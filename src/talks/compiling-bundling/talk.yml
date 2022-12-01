@@ -1,0 +1,580 @@
+---
+config:
+  theme: nearform
+  dimensions:
+    width: 2000
+    height: 1120
+document:
+  title: Compiling and bundling JS, the painless way
+  titleFormatted: Compiling and bundling JS,<br/> the painless way
+  author:
+    name: Paolo Insogna
+    descriptionShort: Staff Node.js Core and DX Engineer
+    description: |
+      Staff Node.js Core and
+      Developer Experience Team
+    email: paolo.insogna@nearform.com
+    twitter: p_insogna
+    github: ShogunPanda
+  company:
+    count: 300
+    npm:
+      monthly: 1B
+      percentage: 8%
+slides:
+  - layout: cover
+  - layout: hello
+  - layout: half
+    title: First of all, let’s give credits!
+    content:
+      - This talk has originally been written by my colleague and friend **Michele Riva**.
+      - <span class="text-nf-brunch-pink">**Whatever goes wrong today, please complain directly to him on Twitter!**</span>
+      - <span class="text-nf-neon-blue font-bold">[@MicheleRivaCode](https://twitter.com/@MicheleRivaCode)</span>
+    image: '@talk/michele.webp'
+  - layout: separator
+    title: Compiling and bundling JavaScript is often a pain ...
+    image: '@talk/complicated.webp'
+    classes:
+      slide: bg-nf-brunch-pink
+  - layout: separator
+    title: …but it<br/> should not!
+    image: '@talk/easy.webp'
+    classes:
+      slide: bg-nf-darkest-blue !flex-row-reverse
+  - layout: quote
+    title: 'A bit of terminology: Compiling'
+    sentence: To change a computer program into a machine language
+    author: Cambridge Dictionary
+    sequence: 1
+    options:
+      light: true
+      icons: false
+    classes:
+      sequence: left-8sp
+  - layout: quote
+    title: 'A bit of terminology: Transpiling'
+    sentence: To translate a source code into a different language source code
+    author: Michele Riva
+    sequence: 2
+    options:
+      light: true
+      icons: false
+    classes:
+      sequence: left-8sp
+  - layout: quote
+    title: 'A bit of terminology: Bundling'
+    sentence: To pack all code and resources in a single source file or executable
+    author: Me, a.k.a. Paolo Insogna
+    sequence: 3
+    options:
+      light: true
+      icons: false
+    classes:
+      sequence: left-8sp
+  - layout: separator
+    title: Transpilation
+    classes:
+      slide: bg-nf-orange-split
+  - title: Why do we want to transpile our code?
+    content: We all have a loved language we’d like to see everywhere.
+    items:
+      - icon: 'rocket'
+        title: Adopt new language features
+        text: Runtimes update much slower than the languages. _We don’t want to wait._
+      - icon: 'affiliate'
+        title: Write once, run everywhere™
+        text: We want to write our scripts in our language despite of the runtime environment.
+    options:
+      horizontal: true
+    notes: |
+      Spiega il processo del TC39:
+
+      0. Informal
+      1. Formal
+      2. Draft, first implementations
+      3. Candidate, 2 implementations
+      4. Finished
+  - title: Who are you missing the most?
+    content: We all have a loved language we’d like to see everywhere.
+    items:
+      - image: '@talk/scala.webp'
+        title: Scala.js
+        text: Scala to Javascript
+      - image: '@talk/opal.webp'
+        title: Opal
+        text: Ruby to Javascript
+    options:
+      horizontal: true
+  - title: 'An example: transpilation of Scala.js'
+    image: '@talk/scala-js-transpile.webp'
+  - title: Where we do we (mostly) run?
+    content:
+      - There are few known runtimes and browsers, way less than in the past.
+    grids:
+      - items:
+          - image: '@talk/chrome.webp'
+          - image: '@talk/firefox.webp'
+          - image: '@talk/safari.webp'
+          - image: '@talk/edge.webp'
+      - items:
+          - image: '@talk/node.webp'
+          - image: '@talk/deno.webp'
+          - image: '@talk/bun.webp'
+        template: 1fr,1fr,1fr
+    notes: |
+      Firefox usa SpiderMonkey, le feature vengono implementate più velocemente.
+
+      La tail-call funge solo su JSC - Menziona che gli env possono essere molto diversi.
+  - title: There is a transpiler for everything…™
+    grids:
+      - items:
+          - image: '@talk/f-sharp.webp'
+            title: F#
+          - image: '@talk/kotlin.webp'
+            title: Kotlin
+          - image: '@talk/gleam.webp'
+            title: Gleam
+          - image: '@talk/reasonml.webp'
+            title: ReasonML
+          - image: '@talk/elm.webp'
+            title: ELM
+          - image: '@talk/rescript.webp'
+            title: ReScript
+        template: 1fr,1fr,1fr
+        gap: 8ch
+    notes: |
+      * F# -> .NET
+      * Kotlin -> Java
+      * Gleam -> Sintassi Rust per Erlang
+      * OCAML -> ReasonML e ReScript
+      * ELM -> Haskell
+  - title: '… and that’s thanks to LLVM!'
+    content: The project is a collection of modular and reusable compiler and toolchains.
+    image: '@talk/llvm.webp'
+    notes: |
+      LLVM permette già di compilare in JavaScript.
+  - title: What are you missing the most?
+    content: We all want to adopt new language features even before they are finalised.
+    items:
+      - image: '@talk/babel-pipe-from.webp'
+        classes:
+          item: flex-initial
+          image: w-auto h-auto max-w-8sp max-h-3sp mb-0
+      - image: '@talk/babel-transform.webp'
+        classes:
+          item: flex-initial
+          image: w-auto h-auto w-2sp mx-4ch
+      - image: '@talk/babel-pipe-to.webp'
+        classes:
+          item: flex-initial
+          image: w-auto h-auto max-w-8sp max-h-3sp mb-0
+    classes:
+      items: justify-center
+    options:
+      horizontal: true
+      skipSpacer: true
+      noGap: true
+    notes: |
+      Pipe da Hack - Dialetto PHP di Facebook
+  - title: There is no end to what we can achieve
+    content: We can even transpile features that likely will never get into the language.
+    items:
+      - image: '@talk/babel-ts-from.webp'
+        classes:
+          item: flex-initial
+          image: w-auto h-auto max-w-8sp max-h-3sp mb-0
+      - image: '@talk/babel-transform.webp'
+        classes:
+          item: flex-initial
+          image: w-auto h-auto w-2sp mx-4ch
+      - image: '@talk/babel-ts-to.webp'
+        classes:
+          item: flex-initial
+          image: w-auto h-auto max-w-8sp max-h-3sp mb-0
+    classes:
+      items: justify-center
+    options:
+      horizontal: true
+      skipSpacer: true
+      noGap: true
+  - layout: half
+    title: Transpiling,<br/>in depth
+    content: Let’s have a deep look on how a transpiler works.
+    image: '@talk/server.webp'
+  - title: 'Generated code is not always readable…'
+    items:
+      - image: '@talk/clojurescript-from.webp'
+        classes:
+          item: flex-initial
+          image: w-auto h-auto w-3_5sp mb-0
+      - image: '@talk/arrow-down.webp'
+        classes:
+          item: flex-initial
+          image: w-auto h-auto min-w-auto min-h-auto h-0_5sp my-4ch
+      - image: '@talk/clojurescript-to.webp'
+        classes:
+          item: flex-initial
+          image: w-auto h-auto w-3_5sp mb-0
+    classes:
+      items: items-center
+    options:
+      skipSpacer: true
+      noGap: true
+  - title: …but some transpilers are really good!
+    items:
+      - image: '@talk/reasonml-from.webp'
+        classes:
+          item: flex-initial
+          image: w-auto h-auto h-2sp mb-0
+      - image: '@talk/arrow-right.webp'
+        classes:
+          item: flex-initial
+          image: w-auto h-auto min-w-auto min-h-auto h-0_5sp mx-4ch
+      - image: '@talk/reasonml-to.webp'
+        classes:
+          item: flex-initial
+          image: w-auto h-auto h-2sp mb-0
+    classes:
+      items: items-center
+    options:
+      horizontal: true
+      skipSpacer: true
+      noGap: true
+  - title: Each language has its own transpiler
+    grids:
+      - items:
+          - image: '@talk/javascript.webp'
+            title: Babel
+          - image: '@talk/typescript.webp'
+            title: TSC
+          - image: '@talk/reasonml.webp'
+            title: BuckleScript
+          - image: '@talk/clojurescript.webp'
+            title: ClojureScript
+        gap: 8ch
+    options:
+      horizontal: true
+  - layout: separator
+    title: No transpiler is perfect!
+    image: '@talk/incomplete.webp'
+    logo: black
+    classes:
+      slide: bg-nf-brunch-pink
+  - title: 'Problem #1: Transpilation time'
+    grids:
+      - items:
+          - image: '@talk/javascript.webp'
+            title: Slow on large codebases
+          - image: '@talk/typescript.webp'
+            title: Slow on large codebases
+          - image: '@talk/reasonml.webp'
+            title: Really fast
+          - image: '@talk/clojurescript.webp'
+            title: Average
+        gap: 8ch
+    sequence: 1
+    options:
+      horizontal: true
+    classes:
+      sequence: left-4_5sp
+  - title: 'Problem #2: Output optimization'
+    grids:
+      - items:
+          - image: '@talk/javascript.webp'
+            title: Well optimized
+          - image: '@talk/typescript.webp'
+            title: Quite optimized
+          - image: '@talk/rescript.webp'
+            title: Beautifully optimized
+          - image: '@talk/clojurescript.webp'
+            title: Awful
+        gap: 8ch
+    sequence: 2
+    options:
+      horizontal: true
+    classes:
+      sequence: left-4_5sp
+  - title: Let’s focus on the popular one!
+    content: No intention to discriminate any language.
+    items:
+      - image: '@talk/javascript.webp'
+        title: Babel
+        text: Quite fast, well optimized
+      - image: '@talk/typescript.webp'
+        title: TSC
+        text: Quite slow, quite optimized
+    options:
+      horizontal: true
+  - title: How does a transpiler work?
+    content: Transpiling time grows proportionally to the source code.
+    items:
+      - index: 1
+        title: Parsing
+        text: The source code is parsed and converted to an Abstract Syntax Tree (AST)
+      - index: 2
+        title: Transformation
+        text: The source language AST is traversed and mapped to the destination language AST.
+      - index: 3
+        title: Code generation (codegen)
+        text: The destination language AST is converted to the destination source code.
+  - title: 'Parsing step #1: Tokenization'
+    content: The input is divided into tokens.
+    items:
+      - image: '@talk/parsing-1-1.webp'
+        title: Input
+        classes:
+          image: max-w-auto max-h-auto w-3sp h-auto
+      - image: '@talk/parsing-1-2.webp'
+        title: Output
+        classes:
+          image: max-w-auto max-h-auto w-3sp h-auto
+    sequence: 1
+    options:
+      horizontal: true
+    classes:
+      sequence: left-0_5sp
+  - title: 'Parsing step #2: Syntactical Analysis'
+    content: The tokens are parsed and analysed.
+    items:
+      - image: '@talk/parsing-2-1.webp'
+        title: Input
+        text: (user code)
+        classes:
+          image: max-w-auto max-h-auto w-3sp h-auto
+      - image: '@talk/parsing-2-2.webp'
+        title: Parse Tree
+        text: (a.k.a. Concrete Syntax Tree)
+        classes:
+          image: max-w-auto max-h-auto w-3sp h-auto
+    sequence: 2
+    options:
+      horizontal: true
+    classes:
+      sequence: left-0_5sp
+  - layout: side
+    title: 'Parsing step #3: Prepare the AST'
+    content: The Parse Tree is converted into the Abstract syntax tree.
+    image: '@talk/ast.webp'
+    sequence: 3
+    classes:
+      sequence: left-0_5sp
+  - layout: side
+    title: 'Parsing step #4:<br/> Build the AST'
+    content: The Abstract Syntax Tree is built and returned to the developer.
+    image: '@talk/ast-js.webp'
+    sequence: 4
+    classes:
+      sequence: left-0_5sp
+  - title: Traversing the AST
+    content: The transpiler exposes an API to allow developer to manipulate the AST.
+    image: '@talk/traversing-1.webp'
+  - title: Transforming the AST
+    content: The traversing API allows to manipulate the AST.
+    image: '@talk/traversing-2.webp'
+  - title: Code generation
+    content: The modified AST is used to generate the final transpiled code.
+    items:
+      - image: '@talk/codegen-input.webp'
+        title: Input
+        classes:
+          image: max-w-auto max-h-auto w-3sp h-auto
+      - image: '@talk/codegen-output.webp'
+        title: Output
+        classes:
+          image: max-w-auto max-h-auto w-3sp h-auto
+    options:
+      horizontal: true
+  - title: All your popular tools use this flow
+    items:
+      - image: '@talk/babel.webp'
+        title: Babel
+      - image: '@talk/prettier.webp'
+        title: Prettier
+      - image: '@talk/eslint.webp'
+        title: ESLint
+    options:
+      horizontal: true
+      skipSpacer: true
+  - title: 'A more complex example: the problem'
+    content: |
+      **jscodeshift** can be used to easily migrate codebases.
+    items:
+      - image: '@talk/jscodeshift-from.webp'
+        title: Input
+        classes:
+          image: max-w-auto max-h-auto h-2sp w-auto
+      - image: '@talk/jscodeshift-to.webp'
+        title: Desired output
+        classes:
+          image: max-w-auto max-h-auto h-2sp w-auto
+    options:
+      horizontal: true
+  - title: 'A more complex example: the solution'
+    image: '@talk/jscodeshift-solution.webp'
+  - layout: separator
+    title: Bundling
+    classes:
+      slide: bg-nf-orange-split
+  - title: Why do we want to bundle our code?
+    content: Bundling improves the developer experience. And it also benefits users.
+    items:
+      - icon: 'rocket'
+        title: To create a single executable file
+        text: A single file, especially if statically linked, is much easier to distribute and to install.
+      - icon: 'affiliate'
+        title: To serve a single JavaScript file
+        text: Serving only a single file reduces the overhead and improves the user experience.
+    options:
+      horizontal: true
+    notes: |
+      Menziona di non fare il bundle lato server.
+  - title: The three horsemen
+    content: These are the mostly used bundlers, each with pros and cons.
+    items:
+      - image: '@talk/webpack.webp'
+        title: Webpack
+        text: Hardest<br/>_Slower_
+      - image: '@talk/rollup.webp'
+        title: Rollup
+        text: Easy<br/>_Slow_
+      - image: '@talk/parcel.webp'
+        title: Parcel
+        text: Easiest<br/>_Fast_
+    options:
+      horizontal: true
+  - layout: separator
+    title: Is webpack still worth it?
+    content: King of Configurations
+    image: '@talk/webpack.webp'
+    classes:
+      slide: bg-nf-darkest-blue
+      image: h-3sp
+  - title: Are there any better alternatives?
+    grids:
+      - items:
+          - image: '@talk/esbuild.webp'
+            title: ESBuild
+          - image: '@talk/swc.webp'
+            title: SWC
+            classes:
+              image: w-auto
+          - image: '@talk/vite.webp'
+            title: Vite
+          - image: '@talk/snowpack.webp'
+            title: SnowPack
+        gap: 8ch
+    options:
+      horizontal: true
+  - layout: separator
+    title: ESBuild
+    image: '@talk/esbuild.webp'
+    classes:
+      slide: bg-nf-darkest-blue
+      image: h-4sp
+  - title: How fast ESBuild is?
+    content: A lot, especially when comparing with webpack.
+    image: '@talk/esbuild-performances.webp'
+  - title: Ok, it’s fast. What about configuration?
+    content: ESBuild CLI is definitely easy to use.
+    image: '@talk/esbuild-cli.webp'
+  - layout: separator
+    title: SWC
+    image: '@talk/swc.webp'
+    classes:
+      slide: bg-nf-darkest-blue
+      image: w-4sp h-unset
+  - title: How does it compare to ESBuild?
+    content: SWC is sometimes faster than ESBuild.
+    items:
+      - image: '@talk/esbuild-vs-swc-es2019.webp'
+        title: ES2019
+        classes:
+          image: max-w-auto max-h-auto w-3sp h-auto
+      - image: '@talk/esbuild-vs-swc-es2020.webp'
+        title: ES2020
+        classes:
+          image: max-w-auto max-h-auto w-3sp h-auto
+    options:
+      horizontal: true
+  - title: An example of SWC configuration
+    image: '@talk/swc-config.webp'
+  - layout: separator
+    title: SWC can run in a browser thanks to WASM
+    image: '@talk/matrioska.webp'
+    classes:
+      slide: bg-nf-brunch-pink
+  - layout: separator
+    title: Vite
+    image: '@talk/vite.webp'
+    classes:
+      slide: bg-nf-darkest-blue
+      image: h-4sp
+  - title: A little insights into Vite
+    items:
+      - icon: 'source-code'
+        title: Complete developer experience
+        text: It provides a webserver with Hot Module Reload support.
+      - icon: 'affiliate'
+        title: A bundler that doesn’t actually bundle
+        text: It completely leverages ECMAScript Modules.
+      - icon: 'rocket'
+        title: Still very fast
+        text: We will talk about this is in a bit.
+    notes: |
+      Spiega la differenza tra CJS e ESM.
+  - title: Vite leverages existing tools
+    content: ESBuild and Rollup are used under the hood.
+    items:
+      - image: '@talk/esbuild.webp'
+        classes:
+          item: absolute z-1 top-0_5gs left-50p -ml-1sp
+          image: w-1sp h-1sp mb-0
+      - image: '@talk/vite.webp'
+        classes:
+          image: w-2sp h-2sp mb-0 relative z-2
+      - image: '@talk/rollup.webp'
+        classes:
+          item: absolute z-1 top-0_5gs left-50p
+          image: w-1sp h-1sp mb-0
+    classes:
+      items: relative flex-initial h-2sp mt-8ch
+    options:
+      horizontal: true
+      noGap: true
+      skipSpacer: true
+  - layout: separator
+    title: Snowpack
+    image: '@talk/snowpack.webp'
+    content: <span class="text-nf-brunch-pink">_Rest In Pepperoni_</span>
+    classes:
+      slide: bg-nf-darkest-blue
+      image: w-4sp h-unset
+  - title: And now something completely different™
+    content: |
+      **Skypack** used snowpack to load module in the browsers without a bundler.
+    image: '@talk/skypack.webp'
+  - layout: side
+    title: The greatest gain<br/>in new bundlers
+    content: New bundlers give <code>O(1)</code> compile time which is great when the number of modules grows.
+    image: '@talk/compile.webp'
+  - title: Take home lessons
+    content: What can we learn from this long journey?
+    items:
+      - icon: 'source-code'
+        title: The future is no bundle
+        text: As ECMAScript module support increases, bundlers will not be needed anymore.
+      - icon: 'moneybag'
+        title: The future is bright
+        text: Big companies are sponsoring transpilers and bundlers and this ensures continuity.
+      - icon: 'rocket'
+        title: Competition is good
+        text: Having multiple transpilers and bundlers competing to be the winner gives the best DX.
+    options:
+      horizontal: true
+  - layout: quote
+    sentence: Working hard and working smart can be two different things.
+    author: Byron Dorgan
+    classes: bg-nf-brunch-pink
+  - layout: hiring
+  - layout: questions
+  - layout: end

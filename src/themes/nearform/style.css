@@ -1,0 +1,432 @@
+@import 'virtual:theme-fonts';
+@import '@freya/normalize.css';
+@import '@freya/reset.css';
+@import '@freya/default.css';
+
+html {
+  @apply font-extralight;
+  @apply font-lexend;
+}
+
+h1,
+h2,
+h3 {
+  @apply font-poppins;
+  @apply font-bold;
+}
+
+p,
+h4,
+h5,
+h6 {
+  @apply font-lexend;
+  @apply font-extralight;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p {
+  @apply leading-snug;
+}
+
+strong,
+code {
+  @apply font-bold;
+}
+
+code {
+  @apply font-fira-code;
+}
+
+em {
+  @apply font-bold;
+  @apply not-italic;
+  @apply text-nf-brunch-pink;
+}
+
+h1 {
+  @apply mb-0_4sp;
+  @apply font-size-30pt;
+
+  &:not(&.no-border) {
+    &::after {
+      content: '';
+      @apply relative;
+      @apply block;
+      @apply -bottom-0_1sp;
+      @apply left-0;
+      @apply w-1sp;
+      @apply h-0_05sp;
+      @apply bg-nf-brunch-pink;
+    }
+  }
+
+  &.white {
+    @apply text-white;
+
+    &:not(&.no-border) {
+      &::after {
+        @apply bg-white;
+      }
+    }
+  }
+}
+
+h4 {
+  @apply font-size-18pt;
+  @apply leading-normal;
+  @apply mb-0_4sp;
+}
+
+a,
+a:hover,
+a:active,
+a:visited,
+a:focus {
+  @apply text-nf-neon-blue;
+}
+
+.logo {
+  @apply absolute;
+  @apply z-10001;
+  @apply bottom-0_2sp;
+  @apply right-0_3sp;
+  @apply w-0_35sp;
+  @apply pb-0_05sp;
+  @apply border-solid;
+  @apply border-0;
+  @apply border-b-0_05sp;
+  @apply border-nf-brunch-pink;
+
+  &--white {
+    @apply fill-white;
+    @apply border-white;
+  }
+}
+
+.big-title {
+  @apply font-size-40pt;
+  @apply font-bold;
+
+  &:not(&.no-border) {
+    &::after {
+      @apply w-2sp;
+      @apply h-0_1sp;
+    }
+  }
+
+  &--white {
+    @apply text-white;
+
+    &::after {
+      @apply !bg-white;
+    }
+  }
+}
+
+.loading {
+  h1 {
+    @apply block;
+    @apply font-poppins;
+  }
+}
+
+.item {
+  @apply flex;
+  @apply items-start;
+  @apply min-h-0_8sp;
+
+  &__icon {
+    @apply inline;
+    @apply w-0_6sp;
+    @apply h-0_6sp;
+    @apply min-w-0_6sp;
+    @apply min-h-0_6sp;
+    @apply stroke-1;
+    @apply -mt-4px;
+    @apply mr-0_2sp;
+  }
+
+  &__image {
+    @apply inline;
+    @apply w-1sp;
+    @apply h-1sp;
+    @apply min-w-1sp;
+    @apply min-w-1sp;
+    @apply mb-0_2sp;
+  }
+
+  &__index {
+    @apply font-poppins;
+    @apply font-bold;
+    @apply text-right;
+    @apply w-0_3sp;
+    @apply font-size-35pt;
+    @apply leading-none;
+    @apply mr-0_2sp;
+    @apply mt-0_05sp;
+  }
+
+  &__text {
+    @apply max-w-7sp;
+    @apply flex;
+    @apply flex-col;
+    @apply font-size-12pt;
+  }
+
+  &__title {
+    @apply max-w-7sp;
+    @apply mb-0;
+    @apply font-bold;
+    @apply font-size-14pt;
+  }
+
+  &--horizontal {
+    @apply flex-1;
+    @apply flex-col;
+    @apply text-center;
+    @apply items-center;
+    @apply min-h-auto;
+  }
+
+  &--horizontal &__icon {
+    @apply w-1sp;
+    @apply h-1sp;
+    @apply min-w-1sp;
+    @apply min-h-1sp;
+    @apply mt-0;
+    @apply mr-0;
+    @apply mb-0_2sp;
+  }
+
+  &--horizontal &__index {
+    @apply w-auto;
+    @apply h-auto;
+    @apply min-w-auto;
+    @apply min-h-auto;
+    @apply mt-0;
+    @apply mr-0;
+    @apply mb-0_2sp;
+    @apply font-size-45pt;
+  }
+
+  &--horizontal &__title,
+  &--horizontal &__text {
+    @apply max-w-3_5sp;
+  }
+
+  &__spacer {
+    @apply bg-neutral-300;
+    @apply w-2px;
+    @apply h-90p;
+  }
+}
+
+.callout {
+  @apply border-solid;
+  @apply border-0;
+  @apply border-b-0_1sp;
+  @apply border-nf-brunch-pink;
+  @apply font-poppins;
+  @apply font-bold;
+  @apply font-size-50pt;
+  @apply m-0;
+  @apply py-0_1sp;
+  @apply px-1ch;
+  @apply bg-nf-midnight-blue;
+  @apply text-white;
+
+  &:not(h1.no-border)::after {
+    @apply hidden;
+  }
+
+  &--title {
+    @apply absolute;
+    @apply z-2;
+    @apply bottom-0_5sp;
+    @apply left-0_5sp;
+  }
+}
+
+.callout-icon {
+  @apply absolute;
+  @apply -bottom-0_5sp;
+  @apply left-3_5sp;
+  @apply w-3sp;
+  @apply h-3sp;
+  @apply text-nf-neon-blue;
+  @apply stroke-1;
+  @apply z-0;
+}
+
+.sequence {
+  @apply absolute
+  @apply -bottom-0_75sp;
+  @apply left-2sp;
+  @apply font-size-220pt;
+  @apply line-height-1;
+  @apply font-bold;
+  @apply text-neutral-300;
+  @apply align-baseline;
+  @apply z-0;
+}
+
+.cover {
+  &__curve-top-left {
+    @apply w-2_76sp;
+  }
+
+  &__curve-bottom-right {
+    @apply w-5_51sp;
+  }
+
+  &__contents {
+    grid-template:
+      's1 s1' 1fr
+      'a a' 275px
+      'b b' min-content
+      'c c' min-content
+      's2 s2' 1fr
+      'd e' min-content
+      / 1fr 1fr;
+
+    h1 {
+      @apply font-size-35pt;
+
+      &::after {
+        @apply hidden;
+      }
+    }
+
+    h2 {
+      @apply font-size-14pt;
+    }
+  }
+
+  &__copyright {
+    @apply font-size-10_5pt;
+  }
+
+  &__logo {
+    @apply w-2_65sp;
+  }
+}
+
+.hello {
+  grid-template:
+    'a b' min-content
+    'c b' 1fr
+    / 1fr 1fr;
+
+  .item__contents {
+    @apply font-size-12pt;
+  }
+
+  .item__contents a {
+    @apply font-bold;
+    @apply text-black;
+  }
+}
+
+.hiring {
+  header {
+    p {
+      @apply font-poppins;
+      @apply font-size-10pt;
+      @apply line-height-1_15;
+    }
+  }
+
+  &__world {
+    h2 {
+      @apply font-size-16pt;
+    }
+  }
+
+  h1.no-border {
+    @apply font-size-30pt;
+    @apply font-extrabold;
+  }
+
+  footer {
+    @apply font-poppins;
+    @apply font-bold;
+    @apply font-size-12pt;
+    @apply line-height-1;
+
+    a {
+      @apply line-height-1;
+    }
+  }
+
+  &__logo-with-text {
+    @apply w-1_8sp;
+  }
+
+  &__curve-bottom-right {
+    @apply top-3_02sp;
+    @apply left-5_82sp;
+    @apply w-4_25sp;
+  }
+
+  &__npm {
+    h1 {
+      @apply font-lexend;
+      @apply font-size-40pt;
+    }
+
+    h2 {
+      @apply font-size-13pt;
+    }
+
+    h3 {
+      @apply font-size-12pt;
+    }
+
+    h4 {
+      @apply font-size-10pt;
+    }
+  }
+
+  &__social {
+    @apply w-0_3sp;
+    @apply h-0_3sp;
+    @apply ml-1ch;
+    @apply text-nf-darkest-blue;
+  }
+}
+
+.end {
+  footer {
+    @apply font-lexend;
+    @apply font-size-12pt;
+    @apply line-height-1;
+
+    .grid {
+      grid-template:
+        'a b e' 1fr
+        'c d e' 1fr
+        / min-content 1fr min-content;
+    }
+
+    a,
+    strong,
+    span {
+      @apply line-height-1;
+    }
+  }
+
+  &__logo-with-text {
+    @apply w-1_81sp;
+  }
+
+  &__curve-bottom-right {
+    @apply top-3_02sp;
+    @apply left-5_82sp;
+    @apply w-4_25sp;
+  }
+}

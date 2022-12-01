@@ -1,0 +1,60 @@
+import { parseContent } from '@freya/generation/generator.js'
+import { resolveImageUrl } from '@freya/generation/loader.js'
+import { SlideProps } from '@freya/generation/models.js'
+import { SlideWrapper } from '../components/common'
+import { Items } from '../components/item'
+import { Slide } from '../models.js'
+
+export default function SideLayout({ talk, slide, index }: SlideProps<Slide>): JSX.Element {
+  const {
+    title,
+    content,
+    image,
+    items,
+    highlight,
+    options: { horizontal, noGap, skipSpacer, skipDefaultClasses },
+    classes: { slide: className, image: imageClassName, highlight: highlightClassName, items: itemsClassName }
+  } = slide
+
+  const imageUrl = resolveImageUrl('nearform', talk.id, image)
+
+  return (
+    <SlideWrapper slide={slide} index={index} className={`freya__slide--with-half p-0 ${className ?? ''}`}>
+      <div className={`freya__slide__half min-w-5sp p-0_5sp self-start flex-col ${highlight ? 'flex-2' : 'flex-1'}`}>
+        {title && <h1 dangerouslySetInnerHTML={{ __html: parseContent(title) }} />}
+
+        {content?.filter(Boolean).map((c: string, contentIndex: number) => (
+          <h4
+            key={`content:${index}:${contentIndex}`}
+            className="text-justify"
+            dangerouslySetInnerHTML={{ __html: parseContent(c) }}
+          />
+        ))}
+
+        {items && (
+          <Items
+            items={items}
+            horizontal={horizontal}
+            className={itemsClassName}
+            talk={talk.id}
+            noGap={noGap}
+            skipSpacer={skipSpacer}
+            skipDefaultClasses={skipDefaultClasses}
+          />
+        )}
+      </div>
+
+      {image && (
+        <div className="flex flex-1 items-center justify-center">
+          <img src={imageUrl} className={`max-w-4_5sp max-h-4sp mr-0_5sp ${imageClassName ?? ''}`.trim()} />
+        </div>
+      )}
+
+      {!image && highlight && (
+        <div className={`flex flex-1 items-center p-1bp h-full text-justify ${highlightClassName ?? ''}`}>
+          <h4 dangerouslySetInnerHTML={{ __html: parseContent(highlight) }} className="m-0" />
+        </div>
+      )}
+    </SlideWrapper>
+  )
+}

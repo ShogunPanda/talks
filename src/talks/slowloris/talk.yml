@@ -1,0 +1,263 @@
+---
+config:
+  theme: nearform
+  dimensions:
+    width: 2000
+    height: 1120
+document:
+  title: The tale of avoiding a time-based DDOS attack in Node.js
+  author:
+    name: Paolo Insogna
+    descriptionShort: Staff Node.js Core and DX Engineer
+    description: |
+      Staff Node.js Core and
+      Developer Experience Team
+    email: paolo.insogna@nearform.com
+    twitter: p_insogna
+    github: ShogunPanda
+  company:
+    count: 300
+    npm:
+      monthly: 1B
+      percentage: 8%
+slides:
+  - layout: cover
+  - layout: hello
+  - layout: half
+    title: What do we use everyday?
+    content:
+      - Web applications play a very important part of our lives.
+      - _They must not go down!_
+    image: '@talk/online-banking.webp'
+  - layout: separator
+    title: We are all vulnerable!
+    image: '@talk/hacking.webp'
+    classes:
+      slide: bg-nf-brunch-pink
+  - title: Denial of Service Attack
+    items:
+      - icon: bug
+        title: Denial of Service Attack (DoS)
+        text: A network resource is maliciously made unavailable to its intended users.
+      - icon: affiliate
+        title: Distributed Denial of Service (DDoS)
+        text: The incoming flooding traffic originates from many different sources.
+      - icon: moneybag
+        title: In DDoS the attacker usually uses a lot of resources
+        text: _Is that still true?_
+    notes: |
+      Emphasize the **true** in the last question.
+  - layout: separator
+    title: Fear the real enemy...
+    image: '@talk/hacking.webp'
+    classes:
+      slide: bg-nf-brunch-pink
+  - layout: image
+    image: '@talk/slowloris.webp'
+    notes: |
+      Joke about: **“This talk should have been named Taming Slowlorises in Node.js”** and see people reaction.
+  - layout: side
+    title: The Slowloris Attack
+    items:
+      - icon: bug
+        title: What is it?
+        text: A DDoS attack which uses minimal bandwidth.
+      - icon: calendar-time
+        title: When it was created?
+        text: Robert “RSnake” Hansen carved it on June 2009.
+      - icon: transform
+        title: It’s not just HTTP!
+        text: This attack can be abstracted to similar protocols.
+    image: '@talk/slowloris-intro.webp'
+  - layout: side
+    title: Normal HTTP server activity
+    content: Each socket on the server consumes some amount of RAM and other system resources.
+    image: '@talk/http-1.webp'
+    sequence: 1
+  - layout: side
+    title: Normal HTTP server activity
+    content: Clients usually disconnect after receiving the response.
+    image: '@talk/http-2.webp'
+    sequence: 2
+    notes: |
+      Explicitly mention that this is not strictly true for Keep-Alive connections but also that legit clients disconnects very soon.
+  - layout: side
+    title: Normal HTTP server activity
+    content: The amount of resources consumed by the server are relatively stable.
+    image: '@talk/http-3.webp'
+    sequence: 3
+  - layout: side
+    title: Retaining sockets is expensive
+    items:
+      - icon: cpu
+        title: The operating system manages low-level operations
+        text: Each sockets consumes several kilobytes of RAM.
+      - icon: link
+        title: Each socket is backed by a file descriptor
+        text: Each process has a limited number of descriptor available, managed via <code>ulimit</code>.
+      - icon: apps
+        title: The application manages high-level operations
+        text: The application representation of the socket adds extra memory overhead.
+  - layout: side
+    title: The Slowloris attack
+    content: Each client never finishes a request and stays connected for the longest time possible.
+    image: '@talk/slowloris-1.webp'
+    sequence: 1
+  - layout: side
+    title: The Slowloris attack
+    content: As more clients connect, server resources usage constantly increases over time.
+    image: '@talk/slowloris-2.webp'
+    sequence: 2
+  - layout: side
+    title: The Slowloris attack
+    content:
+      - At some point server has no more free resources and cannot accept any new client.
+      - _The service is interrupted!_
+    image: '@talk/slowloris-3.webp'
+    sequence: 3
+  - layout: image
+    title: How do we stop it?
+    image: '@talk/wall.webp'
+    notes: |
+      Emphasize **“How”** and **“stop it”**?
+  - title: Use a reverse proxy
+    content: Never put Node.js as the direct point of contact to the clients.<br/> Servers like Nginx have better protection from DDoS attacks.
+    icon: traffic-lights
+  - title: Mitigation strategies
+    content: Distinguish between requests which are legit and requests that belong to the attack is very hard. **None of the strategies below is 100% accurate.**
+    items:
+      - icon: lock-access
+        title: Limit connections per IP
+        text: As the attack is distributed, the attacker can easily switch to another IP.
+      - icon: hourglass
+        title: Enforce speed or time constraints
+        text: It’s hard to establish a connection which will not cut out slow legit clients.
+    options:
+      horizontal: true
+  - layout: image
+    title: What about Node.js?
+    image: '@talk/node.webp'
+
+  - title: http.Server.headersTimeout
+    items:
+      - icon: bug
+        title: Partial fix as the body is not considered
+        text: Node.js never parses or consume request bodies.
+      - icon: license
+        title: Body handling is delegated
+        text: Applications are responsible for body timeouts.
+      - icon: calendar-time
+        title: Node.js 10.14.0, November 28th, 2018
+        text: <em>Node.js has been completely unprotected for 10 years.</em>
+    sequence: 10
+    classes:
+      sequence: left-auto -right-0_3sp -bottom-1sp font-size-300pt text-red-300
+  - layout: side
+    title: Trust the frameworks
+    highlight: The philosophy behind this choice was to <em>support</em> serverless environments which needed long running connections.
+    items:
+      - icon: hourglass-off
+        title: Disable http.Server.timeout by default
+        text: The default value has been changed to nothing.
+      - icon: calendar-time
+        title: Node.js 13.0.0, October 22th, 2019
+        text: _From now on, attacker can delay transfer indefinitely._
+    classes:
+      highlight: bg-nf-neon-blue text-white
+    logo: white
+    notes: |
+      * Hapi and Fastify implemented a fix.
+      * Restify, Express and Koa did not.
+  - title: http.Server.requestTimeout
+    items:
+      - icon: shield-check
+        title: Complete fix
+        text: The client has now limited time to finish.
+      - icon: calendar-time
+        title: Available on all active Node.js lines
+        text: Added to Node.js 14.11.0, released on September 15th, 2020.
+      - icon: thumb-down
+        title: Disabled by default
+        text: Adding a timer for each new request is an expensive operation.
+  - layout: image
+    title: Are we safe now?
+    image: '@talk/safe.webp'
+  - layout: separator
+    title: Yes, almost!
+    image: '@talk/hacking.webp'
+    classes:
+      slide: bg-nf-brunch-pink
+  - title: The countermeasures were loose
+    items:
+      - icon: thumb-down
+        title: Custom configuration was needed to protect adequately
+        text: The attacker could still delay data transfer forever without being rejected.
+      - icon: rocket
+        title: Performance was prioritized
+        text: Whenever a timeout has gone off was checked only after new data was received.
+  - title: How to protect Node.js 16 and below
+    items:
+      - icon: hourglass
+        title: Make sure sockets cannot be idle
+        text: <code>http.Server.timeout</code> must be greater than 0 to detect malicious idle sockets.
+      - icon: lock-access
+        title: Limit the time for each request
+        text: <code>http.Server.requestTimeout</code> must be greater than 0 to limit the total time allowed for a client to finish a request.
+      - icon: hourglass-low
+        title: Have a lower timeout for the headers
+        text: <code>http.Server.headersTimeout</code> should also be set to detect a malicious client earlier.
+  - title: How to protect Node.js 16 and below
+    image: '@talk/node-16.webp'
+  - title: Node.js 18.0.0 is finally safe by default
+    content: |
+      The latest major version of Node.js has finally solved all the issues described.
+
+      _Changing timeout handling has improved performance by 2%._
+    items:
+      - icon: history
+        title: Request are checked periodically
+        text: |
+          The HTTP server regularly checks for requests which have not completed in the allowed time.
+
+          <br/>See the new option: `connectionsCheckingInterval`
+      - icon: license
+        title: Have safer defaults
+        text: |
+          The timeouts for headers and request are finally enabled by default.<br/>
+
+          <br/>_The default Node.js configuration now protects against SlowLoris._
+    options:
+      horizontal: true
+    notes: |
+      Mention that this was possible due to semver major change and thus it will not be backported.
+  - layout: separator
+    title: We finally made it!
+    image: '@talk/turtle.webp'
+    icon: confetti
+    classes:
+      slide: bg-nf-darkest-blue
+      icon: w-2_5sp h-2_5sp left-1sp -bottom-0_4sp text-white stroke-width-0_3
+    notes: |
+      Do a nice victory gesture and shout!
+  - title: Take home lessons
+    content: What can we learn from this long journey?
+    items:
+      - icon: shield-lock
+        title: Security, always
+        text: Always think about security implication when implementing new features or fixing bugs.
+      - icon: rocket-off
+        title: Sacrifice Performance
+        text: Putting performance aside can drive to correct, innovative and eventually performant solutions.
+      - icon: history
+        title: Validate regularly
+        text: During regular activities, always check the existing code for hidden flaws or vulnerabilites.
+    options:
+      horizontal: true
+    notes: |
+      **Before** talking about the slides, recap what you talked about: **“Today we have seen how atypical attacks can unexpectedly affect our applications and how it can take a very long time to fix them.”**
+  - layout: quote
+    sentence: Never assume the obvious is true.
+    author: William Safire
+  - layout: hiring
+  - layout: questions
+  - layout: end

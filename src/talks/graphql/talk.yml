@@ -1,0 +1,250 @@
+---
+config:
+  theme: nearform
+  dimensions:
+    width: 2000
+    height: 1120
+document:
+  title: Don’t break GraphQL, extend it!
+  author:
+    name: Paolo Insogna
+    descriptionShort: Staff Node.js Core and DX Engineer
+    description: |
+      Staff Node.js Core and
+      Developer Experience Team
+    email: paolo.insogna@nearform.com
+    twitter: p_insogna
+    github: ShogunPanda
+  company:
+    count: 300
+    npm:
+      monthly: 1B
+      percentage: 8%
+slides:
+  - layout: cover
+  - layout: hello
+  - title: Let’s celebrate GraphQL!
+    content: We all know how this technology has made our life easier.
+    image: '@talk/graphql.webp'
+    classes:
+      image: absolute -bottom-1_5sp left-2_5sp w-5sp !max-h-none
+  - title: Introduction
+    items:
+      - icon: source-code
+        title: Many resources, less overhead, expressive language
+        text: You can ask for multiple resources in a single request and save network bandwidth.
+      - icon: cut
+        title: No overfetching or underfetching
+        text: The server will return exactly the data we asked for. <em>This will return.</em>
+      - icon: network
+        title: Federation
+        text: Multiple schemas can be easily joined.
+  - layout: separator
+    title: Let’s talk about Federation
+    classes:
+      slide: bg-nf-brunch-pink
+  - title: GraphQL Federation
+    items:
+      - icon: affiliate
+        title: Split the schema in subgraphs
+        text: This is great for separation of concerns.
+      - icon: link
+        title: Integration with remote services
+        text: Each subgraph is handled by a separate service, possibly remote.
+      - icon: thumb-down
+        title: Only works with GraphQL service
+        text: You can’t directly integrate with REST APIs or similar.
+  - layout: half
+    title: The server knows<br/>it better
+    content:
+      - It’s relative easy to attach new data sources to the server.
+      - '<em class="text-nf-neon-blue">How to push additional data to a client that didn’t ask for it?</em>'
+    image: '@talk/server.webp'
+  - layout: image
+    title: How to be proactive?
+    image: '@talk/what-now.webp'
+  - title: 'Happy case: we control everything'
+    items:
+      - index: 1
+        title: Add new data to the server’s schema
+        text: You should not break backward compatibility.
+      - index: 2
+        title: Verify the clients are still working
+        text: Double checking that nothing broke is never a bad choice.
+      - index: 3
+        title: Update the clients
+        text: Update queries in the client to use the new data.
+  - layout: image
+    title: Are we done?
+    image: '@talk/happiness.webp'
+  - layout: separator
+    title: You already know the answer...
+    image: '@talk/laugh.webp'
+    classes:
+      slide: bg-nf-brunch-pink
+  - title: The happy case is mostly theoretical
+    items:
+      - icon: world
+        title: You have to be in control of the clients
+        text: You also have to consider users that don’t usually upgrade their applications often.
+      - icon: device-cctv
+        title: Nothing can go out of sight
+        text: If even a single component is not updated at the right time, compatibility problems will arise.
+      - icon: license
+        title: Specification will be broken
+        text: Even if the client is able to handle data it didn’t ask for, <em>we are breaking the specification</em>.
+  - layout: raw
+    content: |
+      <h1 class="text-nf-midnight-blue no-border font-size-150pt line-height-1 m-0 p-0">BAD!
+      <h1 class="text-white no-border font-size-150pt line-height-1 m-0 p-0">DON'T!
+    classes:
+      slide: bg-nf-brunch-pink items-center justify-center p-0
+      raw: flex flex-1 w-full h-full flex-col items-center justify-center
+    logo: white
+  - layout: image
+    title: Do we have a choice?
+    image: '@talk/alternatives.webp'
+  - title: Meet GraphQL extensions
+    content: The `extensions` field is already documented in the specification and it's perfect to ensure both compatibility and expandability.
+    items:
+      - icon: source-code
+        title: Extensions are for developers
+        text: The specification specifically states that field is reserved for developers to extend the protocol.
+      - icon: circuit-changeover
+        title: Existing clients will ignore them
+        text: Unless configured to, clients will ignore the field and the server is still specification compliant.
+    options:
+      horizontal: true
+  - title: Serialization
+    items:
+      - icon: world
+        title: GraphQL does not enforces a serialization format
+        text: Developers are free to use whatever they want to.
+      - icon: tools
+        title: The network stack is your choice
+        text: Neither the data format or the transfer protocol are mandated by the spec.
+      - icon: star
+        title: Let’s face the honest truth
+        text: 99% (total arbitrary) of the times we are talking about JSON data exchanged over HTTP.
+  - layout: side
+    title: Meet JSONPath
+    content: It is a string syntax for selecting and extracting values within a JSON value.
+    items:
+      - icon: star
+        title: Well known
+        text: You are already using JSONPath or similar.
+      - icon: tools
+        title: Easily implementable
+        text: The syntax is easy to understand and implement.
+    image: '@talk/jsonpath.webp'
+  - title: How does enriching works?
+    items:
+      - index: 1
+        title: Analyze the query
+        text: Parse and validate the query received by the client. In case of request error, stop here.
+      - index: 2
+        title: Ensure types information with temporary modifications
+        text: Each selection set must contain the type to give all information to the enriching handler.
+      - index: 3
+        title: Execute the query
+        text: This can be done directly on the server or we can create an enriching GraphQL proxy server.
+      - index: 4
+        title: Fetch the additional data
+        text: Using a tree traversal algorithm, fetch additional data for each field according to the handler.
+      - index: 5
+        title: Enrich the response
+        text: Store the additional data in the extensions field, using the JSONPath selector as the key.
+    options:
+      noGap: true
+  - layout: side
+    title: Ensuring type information
+    content:
+      - The enriching algorithm needs type information, therefore we need `__typename` to be in all selection sets.
+    items:
+      - icon: tool
+        title: The added fields are temporary
+        text: Never return these to the client.
+      - icon: replace
+        title: Leverage field aliasing
+        text: Use field aliasing to easily spot the fields added.
+    image: '@talk/type-aliasing.webp'
+  - title: Cache the queries
+    content: Parsing and executing GraphQL is expensive. Cache them when possible.
+    items:
+      - icon: cloud-upload
+        title: Cache the original query…
+        text: This also includes invalid queries as it will speed up the handling of misbehaving clients.
+      - icon: replace
+        title: …and the enriched query
+        text: Traversing a complex query to ensure types information can be time consuming.
+    options:
+      horizontal: true
+  - title: Depth first tree traversal
+    image: '@talk/tree.webp'
+  - layout: side
+    title: GraphQL Proxy handler
+    content:
+      - We can reuse the parsing and serialization methods from the reference GraphQL implementation.
+      - <span class="font-size-0_9em">[https://github.com/ShogunPanda/graphql-enrich-proxy](https://github.com/ShogunPanda/graphql-enrich-proxy)</span>
+    image: '@talk/server-1.webp'
+    notes: |
+      Linee 3, 12, 18, 19, 22, 31, 34
+  - layout: side
+    title: Ensure type information
+    content: The visit API and the AST from the GraphQL reference implementation makes our life very easy.
+    image: '@talk/server-2.webp'
+    notes: |
+      Linee 6, 11, 13, 19
+  - layout: side
+    title: Fetch the additional data
+    content: Using the type and path we can choose whether the node needs additional data.
+    image: '@talk/server-3.webp'
+    notes: |
+      Linee 18, 27, 29, 31, 36
+  - layout: side
+    title: Execute the handler
+    content: We receive all information to decide whether we want to attach any data or not.
+    image: '@talk/handler.webp'
+    notes: |
+      Linee 1, 2
+  - title: Input query
+    image: '@talk/query-1.webp'
+  - title: Query executed from the upstream
+    image: '@talk/query-2.webp'
+  - layout: side
+    title: Upstream response
+    content: It contains the enriched type information that will be removed from the final response.
+    image: '@talk/response-1.webp'
+  - layout: side
+    title: Final proxy response
+    content: The client will receive the original data requested and all our enriched data is in the extensions field.
+    image: '@talk/response-2.webp'
+  - layout: separator
+    title: Mission completed!
+    image: '@talk/completed.webp'
+    icon: confetti
+    classes:
+      slide: bg-nf-darkest-blue
+      icon: w-2_5sp h-2_5sp left-1sp -bottom-0_4sp text-white stroke-width-0_3
+    notes: |
+      Do a nice victory gesture and shout!
+  - title: Take home lessons
+    content: What can we learn from this long journey?
+    items:
+      - icon: license
+        title: Read the specification
+        text: The specifications are formal and verbose but they <em>might already contain what you need</em>.
+      - icon: checkup-list
+        title: Be compliant
+        text: Even if peers are lenient with specification break, they might stop at any time. <em>Don’t risk!</em>
+      - icon: search
+        title: Analyse the environment
+        text: Even if you develop the experience end to end, you will never be able to <em>cannot control everything</em>.
+    options:
+      horizontal: true
+  - layout: quote
+    sentence: You are remembered for the rules you break.
+    author: Douglas MacArthur
+  - layout: hiring
+  - layout: questions
+  - layout: end
