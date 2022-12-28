@@ -23,6 +23,7 @@ document:
 slides:
   - layout: cover
   - layout: hello
+  - layout: hiring
   - layout: half
     title: What do we use everyday?
     content:
@@ -258,6 +259,5 @@ slides:
   - layout: quote
     sentence: Never assume the obvious is true.
     author: William Safire
-  - layout: hiring
   - layout: questions
   - layout: end

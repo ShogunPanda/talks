@@ -24,6 +24,7 @@ document:
 slides:
   - layout: cover
   - layout: hello
+  - layout: hiring
   - layout: half
     title: First of all, let’s give credits!
     content:
@@ -575,6 +576,5 @@ slides:
     sentence: Working hard and working smart can be two different things.
     author: Byron Dorgan
     classes: bg-nf-brunch-pink
-  - layout: hiring
   - layout: questions
   - layout: end

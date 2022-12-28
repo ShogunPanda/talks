@@ -1,8 +1,7 @@
-import { defineUnoConfig, numericRule, systemFonts, systemMonospaceFonts } from '@freya/generation/css.js'
-import { getTalk, getTalks } from '@freya/generation/loader.js'
 import { CSSValue, Rule } from '@unocss/core'
 import presetWind from '@unocss/preset-wind'
 import transformerDirectives from '@unocss/transformer-directives'
+import { defineUnoConfig, getTalk, getTalks, numericRule, systemFonts, systemMonospaceFonts } from 'freya-slides'
 
 function generateSpacing(customUnit: string, ratio: number, unit: string): Rule[] {
   const spacings: Rule[] = []

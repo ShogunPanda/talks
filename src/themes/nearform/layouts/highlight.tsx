@@ -1,8 +1,6 @@
-import { parseContent } from '@freya/generation/generator.js'
-import { resolveImageUrl } from '@freya/generation/loader.js'
-import { SlideProps } from '@freya/generation/models.js'
-import { SlideWrapper } from '../components/common'
-import { Items } from '../components/item'
+import { parseContent, resolveImageUrl, SlideProps } from 'freya-slides'
+import { SlideWrapper } from '../components/common.js'
+import { Items } from '../components/item.js'
 import { Slide } from '../models.js'
 
 export default function SideLayout({ talk, slide, index }: SlideProps<Slide>): JSX.Element {

@@ -1,6 +1,5 @@
-import { resolveImageUrl } from '@freya/generation/loader.js'
-import { SlideProps } from '@freya/generation/models.js'
-import { SlideWrapper } from '../components/common'
+import { resolveImageUrl, SlideProps } from 'freya-slides'
+import { SlideWrapper } from '../components/common.js'
 import { Slide } from '../models.js'
 
 export default function ImageLayout({ talk, slide, index }: SlideProps<Slide>): JSX.Element {

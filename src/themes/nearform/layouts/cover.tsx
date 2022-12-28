@@ -1,7 +1,5 @@
-import { Svg } from '@freya/components/svg'
-import { parseContent } from '@freya/generation/generator.js'
-import { SlideProps } from '@freya/generation/models.js'
-import { SlideWrapper } from '../components/common'
+import { parseContent, SlideProps, Svg } from 'freya-slides'
+import { SlideWrapper } from '../components/common.js'
 import { Slide } from '../models.js'
 
 export default function CoverLayout({ talk, slide, index }: SlideProps<Slide>): JSX.Element {

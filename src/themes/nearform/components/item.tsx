@@ -1,6 +1,4 @@
-import { SvgIcon } from '@freya/components/svg'
-import { parseContent } from '@freya/generation/generator.js'
-import { resolveImageUrl } from '@freya/generation/loader.js'
+import { parseContent, resolveImageUrl, SvgIcon } from 'freya-slides'
 import { Fragment, ReactNode } from 'react'
 import { Grid, Item as ItemDefinition } from '../models.js'
 
