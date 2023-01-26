@@ -22,6 +22,12 @@ document:
       percentage: 8%
 slides:
   - layout: cover
+  - layout: separator
+    title: |
+      Sometimes, your worst enemy is slowness!
+    image: '@talk/sloth.webp'
+    classes:
+      slide: bg-nf-orange-split
   - layout: hello
   - layout: hiring
   - layout: half
