@@ -45,7 +45,7 @@ export default function SideLayout({ slide, index }: SlideProps<Slide>): JSX.Ele
           />
           <SvgIcon
             name="puzzle-2"
-            className={`absolute z-1 w-2_5sp h-2_5sp -bottom-0_5sp -left-0_5sp stroke-width-0_3 ${
+            className={`absolute z-1 w-2_5sp h-2_5sp -bottom-0_8sp left-4sp stroke-width-0_3 ${
               !light ? 'text-white' : ''
             }`}
             theme="nearform"

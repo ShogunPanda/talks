@@ -28,7 +28,7 @@ export default function SeparatorLayout({ talk, slide, index }: SlideProps<Slide
 
       {image && (
         <div className="grid-b h-full overflow-hidden flex flex-col items-center justify-center w-5sp">
-          <img src={imageUrl} className={`h-full min-w-5gs max-w-none ${imageClassName ?? ''}`} />
+          <img src={imageUrl} className={`h-full min-w-5sp max-w-none ${imageClassName ?? ''}`} />
 
           {content?.filter(Boolean).map((c: string, contentIndex: number) => (
             <h4
