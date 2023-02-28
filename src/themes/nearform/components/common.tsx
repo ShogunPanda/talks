@@ -1,4 +1,4 @@
-import { parseContent, Svg, SvgIcon } from 'freya-slides'
+import { parseContent, QRCode, SlideProps, Svg, SvgIcon } from 'freya-slides'
 import { CSSProperties, ReactNode } from 'react'
 import { Slide } from '../models.js'
 
@@ -67,4 +67,12 @@ export function Decorations({ slide, defaultLogoColor }: DecorationProps): JSX.E
       <Svg theme="nearform" contents="@theme/nearform-logo.svg" className={`logo logo--${logo ?? defaultLogoColor}`} />
     </>
   )
+}
+
+export function parseComplexContent(raw: Record<string, any>, key: string, props: SlideProps<Slide>): JSX.Element {
+  if (raw.qr) {
+    return <QRCode key={key} data={raw.qr} className={props.slide.classes.qr ?? ''} />
+  }
+
+  return <></>
 }

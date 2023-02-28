@@ -2,6 +2,7 @@
 @import '@freya/normalize.css';
 @import '@freya/reset.css';
 @import '@freya/default.css';
+@import '@freya/highlight/atom-one-dark.css';
 
 html {
   @apply font-extralight;
@@ -40,6 +41,7 @@ code {
 
 code {
   @apply font-fira-code;
+  @apply font-100;
 }
 
 em {
@@ -160,6 +162,15 @@ a:focus {
     @apply mb-0_2sp;
   }
 
+  &__qr {
+    @apply inline;
+    @apply w-0_6sp;
+    @apply h-0_5sp;
+    @apply min-w-0_6sp;
+    @apply min-h-0_5sp;
+    @apply mr-0_2sp;
+  }
+
   &__index {
     @apply font-poppins;
     @apply font-bold;
@@ -275,6 +286,49 @@ a:focus {
   @apply z-0;
 }
 
+.hljs {
+  @apply rounded-0_05sp;
+  @apply font-size-1_5em;
+  @apply m-0;
+  @apply py-0_1sp;
+  @apply min-w-4sp;
+  @apply rounded-0_05sp;
+
+  & .hljs-line {
+    @apply px-0_1sp;
+    @apply h-35px;
+    @apply line-height-1_5;
+  }
+
+  & .hljs-line-number {
+    @apply inline-block;
+    @apply w-3ch;
+    @apply pr-1ch;
+    @apply mr-2ch;
+    @apply text-right;
+    @apply border-solid;
+    @apply border-0;
+    @apply border-r-0_01sp;
+    @apply text-#757575;
+  }
+
+  & .hljs-line--highlighted {
+    @apply relative;
+
+    &::before {
+      content: '';
+      @apply absolute;
+      @apply block;
+      @apply top-0;
+      @apply left-0;
+      @apply w-full;
+      @apply h-full;
+      @apply opacity-30;
+      @apply bg-#607D8B;
+    }
+  }
+}
+
 .cover {
   &__curve-top-left {
     @apply w-2_76sp;
@@ -313,6 +367,16 @@ a:focus {
 
   &__logo {
     @apply w-2_65sp;
+  }
+
+  &__qr {
+    @apply absolute;
+    @apply top-0;
+    @apply right-0;
+    @apply w-1_2sp;
+    @apply bg-white;
+    @apply p-0_1sp;
+    @apply rounded-bl-0_2sp;
   }
 }
 

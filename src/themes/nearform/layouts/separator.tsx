@@ -1,8 +1,10 @@
 import { parseContent, resolveImageUrl, SlideProps } from 'freya-slides'
-import { SlideWrapper } from '../components/common.js'
+import { parseComplexContent, SlideWrapper } from '../components/common.js'
 import { Slide } from '../models.js'
 
-export default function SeparatorLayout({ talk, slide, index }: SlideProps<Slide>): JSX.Element {
+export default function SeparatorLayout(props: SlideProps<Slide>): JSX.Element {
+  const { talk, index, slide } = props
+
   const {
     title,
     content,
@@ -30,13 +32,21 @@ export default function SeparatorLayout({ talk, slide, index }: SlideProps<Slide
         <div className="grid-b h-full overflow-hidden flex flex-col items-center justify-center w-5sp">
           <img src={imageUrl} className={`h-full min-w-5sp max-w-none ${imageClassName ?? ''}`} />
 
-          {content?.filter(Boolean).map((c: string, contentIndex: number) => (
-            <h4
-              key={`content:${index}:${contentIndex}`}
-              className="text-justify text-white mt-2ch font-bold font-size-24pt"
-              dangerouslySetInnerHTML={{ __html: parseContent(c) }}
-            />
-          ))}
+          {content?.filter(Boolean).map((c: string | object, contentIndex: number) => {
+            const key = `content:${index}:${contentIndex}`
+
+            if (typeof c === 'object') {
+              return parseComplexContent(c, key, props)
+            }
+
+            return (
+              <h4
+                key={key}
+                className="text-justify text-white mt-2ch font-bold font-size-24pt"
+                dangerouslySetInnerHTML={{ __html: parseContent(c) }}
+              />
+            )
+          })}
         </div>
       )}
     </SlideWrapper>

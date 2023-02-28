@@ -22,7 +22,7 @@ export default function HelloLayout({ talk, slide, index }: SlideProps<Slide>): 
         <img src={avatarImage} className="self-center w-1_5sp" />
 
         <Item
-          icon="user"
+          qr="https://cowtech.it"
           className="items-center min-h-0"
           talk={talk.id}
           theme="nearform"

@@ -4,6 +4,7 @@ config:
   dimensions:
     width: 2000
     height: 1120
+  url: https://talks.cowtech.it
 document:
   title: Compiling and bundling JS, the painless way
   titleFormatted: Compiling and bundling JS,<br/> the painless way

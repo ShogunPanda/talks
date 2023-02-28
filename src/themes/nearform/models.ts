@@ -1,9 +1,12 @@
+import { Slide as FreyaSlide } from 'freya-slides'
+
 export interface Item {
   index?: string
   icon?: string
   image?: string
   title?: string
   text?: string
+  qr?: string
   classes?: {
     item?: string
     index?: string
@@ -11,6 +14,7 @@ export interface Item {
     image?: string
     title?: string
     text?: string
+    qr?: string
   }
 }
 
@@ -27,6 +31,7 @@ export interface Slide {
   items?: Item[]
   grids?: Grid | Grid[]
   image?: string
+  code?: FreyaSlide['code']
   highlight?: string
   sentence?: string
   author?: string
@@ -47,9 +52,11 @@ export interface Slide {
     raw?: string
     items?: string
     image?: string
+    code?: string
     sequence?: string
     icon?: string
     highlight: string
+    qr?: string
   }
   notes?: string
 }

@@ -1,11 +1,17 @@
-import { parseContent, SlideProps, Svg } from 'freya-slides'
+import { parseContent, QRCode, SlideProps, Svg } from 'freya-slides'
 import { SlideWrapper } from '../components/common.js'
 import { Slide } from '../models.js'
 
-export default function CoverLayout({ talk, slide, index }: SlideProps<Slide>): JSX.Element {
+export default function CoverLayout({ environment, theme, talk, slide, index }: SlideProps<Slide>): JSX.Element {
+  const { urls } = theme
   const {
+    id,
     document: { author, title, titleFormatted }
   } = talk
+
+  const {
+    classes: { qr: qrClassName }
+  } = slide
 
   return (
     <SlideWrapper
@@ -47,6 +53,8 @@ export default function CoverLayout({ talk, slide, index }: SlideProps<Slide>): 
           contents="@theme/nearform-logo-with-text-right.svg"
           className="cover__logo grid-e justify-self-end fill-white"
         />
+
+        <QRCode data={`${urls[environment]}/${id}`} className={`qr cover__qr ${qrClassName ?? ''}`} />
       </div>
     </SlideWrapper>
   )

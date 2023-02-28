@@ -4,6 +4,7 @@ config:
   dimensions:
     width: 2000
     height: 1120
+  url: https://talks.cowtech.it
 document:
   title: Maths or magic? End-to-end encryption explained like I'm 5
   author:
@@ -46,12 +47,12 @@ slides:
           *Do you believe in conspiracies?*
   - layout: separator
     title: Let's send the audience a message.
-    image: "@talk/letter.webp"
+    image: '@talk/letter.webp'
     classes:
       slide: bg-nf-orange-split
   - layout: separator
     title: That was not an encrypted channel!
-    image: "@talk/dali.webp"
+    image: '@talk/dali.webp'
     classes:
       slide: bg-nf-darkest-blue
   - layout: quote
@@ -62,38 +63,38 @@ slides:
       icons: false
       light: true
   - layout: separator
-    title: "An example:<br/> The Caesar Cipher"
-    image: "@talk/caesar-salad.webp"
+    title: 'An example:<br/> The Caesar Cipher'
+    image: '@talk/caesar-salad.webp'
     classes:
       slide: bg-nf-brunch-pink
-  - title: "How does the Caesar Cipher work?"
-    image: "@talk/caesar-cipher-1.webp"
-  - title: "How does the Caesar Cipher work?"
-    image: "@talk/caesar-cipher-2.webp"
-  - title: "How does the Caesar Cipher work?"
-    image: "@talk/caesar-cipher-3.webp"
-  - title: "How does the Caesar Cipher work?"
-    image: "@talk/caesar-cipher-4.webp"
-  - title: "How does the Caesar Cipher work?"
-    image: "@talk/caesar-cipher-5.webp"
-  - title: "How does the Caesar Cipher work?"
-    image: "@talk/caesar-cipher-6.webp"
+  - title: 'How does the Caesar Cipher work?'
+    image: '@talk/caesar-cipher-1.webp'
+  - title: 'How does the Caesar Cipher work?'
+    image: '@talk/caesar-cipher-2.webp'
+  - title: 'How does the Caesar Cipher work?'
+    image: '@talk/caesar-cipher-3.webp'
+  - title: 'How does the Caesar Cipher work?'
+    image: '@talk/caesar-cipher-4.webp'
+  - title: 'How does the Caesar Cipher work?'
+    image: '@talk/caesar-cipher-5.webp'
+  - title: 'How does the Caesar Cipher work?'
+    image: '@talk/caesar-cipher-6.webp'
   - layout: side
     title: Trivia question
-    content: "Where does its name come from?"
-    image: "@talk/hal.webp"
+    content: 'Where does its name come from?'
+    image: '@talk/hal.webp'
   - layout: side
     title: Trivia question
     content:
-      - "Where does its name come from?"
-      - "<span class=\"text-nf-brunch-pink font-bold font-size-1_6em\">It's a Caesar Cipher!</span>"
-    image: "@talk/hal.webp"
+      - 'Where does its name come from?'
+      - '<span class="text-nf-brunch-pink font-bold font-size-1_6em">It''s a Caesar Cipher!</span>'
+    image: '@talk/hal.webp'
   - title: And now, a bit of pain for some of us
-    content: "How old are you? Do you recognize this?"
-    image: "@talk/rot13.webp"
+    content: 'How old are you? Do you recognize this?'
+    image: '@talk/rot13.webp'
   - title: Why is Caesar Cipher weak?
     content: Since only few permutations are possible, brute forcing is quite easy (especially if using letter frequency analysis).
-    image: "@talk/letter-analysis.webp"
+    image: '@talk/letter-analysis.webp'
   - layout: side
     title: A good algorithm
     items:
@@ -103,21 +104,21 @@ slides:
       - icon: adjustments
         title: The security is in the parameters
         text: The parameters must be chosen so that brute forcing is unfeasible.
-    image: "@talk/algorithm.webp"
+    image: '@talk/algorithm.webp'
   - title: What are our choices today?
     content: The **Advanced Encryption Standard** (AES) is a secure symmetric block algorithm.
-    image: "@talk/aes.webp"
+    image: '@talk/aes.webp'
   - title: Let's make the communication secure
     content:
       - Before starting encrypting the traffic, the peers have to choose a shared key. Shared key handshaking is not and cannot be encrypted.
-      - "*Anybody could steal the key.*"
+      - '*Anybody could steal the key.*'
   - layout: image
     title: Do we have a solution?
-    image: "@talk/solution.webp"
+    image: '@talk/solution.webp'
     logo: black
   - layout: image
     title: Of course!
-    image: "@talk/diffie-hellman.webp"
+    image: '@talk/diffie-hellman.webp'
     logo: black
   - title: The Diffie-Hellman algorithm
     items:
@@ -132,34 +133,34 @@ slides:
         text: Keys can (and should) be rotated in each message to improve security.
   - layout: separator
     title: It's time to paint!
-    image: "@talk/baby-hand.webp"
+    image: '@talk/baby-hand.webp'
     logo: black
     classes:
       slide: bg-nf-orange-split
   - title: Generate the private and public keys
-    image: "@talk/generate.webp"
+    image: '@talk/generate.webp'
     index: 1
   - title: Exchange the public keys
-    image: "@talk/exchange.webp"
+    image: '@talk/exchange.webp'
     index: 2
   - title: Generate the shared keys
-    image: "@talk/shared.webp"
+    image: '@talk/shared.webp'
     index: 3
   - layout: separator
     title: Let's make some m<span class="text-nf-brunch-pink">a</span>th!
-    image: "@talk/walter-white.webp"
+    image: '@talk/walter-white.webp'
     classes:
       slide: bg-nf-midnight-blue
-  - title: "How is this possible?"
-    image: "@talk/handshake-1.webp"
-  - title: "How is this possible?"
-    image: "@talk/handshake-2.webp"
-  - title: "How is this possible?"
-    image: "@talk/handshake-3.webp"
-  - title: "How is this possible?"
-    image: "@talk/shared-calculation.webp"
+  - title: 'How is this possible?'
+    image: '@talk/handshake-1.webp'
+  - title: 'How is this possible?'
+    image: '@talk/handshake-2.webp'
+  - title: 'How is this possible?'
+    image: '@talk/handshake-3.webp'
+  - title: 'How is this possible?'
+    image: '@talk/shared-calculation.webp'
   - title: Let's prove it!
-    image: "@talk/prove.webp"
+    image: '@talk/prove.webp'
   - layout: quote
     sentence: The decisions we make about communication security today will determine the kind of society we live in tomorrow.
     author: Whitfield Diffie

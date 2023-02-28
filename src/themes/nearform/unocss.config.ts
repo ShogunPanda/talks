@@ -124,10 +124,43 @@ function generateDimensions(short: string, long: string, customUnit: string, rat
   return dimensions
 }
 
+function generateRadiuses(customUnit: string, ratio: number, unit: string): Rule[] {
+  const radiuses: Rule[] = [
+    [new RegExp(`^rounded-(\\d+(?:_\\d+)?)${customUnit}$`), ([, d]) => numericRule('border-radius', d, unit, ratio)]
+  ]
+
+  for (const [short, long] of [
+    ['t', ['top-left', 'top-right']],
+    ['b', ['bottom-left', 'bottom-right']],
+    ['l', ['top-left', 'bottom-left']],
+    ['r', ['top-right', 'bottom-right']],
+    ['tl', ['top-left']],
+    ['tr', ['top-right']],
+    ['bl', ['bottom-left']],
+    ['br', ['bottom-right']]
+  ]) {
+    radiuses.push([
+      new RegExp(`^rounded-${short}-(\\d+(?:_\\d+)?)${customUnit}$`),
+      ([, d]) => {
+        const r: CSSValue = {}
+
+        for (const l of long) {
+          Object.assign(r, numericRule(`border-${l}-radius`, d, unit, ratio))
+        }
+
+        return r
+      }
+    ])
+  }
+
+  return radiuses
+}
+
 function generateCustomUnits(): Rule[] {
   const customUnits: [string, number, string][] = [
     ['sp', 200, 'px'],
-    ['p', 1, '%']
+    ['p', 1, '%'],
+    ['em', 1, 'em']
   ]
   const rules: Rule[] = []
 
@@ -138,7 +171,8 @@ function generateCustomUnits(): Rule[] {
       ...generateGaps(customUnit, ratio, unit),
       ...generateBorders(customUnit, ratio, unit),
       ...generateDimensions('w', 'width', customUnit, ratio, unit),
-      ...generateDimensions('h', 'height', customUnit, ratio, unit)
+      ...generateDimensions('h', 'height', customUnit, ratio, unit),
+      ...generateRadiuses(customUnit, ratio, unit)
     )
   }
 
@@ -187,6 +221,7 @@ export default defineUnoConfig({
     ],
     ...generateCustomUnits(),
     ...generateBorders('', 1, 'px'),
+    ...generateRadiuses('', 1, 'px'),
     [/^stroke-width-(\d+(?:_\d+)?)$/, ([, value]: string[]) => numericRule('stroke-width', value)],
     [/^line-height-(\d+(?:_\d+)?)$/, ([, value]: string[]) => numericRule('line-height', value, 'em')],
     [/^font-size-(\d+(?:_\d+)?)em$/, ([, value]: string[]) => numericRule('font-size', value, 'em')],

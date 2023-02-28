@@ -1,4 +1,4 @@
-import { parseContent, resolveImageUrl, SvgIcon } from 'freya-slides'
+import { parseContent, QRCode, resolveImageUrl, SvgIcon } from 'freya-slides'
 import { Fragment, ReactNode } from 'react'
 import { Grid, Item as ItemDefinition } from '../models.js'
 
@@ -26,7 +26,7 @@ interface GridsProps {
 }
 
 export function Item(props: ItemProps): JSX.Element {
-  const { horizontal, index, icon, image, title, text, className, classes, talk, theme, children } = props
+  const { horizontal, index, icon, image, title, text, qr, className, classes, talk, theme, children } = props
 
   const {
     item: itemClassName,
@@ -34,7 +34,8 @@ export function Item(props: ItemProps): JSX.Element {
     icon: iconClassName,
     image: imageClassName,
     title: titleClassName,
-    text: textClassName
+    text: textClassName,
+    qr: qrClassName
   } = classes ?? {}
 
   const imageUrl = image ? resolveImageUrl(theme, talk, image) : undefined
@@ -51,6 +52,7 @@ export function Item(props: ItemProps): JSX.Element {
       {!imageUrl && icon && (
         <SvgIcon name={icon} className={`item__icon ${iconClassName ?? ''}`.trim()} theme={theme} />
       )}
+      {!imageUrl && !icon && qr && <QRCode data={qr} className={`item__qr ${qrClassName ?? ''}`.trim()} />}
 
       <div className={`item__text ${textClassName ?? ''}`.trim()}>
         {title && (

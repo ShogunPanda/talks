@@ -4,6 +4,7 @@ config:
   dimensions:
     width: 2000
     height: 1120
+  url: https://talks.cowtech.it
 document:
   title: Horizontal Scaling of a Web3 system to the sky and beyond in AWS
   author:
