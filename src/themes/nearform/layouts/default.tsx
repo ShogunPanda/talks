@@ -1,4 +1,4 @@
-import { parseContent, resolveImageUrl, SlideProps } from 'freya-slides'
+import { Code, parseContent, resolveImageUrl, SlideProps } from 'freya-slides'
 import { parseComplexContent, SlideWrapper } from '../components/common.js'
 import { Grids, Items } from '../components/item.js'
 import { Slide } from '../models.js'
@@ -12,8 +12,15 @@ export default function DefaultLayout(props: SlideProps<Slide>): JSX.Element {
     grids,
     image,
     items,
+    code,
     options: { horizontal, noGap, skipSpacer, skipDefaultClasses },
-    classes: { slide: className, image: imageClassName, items: itemsClassName }
+    classes: {
+      slide: className,
+      image: imageClassName,
+      items: itemsClassName,
+      highlight: highlightClassName,
+      code: codeClassName
+    }
   } = slide
 
   const imageUrl = resolveImageUrl('nearform', talk.id, image)
@@ -55,6 +62,12 @@ export default function DefaultLayout(props: SlideProps<Slide>): JSX.Element {
         />
       )}
       {!image && !items && grids && <Grids grids={grids} talk={talk.id} />}
+
+      {!image && !items && !grids && code && (
+        <div className={`flex items-center justify-center h-full min-w-40p ${highlightClassName ?? ''}`}>
+          <Code {...code} className={codeClassName ?? ''} />
+        </div>
+      )}
     </SlideWrapper>
   )
 }

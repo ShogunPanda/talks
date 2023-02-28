@@ -48,7 +48,13 @@ slides:
     image: '@talk/cid.webp'
   - title: Content Archives
     content: The CAR file format is optimized for sequential reading and it's essentially a concatenation of blocks delimited using byte length prefixes.
-    image: '@talk/car.webp'
+    code:
+      language: markdown
+      numbers: false
+      content: |
+        | ---------- Header --------- | | ------------------------ Data ----------------------- |
+        |                             | |                                                       |
+        | [ varint | DAG-CBOR block ] | | [ varint | CID | block ] [ varint | CID | block ] ... |
   - layout: image
     title: What was wrong?
     image: '@talk/obstacle.webp'
@@ -105,18 +111,44 @@ slides:
       - icon: users
         title: The DevOps are your limit
         text: Mixed or on-premise approach are also possible, but be gentle with the people responsible to maintain the infrastructure.
-  - layout: side
-    title: CARs Table Item
+  - title: CARs Table Item
     content: It contains information about indexed CAR files, including the S3 full path.
-    image: '@talk/item-car.webp'
+    code:
+      language: typescript
+      content: |
+        interface Car {
+          path: string
+          bucket: string
+          bucketRegion: string
+          createdAt: Date
+          fileSize: number
+          key: string
+          roots: Array<string>
+          version: number
+        }
   - title: Blocks Tables Item
     content: It stores the multihash and the type of the block, used for debugging.
-    image: '@talk/item-block.webp'
+    code:
+      language: typescript
+      content: |
+        interface Block {
+          multihash: string
+          createdAt: Date
+          type: 'raw' | 'dag-cbor' | 'dag-json'
+        }
   - layout: side
     title: |
       <span class="whitespace-nowrap">Blocks Position Item</span>
     content: It is the most important table in the architecture, as it links blocks to CARs, including offset and length.
-    image: '@talk/item-block-to-cars.webp'
+    code:
+      language: typescript
+      content: |
+        interface BlockToCars {
+          blockmultihash: string
+          carpath: string
+          length: number
+          offset: number
+        }
   - layout: separator
     title: Indexing subsystem
     classes:
@@ -217,16 +249,67 @@ slides:
         text: Stop when reaching an already indexed advertisement or the tail of the chain.
   - title: Head file
     content: The <code>/head</code> just maintains a link to the latest advertisement.
-    image: '@talk/head.webp'
-  - layout: side
-    title: |
+    code:
+      language: json
+      highlight: '3'
+      content: |
+        {
+          "head": {
+            "/" : "bagugeeragtbtgeb2iulx2zihnymysaebais6ysziefwih66tyc7pupns2bma"
+          },
+          "pubkey": {
+            "/": {
+              "bytes" : "CAASpgIwgg ... 9bAgMBAAE="
+            }
+          },
+          "sig": {
+            "/": {
+              "bytes": "hq9N33rQSZ ... BSHcoQLcbw=="
+            }
+          }
+        }
+  - title: |
       <span class="whitespace-nowrap">Advertisement file</span>
     content: It contains information about storage provider and entries.
-    image: '@talk/advertisement.webp'
-  - layout: side
-    title: Entries file
+    code:
+      language: json
+      highlight: 2, 7, 12, 14
+      content: |
+        {        
+          "Addresses" : ["/dns4/peer.ipfs-elastic-provider-aws.com/tcp/3000/ws"],
+          "ContextID": { 
+            "/": { "bytes": "YmFndXF1ZXJ . .. dpdnhyYQ==" } 
+          },
+          "Entries": {
+            "/" : "bagugeeraijghexgvdvLuk3pwd6axbvzcajhd3pylz7sm3sfaitc7lnwivxra"
+          },
+          "IsRm": false,
+          "Metadata": { "/": { "bytes": "gBI" } },
+          "PreviousID": {
+            "/" : "bagugeeraii6bahmbnnijhakhyscrlkcblwpwdvahzt53vzhd2jfryj43ebag"
+          },
+          "Provider": "bafzbeibhqavlasjc7dvbiopygwncnrtvjd2xmryk51aib7zyjor6kf3avm"
+          "Signature": { "/": { "bytes": "CqsCCAASpg ... y/yqKWQ" } }
+        }
+  - title: Entries file
     content: Is is just a list of CIDs made available by the provider.
-    image: '@talk/entries.webp'
+    code:
+      language: json
+      highlight: 4, 7, 10
+      content: |
+        {
+          "Entries": [
+            {
+              "/" : { "bytes": "EiCvOxoqEOhmarwWow7nY+bw2JL6SiLEYigT400EnBMeZA==" }
+            },
+            {
+              "/" : { "bytes": "EiBOIwugRMRrvV3LFB7i3ixzaY5XTBASznCwwTWIu9Mx3g==" }
+            },
+            {
+              "/" : { "bytes": "EiDc5NKXBT8ZSNfLDhTs2+72ZZ94qfruS]QEfJVM70XB6w==" }
+            }
+          ]
+        }
   - layout: separator
     title: Publishing subsystem
     classes:

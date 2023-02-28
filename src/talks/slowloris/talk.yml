@@ -214,8 +214,23 @@ slides:
       - icon: hourglass-low
         title: Have a lower timeout for the headers
         text: <code>http.Server.headersTimeout</code> should also be set to detect a malicious client earlier.
-  - title: How to protect Node.js 16 and below
-    image: '@talk/node-16.webp'
+  - layout: code
+    title: How to protect Node.js 16 and below
+    code:
+      language: javascript
+      content: |
+        import { createServer } from 'node:http'
+
+        const server = createServer()
+
+        // The socket can be idle for 2 minutes before being terminated
+        server.timeout = 120000
+
+        // The entire request must be completely received by the server within 5 minutes
+        server.requestTimeout = 300000
+
+        // The request's headers must be completely received by the server within a minute
+        server.headersTimeout = 60000
   - title: Node.js 18.0.0 is finally safe by default
     content: |
       The latest major version of Node.js has finally solved all the issues described.

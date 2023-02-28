@@ -161,18 +161,18 @@ slides:
 
         /* ... */
 
-        server.post('/graphql', async function handleQuery(req, reply) {          
+        server.post('/graphql', async function handleQuery(req, reply) {
           // Step 1: Parse the query and check for syntax error
-          const document = parse(req.body.query) 
+          const document = parse(req.body.query)
 
           // Step 2: Add types information to the query
-          const [enrichedAst, enrichedId] = addTypesInformation(document) 
+          const [enrichedAst, enrichedId] = addTypesInformation(document)
 
           // Step 3: Execute the query on the upstream
           const response = await graphql('https://api.geographql.rudio.dev', print(enrichedAst))
-          
+
           // Step 4 and 5: Execute the enriching handler to fetch additional data
-          const extensions = await enrich(response.data, enrichedId, addWeatherInformation) 
+          const extensions = await enrich(response.data, enrichedId, addWeatherInformation)
 
           // Return to the client
           return { ...response, extensions: { ...response.extensions, ...extensions }}
@@ -216,9 +216,9 @@ slides:
       highlight: '10, 14, 17, 23'
       content: |
         function injectedTypeField(id) {
-          return { 
-            kind: 'Field', 
-            alias: { kind: 'Name', value: id }, 
+          return {
+            kind: 'Field',
+            alias: { kind: 'Name', value: id },
             name: { kind: 'Name', value: '__typename' }
           }
         }
@@ -302,11 +302,11 @@ slides:
           const extensions = {}
 
           await traverse(data, async function (value, path) {
-            // Execute the handler on the node 
+            // Execute the handler on the node
             // and eventually add the returned data
             const additional = await handler(
-              value.__typename || value[enrichedId], 
-              path, 
+              value.__typename || value[enrichedId],
+              path,
               value
             )
 
