@@ -81,14 +81,14 @@ export default function HiringLayout({ talk, slide, index }: SlideProps<Slide>):
         <Svg
           theme="nearform"
           contents="@theme/nearform-logo-with-text-right.svg"
-          className="hiring__logo-with-text justify-end fill-nf-darkest-blue"
+          className="w-1_8sp justify-end fill-nf-darkest-blue"
         />
       </footer>
 
       <Svg
         theme="nearform"
         contents="@theme/hiring-curve-bottom-right.svg"
-        className="hiring__curve-bottom-right absolute z-1 fill-white"
+        className="absolute z-1 top-3_02sp left-5_82sp w-4_25sp fill-white"
       />
 
       <div className="hiring__npm w-2_5sp absolute text-center top-0_5sp right-0_5sp">

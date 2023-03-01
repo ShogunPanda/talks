@@ -28,14 +28,14 @@ export default function EndLayout({ talk, slide, index }: SlideProps<Slide>): JS
           <a className="grid-b whitespace-nowrap !text-nf-darkest-blue" href="https://twitter.com/{{ author.twitter }}">
             @{author.twitter}
           </a>
-          <span className="grid-c whitespace-nowrap">{author.descriptionShort}</span>
+          <span className="grid-c whitespace-nowrap">{author.description}</span>
           <a className="grid-d whitespace-nowrap text-nf-darkest-blue" href="mailto:{{ author.email }}">
             {author.email}
           </a>
           <Svg
             theme="nearform"
             contents="@theme/nearform-logo-with-text-right.svg"
-            className="end__logo-with-text grid-e self-center fill-nf-darkest-blue"
+            className="w-1_81sp grid-e self-center fill-nf-darkest-blue"
           />
         </div>
       </footer>
@@ -43,7 +43,7 @@ export default function EndLayout({ talk, slide, index }: SlideProps<Slide>): JS
       <Svg
         theme="nearform"
         contents="@theme/hiring-curve-bottom-right.svg"
-        className="end__curve-bottom-right absolute z-1 fill-white"
+        className="top-3_02sp left-5_82sp w-4_25sp absolute z-1 fill-white"
       />
     </SlideWrapper>
   )

@@ -1,0 +1,27 @@
+config:
+  theme: nearform
+  dimensions:
+    width: 2000
+    height: 1120
+  url: https://talks.cowtech.it
+author:
+  name: Paolo Insogna
+  description: Node.js Core, Orama, NearForm
+  roles:
+    - where: Node.js
+      what: Core Member
+      url: https://nodejs.org
+    - where: Orama
+      what: Cofounder & Principal Architect
+      url: https://oramasearch.com
+    - where: NearForm
+      what: Staff Developer Experience Engineer
+      url: https://nearform.com
+  email: paolo.insogna@nearform.com
+  twitter: p_insogna
+  github: ShogunPanda
+company:
+  count: 300
+  npm:
+    monthly: 1B
+    percentage: 8%

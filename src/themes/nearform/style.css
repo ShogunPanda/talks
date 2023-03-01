@@ -330,14 +330,6 @@ a:focus {
 }
 
 .cover {
-  &__curve-top-left {
-    @apply w-2_76sp;
-  }
-
-  &__curve-bottom-right {
-    @apply w-5_51sp;
-  }
-
   &__contents {
     grid-template:
       's1 s1' 1fr
@@ -361,22 +353,11 @@ a:focus {
     }
   }
 
-  &__copyright {
-    @apply font-size-10_5pt;
-  }
-
-  &__logo {
-    @apply w-2_65sp;
-  }
-
-  &__qr {
-    @apply absolute;
-    @apply top-0;
-    @apply right-0;
-    @apply w-1_2sp;
-    @apply bg-white;
-    @apply p-0_1sp;
-    @apply rounded-bl-0_2sp;
+  &__qrs {
+    grid-template:
+      'a b' 1fr
+      'c d' min-content
+      / 1fr 1fr;
   }
 }
 
@@ -386,8 +367,26 @@ a:focus {
     'c b' 1fr
     / 1fr 1fr;
 
+  &__content {
+    grid-template:
+      'a a a' min-content
+      'b b b' min-content
+      'c d e' min-content
+      / 1fr 1fr 1fr;
+  }
+
+  .item__icon,
+  .item__qr {
+    @apply w-0_5sp;
+    @apply h-0_5sp;
+    @apply min-w-0_5sp;
+    @apply min-h-0_5sp;
+    @apply mr-0;
+    @apply mb-0_1sp;
+  }
+
   .item__contents {
-    @apply font-size-12pt;
+    @apply font-size-10pt;
   }
 
   .item__contents a {
@@ -422,19 +421,11 @@ a:focus {
     @apply font-size-12pt;
     @apply line-height-1;
 
-    a {
+    a,
+    a:visited {
       @apply line-height-1;
+      @apply text-nf-darkest-blue;
     }
-  }
-
-  &__logo-with-text {
-    @apply w-1_8sp;
-  }
-
-  &__curve-bottom-right {
-    @apply top-3_02sp;
-    @apply left-5_82sp;
-    @apply w-4_25sp;
   }
 
   &__npm {
@@ -482,15 +473,5 @@ a:focus {
     span {
       @apply line-height-1;
     }
-  }
-
-  &__logo-with-text {
-    @apply w-1_81sp;
-  }
-
-  &__curve-bottom-right {
-    @apply top-3_02sp;
-    @apply left-5_82sp;
-    @apply w-4_25sp;
   }
 }

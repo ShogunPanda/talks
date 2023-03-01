@@ -1,26 +1,9 @@
 ---
-config:
-  theme: nearform
-  dimensions:
-    width: 2000
-    height: 1120
-  url: https://talks.cowtech.it
+config: common.config
 document:
   title: The tale of avoiding a time-based DDOS attack in Node.js
-  author:
-    name: Paolo Insogna
-    descriptionShort: Staff Node.js Core and DX Engineer
-    description: |
-      Staff Node.js Core and
-      Developer Experience Team
-    email: paolo.insogna@nearform.com
-    twitter: p_insogna
-    github: ShogunPanda
-  company:
-    count: 300
-    npm:
-      monthly: 1B
-      percentage: 8%
+  author: common.author
+  company: common.company
 slides:
   - layout: cover
   - layout: separator

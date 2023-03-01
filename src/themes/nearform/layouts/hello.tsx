@@ -1,4 +1,5 @@
 import { parseContent, resolveImageUrl, SlideProps } from 'freya-slides'
+import { Fragment } from 'react'
 import { SlideWrapper } from '../components/common.js'
 import { Item } from '../components/item.js'
 import { Slide } from '../models.js'
@@ -18,17 +19,40 @@ export default function HelloLayout({ talk, slide, index }: SlideProps<Slide>): 
         <img src={locationImage} className="w-full overflow-hidden  ml-1px" />
       </div>
 
-      <div className="grid-c flex flex-col self-center justify-self-center gap-y-3ch">
-        <img src={avatarImage} className="self-center w-1_5sp" />
+      <div className="grid-c grid hello__content self-center justify-self-center justify-items-center gap-y-3ch">
+        <img src={avatarImage} className="grid-a self-center w-1_5sp" />
+
+        <Item
+          className="items-center min-h-0"
+          talk={talk.id}
+          theme="nearform"
+          classes={{ item: 'grid-b font-size-12pt mb-0_4sp', icon: 'fill-black' }}
+        >
+          <strong className="font-size-1_2em">
+            {author.roles.map(({ what, where, url }: Record<string, string>, index: number) => {
+              return (
+                <Fragment key={`role:${index}`}>
+                  <span className="font-light inline-block w-3sp">{what}</span>
+                  &nbsp;
+                  <a href={url} className="inline-block">
+                    {where}
+                  </a>{' '}
+                  <br />
+                </Fragment>
+              )
+            })}
+          </strong>
+        </Item>
 
         <Item
           qr="https://cowtech.it"
           className="items-center min-h-0"
           talk={talk.id}
           theme="nearform"
-          classes={{ icon: 'fill-black' }}
+          classes={{ item: 'grid-c', icon: 'fill-black' }}
+          horizontal={true}
         >
-          <strong dangerouslySetInnerHTML={{ __html: parseContent(author.description) }} />
+          <a href="https://cowtech.it">https://cowtech.it</a>
         </Item>
 
         <Item
@@ -36,7 +60,8 @@ export default function HelloLayout({ talk, slide, index }: SlideProps<Slide>): 
           className="items-center min-h-0"
           talk={talk.id}
           theme="nearform"
-          classes={{ icon: 'fill-black' }}
+          classes={{ item: 'grid-d', icon: 'fill-black' }}
+          horizontal={true}
         >
           <a
             href={`https://twitter.com/${author.twitter}`}
@@ -49,7 +74,8 @@ export default function HelloLayout({ talk, slide, index }: SlideProps<Slide>): 
           className="items-center min-h-0"
           talk={talk.id}
           theme="nearform"
-          classes={{ icon: 'fill-black' }}
+          classes={{ item: 'grid-e', icon: 'fill-black' }}
+          horizontal={true}
         >
           <a
             href={`https://github.com/${author.github}`}

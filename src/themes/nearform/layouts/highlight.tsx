@@ -53,7 +53,7 @@ export default function SideLayout(props: SlideProps<Slide>): JSX.Element {
       )}
 
       {!image && highlight && (
-        <div className={`flex flex-1 items-center p-1bp h-full text-justify ${highlightClassName ?? ''}`}>
+        <div className={`flex flex-1 items-center p-0_5p h-full text-justify ${highlightClassName ?? ''}`}>
           <h4 dangerouslySetInnerHTML={{ __html: parseContent(highlight) }} className="m-0" />
         </div>
       )}
