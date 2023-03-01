@@ -538,8 +538,6 @@ slides:
     classes:
       slide: bg-nf-darkest-blue
       icon: w-2_5sp h-2_5sp left-1sp -bottom-0_4sp text-white stroke-width-0_3
-    notes: |
-      Do a nice victory gesture and shout!
   - title: Take home lessons
     content: What can we learn from this long journey?
     items:
