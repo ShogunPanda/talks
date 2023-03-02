@@ -64,7 +64,7 @@ export default function CoverLayout({ environment, theme, talk, slide, index }: 
           />
           <span className="grid-c mt-0_1sp font-size-10pt">View online</span>
           <QRCode
-            data={`${urls[environment]}/pdfs/${id}`}
+            data={`${urls[environment]}/pdfs/${id}.pdf`}
             className={`qr grid-b w-0_8sp p-0_05sp rounded-0_1sp bg-white ${qrClassName ?? ''}`}
           />
           <span className="grid-d mt-0_1sp font-size-10pt">Download PDF</span>
