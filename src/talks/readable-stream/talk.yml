@@ -1,0 +1,247 @@
+---
+config: common.config
+document:
+  title: The last 5 years of streams in Node.js
+  author: common.author
+  company: common.company
+slides:
+  - layout: cover
+  - layout: separator
+    title: Panta rhei!
+    image: '@talk/lava.webp'
+    classes:
+      slide: bg-nf-orange-split
+  - layout: hello
+  - layout: hiring
+  - layout: separator
+    title: What are streams anyway?
+    image: '@talk/island.webp'
+    classes:
+      slide: bg-nf-darkest-blue
+  - layout: quote
+    title: Pretty simple, isn't it?
+    sentence: A stream is an abstract interface for working with streaming data in Node.js.
+    author: Node.js official documentation
+    options:
+      icons: false
+      light: true
+  - title: They are powerful
+    items:
+      - icon: rocket
+        title: Fully asynchronous
+        text: Since they are based on events and async I/O, the event loop is not blocked.
+      - icon: zoom-code
+        title: Minimum memory footprint
+        text: Only single chunks of data are processed instead of loading the full data in memory.<br/>*This will return!*
+      - icon: git-branch
+        title: Expandable
+        text: There are tons of away to implement new stream.
+  - layout: separator
+    title: Can I use it in the browser?
+    image: '@talk/laptop.webp'
+    classes:
+      slide: bg-nf-brunch-pink
+  - title: Meet readable-stream
+    content:
+      - It is a NPM package which mirrors the Node.js stream module and additionally adapts it to use in the browsers and/or bundlers.
+      - qr: https://www.npmjs.com/package/readable-stream
+      - <span class="font-bold block text-center">[https://www.npmjs.com/package/readable-stream](https://www.npmjs.com/package/readable-stream)</span>
+    classes:
+      qr: w-2sp h-2sp mx-auto mb-0_2sp flex-1
+  - title: How is the package built?
+    items:
+      - index: 1
+        title: Download the code
+        text: Node.js source code is downloaded.
+      - index: 2
+        title: Copy the stream module
+        text: The entire stream module is copied into the destination directory.
+      - index: 3
+        title: Manipulate the source
+        text: All references to other node modules are removed.
+      - index: 4
+        title: Add custom modules
+        text: Custom and platform-agnostic version of the needed modules re-inserted in the distribution.
+  - layout: half
+    title: Project status
+    items:
+      - icon: calendar-time
+        title: Latest series is 4.x.x.
+        text: It was initally released on **June 14th, 2022**, three years after the last one.
+      - icon: git-fork
+        title: Update of the stream module
+        text: It mirrors the module in Node.js **18.x.x** which is the current LTS version.
+      - icon: alarm
+        title: Long overdue
+        text: Series 3.x.x shipped the module present in Node.js **10.x.x** (2018).
+    image: '@talk/server.webp'
+  - layout: separator
+    title: Sorry for the long wait!
+    classes:
+      slide: bg-nf-brunch-pink
+  - layout: separator
+    title: What has changed in streams<br/> since then?
+    image: '@talk/changes.webp'
+    classes:
+      slide: bg-nf-orange-split
+
+
+  - title: Broader status handling
+    items:
+      - icon: book
+        title: An entire new set of properties for readable stream
+        text: "`readableAborted`, `readableDidRead`, `readableEncoding` and `readableObjectMode`"
+      - icon: checkup-list
+        title: Tracking the `end` event
+        text: "`stream.Readable.readableEnded` and `stream.Writable.writableEnded`"
+      - icon: truck
+        title: Tracking flushing status
+        text: "`stream.Writable.writableFinished`"
+  - title: More predictable event flow
+    items:
+      - icon: status-change
+        title: Be reasonable
+        text: "The `autoDestroy` option is now enabled by default: after a `end` or `finish` event the stream will call `destroy` automatically (and only once)."
+      - icon: circuit-switch-open
+        title: Less events chain
+        text: The `end` or `finish` events are not emitted if a `error` event was emitted.<br/>Emitting a `close` event before the `end` event is now considered an error.
+      - icon: clock-pause
+        title: Do not be eager
+        text: "`stream.pipeline` will wait for unfinished streams."
+  - layout: separator
+    title: ... so boring ...
+    classes:
+      slide: bg-nf-darkest-blue
+  - layout: separator
+    title: Let's see the exciting parts!
+    classes:
+      slide: bg-nf-orange-split
+  - title: Stream from iterables
+    content: "`stream.Readable.from` is a new function that allow to create a stream from any object implementing the (async) iterator protocol."
+    code:
+      language: javascript
+      content: |
+        import Readable from 'readable-stream'
+
+        async function* generate() {
+          yield 'hello'
+          yield 'streams'
+        }
+
+        const readable = Readable.from(generate())
+  - title: Duplex stream from anything
+    content:
+      - "`stream.Duplex.from` can now be used to create a duplex stream from something else."
+      - "*Let's play a little game!*"
+    code:
+      language: javascript
+      content: |
+        import Duplex from 'readable-stream'
+
+        Duplex.from([
+          new Promise((resolve) => setTimeout(resolve('1'), 1500)),
+          new Promise((resolve) => setTimeout(resolve('2'), 1500)),
+          new Promise((resolve) => setTimeout(resolve('3'), 3000))
+        ]);
+  - layout: side
+    title: Promises API
+    content:
+      - "A new module exposes was added to Node.js: `stream/promises`."
+      - It exposes a promises based API version of `stream.finished` and `stream.pipeline`.
+    code:
+      language: javascript
+      content: |
+        import { createReadStream, createWriteStream } from 'node:fs'
+        import { createGzip } from 'node:zlib'
+        import { Stream } from 'readable-stream'
+
+        const { finished, pipeline } = Stream.promises
+
+        await pipeline(
+          createReadStream('archive.tar'),
+          createGzip(),
+          createWriteStream('archive.tar.gz')
+        )
+
+        const rs = createReadStream('archive.tar')
+        await finished(rs.resume())
+
+  - title: Functional style helpers
+    content: You can manipulate readable streams using common functional style helpers.
+    items:
+      - icon: filter
+        title: Manipulating
+        text: "`filter`, `map`, `reduce`, `forEach`, `flatMap`"
+      - icon: search
+        title: Searching
+        text: "`some`, `find`, `every`"
+      - icon: file-download
+        title: Fetching
+        text: "`toArray`"
+  - layout: half
+    title: With great power comes great responsibility™
+    content:
+      - The `toArray` method **reads the entire stream into memory**, which is exactly what streams are meant to avoid.
+      - "*Promise me you will only use it when absolutely necessary!*"
+    image: '@talk/spiderman.webp'
+  - layout: separator
+    title: What is used under the hood?
+    classes:
+      slide: bg-nf-neon-blue
+  - title: Build toolchain
+    content: Compared to the previous one it still uses regular expression but it is much smaller thanks to a more modern Javascript environment.
+    items:
+      - image: '@talk/javascript.webp'
+        title: ESM
+      - image: '@talk/babel.webp'
+        title: Babel
+        classes:
+          image: w-auto
+      - image: '@talk/prettier.webp'
+        title: Prettier
+    options:
+      horizontal: true
+  - title: Testing technologies
+    content: A complex testing environment to match most desired scenarios across Node.js version, browsers and bundlers.
+    items:
+      - image: '@talk/tap.webp'
+        title: TAP
+        text: Used to test in the Node.js environment.
+      - image: '@talk/tape.webp'
+        title: Tape
+        text: Along with custom runner and parser, it is used to test browsers.
+        classes:
+          image: w-auto min-w-auto
+      - image: '@talk/playwright.webp'
+        title: Playwright
+        text: It used to easily test in all major browsers.
+    options:
+      horizontal: true
+  - layout: separator
+    title: We test 100 configuration in the CI!
+    image: '@talk/100.webp'
+    classes:
+      slide: bg-nf-orange-split
+  - title: Remember to thank these guys!
+    content: Obviously I haven't done all this by myself.
+    items:
+      - image: '@talk/mcollina.webp'
+        title: Matteo Collina
+        text: https://github.com/mcollina
+      - image: '@talk/ronag.webp'
+        title: Robert Nagy
+        text: https://github.com/ronag
+      - image: '@talk/benjamingr.webp'
+        title: Benjamin Gruenbaum
+        text: https://github.com/benjamingr
+    options:
+      horizontal: true
+  - title: ... that's all folks!™
+    content:
+      - There are obviously more changes, but these were the most juicy.
+    image: '@talk/thats-all-folks.webp'
+  - layout: quote
+    sentence: The man who is swimming against the stream knows the strength of it.
+    author: Woodrow Wilson
+  - layout: questions
+  - layout: end

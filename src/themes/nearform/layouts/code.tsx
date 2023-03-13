@@ -12,10 +12,10 @@ export default function SideLayout(props: SlideProps<Slide>): JSX.Element {
   } = slide
 
   return (
-    <SlideWrapper slide={slide} index={index} className={`${!title ? 'p-0_1sp' : ''} ${className}`}>
+    <SlideWrapper slide={slide} index={index} className={`${!title ? 'p-0_1sp' : ''} ${className}`.trim()}>
       {title && <h1 dangerouslySetInnerHTML={{ __html: parseContent(title) }} />}
 
-      <div className={`flex items-center justify-center h-full min-w-40p ${highlightClassName ?? ''}`}>
+      <div className={`flex items-center justify-center h-full min-w-40p ${highlightClassName ?? ''}`.trim()}>
         <Code {...code} className={codeClassName ?? ''} />
       </div>
     </SlideWrapper>

@@ -6,13 +6,13 @@ config:
   url: https://talks.cowtech.it
 author:
   name: Paolo Insogna
-  description: Node.js Core, Orama, NearForm
+  description: Node.js Core, OramaSearch, NearForm
   roles:
     - where: Node.js
       what: Core Member
       url: https://nodejs.org
-    - where: Orama
-      what: Cofounder & Principal Architect
+    - where: OramaSearch
+      what: Co-founder & Principal Architect
       url: https://oramasearch.com
     - where: NearForm
       what: Staff Developer Experience Engineer

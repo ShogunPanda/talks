@@ -26,7 +26,7 @@ export default function SideLayout(props: SlideProps<Slide>): JSX.Element {
   const imageUrl = resolveImageUrl('nearform', talk.id, image)
 
   return (
-    <SlideWrapper slide={slide} index={index} className={`freya__slide--with-half p-0 ${className ?? ''}`}>
+    <SlideWrapper slide={slide} index={index} className={`freya__slide--with-half p-0 ${className ?? ''}`.trim()}>
       <div className="freya__slide__half min-w-4sp p-0_5sp self-start flex-col flex-1">
         {title && <h1 dangerouslySetInnerHTML={{ __html: parseContent(title) }} />}
 
@@ -59,7 +59,9 @@ export default function SideLayout(props: SlideProps<Slide>): JSX.Element {
       )}
       {!image && highlight && (
         <div
-          className={`flex items-center p-0_5sp h-full text-justify min-w-40p max-w-40p ${highlightClassName ?? ''}`}
+          className={`flex items-center p-0_5sp h-full text-justify min-w-40p max-w-40p ${
+            highlightClassName ?? ''
+          }`.trim()}
         >
           <h4 dangerouslySetInnerHTML={{ __html: parseContent(highlight) }} className="m-0" />
         </div>
@@ -67,9 +69,11 @@ export default function SideLayout(props: SlideProps<Slide>): JSX.Element {
 
       {!image && !highlight && code && (
         <div
-          className={`flex items-center py-0_5sp pl-0 pr-1sp h-full min-w-40p max-w-60p ${highlightClassName ?? ''}`}
+          className={`flex items-center py-0_5sp pl-0 pr-1sp h-full min-w-40p max-w-60p ${
+            highlightClassName ?? ''
+          }`.trim()}
         >
-          <Code {...code} className={codeClassName ?? ''} />
+          <Code {...code} className={codeClassName ?? ''.trim()} />
         </div>
       )}
     </SlideWrapper>

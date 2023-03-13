@@ -258,7 +258,7 @@ slides:
       language: console
       numbers: false
       content: |
-        $ cat example.json
+        shogun@panda:~$ cat example.json
         {
           "countries": [
             { "name": "Iceland", capital: "Reykjavík", },
@@ -266,7 +266,7 @@ slides:
           ]
         }
 
-        $ jq ".countries[1].capital" example.json
+        shogun@panda:~$ jq ".countries[1].capital" example.json
         "Roma"
   - layout: separator
     title: ... and now the show goes on!
@@ -424,7 +424,7 @@ slides:
     title: Upstream response
     content: It contains the enriched type information that will be removed from the final response.
     code:
-      language: json
+      language: jsonc
       highlight: 3, 5, 12, 14, 19, 21
       content: |
         {
@@ -460,7 +460,7 @@ slides:
     title: Final proxy response (1/2)
     content: The client will receive the original data requested ...
     code:
-      language: json
+      language: jsonc
       content: |
         {
           "data": {
@@ -493,7 +493,7 @@ slides:
     title: Final proxy response (2/2)
     content: ...and all our enriched data is in the extensions field.
     code:
-      language: graphql
+      language: jsonc
       highlight: 6, 9
       content: |
         {

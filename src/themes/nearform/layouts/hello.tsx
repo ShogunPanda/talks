@@ -28,15 +28,14 @@ export default function HelloLayout({ talk, slide, index }: SlideProps<Slide>): 
           theme="nearform"
           classes={{ item: 'grid-b font-size-12pt mb-0_4sp', icon: 'fill-black' }}
         >
-          <strong className="font-size-1_2em">
+          <strong className="font-size-1_2em inline-block mx-auto line-height-1_8">
             {author.roles.map(({ what, where, url }: Record<string, string>, index: number) => {
               return (
                 <Fragment key={`role:${index}`}>
-                  <span className="font-light inline-block w-3sp">{what}</span>
-                  &nbsp;
-                  <a href={url} className="inline-block">
+                  <a href={url} className="inline-block w-1_5sp mr-0_2sp text-right">
                     {where}
-                  </a>{' '}
+                  </a>
+                  <span className="font-light">{what}</span>
                   <br />
                 </Fragment>
               )

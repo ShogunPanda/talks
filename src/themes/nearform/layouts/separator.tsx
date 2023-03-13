@@ -18,7 +18,7 @@ export default function SeparatorLayout(props: SlideProps<Slide>): JSX.Element {
     <SlideWrapper
       slide={slide}
       index={index}
-      className={`p-0 flex-row items-center justify-start ${className}`}
+      className={`p-0 flex-row items-center justify-start ${className}`.trim()}
       defaultLogoColor="white"
     >
       {title && (
@@ -30,7 +30,7 @@ export default function SeparatorLayout(props: SlideProps<Slide>): JSX.Element {
 
       {image && (
         <div className="grid-b h-full overflow-hidden flex flex-col items-center justify-center w-5sp">
-          <img src={imageUrl} className={`h-full min-w-5sp max-w-none ${imageClassName ?? ''}`} />
+          <img src={imageUrl} className={`h-full min-w-5sp max-w-none ${imageClassName ?? ''}`.trim()} />
 
           {content?.filter(Boolean).map((c: string | object, contentIndex: number) => {
             const key = `content:${index}:${contentIndex}`

@@ -12,9 +12,9 @@ export default function ImageLayout({ talk, slide, index }: SlideProps<Slide>): 
   const imageUrl = resolveImageUrl('nearform', talk.id, image)
 
   return (
-    <SlideWrapper slide={slide} index={index} className={`p-0 ${className ?? ''}`} defaultLogoColor="white">
+    <SlideWrapper slide={slide} index={index} className={`p-0 ${className ?? ''}`.trim()} defaultLogoColor="white">
       {title && <h1 className="callout callout--title" dangerouslySetInnerHTML={{ __html: title }} />}
-      <img src={imageUrl} className={`absolute left-0 w-full min-h-full ${imageClassName ?? ''}`} />
+      <img src={imageUrl} className={`absolute left-0 w-full min-h-full ${imageClassName ?? ''}`.trim()} />
     </SlideWrapper>
   )
 }

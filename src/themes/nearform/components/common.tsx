@@ -71,7 +71,7 @@ export function Decorations({ slide, defaultLogoColor }: DecorationProps): JSX.E
 
 export function parseComplexContent(raw: Record<string, any>, key: string, props: SlideProps<Slide>): JSX.Element {
   if (raw.qr) {
-    return <QRCode key={key} data={raw.qr} className={props.slide.classes.qr ?? ''} />
+    return <QRCode key={key} data={raw.qr} classes={{ code: props.slide.classes.qr ?? '' }} />
   }
 
   return <></>

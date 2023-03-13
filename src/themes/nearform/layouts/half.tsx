@@ -21,7 +21,7 @@ export default function DefaultLayout(props: SlideProps<Slide>): JSX.Element {
     <SlideWrapper
       slide={slide}
       index={index}
-      className={`p-0 flex-row items-start justify-start ${className}`}
+      className={`p-0 flex-row items-start justify-start ${className}`.trim()}
       defaultLogoColor="white"
     >
       <div className="flex-1 min-w-5sp p-0_5sp">
@@ -52,7 +52,7 @@ export default function DefaultLayout(props: SlideProps<Slide>): JSX.Element {
 
       {image && (
         <div className="grid-b w-5sp h-full overflow-hidden">
-          <img src={imageUrl} className={`h-full min-w-5gs max-w-none ${imageClassName ?? ''}`} />
+          <img src={imageUrl} className={`h-full min-w-5gs max-w-none ${imageClassName ?? ''}`.trim()} />
         </div>
       )}
     </SlideWrapper>

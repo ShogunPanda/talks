@@ -1,9 +1,9 @@
-import { parseContent, QRCode, SlideProps, Svg } from 'freya-slides'
+import { parseContent, QRCode, SlideProps, Svg, resolveImageUrl } from 'freya-slides'
 import { SlideWrapper } from '../components/common.js'
 import { Slide } from '../models.js'
 
 export default function CoverLayout({ environment, theme, talk, slide, index }: SlideProps<Slide>): JSX.Element {
-  const { urls } = theme
+  const { id: themeId, urls } = theme
   const {
     id,
     document: { author, title, titleFormatted }
@@ -57,17 +57,33 @@ export default function CoverLayout({ environment, theme, talk, slide, index }: 
           className="cover__logo grid-e justify-self-end w-2_65sp fill-white"
         />
 
-        <div className="absolute grid top-0_2sp right-0_5sp justify-items-center gap-x-0_4sp cover__qrs">
+        <div className="absolute grid top-0_2sp right-0_5sp justify-items-center flex gap-x-0_6sp">
           <QRCode
             data={`${urls[environment]}/${id}`}
-            className={`qr grid-a w-0_8sp p-0_05sp rounded-0_1sp bg-white ${qrClassName ?? ''}`}
+            image={resolveImageUrl(themeId, id, '@theme/icons/world.svg')}
+            imageRatio={1}
+            label="View online"
+            classes={{
+              code: `w-1sp h-auto text-center ${qrClassName ?? ''}`.trim(),
+              qr: 'p-0_05sp rounded-0_05sp text-black bg-white',
+              label:
+                'inline-block mt-0_1sp font-size-11pt text-white hover:text-white hover:underline visited:text-white',
+              image: 'w-30p h-auto'
+            }}
           />
-          <span className="grid-c mt-0_1sp font-size-10pt">View online</span>
           <QRCode
             data={`${urls[environment]}/pdfs/${id}.pdf`}
-            className={`qr grid-b w-0_8sp p-0_05sp rounded-0_1sp bg-white ${qrClassName ?? ''}`}
+            image={resolveImageUrl(themeId, id, '@theme/icons/pdf.svg')}
+            imageRatio={1}
+            label="Download PDF"
+            classes={{
+              code: `w-1sp h-auto text-center ${qrClassName ?? ''}`.trim(),
+              qr: 'p-0_05sp rounded-0_05sp text-black bg-white',
+              label:
+                'inline-block mt-0_1sp font-size-11pt text-white hover:text-white hover:underline visited:text-white',
+              image: 'w-30p h-auto'
+            }}
           />
-          <span className="grid-d mt-0_1sp font-size-10pt">Download PDF</span>
         </div>
       </div>
     </SlideWrapper>

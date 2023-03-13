@@ -2,7 +2,6 @@
 @import '@freya/normalize.css';
 @import '@freya/reset.css';
 @import '@freya/default.css';
-@import '@freya/highlight/atom-one-dark.css';
 
 html {
   @apply font-extralight;
@@ -286,45 +285,36 @@ a:focus {
   @apply z-0;
 }
 
-.hljs {
+.code pre {
   @apply rounded-0_05sp;
   @apply font-size-1_5em;
   @apply m-0;
-  @apply py-0_1sp;
+  @apply py-0_2sp;
   @apply min-w-4sp;
   @apply rounded-0_05sp;
+  counter-reset: step;
+  counter-increment: step 0;
 
-  & .hljs-line {
-    @apply px-0_1sp;
-    @apply h-35px;
-    @apply line-height-1_5;
-  }
-
-  & .hljs-line-number {
-    @apply inline-block;
-    @apply w-3ch;
-    @apply pr-1ch;
-    @apply mr-2ch;
-    @apply text-right;
-    @apply border-solid;
-    @apply border-0;
-    @apply border-r-0_01sp;
-    @apply text-#757575;
-  }
-
-  & .hljs-line--highlighted {
+  & .line {
     @apply relative;
+    @apply inline-block;
+    @apply pl-2ch;
+    @apply pr-3ch;
+    @apply py-0_2em;
 
-    &::before {
-      content: '';
-      @apply absolute;
-      @apply block;
-      @apply top-0;
-      @apply left-0;
+    &.highlighted {
       @apply w-full;
-      @apply h-full;
-      @apply opacity-30;
-      @apply bg-#607D8B;
+      @apply bg-#528BFF3D; /* 99BBFF0A; */
+    }
+
+    & .line-number {
+      @apply inline-block;
+      @apply w-3ch;
+      @apply mr-3ch;
+      @apply text-right;
+      @apply text-#636d83;
+      content: counter(step);
+      counter-increment: step;
     }
   }
 }
@@ -351,13 +341,6 @@ a:focus {
     h2 {
       @apply font-size-14pt;
     }
-  }
-
-  &__qrs {
-    grid-template:
-      'a b' 1fr
-      'c d' min-content
-      / 1fr 1fr;
   }
 }
 

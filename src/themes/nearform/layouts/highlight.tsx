@@ -19,7 +19,7 @@ export default function SideLayout(props: SlideProps<Slide>): JSX.Element {
   const imageUrl = resolveImageUrl('nearform', talk.id, image)
 
   return (
-    <SlideWrapper slide={slide} index={index} className={`freya__slide--with-half p-0 ${className ?? ''}`}>
+    <SlideWrapper slide={slide} index={index} className={`freya__slide--with-half p-0 ${className ?? ''}`.trim()}>
       <div className={`freya__slide__half min-w-5sp p-0_5sp self-start flex-col ${highlight ? 'flex-2' : 'flex-1'}`}>
         {title && <h1 dangerouslySetInnerHTML={{ __html: parseContent(title) }} />}
 
@@ -53,7 +53,7 @@ export default function SideLayout(props: SlideProps<Slide>): JSX.Element {
       )}
 
       {!image && highlight && (
-        <div className={`flex flex-1 items-center p-0_5p h-full text-justify ${highlightClassName ?? ''}`}>
+        <div className={`flex flex-1 items-center p-0_5p h-full text-justify ${highlightClassName ?? ''}`.trim()}>
           <h4 dangerouslySetInnerHTML={{ __html: parseContent(highlight) }} className="m-0" />
         </div>
       )}

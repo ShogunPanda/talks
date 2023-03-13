@@ -64,7 +64,7 @@ export default function DefaultLayout(props: SlideProps<Slide>): JSX.Element {
       {!image && !items && grids && <Grids grids={grids} talk={talk.id} />}
 
       {!image && !items && !grids && code && (
-        <div className={`flex items-center justify-center h-full min-w-40p ${highlightClassName ?? ''}`}>
+        <div className={`flex items-center justify-center h-full min-w-40p ${highlightClassName ?? ''}`.trim()}>
           <Code {...code} className={codeClassName ?? ''} />
         </div>
       )}

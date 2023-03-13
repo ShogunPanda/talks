@@ -119,8 +119,7 @@ slides:
           createdAt: Date
           type: 'raw' | 'dag-cbor' | 'dag-json'
         }
-  - layout: side
-    title: |
+  - title: |
       <span class="whitespace-nowrap">Blocks Position Item</span>
     content: It is the most important table in the architecture, as it links blocks to CARs, including offset and length.
     code:
@@ -258,10 +257,10 @@ slides:
       language: json
       highlight: 2, 7, 12, 14
       content: |
-        {        
+        {
           "Addresses" : ["/dns4/peer.ipfs-elastic-provider-aws.com/tcp/3000/ws"],
-          "ContextID": { 
-            "/": { "bytes": "YmFndXF1ZXJ . .. dpdnhyYQ==" } 
+          "ContextID": {
+            "/": { "bytes": "YmFndXF1ZXJ . .. dpdnhyYQ==" }
           },
           "Entries": {
             "/" : "bagugeeraijghexgvdvLuk3pwd6axbvzcajhd3pylz7sm3sfaitc7lnwivxra"
@@ -271,7 +270,7 @@ slides:
           "PreviousID": {
             "/" : "bagugeeraii6bahmbnnijhakhyscrlkcblwpwdvahzt53vzhd2jfryj43ebag"
           },
-          "Provider": "bafzbeibhqavlasjc7dvbiopygwncnrtvjd2xmryk51aib7zyjor6kf3avm"
+          "Provider": "bafzbeibhqavlasjc7dvbiopygwncnrtvjd2xmryk51aib7zyjor6kf3avm",
           "Signature": { "/": { "bytes": "CqsCCAASpg ... y/yqKWQ" } }
         }
   - title: Entries file

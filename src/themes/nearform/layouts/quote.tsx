@@ -19,7 +19,7 @@ export default function SideLayout({ slide, index }: SlideProps<Slide>): JSX.Ele
     <SlideWrapper
       slide={slide}
       index={index}
-      className={`${backgroundColor} ${className ?? ''}`}
+      className={`${backgroundColor} ${className ?? ''}`.trim()}
       defaultLogoColor={light ? 'black' : 'white'}
     >
       <h1
@@ -40,14 +40,14 @@ export default function SideLayout({ slide, index }: SlideProps<Slide>): JSX.Ele
             name="bulb"
             className={`absolute z-1 w-2_5sp h-2_5sp -top-0_5sp right-0_5sp stroke-width-0_3 transform rotate-180 ${
               !light ? 'text-white' : ''
-            }`}
+            }`.trim()}
             theme="nearform"
           />
           <SvgIcon
             name="puzzle-2"
             className={`absolute z-1 w-2_5sp h-2_5sp -bottom-0_8sp left-4sp stroke-width-0_3 ${
               !light ? 'text-white' : ''
-            }`}
+            }`.trim()}
             theme="nearform"
           />
         </>

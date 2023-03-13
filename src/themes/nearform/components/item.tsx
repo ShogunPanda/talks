@@ -41,7 +41,9 @@ export function Item(props: ItemProps): JSX.Element {
   const imageUrl = image ? resolveImageUrl(theme, talk, image) : undefined
 
   return (
-    <section className={`item ${horizontal ? 'item--horizontal' : ''} ${className ?? ''} ${itemClassName ?? ''}`}>
+    <section
+      className={`item ${horizontal ? 'item--horizontal' : ''} ${className ?? ''} ${itemClassName ?? ''}`.trim()}
+    >
       {index && (
         <h5
           className={`item__index ${indexClassName ?? ''}`.trim()}
@@ -52,7 +54,7 @@ export function Item(props: ItemProps): JSX.Element {
       {!imageUrl && icon && (
         <SvgIcon name={icon} className={`item__icon ${iconClassName ?? ''}`.trim()} theme={theme} />
       )}
-      {!imageUrl && !icon && qr && <QRCode data={qr} className={`item__qr ${qrClassName ?? ''}`.trim()} />}
+      {!imageUrl && !icon && qr && <QRCode data={qr} classes={{ code: `item__qr ${qrClassName ?? ''}`.trim() }} />}
 
       <div className={`item__text ${textClassName ?? ''}`.trim()}>
         {title && (
