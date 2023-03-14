@@ -26,6 +26,8 @@ export function SlideWrapper({
   defaultLogoColor,
   children
 }: SlideWrapperProps): JSX.Element {
+  const optionSkipDecorations = slide.options.skipDecorations
+
   if (!defaultLogoColor) {
     defaultLogoColor = 'black'
   }
@@ -39,7 +41,7 @@ export function SlideWrapper({
     >
       {children}
 
-      {!skipDecorations && <Decorations slide={slide} defaultLogoColor={defaultLogoColor} />}
+      {!skipDecorations && !optionSkipDecorations && <Decorations slide={slide} defaultLogoColor={defaultLogoColor} />}
       <template data-freya-id="slide-notes" dangerouslySetInnerHTML={{ __html: slide.notes ?? '' }} />
     </article>
   )

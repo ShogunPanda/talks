@@ -43,6 +43,7 @@ export interface Slide {
     icons?: boolean
     horizontal?: boolean
     noGap?: boolean
+    skipDecorations?: boolean
     skipSpacer?: boolean
     skipDefaultClasses?: boolean
     highlightWidth: number

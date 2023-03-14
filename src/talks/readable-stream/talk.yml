@@ -5,9 +5,17 @@ document:
   author: common.author
   company: common.company
 slides:
+  - layout: image
+    image: '@talk/webday-001.webp'
+    options:
+      skipDecorations: true
+  - layout: image
+    image: '@talk/webday-002.webp'
+    options:
+      skipDecorations: true
   - layout: cover
   - layout: separator
-    title: Panta rhei!
+    title: Panta rei!
     image: '@talk/lava.webp'
     classes:
       slide: bg-nf-orange-split
@@ -222,6 +230,10 @@ slides:
     image: '@talk/100.webp'
     classes:
       slide: bg-nf-orange-split
+  - title: ... that's all folks!™
+    content:
+      - There are obviously more changes, but these were the most juicy.
+    image: '@talk/thats-all-folks.webp'
   - title: Remember to thank these guys!
     content: Obviously I haven't done all this by myself.
     items:
@@ -236,12 +248,12 @@ slides:
         text: https://github.com/benjamingr
     options:
       horizontal: true
-  - title: ... that's all folks!™
-    content:
-      - There are obviously more changes, but these were the most juicy.
-    image: '@talk/thats-all-folks.webp'
   - layout: quote
     sentence: The man who is swimming against the stream knows the strength of it.
     author: Woodrow Wilson
   - layout: questions
   - layout: end
+  - layout: image
+    image: '@talk/webday-003.webp'
+    options:
+      skipDecorations: true
