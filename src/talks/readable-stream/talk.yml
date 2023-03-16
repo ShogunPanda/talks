@@ -20,7 +20,8 @@ slides:
     classes:
       slide: bg-nf-orange-split
   - layout: hello
-  - layout: hiring
+  - layout: nearform
+  - layout: orama
   - layout: separator
     title: What are streams anyway?
     image: '@talk/island.webp'

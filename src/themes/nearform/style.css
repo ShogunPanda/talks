@@ -378,7 +378,7 @@ a:focus {
   }
 }
 
-.hiring {
+.nearform {
   header {
     p {
       @apply font-poppins;
@@ -435,6 +435,13 @@ a:focus {
     @apply h-0_3sp;
     @apply ml-1ch;
     @apply text-nf-darkest-blue;
+  }
+}
+
+.orama {
+  h1,
+  h2 {
+    @apply font-normal;
   }
 }
 

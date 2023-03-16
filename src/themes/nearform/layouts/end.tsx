@@ -42,7 +42,7 @@ export default function EndLayout({ talk, slide, index }: SlideProps<Slide>): JS
 
       <Svg
         theme="nearform"
-        contents="@theme/hiring-curve-bottom-right.svg"
+        contents="@theme/nearform-curve-bottom-right.svg"
         className="top-3_02sp left-5_82sp w-4_25sp absolute z-1 fill-white"
       />
     </SlideWrapper>

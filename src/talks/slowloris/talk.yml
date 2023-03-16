@@ -13,7 +13,7 @@ slides:
     classes:
       slide: bg-nf-orange-split
   - layout: hello
-  - layout: hiring
+  - layout: nearform
   - layout: half
     title: What do we use everyday?
     content:

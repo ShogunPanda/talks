@@ -65,3 +65,19 @@ fonts:
         600:
           latin: https://fonts.gstatic.com/s/firacode/v21/uU9NCBsR6Z2vfE9aq3bh3dSDqFGedA.woff2
           latin-ext: https://fonts.gstatic.com/s/firacode/v21/uU9NCBsR6Z2vfE9aq3bh09SDqFGedCMX.woff2
+    # https://fonts.googleapis.com/css2?family=Noto+Sans:wght@200;300;700;800&display=swap
+    Noto Sans:
+      normal:
+        200:
+          latin: https://fonts.gstatic.com/s/notosans/v27/o-0NIpQlx3QUlC5A4PNjKhVVZNyBx2pqPA.woff2
+          latin-ext: https://fonts.gstatic.com/s/notosans/v27/o-0NIpQlx3QUlC5A4PNjKhVVatyBx2pqPIif.woff2
+        300:
+          latin: https://fonts.gstatic.com/s/notosans/v27/o-0NIpQlx3QUlC5A4PNjThZVZNyBx2pqPA.woff2
+          latin-ext: https://fonts.gstatic.com/s/notosans/v27/o-0NIpQlx3QUlC5A4PNjThZVatyBx2pqPIif.woff2
+        700:
+          latin: https://fonts.gstatic.com/s/notosans/v27/o-0NIpQlx3QUlC5A4PNjXhFVZNyBx2pqPA.woff2
+          latin-ext: https://fonts.gstatic.com/s/notosans/v27/o-0NIpQlx3QUlC5A4PNjXhFVatyBx2pqPIif.woff2
+        800:
+          latin: https://fonts.gstatic.com/s/notosans/v27/o-0NIpQlx3QUlC5A4PNjQhJVZNyBx2pqPA.woff2
+          latin-ext: https://fonts.gstatic.com/s/notosans/v27/o-0NIpQlx3QUlC5A4PNjQhJVatyBx2pqPIif.woff2
+

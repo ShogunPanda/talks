@@ -228,7 +228,8 @@ export default defineUnoConfig({
     [/^font-size-(\d+(?:_\d+)?)pt$/, ([, value]: string[]) => numericRule('font-size', value, 'px', 2.7)],
     ['font-poppins', { 'font-family': `Poppins, ${systemFonts}` }],
     ['font-lexend', { 'font-family': `Lexend, Poppins, ${systemFonts}` }],
-    ['font-fira-code', { 'font-family': `'Fira Code', Consolas, ${systemMonospaceFonts}` }]
+    ['font-fira-code', { 'font-family': `'Fira Code', Consolas, ${systemMonospaceFonts}` }],
+    ['font-noto', { 'font-family': `'Noto Sans', ${systemFonts}` }]
   ],
   safelist: ['hidden', ...safelist]
 })

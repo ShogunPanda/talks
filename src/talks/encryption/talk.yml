@@ -7,7 +7,7 @@ document:
 slides:
   - layout: cover
   - layout: hello
-  - layout: hiring
+  - layout: nearform
   - layout: half
     title: First of all, let’s give credits!
     content:

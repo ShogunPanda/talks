@@ -2,7 +2,7 @@ import { resolveImageUrl, SlideProps, Svg, SvgIcon } from 'freya-slides'
 import { SlideWrapper } from '../components/common.js'
 import { Slide } from '../models.js'
 
-export default function HiringLayout({ talk, slide, index }: SlideProps<Slide>): JSX.Element {
+export default function NearFormLayout({ talk, slide, index }: SlideProps<Slide>): JSX.Element {
   const {
     id,
     document: {
@@ -16,7 +16,7 @@ export default function HiringLayout({ talk, slide, index }: SlideProps<Slide>):
     <SlideWrapper
       slide={slide}
       index={index}
-      className="hiring p-0 justify-between bg-nf-darkest-blue text-white"
+      className="nearform p-0 justify-between bg-nf-darkest-blue text-white"
       skipDecorations={true}
     >
       <div className="flex flex-col flex-1 place-content-between">
@@ -40,13 +40,13 @@ export default function HiringLayout({ talk, slide, index }: SlideProps<Slide>):
         </header>
 
         <div
-          className="hiring__world flex items-center ml-0_5sp bg-no-repeat bg-contain h-3sp"
+          className="nearform__world flex items-center ml-0_5sp bg-no-repeat bg-contain h-3sp"
           style={{ backgroundImage: `url(${worldImageUrl})` }}
         >
           <h2>Global Delivery Org with {count}+ and counting</h2>
         </div>
 
-        <h1 className="m-0 ml-0_5sp mb-0_1sp text-nf-brunch-pink no-border">We are hiring!</h1>
+        <h1 className="m-0 ml-0_5sp mb-0_1sp text-nf-brunch-pink no-border">We are nearform!</h1>
       </div>
 
       <footer className="flex items-center w-full min-h-0_7sp px-0_5sp bg-nf-brunch-pink text-nf-darkest-blue">
@@ -56,23 +56,23 @@ export default function HiringLayout({ talk, slide, index }: SlideProps<Slide>):
         <div className="w-3px h-0_3sp mx-1ch bg-nf-darkest-blue" />
         <span>follow us on</span>
 
-        <a href="https://www.linkedin.com/company/nearform/" className="hiring__social">
+        <a href="https://www.linkedin.com/company/nearform/" className="nearform__social">
           <SvgIcon name="brand-linkedin" theme="nearform" />
         </a>
 
-        <a href="https://twitter.com/nearform" className="hiring__social">
+        <a href="https://twitter.com/nearform" className="nearform__social">
           <SvgIcon name="brand-twitter" theme="nearform" />
         </a>
 
-        <a href="https://github.com/nearform" className="hiring__social">
+        <a href="https://github.com/nearform" className="nearform__social">
           <SvgIcon name="brand-github" theme="nearform" />
         </a>
 
-        <a href="https://www.youtube.com/channel/UCp2Tsbjd3P8itnBHUNHi82A" className="hiring__social">
+        <a href="https://www.youtube.com/channel/UCp2Tsbjd3P8itnBHUNHi82A" className="nearform__social">
           <SvgIcon name="brand-youtube" theme="nearform" />
         </a>
 
-        <a href="https://www.facebook.com/NearFormLtd" className="hiring__social">
+        <a href="https://www.facebook.com/NearFormLtd" className="nearform__social">
           <SvgIcon name="brand-facebook" theme="nearform" />
         </a>
 
@@ -87,11 +87,11 @@ export default function HiringLayout({ talk, slide, index }: SlideProps<Slide>):
 
       <Svg
         theme="nearform"
-        contents="@theme/hiring-curve-bottom-right.svg"
+        contents="@theme/nearform-curve-bottom-right.svg"
         className="absolute z-1 top-3_02sp left-5_82sp w-4_25sp fill-white"
       />
 
-      <div className="hiring__npm w-2_5sp absolute text-center top-0_5sp right-0_5sp">
+      <div className="nearform__npm w-2_5sp absolute text-center top-0_5sp right-0_5sp">
         <h2 className="mb-2ch">Major Contributors to the Open Source Web Platform</h2>
 
         <h3>NPM monthly downloads</h3>
