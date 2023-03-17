@@ -46,7 +46,7 @@ export default function NearFormLayout({ talk, slide, index }: SlideProps<Slide>
           <h2>Global Delivery Org with {count}+ and counting</h2>
         </div>
 
-        <h1 className="m-0 ml-0_5sp mb-0_1sp text-nf-brunch-pink no-border">We are nearform!</h1>
+        <h1 className="m-0 ml-0_5sp mb-0_1sp text-nf-brunch-pink no-border">We are hiring!</h1>
       </div>
 
       <footer className="flex items-center w-full min-h-0_7sp px-0_5sp bg-nf-brunch-pink text-nf-darkest-blue">
