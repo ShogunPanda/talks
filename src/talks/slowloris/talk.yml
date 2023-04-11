@@ -14,6 +14,7 @@ slides:
       slide: bg-nf-orange-split
   - layout: hello
   - layout: nearform
+  - layout: orama
   - layout: half
     title: What do we use everyday?
     content:

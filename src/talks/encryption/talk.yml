@@ -8,6 +8,7 @@ slides:
   - layout: cover
   - layout: hello
   - layout: nearform
+  - layout: orama
   - layout: half
     title: First of all, let’s give credits!
     content:

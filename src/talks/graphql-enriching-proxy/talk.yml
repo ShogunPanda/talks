@@ -8,6 +8,7 @@ slides:
   - layout: cover
   - layout: hello
   - layout: nearform
+  - layout: orama
   - title: Let’s celebrate GraphQL!
     content: We all know how this technology has made our life easier.
     image: '@talk/graphql.webp'
