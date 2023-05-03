@@ -1,4 +1,4 @@
-import { parseContent, QRCode, SlideProps, Svg, resolveImageUrl } from 'freya-slides'
+import { QRCode, SlideProps, Svg, parseContent, resolveImageUrl } from 'freya-slides'
 import { SlideWrapper } from '../components/common.js'
 import { Slide } from '../models.js'
 
@@ -48,7 +48,7 @@ export default function CoverLayout({ environment, theme, talk, slide, index }: 
         <div className="grid-c w-2sp h-0_1sp bg-nf-brunch-pink" />
 
         <h3 className="cover__copyright grid-d self-end text-nf-brunch-pink font-light font-size-10_5pt">
-          &#169; Copyright 2022-{new Date().getFullYear()} NearForm Ltd. All Rights Reserved.
+          &#169; Copyright {new Date().getFullYear()} NearForm Ltd. All Rights Reserved.
         </h3>
 
         <Svg

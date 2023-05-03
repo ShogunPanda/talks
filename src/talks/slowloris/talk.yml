@@ -129,7 +129,6 @@ slides:
   - layout: image
     title: What about Node.js?
     image: '@talk/node.webp'
-
   - title: http.Server.headersTimeout
     items:
       - icon: bug

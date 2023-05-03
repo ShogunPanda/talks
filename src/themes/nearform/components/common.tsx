@@ -1,4 +1,4 @@
-import { parseContent, QRCode, SlideProps, Svg, SvgIcon } from 'freya-slides'
+import { parseContent, QRCode, renderNotes, SlideProps, Svg, SvgIcon } from 'freya-slides'
 import { CSSProperties, ReactNode } from 'react'
 import { Slide } from '../models.js'
 
@@ -42,7 +42,7 @@ export function SlideWrapper({
       {children}
 
       {!skipDecorations && !optionSkipDecorations && <Decorations slide={slide} defaultLogoColor={defaultLogoColor} />}
-      <template data-freya-id="slide-notes" dangerouslySetInnerHTML={{ __html: slide.notes ?? '' }} />
+      <template data-freya-id="slide-notes" dangerouslySetInnerHTML={{ __html: renderNotes(slide) }} />
     </article>
   )
 }
