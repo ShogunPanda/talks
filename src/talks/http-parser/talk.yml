@@ -170,7 +170,7 @@ slides:
   - title: "llhttp: what's wrong with it?"
     items:
       - icon: 'bug'
-        title: Hard to debug
+        title: Hard to debug and release
         text: The transpilation makes hard to debug issues.
       - icon: 'history'
         title: Backward compatibility
@@ -200,7 +200,7 @@ slides:
         text: llhttp has a wonderful and performant architecture and APIs.
       - icon: 'checkup-list'
         title: Testability
-        text: The test suite is unvaluable to ensure correctness.
+        text: The test suite is invaluable to ensure correctness.
     options:
       horizontal: true
   - title: What shall we change?
@@ -211,6 +211,9 @@ slides:
       - image: '@talk/rust-logo.webp'
         title: Use a higher level language
         text: Rust is a good candidate that can be used for both developer input and transpilation output.
+      - icon: 'shield-lock'
+        title: Modern and strict
+        text: Only support latest HTTP/1.1 standard (RFC 9110) and initially do have any leniency logic.
     options:
       horizontal: true
   - layout: separator
