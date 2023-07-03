@@ -8,7 +8,6 @@ slides:
   - layout: cover
   - layout: hello
   - layout: nearform
-  - layout: orama
   - layout: half
     title: First of all, let’s give credits!
     content:
@@ -148,5 +147,4 @@ slides:
   - layout: quote
     sentence: The decisions we make about communication security today will determine the kind of society we live in tomorrow.
     author: Whitfield Diffie
-  - layout: questions
   - layout: end

@@ -8,7 +8,6 @@ slides:
   - layout: cover
   - layout: hello
   - layout: nearform
-  - layout: orama
   - title: Let’s celebrate GraphQL!
     content: We all know how this technology has made our life easier.
     image: '@talk/graphql.webp'
@@ -539,5 +538,4 @@ slides:
   - layout: quote
     sentence: You are remembered for the rules you break.
     author: Douglas MacArthur
-  - layout: questions
   - layout: end

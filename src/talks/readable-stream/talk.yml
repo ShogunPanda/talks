@@ -13,7 +13,6 @@ slides:
       slide: bg-nf-orange-split
   - layout: hello
   - layout: nearform
-  - layout: orama
   - layout: separator
     title: What are streams anyway?
     image: '@talk/island.webp'
@@ -85,30 +84,28 @@ slides:
     image: '@talk/changes.webp'
     classes:
       slide: bg-nf-orange-split
-
-
   - title: Broader status handling
     items:
       - icon: book
         title: An entire new set of properties for readable stream
-        text: "`readableAborted`, `readableDidRead`, `readableEncoding` and `readableObjectMode`"
+        text: '`readableAborted`, `readableDidRead`, `readableEncoding` and `readableObjectMode`'
       - icon: checkup-list
         title: Tracking the `end` event
-        text: "`stream.Readable.readableEnded` and `stream.Writable.writableEnded`"
+        text: '`stream.Readable.readableEnded` and `stream.Writable.writableEnded`'
       - icon: truck
         title: Tracking flushing status
-        text: "`stream.Writable.writableFinished`"
+        text: '`stream.Writable.writableFinished`'
   - title: More predictable event flow
     items:
       - icon: status-change
         title: Be reasonable
-        text: "The `autoDestroy` option is now enabled by default: after a `end` or `finish` event the stream will call `destroy` automatically (and only once)."
+        text: 'The `autoDestroy` option is now enabled by default: after a `end` or `finish` event the stream will call `destroy` automatically (and only once).'
       - icon: circuit-switch-open
         title: Less events chain
         text: The `end` or `finish` events are not emitted if a `error` event was emitted.<br/>Emitting a `close` event before the `end` event is now considered an error.
       - icon: clock-pause
         title: Do not be eager
-        text: "`stream.pipeline` will wait for unfinished streams."
+        text: '`stream.pipeline` will wait for unfinished streams.'
   - layout: separator
     title: ... so boring ...
     classes:
@@ -118,7 +115,7 @@ slides:
     classes:
       slide: bg-nf-orange-split
   - title: Stream from iterables
-    content: "`stream.Readable.from` is a new function that allow to create a stream from any object implementing the (async) iterator protocol."
+    content: '`stream.Readable.from` is a new function that allow to create a stream from any object implementing the (async) iterator protocol.'
     code:
       language: javascript
       content: |
@@ -132,7 +129,7 @@ slides:
         const readable = Readable.from(generate())
   - title: Duplex stream from anything
     content:
-      - "`stream.Duplex.from` can now be used to create a duplex stream from something else."
+      - '`stream.Duplex.from` can now be used to create a duplex stream from something else.'
       - "*Let's play a little game!*"
     code:
       language: javascript
@@ -147,7 +144,7 @@ slides:
   - layout: side
     title: Promises API
     content:
-      - "A new module exposes was added to Node.js: `stream/promises`."
+      - 'A new module exposes was added to Node.js: `stream/promises`.'
       - It exposes a promises based API version of `stream.finished` and `stream.pipeline`.
     code:
       language: javascript
@@ -172,18 +169,18 @@ slides:
     items:
       - icon: filter
         title: Manipulating
-        text: "`filter`, `map`, `reduce`, `forEach`, `flatMap`"
+        text: '`filter`, `map`, `reduce`, `forEach`, `flatMap`'
       - icon: search
         title: Searching
-        text: "`some`, `find`, `every`"
+        text: '`some`, `find`, `every`'
       - icon: file-download
         title: Fetching
-        text: "`toArray`"
+        text: '`toArray`'
   - layout: half
     title: With great power comes great responsibility™
     content:
       - The `toArray` method **reads the entire stream into memory**, which is exactly what streams are meant to avoid.
-      - "*Promise me you will only use it when absolutely necessary!*"
+      - '*Promise me you will only use it when absolutely necessary!*'
     image: '@talk/spiderman.webp'
   - layout: separator
     title: What is used under the hood?
@@ -244,5 +241,4 @@ slides:
   - layout: quote
     sentence: The man who is swimming against the stream knows the strength of it.
     author: Woodrow Wilson
-  - layout: questions
   - layout: end

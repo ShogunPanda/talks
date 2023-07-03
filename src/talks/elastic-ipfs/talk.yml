@@ -15,7 +15,6 @@ slides:
       slide: bg-nf-orange-split
   - layout: hello
   - layout: nearform
-  - layout: orama
   - title: IPFS (InterPlanetary FileSystem)
     content: A protocol designed with the intention to preserve and grow humanity's knowledge by making the web upgradeable, resilient, and more open.
     image: '@talk/ipfs.webp'
@@ -386,5 +385,4 @@ slides:
   - layout: quote
     sentence: Keep your eyes on the stars, and your feet on the ground.
     author: Theodore Roosevelt
-  - layout: questions
   - layout: end

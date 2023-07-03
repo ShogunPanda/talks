@@ -11,7 +11,6 @@ slides:
   - layout: cover
   - layout: hello
   - layout: nearform
-  - layout: orama
   - layout: separator
     title: We all love HTTP!
     image: '@talk/love.webp'
@@ -226,5 +225,4 @@ slides:
   - layout: quote
     sentence: If there is no struggle, there is no progress.
     author: Frederick Douglass
-  - layout: questions
   - layout: end

@@ -9,7 +9,6 @@ slides:
   - layout: cover
   - layout: hello
   - layout: nearform
-  - layout: orama
   - layout: half
     title: First of all, let’s give credits!
     content:
@@ -560,5 +559,4 @@ slides:
   - layout: quote
     sentence: Working hard and working smart can be two different things.
     author: Byron Dorgan
-  - layout: questions
   - layout: end
