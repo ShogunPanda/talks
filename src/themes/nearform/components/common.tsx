@@ -40,6 +40,7 @@ export function SlideWrapper({
       style={style}
     >
       {children}
+      <div className="freya__slide__progress" />
 
       {!skipDecorations && !optionSkipDecorations && <Decorations slide={slide} defaultLogoColor={defaultLogoColor} />}
       <template data-freya-id="slide-notes" dangerouslySetInnerHTML={{ __html: renderNotes(slide) }} />

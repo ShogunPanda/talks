@@ -224,6 +224,8 @@ export default defineUnoConfig({
     [/^line-height-(\d+(?:_\d+)?)$/, ([, value]: string[]) => numericRule('line-height', value, 'em')],
     [/^font-size-(\d+(?:_\d+)?)em$/, ([, value]: string[]) => numericRule('font-size', value, 'em')],
     [/^font-size-(\d+(?:_\d+)?)pt$/, ([, value]: string[]) => numericRule('font-size', value, 'px', 2.7)],
+    ['font-system-fonts', { 'font-family': systemFonts }],
+    ['font-monospace-system-fonts', { 'font-family': systemMonospaceFonts }],
     ['font-poppins', { 'font-family': `Poppins, ${systemFonts}` }],
     ['font-lexend', { 'font-family': `Lexend, Poppins, ${systemFonts}` }],
     ['font-fira-code', { 'font-family': `'Fira Code', Consolas, ${systemMonospaceFonts}` }],

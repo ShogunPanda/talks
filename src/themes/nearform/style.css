@@ -91,6 +91,15 @@ a:focus {
   @apply text-nf-neon-blue;
 }
 
+.freya__slide__progress {
+  @apply absolute;
+  @apply bottom-0;
+  @apply left-0;
+  width: calc(var(--freya-slide-progress) * 1%);
+  @apply h-0_02sp;
+  @apply bg-#5AC3EA;
+}
+
 .logo {
   @apply absolute;
   @apply z-10001;
