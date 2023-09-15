@@ -29,8 +29,8 @@ slides:
           Anybody with physical access might replace a connector with a very small device.
           *Do you believe in conspiracies?*
   - layout: separator
-    title: Let's send the audience a message.
-    image: '@talk/letter.webp'
+    title: Let's send a message.
+    image: '@talk/pidgeons.webp'
     classes:
       slide: bg-nf-orange-split
   - layout: separator
