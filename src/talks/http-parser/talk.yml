@@ -175,7 +175,7 @@ slides:
         title: Backward compatibility
         text: Supporting different versions of HTTP (included obsoletes) introduces unneeded complexity.
       - icon: 'heart-handshake'
-        title: You give a finger, they take the arm
+        title: You give them a finger, they take the arm
         text: Leniency-prone approach opens the door for a lot of edge cases.
   - layout: separator
     title: Where are the docs?

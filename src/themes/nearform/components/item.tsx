@@ -1,4 +1,4 @@
-import { parseContent, QRCode, resolveImageUrl, SvgIcon } from 'freya-slides'
+import { Code, QRCode, SvgIcon, parseContent, resolveImageUrl } from 'freya-slides'
 import { Fragment, ReactNode } from 'react'
 import { Grid, Item as ItemDefinition } from '../models.js'
 
@@ -26,7 +26,7 @@ interface GridsProps {
 }
 
 export function Item(props: ItemProps): JSX.Element {
-  const { horizontal, index, icon, image, title, text, qr, className, classes, talk, theme, children } = props
+  const { horizontal, index, icon, image, title, text, qr, code, className, classes, talk, theme, children } = props
 
   const {
     item: itemClassName,
@@ -35,7 +35,8 @@ export function Item(props: ItemProps): JSX.Element {
     image: imageClassName,
     title: titleClassName,
     text: textClassName,
-    qr: qrClassName
+    qr: qrClassName,
+    code: codeClassName
   } = classes ?? {}
 
   const imageUrl = image ? resolveImageUrl(theme, talk, image) : undefined
@@ -54,23 +55,30 @@ export function Item(props: ItemProps): JSX.Element {
       {!imageUrl && icon && (
         <SvgIcon name={icon} className={`item__icon ${iconClassName ?? ''}`.trim()} theme={theme} />
       )}
-      {!imageUrl && !icon && qr && <QRCode data={qr} classes={{ code: `item__qr ${qrClassName ?? ''}`.trim() }} />}
+      {!imageUrl && !icon && qr && (
+        <QRCode label="" data={qr} classes={{ code: `item__qr ${qrClassName ?? ''}`.trim() }} />
+      )}
 
-      <div className={`item__text ${textClassName ?? ''}`.trim()}>
-        {title && (
-          <h4
-            className={`item__title ${titleClassName ?? ''}`.trim()}
-            dangerouslySetInnerHTML={{ __html: parseContent(title) }}
-          />
-        )}
-        {text && (
-          <p
-            className={`item__contents ${textClassName ?? ''}`.trim()}
-            dangerouslySetInnerHTML={{ __html: parseContent(text) }}
-          />
-        )}
-        {!text && <p className={`item__contents ${textClassName ?? ''}`.trim()}>{children}</p>}
-      </div>
+      {!imageUrl && !icon && !qr && code && <Code {...code} className={codeClassName ?? ''} />}
+
+      {/* eslint-disable-next-line @typescript-eslint/prefer-nullish-coalescing */}
+      {!code && (title || text || children) && (
+        <div className={`item__text ${textClassName ?? ''}`.trim()}>
+          {title && (
+            <h4
+              className={`item__title ${titleClassName ?? ''}`.trim()}
+              dangerouslySetInnerHTML={{ __html: parseContent(title) }}
+            />
+          )}
+          {text && (
+            <p
+              className={`item__contents ${textClassName ?? ''}`.trim()}
+              dangerouslySetInnerHTML={{ __html: parseContent(text) }}
+            />
+          )}
+          {!text && <p className={`item__contents ${textClassName ?? ''}`.trim()}>{children}</p>}
+        </div>
+      )}
     </section>
   )
 }

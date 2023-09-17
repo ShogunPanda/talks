@@ -1,0 +1,371 @@
+---
+config: common.config
+document:
+  title: Milo, a new HTTP parser for Node.js
+  titleFormatted: |
+    Milo, a new HTTP parser for Node.js
+  author: common.author
+  company: common.company
+slides:
+  - layout: cover
+  - layout: hello
+  - layout: nearform
+  - layout: separator
+    title: We all love HTTP!
+    image: '@talk/love.webp'
+    classes:
+      slide: bg-nf-brunch-pink
+  - layout: separator
+    title: Which HTTP are you?
+    image: '@talk/palette.webp'
+    classes:
+      slide: bg-nf-orange-split
+  - title: The choice is narrow
+    content: Even if HTTP is almost 25 years old, only 3 current version of it exists as of today.
+    items:
+      - index: 1
+        title: HTTP/1.1
+        text: The last version of the initial protocol. By far the most famous and most used.
+      - index: 2
+        title: HTTP/2
+        text: Developed on top of SPDY to remove some problems of HTTP.
+      - index: 3
+        title: HTTP/3
+        text: Developed on top of QUIC to solve TCP problems.
+  - title: What about Node.js?
+    items:
+      - index: 1+2
+        title: HTTP/1.1 and HTTP/2
+        text: Node.js has a stable implementation.
+      - index: 3
+        title: HTTP/3
+        text: A PR is under review as we speak.
+    options:
+      horizontal: true
+  - layout: separator
+    title: Let's focus!
+    image: '@talk/focus.webp'
+    classes:
+      slide: bg-nf-midnight-blue
+  - layout: side
+    title: The current parser
+    content:
+      - '**llhttp** is the current HTTP parser.'
+      - Written by Fedor Indutny in 2019, is the default since Node.js 12.
+    image: '@talk/llhttp.webp'
+  - layout: side
+    title: How it works?
+    content:
+      - 'llhttp is a state based HTTP parser based on llparse.'
+      - llparse is capable to generate a very performant C code out of a TypeScript description of the possible states.
+    image: '@talk/llhttp_states.webp'
+  - title: "llhttp: what's wrong with it?"
+    items:
+      - icon: 'bug'
+        title: Hard to debug and release
+        text: The transpilation makes hard to debug issues.
+      - icon: 'history'
+        title: Backward compatibility
+        text: Supporting different versions of HTTP (included obsoletes) introduces unneeded complexity.
+      - icon: 'heart-handshake'
+        title: You give them a finger, they take the arm
+        text: Leniency-prone approach opens the door for a lot of edge cases.
+  - layout: separator
+    title: Do we have the solution?
+    image: '@talk/solution.webp'
+    classes:
+      slide: bg-nf-brunch-pink
+  - layout: separator
+    title: Yes, start fresh!
+    image: '@talk/fresh.webp'
+    classes:
+      slide: bg-nf-orange-split
+  - layout: separator
+    title: Say hello to Milo!
+    image: '@talk/milo.webp'
+    classes:
+      slide: bg-nf-brunch-pink
+  - layout: side
+    title: Let's drop the bomb!
+    items:
+      - icon: 'source-code'
+        title: Milo is written in Rust
+        text: The language has proven flexible and performant to achieve the task.
+      - icon: 'history'
+        title: I did not know it before Milo
+        text: I purposely choose Rust to see how hard is to embrace for a new prospect contributor.
+      - icon: 'heart'
+        title: Be cool
+        text: I don't want to start another language flame. *Please.*
+    image: '@talk/rust-logo.webp'
+  - title: Do not throw the goods away
+    items:
+      - icon: 'heart'
+        title: llhttp is a piece of art
+        text: It deeply inspires Milo and I kept most of his architecture. *Kudos to Fedor!*
+      - icon: 'status-change'
+        title: Still a state machine, but simpler
+        text: llhttp has **80** possible states, Milo only *33*.
+      - icon: 'git-branch'
+        title: Declarative, reinvented
+        text: Rust enables to declare states with no code restriction.
+  - layout: separator
+    title: How is that possible?
+    image: '@talk/dog.webp'
+    classes:
+      slide: bg-nf-midnight-blue
+  - layout: separator
+    title: It's all in the macros!
+    image: '@talk/macro.webp'
+    classes:
+      slide: bg-nf-orange-split
+  - title: Rust macro system is insanely powerful
+    items:
+      - icon: 'plug-connected'
+        title: It is evaluated at compile time
+        text: The executed code is inherently optimized.
+      - icon: 'brain'
+        title: No code limitation
+        text: As long as you return valid Rust code, everything is permitted.
+      - icon: 'bug'
+        title: Easily debuggable
+        text: Via [*cargo-expand*](https://github.com/dtolnay/cargo-expand), it's easy to see what is the final compiled code.
+  - title: Examples are worth more than 1000 words
+    items:
+      - code:
+          language: rust
+          content: |
+            state!(chunk_end, {
+              match data {
+                crlf!() => {
+                  parser.chunk_size = 0;
+                  parser.remaining_chunk_size = 0;
+                  move_to!(chunk_length, 2)
+                }
+                otherwise!(2) => fail!(
+                  UNEXPECTED_CHARACTER, 
+                  "Unexpected character after chunk data"
+                ),
+                _ => suspend!(),
+              }
+            });
+        classes:
+          item: flex-initial
+          code: w-auto h-auto mb-0 narrow text-left
+      - image: '@talk/arrow-right.webp'
+        classes:
+          item: flex-initial
+          image: w-auto h-auto min-w-auto min-h-auto h-0_5sp mx-4ch mb-0
+      - code:
+          language: rust
+          content: |
+            #[inline(always)]
+            fn state_chunk_end(parser: &mut Parser, data: &[c_uchar]) -> isize {
+                let mut data = data;
+                match data {
+                    [b'\r', b'\n', ..] => {
+                        parser.chunk_size = 0;
+                        parser.remaining_chunk_size = 0;
+                        parser.move_to(State::CHUNK_LENGTH, (2) as isize)
+                    }
+                    [_u0, _u1, ..] => {
+                        parser.fail_str(
+                          Error::UNEXPECTED_CHARACTER,
+                          "Unexpected character after chunk data",
+                        )
+                    }
+                    _ => SUSPEND,
+                }
+            }
+        classes:
+          item: flex-initial
+          code: w-auto h-auto mb-0 text-left
+    classes:
+      items: flex flex-1 gap-x-0sp font-size-0_8em items-center
+    options:
+      horizontal: true
+      skipSpacer: true
+      skipDefaultClasses: true
+      noGap: true
+  - layout: separator
+    title: What about resources?
+    image: '@talk/piggy-bank.webp'
+    classes:
+      slide: bg-nf-midnight-blue
+  - title: Milo has very small memory footprint
+    items:
+      - icon: 'rocket'
+        title: (Almost) No copy eager parsing
+        text: Data is analyzed inline without copying it.
+      - icon: 'link'
+        title: Only one exception
+        text: When parsing, only the unconsumed part of the input is copied in the parser.
+      - icon: 'heart'
+        title: Convenience at your service
+        text: Milo manages unconsumed data for you, making your life easier.
+  - layout: image
+    title: Strict, period.
+    image: '@talk/wall.webp'
+    classes:
+      slide: bg-nf-brunch-pink
+  - title: Let's see it in action! (Rust)
+    code:
+      language: rust
+      content: |
+        use std::os::raw::c_uchar;
+        use std::{slice, str};
+        use milo::Parser;
+
+        fn log(what: &str, p: &mut Parser, data: *const c_uchar, size: usize) -> isize {
+          let contents = unsafe { str::from_utf8_unchecked(slice::from_raw_parts(data, size)) };
+          println!("Pos={} {}: {}", p.position, what, contents);
+          0
+        }
+
+        fn main() {
+          let mut parser = Parser::new();
+          let message = "HTTP/1.1 200 OK\r\nContent-Length: 3\r\n\r\nabc";
+
+          parser.callbacks.on_status = |p, data, size| { log("Status", p, data, size) };
+          parser.callbacks.on_header_name = |p, data, size| { log("Header name", p, data, size) };
+          parser.callbacks.on_header_value = |p, data, size| { log("Header value", p, data, size) };        
+          parser.callbacks.on_data = |p, data, size| { log("Body", p, data, size) };
+
+          parser.parse(message.as_ptr(), message.len());
+        }
+  - title: Output (Rust)
+    code:
+      language: console
+      content: |
+        shogun@panda:~$ cargo run
+        Pos=9 Status: 200
+        Pos=17 Header name: Content-Length
+        Pos=33 Header value: 3
+        Pos=38 Body: abc
+  - layout: separator
+    title: But Node.js uses C++!
+    image: '@talk/incompatible.webp'
+    classes:
+      slide: bg-nf-brunch-pink
+  - layout: side
+    title: The C++ workflow
+    image: '@talk/cbindgen.webp'
+    items:
+      - icon: 'puzzle-2'
+        title: 'A separate tool generates the headers'
+        text: '[*cbindgen*](https://github.com/mozilla/cbindgen) generates a fully working C or C++ header file. Only a small TOML file is needed.'
+      - icon: 'link'
+        title: Cargo generates a static library
+        text: Rust supports this out of the box. The generated *libmilo.a* file can be statically linked in any C/C++ executable.
+  - title: Let's see it in action! (C++)
+    code:
+      language: rust
+      content: |
+        #include "milo.h"
+        #include "stdio.h"
+        #include "string.h"
+
+        int main()
+        {
+          milo::Parser *parser = milo::milo_create();
+          const char *message = "HTTP/1.1 200 OK\r\nContent-Length: 3\r\n\r\nabc";
+
+          parser->callbacks.on_data = [](milo::Parser *p, const unsigned char *data, uintptr_t size) -> intptr_t
+          {
+            char *content = reinterpret_cast<char *>(malloc(sizeof(char) * 1000));
+            strncpy(content, reinterpret_cast<const char *>(data), size);
+
+            printf("Pos=%lu Body: %s\n", p->position, content);
+            free(content);
+            return 0;
+          };
+
+          milo::milo_parse(parser, reinterpret_cast<const unsigned char *>(message), strlen(message));
+        }
+  - title: Output (C++)
+    code:
+      language: console
+      content: |
+        shogun@panda:~$ clang++ -std=c++11 -o example libmilo.a main.cc
+        shogun@panda:~$ ./example
+        Pos=38 Body: abc
+  - layout: image
+    title: And that's Milo!
+    image: '@talk/safe.webp'
+  - title: Performance (preliminary)
+    items:
+      - code:
+          language: console
+          content: |
+            ======================================== llhttp ====================================
+
+            ┌─────────┬──────┬──────┬───────┬──────┬─────────┬─────────┬──────┐
+            │ Stat    │ 2.5% │ 50%  │ 97.5% │ 99%  │ Avg     │ Stdev   │ Max  │
+            ├─────────┼──────┼──────┼───────┼──────┼─────────┼─────────┼──────┤
+            │ Latency │ 0 ms │ 0 ms │ 0 ms  │ 0 ms │ 0.01 ms │ 0.02 ms │ 5 ms │
+            └─────────┴──────┴──────┴───────┴──────┴─────────┴─────────┴──────┘
+            ┌───────────┬─────────┬─────────┬─────────┬─────────┬──────────┬─────────┬─────────┐
+            │ Stat      │ 1%      │ 2.5%    │ 50%     │ 97.5%   │ Avg      │ Stdev   │ Min     │
+            ├───────────┼─────────┼─────────┼─────────┼─────────┼──────────┼─────────┼─────────┤
+            │ Req/Sec   │ 71679   │ 71679   │ 73919   │ 75199   │ 73579.64 │ 1149.36 │ 71670   │
+            ├───────────┼─────────┼─────────┼─────────┼─────────┼──────────┼─────────┼─────────┤
+            │ Bytes/Sec │ 6.02 MB │ 6.02 MB │ 6.21 MB │ 6.31 MB │ 6.18 MB  │ 96.1 kB │ 6.02 MB │
+            └───────────┴─────────┴─────────┴─────────┴─────────┴──────────┴─────────┴─────────┘
+
+            Req/Bytes counts sampled once per second.
+            # of samples: 11
+
+            809k requests in 11.01s, 68 MB read
+        classes:
+          item: flex
+          code: w-auto h-auto mb-0 narrow text-left font-size-0_8em
+      - code:
+          language: console
+          content: |
+            ========================================  milo  ====================================
+
+            ┌─────────┬──────┬──────┬───────┬──────┬─────────┬─────────┬──────┐
+            │ Stat    │ 2.5% │ 50%  │ 97.5% │ 99%  │ Avg     │ Stdev   │ Max  │
+            ├─────────┼──────┼──────┼───────┼──────┼─────────┼─────────┼──────┤
+            │ Latency │ 0 ms │ 0 ms │ 0 ms  │ 0 ms │ 0.01 ms │ 0.03 ms │ 7 ms │
+            └─────────┴──────┴──────┴───────┴──────┴─────────┴─────────┴──────┘
+            ┌───────────┬─────────┬─────────┬─────────┬─────────┬──────────┬─────────┬─────────┐
+            │ Stat      │ 1%      │ 2.5%    │ 50%     │ 97.5%   │ Avg      │ Stdev   │ Min     │
+            ├───────────┼─────────┼─────────┼─────────┼─────────┼──────────┼─────────┼─────────┤
+            │ Req/Sec   │ 70015   │ 70015   │ 71935   │ 72575   │ 71601.46 │ 767.08  │ 69985   │
+            ├───────────┼─────────┼─────────┼─────────┼─────────┼──────────┼─────────┼─────────┤
+            │ Bytes/Sec │ 5.88 MB │ 5.88 MB │ 6.04 MB │ 6.09 MB │ 6.02 MB  │ 64.3 kB │ 5.88 MB │
+            └───────────┴─────────┴─────────┴─────────┴─────────┴──────────┴─────────┴─────────┘
+
+            Req/Bytes counts sampled once per second.
+            # of samples: 11
+
+            788k requests in 11.01s, 66.2 MB read
+        classes:
+          item: flex
+          code: w-auto h-auto mb-0 narrow text-left font-size-0_8em
+    classes:
+      items: flex flex-1 gap-x-2ch font-size-0_8em items-center
+    options:
+      horizontal: true
+      skipSpacer: true
+      skipDefaultClasses: true
+      noGap: true
+  - title: What's next?
+    items:
+      - icon: 'book'
+        title: Documentation
+        text: At the moment is completely missing as I focused on the implementation only.
+      - icon: 'rocket'
+        title: Performance improvement
+        text: I want to at least match llhttp performance. *Or beat it!*
+      - icon: 'checks'
+        title: Rust validation
+        text: Somebody expert in Rust needs to validate the code I have written.
+      - icon: 'puzzle-2'
+        title: Complete integration with Node.js
+        text: I currently just focused on make Milo link with Node.js on my machine. *I need help on this.*
+  - layout: quote
+    sentence: A person who never made a mistake never tried anything new.
+    author: Albert Einstein
+  - layout: end

@@ -29,7 +29,7 @@
   "dependencies": {
     "@unocss/preset-wind": "^0.47.4",
     "@unocss/transformer-directives": "^0.47.4",
-    "freya-slides": "^0.23.0",
+    "freya-slides": "^0.24.3",
     "react": "^18.2.0",
     "tsx": "^3.12.1"
   },

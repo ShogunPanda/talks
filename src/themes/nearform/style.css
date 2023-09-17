@@ -328,6 +328,13 @@ a:focus {
   }
 }
 
+.code.narrow {
+  pre {
+    @apply min-w-3sp;
+  }
+}
+
+
 .cover {
   &__contents {
     grid-template:

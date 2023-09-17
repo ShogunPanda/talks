@@ -7,6 +7,7 @@ export interface Item {
   title?: string
   text?: string
   qr?: string
+  code?: FreyaSlide['code']
   classes?: {
     item?: string
     index?: string
@@ -15,6 +16,7 @@ export interface Item {
     title?: string
     text?: string
     qr?: string
+    code?: string
   }
 }
 
