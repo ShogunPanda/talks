@@ -3,7 +3,7 @@ import { parseComplexContent, SlideWrapper } from '../components/common.js'
 import { Slide } from '../models.js'
 
 export default function SeparatorLayout(props: SlideProps<Slide>): JSX.Element {
-  const { talk, index, slide } = props
+  const { environment, theme, talk, index, slide } = props
 
   const {
     title,
@@ -16,6 +16,9 @@ export default function SeparatorLayout(props: SlideProps<Slide>): JSX.Element {
 
   return (
     <SlideWrapper
+      environment={environment}
+      theme={theme}
+      talk={talk}
       slide={slide}
       index={index}
       className={`p-0 flex-row items-center justify-start ${className}`.trim()}

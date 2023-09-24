@@ -87,8 +87,8 @@ slides:
         text: Even if the client is able to handle data it didn’t ask for, <em>we are breaking the specification</em>.
   - layout: raw
     content: |
-      <h1 class="text-nf-midnight-blue no-border font-size-150pt line-height-1 m-0 p-0">BAD!
-      <h1 class="text-white no-border font-size-150pt line-height-1 m-0 p-0">DON'T!
+      <h1 class="text-nf-midnight-blue no-border font-size-150pt line-height-1 m-0 p-0">BAD!</h1>
+      <h1 class="text-white no-border font-size-150pt line-height-1 m-0 p-0">DON'T!</h1>
     classes:
       slide: bg-nf-brunch-pink items-center justify-center p-0
       raw: flex flex-1 w-full h-full flex-col items-center justify-center
@@ -96,18 +96,20 @@ slides:
   - layout: image
     title: Do we have a choice?
     image: '@talk/alternatives.webp'
-  - title: Meet GraphQL extensions
-    content: The `extensions` field is already documented in the specification and it's perfect to ensure both compatibility and expandability.
-    items:
-      - icon: source-code
-        title: Extensions are for developers
-        text: The specification specifically states that field is reserved for developers to extend the protocol.
-      - icon: circuit-changeover
-        title: Existing clients will ignore them
-        text: Unless configured to, clients will ignore the field and the server is still specification compliant.
-    options:
-      horizontal: true
-  - title: "Let's implement an enriching proxy"
+  - layout: separator
+    title: |
+      <span class="whitespace-nowrap">Yes, let's make<br/> an <span class="text-nf-midnight-blue">enriching</span><br/> proxy!</span>
+    image: '@talk/san-bernardo.webp'
+    classes:
+      slide: bg-nf-orange-split
+  - title: Check it out!
+    content:
+      - We can reuse the parsing and serialization from the reference GraphQL Javascript implementation.
+      - qr: https://github.com/ShogunPanda/graphql-enrich-proxy
+      - <span class="font-bold block text-center">[https://github.com/ShogunPanda/graphql-enrich-proxy](https://github.com/ShogunPanda/graphql-enrich-proxy)</span>
+    classes:
+      qr: w-2sp h-2sp mx-auto mb-0_2sp flex-1
+  - title: 'How it works'
     items:
       - index: 1
         title: Analyze the query
@@ -126,13 +128,17 @@ slides:
         text: Store the additional data in the extensions field, using the JSONPath selector as the key.
     options:
       noGap: true
-  - title: Check it out!
-    content:
-      - We can reuse the parsing and serialization from the reference GraphQL Javascript implementation.
-      - qr: https://github.com/ShogunPanda/graphql-enrich-proxy
-      - <span class="font-bold block text-center">[https://github.com/ShogunPanda/graphql-enrich-proxy](https://github.com/ShogunPanda/graphql-enrich-proxy)</span>
-    classes:
-      qr: w-2sp h-2sp mx-auto mb-0_2sp flex-1
+  - title: Meet GraphQL extensions
+    content: The `extensions` field is already documented in the specification and it's perfect to ensure both compatibility and expandability.
+    items:
+      - icon: source-code
+        title: Extensions are for developers
+        text: The specification specifically states that field is reserved for developers to extend the protocol.
+      - icon: circuit-changeover
+        title: Existing clients will ignore them
+        text: Unless configured to, clients will ignore the field and the server is still specification compliant.
+    options:
+      horizontal: true
   - layout: code
     title: Overview
     code:

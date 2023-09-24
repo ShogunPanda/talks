@@ -4,7 +4,7 @@ import { Items } from '../components/item.js'
 import { Slide } from '../models.js'
 
 export default function DefaultLayout(props: SlideProps<Slide>): JSX.Element {
-  const { talk, index, slide } = props
+  const { environment, theme, talk, index, slide } = props
 
   const {
     title,
@@ -19,6 +19,9 @@ export default function DefaultLayout(props: SlideProps<Slide>): JSX.Element {
 
   return (
     <SlideWrapper
+      environment={environment}
+      theme={theme}
+      talk={talk}
       slide={slide}
       index={index}
       className={`p-0 flex-row items-start justify-start ${className}`.trim()}

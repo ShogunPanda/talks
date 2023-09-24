@@ -3,7 +3,7 @@ import { SlideWrapper } from '../components/common.js'
 import { Slide } from '../models.js'
 
 export default function SideLayout(props: SlideProps<Slide>): JSX.Element {
-  const { index, slide } = props
+  const { index, slide, environment, theme, talk } = props
 
   const {
     title,
@@ -12,7 +12,14 @@ export default function SideLayout(props: SlideProps<Slide>): JSX.Element {
   } = slide
 
   return (
-    <SlideWrapper slide={slide} index={index} className={`${!title ? 'p-0_1sp' : ''} ${className}`.trim()}>
+    <SlideWrapper
+      environment={environment}
+      theme={theme}
+      talk={talk}
+      slide={slide}
+      index={index}
+      className={`${!title ? 'p-0_1sp' : ''} ${className}`.trim()}
+    >
       {title && <h1 dangerouslySetInnerHTML={{ __html: parseContent(title) }} />}
 
       <div className={`flex items-center justify-center h-full min-w-40p ${highlightClassName ?? ''}`.trim()}>

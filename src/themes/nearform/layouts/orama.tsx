@@ -1,8 +1,8 @@
-import { resolveImageUrl, SlideProps, Svg, SvgIcon } from 'freya-slides'
+import { resolveImageUrl, SlideProps, Svg } from 'freya-slides'
 import { SlideWrapper } from '../components/common.js'
 import { Slide } from '../models.js'
 
-export default function OramaLayout({ talk, slide, index }: SlideProps<Slide>): JSX.Element {
+export default function OramaLayout({ environment, theme, talk, slide, index }: SlideProps<Slide>): JSX.Element {
   const { id } = talk
 
   const oramaBackground = resolveImageUrl('nearform', id, '@theme/orama-background.webp')
@@ -10,6 +10,9 @@ export default function OramaLayout({ talk, slide, index }: SlideProps<Slide>): 
 
   return (
     <SlideWrapper
+      environment={environment}
+      theme={theme}
+      talk={talk}
       slide={slide}
       index={index}
       className="orama justify-center text-#D5D4DC gap-y-0_4sp"

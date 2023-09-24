@@ -4,7 +4,7 @@ import { Items } from '../components/item.js'
 import { Slide } from '../models.js'
 
 export default function SideLayout(props: SlideProps<Slide>): JSX.Element {
-  const { talk, index, slide } = props
+  const { environment, theme, talk, index, slide } = props
 
   const {
     title,
@@ -19,7 +19,14 @@ export default function SideLayout(props: SlideProps<Slide>): JSX.Element {
   const imageUrl = resolveImageUrl('nearform', talk.id, image)
 
   return (
-    <SlideWrapper slide={slide} index={index} className={`freya__slide--with-half p-0 ${className ?? ''}`.trim()}>
+    <SlideWrapper
+      environment={environment}
+      theme={theme}
+      talk={talk}
+      slide={slide}
+      index={index}
+      className={`freya__slide--with-half p-0 ${className ?? ''}`.trim()}
+    >
       <div className={`freya__slide__half min-w-5sp p-0_5sp self-start flex-col ${highlight ? 'flex-2' : 'flex-1'}`}>
         {title && <h1 dangerouslySetInnerHTML={{ __html: parseContent(title) }} />}
 

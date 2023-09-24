@@ -2,7 +2,7 @@ import { resolveImageUrl, SlideProps, Svg, SvgIcon } from 'freya-slides'
 import { SlideWrapper } from '../components/common.js'
 import { Slide } from '../models.js'
 
-export default function NearFormLayout({ talk, slide, index }: SlideProps<Slide>): JSX.Element {
+export default function NearFormLayout({ environment, theme, talk, slide, index }: SlideProps<Slide>): JSX.Element {
   const {
     id,
     document: {
@@ -14,6 +14,9 @@ export default function NearFormLayout({ talk, slide, index }: SlideProps<Slide>
 
   return (
     <SlideWrapper
+      environment={environment}
+      theme={theme}
+      talk={talk}
       slide={slide}
       index={index}
       className="nearform p-0 justify-between bg-nf-darkest-blue text-white"

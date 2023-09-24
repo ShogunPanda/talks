@@ -118,6 +118,20 @@ a:focus {
   }
 }
 
+.page-qr {
+  @apply absolute;
+  @apply z-10001;
+  @apply top-0_2sp;
+  @apply right-0_3sp;
+  @apply w-0_35sp;
+  @apply pb-0_05sp;
+
+  &--white {
+    @apply fill-white;
+    @apply border-white;
+  }
+}
+
 .big-title {
   @apply font-size-40pt;
   @apply font-bold;
@@ -333,7 +347,6 @@ a:focus {
     @apply min-w-3sp;
   }
 }
-
 
 .cover {
   &__contents {

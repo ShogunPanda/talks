@@ -2,7 +2,7 @@ import { resolveImageUrl, SlideProps, Svg } from 'freya-slides'
 import { SlideWrapper } from '../components/common.js'
 import { Slide } from '../models.js'
 
-export default function EndLayout({ talk, slide, index }: SlideProps<Slide>): JSX.Element {
+export default function EndLayout({ environment, theme, talk, slide, index }: SlideProps<Slide>): JSX.Element {
   const {
     id,
     document: { author }
@@ -12,6 +12,9 @@ export default function EndLayout({ talk, slide, index }: SlideProps<Slide>): JS
 
   return (
     <SlideWrapper
+      environment={environment}
+      theme={theme}
+      talk={talk}
       slide={slide}
       index={index}
       className="end p-0 bg-no-repeat bg-cover"

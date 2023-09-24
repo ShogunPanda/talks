@@ -2,7 +2,7 @@ import { parseContent, SlideProps, SvgIcon } from 'freya-slides'
 import { SlideWrapper } from '../components/common.js'
 import { Slide } from '../models.js'
 
-export default function SideLayout({ slide, index }: SlideProps<Slide>): JSX.Element {
+export default function QuoteLayout({ environment, theme, slide, talk, index }: SlideProps<Slide>): JSX.Element {
   const {
     title,
     sentence,
@@ -17,6 +17,9 @@ export default function SideLayout({ slide, index }: SlideProps<Slide>): JSX.Ele
 
   return (
     <SlideWrapper
+      environment={environment}
+      theme={theme}
+      talk={talk}
       slide={slide}
       index={index}
       className={`${backgroundColor} ${className ?? ''}`.trim()}

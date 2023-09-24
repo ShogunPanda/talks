@@ -15,6 +15,9 @@ export default function CoverLayout({ environment, theme, talk, slide, index }: 
 
   return (
     <SlideWrapper
+      environment={environment}
+      theme={theme}
+      talk={talk}
       slide={slide}
       index={index}
       className="cover justify-end bg-nf-darkest-blue text-white"

@@ -1,8 +1,22 @@
-import { parseContent, QRCode, renderNotes, SlideProps, Svg, SvgIcon } from 'freya-slides'
+import {
+  Context,
+  Slide as FreyaSlide,
+  QRCode,
+  SlideProps,
+  Svg,
+  SvgIcon,
+  Talk,
+  Theme,
+  parseContent,
+  renderNotes
+} from 'freya-slides'
 import { CSSProperties, ReactNode } from 'react'
 import { Slide } from '../models.js'
 
 interface SlideWrapperProps {
+  environment: Context['environment']
+  theme: Theme
+  talk: Talk
   slide: Slide
   index: number
   className?: string
@@ -12,12 +26,12 @@ interface SlideWrapperProps {
   children: ReactNode
 }
 
-interface DecorationProps {
-  slide: Slide
-  defaultLogoColor: 'black' | 'white'
-}
+type DecorationProps = Omit<SlideWrapperProps, 'skipDecorations' | 'children'>
 
 export function SlideWrapper({
+  environment,
+  theme,
+  talk,
   slide,
   index,
   style,
@@ -42,18 +56,36 @@ export function SlideWrapper({
       {children}
       <div className="freya__slide__progress" />
 
-      {!skipDecorations && !optionSkipDecorations && <Decorations slide={slide} defaultLogoColor={defaultLogoColor} />}
-      <template data-freya-id="slide-notes" dangerouslySetInnerHTML={{ __html: renderNotes(slide) }} />
+      {!skipDecorations && !optionSkipDecorations && (
+        <Decorations
+          environment={environment}
+          theme={theme}
+          talk={talk}
+          slide={slide}
+          index={index}
+          defaultLogoColor={defaultLogoColor}
+        />
+      )}
+      <template data-freya-id="slide-notes" dangerouslySetInnerHTML={{ __html: renderNotes(slide as FreyaSlide) }} />
     </article>
   )
 }
 
-export function Decorations({ slide, defaultLogoColor }: DecorationProps): JSX.Element {
+export function Decorations({
+  environment,
+  theme,
+  talk,
+  slide,
+  index,
+  defaultLogoColor
+}: DecorationProps): JSX.Element {
+  const { urls } = theme
+  const { id, slidesPadding } = talk
   const {
     sequence,
     icon,
     logo,
-    classes: { icon: iconClasses, sequence: sequenceClasses }
+    classes: { icon: iconClasses, sequence: sequenceClasses, qr: qrClassName }
   } = slide
 
   return (
@@ -67,6 +99,16 @@ export function Decorations({ slide, defaultLogoColor }: DecorationProps): JSX.E
       {!sequence && icon && (
         <SvgIcon name={icon} className={`callout-icon ${iconClasses ?? ''}`.trim()} theme="nearform" />
       )}
+      <QRCode
+        data={`${urls[environment]}/${id}/${index.toString().padStart(slidesPadding, '0')}.pdf`}
+        // image={resolveImageUrl(themeId, id, '@theme/icons/world.svg')}
+        // imageRatio={1}
+        classes={{
+          code: `page-qr page-qr--${qrClassName ?? defaultLogoColor}`.trim(),
+          qr: 'text-black bg-white',
+          image: 'w-0_35sp h-auto'
+        }}
+      />
       <Svg theme="nearform" contents="@theme/nearform-logo.svg" className={`logo logo--${logo ?? defaultLogoColor}`} />
     </>
   )
