@@ -52,22 +52,11 @@ export default function HelloLayout({ environment, theme, talk, slide, index }: 
         </Item>
 
         <Item
-          qr="https://cowtech.it"
-          className="items-center min-h-0"
-          talk={talk.id}
-          theme="nearform"
-          classes={{ item: 'grid-c', icon: 'fill-black' }}
-          horizontal={true}
-        >
-          <a href="https://cowtech.it">https://cowtech.it</a>
-        </Item>
-
-        <Item
           icon="brand-twitter"
           className="items-center min-h-0"
           talk={talk.id}
           theme="nearform"
-          classes={{ item: 'grid-d', icon: 'fill-black' }}
+          classes={{ item: 'grid-c', icon: 'fill-black' }}
           horizontal={true}
         >
           <a
@@ -81,12 +70,26 @@ export default function HelloLayout({ environment, theme, talk, slide, index }: 
           className="items-center min-h-0"
           talk={talk.id}
           theme="nearform"
-          classes={{ item: 'grid-e', icon: 'fill-black' }}
+          classes={{ item: 'grid-d', icon: 'fill-black' }}
           horizontal={true}
         >
           <a
             href={`https://github.com/${author.github}`}
             dangerouslySetInnerHTML={{ __html: parseContent(author.github) }}
+          />
+        </Item>
+
+        <Item
+          icon="brand-linkedin"
+          className="items-center min-h-0"
+          talk={talk.id}
+          theme="nearform"
+          classes={{ item: 'grid-e', icon: 'stroke-width-2' }}
+          horizontal={true}
+        >
+          <a
+            href={`https://linkedin.com/in/${author.linkedin}`}
+            dangerouslySetInnerHTML={{ __html: parseContent(author.linkedin) }}
           />
         </Item>
       </div>
