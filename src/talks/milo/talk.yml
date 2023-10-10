@@ -214,22 +214,23 @@ slides:
       content: |
         use std::os::raw::c_uchar;
         use std::{slice, str};
+
         use milo::Parser;
 
-        fn log(what: &str, p: &mut Parser, data: *const c_uchar, size: usize) -> isize {
+        fn log(what: &str, p: &Parser, data: *const c_uchar, size: usize) -> isize {
           let contents = unsafe { str::from_utf8_unchecked(slice::from_raw_parts(data, size)) };
-          println!("Pos={} {}: {}", p.position, what, contents);
+          println!("Pos={} {}: {}", p.position.get(), what, contents);
           0
         }
 
         fn main() {
-          let mut parser = Parser::new();
+          let parser = Parser::new();
           let message = "HTTP/1.1 200 OK\r\nContent-Length: 3\r\n\r\nabc";
 
-          parser.callbacks.on_status = |p, data, size| { log("Status", p, data, size) };
-          parser.callbacks.on_header_name = |p, data, size| { log("Header name", p, data, size) };
-          parser.callbacks.on_header_value = |p, data, size| { log("Header value", p, data, size) };        
-          parser.callbacks.on_data = |p, data, size| { log("Body", p, data, size) };
+          parser.callbacks.on_status.set(|p, data, size| log("Status", p, data, size));
+          parser.callbacks.on_header_name.set(|p, data, size| log("Header name", p, data, size));
+          parser.callbacks.on_header_value.set(|p, data, size| log("Header value", p, data, size));
+          parser.callbacks.on_data.set(|p, data, size| log("Body", p, data, size));
 
           parser.parse(message.as_ptr(), message.len());
         }
@@ -265,22 +266,22 @@ slides:
         #include "stdio.h"
         #include "string.h"
 
-        int main()
-        {
-          milo::Parser *parser = milo::milo_create();
-          const char *message = "HTTP/1.1 200 OK\r\nContent-Length: 3\r\n\r\nabc";
+        typedef unsigned char uchar_t;
 
-          parser->callbacks.on_data = [](milo::Parser *p, const unsigned char *data, uintptr_t size) -> intptr_t
-          {
-            char *content = reinterpret_cast<char *>(malloc(sizeof(char) * 1000));
-            strncpy(content, reinterpret_cast<const char *>(data), size);
+        int main() {
+          milo::Parser* parser = milo::milo_create();
+          const char* message = "HTTP/1.1 200 OK\r\nContent-Length: 3\r\n\r\nabc";
 
-            printf("Pos=%lu Body: %s\n", p->position, content);
+          parser->callbacks.on_data = [](const milo::Parser* p, const uchar_t* data, uintptr_t size) -> intptr_t {
+            uchar_t* content = reinterpret_cast<uchar_t*>(malloc(sizeof(uchar_t) * size));
+            strncpy(reinterpret_cast<char*>(content), reinterpret_cast<const char*>(data), size);
+
+            printf("Pos=%llu Body: %s\n", p->position, content);
             free(content);
             return 0;
           };
 
-          milo::milo_parse(parser, reinterpret_cast<const unsigned char *>(message), strlen(message));
+          milo::milo_parse(parser, reinterpret_cast<const uchar_t*>(message), strlen(message));
         }
   - title: Output (C++)
     code:
@@ -299,23 +300,23 @@ slides:
           content: |
             ======================================== llhttp ====================================
 
-            ┌─────────┬──────┬──────┬───────┬──────┬─────────┬─────────┬──────┐
-            │ Stat    │ 2.5% │ 50%  │ 97.5% │ 99%  │ Avg     │ Stdev   │ Max  │
-            ├─────────┼──────┼──────┼───────┼──────┼─────────┼─────────┼──────┤
-            │ Latency │ 0 ms │ 0 ms │ 0 ms  │ 0 ms │ 0.01 ms │ 0.02 ms │ 5 ms │
-            └─────────┴──────┴──────┴───────┴──────┴─────────┴─────────┴──────┘
-            ┌───────────┬─────────┬─────────┬─────────┬─────────┬──────────┬─────────┬─────────┐
-            │ Stat      │ 1%      │ 2.5%    │ 50%     │ 97.5%   │ Avg      │ Stdev   │ Min     │
-            ├───────────┼─────────┼─────────┼─────────┼─────────┼──────────┼─────────┼─────────┤
-            │ Req/Sec   │ 71679   │ 71679   │ 73919   │ 75199   │ 73579.64 │ 1149.36 │ 71670   │
-            ├───────────┼─────────┼─────────┼─────────┼─────────┼──────────┼─────────┼─────────┤
-            │ Bytes/Sec │ 6.02 MB │ 6.02 MB │ 6.21 MB │ 6.31 MB │ 6.18 MB  │ 96.1 kB │ 6.02 MB │
-            └───────────┴─────────┴─────────┴─────────┴─────────┴──────────┴─────────┴─────────┘
+            ┌─────────┬──────┬──────┬───────┬──────┬─────────┬─────────┬───────┐
+            │ Stat    │ 2.5% │ 50%  │ 97.5% │ 99%  │ Avg     │ Stdev   │ Max   │
+            ├─────────┼──────┼──────┼───────┼──────┼─────────┼─────────┼───────┤
+            │ Latency │ 0 ms │ 0 ms │ 0 ms  │ 0 ms │ 0.01 ms │ 0.12 ms │ 17 ms │
+            └─────────┴──────┴──────┴───────┴──────┴─────────┴─────────┴───────┘
+            ┌───────────┬─────────┬─────────┬─────────┬─────────┬─────────┬─────────┬─────────┐
+            │ Stat      │ 1%      │ 2.5%    │ 50%     │ 97.5%   │ Avg     │ Stdev   │ Min     │
+            ├───────────┼─────────┼─────────┼─────────┼─────────┼─────────┼─────────┼─────────┤
+            │ Req/Sec   │ 25119   │ 25119   │ 29055   │ 30447   │ 28808   │ 1411.49 │ 25114   │
+            ├───────────┼─────────┼─────────┼─────────┼─────────┼─────────┼─────────┼─────────┤
+            │ Bytes/Sec │ 2.11 MB │ 2.11 MB │ 2.44 MB │ 2.56 MB │ 2.42 MB │ 118 kB  │ 2.11 MB │
+            └───────────┴─────────┴─────────┴─────────┴─────────┴─────────┴─────────┴─────────┘
 
             Req/Bytes counts sampled once per second.
             # of samples: 11
 
-            809k requests in 11.01s, 68 MB read
+            317k requests in 11.02s, 26.6 MB read
         classes:
           item: flex
           code: w-auto h-auto mb-0 narrow text-left font-size-0_8em
@@ -324,23 +325,23 @@ slides:
           content: |
             ========================================  milo  ====================================
 
-            ┌─────────┬──────┬──────┬───────┬──────┬─────────┬─────────┬──────┐
-            │ Stat    │ 2.5% │ 50%  │ 97.5% │ 99%  │ Avg     │ Stdev   │ Max  │
-            ├─────────┼──────┼──────┼───────┼──────┼─────────┼─────────┼──────┤
-            │ Latency │ 0 ms │ 0 ms │ 0 ms  │ 0 ms │ 0.01 ms │ 0.03 ms │ 7 ms │
-            └─────────┴──────┴──────┴───────┴──────┴─────────┴─────────┴──────┘
-            ┌───────────┬─────────┬─────────┬─────────┬─────────┬──────────┬─────────┬─────────┐
-            │ Stat      │ 1%      │ 2.5%    │ 50%     │ 97.5%   │ Avg      │ Stdev   │ Min     │
-            ├───────────┼─────────┼─────────┼─────────┼─────────┼──────────┼─────────┼─────────┤
-            │ Req/Sec   │ 70015   │ 70015   │ 71935   │ 72575   │ 71601.46 │ 767.08  │ 69985   │
-            ├───────────┼─────────┼─────────┼─────────┼─────────┼──────────┼─────────┼─────────┤
-            │ Bytes/Sec │ 5.88 MB │ 5.88 MB │ 6.04 MB │ 6.09 MB │ 6.02 MB  │ 64.3 kB │ 5.88 MB │
-            └───────────┴─────────┴─────────┴─────────┴─────────┴──────────┴─────────┴─────────┘
+            ┌─────────┬──────┬──────┬───────┬──────┬─────────┬─────────┬───────┐
+            │ Stat    │ 2.5% │ 50%  │ 97.5% │ 99%  │ Avg     │ Stdev   │ Max   │
+            ├─────────┼──────┼──────┼───────┼──────┼─────────┼─────────┼───────┤
+            │ Latency │ 0 ms │ 0 ms │ 0 ms  │ 0 ms │ 0.01 ms │ 0.11 ms │ 17 ms │
+            └─────────┴──────┴──────┴───────┴──────┴─────────┴─────────┴───────┘
+            ┌───────────┬────────┬────────┬─────────┬─────────┬─────────┬────────┬─────────┐
+            │ Stat      │ 1%     │ 2.5%   │ 50%     │ 97.5%   │ Avg     │ Stdev  │ Min     │
+            ├───────────┼────────┼────────┼─────────┼─────────┼─────────┼────────┼─────────┤
+            │ Req/Sec   │ 28511  │ 28511  │ 30287   │ 33407   │ 30765.1 │ 1458.2 │ 28507   │
+            ├───────────┼────────┼────────┼─────────┼─────────┼─────────┼────────┼─────────┤
+            │ Bytes/Sec │ 2.4 MB │ 2.4 MB │ 2.55 MB │ 2.81 MB │ 2.58 MB │ 122 kB │ 2.39 MB │
+            └───────────┴────────┴────────┴─────────┴─────────┴─────────┴────────┴─────────┘
 
             Req/Bytes counts sampled once per second.
             # of samples: 11
 
-            788k requests in 11.01s, 66.2 MB read
+            338k requests in 11.02s, 28.4 MB read
         classes:
           item: flex
           code: w-auto h-auto mb-0 narrow text-left font-size-0_8em
@@ -353,17 +354,14 @@ slides:
       noGap: true
   - title: What's next?
     items:
-      - icon: 'book'
-        title: Documentation
-        text: At the moment is completely missing as I focused on the implementation only.
       - icon: 'rocket'
-        title: Performance improvement
-        text: I want to at least match llhttp performance. *Or beat it!*
+        title: WebAssembly
+        text: It will make it easier to embed in Node.js or undici. *I'm almost done!*
       - icon: 'checks'
         title: Rust validation
         text: Somebody expert in Rust needs to validate the code I have written.
       - icon: 'puzzle-2'
-        title: Complete integration with Node.js
+        title: Complete integration with Node.js build system
         text: I currently just focused on make Milo link with Node.js on my machine. *I need help on this.*
   - layout: quote
     sentence: A person who never made a mistake never tried anything new.
