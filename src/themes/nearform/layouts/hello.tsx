@@ -52,17 +52,16 @@ export default function HelloLayout({ environment, theme, talk, slide, index }: 
         </Item>
 
         <Item
-          icon="brand-twitter"
+          qr={author.website}
           className="items-center min-h-0"
           talk={talk.id}
           theme="nearform"
           classes={{ item: 'grid-c', icon: 'fill-black' }}
           horizontal={true}
         >
-          <a
-            href={`https://twitter.com/${author.twitter}`}
-            dangerouslySetInnerHTML={{ __html: parseContent(author.twitter) }}
-          />
+          <a href={author.website} className="font-size-0_8em">
+            {author.website.replace('https://', '')}
+          </a>
         </Item>
 
         <Item
@@ -70,12 +69,28 @@ export default function HelloLayout({ environment, theme, talk, slide, index }: 
           className="items-center min-h-0"
           talk={talk.id}
           theme="nearform"
-          classes={{ item: 'grid-d', icon: 'fill-black' }}
+          classes={{ item: 'grid-e', icon: 'fill-black' }}
           horizontal={true}
         >
           <a
             href={`https://github.com/${author.github}`}
             dangerouslySetInnerHTML={{ __html: parseContent(author.github) }}
+            className="font-size-0_8em"
+          />
+        </Item>
+
+        <Item
+          icon="brand-twitter"
+          className="items-center min-h-0"
+          talk={talk.id}
+          theme="nearform"
+          classes={{ item: 'grid-d', icon: 'fill-black' }}
+          horizontal={true}
+        >
+          <a
+            href={`https://twitter.com/${author.twitter}`}
+            dangerouslySetInnerHTML={{ __html: parseContent(author.twitter) }}
+            className="font-size-0_8em"
           />
         </Item>
 
@@ -84,12 +99,13 @@ export default function HelloLayout({ environment, theme, talk, slide, index }: 
           className="items-center min-h-0"
           talk={talk.id}
           theme="nearform"
-          classes={{ item: 'grid-e', icon: 'stroke-width-2' }}
+          classes={{ item: 'grid-f', icon: 'stroke-width-2' }}
           horizontal={true}
         >
           <a
             href={`https://linkedin.com/in/${author.linkedin}`}
             dangerouslySetInnerHTML={{ __html: parseContent(author.linkedin) }}
+            className="font-size-0_8em"
           />
         </Item>
       </div>

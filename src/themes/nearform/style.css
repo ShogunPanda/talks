@@ -381,10 +381,10 @@ a:focus {
 
   &__content {
     grid-template:
-      'a a a' min-content
-      'b b b' min-content
-      'c d e' min-content
-      / 1fr 1fr 1fr;
+      'a a a a' min-content
+      'b b b b' min-content
+      'c d e f' min-content
+      / 1fr 1fr 1fr 1fr;
   }
 
   .item__icon,

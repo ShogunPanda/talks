@@ -3,7 +3,7 @@ config:
   dimensions:
     width: 2000
     height: 1120
-  url: https://talks.cowtech.it
+  url: https://talks.paoloinsogna.dev
 author:
   name: Paolo Insogna
   description: Node.js Core, NearForm
@@ -15,6 +15,7 @@ author:
       what: Staff Developer Experience Engineer
       url: https://nearform.com
   email: paolo.insogna@nearform.com
+  website: https://paoloinsogna.dev
   twitter: p_insogna
   github: ShogunPanda
   linkedin: pinsogna
