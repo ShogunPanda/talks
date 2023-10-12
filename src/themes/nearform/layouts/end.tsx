@@ -29,7 +29,7 @@ export default function EndLayout({ environment, theme, talk, slide, index }: Sl
         <div className="grid w-full text-nf-darkest-blue gap-x-0_3sp gap-y-0_1sp">
           <strong className="grid-a whitespace-nowrap">{author.name}</strong>
           <a className="grid-b whitespace-nowrap !text-nf-darkest-blue" href="https://twitter.com/{{ author.twitter }}">
-            @{author.twitter}
+            {author.website}
           </a>
           <span className="grid-c whitespace-nowrap">{author.description}</span>
           <a className="grid-d whitespace-nowrap text-nf-darkest-blue" href="mailto:{{ author.email }}">
