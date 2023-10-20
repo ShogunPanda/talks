@@ -39,7 +39,7 @@ slides:
     notes: |
       Emphasize the **true** in the last question.
   - layout: separator
-    title: Fear the real enemy...
+    title: Fear the real enemy ...
     image: '@talk/hacking.webp'
     classes:
       slide: bg-nf-brunch-pink

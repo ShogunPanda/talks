@@ -6,6 +6,12 @@ document:
   company: common.company
 slides:
   - layout: cover
+  - layout: separator
+    title: |
+      Encrypting is like painting!
+    image: '@talk/painting.webp'
+    classes:
+      slide: bg-nf-orange-split
   - layout: hello
   - layout: nearform
   - layout: half
@@ -29,7 +35,7 @@ slides:
           Anybody with physical access might replace a connector with a very small device.
           *Do you believe in conspiracies?*
   - layout: separator
-    title: Let's send a message.
+    title: Let's send a message ...
     image: '@talk/pidgeons.webp'
     classes:
       slide: bg-nf-orange-split
