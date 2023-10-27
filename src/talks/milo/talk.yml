@@ -8,6 +8,11 @@ document:
   company: common.company
 slides:
   - layout: cover
+  - layout: separator
+    title: Being reckless (sometimes) pays off!
+    image: '@talk/ski.webp'
+    classes:
+      slide: bg-nf-neon-blue
   - layout: hello
   - layout: nearform
   - layout: separator

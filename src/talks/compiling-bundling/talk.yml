@@ -7,6 +7,12 @@ document:
   company: common.company
 slides:
   - layout: cover
+  - layout: separator
+    title: |
+      Fight your fears!
+    image: '@talk/skydiving.webp'
+    classes:
+      slide: bg-nf-neon-blue
   - layout: hello
   - layout: nearform
   - layout: half

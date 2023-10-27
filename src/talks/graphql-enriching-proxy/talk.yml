@@ -6,6 +6,13 @@ document:
   company: common.company
 slides:
   - layout: cover
+  - layout: separator
+    title: |
+      Being kind never hurts!
+    image: '@talk/kindness.webp'
+    classes:
+      slide: bg-nf-brunch-pink
+    logo: black
   - layout: hello
   - layout: nearform
   - title: Let’s celebrate GraphQL!

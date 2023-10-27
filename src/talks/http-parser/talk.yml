@@ -9,6 +9,11 @@ document:
   company: common.company
 slides:
   - layout: cover
+  - layout: separator
+    title: Nothing beats a classic!
+    image: '@talk/500.webp'
+    classes:
+      slide: bg-nf-darkest-blue
   - layout: hello
   - layout: nearform
   - layout: separator
