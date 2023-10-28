@@ -7,6 +7,7 @@ document:
     what's going on?
   author: common.author
   company: common.company
+  archived: true
 slides:
   - layout: cover
   - layout: separator

@@ -1,7 +1,7 @@
 ---
 style: style.css
 urls:
-  development: 'http://localhost:3000'
+  development: 'https://home.cowtech.it:4200'
   production: 'https://talks.paoloinsogna.dev'
 images:
   - '@theme/avatar-with-shadow.webp'

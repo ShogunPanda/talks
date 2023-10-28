@@ -143,7 +143,7 @@ slides:
         text: The specification specifically states that field is reserved for developers to extend the protocol.
       - icon: circuit-changeover
         title: Existing clients will ignore them
-        text: Unless configured to, clients will ignore the field and the server is still specification compliant.
+        text: Unaware clients will ignore the field and the server is still specification compliant.
     options:
       horizontal: true
   - layout: code

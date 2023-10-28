@@ -4,6 +4,7 @@ document:
   title: Horizontal Scaling of a Web3 system to the sky and beyond in AWS
   author: common.author
   company: common.company
+  archived: true
 slides:
   - layout: cover
   - layout: separator

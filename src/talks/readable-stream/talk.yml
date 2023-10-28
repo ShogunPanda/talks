@@ -4,6 +4,7 @@ document:
   title: The last 5 years of streams in Node.js
   author: common.author
   company: common.company
+  archived: true
 slides:
   - layout: cover
   - layout: separator

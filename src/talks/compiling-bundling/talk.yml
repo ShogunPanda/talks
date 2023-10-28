@@ -5,6 +5,7 @@ document:
   titleFormatted: Compiling and bundling JS,<br/> the painless way
   author: common.author
   company: common.company
+  archived: true
 slides:
   - layout: cover
   - layout: separator
