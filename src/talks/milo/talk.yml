@@ -110,7 +110,7 @@ slides:
         text: It deeply inspires Milo and I kept most of his architecture. *Kudos to Fedor!*
       - icon: 'status-change'
         title: Still a state machine, but simpler
-        text: llhttp has **80** possible states, Milo only *33*.
+        text: llhttp has **80** possible states, Milo only *32*.
       - icon: 'git-branch'
         title: Declarative, reinvented
         text: Rust enables to declare states with no code restriction.
@@ -203,17 +203,20 @@ slides:
         title: (Almost) No copy eager parsing
         text: Data is analyzed inline without copying it.
       - icon: 'link'
-        title: Only one exception
+        title: Only one exception (optional)
         text: When parsing, only the unconsumed part of the input is copied in the parser.
       - icon: 'heart'
         title: Convenience at your service
         text: Milo manages unconsumed data for you, making your life easier.
-  - layout: image
+  - layout: separator
     title: Strict, period.
     image: '@talk/wall.webp'
     classes:
-      slide: bg-nf-brunch-pink
-  - title: Let's see it in action! (Rust)
+      slide: bg-nf-darkest-blue
+  - layout: image
+    title: Let's see it in action!
+    image: '@talk/action.webp'
+  - title: Sample code (Rust)
     code:
       language: rust
       content: |
@@ -258,12 +261,12 @@ slides:
     image: '@talk/cbindgen.webp'
     items:
       - icon: 'puzzle-2'
-        title: 'A separate tool generates the headers'
+        title: 'A tool generates the headers'
         text: '[*cbindgen*](https://github.com/mozilla/cbindgen) generates a fully working C or C++ header file. Only a small TOML file is needed.'
       - icon: 'link'
         title: Cargo generates a static library
         text: Rust supports this out of the box. The generated *libmilo.a* file can be statically linked in any C/C++ executable.
-  - title: Let's see it in action! (C++)
+  - title: Sample code (C++)
     code:
       language: rust
       content: |
@@ -295,10 +298,51 @@ slides:
         shogun@panda:~$ clang++ -std=c++11 -o example libmilo.a main.cc
         shogun@panda:~$ ./example
         Pos=38 Body: abc
+  - layout: separator
+    title: But I want to support SmartOS!
+    image: '@talk/incompatible.webp'
+    classes:
+      slide: bg-nf-brunch-pink
+  - layout: side
+    title: WASM will save us!
+    image: '@talk/wasm-bindgen.webp'
+    items:
+      - icon: 'puzzle-2'
+        title: 'WebAssembly is fully supported'
+        text: 'Rust has always considered WebAssembly a first class citizen.'
+      - icon: 'link'
+        title: The toolchain makes it eady
+        text: '[*wasm-bindgen*](https://github.com/rustwasm/wasm-bindgen) generates a fully working JS module which internally loads a WASM file.'
+  - title: Sample code (Node.js with WebAssembly)
+    code:
+      language: javascript
+      content: |
+        import milo from 'milo'
+
+        const message = Buffer.from('HTTP/1.1 200 OK\r\nContent-Length: 3\r\n\r\nabc')
+
+        // This is malloc, but it is mangled when exported in release mode
+        const buffer = milo.__wasm.__wbindgen_malloc(4096, 1) >>> 0
+
+        const parser = new milo.Parser()
+
+        parser.setOnData((at, len) => {
+          console.log(`Pos=${Number(parser.position)} Body: ${message.slice(at, at + len).toString()}`)
+          return 0
+        })
+
+        new Uint8Array(milo.__wasm.memory.buffer, buffer, 4096).set(message)
+        parser.parse(buffer, message.length)
+  - title: Output (Node.js with WebAssembly)
+    code:
+      language: console
+      content: |
+        shogun@panda:~$ node index.mjs
+        Pos=38 Body: abc
   - layout: image
     title: And that's Milo!
     image: '@talk/safe.webp'
-  - title: Performance (preliminary)
+  - title: Performance in Node (native, preliminary)
     items:
       - code:
           language: console
@@ -357,17 +401,19 @@ slides:
       skipSpacer: true
       skipDefaultClasses: true
       noGap: true
-  - title: What's next?
+  - title: What's missing?
     items:
-      - icon: 'rocket'
-        title: WebAssembly
-        text: It will make it easier to embed in Node.js or undici. *I'm almost done!*
-      - icon: 'checks'
-        title: Rust validation
-        text: Somebody expert in Rust needs to validate the code I have written.
       - icon: 'puzzle-2'
-        title: Complete integration with Node.js build system
-        text: I currently just focused on make Milo link with Node.js on my machine. *I need help on this.*
+        title: Node.js integration
+        text: I just finished integrating the WebAssembly version in undici. Our beloved runtime is next.
+      - icon: 'rocket'
+        title: WebAssembly Performance
+        text: Milo matches or outperforms llhttp in native mode, but it is slower when compiled in WebAssembly.
+      - icon: 'checks'
+        title: Migrate llhttp test suite
+        text: The llhttp test suite (originally from http_parser) is crucial to ensure correctness of the parser.
+    options:
+      horizontal: true
   - layout: quote
     sentence: A person who never made a mistake never tried anything new.
     author: Albert Einstein
