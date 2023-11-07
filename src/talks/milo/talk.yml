@@ -26,7 +26,7 @@ slides:
     classes:
       slide: bg-nf-orange-split
   - title: The choice is narrow
-    content: Even if HTTP is almost 25 years old, only 3 current version of it exists as of today.
+    content: Even if HTTP is almost 25 years old, only 3 current versions of it exists as of today.
     items:
       - index: 1
         title: HTTP/1.1
@@ -44,7 +44,7 @@ slides:
         text: Node.js has a stable implementation.
       - index: 3
         title: HTTP/3
-        text: A PR is under review as we speak.
+        text: Work in progress, *stay tuned!*
     options:
       horizontal: true
   - layout: separator
@@ -71,10 +71,10 @@ slides:
         text: The transpilation makes hard to debug issues.
       - icon: 'history'
         title: Backward compatibility
-        text: Supporting different versions of HTTP (included obsoletes) introduces unneeded complexity.
+        text: Supporting different versions of HTTP (included obsoleted) introduces unneeded complexity.
       - icon: 'heart-handshake'
         title: You give them a finger, they take the arm
-        text: Leniency-prone approach opens the door for a lot of edge cases.
+        text: Leniency-prone approach opens the door for a lot of edge cases and vulnerabilities opportunities.
   - layout: separator
     title: Do we have the solution?
     image: '@talk/solution.webp'
@@ -101,7 +101,7 @@ slides:
         text: I purposely choose Rust to see how hard is to embrace for a new prospect contributor.
       - icon: 'heart'
         title: Be cool
-        text: I don't want to start another language flame. *Please.*
+        text: "I don't want to start another language flame. *Please.* ❤️"
     image: '@talk/rust-logo.webp'
   - title: Do not throw the goods away
     items:
@@ -201,7 +201,7 @@ slides:
     items:
       - icon: 'rocket'
         title: (Almost) No copy eager parsing
-        text: Data is analyzed inline without copying it.
+        text: Data is analyzed in place without copying it.
       - icon: 'link'
         title: Only one exception (optional)
         text: When parsing, only the unconsumed part of the input is copied in the parser.
@@ -311,7 +311,7 @@ slides:
         title: 'WebAssembly is fully supported'
         text: 'Rust has always considered WebAssembly a first class citizen.'
       - icon: 'link'
-        title: The toolchain makes it eady
+        title: The toolchain makes it easy
         text: '[*wasm-bindgen*](https://github.com/rustwasm/wasm-bindgen) generates a fully working JS module which internally loads a WASM file.'
   - title: Sample code (Node.js with WebAssembly)
     code:
@@ -321,7 +321,6 @@ slides:
 
         const message = Buffer.from('HTTP/1.1 200 OK\r\nContent-Length: 3\r\n\r\nabc')
 
-        // This is malloc, but it is mangled when exported in release mode
         const buffer = milo.__wasm.__wbindgen_malloc(4096, 1) >>> 0
 
         const parser = new milo.Parser()
@@ -407,7 +406,7 @@ slides:
         title: Node.js integration
         text: I just finished integrating the WebAssembly version in undici. Our beloved runtime is next.
       - icon: 'rocket'
-        title: WebAssembly Performance
+        title: SIMD in WebAssembly
         text: Milo matches or outperforms llhttp in native mode, but it is slower when compiled in WebAssembly.
       - icon: 'checks'
         title: Migrate llhttp test suite

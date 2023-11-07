@@ -28,7 +28,7 @@ slides:
     classes:
       slide: bg-nf-orange-split
   - title: The choice is narrow
-    content: Even if HTTP is almost 25 years old, only 3 current version of it exists as of today.
+    content: Even if HTTP is almost 25 years old, only 3 current versions of it exists as of today.
     items:
       - index: 1
         title: HTTP/1.1
@@ -79,7 +79,7 @@ slides:
         text: Node.js has a stable implementation.
       - index: 3
         title: HTTP/3
-        text: A PR is under review as we speak.
+        text: Work in progress, *stay tuned!*
     options:
       horizontal: true
   - layout: separator
@@ -179,7 +179,7 @@ slides:
         text: The transpilation makes hard to debug issues.
       - icon: 'history'
         title: Backward compatibility
-        text: Supporting different versions of HTTP (included obsoletes) introduces unneeded complexity.
+        text: Supporting different versions of HTTP (included obsoleted) introduces unneeded complexity.
       - icon: 'heart-handshake'
         title: You give them a finger, they take the arm
         text: Leniency-prone approach opens the door for a lot of edge cases.
