@@ -28,7 +28,7 @@ slides:
     classes:
       slide: bg-nf-orange-split
   - title: The choice is narrow
-    content: Even if HTTP is almost 25 years old, only 3 current versions of it exists as of today.
+    content: Even if the HTTP protocol is more than 30 years old, only *three* current versions of it exists as of today.
     items:
       - index: 1
         title: HTTP/1.1
