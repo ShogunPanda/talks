@@ -1,0 +1,8 @@
+---
+config: common.config
+document:
+  title: Compiling and bundling JS, the painless way
+  titleFormatted: Compiling and bundling JS,<br/> the painless way
+  author: common.author
+  company: common.company
+  archived: true

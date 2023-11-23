@@ -1,44 +1,66 @@
-import { resolveImageUrl, SlideProps, Svg } from 'freya-slides'
+import { Svg, resolveImageUrl, type SlideProps } from 'freya-slides'
 import { SlideWrapper } from '../components/common.js'
-import { Slide } from '../models.js'
+import { type Slide } from '../models.js'
 
-export default function EndLayout({ environment, theme, talk, slide, index }: SlideProps<Slide>): JSX.Element {
+export default function EndLayout({ context, theme, talk, slide, index }: SlideProps<Slide>): JSX.Element {
   const {
     id,
     document: { author }
   } = talk
 
-  const pandaImageUrl = resolveImageUrl('nearform', id, '@theme/panda.webp')
+  const {
+    title,
+    content,
+    image,
+    classes: { title: titleClasses, content: contentClasses }
+  } = slide
+
+  const pandaImageUrl = resolveImageUrl('nearform', id, image ?? '@theme/panda.webp')
 
   return (
     <SlideWrapper
-      environment={environment}
+      context={context}
       theme={theme}
       talk={talk}
       slide={slide}
       index={index}
-      className="end p-0 bg-no-repeat bg-cover"
+      className={context.extensions.expandClasses('theme@end')}
       style={{ backgroundImage: `url(${pandaImageUrl})` }}
       skipDecorations={true}
     >
-      <div className="flex-1" />
+      <div className={context.extensions.expandClasses('theme@end__spacer')} />
 
-      <h1 className="callout callout--title bottom-1sp">Thank you!</h1>
+      <h1 className={context.extensions.expandClasses(`theme@end__title ${titleClasses ?? ''}`)}>
+        {title ?? 'Thank you!'}
+        {content && (
+          <span className={context.extensions.expandClasses(`theme@end__subtitle ${contentClasses ?? ''}`)}>
+            {content}
+          </span>
+        )}
+      </h1>
 
-      <footer className="w-full min-h-0_7sp px-0_5sp bg-nf-brunch-pink flex items-center">
-        <div className="grid w-full text-nf-darkest-blue gap-x-0_3sp gap-y-0_1sp">
-          <strong className="grid-a whitespace-nowrap">{author.name}</strong>
-          <a className="grid-b whitespace-nowrap !text-nf-darkest-blue" href="https://twitter.com/{{ author.twitter }}">
-            {author.website}
+      <footer className={context.extensions.expandClasses('theme@end__footer')}>
+        <div className={context.extensions.expandClasses('theme@end__socials')}>
+          <strong className={context.extensions.expandClasses('theme@end__social grid-area-[a]')}>{author.name}</strong>
+          <a
+            className={context.extensions.expandClasses('theme@end__social grid-area-[b]')}
+            href={`https://twitter.com/${author.twitter}`}
+          >
+            @{author.twitter}
           </a>
-          <span className="grid-c whitespace-nowrap">{author.description}</span>
-          <a className="grid-d whitespace-nowrap text-nf-darkest-blue" href="mailto:{{ author.email }}">
+          <span className={context.extensions.expandClasses('theme@end__social grid-area-[c]')}>
+            {author.description}
+          </span>
+          <a
+            className={context.extensions.expandClasses('theme@end__social grid-area-[d]')}
+            href={`mailto:${author.email}`}
+          >
             {author.email}
           </a>
           <Svg
             theme="nearform"
             contents="@theme/nearform-logo-with-text-right.svg"
-            className="w-1_81sp grid-e self-center fill-nf-darkest-blue"
+            className={context.extensions.expandClasses('theme@end__logo')}
           />
         </div>
       </footer>
@@ -46,7 +68,7 @@ export default function EndLayout({ environment, theme, talk, slide, index }: Sl
       <Svg
         theme="nearform"
         contents="@theme/nearform-curve-bottom-right.svg"
-        className="top-3_02sp left-5_82sp w-4_25sp absolute z-1 fill-white"
+        className={context.extensions.expandClasses('theme@end__curve')}
       />
     </SlideWrapper>
   )

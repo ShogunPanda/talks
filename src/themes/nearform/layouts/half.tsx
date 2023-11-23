@@ -3,8 +3,8 @@ import { parseComplexContent, SlideWrapper } from '../components/common.js'
 import { Items } from '../components/item.js'
 import { Slide } from '../models.js'
 
-export default function DefaultLayout(props: SlideProps<Slide>): JSX.Element {
-  const { environment, theme, talk, index, slide } = props
+export default function HalfLayout(props: SlideProps<Slide>): JSX.Element {
+  const { context, theme, talk, index, slide } = props
 
   const {
     title,
@@ -19,15 +19,15 @@ export default function DefaultLayout(props: SlideProps<Slide>): JSX.Element {
 
   return (
     <SlideWrapper
-      environment={environment}
+      context={context}
       theme={theme}
       talk={talk}
       slide={slide}
       index={index}
-      className={`p-0 flex-row items-start justify-start ${className}`.trim()}
+      className={context.extensions.expandClasses(`freya@slide--with-half theme@half ${className ?? ''}`)}
       defaultLogoColor="white"
     >
-      <div className="flex-1 min-w-5sp p-0_5sp">
+      <div className={context.extensions.expandClasses('theme@half__contents')}>
         {title && <h1 dangerouslySetInnerHTML={{ __html: parseContent(title) }} />}
 
         {content?.filter(Boolean).map((c: string | object, contentIndex: number) => {
@@ -37,14 +37,21 @@ export default function DefaultLayout(props: SlideProps<Slide>): JSX.Element {
             return parseComplexContent(c, key, props)
           }
 
-          return <h4 key={key} className="text-justify" dangerouslySetInnerHTML={{ __html: parseContent(c) }} />
+          return (
+            <h4
+              key={key}
+              className={context.extensions.expandClasses('theme@half__subtitle')}
+              dangerouslySetInnerHTML={{ __html: parseContent(c) }}
+            />
+          )
         })}
 
         {items && (
           <Items
+            context={context}
             items={items}
             horizontal={horizontal}
-            className={itemsClassName}
+            className={context.extensions.expandClasses(itemsClassName)}
             talk={talk.id}
             noGap={noGap}
             skipSpacer={skipSpacer}
@@ -54,8 +61,11 @@ export default function DefaultLayout(props: SlideProps<Slide>): JSX.Element {
       </div>
 
       {image && (
-        <div className="grid-b w-5sp h-full overflow-hidden">
-          <img src={imageUrl} className={`h-full min-w-5gs max-w-none ${imageClassName ?? ''}`.trim()} />
+        <div className={context.extensions.expandClasses('theme@half__image-wrapper')}>
+          <img
+            src={imageUrl}
+            className={context.extensions.expandClasses(`theme@half__image ${imageClassName ?? ''}`)}
+          />
         </div>
       )}
     </SlideWrapper>

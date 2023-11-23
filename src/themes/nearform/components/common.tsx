@@ -1,20 +1,20 @@
+import { type BuildContext } from 'dante'
 import {
-  Context,
-  Slide as FreyaSlide,
   QRCode,
-  SlideProps,
   Svg,
   SvgIcon,
-  Talk,
-  Theme,
   parseContent,
-  renderNotes
+  renderNotes,
+  type Slide as FreyaSlide,
+  type SlideProps,
+  type Talk,
+  type Theme
 } from 'freya-slides'
-import { CSSProperties, ReactNode } from 'react'
-import { Slide } from '../models.js'
+import { type CSSProperties, type ReactNode } from 'react'
+import { type Slide } from '../models.js'
 
 interface SlideWrapperProps {
-  environment: Context['environment']
+  context: BuildContext
   theme: Theme
   talk: Talk
   slide: Slide
@@ -29,7 +29,7 @@ interface SlideWrapperProps {
 type DecorationProps = Omit<SlideWrapperProps, 'skipDecorations' | 'children'>
 
 export function SlideWrapper({
-  environment,
+  context,
   theme,
   talk,
   slide,
@@ -41,6 +41,11 @@ export function SlideWrapper({
   children
 }: SlideWrapperProps): JSX.Element {
   const optionSkipDecorations = slide.options.skipDecorations
+  const { foreground, background } = slide
+
+  // These two should be moved to the SlideWrapper component
+  const foregroundClass = foreground ? `theme@text-${foreground}` : ''
+  const backgroundClass = background ? `theme@bg-${background}` : ''
 
   if (!defaultLogoColor) {
     defaultLogoColor = 'black'
@@ -50,15 +55,17 @@ export function SlideWrapper({
     <article
       data-freya-id="slide"
       data-freya-index={index}
-      className={`freya__slide z-${index + 100} ${className ?? ''}`.trim()}
+      className={context.extensions.expandClasses(
+        `freya@slide z-${index + 100} ${foregroundClass} ${backgroundClass} ${className ?? ''}`
+      )}
       style={style}
     >
       {children}
-      <div className="freya__slide__progress" />
+      <div data-freya-id="progress" className={context.extensions.expandClasses('freya@slide__progress')} />
 
       {!skipDecorations && !optionSkipDecorations && (
         <Decorations
-          environment={environment}
+          context={context}
           theme={theme}
           talk={talk}
           slide={slide}
@@ -71,14 +78,7 @@ export function SlideWrapper({
   )
 }
 
-export function Decorations({
-  environment,
-  theme,
-  talk,
-  slide,
-  index,
-  defaultLogoColor
-}: DecorationProps): JSX.Element {
+export function Decorations({ context, theme, talk, slide, index, defaultLogoColor }: DecorationProps): JSX.Element {
   const { urls } = theme
   const { id, slidesPadding } = talk
   const {
@@ -92,31 +92,42 @@ export function Decorations({
     <>
       {sequence && (
         <h2
-          className={`sequence ${sequenceClasses ?? ''}`.trim()}
+          className={context.extensions.expandClasses(`theme@sequence ${sequenceClasses ?? ''}`)}
           dangerouslySetInnerHTML={{ __html: parseContent(sequence.toString()) }}
         />
       )}
       {!sequence && icon && (
-        <SvgIcon name={icon} className={`callout-icon ${iconClasses ?? ''}`.trim()} theme="nearform" />
+        <SvgIcon
+          name={icon}
+          className={context.extensions.expandClasses(`theme@callout__icon ${iconClasses ?? ''}`)}
+          theme="nearform"
+        />
       )}
       <QRCode
-        data={`${urls[environment]}/${id}/${index.toString().padStart(slidesPadding, '0')}.pdf`}
+        context={context}
+        data={`${urls[context.isProduction ? 'production' : 'development']}/${id}/${index
+          .toString()
+          .padStart(slidesPadding, '0')}.pdf`}
         // image={resolveImageUrl(themeId, id, '@theme/icons/world.svg')}
         // imageRatio={1}
         classes={{
-          code: `page-qr page-qr--${qrClassName ?? defaultLogoColor}`.trim(),
+          code: `theme@page-qr theme@page-qr--${qrClassName ?? defaultLogoColor}`,
           qr: 'text-black bg-white',
           image: 'w-0_35sp h-auto'
         }}
       />
-      <Svg theme="nearform" contents="@theme/nearform-logo.svg" className={`logo logo--${logo ?? defaultLogoColor}`} />
+      <Svg
+        theme="nearform"
+        contents="@theme/nearform-logo.svg"
+        className={context.extensions.expandClasses(`theme@logo theme@logo--${logo ?? defaultLogoColor}`)}
+      />
     </>
   )
 }
 
 export function parseComplexContent(raw: Record<string, any>, key: string, props: SlideProps<Slide>): JSX.Element {
   if (raw.qr) {
-    return <QRCode key={key} data={raw.qr} classes={{ code: props.slide.classes.qr ?? '' }} />
+    return <QRCode context={props.context} key={key} data={raw.qr} classes={{ code: props.slide.classes.qr ?? '' }} />
   }
 
   return <></>

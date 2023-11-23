@@ -1,8 +1,10 @@
+import { type BuildContext } from 'dante'
 import { Code, QRCode, SvgIcon, parseContent, resolveImageUrl } from 'freya-slides'
 import { Fragment, ReactNode } from 'react'
 import { Grid, Item as ItemDefinition } from '../models.js'
 
 interface ItemProps extends ItemDefinition {
+  context: BuildContext
   horizontal?: boolean
   talk: string
   theme: string
@@ -11,6 +13,7 @@ interface ItemProps extends ItemDefinition {
 }
 
 interface ItemsProps {
+  context: BuildContext
   items: ItemDefinition[]
   horizontal?: boolean
   talk: string
@@ -21,12 +24,14 @@ interface ItemsProps {
 }
 
 interface GridsProps {
+  context: BuildContext
   grids: Grid | Grid[]
   talk: string
 }
 
 export function Item(props: ItemProps): JSX.Element {
-  const { horizontal, index, icon, image, title, text, qr, code, className, classes, talk, theme, children } = props
+  const { context, horizontal, index, icon, image, title, text, qr, code, className, classes, talk, theme, children } =
+    props
 
   const {
     item: itemClassName,
@@ -35,6 +40,7 @@ export function Item(props: ItemProps): JSX.Element {
     image: imageClassName,
     title: titleClassName,
     text: textClassName,
+    contents: contentsClassName,
     qr: qrClassName,
     code: codeClassName
   } = classes ?? {}
@@ -43,40 +49,74 @@ export function Item(props: ItemProps): JSX.Element {
 
   return (
     <section
-      className={`item ${horizontal ? 'item--horizontal' : ''} ${className ?? ''} ${itemClassName ?? ''}`.trim()}
+      className={context.extensions.expandClasses(
+        `theme@item ${horizontal ? 'theme@item--horizontal' : ''} ${className ?? ''} ${itemClassName ?? ''}`
+      )}
     >
       {index && (
         <h5
-          className={`item__index ${indexClassName ?? ''}`.trim()}
+          className={context.extensions.expandClasses(
+            `theme@item__index ${horizontal ? 'theme@item__index--horizontal' : ''} ${indexClassName ?? ''}`
+          )}
           dangerouslySetInnerHTML={{ __html: parseContent(index) }}
         />
       )}
-      {imageUrl && <img src={imageUrl} className={`item__image ${imageClassName ?? ''}`.trim()} />}
+      {imageUrl && (
+        <img
+          src={imageUrl}
+          className={context.extensions.expandClasses(
+            `item__image ${horizontal ? 'theme@item__image--horizontal' : ''} ${imageClassName ?? ''}`
+          )}
+        />
+      )}
       {!imageUrl && icon && (
-        <SvgIcon name={icon} className={`item__icon ${iconClassName ?? ''}`.trim()} theme={theme} />
+        <SvgIcon
+          name={icon}
+          className={context.extensions.expandClasses(
+            `theme@item__icon ${horizontal ? 'theme@item__icon--horizontal' : ''} ${iconClassName ?? ''}`
+          )}
+          theme={theme}
+        />
       )}
       {!imageUrl && !icon && qr && (
-        <QRCode label="" data={qr} classes={{ code: `item__qr ${qrClassName ?? ''}`.trim() }} />
+        <QRCode
+          context={context}
+          label=""
+          data={qr}
+          classes={{ code: `theme@item__qr ${horizontal ? 'theme@item__qr--horizontal' : ''} ${qrClassName ?? ''}` }}
+        />
       )}
 
-      {!imageUrl && !icon && !qr && code && <Code {...code} className={codeClassName ?? ''} />}
+      {!imageUrl && !icon && !qr && code && (
+        <Code context={context} {...code} className={context.extensions.expandClasses(codeClassName ?? '')} />
+      )}
 
       {/* eslint-disable-next-line @typescript-eslint/prefer-nullish-coalescing */}
       {!code && (title || text || children) && (
-        <div className={`item__text ${textClassName ?? ''}`.trim()}>
+        <div
+          className={context.extensions.expandClasses(
+            `theme@item__text ${horizontal ? 'theme@item__text--horizontal' : ''} ${textClassName ?? ''}`
+          )}
+        >
           {title && (
             <h4
-              className={`item__title ${titleClassName ?? ''}`.trim()}
+              className={context.extensions.expandClasses(
+                `theme@item__title ${horizontal ? 'theme@item__title--horizontal' : ''} ${titleClassName ?? ''}`
+              )}
               dangerouslySetInnerHTML={{ __html: parseContent(title) }}
             />
           )}
           {text && (
             <p
-              className={`item__contents ${textClassName ?? ''}`.trim()}
+              className={context.extensions.expandClasses(`theme@item__contents ${contentsClassName ?? ''}`)}
               dangerouslySetInnerHTML={{ __html: parseContent(text) }}
             />
           )}
-          {!text && <p className={`item__contents ${textClassName ?? ''}`.trim()}>{children}</p>}
+          {!text && (
+            <p className={context.extensions.expandClasses(`theme@item__contents ${contentsClassName ?? ''}`)}>
+              {children}
+            </p>
+          )}
         </div>
       )}
     </section>
@@ -84,6 +124,7 @@ export function Item(props: ItemProps): JSX.Element {
 }
 
 export function Items({
+  context,
   items,
   horizontal,
   talk,
@@ -98,12 +139,15 @@ export function Items({
     : ''
 
   return (
-    <div className={`${classes} ${className ?? ''}`.trim()}>
+    <div className={context.extensions.expandClasses(`${classes} ${className ?? ''}`)}>
       {items.filter(Boolean).map((item: ItemDefinition, index: number) => {
         return (
           <Fragment key={`item:${index}`}>
-            {!skipSpacer && horizontal && index > 0 && <div className="item__spacer" />}
+            {!skipSpacer && horizontal && index > 0 && (
+              <div className={context.extensions.expandClasses('theme@item__spacer')} />
+            )}
             <Item
+              context={context}
               horizontal={horizontal}
               {...item}
               classes={{ index: 'text-nf-neon-blue', icon: 'text-nf-neon-blue', ...item.classes }}
@@ -117,25 +161,28 @@ export function Items({
   )
 }
 
-export function Grids({ grids, talk }: GridsProps): JSX.Element {
+export function Grids({ context, grids, talk }: GridsProps): JSX.Element {
   if (!Array.isArray(grids)) {
     grids = [grids]
   }
 
   return (
-    <div className="flex flex-1 items-center gap-x-0_2sp">
+    <div className={context.extensions.expandClasses('flex flex-1 items-center gap-x-0_2sp')}>
       {grids.map((grid: Grid, index: number) => {
-        const template = grid.template ?? '1fr,1fr'
+        const template = grid.template ?? '1fr_1fr'
         const gap = grid.gap ?? '4ch'
 
         return (
           <Fragment key={`item:${index}`}>
-            {index > 0 && <div className="item__spacer" />}
+            {index > 0 && <div className={context.extensions.expandClasses('theme@item__spacer')} />}
             <Items
+              context={context}
               items={grid.items}
               horizontal={true}
               talk={talk}
-              className={`flex-1 grid grid-cols-[${template}] gap-${gap} justify-center items-center`}
+              className={context.extensions.expandClasses(
+                `flex-1 grid grid-cols-[${template}] gap-${gap} justify-center items-center`
+              )}
               skipSpacer={true}
               skipDefaultClasses={true}
             />

@@ -1,0 +1,10 @@
+---
+config: common.config
+document:
+  title: 'Your First Node.js Contribution'
+  author:
+    name: 'Marco Ippolito, Paolo Insogna'
+    description: Node.js Core, NearForm
+    twitter: nearform
+    email: info@nearform.com
+  company: common.company

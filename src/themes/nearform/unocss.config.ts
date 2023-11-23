@@ -1,7 +1,28 @@
-import { CSSValue, Rule } from '@unocss/core'
+import { type CSSValue, type Rule } from '@unocss/core'
+import { handler } from '@unocss/preset-mini/utils'
 import presetWind from '@unocss/preset-wind'
 import transformerDirectives from '@unocss/transformer-directives'
-import { defineUnoConfig, getTalk, getTalks, numericRule, systemFonts, systemMonospaceFonts } from 'freya-slides'
+import { defineUnoConfig } from 'freya-slides'
+
+export type UnoRuleDefinition = [
+  string | RegExp,
+  Record<string, string> | ((v: string[]) => Record<string, string> | CSSValue)
+]
+
+export const systemFonts =
+  "-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol'"
+
+export const systemMonospaceFonts = "ui-monospace, SFMono-Regular, Consolas, 'Liberation Mono', Menlo, monospace"
+
+export function numericRule(property: string, value: string, unit: string = '', ratio: number = 1): CSSValue {
+  const parsed = Number.parseFloat(value.replace('_', '.'))
+
+  return { [property]: `${parsed * ratio}${unit}` }
+}
+
+export function transformCSSValue(value: string): string | undefined {
+  return value.startsWith('$') ? handler.cssvar(value) : handler.bracket(value)
+}
 
 function generateSpacing(customUnit: string, ratio: number, unit: string): Rule[] {
   const spacings: Rule[] = []
@@ -93,37 +114,6 @@ function generateBorders(customUnit: string, ratio: number, unit: string): Rule[
   return borders
 }
 
-function generatePositions(customUnit: string, ratio: number, unit: string): Rule[] {
-  const positions: Rule[] = []
-  for (const position of ['top', 'bottom', 'left', 'right']) {
-    positions.push(
-      [
-        new RegExp(`^${position}-(\\d+(?:_\\d+)?)${customUnit}$`),
-        ([, value]) => numericRule(position, value, unit, ratio)
-      ],
-      [
-        new RegExp(`^-${position}-(\\d+(?:_\\d+)?)${customUnit}$`),
-        ([, value]) => numericRule(position, value, unit, -ratio)
-      ]
-    )
-  }
-
-  return positions
-}
-
-function generateDimensions(short: string, long: string, customUnit: string, ratio: number, unit: string): Rule[] {
-  const dimensions: Rule[] = []
-
-  for (const prefix of ['', 'min-', 'max-']) {
-    dimensions.push([
-      new RegExp(`^${prefix}${short}-(\\d+(?:_\\d+)?)${customUnit}$`),
-      ([, value]) => numericRule(`${prefix}${long}`, value, unit, ratio)
-    ])
-  }
-
-  return dimensions
-}
-
 function generateRadiuses(customUnit: string, ratio: number, unit: string): Rule[] {
   const radiuses: Rule[] = [
     [new RegExp(`^rounded-(\\d+(?:_\\d+)?)${customUnit}$`), ([, d]) => numericRule('border-radius', d, unit, ratio)]
@@ -156,6 +146,37 @@ function generateRadiuses(customUnit: string, ratio: number, unit: string): Rule
   return radiuses
 }
 
+function generatePositions(customUnit: string, ratio: number, unit: string): Rule[] {
+  const positions: Rule[] = []
+  for (const position of ['top', 'bottom', 'left', 'right']) {
+    positions.push(
+      [
+        new RegExp(`^${position}-(\\d+(?:_\\d+)?)${customUnit}$`),
+        ([, value]) => numericRule(position, value, unit, ratio)
+      ],
+      [
+        new RegExp(`^-${position}-(\\d+(?:_\\d+)?)${customUnit}$`),
+        ([, value]) => numericRule(position, value, unit, -ratio)
+      ]
+    )
+  }
+
+  return positions
+}
+
+function generateDimensions(short: string, long: string, customUnit: string, ratio: number, unit: string): Rule[] {
+  const dimensions: Rule[] = []
+
+  for (const prefix of ['', 'min-', 'max-']) {
+    dimensions.push([
+      new RegExp(`^${prefix}${short}-(\\d+(?:_\\d+)?)${customUnit}$`),
+      ([, value]) => numericRule(`${prefix}${long}`, value, unit, ratio)
+    ])
+  }
+
+  return dimensions
+}
+
 function generateCustomUnits(): Rule[] {
   const customUnits: [string, number, string][] = [
     ['sp', 200, 'px'],
@@ -170,28 +191,13 @@ function generateCustomUnits(): Rule[] {
       ...generatePositions(customUnit, ratio, unit),
       ...generateGaps(customUnit, ratio, unit),
       ...generateBorders(customUnit, ratio, unit),
+      ...generateRadiuses(customUnit, ratio, unit),
       ...generateDimensions('w', 'width', customUnit, ratio, unit),
-      ...generateDimensions('h', 'height', customUnit, ratio, unit),
-      ...generateRadiuses(customUnit, ratio, unit)
+      ...generateDimensions('h', 'height', customUnit, ratio, unit)
     )
   }
 
   return rules
-}
-
-const talks = await getTalks()
-const safelist = new Set<string>()
-
-for (const id of talks) {
-  const talk = await getTalk(id)
-
-  for (const slide of talk.slides) {
-    for (const value of Object.values(slide.classes ?? {})) {
-      for (const klass of value.split(' ')) {
-        safelist.add(klass)
-      }
-    }
-  }
 }
 
 export default defineUnoConfig({
@@ -210,13 +216,32 @@ export default defineUnoConfig({
   },
   rules: [
     [/^flex-(\d+)$/, ([, value]: string[]) => ({ flex: `${value} ${value} 0%` })],
-    ['flex-initial', { flex: 'initial' }],
-    ['flex-row', { 'flex-direction': 'row' }],
-    [/^grid-([a-z]+)$/, ([, value]: string[]) => ({ 'grid-area': value })],
+    ['flex-initial', { flex: 'initial' }], // This rule purposely overrides preset-mini one
     [
-      /^grid-cols-\[([^\]]+)]$/,
-      ([, value]: string[]) => ({ 'grid-template-columns': value.split(/\s*,\s*/).join(' ') })
+      /^transform-(.+)/,
+      ([, value]: string[]) => {
+        return { transform: transformCSSValue(value) }
+      }
     ],
+    [
+      /^content-(\[.+\])/,
+      ([, value]: string[]) => {
+        return { content: transformCSSValue(value) }
+      }
+    ],
+    [
+      /^counter-reset-(.+)/,
+      ([, value]: string[]) => {
+        return { 'counter-reset': transformCSSValue(value) }
+      }
+    ],
+    [
+      /^counter-increment-(.+)/,
+      ([, value]: string[]) => {
+        return { 'counter-increment': transformCSSValue(value) }
+      }
+    ],
+
     ...generateCustomUnits(),
     ...generateBorders('', 1, 'px'),
     ...generateRadiuses('', 1, 'px'),
@@ -231,5 +256,39 @@ export default defineUnoConfig({
     ['font-fira-code', { 'font-family': `'Fira Code', Consolas, ${systemMonospaceFonts}` }],
     ['font-noto', { 'font-family': `'Noto Sans', ${systemFonts}` }]
   ],
-  safelist: ['hidden', ...safelist]
+  layers: {
+    components: 10,
+    utilities: 11,
+    default: 12,
+    freya: 21,
+    theme: 41,
+    talk: 61,
+    'freya-important': 91,
+    'theme-important': 92,
+    'talk-important': 93,
+    js: 99
+  },
+  variants: [
+    /*
+      TODO@PI: Compress layers here, using the same CSS classes generators elsewhere
+      Consider that layers above must be changed as well.
+      Then reimport these changes in freya.
+    */
+    {
+      name: 'talks-layer-matcher',
+      match(matcher: string) {
+        const mo = matcher.match(/^(?<layer>([^@]+))@(?<matcher>.+)$/)
+
+        if (!mo) {
+          return matcher
+        }
+
+        return {
+          matcher: mo.groups!.matcher,
+          layer: mo.groups!.layer
+        }
+      }
+    }
+  ],
+  safelist: []
 })

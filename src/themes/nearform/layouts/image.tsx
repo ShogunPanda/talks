@@ -1,8 +1,8 @@
-import { resolveImageUrl, SlideProps } from 'freya-slides'
+import { resolveImageUrl, type SlideProps } from 'freya-slides'
 import { SlideWrapper } from '../components/common.js'
-import { Slide } from '../models.js'
+import { type Slide } from '../models.js'
 
-export default function ImageLayout({ environment, theme, talk, slide, index }: SlideProps<Slide>): JSX.Element {
+export default function ImageLayout({ context, theme, talk, slide, index }: SlideProps<Slide>): JSX.Element {
   const {
     title,
     image,
@@ -13,16 +13,21 @@ export default function ImageLayout({ environment, theme, talk, slide, index }: 
 
   return (
     <SlideWrapper
-      environment={environment}
+      context={context}
       theme={theme}
       talk={talk}
       slide={slide}
       index={index}
-      className={`p-0 ${className ?? ''}`.trim()}
+      className={context.extensions.expandClasses(`theme@image ${className ?? ''}`)}
       defaultLogoColor="white"
     >
-      {title && <h1 className="callout callout--title" dangerouslySetInnerHTML={{ __html: title }} />}
-      <img src={imageUrl} className={`absolute left-0 w-full min-h-full ${imageClassName ?? ''}`.trim()} />
+      {title && (
+        <h1
+          className={context.extensions.expandClasses('theme@image__title')}
+          dangerouslySetInnerHTML={{ __html: title }}
+        />
+      )}
+      <img src={imageUrl} className={context.extensions.expandClasses(`theme@image__image ${imageClassName ?? ''}`)} />
     </SlideWrapper>
   )
 }

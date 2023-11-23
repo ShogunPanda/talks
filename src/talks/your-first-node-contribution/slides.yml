@@ -1,0 +1,132 @@
+---
+layout: cover
+# ...
+
+---
+layout: separator
+title: 'All hope abandon ye who enter here!'
+image: '@talk/hell.webp'
+background: nf-orange-split
+
+---
+layout: image
+image: '@talk/marco.webp'
+
+---
+layout: hello
+options:
+  author: # Keep in sync with common.yml
+    name: Paolo Insogna
+    description: Node.js Core, NearForm
+    roles:
+      - where: Node.js
+        what: Core Member
+        url: https://nodejs.org
+      - where: NearForm
+        what: Staff Developer Experience Engineer
+        url: https://nearform.com
+    email: paolo.insogna@nearform.com
+    website: https://paoloinsogna.dev
+    twitter: p_insogna
+    github: ShogunPanda
+    linkedin: pinsogna
+
+---
+title: Getting started (1/2)!
+items:
+  - qr: https://github.com/nodejs/node
+    title: Navigate to [https://github.com/nodejs/node](https://github.com/nodejs/node).
+    text: |
+      On MacOS / Linux:
+      `open https://github.com/nodejs/node`
+  - icon: git-fork
+    title: Fork the repository.
+    text: |
+      If you have the GitHub CLI:
+      `gh repo clone nodejs/node`
+options:
+  horizontal: true
+
+---
+title: Getting started (2/2)!
+items:
+  - icon: file-download
+    title: Clone it.
+    text: '`git clone git@github.com:$YOURNAME/node.git`'
+  - qr: https://github.com/nodejs/node/blob/main/BUILDING.md
+    title: Read the [BUILDING.MD](https://github.com/nodejs/node/blob/main/BUILDING.md) file.
+    text: |
+      `cd node && open BUILDING.md`
+options:
+  horizontal: true
+
+---
+title: Build Node.js
+code:
+  language: shell
+  numbers: false
+  content: |
+    ./configure
+    make -j 4
+classes:
+  code: font-size-1_3em
+
+---
+title: Choose an issue
+content: |
+  You can pick one from any of the sources below.
+  *If you claim one, put your name on it!*
+items:
+  - qr: 'https://docs.google.com/spreadsheets/d/1mqLZafbDSI_2h6hijO4IYxoibjayzHYt__ZMbVc1s2A/edit#gid=0'
+    title: Our list of [good first issue](https://docs.google.com/spreadsheets/d/1mqLZafbDSI_2h6hijO4IYxoibjayzHYt__ZMbVc1s2A/edit#gid=0).
+  - qr: 'https://github.com/nodejs/node/issues'
+    title: Node.js [public issues list](https://github.com/nodejs/node/issues).
+options:
+  horizontal: true
+
+---
+title: Build, then run the tests and the linter
+code:
+  language: shell
+  numbers: false
+  content: |
+    make jstest
+    make lint-js-fix
+classes:
+  code: font-size-1_3em
+
+---
+title: Configure GIT before committing
+content: Make sure to have `git config` configured with your GitHub account.
+code:
+  language: shell
+  numbers: false
+  content: |
+    git config user.name "$NAME"
+    git config user.email "$EMAIL"
+classes:
+  code: font-size-1_3em
+
+---
+title: Make sure to follow commit guidelines
+items:
+  - qr: https://github.com/nodejs/node/blob/main/doc/contributing/pull-requests.md#commit-message-guidelines
+    title: You can found them [here](https://github.com/nodejs/node/blob/main/doc/contributing/pull-requests.md#commit-message-guidelines).
+  - code:
+      language: shell
+      numbers: false
+      content: |
+        # How to validate the commit locally
+        npm install -g @node-core/utils
+        core-validate-commit HEAD
+    classes:
+      code: font-size-1_3em text-left
+options:
+  horizontal: true
+
+---
+layout: nearform
+# ...
+
+---
+layout: end

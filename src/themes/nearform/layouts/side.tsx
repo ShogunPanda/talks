@@ -4,7 +4,7 @@ import { Items } from '../components/item.js'
 import { Slide } from '../models.js'
 
 export default function SideLayout(props: SlideProps<Slide>): JSX.Element {
-  const { environment, theme, talk, index, slide } = props
+  const { context, theme, talk, index, slide } = props
 
   const {
     title,
@@ -27,14 +27,14 @@ export default function SideLayout(props: SlideProps<Slide>): JSX.Element {
 
   return (
     <SlideWrapper
-      environment={environment}
+      context={context}
       theme={theme}
       talk={talk}
       slide={slide}
       index={index}
-      className={`freya__slide--with-half p-0 ${className ?? ''}`.trim()}
+      className={context.extensions.expandClasses(`freya@slide--with-half ${className ?? ''}`)}
     >
-      <div className="freya__slide__half min-w-4sp p-0_5sp self-start flex-col flex-1">
+      <div className={context.extensions.expandClasses('freya@slide__half theme@side')}>
         {title && <h1 dangerouslySetInnerHTML={{ __html: parseContent(title) }} />}
 
         {content?.filter(Boolean).map((c: string | object, contentIndex: number) => {
@@ -44,14 +44,21 @@ export default function SideLayout(props: SlideProps<Slide>): JSX.Element {
             return parseComplexContent(c, key, props)
           }
 
-          return <h4 key={key} className="text-justify" dangerouslySetInnerHTML={{ __html: parseContent(c) }} />
+          return (
+            <h4
+              key={key}
+              className={context.extensions.expandClasses('theme@side__content')}
+              dangerouslySetInnerHTML={{ __html: parseContent(c) }}
+            />
+          )
         })}
 
         {items && (
           <Items
+            context={context}
             items={items}
             horizontal={horizontal}
-            className={itemsClassName}
+            className={context.extensions.expandClasses(itemsClassName)}
             talk={talk.id}
             noGap={noGap}
             skipSpacer={skipSpacer}
@@ -60,27 +67,25 @@ export default function SideLayout(props: SlideProps<Slide>): JSX.Element {
         )}
       </div>
       {image && (
-        <div className="flex flex-1 items-center justify-center">
-          <img src={imageUrl} className={`max-w-4_5sp max-h-4sp mr-0_5sp ${imageClassName ?? ''}`.trim()} />
+        <div className={context.extensions.expandClasses('theme@side__image-wrapper')}>
+          <img
+            src={imageUrl}
+            className={context.extensions.expandClasses(`theme@side__image ${imageClassName ?? ''}`)}
+          />
         </div>
       )}
       {!image && highlight && (
-        <div
-          className={`flex items-center p-0_5sp h-full text-justify min-w-40p max-w-40p ${
-            highlightClassName ?? ''
-          }`.trim()}
-        >
-          <h4 dangerouslySetInnerHTML={{ __html: parseContent(highlight) }} className="m-0" />
+        <div className={context.extensions.expandClasses(`theme@side__highlight ${highlightClassName ?? ''}`)}>
+          <h4
+            dangerouslySetInnerHTML={{ __html: parseContent(highlight) }}
+            className={context.extensions.expandClasses('m-0')}
+          />
         </div>
       )}
 
       {!image && !highlight && code && (
-        <div
-          className={`flex items-center py-0_5sp pl-0 pr-1sp h-full min-w-40p max-w-60p ${
-            highlightClassName ?? ''
-          }`.trim()}
-        >
-          <Code {...code} className={codeClassName ?? ''.trim()} />
+        <div className={context.extensions.expandClasses(`theme@side__code ${highlightClassName ?? ''}`)}>
+          <Code context={context} {...code} className={context.extensions.expandClasses(codeClassName ?? '')} />
         </div>
       )}
     </SlideWrapper>

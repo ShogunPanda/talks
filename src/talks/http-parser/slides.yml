@@ -1,0 +1,274 @@
+---
+layout: cover
+# ...
+
+---
+layout: separator
+title: Nothing beats a classic!
+image: '@talk/500.webp'
+background: nf-darkest-blue
+
+---
+layout: hello
+# ...
+
+---
+layout: nearform
+# ...
+
+---
+layout: separator
+title: We all love HTTP!
+image: '@talk/love.webp'
+background: nf-brunch-pink
+
+---
+layout: separator
+title: Which HTTP are you?
+image: '@talk/palette.webp'
+background: nf-orange-split
+
+---
+title: The choice is narrow
+content: Even if the HTTP protocol is more than 30 years old, only *three* current versions of it exist as of today.
+items:
+  - index: 1
+    title: HTTP/1.1
+    text: The last version of the initial protocol. By far the most famous and most used.
+  - index: 2
+    title: HTTP/2
+    text: Developed on top of SPDY to remove some problems of HTTP.
+  - index: 3
+    title: HTTP/3
+    text: Developed on top of QUIC to solve TCP problems.
+
+---
+title: "HTTP/1.1: Can't beat a classic"
+items:
+  - icon: 'calendar-time'
+    title: 'The grandparent'
+    text: Developed in 1989 and by far the mostly used (80% of websites).
+  - icon: 'typography'
+    title: Textual protocol
+    text: Parsing can be easily implemented in any language.
+  - icon: 'topology-bus'
+    title: Keep-Alive and FIFO pipelining
+    text: A single TCP connection can be reused.
+
+---
+title: "HTTP/2: Don't break too much"
+items:
+  - icon: 'calendar-time'
+    title: 'The parent'
+    text: Development started in 2012 and end up being standardized in 2015.
+  - icon: 'history'
+    title: Baby-steps
+    text: The semantics are thes same, only the TCP connection usage has changed.
+  - icon: 'arrows-shuffle'
+    title: Multiplexing and real parallelism
+    text: It uses a SPDY derived communication protocol for better multiplexing.
+
+---
+title: HTTP/3
+items:
+  - icon: 'calendar-time'
+    title: 'The sibling'
+    text: Development started in 2018 and end up being standardized in 2022.
+  - icon: 'status-change'
+    title: Farewell, TCP!
+    text: QUIC is now used, which means HTTP has switched to UDP.
+  - icon: 'arrows-split-2'
+    title: No head of line blocking
+    text: Using multiplexing over UDP minimizes problems introduced by lost packets.
+
+---
+title: What about Node.js?
+items:
+  - index: 1+2
+    title: HTTP/1.1 and HTTP/2
+    text: Node.js has a stable implementation.
+  - index: 3
+    title: HTTP/3
+    text: Work in progress, *stay tuned!*
+options:
+  horizontal: true
+
+---
+layout: separator
+title: Let's focus!
+image: '@talk/focus.webp'
+background: nf-midnight-blue
+
+---
+layout: side
+title: The original parser
+content:
+  - '**http_parser** was the original HTTP/1.1 parser of Node.js'
+  - It existed since the early days of Node.js and it was one of its older dependencies.
+image: '@talk/http_parser.webp'
+
+---
+title: 'http_parser: the goods'
+items:
+  - icon: 'rocket'
+    title: 'Good performance'
+    text: The original parser had good performance, around 1.5 million requests per second.
+  - icon: 'heart-handshake'
+    title: Lenient
+    text: It supported both HTTP/0.9, HTTP/1.0 and HTTP/1.1 specs and non compliant clients.
+  - icon: 'checkup-list'
+    title: Well tested
+    text: It had a comprehensive and battle tested test suite.
+
+---
+title: 'http_parser: the bads'
+items:
+  - icon: 'letter-c'
+    title: Written in C
+    text: It is not the most user friendly language.
+  - icon: 'mood-sad-squint'
+    title: Hard to maintain
+    text: Over the course of ten years, the codebase became unmaintainable.
+  - icon: 'bug'
+    title: Vulnerability-prone
+    text: The maintanability problem made it also hard to promptly address bugs and vulnerabilities.
+
+---
+layout: side
+title: The current parser
+content:
+  - '**llhttp** is the current HTTP parser.'
+  - Written by Fedor Indutny in 2019, is the default since Node.js 12.
+image: '@talk/llhttp.webp'
+
+---
+layout: side
+title: How it works?
+content:
+  - 'llhttp is a state based HTTP parser based on llparse.'
+  - llparse is capable to generate a very performant C code out of a TypeScript description of the possible states.
+image: '@talk/llhttp_states.webp'
+
+---
+layout: separator
+title: Wait, what?!
+image: '@talk/what.webp'
+background: nf-orange-split
+
+---
+layout: separator
+title: |
+  Yes, you 
+  got it right!
+image: '@talk/possible.webp'
+background: nf-midnight-blue
+
+---
+layout: side
+title: There's more!
+content:
+  - The http_parser test suite has been ported and extended in llhttp.
+  - The test suite is now described in *Markdown*, transpiled at runtime to a *C source code* and then compiled and executed.
+code:
+  language: markdown
+  content: |
+    ### Invalid HTTP version with lenient
+
+    <!-- meta={"type": "request-lenient-version"} -->
+    ```http
+    GET / HTTP/5.6
+
+
+    ```
+
+    ```log
+    off=0 message begin
+    off=0 len=3 span[method]="GET"
+    off=3 method complete
+    off=4 len=1 span[url]="/"
+    off=6 url complete
+    off=11 len=3 span[version]="5.6"
+    off=14 version complete
+    off=18 headers complete method=1 v=5/6 flags=0 content_length=0
+    off=18 message complete
+    ```
+
+---
+layout: separator
+title: That's a genius in action!
+image: '@talk/genius.webp'
+background: nf-orange-split
+
+---
+title: "llhttp: what's wrong with it?"
+items:
+  - icon: 'bug'
+    title: Hard to debug and release
+    text: The transpilation makes hard to debug issues.
+  - icon: 'history'
+    title: Backward compatibility
+    text: Supporting different versions of HTTP (included obsoleted) introduces unneeded complexity.
+  - icon: 'heart-handshake'
+    title: You give them a finger, they take the arm
+    text: Leniency-prone approach opens the door for a lot of edge cases.
+
+---
+layout: separator
+title: Where are the docs?
+image: '@talk/postit.webp'
+background: nf-darkest-blue
+
+---
+layout: separator
+title: Do we have the solution?
+image: '@talk/solution.webp'
+background: nf-brunch-pink
+
+---
+layout: separator
+title: Yes, start fresh!
+image: '@talk/fresh.webp'
+background: nf-orange-split
+
+---
+title: Keep the goods
+items:
+  - icon: 'brain'
+    title: Piece of art design
+    text: llhttp has a wonderful and performant architecture.
+  - icon: 'checkup-list'
+    title: Testability
+    text: The test suite is invaluable to ensure correctness.
+options:
+  horizontal: true
+
+---
+title: What shall we change?
+items:
+  - icon: 'user'
+    title: Better transpilation
+    text: Try to transpile to a human readable form and then generate static libs and include headers.
+  - image: '@talk/rust-logo.webp'
+    title: Use a higher level language
+    text: Rust is a good candidate that can be used for both developer input and transpilation output.
+  - icon: 'shield-lock'
+    title: Modern and strict
+    text: Only support latest HTTP/1.1 standard (RFC 9110) and initially do have any leniency logic.
+options:
+  horizontal: true
+
+---
+layout: separator
+title: |
+  Work in progress,
+  stay tuned!
+image: '@talk/road.webp'
+background: nf-orange-split
+
+---
+layout: quote
+sentence: If there is no struggle, there is no progress.
+author: Frederick Douglass
+
+---
+layout: end

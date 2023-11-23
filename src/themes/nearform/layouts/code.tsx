@@ -1,9 +1,9 @@
-import { Code, parseContent, SlideProps } from 'freya-slides'
+import { Code, parseContent, type SlideProps } from 'freya-slides'
 import { SlideWrapper } from '../components/common.js'
-import { Slide } from '../models.js'
+import { type Slide } from '../models.js'
 
-export default function SideLayout(props: SlideProps<Slide>): JSX.Element {
-  const { index, slide, environment, theme, talk } = props
+export default function CodeLayout(props: SlideProps<Slide>): JSX.Element {
+  const { index, slide, context, theme, talk } = props
 
   const {
     title,
@@ -13,17 +13,17 @@ export default function SideLayout(props: SlideProps<Slide>): JSX.Element {
 
   return (
     <SlideWrapper
-      environment={environment}
+      context={context}
       theme={theme}
       talk={talk}
       slide={slide}
       index={index}
-      className={`${!title ? 'p-0_1sp' : ''} ${className}`.trim()}
+      className={context.extensions.expandClasses(`${!title ? 'p-0_1sp' : ''} ${className}`)}
     >
       {title && <h1 dangerouslySetInnerHTML={{ __html: parseContent(title) }} />}
 
-      <div className={`flex items-center justify-center h-full min-w-40p ${highlightClassName ?? ''}`.trim()}>
-        <Code {...code} className={codeClassName ?? ''} />
+      <div className={context.extensions.expandClasses(`theme@code__wrapper ${highlightClassName ?? ''}`)}>
+        <Code context={context} {...code} className={context.extensions.expandClasses(codeClassName ?? '')} />
       </div>
     </SlideWrapper>
   )

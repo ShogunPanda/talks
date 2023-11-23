@@ -15,6 +15,7 @@ export interface Item {
     image?: string
     title?: string
     text?: string
+    contents?: string
     qr?: string
     code?: string
   }
@@ -29,6 +30,7 @@ export interface Grid {
 export interface Slide {
   layout?: string
   title?: string
+  subtitle?: string
   content: string[]
   items?: Item[]
   grids?: Grid | Grid[]
@@ -40,6 +42,8 @@ export interface Slide {
   sequence?: string
   icon?: string
   logo?: string
+  foreground?: string
+  background?: string
   options: {
     light?: boolean
     icons?: boolean
@@ -49,9 +53,17 @@ export interface Slide {
     skipSpacer?: boolean
     skipDefaultClasses?: boolean
     highlightWidth: number
+    author?: Record<string, any>
+    quote: {
+      primaryIcon?: string
+      secondaryIcon?: string
+    }
   }
   classes: {
     slide?: string
+    title?: string
+    subtitle?: string
+    content?: string
     raw?: string
     items?: string
     image?: string

@@ -1,56 +1,54 @@
-import { parseContent, SlideProps, SvgIcon } from 'freya-slides'
+import { SvgIcon, parseContent, type SlideProps } from 'freya-slides'
 import { SlideWrapper } from '../components/common.js'
-import { Slide } from '../models.js'
+import { type Slide } from '../models.js'
 
-export default function QuoteLayout({ environment, theme, slide, talk, index }: SlideProps<Slide>): JSX.Element {
+export default function QuoteLayout({ context, theme, slide, talk, index }: SlideProps<Slide>): JSX.Element {
   const {
     title,
     sentence,
     author,
-    options: { light, icons },
+    options: { light, icons, quote },
     classes: { slide: className }
   } = slide
+  const { primaryIcon, secondaryIcon } = quote ?? {}
 
   const [backgroundColor, sentenceColor, authorColor] = light
-    ? ['bg-white', 'text-nf-midnight-blue', 'text-black']
-    : ['bg-nf-brunch-pink', 'text-white', 'text-nf-midnight-blue']
+    ? ['theme@bg-white', 'theme@text-nf-midnight-blue', 'text-black']
+    : ['theme@bg-nf-brunch-pink', 'theme@text-white', 'text-nf-midnight-blue']
 
   return (
     <SlideWrapper
-      environment={environment}
+      context={context}
       theme={theme}
       talk={talk}
       slide={slide}
       index={index}
-      className={`${backgroundColor} ${className ?? ''}`.trim()}
+      className={context.extensions.expandClasses(`${backgroundColor} ${className ?? ''}`)}
       defaultLogoColor={light ? 'black' : 'white'}
     >
       <h1
         dangerouslySetInnerHTML={{ __html: parseContent(title ?? 'One last thing™') }}
-        className={!light ? 'white' : ''}
+        className={context.extensions.expandClasses(!light ? 'text-white' : '')}
       />
 
-      <h1
-        className={`flex flex-col flex-1 justify-center max-w-8sp m-0 -mt-0_5sp p-0 no-border ${sentenceColor} line-height-1_3`}
-      >
-        <span className="block" dangerouslySetInnerHTML={{ __html: parseContent(`&ldquo;${sentence}&rdquo;`) }} />
-        <strong className={`font-size-0_6em ${authorColor} italic`}>{author}</strong>
+      <h1 className={context.extensions.expandClasses(`theme@quote__title ${sentenceColor}`)}>
+        <span
+          className={context.extensions.expandClasses('theme@quote__sentence')}
+          dangerouslySetInnerHTML={{ __html: parseContent(`&ldquo;${sentence?.trim()}&rdquo;`) }}
+        />
+        <strong className={context.extensions.expandClasses(`theme@quote__author ${authorColor}`)}>{author}</strong>
       </h1>
 
       {icons !== false && (
         <>
           <SvgIcon
-            name="bulb"
-            className={`absolute z-1 w-2_5sp h-2_5sp -top-0_5sp right-0_5sp stroke-width-0_3 transform rotate-180 ${
-              !light ? 'text-white' : ''
-            }`.trim()}
+            name={primaryIcon ?? 'puzzle-2'}
+            className={context.extensions.expandClasses(`theme@quote__primary-icon ${!light ? 'text-white' : ''}`)}
             theme="nearform"
           />
           <SvgIcon
-            name="puzzle-2"
-            className={`absolute z-1 w-2_5sp h-2_5sp -bottom-0_8sp left-4sp stroke-width-0_3 ${
-              !light ? 'text-white' : ''
-            }`.trim()}
+            name={secondaryIcon ?? 'bulb'}
+            className={context.extensions.expandClasses(`theme@quote__secondary-icon  ${!light ? 'text-white' : ''}`)}
             theme="nearform"
           />
         </>
