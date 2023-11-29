@@ -2,7 +2,7 @@ import { type CSSValue, type Rule } from '@unocss/core'
 import { handler } from '@unocss/preset-mini/utils'
 import presetWind from '@unocss/preset-wind'
 import transformerDirectives from '@unocss/transformer-directives'
-import { defineUnoConfig } from 'freya-slides'
+import { compressLayers, defineUnoConfig, layersVariant } from 'freya-slides'
 
 export type UnoRuleDefinition = [
   string | RegExp,
@@ -200,7 +200,23 @@ function generateCustomUnits(): Rule[] {
   return rules
 }
 
-export default defineUnoConfig({
+const layers: Record<string, number> = {
+  components: 10,
+  utilities: 11,
+  default: 12,
+  freya: 21,
+  theme: 41,
+  talk: 61,
+  'freya-override': 81,
+  'theme-override': 82,
+  'talk-override': 83,
+  'freya-important': 91,
+  'theme-important': 92,
+  'talk-important': 93,
+  js: 99
+}
+
+export const config = defineUnoConfig({
   presets: [presetWind()],
   transformers: [transformerDirectives()],
   theme: {
@@ -256,39 +272,10 @@ export default defineUnoConfig({
     ['font-fira-code', { 'font-family': `'Fira Code', Consolas, ${systemMonospaceFonts}` }],
     ['font-noto', { 'font-family': `'Noto Sans', ${systemFonts}` }]
   ],
-  layers: {
-    components: 10,
-    utilities: 11,
-    default: 12,
-    freya: 21,
-    theme: 41,
-    talk: 61,
-    'freya-important': 91,
-    'theme-important': 92,
-    'talk-important': 93,
-    js: 99
-  },
-  variants: [
-    /*
-      TODO@PI: Compress layers here, using the same CSS classes generators elsewhere
-      Consider that layers above must be changed as well.
-      Then reimport these changes in freya.
-    */
-    {
-      name: 'talks-layer-matcher',
-      match(matcher: string) {
-        const mo = matcher.match(/^(?<layer>([^@]+))@(?<matcher>.+)$/)
-
-        if (!mo) {
-          return matcher
-        }
-
-        return {
-          matcher: mo.groups!.matcher,
-          layer: mo.groups!.layer
-        }
-      }
-    }
-  ],
+  layers,
+  variants: [layersVariant],
   safelist: []
 })
+
+export default config
+export const compressedLayers = compressLayers(layers)

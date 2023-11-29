@@ -36,7 +36,7 @@ background: nf-brunch-pink
 layout: separator
 title: …but it<br/> should not!
 image: '@talk/easy.webp'
-background: nf-darkest-blue talk@flex-row-reverse
+background: nf-darkest-blue theme@flex-row-reverse
 
 ---
 layout: quote

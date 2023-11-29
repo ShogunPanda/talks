@@ -277,6 +277,13 @@
   }
 
   /* Layouts */
+  &slide--half-wrapper {
+    @apply theme@flex-row;
+    @apply theme@p-0;
+    @apply items-center;
+    @apply justify-center;
+  }
+
   &code {
     &__wrapper {
       @apply flex;
@@ -590,12 +597,12 @@
 
       &__qr,
       &__icon {
-        @apply theme-important@w-0_5sp;
-        @apply theme-important@h-0_5sp;
-        @apply theme-important@min-w-0_5sp;
-        @apply theme-important@min-h-0_5sp;
-        @apply theme-important@mr-0;
-        @apply theme-important@mb-0_1sp;
+        @apply theme-override@w-0_5sp;
+        @apply theme-override@h-0_5sp;
+        @apply theme-override@min-w-0_5sp;
+        @apply theme-override@min-h-0_5sp;
+        @apply theme-override@mr-0;
+        @apply theme-override@mb-0_1sp;
       }
 
       &__text {

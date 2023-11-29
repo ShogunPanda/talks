@@ -24,7 +24,7 @@ export default function HalfLayout(props: SlideProps<Slide>): JSX.Element {
       talk={talk}
       slide={slide}
       index={index}
-      className={context.extensions.expandClasses(`freya@slide--with-half theme@half ${className ?? ''}`)}
+      className={context.extensions.expandClasses(`theme@slide--half-wrapper theme@half ${className ?? ''}`)}
       defaultLogoColor="white"
     >
       <div className={context.extensions.expandClasses('theme@half__contents')}>

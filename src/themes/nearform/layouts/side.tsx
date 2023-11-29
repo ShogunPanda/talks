@@ -32,9 +32,9 @@ export default function SideLayout(props: SlideProps<Slide>): JSX.Element {
       talk={talk}
       slide={slide}
       index={index}
-      className={context.extensions.expandClasses(`freya@slide--with-half ${className ?? ''}`)}
+      className={context.extensions.expandClasses(`theme@slide--half-wrapper ${className ?? ''}`)}
     >
-      <div className={context.extensions.expandClasses('freya@slide__half theme@side')}>
+      <div className={context.extensions.expandClasses('theme@side')}>
         {title && <h1 dangerouslySetInnerHTML={{ __html: parseContent(title) }} />}
 
         {content?.filter(Boolean).map((c: string | object, contentIndex: number) => {

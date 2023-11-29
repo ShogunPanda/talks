@@ -35,7 +35,7 @@ options:
 title: Getting started (1/2)!
 items:
   - qr: https://github.com/nodejs/node
-    title: Navigate to [https://github.com/nodejs/node](https://github.com/nodejs/node).
+    title: Navigate to [the Node.js repository](https://github.com/nodejs/node).
     text: |
       On MacOS / Linux:
       `open https://github.com/nodejs/node`

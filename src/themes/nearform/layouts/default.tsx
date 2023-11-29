@@ -19,7 +19,8 @@ export default function DefaultLayout(props: SlideProps<Slide>): JSX.Element {
       image: imageClassName,
       items: itemsClassName,
       highlight: highlightClassName,
-      code: codeClassName
+      code: codeClassName,
+      contents: contentsClassName
     }
   } = slide
 
@@ -46,7 +47,7 @@ export default function DefaultLayout(props: SlideProps<Slide>): JSX.Element {
         return (
           <h4
             key={key}
-            className={context.extensions.expandClasses('theme@default__subtitle')}
+            className={context.extensions.expandClasses(`theme@default__subtitle ${contentsClassName}`)}
             dangerouslySetInnerHTML={{ __html: parseContent(c) }}
           />
         )

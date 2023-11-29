@@ -1,0 +1,674 @@
+---
+layout: cover
+# ...
+
+---
+layout: separator
+title: "Don't ask if you can't handle the answers!"
+image: '@talk/dog.webp'
+background: nf-orange-split
+logo: black
+
+---
+layout: hello
+# ...
+
+---
+layout: nearform
+# ...
+
+---
+layout: separator
+title: So, you want to mess with Open Source...
+image: '@talk/code.webp'
+background: nf-orange-split
+
+---
+title: Let's clarify things
+items:
+  - icon: 'git-fork'
+    title: What is it?
+    text: A decentralized software development model that *encourages open collaboration*.
+  - icon: 'heart'
+    title: How is it possible?
+    text: The secret is in the *passion* of the people.
+  - icon: 'bolt'
+    title: Is it working?
+    text: Open Source has proven to be really effective in improving software quality.
+
+---
+title: How it started?
+items:
+  - icon: 'moneybag'
+    title: Initially, it was free, not open
+    text: In the 70s the *free software movement* challenged the for-profit based development.
+  - icon: 'arrows-split-2'
+    title: Free means too much
+    text: In English, the word free is ambiguous. *Not paid* was the most understood meaning.
+  - icon: 'git-fork'
+    title: Open Source was branched off the Free Software Movement
+    text: OSS software can be used for commercial purposes. *The freedom is retained.*
+
+---
+title: It might not be OpenSource
+content:
+  - |
+    To be considered Open Source, a software must use a OSS compatible license.
+    The [Open Source Initiative](https://opensource.org) maintains a list of such licenses.
+  - qr: https://opensource.org
+classes:
+  qr: w-2sp h-2sp mx-auto mb-0_2sp flex-1
+
+---
+layout: separator
+title: Beware!
+image: '@talk/hell.webp'
+background: nf-darkest-blue
+
+---
+layout: side
+title: The devil is in the details
+content:
+  - Even if a software has a OSS license, it might not strictly be OSS.
+  - SQLite is [Open Source but not Open Contribution](https://sqlite.org/copyright.html).
+image: '@talk/sqlite.webp'
+
+---
+title: Why would somebody want to go Open Source?
+items:
+  - icon: 'rocket'
+    title: The best of the best of the best
+    text: You can access a developer base not physically close to you.
+  - icon: 'world'
+    title: Different cultures, backgrounds and capabilities
+    text: You get different point of views, which increases quality.
+  - icon: 'coin-euro'
+    title: Low maintenance cost
+    text: You don't need an office, just a version control server.
+
+---
+layout: separator
+title: Wait a sec...
+image: '@talk/thinker.webp'
+background: nf-neon-blue
+
+---
+layout: separator
+title: Ring a bell?
+image: '@talk/bell.webp'
+background: nf-neon-blue
+classes:
+  slide: theme@flex-row-reverse
+
+---
+title: It's similar, but it's not!
+content:
+  - |
+    The Open Source development model is similar to Remote Working.
+    The huge difference is that people are driven by *passion*, not money.
+  - '*You are not their boss!*'
+
+---
+layout: side
+title: How to make it similar?
+content: You can create bounty programs to prioritize collaboration on bug fixing or feature development.
+image: '@talk/wanted.webp'
+
+---
+layout: raw
+content: |
+  <h1 class="text-nf-midnight-blue after:hidden font-size-150pt line-height-1 m-0 p-0">BAD!</h1>
+  <h1 class="text-white after:hidden font-size-150pt line-height-1 m-0 p-0">DON'T!</h1>
+background: nf-brunch-pink
+classes:
+  slide: items-center justify-center p-0
+  raw: flex flex-1 w-full h-full flex-col items-center justify-center
+logo: white
+
+---
+title: Diversity and freedom are a huge treasure
+items:
+  - icon: 'plug-connected'
+    title: Let them follow their path
+    text: The Open Source model works because people can freely follow their paths.
+  - icon: 'confetti'
+    title: It's a hobby
+    text: Most collaborators send code in their free time, after a day of boring coding.
+  - icon: 'git-fork'
+    title: Keep the difference
+    text: If you make it look like a job, you will lose them.
+
+---
+title: How can you avoid losing control?
+items:
+  - index: 1
+    title: Propose, don't impose
+    text: You can share your vision and see if people are interested.
+  - index: 2
+    title: Follow your path
+    text: You can still deliver the features you care about.
+  - index: 3
+    title: Be open
+    text: Other people's path might be useful for yours.
+options:
+  horizontal: true
+
+---
+layout: separator
+title: Trust the community!
+image: '@talk/community.webp'
+background: nf-orange-split
+logo: black
+
+---
+layout: half
+title: The world is nice ...
+content:
+  - People generally want to help.
+  - The have interest in what you are doing for their own needs.
+image: '@talk/people.webp'
+
+---
+layout: half
+title: ... but don't be afraid to be harsh ...
+content:
+  - Quick and effective intervention about uncomfortable situation are the key.
+  - Avoiding creating a toxic community is always your *first* priority.
+image: '@talk/police.webp'
+
+---
+layout: half
+title: ... and don't forget to be kind!
+content:
+  - You will get people of all knowledges and expertises. Be patient, especially with newcomers.
+  - "Basically, it's like *parenting*: endless patience, close to no recognition."
+image: '@talk/kindness.webp'
+classes:
+  slide: theme@flex-row-reverse
+
+---
+layout: separator
+title: But here we're talking about breeding...
+image: '@talk/breeding.webp'
+background: nf-orange-split
+
+---
+title: The job NEVER ends
+items:
+  - icon: 'bomb'
+    title: Too big to fail
+    text: Once you start a community, you are responsible for maintaining it. Potentially forever.
+  - icon: 'heart'
+    title: Don't take it personally
+    text: The best way to manage such communities is to avoid a *one-person show*.
+  - icon: 'arrows-shuffle'
+    title: Everybody is replaceable
+    text: All people are valuable and important, but make sure the community can survive if people suddenly disappear.
+
+---
+layout: separator
+title: Nobody wants to be sued!
+image: '@talk/justice.webp'
+background: nf-brunch-pink
+
+---
+title: Why do we need legal licenses
+content:
+  - Since Open Source Software is used in every sector, it has legally implication and liability. You need to avoid consequences.
+  - '*Do not reinvent the wheel, choose an existing license!*'
+
+---
+title: Remember, it's permament ...
+items:
+  - icon: 'status-change'
+    title: You can change...
+    text: With every release, you can change the license to a compatible one.
+  - icon: 'history'
+    title: ... but not retroactively.
+    text: Only new release use a different licenses. You can't modify the past.
+  - icon: 'git-fork'
+    title: Forking is unavoidable
+    text: If people don't like the new license, they can fork the software.
+options:
+  horizontal: true
+
+---
+title: ...but you can still profit from it!
+items:
+  - icon: 'history'
+    title: Remember how it started?
+    text: Open Source doesn't mean free.
+  - icon: 'brain'
+    title: Think outside of the box
+    text: You don't have to think about profiting directly from the software.
+  - icon: 'heart'
+    title: Be around and everywhere
+    text: You can profit by offering premium services, customer support or a commercial derived product based on the OSS software.
+
+---
+title: Don't try to mess the system
+content: People don't like if you try to take away their beloved Open Source software.
+items:
+  - image: '@talk/nodejs-logo.webp'
+    title: Node.js
+    classes:
+      image: talk@w-auto
+  - image: '@talk/terraform.webp'
+    title: Terraform
+  - image: '@talk/rust-logo.webp'
+    title: Rust
+options:
+  horizontal: true
+
+---
+layout: separator
+title: |
+  Being kind never hurts!
+image: '@talk/kindness.webp'
+background: nf-brunch-pink
+logo: black
+
+---
+layout: image
+title: Questions?
+image: '@theme/questions.webp'
+
+---
+layout: image
+title: Coffee Break
+image: '@talk/coffee.webp'
+
+---
+layout: separator
+title: Let's get to the action!
+image: '@talk/action.webp'
+background: nf-neon-blue
+
+---
+title: First of all, choose the hosting
+items:
+  - image: '@talk/github.webp'
+    title: GitHub
+  - image: '@talk/gitlab.webp'
+    title: GitLab
+  - image: '@talk/bitbucket.webp'
+    title: BitBucket
+options:
+  horizontal: true
+
+---
+title: Three reason not to go self-hosted or exotic
+items:
+  - index: 1
+    title: 'Self hosting is hard'
+    text: 'It will increase your ownership cost.'
+  - index: 2
+    title: 'Self hosting is hidden'
+    text: 'You will be hard to be found.'
+  - index: 3
+    title: 'GIT is well known'
+    text: 'Do not create entry barriers.'
+options:
+  horizontal: true
+
+---
+layout: separator
+title: How do we get started?
+image: '@talk/do-it.webp'
+background: nf-brunch-pink
+
+---
+layout: side
+title: Everybody has issues
+content:
+  - The core idea to attract people is to show you care.
+  - The issue system is where you usually take feedback and bug reports from your user base.
+image: '@talk/issue.webp'
+
+---
+layout: side
+title: Having a template helps
+items:
+  - icon: ''
+    title: 'It will help you'
+    text: 'You can explicitly ask for the info you care the most.'
+  - icon: ''
+    title: 'It will help them'
+    text: 'Having a templates speeds up their reporting time.'
+image: '@talk/template.webp'
+
+---
+layout: side
+title: Reproducible examples are crucial for bugs
+items:
+  - icon: 'cut'
+    title: 'Reduce to the minimum'
+    text: 'You want to rule out all unrelevant details.'
+  - icon: 'shield-lock'
+    title: 'Remove sensitive information'
+    text: 'Nobody wants to get in trouble.'
+  - icon: 'world'
+    title: 'Ask for a public repository'
+    text: 'It will help other people helping the triage process.'
+image: '@talk/repro.webp'
+
+---
+layout: half
+title: You don't owe anybody anything ...
+content: It is in your rights to close bugs or features without solving them.
+image: '@talk/baloons.webp'
+
+---
+title: ... but don't forget kindess!
+items:
+  - index: 1
+    title: 'Be respectful'
+    text: 'Provide an exhaustive explanation.'
+  - index: 2
+    title: 'Be gentle'
+    text: 'Use a kind tone.'
+  - index: 3
+    title: 'Be reasonable'
+    text: 'Be open to change your mind.'
+options:
+  horizontal: true
+
+---
+layout: quote
+title: 'In case of doubts'
+sentence: A component of a system should behave in a way that most users will expect it to behave, and therefore not astonish or surprise users.
+author: Principle of least surprise
+options:
+  light: true
+
+---
+title: Label everything
+items:
+  - icon: 'checkup-list'
+    title: 'Have a process'
+    text: 'Following procedures will speed you up.'
+  - icon: 'arrows-split-2'
+    title: 'Divide et impera'
+    text: 'Using labels helps categorizing and dividing tasks.'
+  - icon: 'heart'
+    title: "Don't overcommit"
+    text: Limit the number of labels so that they are still useful.
+
+---
+layout: side
+title: Remember about good first time issues
+content:
+  - When people come in your community and want to help, they don't know where to start.
+  - By having *good first time issues* will help them to independently starting being involved.
+image: '@talk/first-issues.webp'
+
+---
+layout: separator
+title: |
+  The next
+  big pillar
+image: '@talk/pillars.webp'
+background: nf-orange-split
+
+---
+title: Pull Request
+items:
+  - icon: 'brain'
+    title: 'The core of the model'
+    text: This is how collaborators send you code.
+  - icon: 'bolt'
+    title: 'The quality will vary'
+    text: It is your responsibility to maintain the level.
+  - icon: 'world'
+    title: 'The scope will vary'
+    text: Same as above, *don't be afraid of changes*.
+
+---
+layout: side
+title: Always ask for tests
+content:
+  - While formal TDD is hard, Pull Request *must* contain tests when non trivial.
+  - Even if a PR content is very appealing, you have to *resist the tentation to accept it without tests*.
+image: '@talk/tests.webp'
+
+---
+title: The review process
+items:
+  - index: 1
+    title: Behavior and security
+    text: Make sure the PR does what it claims, and double check security implications.
+  - index: 2
+    title: Performance
+    text: Nobody likes slow software, isn't it?
+  - index: 3
+    title: Quality and clarity
+    text: A poorly (or obscurely) written performant code make more harm than good.
+  - index: 4
+    title: Enforce the conventions
+    text: Same as above, *don't be afraid to ask for picky changes*.
+
+---
+layout: half
+title: Review must be thorough
+content:
+  - Nobody rushes you to merge code. If possible, require for multiple approvals before committing.
+  - Once you give enough time for objection, then you can merge.
+image: '@talk/review.webp'
+
+---
+title: CI and workflows
+items:
+  - icon: 'flame'
+    title: Available everywhere
+    text: In modern service you have a CI and workflow system.
+  - icon: 'heart'
+    title: It's so easy
+    text: Most of these tools are very easy to use.
+  - icon: 'shield-check'
+    title: CI is a life saver
+    text: Don't merge any PR with a red CI.
+
+---
+title: Conventional commits
+content:
+  - |
+    How to add human and machine readable meaning to commit messages. 
+    Check the [official website](https://www.conventionalcommits.org/en/v1.0.0/)!
+  - qr: https://www.conventionalcommits.org/en/v1.0.0/
+classes:
+  qr: w-2sp h-2sp mx-auto mb-0_2sp flex-1
+
+---
+title: Show me some examples
+code:
+  language: shell
+  content: |
+    git commit -m "feat!: send an email to the customer when a product is shipped"
+    git commit -m "feat: allow provided config object to extend other configs"
+    git commit -m "fix: prevent racing of requests"
+    git commit -m "chore!: drop support for Node 6"
+    git commit -m "docs: correct spelling of CHANGELOG"
+  numbers: false
+
+---
+title: Semantic versioning
+content:
+  - |
+    A specification for have meaningful software version.
+    Check the [official website](https://semver.org/)!
+  - qr: https://semver.org/
+classes:
+  qr: w-2sp h-2sp mx-auto mb-0_2sp flex-1
+
+---
+layout: side
+title: (Semi) Automated releasing
+content: By leveraging existing tools and the workflow feature you can release new version with just a click.
+image: '@talk/workflows.webp'
+
+---
+layout: image
+title: Questions?
+image: '@theme/questions.webp'
+
+---
+layout: image
+title: Coffee Break
+image: '@talk/coffee.webp'
+
+---
+layout: separator
+title: Humans are social beings
+image: '@talk/people.webp'
+background: nf-brunch-pink
+
+---
+layout: half
+title: Let's talk about the community
+content:
+  - Even if we're developing software, it's always about the people.
+  - A line of of code can be replaced at any time with no effort, you can't do the same with people.
+image: '@talk/community.webp'
+logo: black
+
+---
+title: Where do you store the code?
+items:
+  - icon: 'arrows-split-2'
+    title: It's better to keep things separate
+    text: The management will be simplified.
+  - icon: 'world'
+    title: Public, separate organization are the best
+    text: They give you the visibility and ease of use you need.
+
+---
+title: Which accesses do you want to give?
+items:
+  - icon: 'shield-lock'
+    title: Keep the accesses to the minimum
+    text: This is a general rule that should be follow as much as possible.
+  - icon: 'bomb'
+    title: Make sure people cannot cut you out
+    text: It will be very hard to retake control.
+
+---
+title: Remember, you don't really own the code
+items:
+  - icon: 'heart'
+    title: It started with you ...
+    text: You own the software as whole.
+  - icon: 'hourglass'
+    title: ... but it doesn't end with you ...
+    text: People are still owners and responsible for their contributions.
+  - icon: 'affiliate'
+    title: ... so don't forget about others!
+    text: Contributors should have a say in relevant administrative tasks.
+
+---
+layout: separator
+title: Diversity and Inclusion
+image: '@talk/diversity.webp'
+background: nf-brunch-pink
+
+---
+title: Conscious and unconscious bias
+content: We all suffer of these bias, there is simply no escape.
+items:
+  - index: 1
+    title: Conscious
+    text: We all have attitudes and heuristic we apply every day.
+  - index: 2
+    title: Unconscious
+    text: More subtle because we don't control them.
+options:
+  horizontal: true
+
+---
+title: Why do you want D&I?
+items:
+  - icon: 'moneybag'
+    title: Richness
+    text: Diversity is a pot of values.
+  - icon: 'world'
+    title: New experiences
+    text: All people are having their lives ...
+  - icon: 'affiliate'
+    title: New perspectives
+    text: ... and different point of views.
+options:
+  horizontal: true
+
+---
+title: How do you enforce it? (1/2)
+items:
+  - index: 1
+    title: Be pro-active
+    text: You can't wait for things to happen to act.
+  - index: 2
+    title: Be receptive
+    text: Ask for suggestion from affected people.
+options:
+  horizontal: true
+
+---
+title: How do you enforce it? (2/2)
+items:
+  - index: 3
+    title: Code of Conduct
+    text: This must be enforced from day zero.
+  - index: 4
+    title: Zero Tolerance
+    text: No exception allowed.
+options:
+  horizontal: true
+
+---
+layout: separator
+title: Everybody is responsible for moderation!
+image: '@talk/police.webp'
+background: nf-darkest-blue
+classes:
+  title: talk@font-size-35pt
+
+---
+title: Last advices
+items:
+  - index: 1
+    title: Common sense
+    text: It might be surprising, but it is very underestimated and *never hurts*.
+  - index: 2
+    title: Yield control
+    text: You can't and neither want to control everything. *Don't burn out!*
+  - index: 3
+    title: Be genuine and honest
+    text: People will never fail to notice, appreciate and *love you*.
+options:
+  horizontal: true
+
+---
+layout: image
+title: Questions?
+image: '@theme/questions.webp'
+
+---
+layout: image
+title: Coffee Break
+image: '@talk/coffee.webp'
+
+---
+layout: image
+title: What about Node.js?
+image: '@talk/node.webp'
+
+---
+layout: image
+title: Questions?
+image: '@theme/questions.webp'
+
+---
+layout: quote
+sentence: Money is just a way to keep score. The best people in any field are motivated by passion. That becomes more true the higher the skill level gets.
+author: Eric Raymond
+
+---
+layout: end

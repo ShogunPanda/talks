@@ -43,7 +43,7 @@ logo: black
 layout: separator
 title: ...and I deeply love them!
 image: '@talk/io.webp'
-background: nf-orange-split !flex-row-reverse
+background: nf-orange-split theme@flex-row-reverse
 
 ---
 title: There are three types of people
@@ -68,7 +68,7 @@ background: nf-brunch-pink
 layout: separator
 title: ...since my wife kept collecting new cats!
 image: '@talk/kuro-loki.webp'
-background: nf-brunch-pink flex-row-reverse
+background: nf-brunch-pink theme@flex-row-reverse
 
 ---
 title: A little disclaimer
@@ -335,7 +335,7 @@ background: nf-orange-split
 layout: separator
 title: Sadly, I couldn't automate his life (yet)...
 image: '@talk/bracio-2.webp'
-background: nf-neon-blue flex-row-reverse
+background: nf-neon-blue theme@flex-row-reverse
 
 ---
 layout: separator
@@ -481,4 +481,4 @@ title: But this talk is special. Thank you!
 content: We miss you both, a very lot! ❤️
 classes:
   title: talk@bg-nf-darkest-blue border-nf-neon-blue talk@font-size-25pt
-  content: text-nf-orange-splitk
+  content: text-nf-orange-split
