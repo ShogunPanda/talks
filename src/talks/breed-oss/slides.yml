@@ -280,7 +280,9 @@ image: '@talk/coffee.webp'
 
 ---
 layout: separator
-title: Let's get to the action!
+title: |
+  Let's get to
+  the action!
 image: '@talk/action.webp'
 background: nf-neon-blue
 

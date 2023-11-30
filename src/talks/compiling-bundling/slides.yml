@@ -363,11 +363,11 @@ items:
   - image: '@talk/parsing-1-1.webp'
     title: Input
     classes:
-      image: talk@max-w-auto talk@max-h-auto talk@w-3sp talk@h-auto
+      image: talk@max-w-none talk@max-h-none talk@w-3sp talk@h-auto
   - image: '@talk/parsing-1-2.webp'
     title: Output
     classes:
-      image: talk@max-w-auto talk@max-h-auto talk@w-3sp talk@h-auto
+      image: talk@max-w-none talk@max-h-none talk@w-3sp talk@h-auto
 sequence: 1
 options:
   horizontal: true
@@ -382,12 +382,12 @@ items:
     title: Input
     text: (user code)
     classes:
-      image: talk@max-w-auto talk@max-h-auto talk@w-3sp talk@h-auto
+      image: talk@max-w-none talk@max-h-none talk@w-3sp talk@h-auto
   - image: '@talk/parsing-2-2.webp'
     title: Parse Tree
     text: (a.k.a. Concrete Syntax Tree)
     classes:
-      image: talk@max-w-auto talk@max-h-auto talk@w-3sp talk@h-auto
+      image: talk@max-w-none talk@max-h-none talk@w-3sp talk@h-auto
 sequence: 2
 options:
   horizontal: true
@@ -429,11 +429,11 @@ items:
   - image: '@talk/codegen-input.webp'
     title: Input
     classes:
-      image: talk@max-w-auto talk@max-h-auto talk@w-3sp talk@h-auto
+      image: talk@max-w-none talk@max-h-none talk@w-3sp talk@h-auto
   - image: '@talk/codegen-output.webp'
     title: Output
     classes:
-      image: talk@max-w-auto talk@max-h-auto talk@w-3sp talk@h-auto
+      image: talk@max-w-none talk@max-h-none talk@w-3sp talk@h-auto
 options:
   horizontal: true
 
@@ -459,11 +459,11 @@ items:
   - image: '@talk/jscodeshift-from.webp'
     title: Input
     classes:
-      image: talk@max-w-auto talk@max-h-auto talk@h-2sp talk@w-auto
+      image: talk@max-w-none talk@max-h-none talk@h-2sp talk@w-auto
   - image: '@talk/jscodeshift-to.webp'
     title: Desired output
     classes:
-      image: talk@max-w-auto talk@max-h-auto talk@h-2sp talk@w-auto
+      image: talk@max-w-none talk@max-h-none talk@h-2sp talk@w-auto
 options:
   horizontal: true
 
@@ -567,11 +567,11 @@ items:
   - image: '@talk/esbuild-vs-swc-es2019.webp'
     title: ES2019
     classes:
-      image: talk@max-w-auto talk@max-h-auto talk@w-3sp talk@h-auto
+      image: talk@max-w-none talk@max-h-none talk@w-3sp talk@h-auto
   - image: '@talk/esbuild-vs-swc-es2020.webp'
     title: ES2020
     classes:
-      image: talk@max-w-auto talk@max-h-auto talk@w-3sp talk@h-auto
+      image: talk@max-w-none talk@max-h-none talk@w-3sp talk@h-auto
 options:
   horizontal: true
 

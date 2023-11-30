@@ -75,4 +75,9 @@ a:visited,
 a:focus {
   @apply text-nf-neon-blue;
   @apply line-height-1;
+  @apply line-height-1;
+}
+
+a:not([class]) {
+  @apply font-bold;
 }

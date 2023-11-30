@@ -1,0 +1,524 @@
+---
+layout: cover
+# ...
+
+---
+layout: separator
+title: 'Mothers are always right!'
+image: '@talk/lollipops.webp'
+background: nf-brunch-pink
+logo: black
+
+---
+layout: hello
+# ...
+
+---
+layout: nearform
+# ...
+
+---
+layout: separator
+title: 'Our entire existence is on their shoulders!'
+image: '@talk/bee.webp'
+background: nf-neon-blue
+
+---
+title: How is that?
+items:
+  - icon: 'recycle'
+    title: 'They are related to our food'
+    text: 'Over 70% of the food we eat is directly or indirectly related to their pollination.'
+  - icon: 'bomb'
+    title: 'We are endangering them'
+    text: 'Pesticides and climate change made them an endangered species.'
+  - icon: 'history'
+    title: 'No coming back'
+    text: 'If they disappear, we have no natural or artificial replacement.'
+
+---
+layout: separator
+title: "Aren't we here for dev stuff?"
+image: '@talk/dog.webp'
+background: nf-brunch-pink
+
+---
+title: Yes, we do.
+items:
+  - icon: 'recycle'
+    title: 'APIs are related to our application'
+    text: 'Over 100% of the application we use is directly or indirectly related to their quality.'
+  - icon: 'bomb'
+    title: 'We are endangering them'
+    text: 'Adding complexity between applications and APIs made them an endangered species.'
+  - icon: 'history'
+    title: 'No coming back'
+    text: 'If they disappear, we have no other replacement.'
+
+---
+layout: separator
+title: 'Are you trolling us?'
+image: '@talk/troll.webp'
+background: nf-brunch-pink
+
+---
+layout: separator
+title: 'Well, try to translate <span class="text-nf-neon-blue">bees</span> in Italian!'
+image: '@theme/location.webp'
+background: nf-brunch-pink
+classes:
+  slide: talk@flex-row-reverse
+
+---
+title: Say hello to SDKs
+items:
+  - icon: 'affiliate'
+    title: "We don't do everything by ourself"
+    text: 'Our application and servers often talk to third party services.'
+  - icon: 'source-code'
+    title: 'Third party usually give use a SDK'
+    text: 'The kit makes our life easier by simplifying integration.'
+  - icon: 'confetti'
+    title: 'Lot of goodies'
+    text: 'Authentication, retry logic and other boring tasks are already implemented.'
+
+---
+title: What do we get, in short?
+items:
+  - icon: 'search'
+    title: 'Focus'
+    text: |
+      All the API services are made simpler to use,
+      hiding all implementation details.
+  - icon: 'home'
+    title: 'Feel at home'
+    text: |
+      Each SDK is designed to be easily adopted
+      by your favorite programming language.
+options:
+  horizontal: true
+
+---
+layout: image
+title: Are there just pros?
+image: '@talk/happiness.webp'
+
+---
+layout: separator
+title: You already know the answer...
+image: '@talk/laugh.webp'
+background: nf-brunch-pink
+
+---
+title: What do we ALSO get, in short? (1/2)
+items:
+  - icon: 'puzzle-2'
+    title: 'Roadmap dependency'
+    text: |
+      Since you don't control the SDK development,
+      you can't embrace new API or features at your pace.
+  - icon: 'truck'
+    title: 'Supply chain'
+    text: |
+      If you have a bug or security vulnerability in the SDK, 
+      you have to wait for the vendor to solve it.
+options:
+  horizontal: true
+
+---
+title: What do we ALSO get, in short? (2/2)
+items:
+  - icon: 'checks'
+    title: 'Quality'
+    text: Sometimes vendor automate the generation of the SDK out of API definitions. Native language experience is lost.
+  - icon: 'rocket'
+    title: 'Performance'
+    text: SDK are often underperforming due to the attempt to keep a unique architecture across languages.
+options:
+  horizontal: true
+
+---
+layout: separator
+title: Only an example can enlighten us!
+background: nf-orange-split
+image: '@talk/sun.webp'
+
+---
+title: 'Case study: uploaded a file to AWS S3'
+items:
+  - icon: 'source-code'
+    title: 'Why?'
+    text: "It's a pretty simple use case that we all faced sometimes."
+  - icon: 'git-fork'
+    title: 'Which one?'
+    text: "I'm gonna analyze two different version of the AWS JavaScript SDK."
+  - icon: 'search'
+    title: 'How?'
+    text: "I'm gonna show you how many dependency the SDK brings and how it performs."
+
+---
+layout: image
+title: Let's go!
+image: '@talk/start.webp'
+
+---
+title: 'AWS SDK v2: Dependencies in theory'
+content: We only add dependency in the `package.json` file ...
+code:
+  language: 'json'
+  content: |
+    {
+      "name": "aws-sdk-v2",
+      "version": "1.0.0",
+      "main": "index.mjs",
+      "scripts": {},
+      "dependencies": {
+        "aws-sdk": "^2.1508.0"
+      }
+    }
+
+---
+title: 'AWS SDK v2: Dependencies in reality'
+content: ... but we actually get a lot more!
+code:
+  language: 'shell'
+  content: |
+    shogun@panda:~$ pnpm list --depth=2 | wc -l
+    28
+
+---
+title: 'AWS SDK v2: The code'
+code:
+  language: 'javascript'
+  content: |
+    import AWS from 'aws-sdk'
+    import { readFile } from 'node:fs/promises'
+
+    // Create the client
+    // This implicitly reads the AWS_ACCESS_KEY_ID and AWS_SECRET_ACCESS_KEY environment variables
+    const client = new AWS.S3({
+      apiVersion: '2006-03-01',
+      region: process.env.AWS_DEFAULT_REGION
+    })
+
+    for (let i = 0; i < 100; i++) {
+      // Upload the file
+      await client
+        .putObject({
+          Bucket: process.env.BUCKET,
+          Key: process.env.KEY,
+          Body: await readFile(process.env.FILE, 'utf-8')
+        })
+        .promise()
+    }
+  numbers: true
+
+---
+title: 'AWS SDK v2: How does it perform?'
+code:
+  language: 'console'
+  content: |
+    shogun@panda:~$ time node index.mjs
+    ________________________________________________________
+    Executed in   13.76 secs    fish           external
+      usr time    1.40 secs   84.00 micros    1.40 secs
+      sys time    0.13 secs  732.00 micros    0.13 secs
+
+---
+title: "AWS SDK v2: What's happening under the hood?"
+image: '@talk/flame-sdk-v2.webp'
+classes:
+  image: talk@max-h-4sp talk@max-w-none
+
+---
+title: 'AWS SDK v3: Dependencies in theory'
+content: A little more detailed dependencies in `package.json` ...
+code:
+  language: 'json'
+  content: |
+    {
+      "name": "aws-sdk-v3",
+      "version": "1.0.0",
+      "main": "index.mjs",
+      "scripts": {},
+      "dependencies": {
+        "@aws-sdk/client-s3": "*",
+        "@aws-sdk/credential-providers": "^3.462.0"
+      }
+    }
+
+---
+title: 'AWS SDK v3: Dependencies in reality'
+content: ... but we actually get even more packages!
+code:
+  language: 'shell'
+  content: |
+    shogun@panda:~$ pnpm list --depth=2 | wc -l
+    524
+
+---
+title: 'AWS SDK v3: The code'
+code:
+  language: 'javascript'
+  content: |
+    import { readFile } from 'node:fs/promises'
+    import { S3Client, PutObjectCommand } from '@aws-sdk/client-s3'
+    import { fromEnv } from '@aws-sdk/credential-providers'
+
+    // Create the client
+    const client = new S3Client({
+      region: process.env.AWS_DEFAULT_REGION,
+      // This implicitly reads the AWS_ACCESS_KEY_ID and AWS_SECRET_ACCESS_KEY environment variables
+      credentials: fromEnv()
+    })
+
+    for (let i = 0; i < 100; i++) {
+      await client.send(
+        new PutObjectCommand({
+          Bucket: process.env.BUCKET,
+          Key: process.env.KEY,
+          Body: await readFile(process.env.FILE, 'utf-8')
+        })
+      )
+    }
+  numbers: true
+
+---
+title: 'AWS SDK v3: How does it perform?'
+code:
+  language: 'console'
+  content: |
+    shogun@panda:~$ time node index.mjs
+    ________________________________________________________
+    Executed in    8.22 secs      fish           external
+      usr time  723.14 millis    0.08 millis  723.06 millis
+      sys time   80.60 millis    1.17 millis   79.44 millis
+
+---
+title: "AWS SDK v3: What's happening under the hood?"
+image: '@talk/flame-sdk-v3.webp'
+classes:
+  image: talk@max-h-4sp talk@max-w-none
+
+---
+layout: half
+title: Quod Erat Demonstrandum
+items:
+  - icon: search
+    title: 'You only see a bit of it'
+    text: Each SDK brings a lot more complexity which is hidden under the rug.
+  - icon: affiliate
+    title: 'Not really a monolith'
+    text: How many point of failures can you afford?
+image: '@talk/iceberg.webp'
+#
+---
+layout: separator
+title: Do we have the solution?
+image: '@talk/solution.webp'
+background: nf-brunch-pink
+
+---
+layout: separator
+title: Yes, use the APIs directly!
+image: '@talk/bee.webp'
+background: nf-orange-split
+
+---
+title: 'How many will you use?'
+items:
+  - index: 1
+    title: 'One algorithm for authentication'
+    text: Each API in AWS uses the same [signing algorithm](https://docs.aws.amazon.com/AmazonS3/latest/API/sig-v4-authenticating-requests.html).
+  - index: 2
+    title: 'One HTTP call'
+    text: Uploading a file to S3 only uses one [REST API call](https://docs.aws.amazon.com/AmazonS3/latest/API/API_PutObject.html).
+options:
+  horizontal: true
+
+---
+layout: separator
+title: |
+  Let's get to
+  the action!
+image: '@talk/action.webp'
+background: nf-neon-blue
+
+---
+title: 'Direct API call: Setup'
+content: No dependencies in `package.json`, Node.js already got our backs ...
+code:
+  language: 'json'
+  content: |
+    {
+      "name": "direct",
+      "version": "1.0.0",
+      "main": "index.mjs",
+      "scripts": {},
+      "dependencies": {}
+    }
+
+---
+title: 'Direct API call: Signing the call'
+code:
+  language: 'javascript'
+  content: |
+    import { createHash, createHmac } from 'node:crypto'
+    import { readFile } from 'node:fs/promises'
+
+    const awsS3UnsignedPayload = 'UNSIGNED-PAYLOAD'
+
+    function sha256(contents) {
+      return createHash('sha256').update(contents).digest('hex')
+    }
+
+    function hmacSha256(key, contents) {
+      return createHmac('sha256', key).update(contents).digest()
+    }
+
+    function signS3Upload(keyId, accessKey, region, method, rawUrl, headers, payloadHash) {
+      // This implements the Authenticating Requests (AWS Signature Version 4) algorithm.
+
+      // CanonicalRequest calculation
+      // StringToSign calculation
+      // Signature calculation
+    }
+  numbers: true
+
+---
+title: 'Direct API call: signS3Upload (CanonicalRequest)'
+code:
+  language: 'javascript'
+  content: |
+    // CanonicalRequest calculation
+    const url = new URL(rawUrl)
+    const path = encodeURIComponent(url.pathname).replaceAll('%2F', '/')
+    const canonicalRequestComponents = [method, path, ''] // The last one is for the queryString, which is empty
+    const signedHeadersComponents = []
+
+    // Next step: StringToSign calculation
+  numbers: true
+
+---
+title: 'Direct API call: signS3Upload (StringToSign)'
+code:
+  language: 'javascript'
+  content: |
+    // Previous step: CanonicalRequest calculation
+
+    // Create the StringToSign
+    const timestamp = headers['x-amz-date']
+    const date = timestamp.slice(0, 8)
+    const scope = `${date}/${region}/s3/aws4_request`
+    const stringToSign = ['AWS4-HMAC-SHA256', timestamp, scope, sha256(canonicalRequest)].join('\n')
+
+    // Next step: Signature calculation
+  numbers: true
+---
+title: 'Direct API call: signS3Upload (Signature)'
+code:
+  language: 'javascript'
+  content: |
+    // Previous step: StringToSign calculation
+
+    // Signature calculation
+    const dateKey = hmacSha256(`AWS4${accessKey}`, date)
+    const dateRegionKey = hmacSha256(dateKey, region)
+    const dateRegionServiceKey = hmacSha256(dateRegionKey, 's3')
+    const signingKey = hmacSha256(dateRegionServiceKey, 'aws4_request')
+    const signature = hmacSha256(signingKey, stringToSign).toString('hex')
+
+    const credentialHeader = `${keyId}/${date}/${region}/s3/aws4_request`
+    return `AWS4-HMAC-SHA256 Credential=${credentialHeader},SignedHeaders=${signedHeaders},Signature=${signature}`
+  numbers: true
+
+---
+title: 'Direct API call: REST API call'
+code:
+  language: 'javascript'
+  content: |
+    function uploadFile(keyId, accessKey, region, bucket, key, contents) {
+      const host = `${bucket}.s3.${region}.amazonaws.com`
+      const payloadHash = 'UNSIGNED-PAYLOAD'
+      const headers = {
+        'x-amz-content-sha256': payloadHash,
+        'x-amz-date': new Date()
+          .toISOString()
+          .replace(/\.\d{0,3}/, '')
+          .replaceAll(/[:-]/g, ''),
+        host
+      }
+
+      const url = `https://${host}/${key}`
+      headers.authorization = signS3Upload(keyId, accessKey, region, 'PUT', url, headers, payloadHash)
+
+      return fetch(url, { method: 'PUT', headers, body: contents })
+    }
+  numbers: true
+
+---
+title: 'Direct API call: Main loop'
+code:
+  language: 'javascript'
+  content: |
+    for (let i = 0; i < 100; i++) {
+      await uploadFile(
+        process.env.AWS_ACCESS_KEY_ID,
+        process.env.AWS_SECRET_ACCESS_KEY,
+        process.env.AWS_DEFAULT_REGION,
+        process.env.BUCKET,
+        process.env.KEY,
+        await readFile(process.env.FILE, 'utf-8')
+      )
+    }
+  numbers: true
+
+---
+title: 'Direct API call: How does it perform?'
+code:
+  language: 'console'
+  content: |
+    shogun@panda:~$ time node index.mjs
+    ________________________________________________________
+    Executed in    6.64 secs      fish           external
+      usr time  353.39 millis   54.00 micros  353.34 millis
+      sys time   42.81 millis  513.00 micros   42.30 millis
+
+---
+title: "Direct API call: What's happening under the hood?"
+image: '@talk/flame-direct.webp'
+classes:
+  image: talk@max-h-4sp talk@max-w-none
+
+---
+layout: separator
+title: Mission completed!
+image: '@talk/completed.webp'
+icon: confetti
+background: nf-darkest-blue
+classes:
+  icon: talk@w-2_5sp talk@h-2_5sp talk@left-1sp talk@-bottom-0_4sp text-white stroke-width-0_3
+
+---
+title: Take home lessons
+content: What can we learn from this long journey?
+items:
+  - icon: affiliate
+    title: SDK are not always bad
+    text: Some times making things manually will *cost too much time*.
+  - icon: rocket
+    title: Be flexible
+    text: You don't have to remove all SDKs. But you can *optimize some calls*.
+  - icon: book
+    title: Read the API docs
+    text: If it's simple to use, maybe you *don't need an SDK*.
+options:
+  horizontal: true
+
+---
+layout: quote
+sentence: Don't take candies from strangers
+author: Every mother in the world
+
+---
+layout: end
