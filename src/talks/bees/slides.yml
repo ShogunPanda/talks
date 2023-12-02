@@ -43,7 +43,7 @@ image: '@talk/dog.webp'
 background: nf-brunch-pink
 
 ---
-title: Yes, we do.
+title: Yes, we do!
 items:
   - icon: 'recycle'
     title: 'APIs are related to our application'
@@ -230,6 +230,7 @@ image: '@talk/flame-sdk-v2.webp'
 classes:
   image: talk@max-h-4sp talk@max-w-none
 
+# TODO@PI: Add separator here
 ---
 title: 'AWS SDK v3: Dependencies in theory'
 content: A little more detailed dependencies in `package.json` ...
