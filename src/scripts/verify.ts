@@ -87,7 +87,7 @@ program
     '-d, --delay <duration>',
     'How much to wait before advancing to the next slide',
     (v: string) => Number.parseInt(v, 10),
-    1000
+    1500
   )
   .addHelpCommand(false)
   .showSuggestionAfterError(true)

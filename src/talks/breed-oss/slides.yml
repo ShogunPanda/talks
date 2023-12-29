@@ -122,7 +122,7 @@ content: |
 background: nf-brunch-pink
 classes:
   slide: items-center justify-center p-0
-  raw: flex flex-1 w-full h-full flex-col items-center justify-center
+  raw: flex flex-1 w-full h-full flex-col items-center justify-center text-center
 logo: white
 
 ---

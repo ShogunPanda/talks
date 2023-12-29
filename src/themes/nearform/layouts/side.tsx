@@ -1,10 +1,11 @@
-import { Code, parseContent, resolveImageUrl, SlideProps } from 'freya-slides'
-import { parseComplexContent, SlideWrapper } from '../components/common.js'
+import { Code, Image, SlideProps, resolveImageUrl } from 'freya-slides'
+import { ComplexContent, SlideWrapper, Text } from '../components/common.js'
 import { Items } from '../components/item.js'
-import { Slide } from '../models.js'
+import { type Slide } from '../models.js'
 
 export default function SideLayout(props: SlideProps<Slide>): JSX.Element {
   const { context, theme, talk, index, slide } = props
+  const resolveClasses = context.extensions.freya.resolveClasses
 
   const {
     title,
@@ -32,24 +33,26 @@ export default function SideLayout(props: SlideProps<Slide>): JSX.Element {
       talk={talk}
       slide={slide}
       index={index}
-      className={context.extensions.expandClasses(`theme@slide--half-wrapper ${className ?? ''}`)}
+      className={resolveClasses('theme@slide--half-wrapper', className)}
     >
-      <div className={context.extensions.expandClasses('theme@side')}>
-        {title && <h1 dangerouslySetInnerHTML={{ __html: parseContent(title) }} />}
+      <div className={resolveClasses('theme@side')}>
+        {title && (
+          <h1>
+            <Text text={title} />
+          </h1>
+        )}
 
         {content?.filter(Boolean).map((c: string | object, contentIndex: number) => {
           const key = `content:${index}:${contentIndex}`
 
           if (typeof c === 'object') {
-            return parseComplexContent(c, key, props)
+            return <ComplexContent key={key} raw={c} {...props} />
           }
 
           return (
-            <h4
-              key={key}
-              className={context.extensions.expandClasses('theme@side__content')}
-              dangerouslySetInnerHTML={{ __html: parseContent(c) }}
-            />
+            <h4 key={key} className={resolveClasses('theme@side__content')}>
+              <Text text={c} />
+            </h4>
           )
         })}
 
@@ -58,7 +61,7 @@ export default function SideLayout(props: SlideProps<Slide>): JSX.Element {
             context={context}
             items={items}
             horizontal={horizontal}
-            className={context.extensions.expandClasses(itemsClassName)}
+            className={resolveClasses(itemsClassName)}
             talk={talk.id}
             noGap={noGap}
             skipSpacer={skipSpacer}
@@ -67,25 +70,21 @@ export default function SideLayout(props: SlideProps<Slide>): JSX.Element {
         )}
       </div>
       {image && (
-        <div className={context.extensions.expandClasses('theme@side__image-wrapper')}>
-          <img
-            src={imageUrl}
-            className={context.extensions.expandClasses(`theme@side__image ${imageClassName ?? ''}`)}
-          />
+        <div className={resolveClasses('theme@side__image-wrapper')}>
+          <Image context={context} src={imageUrl} className={resolveClasses('theme@side__image', imageClassName)} />
         </div>
       )}
       {!image && highlight && (
-        <div className={context.extensions.expandClasses(`theme@side__highlight ${highlightClassName ?? ''}`)}>
-          <h4
-            dangerouslySetInnerHTML={{ __html: parseContent(highlight) }}
-            className={context.extensions.expandClasses('m-0')}
-          />
+        <div className={resolveClasses('theme@side__highlight', highlightClassName)}>
+          <h4 className={resolveClasses('m-0')}>
+            <Text text={highlight} />
+          </h4>
         </div>
       )}
 
       {!image && !highlight && code && (
-        <div className={context.extensions.expandClasses(`theme@side__code ${highlightClassName ?? ''}`)}>
-          <Code context={context} {...code} className={context.extensions.expandClasses(codeClassName ?? '')} />
+        <div className={resolveClasses('theme@side__code', highlightClassName)}>
+          <Code context={context} {...code} className={resolveClasses(codeClassName)} />
         </div>
       )}
     </SlideWrapper>

@@ -25,25 +25,18 @@
     "format": "prettier -w src",
     "lint": "eslint src --ext .ts,.tsx",
     "deploy": "freya deploy",
-    "postdeploy": "node --import tsx src/scripts/postdeploy.ts && cd dist/deploy && netlify deploy --site 2cf46b93-1dd6-4524-9b96-d21cc9df1ad2 --prod",
-    "verify": "node --import tsx src/scripts/verify.ts"
+    "postdeploy": "node --import tsx src/scripts/postdeploy.ts && cd dist/deploy && netlify deploy --site $NETLIFY_SITE_ID --prod",
+    "verify": "node --import tsx src/scripts/verify.ts",
+    "list": "find src/talks -type d -depth 1 -exec basename {} \\; | sort"
   },
   "dependencies": {
-    "@unocss/preset-wind": "^0.47.4",
-    "@unocss/transformer-directives": "^0.47.4",
-    "freya-slides": "^0.38.0",
-    "react": "^18.2.0",
-    "tsx": "^3.12.1"
+    "freya-slides": "^0.41.1"
   },
   "devDependencies": {
-    "@cowtech/eslint-config": "^8.8.0",
-    "@types/node": "^20.9.3",
-    "@types/react": "^18.0.25",
-    "commander": "^11.1.0",
-    "eslint": "^8.28.0",
-    "playwright": "^1.40.0",
-    "playwright-chromium": "^1.40.0",
-    "prettier": "^2.8.0",
-    "tsx": "^4.2.0"
+    "@cowtech/eslint-config": "^9.0.0",
+    "eslint": "^8.56.0",
+    "prettier": "^3.1.1",
+    "tsx": "^4.7.0",
+    "typescript": "^5.3.3"
   }
 }

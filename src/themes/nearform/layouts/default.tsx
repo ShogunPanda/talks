@@ -1,10 +1,11 @@
-import { Code, parseContent, resolveImageUrl, type SlideProps } from 'freya-slides'
-import { parseComplexContent, SlideWrapper } from '../components/common.js'
+import { Code, Image, resolveImageUrl, type SlideProps } from 'freya-slides'
+import { ComplexContent, SlideWrapper, Text } from '../components/common.js'
 import { Grids, Items } from '../components/item.js'
 import { type Slide } from '../models.js'
 
 export default function DefaultLayout(props: SlideProps<Slide>): JSX.Element {
   const { context, theme, talk, index, slide } = props
+  const resolveClasses = context.extensions.freya.resolveClasses
 
   const {
     title,
@@ -33,34 +34,37 @@ export default function DefaultLayout(props: SlideProps<Slide>): JSX.Element {
       talk={talk}
       slide={slide}
       index={index}
-      className={context.extensions.expandClasses(className)}
+      className={resolveClasses(className)}
     >
-      {title && <h1 dangerouslySetInnerHTML={{ __html: parseContent(title) }} />}
+      {title && (
+        <h1>
+          <Text text={title} />
+        </h1>
+      )}
 
       {content?.filter(Boolean).map((c: string | object, contentIndex: number) => {
         const key = `content:${index}:${contentIndex}`
 
         if (typeof c === 'object') {
-          return parseComplexContent(c, key, props)
+          return <ComplexContent key={key} raw={c} {...props} />
         }
 
         return (
-          <h4
-            key={key}
-            className={context.extensions.expandClasses(`theme@default__subtitle ${contentsClassName}`)}
-            dangerouslySetInnerHTML={{ __html: parseContent(c) }}
-          />
+          <h4 key={key} className={resolveClasses('theme@default__subtitle', contentsClassName)}>
+            <Text text={c} />
+          </h4>
         )
       })}
 
       {image && (
-        <div className={context.extensions.expandClasses('theme@default__image-wrapper')}>
-          <img
+        <div className={resolveClasses('theme@default__image-wrapper')}>
+          <Image
+            context={context}
             src={imageUrl}
-            className={context.extensions.expandClasses(
-              `theme@default__image theme@default__image--${content?.length ? 'with' : 'no'}-content ${
-                imageClassName ?? ''
-              }`
+            className={resolveClasses(
+              'theme@default__image',
+              `theme@default__image--${content?.length ? 'with' : 'no'}-content`,
+              imageClassName
             )}
           />
         </div>
@@ -71,7 +75,7 @@ export default function DefaultLayout(props: SlideProps<Slide>): JSX.Element {
           context={context}
           items={items}
           horizontal={horizontal}
-          className={context.extensions.expandClasses(itemsClassName)}
+          className={resolveClasses(itemsClassName)}
           talk={talk.id}
           noGap={noGap}
           skipSpacer={skipSpacer}
@@ -81,8 +85,8 @@ export default function DefaultLayout(props: SlideProps<Slide>): JSX.Element {
       {!image && !items && grids && <Grids context={context} grids={grids} talk={talk.id} />}
 
       {!image && !items && !grids && code && (
-        <div className={context.extensions.expandClasses(`theme@default__code ${highlightClassName}`)}>
-          <Code context={context} {...code} className={context.extensions.expandClasses(codeClassName ?? '')} />
+        <div className={resolveClasses('theme@default__code', highlightClassName)}>
+          <Code context={context} {...code} className={resolveClasses(codeClassName)} />
         </div>
       )}
     </SlideWrapper>

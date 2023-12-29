@@ -1,9 +1,10 @@
-import { parseContent, resolveImageUrl, type SlideProps } from 'freya-slides'
-import { parseComplexContent, SlideWrapper } from '../components/common.js'
+import { Image, resolveImageUrl, type SlideProps } from 'freya-slides'
+import { ComplexContent, SlideWrapper, Text } from '../components/common.js'
 import { type Slide } from '../models.js'
 
 export default function SeparatorLayout(props: SlideProps<Slide>): JSX.Element {
   const { context, theme, talk, index, slide } = props
+  const resolveClasses = context.extensions.freya.resolveClasses
 
   const {
     title,
@@ -23,42 +24,40 @@ export default function SeparatorLayout(props: SlideProps<Slide>): JSX.Element {
       talk={talk}
       slide={slide}
       index={index}
-      className={context.extensions.expandClasses(`theme@slide--half-wrapper theme@separator ${className}`)}
+      className={resolveClasses('theme@slide--half-wrapper', 'theme@separator', className)}
       defaultLogoColor="white"
     >
       {title && (
-        <h1
-          className={context.extensions.expandClasses(`theme@separator__title ${titleClassName ?? ''}`)}
-          dangerouslySetInnerHTML={{ __html: parseContent(title) }}
-        />
+        <h1 className={resolveClasses('theme@separator__title', titleClassName)}>
+          <Text text={title} />
+        </h1>
       )}
 
       {image && (
-        <div className={context.extensions.expandClasses('theme@separator__wrapper')}>
-          <img
+        <div className={resolveClasses('theme@separator__wrapper')}>
+          <Image
+            context={context}
             src={imageUrl}
-            className={context.extensions.expandClasses(`theme@separator__image ${imageClassName ?? ''}`)}
+            className={resolveClasses('theme@separator__image', imageClassName)}
           />
 
           {content?.filter(Boolean).map((c: string | object, contentIndex: number) => {
             const key = `content:${index}:${contentIndex}`
 
             if (typeof c === 'object') {
-              return parseComplexContent(c, key, props)
+              return <ComplexContent key={key} raw={c} {...props} />
             }
 
             return (
-              <h4
-                key={key}
-                className={context.extensions.expandClasses('theme@separator__content')}
-                dangerouslySetInnerHTML={{ __html: parseContent(c) }}
-              />
+              <h4 key={key} className={resolveClasses('theme@separator__content')}>
+                <Text text={c} />
+              </h4>
             )
           })}
 
           {subtitle && (
-            <h3 className={context.extensions.expandClasses(`theme@separator__subtitle ${subtitleClassName ?? ''}`)}>
-              {subtitle}
+            <h3 className={resolveClasses('theme@separator__subtitle', subtitleClassName)}>
+              <Text text={subtitle} />
             </h3>
           )}
         </div>

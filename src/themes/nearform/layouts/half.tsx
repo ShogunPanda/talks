@@ -1,10 +1,11 @@
-import { parseContent, resolveImageUrl, SlideProps } from 'freya-slides'
-import { parseComplexContent, SlideWrapper } from '../components/common.js'
+import { Image, resolveImageUrl, SlideProps } from 'freya-slides'
+import { ComplexContent, SlideWrapper, Text } from '../components/common.js'
 import { Items } from '../components/item.js'
 import { Slide } from '../models.js'
 
 export default function HalfLayout(props: SlideProps<Slide>): JSX.Element {
   const { context, theme, talk, index, slide } = props
+  const resolveClasses = context.extensions.freya.resolveClasses
 
   const {
     title,
@@ -24,25 +25,27 @@ export default function HalfLayout(props: SlideProps<Slide>): JSX.Element {
       talk={talk}
       slide={slide}
       index={index}
-      className={context.extensions.expandClasses(`theme@slide--half-wrapper theme@half ${className ?? ''}`)}
+      className={resolveClasses('theme@slide--half-wrapper', 'theme@half', className)}
       defaultLogoColor="white"
     >
-      <div className={context.extensions.expandClasses('theme@half__contents')}>
-        {title && <h1 dangerouslySetInnerHTML={{ __html: parseContent(title) }} />}
+      <div className={resolveClasses('theme@half__contents')}>
+        {title && (
+          <h1>
+            <Text text={title} />
+          </h1>
+        )}
 
         {content?.filter(Boolean).map((c: string | object, contentIndex: number) => {
           const key = `content:${index}:${contentIndex}`
 
           if (typeof c === 'object') {
-            return parseComplexContent(c, key, props)
+            return <ComplexContent key={key} raw={c} {...props} />
           }
 
           return (
-            <h4
-              key={key}
-              className={context.extensions.expandClasses('theme@half__subtitle')}
-              dangerouslySetInnerHTML={{ __html: parseContent(c) }}
-            />
+            <h4 key={key} className={resolveClasses('theme@half__subtitle')}>
+              <Text text={c} />
+            </h4>
           )
         })}
 
@@ -51,7 +54,7 @@ export default function HalfLayout(props: SlideProps<Slide>): JSX.Element {
             context={context}
             items={items}
             horizontal={horizontal}
-            className={context.extensions.expandClasses(itemsClassName)}
+            className={resolveClasses(itemsClassName)}
             talk={talk.id}
             noGap={noGap}
             skipSpacer={skipSpacer}
@@ -61,11 +64,8 @@ export default function HalfLayout(props: SlideProps<Slide>): JSX.Element {
       </div>
 
       {image && (
-        <div className={context.extensions.expandClasses('theme@half__image-wrapper')}>
-          <img
-            src={imageUrl}
-            className={context.extensions.expandClasses(`theme@half__image ${imageClassName ?? ''}`)}
-          />
+        <div className={resolveClasses('theme@half__image-wrapper')}>
+          <Image context={context} src={imageUrl} className={resolveClasses('theme@half__image', imageClassName)} />
         </div>
       )}
     </SlideWrapper>

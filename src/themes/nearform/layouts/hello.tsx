@@ -1,10 +1,12 @@
-import { parseContent, resolveImageUrl, type SlideProps } from 'freya-slides'
+import { Image, resolveImageUrl, type SlideProps } from 'freya-slides'
 import { Fragment } from 'react'
-import { SlideWrapper } from '../components/common.js'
+import { SlideWrapper, Text } from '../components/common.js'
 import { Item } from '../components/item.js'
 import { type Slide } from '../models.js'
 
 export default function HelloLayout({ context, theme, talk, slide, index }: SlideProps<Slide>): JSX.Element {
+  const resolveClasses = context.extensions.freya.resolveClasses
+
   const author = slide.options?.author ?? talk.document.author
 
   const name = author.name.split(' ')[0]
@@ -18,33 +20,33 @@ export default function HelloLayout({ context, theme, talk, slide, index }: Slid
       talk={talk}
       slide={slide}
       index={index}
-      className={context.extensions.expandClasses('theme@hello')}
+      className={resolveClasses('theme@hello')}
       defaultLogoColor="white"
     >
-      <h1 className={context.extensions.expandClasses('theme@hello__title')}>Hello, I'm {name}!</h1>
+      <h1 className={resolveClasses('theme@hello__title')}>Hello, I'm {name}!</h1>
 
-      <div className={context.extensions.expandClasses('theme@hello__location-wrapper')}>
-        <img src={locationImage} className={context.extensions.expandClasses('theme@hello__location')} />
+      <div className={resolveClasses('theme@hello__location-wrapper')}>
+        <Image context={context} src={locationImage} className={resolveClasses('theme@hello__location')} />
       </div>
 
-      <div className={context.extensions.expandClasses('theme@hello__contents')}>
-        <img src={avatarImage} className={context.extensions.expandClasses('theme@hello__logo')} />
+      <div className={resolveClasses('theme@hello__contents')}>
+        <Image context={context} src={avatarImage} className={resolveClasses('theme@hello__logo')} />
 
         <Item
           context={context}
-          className={context.extensions.expandClasses('theme@hello__roles-wrapper')}
+          className={resolveClasses('theme@hello__roles-wrapper')}
           talk={talk.id}
           theme="nearform"
           classes={{ item: 'theme@hello__roles__item', text: 'theme@hello__roles__text' }}
         >
-          <strong className={context.extensions.expandClasses('theme@hello__roles')}>
+          <strong className={resolveClasses('theme@hello__roles')}>
             {author.roles.map(({ what, where, url }: Record<string, string>, index: number) => {
               return (
                 <Fragment key={`role:${index}`}>
-                  <a href={url} className={context.extensions.expandClasses('theme@hello__role__company')}>
+                  <a href={url} className={resolveClasses('theme@hello__role__company')}>
                     {where}
                   </a>
-                  <span className={context.extensions.expandClasses('theme@hello__role__description')}>{what}</span>
+                  <span className={resolveClasses('theme@hello__role__description')}>{what}</span>
                   <br />
                 </Fragment>
               )
@@ -55,79 +57,76 @@ export default function HelloLayout({ context, theme, talk, slide, index }: Slid
         <Item
           context={context}
           qr={author.website}
-          className={context.extensions.expandClasses('theme@hello__social')}
+          className={resolveClasses('theme@hello__social')}
           talk={talk.id}
           theme="nearform"
           classes={{
-            item: 'grid-area-[c]',
-            qr: 'theme@hello__social__qr',
-            contents: 'theme@hello__social__text'
+            item: resolveClasses('grid-area-[c]'),
+            qr: resolveClasses('theme@hello__social__qr'),
+            contents: resolveClasses('theme@hello__social__text')
           }}
           horizontal={true}
         >
-          <a href={author.website} className={context.extensions.expandClasses('theme@hello__social__link')}>
-            {author.website.replace('https://', '')}
+          <a href={author.website} className={resolveClasses('theme@hello__social__link')}>
+            <Text text={author.website.replace('https://', '')} />
           </a>
         </Item>
 
         <Item
           context={context}
           icon="brand-github"
-          className={context.extensions.expandClasses('theme@hello__social')}
+          className={resolveClasses('theme@hello__social')}
           talk={talk.id}
           theme="nearform"
           classes={{
-            item: 'grid-area-[e]',
-            icon: 'theme@hello__social__icon fill-black',
-            contents: 'theme@hello__social__text'
+            item: resolveClasses('grid-area-[e]'),
+            icon: resolveClasses('theme@hello__social__icon fill-black'),
+            contents: resolveClasses('theme@hello__social__text')
           }}
           horizontal={true}
         >
-          <a
-            href={`https://github.com/${author.github}`}
-            dangerouslySetInnerHTML={{ __html: parseContent(author.github) }}
-            className={context.extensions.expandClasses('theme@hello__social__link')}
-          />
+          <a href={`https://github.com/${author.github}`} className={resolveClasses('theme@hello__social__link')}>
+            <Text text={author.github} />
+          </a>
         </Item>
 
         <Item
           context={context}
           icon="brand-twitter"
-          className={context.extensions.expandClasses('theme@hello__social')}
+          className={resolveClasses('theme@hello__social')}
           talk={talk.id}
           theme="nearform"
           classes={{
-            item: 'grid-area-[d]',
-            icon: 'theme@hello__social__icon fill-black',
-            contents: 'theme@hello__social__text'
+            item: resolveClasses('grid-area-[d]'),
+            icon: resolveClasses('theme@hello__social__icon fill-black'),
+            contents: resolveClasses('theme@hello__social__text')
           }}
           horizontal={true}
         >
-          <a
-            href={`https://twitter.com/${author.twitter}`}
-            dangerouslySetInnerHTML={{ __html: parseContent(author.twitter) }}
-            className={context.extensions.expandClasses('theme@hello__social__link')}
-          />
+          <a href={`https://twitter.com/${author.twitter}`} className={resolveClasses('theme@hello__social__link')}>
+            <Text text={author.twitter} />
+          </a>
         </Item>
 
         <Item
           context={context}
           icon="brand-linkedin"
-          className={context.extensions.expandClasses('theme@hello__social')}
+          className={resolveClasses('theme@hello__social')}
           talk={talk.id}
           theme="nearform"
           classes={{
-            item: 'grid-area-[f]',
-            icon: 'theme@hello__social__icon stroke-width-2',
-            contents: 'theme@hello__social__text'
+            item: resolveClasses('grid-area-[f]'),
+            icon: resolveClasses('theme@hello__social__icon stroke-width-2'),
+            contents: resolveClasses('theme@hello__social__text')
           }}
           horizontal={true}
         >
           <a
             href={`https://linkedin.com/in/${author.linkedin}`}
-            dangerouslySetInnerHTML={{ __html: parseContent(author.linkedin) }}
-            className={context.extensions.expandClasses('theme@hello__social__link')}
-          />
+            className={resolveClasses('theme@hello__social__link')}
+          >
+            <Text text={author.linkedin} />
+          </a>
         </Item>
       </div>
     </SlideWrapper>

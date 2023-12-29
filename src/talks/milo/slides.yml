@@ -47,7 +47,7 @@ title: What about Node.js?
 items:
   - index: 1+2
     title: HTTP/1.1 and HTTP/2
-    te  xt: Node.js has a stable implementation.
+    text: Node.js has a stable implementation.
   - index: 3
     title: HTTP/3
     text: Work in progress, *stay tuned!*

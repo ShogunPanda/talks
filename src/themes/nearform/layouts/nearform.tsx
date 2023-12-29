@@ -1,8 +1,10 @@
 import { resolveImageUrl, SlideProps, Svg, SvgIcon } from 'freya-slides'
 import { SlideWrapper } from '../components/common.js'
-import { Slide } from '../models.js'
+import { type Slide } from '../models.js'
 
 export default function NearFormLayout({ context, theme, talk, slide, index }: SlideProps<Slide>): JSX.Element {
+  const resolveClasses = context.extensions.freya.resolveClasses
+
   const {
     id,
     document: {
@@ -19,18 +21,18 @@ export default function NearFormLayout({ context, theme, talk, slide, index }: S
       talk={talk}
       slide={slide}
       index={index}
-      className={context.extensions.expandClasses('theme@nearform')}
+      className={resolveClasses('theme@nearform')}
       skipDecorations={true}
     >
-      <div className={context.extensions.expandClasses('theme@nearform__contents')}>
-        <header className={context.extensions.expandClasses('theme@nearform__header')}>
+      <div className={resolveClasses('theme@nearform__contents')}>
+        <header className={resolveClasses('theme@nearform__header')}>
           <Svg
             theme="nearform"
             contents="@theme/nearform-logo.svg"
-            className={context.extensions.expandClasses('theme@nearform__logo')}
+            className={resolveClasses('theme@nearform__logo')}
           />
 
-          <p className={context.extensions.expandClasses('theme@nearform__tagline')}>
+          <p className={resolveClasses('theme@nearform__tagline')}>
             WE’RE BOLD
             <br />
             WE’RE FLEXIBLE
@@ -43,105 +45,80 @@ export default function NearFormLayout({ context, theme, talk, slide, index }: S
         </header>
 
         <div
-          className={context.extensions.expandClasses('theme@nearform__description')}
+          className={resolveClasses('theme@nearform__description')}
           style={{ backgroundImage: `url(${worldImageUrl})` }}
         >
-          <h2 className={context.extensions.expandClasses('theme@nearform__description__text')}>
+          <h2 className={resolveClasses('theme@nearform__description__text')}>
             Global Delivery Org with {count}+ and counting
           </h2>
         </div>
 
-        <h1 className={context.extensions.expandClasses('theme@nearform__hiring')}>We are hiring!</h1>
+        <h1 className={resolveClasses('theme@nearform__hiring')}>We are hiring!</h1>
       </div>
 
-      <footer
-        className={context.extensions.expandClasses(
-          'flex items-center w-full min-h-0_7sp px-0_5sp bg-nf-brunch-pink text-nf-darkest-blue font-poppins font-bold font-size-12pt line-height-1'
-        )}
-      >
-        <a
-          href="https://nearform.com"
-          className={context.extensions.expandClasses('text-nf-darkest-blue talk@visited:text-nf-darkest-blue')}
-        >
+      <footer className={resolveClasses('theme@nearform__footer')}>
+        <a href="https://nearform.com" className={resolveClasses('theme@nearform__footer__link')}>
           nearform.com
         </a>
-        <div className={context.extensions.expandClasses('w-3px h-0_3sp mx-1ch bg-nf-darkest-blue')} />
+        <div className={resolveClasses('theme@nearform__footer__follow')} />
         <span>follow us on</span>
 
         <a
           href="https://www.linkedin.com/company/nearform/"
-          className={context.extensions.expandClasses(
-            'w-0_3sp h-0_3sp ml-1ch text-nf-darkest-blue talk@visited:text-nf-darkest-blue'
-          )}
+          className={resolveClasses('theme@nearform__footer__social-link')}
         >
           <SvgIcon name="brand-linkedin" theme="nearform" />
         </a>
 
-        <a
-          href="https://twitter.com/nearform"
-          className={context.extensions.expandClasses(
-            'w-0_3sp h-0_3sp ml-1ch text-nf-darkest-blue talk@visited:text-nf-darkest-blue'
-          )}
-        >
+        <a href="https://twitter.com/nearform" className={resolveClasses('theme@nearform__footer__social-link')}>
           <SvgIcon name="brand-twitter" theme="nearform" />
         </a>
 
-        <a
-          href="https://github.com/nearform"
-          className={context.extensions.expandClasses(
-            'w-0_3sp h-0_3sp ml-1ch text-nf-darkest-blue talk@visited:text-nf-darkest-blue'
-          )}
-        >
+        <a href="https://github.com/nearform" className={resolveClasses('theme@nearform__footer__social-link')}>
           <SvgIcon name="brand-github" theme="nearform" />
         </a>
 
         <a
           href="https://www.youtube.com/channel/UCp2Tsbjd3P8itnBHUNHi82A"
-          className={context.extensions.expandClasses(
-            'w-0_3sp h-0_3sp ml-1ch text-nf-darkest-blue talk@visited:text-nf-darkest-blue'
-          )}
+          className={resolveClasses('theme@nearform__footer__social-link')}
         >
           <SvgIcon name="brand-youtube" theme="nearform" />
         </a>
 
         <a
           href="https://www.facebook.com/NearFormLtd"
-          className={context.extensions.expandClasses(
-            'w-0_3sp h-0_3sp ml-1ch text-nf-darkest-blue talk@visited:text-nf-darkest-blue'
-          )}
+          className={resolveClasses('theme@nearform__footer__social-link')}
         >
           <SvgIcon name="brand-facebook" theme="nearform" />
         </a>
 
-        <div className={context.extensions.expandClasses('flex flex-1')} />
+        <div className={resolveClasses('theme@nearform__footer__spacer')} />
 
         <Svg
           theme="nearform"
           contents="@theme/nearform-logo-with-text-right.svg"
-          className={context.extensions.expandClasses('w-1_8sp justify-end fill-nf-darkest-blue')}
+          className={resolveClasses('theme@nearform__footer__logo')}
         />
       </footer>
 
       <Svg
         theme="nearform"
         contents="@theme/nearform-curve-bottom-right.svg"
-        className={context.extensions.expandClasses('theme@nearform__curve')}
+        className={resolveClasses('theme@nearform__curve')}
       />
 
-      <div className={context.extensions.expandClasses('theme@nearform__npm')}>
-        <h2 className={context.extensions.expandClasses('theme@nearform__npm__title')}>
+      <div className={resolveClasses('theme@nearform__npm')}>
+        <h2 className={resolveClasses('theme@nearform__npm__title')}>
           Major Contributors to the Open Source Web Platform
         </h2>
 
-        <h3 className={context.extensions.expandClasses('theme@nearform__npm__header')}>NPM monthly downloads</h3>
-        <h1 className={context.extensions.expandClasses('theme@nearform__npm__value')}>{npm.monthly}</h1>
+        <h3 className={resolveClasses('theme@nearform__npm__header')}>NPM monthly downloads</h3>
+        <h1 className={resolveClasses('theme@nearform__npm__value')}>{npm.monthly}</h1>
 
-        <hr className={context.extensions.expandClasses('theme@nearform__npm__separator')} />
+        <hr className={resolveClasses('theme@nearform__npm__separator')} />
 
-        <h4 className={context.extensions.expandClasses('theme@nearform__npm__header')}>
-          Represents modules used globally
-        </h4>
-        <h1 className={context.extensions.expandClasses('theme@nearform__npm__value')}>{npm.percentage}</h1>
+        <h4 className={resolveClasses('theme@nearform__npm__header')}>Represents modules used globally</h4>
+        <h1 className={resolveClasses('theme@nearform__npm__value')}>{npm.percentage}</h1>
       </div>
     </SlideWrapper>
   )

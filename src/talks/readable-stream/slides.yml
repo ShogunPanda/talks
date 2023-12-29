@@ -254,7 +254,7 @@ options:
 
 ---
 layout: separator
-title: We test 100 configuration in the CI!
+title: We test 100 configurations in the CI!
 image: '@talk/100.webp'
 background: nf-orange-split
 

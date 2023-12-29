@@ -2,7 +2,7 @@ import { type CSSValue, type Rule } from '@unocss/core'
 import { handler } from '@unocss/preset-mini/utils'
 import presetWind from '@unocss/preset-wind'
 import transformerDirectives from '@unocss/transformer-directives'
-import { compressLayers, defineUnoConfig, layersVariant } from 'freya-slides'
+import { defineUnoConfig, layersVariant } from 'freya-slides'
 
 export type UnoRuleDefinition = [
   string | RegExp,
@@ -278,4 +278,3 @@ export const config = defineUnoConfig({
 })
 
 export default config
-export const compressedLayers = compressLayers(layers)

@@ -1,7 +1,8 @@
 import { type BuildContext } from 'dante'
-import { Code, QRCode, SvgIcon, parseContent, resolveImageUrl } from 'freya-slides'
-import { Fragment, ReactNode } from 'react'
-import { Grid, Item as ItemDefinition } from '../models.js'
+import { CSSClassesResolverContext, Code, Image, QRCode, SvgIcon, resolveImageUrl } from 'freya-slides'
+import { Fragment, useContext, type ReactNode } from 'react'
+import { type Grid, type Item as ItemDefinition } from '../models.js'
+import { Text } from './common.js'
 
 interface ItemProps extends ItemDefinition {
   context: BuildContext
@@ -30,6 +31,8 @@ interface GridsProps {
 }
 
 export function Item(props: ItemProps): JSX.Element {
+  const resolveClasses = useContext(CSSClassesResolverContext)
+
   const { context, horizontal, index, icon, image, title, text, qr, code, className, classes, talk, theme, children } =
     props
 
@@ -48,33 +51,25 @@ export function Item(props: ItemProps): JSX.Element {
   const imageUrl = image ? resolveImageUrl(theme, talk, image) : undefined
 
   return (
-    <section
-      className={context.extensions.expandClasses(
-        `theme@item ${horizontal ? 'theme@item--horizontal' : ''} ${className ?? ''} ${itemClassName ?? ''}`
-      )}
-    >
+    <section className={resolveClasses('theme@item', horizontal && 'theme@item--horizontal', className, itemClassName)}>
       {index && (
         <h5
-          className={context.extensions.expandClasses(
-            `theme@item__index ${horizontal ? 'theme@item__index--horizontal' : ''} ${indexClassName ?? ''}`
-          )}
-          dangerouslySetInnerHTML={{ __html: parseContent(index) }}
-        />
+          className={resolveClasses('theme@item__index', horizontal && 'theme@item__index--horizontal', indexClassName)}
+        >
+          <Text text={index} />
+        </h5>
       )}
       {imageUrl && (
-        <img
+        <Image
+          context={context}
           src={imageUrl}
-          className={context.extensions.expandClasses(
-            `item__image ${horizontal ? 'theme@item__image--horizontal' : ''} ${imageClassName ?? ''}`
-          )}
+          className={resolveClasses('item__image', horizontal && 'theme@item__image--horizontal', imageClassName)}
         />
       )}
       {!imageUrl && icon && (
         <SvgIcon
           name={icon}
-          className={context.extensions.expandClasses(
-            `theme@item__icon ${horizontal ? 'theme@item__icon--horizontal' : ''} ${iconClassName ?? ''}`
-          )}
+          className={resolveClasses('theme@item__icon', horizontal && 'theme@item__icon--horizontal', iconClassName)}
           theme={theme}
         />
       )}
@@ -83,40 +78,36 @@ export function Item(props: ItemProps): JSX.Element {
           context={context}
           label=""
           data={qr}
-          classes={{ code: `theme@item__qr ${horizontal ? 'theme@item__qr--horizontal' : ''} ${qrClassName ?? ''}` }}
+          classes={{ code: resolveClasses('theme@item__qr', horizontal && 'theme@item__qr--horizontal', qrClassName) }}
         />
       )}
 
       {!imageUrl && !icon && !qr && code && (
-        <Code context={context} {...code} className={context.extensions.expandClasses(codeClassName ?? '')} />
+        <Code context={context} {...code} className={resolveClasses(codeClassName)} />
       )}
 
       {/* eslint-disable-next-line @typescript-eslint/prefer-nullish-coalescing */}
       {!code && (title || text || children) && (
         <div
-          className={context.extensions.expandClasses(
-            `theme@item__text ${horizontal ? 'theme@item__text--horizontal' : ''} ${textClassName ?? ''}`
-          )}
+          className={resolveClasses('theme@item__text', horizontal && 'theme@item__text--horizontal', textClassName)}
         >
           {title && (
             <h4
-              className={context.extensions.expandClasses(
-                `theme@item__title ${horizontal ? 'theme@item__title--horizontal' : ''} ${titleClassName ?? ''}`
+              className={resolveClasses(
+                'theme@item__title',
+                horizontal && 'theme@item__title--horizontal',
+                titleClassName
               )}
-              dangerouslySetInnerHTML={{ __html: parseContent(title) }}
-            />
+            >
+              <Text text={title} />
+            </h4>
           )}
           {text && (
-            <p
-              className={context.extensions.expandClasses(`theme@item__contents ${contentsClassName ?? ''}`)}
-              dangerouslySetInnerHTML={{ __html: parseContent(text) }}
-            />
-          )}
-          {!text && (
-            <p className={context.extensions.expandClasses(`theme@item__contents ${contentsClassName ?? ''}`)}>
-              {children}
+            <p className={resolveClasses('theme@item__contents', contentsClassName)}>
+              <Text text={text} />
             </p>
           )}
+          {!text && <p className={resolveClasses('theme@item__contents', contentsClassName)}>{children}</p>}
         </div>
       )}
     </section>
@@ -133,19 +124,17 @@ export function Items({
   skipDefaultClasses,
   skipSpacer
 }: ItemsProps): JSX.Element {
+  const resolveClasses = useContext(CSSClassesResolverContext)
+
   const gap = noGap ? '0' : '0_2'
-  const classes = !skipDefaultClasses
-    ? `flex ${horizontal ? `flex-1 items-center gap-x-${gap}sp` : `flex-col gap-y-${gap}sp`}`
-    : ''
+  const classes = horizontal ? `theme@items--horizontal gap-x-${gap}sp` : `theme@items--vertical gap-y-${gap}sp`
 
   return (
-    <div className={context.extensions.expandClasses(`${classes} ${className ?? ''}`)}>
+    <div className={resolveClasses(!skipDefaultClasses && 'theme@items', !skipDefaultClasses && classes, className)}>
       {items.filter(Boolean).map((item: ItemDefinition, index: number) => {
         return (
           <Fragment key={`item:${index}`}>
-            {!skipSpacer && horizontal && index > 0 && (
-              <div className={context.extensions.expandClasses('theme@item__spacer')} />
-            )}
+            {!skipSpacer && horizontal && index > 0 && <div className={resolveClasses('theme@item__spacer')} />}
             <Item
               context={context}
               horizontal={horizontal}
@@ -162,27 +151,27 @@ export function Items({
 }
 
 export function Grids({ context, grids, talk }: GridsProps): JSX.Element {
+  const resolveClasses = useContext(CSSClassesResolverContext)
+
   if (!Array.isArray(grids)) {
     grids = [grids]
   }
 
   return (
-    <div className={context.extensions.expandClasses('flex flex-1 items-center gap-x-0_2sp')}>
+    <div className={resolveClasses('theme@items--grid__wrapper')}>
       {grids.map((grid: Grid, index: number) => {
         const template = grid.template ?? '1fr_1fr'
         const gap = grid.gap ?? '4ch'
 
         return (
           <Fragment key={`item:${index}`}>
-            {index > 0 && <div className={context.extensions.expandClasses('theme@item__spacer')} />}
+            {index > 0 && <div className={resolveClasses('theme@item__spacer')} />}
             <Items
               context={context}
               items={grid.items}
               horizontal={true}
               talk={talk}
-              className={context.extensions.expandClasses(
-                `flex-1 grid grid-cols-[${template}] gap-${gap} justify-center items-center`
-              )}
+              className={resolveClasses('theme@items--grid', `grid-cols-[${template}]`, `gap-${gap}`)}
               skipSpacer={true}
               skipDefaultClasses={true}
             />
