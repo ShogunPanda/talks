@@ -1,4 +1,4 @@
-import { Code, Image, SlideProps, resolveImageUrl } from 'freya-slides'
+import { Code, Image, resolveImageUrl, type SlideProps } from 'freya-slides'
 import { ComplexContent, SlideWrapper, Text } from '../components/common.js'
 import { Items } from '../components/item.js'
 import { type Slide } from '../models.js'

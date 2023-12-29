@@ -5,6 +5,13 @@ import { setTimeout as sleep } from 'timers/promises'
 
 type BrowserEnvironment = [Browser, BrowserContext, Page]
 
+interface Options {
+  only: string
+  compare: boolean
+  remote: boolean
+  delay: number
+}
+
 async function findScreenResolution(): Promise<[number, number]> {
   const browser = await chromium.launch({ args: ['--start-maximized'] })
   const context = await browser.newContext({ ignoreHTTPSErrors: true, viewport: null })
@@ -95,7 +102,7 @@ program
   .action(async function verifyAction(this: Command): Promise<void> {
     try {
       // Determine window dimension
-      const { compare, remote, delay, only } = this.optsWithGlobals()
+      const { compare, remote, delay, only }: Options = this.optsWithGlobals()
       setWhitelistedTalks(only)
 
       for (const talk of filterWhitelistedTalks(await getAllTalks())) {

@@ -1,7 +1,7 @@
-import { Image, resolveImageUrl, SlideProps } from 'freya-slides'
+import { Image, resolveImageUrl, type SlideProps } from 'freya-slides'
 import { ComplexContent, SlideWrapper, Text } from '../components/common.js'
 import { Items } from '../components/item.js'
-import { Slide } from '../models.js'
+import { type Slide } from '../models.js'
 
 export default function HalfLayout(props: SlideProps<Slide>): JSX.Element {
   const { context, theme, talk, index, slide } = props

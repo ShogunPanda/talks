@@ -1,4 +1,4 @@
-import { Slide as FreyaSlide } from 'freya-slides'
+import { type Slide as FreyaSlide } from 'freya-slides'
 
 export interface Item {
   index?: string

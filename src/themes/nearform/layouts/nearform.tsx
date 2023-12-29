@@ -1,4 +1,4 @@
-import { resolveImageUrl, SlideProps, Svg, SvgIcon } from 'freya-slides'
+import { Svg, SvgIcon, resolveImageUrl, type SlideProps } from 'freya-slides'
 import { SlideWrapper } from '../components/common.js'
 import { type Slide } from '../models.js'
 

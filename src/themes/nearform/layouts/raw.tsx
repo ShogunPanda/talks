@@ -1,4 +1,4 @@
-import { SlideProps } from 'freya-slides'
+import { type SlideProps } from 'freya-slides'
 import { SlideWrapper, Text } from '../components/common.js'
 import { type Slide } from '../models.js'
 
