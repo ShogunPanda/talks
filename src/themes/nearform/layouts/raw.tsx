@@ -1,16 +1,16 @@
-import { type SlideProps } from 'freya-slides'
+import { useFreya, type SlideProps } from '@perseveranza-pets/freya/client'
 import { SlideWrapper, Text } from '../components/common.js'
 import { type Slide } from '../models.js'
 
-export default function RawLayout({ context, theme, talk, slide, index }: SlideProps<Slide>): JSX.Element {
+export default function RawLayout({ slide, index, className }: SlideProps<Slide>): JSX.Element {
   const {
     content,
-    classes: { slide: className, raw: rawClassName }
+    classes: { slide: slideClassName, raw: rawClassName }
   } = slide
-  const resolveClasses = context.extensions.freya.resolveClasses
+  const { resolveClasses } = useFreya()
 
   return (
-    <SlideWrapper context={context} theme={theme} talk={talk} slide={slide} index={index} className={className}>
+    <SlideWrapper slide={slide} index={index} className={resolveClasses(className, slideClassName)}>
       <div className={resolveClasses(rawClassName)}>
         <Text text={content.join('')} />
       </div>

@@ -4,6 +4,7 @@
     "module": "ESNext",
     "moduleResolution": "node",
     "jsx": "react-jsx",
+    "jsxImportSource": "preact",
     "outDir": "dist",
     "allowJs": false,
     "allowSyntheticDefaultImports": true,

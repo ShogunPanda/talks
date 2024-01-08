@@ -26,13 +26,13 @@ background: nf-neon-blue
 ---
 title: How is that?
 items:
-  - icon: 'recycle'
+  - icon: 'pot-food'
     title: 'They are related to our food'
     text: 'Over 70% of the food we eat is directly or indirectly related to their pollination.'
-  - icon: 'bomb'
+  - icon: 'dinosaur'
     title: 'We are endangering them'
     text: 'Pesticides and climate change made them an endangered species.'
-  - icon: 'history'
+  - icon: 'timeline-arrow'
     title: 'No coming back'
     text: 'If they disappear, we have no natural or artificial replacement.'
 
@@ -45,13 +45,13 @@ background: nf-brunch-pink
 ---
 title: Yes, we do!
 items:
-  - icon: 'recycle'
+  - icon: 'webhook'
     title: 'APIs are related to our application'
     text: 'Over 100% of the application we use is directly or indirectly related to their quality.'
-  - icon: 'bomb'
+  - icon: 'dinosaur'
     title: 'We are endangering them'
     text: 'Adding complexity between applications and APIs made them an endangered species.'
-  - icon: 'history'
+  - icon: 'timeline-arrow'
     title: 'No coming back'
     text: 'If they disappear, we have no other replacement.'
 
@@ -72,20 +72,20 @@ classes:
 ---
 title: Say hello to SDKs
 items:
-  - icon: 'affiliate'
+  - icon: 'webhook'
     title: "We don't do everything by ourself"
     text: 'Our application and servers often talk to third party services.'
-  - icon: 'source-code'
+  - icon: 'gear-code'
     title: 'Third party usually give use a SDK'
     text: 'The kit makes our life easier by simplifying integration.'
-  - icon: 'confetti'
+  - icon: 'gift'
     title: 'Lot of goodies'
     text: 'Authentication, retry logic and other boring tasks are already implemented.'
 
 ---
 title: What do we get, in short?
 items:
-  - icon: 'search'
+  - icon: 'arrows-to-circle'
     title: 'Focus'
     text: |
       All the API services are made simpler to use,
@@ -112,7 +112,7 @@ background: nf-brunch-pink
 ---
 title: What do we ALSO get, in short? (1/2)
 items:
-  - icon: 'puzzle-2'
+  - icon: 'list-check'
     title: 'Roadmap dependency'
     text: |
       Since you don't control the SDK development,
@@ -128,7 +128,7 @@ options:
 ---
 title: What do we ALSO get, in short? (2/2)
 items:
-  - icon: 'checks'
+  - icon: 'solid:star-sharp-half-stroke'
     title: 'Quality'
     text: Sometimes vendor automate the generation of the SDK out of API definitions. Native language experience is lost.
   - icon: 'rocket'
@@ -146,13 +146,13 @@ image: '@talk/sun.webp'
 ---
 title: 'Case study: uploaded a file to AWS S3'
 items:
-  - icon: 'source-code'
+  - icon: 'code'
     title: 'Why?'
     text: "It's a pretty simple use case that we all faced sometimes."
-  - icon: 'git-fork'
+  - icon: 'code-compare'
     title: 'Which one?'
     text: "I'm gonna analyze two different version of the AWS JavaScript SDK."
-  - icon: 'search'
+  - icon: 'truck'
     title: 'How?'
     text: "I'm gonna show you how many dependency the SDK brings and how it performs."
 
@@ -231,6 +231,7 @@ classes:
   image: talk@max-h-4sp talk@max-w-none
 
 # TODO@PI: Add separator here
+
 ---
 title: 'AWS SDK v3: Dependencies in theory'
 content: A little more detailed dependencies in `package.json` ...
@@ -305,10 +306,10 @@ classes:
 layout: half
 title: Quod Erat Demonstrandum
 items:
-  - icon: search
+  - icon: eye-slash
     title: 'You only see a bit of it'
     text: Each SDK brings a lot more complexity which is hidden under the rug.
-  - icon: affiliate
+  - icon: explosion
     title: 'Not really a monolith'
     text: How many point of failures can you afford?
 image: '@talk/iceberg.webp'
@@ -495,19 +496,19 @@ classes:
 layout: separator
 title: Mission completed!
 image: '@talk/completed.webp'
-icon: confetti
+icon: party-horn
 background: nf-darkest-blue
 classes:
-  icon: talk@w-2_5sp talk@h-2_5sp talk@left-1sp talk@-bottom-0_4sp text-white stroke-width-0_3
+  icon: talk@w-2sp talk@h-2sp talk@left-1sp talk@-bottom-0_2sp var-[ct-icon-primary-color]-[#133f91] stroke-width-0
 
 ---
 title: Take home lessons
 content: What can we learn from this long journey?
 items:
-  - icon: affiliate
+  - icon: timer
     title: SDK are not always bad
     text: Some times making things manually will *cost too much time*.
-  - icon: rocket
+  - icon: route
     title: Be flexible
     text: You don't have to remove all SDKs. But you can *optimize some calls*.
   - icon: book

@@ -1,42 +1,43 @@
-import { Image, resolveImageUrl, type SlideProps } from 'freya-slides'
-import { Fragment } from 'react'
+import { Image, useFreya, type SlideProps } from '@perseveranza-pets/freya/client'
+import { Fragment } from 'preact'
 import { SlideWrapper, Text } from '../components/common.js'
 import { Item } from '../components/item.js'
 import { type Slide } from '../models.js'
 
-export default function HelloLayout({ context, theme, talk, slide, index }: SlideProps<Slide>): JSX.Element {
-  const resolveClasses = context.extensions.freya.resolveClasses
+export default function HelloLayout({ slide, index, className }: SlideProps<Slide>): JSX.Element {
+  const {
+    talk: {
+      id,
+      document: { author: documentAuthor }
+    },
+    resolveClasses,
+    resolveImage
+  } = useFreya()
 
-  const author = slide.options?.author ?? talk.document.author
+  const author = slide.options?.author ?? documentAuthor
 
   const name = author.name.split(' ')[0]
-  const locationImage = resolveImageUrl('nearform', talk.id, '@theme/location.webp')
-  const avatarImage = resolveImageUrl('nearform', talk.id, '@theme/avatar-with-shadow.webp')
+  const locationImage = resolveImage('nearform', id, '@theme/location.webp')
+  const avatarImage = resolveImage('nearform', id, '@theme/avatar-with-shadow.webp')
 
   return (
     <SlideWrapper
-      context={context}
-      theme={theme}
-      talk={talk}
       slide={slide}
       index={index}
-      className={resolveClasses('theme@hello')}
+      className={resolveClasses('theme@hello', className, slide.className)}
       defaultLogoColor="white"
     >
       <h1 className={resolveClasses('theme@hello__title')}>Hello, I'm {name}!</h1>
 
       <div className={resolveClasses('theme@hello__location-wrapper')}>
-        <Image context={context} src={locationImage} className={resolveClasses('theme@hello__location')} />
+        <Image src={locationImage} className={resolveClasses('theme@hello__location')} />
       </div>
 
       <div className={resolveClasses('theme@hello__contents')}>
-        <Image context={context} src={avatarImage} className={resolveClasses('theme@hello__logo')} />
+        <Image src={avatarImage} className={resolveClasses('theme@hello__logo')} />
 
         <Item
-          context={context}
           className={resolveClasses('theme@hello__roles-wrapper')}
-          talk={talk.id}
-          theme="nearform"
           classes={{ item: 'theme@hello__roles__item', text: 'theme@hello__roles__text' }}
         >
           <strong className={resolveClasses('theme@hello__roles')}>
@@ -55,11 +56,8 @@ export default function HelloLayout({ context, theme, talk, slide, index }: Slid
         </Item>
 
         <Item
-          context={context}
           qr={author.website}
           className={resolveClasses('theme@hello__social')}
-          talk={talk.id}
-          theme="nearform"
           classes={{
             item: resolveClasses('grid-area-[c]'),
             qr: resolveClasses('theme@hello__social__qr'),
@@ -73,11 +71,8 @@ export default function HelloLayout({ context, theme, talk, slide, index }: Slid
         </Item>
 
         <Item
-          context={context}
-          icon="brand-github"
+          icon="github"
           className={resolveClasses('theme@hello__social')}
-          talk={talk.id}
-          theme="nearform"
           classes={{
             item: resolveClasses('grid-area-[e]'),
             icon: resolveClasses('theme@hello__social__icon fill-black'),
@@ -91,11 +86,8 @@ export default function HelloLayout({ context, theme, talk, slide, index }: Slid
         </Item>
 
         <Item
-          context={context}
-          icon="brand-twitter"
+          icon="twitter"
           className={resolveClasses('theme@hello__social')}
-          talk={talk.id}
-          theme="nearform"
           classes={{
             item: resolveClasses('grid-area-[d]'),
             icon: resolveClasses('theme@hello__social__icon fill-black'),
@@ -109,11 +101,8 @@ export default function HelloLayout({ context, theme, talk, slide, index }: Slid
         </Item>
 
         <Item
-          context={context}
-          icon="brand-linkedin"
+          icon="linkedin"
           className={resolveClasses('theme@hello__social')}
-          talk={talk.id}
-          theme="nearform"
           classes={{
             item: resolveClasses('grid-area-[f]'),
             icon: resolveClasses('theme@hello__social__icon stroke-width-2'),

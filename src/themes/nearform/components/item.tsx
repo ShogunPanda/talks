@@ -1,23 +1,18 @@
-import { type BuildContext } from 'dante'
-import { CSSClassesResolverContext, Code, Image, QRCode, SvgIcon, resolveImageUrl } from 'freya-slides'
-import { Fragment, useContext, type ReactNode } from 'react'
+import { Code, Image, QRCode, useFreya } from '@perseveranza-pets/freya/client'
+import { Fragment, type ComponentChildren } from 'preact'
 import { type Grid, type Item as ItemDefinition } from '../models.js'
 import { Text } from './common.js'
+import { SvgIcon } from './icons.js'
 
 interface ItemProps extends ItemDefinition {
-  context: BuildContext
   horizontal?: boolean
-  talk: string
-  theme: string
-  children?: ReactNode
+  children?: ComponentChildren | ComponentChildren[]
   className?: string
 }
 
 interface ItemsProps {
-  context: BuildContext
   items: ItemDefinition[]
   horizontal?: boolean
-  talk: string
   noGap?: boolean
   className?: string
   skipDefaultClasses?: boolean
@@ -25,16 +20,13 @@ interface ItemsProps {
 }
 
 interface GridsProps {
-  context: BuildContext
-  grids: Grid | Grid[]
-  talk: string
+  grids: Grid[]
 }
 
 export function Item(props: ItemProps): JSX.Element {
-  const resolveClasses = useContext(CSSClassesResolverContext)
+  const { context, talk, theme, resolveClasses, resolveImage } = useFreya()
 
-  const { context, horizontal, index, icon, image, title, text, qr, code, className, classes, talk, theme, children } =
-    props
+  const { horizontal, index, icon, image, title, text, qr, code, className, classes, children } = props
 
   const {
     item: itemClassName,
@@ -48,7 +40,7 @@ export function Item(props: ItemProps): JSX.Element {
     code: codeClassName
   } = classes ?? {}
 
-  const imageUrl = image ? resolveImageUrl(theme, talk, image) : undefined
+  const imageUrl = image ? resolveImage(theme, talk, image) : undefined
 
   return (
     <section className={resolveClasses('theme@item', horizontal && 'theme@item--horizontal', className, itemClassName)}>
@@ -70,7 +62,6 @@ export function Item(props: ItemProps): JSX.Element {
         <SvgIcon
           name={icon}
           className={resolveClasses('theme@item__icon', horizontal && 'theme@item__icon--horizontal', iconClassName)}
-          theme={theme}
         />
       )}
       {!imageUrl && !icon && qr && (
@@ -115,16 +106,14 @@ export function Item(props: ItemProps): JSX.Element {
 }
 
 export function Items({
-  context,
   items,
   horizontal,
-  talk,
   noGap,
   className,
   skipDefaultClasses,
   skipSpacer
 }: ItemsProps): JSX.Element {
-  const resolveClasses = useContext(CSSClassesResolverContext)
+  const { resolveClasses } = useFreya()
 
   const gap = noGap ? '0' : '0_2'
   const classes = horizontal ? `theme@items--horizontal gap-x-${gap}sp` : `theme@items--vertical gap-y-${gap}sp`
@@ -136,12 +125,9 @@ export function Items({
           <Fragment key={`item:${index}`}>
             {!skipSpacer && horizontal && index > 0 && <div className={resolveClasses('theme@item__spacer')} />}
             <Item
-              context={context}
               horizontal={horizontal}
               {...item}
               classes={{ index: 'text-nf-neon-blue', icon: 'text-nf-neon-blue', ...item.classes }}
-              talk={talk}
-              theme="nearform"
             />
           </Fragment>
         )
@@ -150,8 +136,8 @@ export function Items({
   )
 }
 
-export function Grids({ context, grids, talk }: GridsProps): JSX.Element {
-  const resolveClasses = useContext(CSSClassesResolverContext)
+export function Grids({ grids }: GridsProps): JSX.Element {
+  const { resolveClasses } = useFreya()
 
   if (!Array.isArray(grids)) {
     grids = [grids]
@@ -167,10 +153,8 @@ export function Grids({ context, grids, talk }: GridsProps): JSX.Element {
           <Fragment key={`item:${index}`}>
             {index > 0 && <div className={resolveClasses('theme@item__spacer')} />}
             <Items
-              context={context}
               items={grid.items}
               horizontal={true}
-              talk={talk}
               className={resolveClasses('theme@items--grid', `grid-cols-[${template}]`, `gap-${gap}`)}
               skipSpacer={true}
               skipDefaultClasses={true}

@@ -1,30 +1,29 @@
-import { Image, resolveImageUrl, type SlideProps } from 'freya-slides'
+import { Image, useFreya, type SlideProps } from '@perseveranza-pets/freya/client'
 import { ComplexContent, SlideWrapper, Text } from '../components/common.js'
 import { type Slide } from '../models.js'
 
-export default function SeparatorLayout(props: SlideProps<Slide>): JSX.Element {
-  const { context, theme, talk, index, slide } = props
-  const resolveClasses = context.extensions.freya.resolveClasses
+export default function SeparatorLayout({ slide, index, className }: SlideProps<Slide>): JSX.Element {
+  const {
+    talk: { id },
+    resolveClasses,
+    resolveImage
+  } = useFreya()
 
   const {
     title,
     subtitle,
     content,
     image,
-
-    classes: { slide: className, image: imageClassName, title: titleClassName, subtitle: subtitleClassName }
+    classes: { slide: slideClassName, image: imageClassName, title: titleClassName, subtitle: subtitleClassName }
   } = slide
 
-  const imageUrl = resolveImageUrl('nearform', talk.id, image)
+  const imageUrl = resolveImage('nearform', id, image)
 
   return (
     <SlideWrapper
-      context={context}
-      theme={theme}
-      talk={talk}
       slide={slide}
       index={index}
-      className={resolveClasses('theme@slide--half-wrapper', 'theme@separator', className)}
+      className={resolveClasses('theme@slide--half-wrapper', 'theme@separator', className, slideClassName)}
       defaultLogoColor="white"
     >
       {title && (
@@ -35,17 +34,13 @@ export default function SeparatorLayout(props: SlideProps<Slide>): JSX.Element {
 
       {image && (
         <div className={resolveClasses('theme@separator__wrapper')}>
-          <Image
-            context={context}
-            src={imageUrl}
-            className={resolveClasses('theme@separator__image', imageClassName)}
-          />
+          <Image src={imageUrl} className={resolveClasses('theme@separator__image', imageClassName)} />
 
           {content?.filter(Boolean).map((c: string | object, contentIndex: number) => {
             const key = `content:${index}:${contentIndex}`
 
             if (typeof c === 'object') {
-              return <ComplexContent key={key} raw={c} {...props} />
+              return <ComplexContent key={key} raw={c} slide={slide} />
             }
 
             return (

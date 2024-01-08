@@ -1,5 +1,5 @@
+import { filterWhitelistedTalks, getAllTalks, getTalk, getTheme, setWhitelistedTalks } from '@perseveranza-pets/freya'
 import { program, type Command } from 'commander'
-import { filterWhitelistedTalks, getAllTalks, getTalk, getTheme, setWhitelistedTalks } from 'freya-slides'
 import { chromium, type Browser, type BrowserContext, type Page } from 'playwright'
 import { setTimeout as sleep } from 'timers/promises'
 

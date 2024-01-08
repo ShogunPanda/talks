@@ -1,16 +1,17 @@
-import { SvgIcon, type SlideProps } from 'freya-slides'
+import { useFreya, type SlideProps } from '@perseveranza-pets/freya/client'
 import { SlideWrapper, Text } from '../components/common.js'
+import { SvgIcon } from '../components/icons.js'
 import { type Slide } from '../models.js'
 
-export default function QuoteLayout({ context, theme, slide, talk, index }: SlideProps<Slide>): JSX.Element {
-  const resolveClasses = context.extensions.freya.resolveClasses
+export default function QuoteLayout({ slide, index, className }: SlideProps<Slide>): JSX.Element {
+  const { resolveClasses, resolveImage } = useFreya()
 
   const {
     title,
     sentence,
     author,
     options: { light, icons, quote },
-    classes: { slide: className }
+    classes: { slide: slideClassName }
   } = slide
   const { primaryIcon, secondaryIcon } = quote ?? {}
 
@@ -20,12 +21,9 @@ export default function QuoteLayout({ context, theme, slide, talk, index }: Slid
 
   return (
     <SlideWrapper
-      context={context}
-      theme={theme}
-      talk={talk}
       slide={slide}
       index={index}
-      className={resolveClasses(backgroundColor, className)}
+      className={resolveClasses(backgroundColor, className, slideClassName)}
       defaultLogoColor={light ? 'black' : 'white'}
     >
       <h1 className={resolveClasses(foregroundColor)}>
@@ -40,14 +38,12 @@ export default function QuoteLayout({ context, theme, slide, talk, index }: Slid
       {icons !== false && (
         <>
           <SvgIcon
-            name={primaryIcon ?? 'puzzle-2'}
+            name={primaryIcon ?? 'puzzle-piece'}
             className={resolveClasses('theme@quote__primary-icon', foregroundColor)}
-            theme="nearform"
           />
           <SvgIcon
-            name={secondaryIcon ?? 'bulb'}
+            name={secondaryIcon ?? 'lightbulb-on'}
             className={resolveClasses('theme@quote__secondary-icon', foregroundColor)}
-            theme="nearform"
           />
         </>
       )}

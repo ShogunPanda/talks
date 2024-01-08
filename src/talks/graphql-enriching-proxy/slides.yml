@@ -596,7 +596,7 @@ code:
 layout: separator
 title: Mission completed!
 image: '@talk/completed.webp'
-icon: confetti
+icon: party-horn
 background: nf-darkest-blue
 classes:
   icon: talk@w-2_5sp talk@h-2_5sp talk@left-1sp talk@-bottom-0_4sp text-white stroke-width-0_3

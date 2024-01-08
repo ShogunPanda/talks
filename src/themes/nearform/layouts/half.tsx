@@ -1,11 +1,10 @@
-import { Image, resolveImageUrl, type SlideProps } from 'freya-slides'
+import { Image, useFreya, type SlideProps } from '@perseveranza-pets/freya/client'
 import { ComplexContent, SlideWrapper, Text } from '../components/common.js'
 import { Items } from '../components/item.js'
 import { type Slide } from '../models.js'
 
-export default function HalfLayout(props: SlideProps<Slide>): JSX.Element {
-  const { context, theme, talk, index, slide } = props
-  const resolveClasses = context.extensions.freya.resolveClasses
+export default function HalfLayout({ slide, index, className }: SlideProps<Slide>): JSX.Element {
+  const { talk, resolveClasses, resolveImage } = useFreya()
 
   const {
     title,
@@ -13,19 +12,16 @@ export default function HalfLayout(props: SlideProps<Slide>): JSX.Element {
     image,
     items,
     options: { horizontal, noGap, skipSpacer, skipDefaultClasses },
-    classes: { slide: className, image: imageClassName, items: itemsClassName }
+    classes: { slide: slideClassName, image: imageClassName, items: itemsClassName }
   } = slide
 
-  const imageUrl = resolveImageUrl('nearform', talk.id, image)
+  const imageUrl = resolveImage('nearform', talk.id, image)
 
   return (
     <SlideWrapper
-      context={context}
-      theme={theme}
-      talk={talk}
       slide={slide}
       index={index}
-      className={resolveClasses('theme@slide--half-wrapper', 'theme@half', className)}
+      className={resolveClasses('theme@slide--half-wrapper', 'theme@half', className, slideClassName)}
       defaultLogoColor="white"
     >
       <div className={resolveClasses('theme@half__contents')}>
@@ -39,7 +35,7 @@ export default function HalfLayout(props: SlideProps<Slide>): JSX.Element {
           const key = `content:${index}:${contentIndex}`
 
           if (typeof c === 'object') {
-            return <ComplexContent key={key} raw={c} {...props} />
+            return <ComplexContent key={key} raw={c} slide={slide} />
           }
 
           return (
@@ -51,11 +47,9 @@ export default function HalfLayout(props: SlideProps<Slide>): JSX.Element {
 
         {items && (
           <Items
-            context={context}
             items={items}
             horizontal={horizontal}
             className={resolveClasses(itemsClassName)}
-            talk={talk.id}
             noGap={noGap}
             skipSpacer={skipSpacer}
             skipDefaultClasses={skipDefaultClasses}
@@ -65,7 +59,7 @@ export default function HalfLayout(props: SlideProps<Slide>): JSX.Element {
 
       {image && (
         <div className={resolveClasses('theme@half__image-wrapper')}>
-          <Image context={context} src={imageUrl} className={resolveClasses('theme@half__image', imageClassName)} />
+          <Image src={imageUrl} className={resolveClasses('theme@half__image', imageClassName)} />
         </div>
       )}
     </SlideWrapper>

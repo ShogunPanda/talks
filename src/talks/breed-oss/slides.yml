@@ -131,7 +131,7 @@ items:
   - icon: 'plug-connected'
     title: Let them follow their path
     text: The Open Source model works because people can freely follow their paths.
-  - icon: 'confetti'
+  - icon: 'party-horn'
     title: It's a hobby
     text: Most collaborators send code in their free time, after a day of boring coding.
   - icon: 'git-fork'

@@ -1,40 +1,32 @@
-import { QRCode, Svg, resolveImageUrl, type SlideProps } from 'freya-slides'
+import { QRCode, Svg, useFreya, type SlideProps } from '@perseveranza-pets/freya/client'
 import { SlideWrapper, Text } from '../components/common.js'
 import { type Slide } from '../models.js'
 
-export default function CoverLayout({ context, theme, talk, slide, index }: SlideProps<Slide>): JSX.Element {
-  const resolveClasses = context.extensions.freya.resolveClasses
-
-  const { id: themeId, urls } = theme
+export default function CoverLayout({ slide, index, className }: SlideProps<Slide>): JSX.Element {
   const {
-    id,
-    document: { author, title, titleFormatted }
-  } = talk
+    isProduction,
+    talk: {
+      id,
+      document: { author, title, titleFormatted }
+    },
+    theme: { id: themeId, urls },
+    resolveClasses,
+    resolveImage
+  } = useFreya()
 
   const {
-    classes: { qr: qrClassName }
+    classes: { slide: slideClassName, qr: qrClassName }
   } = slide
 
   return (
     <SlideWrapper
-      context={context}
-      theme={theme}
-      talk={talk}
       slide={slide}
       index={index}
-      className={resolveClasses('theme@cover')}
+      className={resolveClasses('theme@cover', className, slideClassName)}
       skipDecorations={true}
     >
-      <Svg
-        theme="nearform"
-        contents="@theme/cover-curve-top-left.svg"
-        className={resolveClasses('theme@cover__curve-top-left')}
-      />
-      <Svg
-        theme="nearform"
-        contents="@theme/cover-curve-bottom-right.svg"
-        className={resolveClasses('theme@cover__curve-bottom-right')}
-      />
+      <Svg path="@theme/cover-curve-top-left.svg" className={resolveClasses('theme@cover__curve-top-left')} />
+      <Svg path="@theme/cover-curve-bottom-right.svg" className={resolveClasses('theme@cover__curve-bottom-right')} />
 
       <div className={resolveClasses('theme@cover__contents')}>
         <h1 className={resolveClasses('theme@cover__title')}>
@@ -55,17 +47,12 @@ export default function CoverLayout({ context, theme, talk, slide, index }: Slid
           &#169; Copyright {new Date().getFullYear()} NearForm Ltd. All Rights Reserved.
         </h3>
 
-        <Svg
-          theme="nearform"
-          contents="@theme/nearform-logo-with-text-right.svg"
-          className={resolveClasses('theme@cover__logo')}
-        />
+        <Svg path="@theme/nearform-logo-with-text-right.svg" className={resolveClasses('theme@cover__logo')} />
 
         <div className={resolveClasses('theme@cover__qrs')}>
           <QRCode
-            context={context}
-            data={`${urls[context.isProduction ? 'production' : 'development']}/${id}`}
-            image={resolveImageUrl(themeId, id, '@theme/icons/world.svg')}
+            data={`${urls[isProduction ? 'production' : 'development']}/${id}`}
+            image={resolveImage(themeId, id, '@theme/icons/world.svg')}
             imageRatio={1}
             label="View online"
             classes={{
@@ -76,9 +63,8 @@ export default function CoverLayout({ context, theme, talk, slide, index }: Slid
             }}
           />
           <QRCode
-            context={context}
-            data={`${urls[context.isProduction ? 'production' : 'development']}/pdfs/${id}.pdf`}
-            image={resolveImageUrl(themeId, id, '@theme/icons/pdf.svg')}
+            data={`${urls[isProduction ? 'production' : 'development']}/pdfs/${id}.pdf`}
+            image={resolveImage(themeId, id, '@theme/icons/pdf.svg')}
             imageRatio={1}
             label="Download PDF"
             classes={{

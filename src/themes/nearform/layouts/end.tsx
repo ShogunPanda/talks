@@ -1,32 +1,31 @@
-import { Svg, resolveImageUrl, type SlideProps } from 'freya-slides'
+import { Svg, useFreya, type SlideProps } from '@perseveranza-pets/freya/client'
 import { SlideWrapper, Text } from '../components/common.js'
 import { type Slide } from '../models.js'
 
-export default function EndLayout({ context, theme, talk, slide, index }: SlideProps<Slide>): JSX.Element {
-  const resolveClasses = context.extensions.freya.resolveClasses
-
+export default function EndLayout({ slide, index, className }: SlideProps<Slide>): JSX.Element {
   const {
-    id,
-    document: { author }
-  } = talk
+    talk: {
+      id,
+      document: { author }
+    },
+    resolveClasses,
+    resolveImage
+  } = useFreya()
 
   const {
     title,
     content,
     image,
-    classes: { title: titleClasses, content: contentClasses }
+    classes: { slide: slideClassName, title: titleClasses, content: contentClasses }
   } = slide
 
-  const pandaImageUrl = resolveImageUrl('nearform', id, image ?? '@theme/panda.webp')
+  const pandaImageUrl = resolveImage('nearform', id, image ?? '@theme/panda.webp')
 
   return (
     <SlideWrapper
-      context={context}
-      theme={theme}
-      talk={talk}
       slide={slide}
       index={index}
-      className={resolveClasses('theme@end')}
+      className={resolveClasses('theme@end', className, slideClassName)}
       style={{ backgroundImage: `url(${pandaImageUrl})` }}
       skipDecorations={true}
     >
@@ -50,19 +49,11 @@ export default function EndLayout({ context, theme, talk, slide, index }: SlideP
           <a className={resolveClasses('theme@end__social', 'grid-area-[d]')} href={`mailto:${author.email}`}>
             {author.email}
           </a>
-          <Svg
-            theme="nearform"
-            contents="@theme/nearform-logo-with-text-right.svg"
-            className={resolveClasses('theme@end__logo')}
-          />
+          <Svg path="@theme/nearform-logo-with-text-right.svg" className={resolveClasses('theme@end__logo')} />
         </div>
       </footer>
 
-      <Svg
-        theme="nearform"
-        contents="@theme/nearform-curve-bottom-right.svg"
-        className={resolveClasses('theme@end__curve')}
-      />
+      <Svg path="@theme/nearform-curve-bottom-right.svg" className={resolveClasses('theme@end__curve')} />
     </SlideWrapper>
   )
 }

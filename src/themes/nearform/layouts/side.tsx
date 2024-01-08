@@ -1,11 +1,14 @@
-import { Code, Image, resolveImageUrl, type SlideProps } from 'freya-slides'
+import { Code, Image, useFreya, type SlideProps } from '@perseveranza-pets/freya/client'
 import { ComplexContent, SlideWrapper, Text } from '../components/common.js'
 import { Items } from '../components/item.js'
 import { type Slide } from '../models.js'
 
-export default function SideLayout(props: SlideProps<Slide>): JSX.Element {
-  const { context, theme, talk, index, slide } = props
-  const resolveClasses = context.extensions.freya.resolveClasses
+export default function SideLayout({ slide, index, className }: SlideProps<Slide>): JSX.Element {
+  const {
+    talk: { id },
+    resolveClasses,
+    resolveImage
+  } = useFreya()
 
   const {
     title,
@@ -16,7 +19,7 @@ export default function SideLayout(props: SlideProps<Slide>): JSX.Element {
     highlight,
     options: { horizontal, noGap, skipSpacer, skipDefaultClasses },
     classes: {
-      slide: className,
+      slide: slideClassName,
       image: imageClassName,
       code: codeClassName,
       highlight: highlightClassName,
@@ -24,16 +27,13 @@ export default function SideLayout(props: SlideProps<Slide>): JSX.Element {
     }
   } = slide
 
-  const imageUrl = resolveImageUrl('nearform', talk.id, image)
+  const imageUrl = resolveImage('nearform', id, image)
 
   return (
     <SlideWrapper
-      context={context}
-      theme={theme}
-      talk={talk}
       slide={slide}
       index={index}
-      className={resolveClasses('theme@slide--half-wrapper', className)}
+      className={resolveClasses('theme@slide--half-wrapper', className, slideClassName)}
     >
       <div className={resolveClasses('theme@side')}>
         {title && (
@@ -46,7 +46,7 @@ export default function SideLayout(props: SlideProps<Slide>): JSX.Element {
           const key = `content:${index}:${contentIndex}`
 
           if (typeof c === 'object') {
-            return <ComplexContent key={key} raw={c} {...props} />
+            return <ComplexContent key={key} raw={c} slide={slide} />
           }
 
           return (
@@ -58,11 +58,9 @@ export default function SideLayout(props: SlideProps<Slide>): JSX.Element {
 
         {items && (
           <Items
-            context={context}
             items={items}
             horizontal={horizontal}
             className={resolveClasses(itemsClassName)}
-            talk={talk.id}
             noGap={noGap}
             skipSpacer={skipSpacer}
             skipDefaultClasses={skipDefaultClasses}
@@ -71,7 +69,7 @@ export default function SideLayout(props: SlideProps<Slide>): JSX.Element {
       </div>
       {image && (
         <div className={resolveClasses('theme@side__image-wrapper')}>
-          <Image context={context} src={imageUrl} className={resolveClasses('theme@side__image', imageClassName)} />
+          <Image src={imageUrl} className={resolveClasses('theme@side__image', imageClassName)} />
         </div>
       )}
       {!image && highlight && (
@@ -84,7 +82,7 @@ export default function SideLayout(props: SlideProps<Slide>): JSX.Element {
 
       {!image && !highlight && code && (
         <div className={resolveClasses('theme@side__code', highlightClassName)}>
-          <Code context={context} {...code} className={resolveClasses(codeClassName)} />
+          <Code {...code} className={resolveClasses(codeClassName)} />
         </div>
       )}
     </SlideWrapper>

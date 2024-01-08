@@ -6,6 +6,13 @@
 html {
   @apply font-extralight;
   @apply font-lexend;
+  --ct-color-nf-dark-grey: #272d3a;
+  --ct-color-nf-light-grey: #f2f2f0;
+  --ct-color-nf-darkest-blue: #130048;
+  --ct-color-nf-brunch-pink: #fb7a9c;
+  --ct-color-nf-midnight-blue: #194caa;
+  --ct-color-nf-neon-blue: #2165e3;
+  --ct-color-nf-orange-split: #ecb22e;
 }
 
 h1,

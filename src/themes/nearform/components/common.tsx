@@ -1,30 +1,16 @@
-import { type BuildContext } from 'dante'
-import {
-  CSSClassesResolverContext,
-  QRCode,
-  Svg,
-  SvgIcon,
-  parseContent,
-  renderNotes,
-  type Slide as FreyaSlide,
-  type SlideProps,
-  type Talk,
-  type Theme
-} from 'freya-slides'
-import { useContext, type CSSProperties, type ReactNode } from 'react'
+import { Progress, QRCode, Svg, useFreya } from '@perseveranza-pets/freya/client'
+import { type ComponentChildren, type JSX, type VNode } from 'preact'
 import { type Slide } from '../models.js'
+import { SvgIcon } from './icons.js'
 
 interface SlideWrapperProps {
-  context: BuildContext
-  theme: Theme
-  talk: Talk
   slide: Slide
   index: number
-  className?: string
-  style?: CSSProperties
   skipDecorations?: boolean
   defaultLogoColor?: 'black' | 'white'
-  children: ReactNode
+  className?: string
+  style?: JSX.CSSProperties
+  children: ComponentChildren | ComponentChildren[]
 }
 
 interface TextProps {
@@ -32,33 +18,44 @@ interface TextProps {
   className?: string
 }
 
-type ComplexContentProps = SlideProps<Slide> & { raw: Record<string, any> }
-
-type DecorationProps = Omit<SlideWrapperProps, 'skipDecorations' | 'children'>
-
-export function Text({ text, className }: TextProps): JSX.Element {
-  const resolveClasses = useContext(CSSClassesResolverContext)
-
-  text = parseContent(text).replaceAll(/class="([^"]+)"/g, (_, classes) => `class="${resolveClasses(classes)}"`)
-
-  return <span className={resolveClasses(className)} dangerouslySetInnerHTML={{ __html: text }} />
+interface ComplexContentProps {
+  slide: Slide
+  raw: Record<string, any>
 }
 
-export function ComplexContent({ raw, context, slide }: ComplexContentProps): JSX.Element {
-  const resolveClasses = useContext(CSSClassesResolverContext)
+type DecorationProps = Pick<SlideWrapperProps, 'slide' | 'index' | 'defaultLogoColor'>
+
+export function Text({ text, className }: TextProps): VNode {
+  const { resolveClasses, parseContent } = useFreya()
+
+  text = parseContent(text).replaceAll(
+    / class="([^"]+)"/g,
+    (_: string, classes: string) => ` class="${resolveClasses(classes)}"`
+  )
+
+  return (
+    <span className={className ? resolveClasses(className) : undefined} dangerouslySetInnerHTML={{ __html: text }} />
+  )
+}
+
+export function ComplexContent({ raw, slide }: ComplexContentProps): JSX.Element {
+  const { resolveClasses } = useFreya()
 
   if (raw.qr) {
-    return <QRCode context={context} data={raw.qr} classes={{ code: resolveClasses(slide.classes.qr) }} />
+    return <QRCode data={raw.qr} classes={{ code: resolveClasses(slide.classes.qr) }} />
   }
 
   return <></>
 }
 
-export function Decorations({ context, theme, talk, slide, index, defaultLogoColor }: DecorationProps): JSX.Element {
-  const resolveClasses = useContext(CSSClassesResolverContext)
+export function Decorations({ slide, index, defaultLogoColor }: DecorationProps): JSX.Element {
+  const {
+    isProduction,
+    talk: { id, slidesPadding },
+    theme: { urls },
+    resolveClasses
+  } = useFreya()
 
-  const { urls } = theme
-  const { id, slidesPadding } = talk
   const {
     sequence,
     icon,
@@ -73,15 +70,12 @@ export function Decorations({ context, theme, talk, slide, index, defaultLogoCol
           <Text text={sequence} />
         </h2>
       )}
-      {!sequence && icon && (
-        <SvgIcon name={icon} className={resolveClasses('theme@callout__icon', iconClasses)} theme="nearform" />
-      )}
+      {!sequence && icon && <SvgIcon name={icon} className={resolveClasses('theme@callout__icon', iconClasses)} />}
       <QRCode
-        context={context}
-        data={`${urls[context.isProduction ? 'production' : 'development']}/${id}/${index
+        data={`${urls[isProduction ? 'production' : 'development']}/${id}/${index
           .toString()
           .padStart(slidesPadding, '0')}.pdf`}
-        // image={resolveImageUrl(themeId, id, '@theme/icons/world.svg')}
+        // image={resolveImage(themeId, id, '@theme/icons/world.svg')}
         // imageRatio={1}
         classes={{
           code: resolveClasses('theme@page-qr', `theme@page-qr--${qrClassName ?? defaultLogoColor}`),
@@ -90,8 +84,7 @@ export function Decorations({ context, theme, talk, slide, index, defaultLogoCol
         }}
       />
       <Svg
-        theme="nearform"
-        contents="@theme/nearform-logo.svg"
+        path="@theme/nearform-logo.svg"
         className={resolveClasses('theme@logo', `theme@logo--${logo ?? defaultLogoColor}`)}
       />
     </>
@@ -99,9 +92,6 @@ export function Decorations({ context, theme, talk, slide, index, defaultLogoCol
 }
 
 export function SlideWrapper({
-  context,
-  theme,
-  talk,
   slide,
   index,
   style,
@@ -110,7 +100,7 @@ export function SlideWrapper({
   defaultLogoColor,
   children
 }: SlideWrapperProps): JSX.Element {
-  const resolveClasses = context.extensions.freya.resolveClasses
+  const { resolveClasses } = useFreya()
 
   const optionSkipDecorations = slide.options.skipDecorations
   const { foreground, background } = slide
@@ -124,28 +114,13 @@ export function SlideWrapper({
   }
 
   return (
-    <CSSClassesResolverContext.Provider value={resolveClasses}>
-      <article
-        data-freya-id="slide"
-        data-freya-index={index}
-        className={resolveClasses('freya@slide', `z-${index + 100}`, foregroundClass, backgroundClass, className)}
-        style={style}
-      >
-        {children}
-        <div data-freya-id="progress" className={resolveClasses('freya@slide__progress')} />
+    <article className={resolveClasses('freya@slide', foregroundClass, backgroundClass, className)} style={style}>
+      {children}
+      <Progress current={index} />
 
-        {!skipDecorations && !optionSkipDecorations && (
-          <Decorations
-            context={context}
-            theme={theme}
-            talk={talk}
-            slide={slide}
-            index={index}
-            defaultLogoColor={defaultLogoColor}
-          />
-        )}
-        <template data-freya-id="slide-notes" dangerouslySetInnerHTML={{ __html: renderNotes(slide as FreyaSlide) }} />
-      </article>
-    </CSSClassesResolverContext.Provider>
+      {!skipDecorations && !optionSkipDecorations && (
+        <Decorations slide={slide} index={index} defaultLogoColor={defaultLogoColor} />
+      )}
+    </article>
   )
 }

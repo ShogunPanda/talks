@@ -1,4 +1,4 @@
-import { type Slide as FreyaSlide } from 'freya-slides'
+import { type Slide as FreyaSlide } from '@perseveranza-pets/freya'
 
 export interface Item {
   index?: string
@@ -33,7 +33,7 @@ export interface Slide {
   subtitle?: string
   content: string[]
   items?: Item[]
-  grids?: Grid | Grid[]
+  grids?: Grid[]
   image?: string
   code?: FreyaSlide['code']
   highlight?: string
