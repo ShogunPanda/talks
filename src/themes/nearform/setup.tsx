@@ -1,8 +1,9 @@
-import { type Talk, type Theme } from '@perseveranza-pets/freya'
-import { type BuildContext } from 'dante'
+import { type BuildContext } from '@perseveranza-pets/dante'
+import { ensureRenderedCode, resolveImageUrl, type Talk, type Theme } from '@perseveranza-pets/freya'
 import { resolve } from 'node:path'
+import { wrapTalkClasses } from './components/common.js'
 import { resolveIcon } from './components/icons.js'
-import { Slide } from './models.js'
+import { type DecorationsClasses, type ItemClasses, type Slide, type SlideClasses } from './models.js'
 
 interface Icon {
   width: number
@@ -22,51 +23,138 @@ function camelCase(source: any): string {
 }
 
 const baseIcons = [
+  'desktop',
+  'file-pdf',
+  'lightbulb-on',
+  'puzzle-piece',
+
   'linkedin@free/brands:linkedin',
   'twitter@free/brands:twitter',
   'github@free/brands:github',
   'youtube@free/brands:youtube',
-  'facebook@free/brands:facebook',
-  'puzzle-piece',
-  'lightbulb-on'
+  'facebook@free/brands:facebook'
 ]
 
-export async function setupServer(context: BuildContext, _theme: Theme, talk: Talk): Promise<object> {
+// TODO@PI: Can you simplify classes with uno.css - Only in production
+export async function setupServer(context: BuildContext, theme: Theme, talk: Talk): Promise<object> {
   const loadedIcons: Record<string, Icon> = {}
+  const iconsToLoad: string[] = [...baseIcons]
+  const images = new Set<string>()
 
-  const toLoad: string[] = [...baseIcons]
-
-  // Add the icons used in the slide
   for (const slide of talk.slides as Slide[]) {
-    if (slide.icon) {
-      toLoad.push(slide.icon)
-    }
+    // Sanitize some options
+    slide.options ??= {}
+    slide.decorations ??= { className: {} }
+    slide.decorations.className ??= {}
+    slide.className ??= {}
 
-    if (slide.options?.quote?.primaryIcon) {
-      toLoad.push(slide.options.quote.primaryIcon)
-    }
+    for (const item of slide.items?.entries ?? []) {
+      if (item.code) {
+        await ensureRenderedCode(context, item.code)
+      }
 
-    if (slide.options?.quote?.secondaryIcon) {
-      toLoad.push(slide.options.quote.secondaryIcon)
-    }
-
-    for (const item of slide.items ?? []) {
       if (item.icon) {
-        toLoad.push(item.icon)
+        iconsToLoad.push(item.icon)
+      }
+
+      if (item.image) {
+        images.add(resolveImageUrl({}, theme.id, talk.id, item.image))
+      }
+
+      if (item.className) {
+        for (const [key, value] of Object.entries(item.className as Record<string, string | undefined>)) {
+          item.className[key as keyof ItemClasses] = wrapTalkClasses(value)
+        }
       }
     }
 
     for (const grid of slide.grids ?? []) {
-      for (const item of grid.items ?? []) {
-        if (item.icon) {
-          toLoad.push(item.icon)
+      for (const item of grid.entries ?? []) {
+        if (item.code) {
+          await ensureRenderedCode(context, item.code)
         }
+
+        if (item.icon) {
+          iconsToLoad.push(item.icon)
+        }
+
+        if (item.image) {
+          images.add(resolveImageUrl({}, theme.id, talk.id, item.image))
+        }
+
+        if (item.className) {
+          for (const [key, value] of Object.entries(item.className as Record<string, string | undefined>)) {
+            item.className[key as keyof ItemClasses] = wrapTalkClasses(value)
+          }
+        }
+      }
+
+      if (grid.className) {
+        grid.className = wrapTalkClasses(grid.className)
+      }
+    }
+
+    if (slide.image) {
+      images.add(resolveImageUrl({}, theme.id, talk.id, slide.image.url))
+
+      if (slide.image.className) {
+        slide.image.className = wrapTalkClasses(slide.image.className)
+      }
+    }
+
+    if (slide.code) {
+      if (slide.code.className) {
+        for (const [key, value] of Object.entries(slide.code.className)) {
+          slide.code.className[key] = wrapTalkClasses(value)
+        }
+      }
+
+      await ensureRenderedCode(context, slide.code)
+    }
+
+    if (slide.highlight?.className) {
+      slide.highlight.className = wrapTalkClasses(slide.highlight.className)
+    }
+
+    if (slide.quote) {
+      if (slide.quote.primaryIconClassName) {
+        slide.quote.primaryIconClassName = wrapTalkClasses(slide.quote.primaryIconClassName)
+      }
+
+      if (slide.quote.secondaryIconClassName) {
+        slide.quote.secondaryIconClassName = wrapTalkClasses(slide.quote.secondaryIconClassName)
+      }
+
+      if (slide.quote.primaryIcon) {
+        iconsToLoad.push(slide.quote.primaryIcon)
+      }
+
+      if (slide.quote.secondaryIcon) {
+        iconsToLoad.push(slide.quote.secondaryIcon)
+      }
+    }
+
+    if (slide.decorations) {
+      if (slide.decorations.icon) {
+        iconsToLoad.push(slide.decorations.icon)
+      }
+
+      if (slide.decorations.className) {
+        for (const [key, value] of Object.entries(slide.decorations.className as Record<string, string | undefined>)) {
+          slide.decorations.className[key as keyof DecorationsClasses] = wrapTalkClasses(value)
+        }
+      }
+    }
+
+    if (slide.className) {
+      for (const [key, value] of Object.entries(slide.className as Record<string, string | undefined>)) {
+        slide.className[key as keyof SlideClasses] = wrapTalkClasses(value)
       }
     }
   }
 
   // Load all icons
-  for (const icon of toLoad) {
+  for (const icon of iconsToLoad) {
     const { package: pkg, alias, name, section } = resolveIcon(icon)
 
     const fileName = `fa${camelCase(`${name}`).replaceAll(/\s/g, '')}.js`
@@ -83,6 +171,8 @@ export async function setupServer(context: BuildContext, _theme: Theme, talk: Ta
       }
     }
   }
+
+  talk.images = Array.from(images)
 
   return { icons: loadedIcons }
 }

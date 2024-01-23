@@ -1,34 +1,39 @@
 ---
 layout: cover
-# ...
+# ---
 
 ---
 layout: separator
 title: |
   All you need to succeed
   is love!
-image: '@talk/love.webp'
-background: nf-orange-split
+image:
+  url: '@talk/love.webp'
+options:
+  background: nf-green
 
 ---
 layout: hello
-# ...
+# ---
 
 ---
 layout: nearform
-# ...
+# ---
 
 ---
 title: IPFS (InterPlanetary FileSystem)
-content: A protocol designed with the intention to preserve and grow humanity's knowledge by making the web upgradeable, resilient, and more open.
-image: '@talk/ipfs.webp'
+content:
+  - A protocol designed with the intention to preserve and grow humanity's knowledge by making the web upgradeable, resilient, and more open.
+image:
+  url: '@talk/ipfs.webp'
 
 ---
 title: web3.storage
-content: A service that makes storing files on IPFS easier and more accessible for non-technical people.
-image: '@talk/web3-storage.svg'
-classes:
-  image: w-5sp
+content:
+  - A service that makes storing files on IPFS easier and more accessible for non-technical people.
+image:
+  url: '@talk/web3-storage.svg'
+  className: w-5sp
 
 ---
 layout: side
@@ -36,11 +41,13 @@ title: Content Identifier
 content:
   - A CID uniquely identifies a chunk of data in IPFS and provides informations on how to verify the integrity of the data.
   - It does not contain any information about the location.
-image: '@talk/cid.webp'
+image:
+  url: '@talk/cid.webp'
 
 ---
 title: Content Archives
-content: The CAR file format is optimized for sequential reading and it's essentially a concatenation of blocks delimited using byte length prefixes.
+content:
+  - The CAR file format is optimized for sequential reading and it's essentially a concatenation of blocks delimited using byte length prefixes.
 code:
   language: markdown
   numbers: false
@@ -52,52 +59,59 @@ code:
 ---
 layout: image
 title: What was wrong?
-image: '@talk/obstacle.webp'
+image:
+  url: '@talk/obstacle.webp'
 
 ---
 title: Previous Challenges
 items:
-  - icon: world
-    title: Increasing traffic
-    text: The original implementation struggled to handle the massive daily upload traffic.
-  - icon: user-plus
-    title: Hard to scale
-    text: New nodes could not be quickly added on-demand due to the long bootstrap phase.
-options:
+  entries:
+    - icon: globe
+      title: Increasing traffic
+      text: The original implementation struggled to handle the massive daily upload traffic.
+    - icon: user-plus
+      title: Hard to scale
+      text: New nodes could not be quickly added on-demand due to the long bootstrap phase.
   horizontal: true
 
 ---
 layout: image
 title: The Problem
-image: '@theme/questions.webp'
+image:
+  url: '@theme/questions.webp'
+decorations:
+  logo: white
 
 ---
 layout: quote
 title: One simple question
-sentence: How can we use AWS services to make the service horizontally scalable with no limits?
-options:
-  icons: false
+quote:
+  sentence: How can we use AWS services to make the service horizontally scalable with no limits?
   light: true
+  icons: false
 
 ---
 title: Goals
 items:
-  - icon: user-plus
-    title: Handle growth
-    text: The system should be able to handle the massive amount of data uploaded on web3.storage.
-  - icon: device-floppy
-    title: Stateless services
-    text: Having stateless services helps horizontal scaling and greatly improves fault tolerance.
-  - icon: cloud
-    title: Cloud based
-    text: The entire architecture should leverage any modern cloud services and try to be affordable.
-options:
+  entries:
+    - icon: user-plus
+      title: Handle growth
+      text: The system should be able to handle the massive amount of data uploaded on web3.storage.
+    - icon: chart-network
+      title: Stateless services
+      text: Having stateless services helps horizontal scaling and greatly improves fault tolerance.
+    - icon: cloud
+      title: Cloud based
+      text: The entire architecture should leverage any modern cloud services and try to be affordable.
   horizontal: true
 
 ---
 layout: image
 title: The Solution
-image: '@talk/solution.webp'
+image:
+  url: '@talk/solution.webp'
+decorations:
+  logo: white
 
 ---
 layout: side
@@ -105,25 +119,28 @@ title: Hi, I'm Elastic IPFS!
 content:
   - The architecture is divided into three independent and stateless subsystems.
   - New nodes can be added or remove at any time, global replication can be easily achieved.
-  - <span class="font-size-0_9em">[https://github.com/elastic-ipfs/elastic-ipfs](https://github.com/elastic-ipfs/elastic-ipfs)</span>
-image: '@talk/eipfs-architecture-complete.webp'
+  - '[https://github.com/elastic-ipfs/elastic-ipfs](https://github.com/elastic-ipfs/elastic-ipfs)'
+image:
+  url: '@talk/eipfs-architecture-complete.webp'
 
 ---
 title: E-IPFS is democratic and cloud agnostic
 items:
-  - icon: world
-    title: No vendor lock-in
-    text: The AWS implementation is just the first implementation and it can also serve as reference implementation for testing.
-  - icon: source-code
-    title: Generic components
-    text: As long as you have object storage, queueing and serverless systems, you can adapt and deploy E-IPFS.
-  - icon: users
-    title: The DevOps are your limit
-    text: Mixed or on-premise approach are also possible, but be gentle with the people responsible to maintain the infrastructure.
+  entries:
+    - icon: globe
+      title: No vendor lock-in
+      text: The AWS implementation is just the first implementation and it can also serve as reference implementation for testing.
+    - icon: code
+      title: Generic components
+      text: As long as you have object storage, queueing and serverless systems, you can adapt and deploy E-IPFS.
+    - icon: users
+      title: The DevOps are your limit
+      text: Mixed or on-premise approach are also possible, but be gentle with the people responsible to maintain the infrastructure.
 
 ---
 title: CARs Table Item
-content: It contains information about indexed CAR files, including the S3 full path.
+content:
+  - It contains information about indexed CAR files, including the S3 full path.
 code:
   language: typescript
   content: |
@@ -140,7 +157,8 @@ code:
 
 ---
 title: Blocks Tables Item
-content: It stores the multihash and the type of the block, used for debugging.
+content:
+  - It stores the multihash and the type of the block, used for debugging.
 code:
   language: typescript
   content: |
@@ -152,8 +170,10 @@ code:
 
 ---
 title: |
-  <span class="whitespace-nowrap">Blocks Position Item</span>
-content: It is the most important table in the architecture, as it links blocks to CARs, including offset and length.
+  Blocks Position Item
+content:
+  - The most important table in the architecture
+  - It links blocks to CARs, including offset and length.
 code:
   language: typescript
   content: |
@@ -167,124 +187,141 @@ code:
 ---
 layout: separator
 title: Indexing subsystem
-background: nf-orange-split
+options:
+  background: nf-green
+decorations:
+  permalink: black
 
 ---
 title: Overview
-image: '@talk/eipfs-architecture-indexing.webp'
+image:
+  url: '@talk/eipfs-architecture-indexing.webp'
 
 ---
 title: Indexing flow
 items:
-  - index: 1
-    title: CAR file is copied to S3
-    text: The event is recorded on a SQS topic which will later trigger Indexing Lambda executions.
-  - index: 2
-    title: Indexing Lambda executes
-    text: The Lambda processes the CAR file and copies all the relevant informations in the DynamoDB tables showed earlier.
-  - index: 3
-    title: Blocks are enqueued for publishing
-    text: For each block encountered in the CAR file, the Indexer Lambda enqueues its multihash in a SQS topic which will later trigger Publishing Subsystem execution.
+  entries:
+    - index: 1
+      title: CAR file is copied to S3
+      text: The event is recorded on a SQS topic which will later trigger Indexing Lambda executions.
+    - index: 2
+      title: Indexing Lambda executes
+      text: The Lambda processes the CAR file and copies all the relevant informations in the DynamoDB tables showed earlier.
+    - index: 3
+      title: Blocks are enqueued for publishing
+      text: For each block encountered in the CAR file, the Indexer Lambda enqueues its multihash in a SQS topic which will later trigger Publishing Subsystem execution.
 
 ---
 title: Bye, Idempotence!
 items:
-  - icon: bug
-    title: The Lambda was idempotent
-    text: It required lots of additional reads on DynamoDB and made batching unavailable.
-  - icon: rocket
-    title: Indexing has very low failure rate
-    text: Idempotence was removed as indexing rarely failed and this brought big performance gain.
-options:
+  entries:
+    - icon: bug
+      title: The Lambda was idempotent
+      text: It required lots of additional reads on DynamoDB and made batching unavailable.
+    - icon: rocket
+      title: Indexing has very low failure rate
+      text: Idempotence was removed as indexing rarely failed and this brought big performance gain.
   horizontal: true
 
 ---
 layout: separator
 title: Let's talk about DHT
-background: nf-orange-split
+options:
+  background: nf-purple
 
 ---
 title: DHT Challenges
-content: IPFS uses the Kademlia DHT for keeping peers and blocks information.
+content:
+  - IPFS uses the Kademlia DHT for keeping peers and blocks information.
 items:
-  - icon: affiliate
-    title: The Elastic IPFS claims to be a single node
-    text: Even though internally a lot of resources are used, only one <code>PeerID</code> is used.
-  - icon: network-off
-    title: No long connection
-    text: E-IPFS cannot directly participate to the DHT since it is not capable to connect to GossipSub.
-  - icon: sos
-    title: Not self sufficient
-    text: In order to advertise content, the E-IPFS systems needs external auxiliary systems.
+  entries:
+    - icon: chart-network
+      title: The Elastic IPFS claims to be a single node
+      text: Even though internally a lot of resources are used, only one <code>PeerID</code> is used.
+    - icon: link-horizontal-slash
+      title: No long connection
+      text: E-IPFS cannot directly participate to the DHT as it is not capable to connect to GossipSub.
+    - icon: handshake-angle
+      title: Not self sufficient
+      text: In order to advertise content, the E-IPFS systems needs external auxiliary systems.
 
 ---
 title: Hydra Nodes
-content: The Hydra nodes speed up looking up content in the DHT.
+content:
+  - The Hydra nodes speed up looking up content in the DHT.
 items:
-  - icon: search
-    title: When
-    text: Hydra nodes are created to have an high chance to incur into one of them when looking up data.
-  - icon: affiliate
-    title: What
-    text: Content Routing Delegation via shared storage and third party systems as the Indexer Nodes.
-  - icon: world
-    title: Where
-    text: The Hydra nodes are distributed in the DHT sense, not the geographical one.
-options:
+  entries:
+    - icon: search
+      title: When
+      text: Hydra nodes are created to have an high chance to incur into one of them when looking up data.
+    - icon: chart-network
+      title: What
+      text: Content Routing Delegation via shared storage and third party systems as the Indexer Nodes.
+    - icon: globe
+      title: Where
+      text: The Hydra nodes are distributed in the DHT sense, not the geographical one.
   horizontal: true
 
 ---
 title: Indexer Nodes
-content: A system which maps CID to content providers via libp2p or HTTP API.
-image: '@talk/indexer-node.webp'
+content:
+  - A system which maps CID to content providers via libp2p or HTTP API.
+image:
+  url: '@talk/indexer-node.webp'
 
 ---
 title: What API shall we use?
-content: E-IPFS uses the HTTP API as GossipSub is not viable for the reasons below.
+content:
+  - E-IPFS uses the HTTP API as GossipSub is not viable for the reasons below.
 items:
-  - icon: moneybag
-    title: E-IPFS is on the cloud
-    text: Maintaining long living connection, when possible, is expensive.
-  - icon: messages
-    title: GossipSub is verbose
-    text: A lot of data is exchanged and it will impact costs as well.
-  - icon: git-fork
-    title: libp2p optimization conflict
-    text: Destination host joins multiple streams with the same <code>PeerID</code>.
-options:
+  entries:
+    - icon: sack-dollar
+      title: E-IPFS is on the cloud
+      text: Maintaining long living connection, when possible, is expensive.
+    - icon: messages
+      title: GossipSub is verbose
+      text: A lot of data is exchanged and it will impact costs as well.
+    - icon: code-fork
+      title: libp2p optimization conflict
+      text: Destination host joins multiple streams with the same <code>PeerID</code>.
   horizontal: true
 
 ---
 title: How does HTTP ingestion work?
-content: The HTTP Ingest API make the Indexer Nodes choose when to sync.
+content:
+  - The HTTP Ingest API make the Indexer Nodes choose when to sync.
 items:
-  - icon: cloud-upload
-    title: Upload new advertisements and entries data
-    text: The data must available over HTTP.
-  - icon: link
-    title: Advertisements are strictly ordered
-    text: Each is linked to the previous one. The <code>/head</code> one is regularly updated.
-  - icon: phone-outgoing
-    title: Notify Indexers on <code>/ingest/announce</code> when ready to be queried
-    text: <code>HTTP PUT</code> requests will signal that new data has been published.
+  entries:
+    - icon: cloud-upload
+      title: Upload new advertisements and entries data
+      text: The data must available over HTTP.
+    - icon: link
+      title: Advertisements are strictly ordered
+      text: Each is linked to the previous one. The <code>/head</code> one is regularly updated.
+    - icon: phone-outgoing
+      title: Notify Indexers on <code>/ingest/announce</code> when ready to be queried
+      text: <code>HTTP PUT</code> requests will signal that new data has been published.
 
 ---
 title: What will the Indexer Node will do?
-content: When ready, the Indexer Node will sync via the HTTP server.
+content:
+  - When ready, the Indexer Node will sync via the HTTP server.
 items:
-  - index: 1
-    title: Fetch the latest <code>/head</code> URL
-    text: It contains the latest advertisement data CID.
-  - index: 2
-    title: Fetch the advertisement data and its related entries data.
-    text: All the data we are interested into is in these files.
-  - index: 3
-    title: Repeat the flow
-    text: Stop when reaching an already indexed advertisement or the tail of the chain.
+  entries:
+    - index: 1
+      title: Fetch the latest <code>/head</code> URL
+      text: It contains the latest advertisement data CID.
+    - index: 2
+      title: Fetch the advertisement data and its related entries data.
+      text: All the data we are interested into is in these files.
+    - index: 3
+      title: Repeat the flow
+      text: Stop when reaching an already indexed advertisement or the tail of the chain.
 
 ---
 title: Head file
-content: The <code>/head</code> just maintains a link to the latest advertisement.
+content:
+  - The <code>/head</code> just maintains a link to the latest advertisement.
 code:
   language: json
   highlight: '3'
@@ -306,9 +343,9 @@ code:
     }
 
 ---
-title: |
-  <span class="whitespace-nowrap">Advertisement file</span>
-content: It contains information about storage provider and entries.
+title: Advertisement file
+content:
+  - It contains information about storage provider and entries.
 code:
   language: json
   highlight: 2, 7, 12, 14
@@ -332,7 +369,8 @@ code:
 
 ---
 title: Entries file
-content: Is is just a list of CIDs made available by the provider.
+content:
+  - Is is just a list of CIDs made available by the provider.
 code:
   language: json
   highlight: 4, 7, 10
@@ -354,120 +392,148 @@ code:
 ---
 layout: separator
 title: Publishing subsystem
-background: nf-orange-split
+options:
+  background: nf-green
+decorations:
+  permalink: black
 
 ---
 title: Overview
-image: '@talk/eipfs-architecture-publishing.webp'
+image:
+  url: '@talk/eipfs-architecture-publishing.webp'
 
 ---
 title: Concurrency Problem
-content: Handle the huge load without losing data is challenging.
+content:
+  - Handle the huge load without losing data is challenging.
 items:
-  - icon: cloud-upload
-    title: Several millions of blocks are uploaded every day
-    text: The ingestion queue can easily explode.
-  - icon: lock-square
-    title: No advertisement can be lost
-    text: If data is not correctly received by the Indexer, it will be unreachable.
-  - icon: traffic-lights
-    title: The head of the queue must be updated atomically
-    text: Concurrency control must be applied to the processors.
+  entries:
+    - icon: cloud-upload
+      title: Several millions of blocks are uploaded every day
+      text: The ingestion queue can easily explode.
+    - icon: link
+      title: No advertisement can be lost
+      text: If data is not correctly received by the Indexer, it will be unreachable.
+    - icon: timeline-arrow
+      title: The head of the queue must be updated atomically
+      text: Concurrency control must be applied to the processors.
 
 ---
 layout: image
 title: What now?
-image: '@talk/dont-panic.webp'
+image:
+  url: '@talk/dont-panic.webp'
+decorations:
+  permalink: white
 
 ---
 layout: side
 title: Publishing flow
-content: The solution was to split the publishing process into two steps in order to reduce the size of the problem.
-highlight: The resulting subsystem is capable to easily advertise <em>a billion blocks per day</em>.
-logo: white
+content:
+  - The solution was to split the publishing process into two steps in order to reduce the size of the problem.
+highlight:
+  text: The resulting subsystem is capable to easily advertise <strong>a billion blocks per day</strong>.
+  className: bg-nf-blue text-white
 items:
-  - index: 1
-    title: Group indexed blocks into entries file
-    text: Concurrency is not limited as order does not matter.
-  - index: 2
-    title: Assign entries to ads, then update the head
-    text: Concurrency is limited to <strong>1</strong>, with <strong>10000</strong> advertisement sent per execution.
-classes:
-  highlight: bg-nf-neon-blue text-white
-options:
-  highlightWidth: 4
+  entries:
+    - index: 1
+      title: Group indexed blocks into entries file
+      text: Concurrency is not limited as order does not matter.
+    - index: 2
+      title: Assign entries to ads, then update the head
+      text: Concurrency is limited to <strong>1</strong>, with <strong>10000</strong> advertisement sent per execution.
+decorations:
+  logo: white
+  permalink: white
 
 ---
 layout: separator
 title: Peer subsystem
-background: nf-orange-split
+options:
+  background: nf-green
+decorations:
+  permalink: black
 
 ---
 title: Overview
-image: '@talk/eipfs-architecture-peer.webp'
+image:
+  url: '@talk/eipfs-architecture-peer.webp'
 
 ---
 title: Peer subsystem characteristic
 items:
-  - icon: affiliate
-    title: Fully automatic
-    text: The subsystem is an autoscaling EKS Node.js cluster managed by an Elastic Load Balancer.
-  - icon: cloud
-    title: Stateless and lean
-    text: Searches for blocks on DynamoDB and leverages plain HTTP Byte-Range on S3 for serving.
-  - icon: scissors
-    title: Simplified BitSwap
-    text: No external data is fetched, allowing to remove wantlists and ledgers management from the architecture.
-options:
+  entries:
+    - icon: chart-network
+      title: Fully automatic
+      text: The subsystem is an autoscaling EKS Node.js cluster managed by an Elastic Load Balancer.
+    - icon: cloud
+      title: Stateless and lean
+      text: Searches for blocks on DynamoDB and leverages plain HTTP Byte-Range on S3 for serving.
+    - icon: scissors
+      title: Simplified BitSwap
+      text: No external data is fetched, allowing to ignore wantlists and ledgers management.
   horizontal: true
 
 ---
 layout: separator
 title: How does E-IPFS perform?
-background: nf-orange-split
+options:
+  background: nf-green
+decorations:
+  permalink: black
 
 ---
 title: Hit rate went almost to 100%
-content: The graph shows the hit-rate across <em>200TB</em> of data.
-image: '@talk/hit-rate.webp'
+content:
+  - The graph shows the hit-rate across <em>200TB</em> of data.
+image:
+  url: '@talk/hit-rate.webp'
 
 ---
 title: The average indexing time has dropped
-image: '@talk/indexing-time.webp'
+image:
+  url: '@talk/indexing-time.webp'
 
 ---
 title: Give me the numbers!
-content: Here are the numbers after <em>six months</em> in production.
+content:
+  - Here are the numbers after <em>six months</em> in production.
 items:
-  - index: 180M
-    title: CARs
-  - index: 16B
-    title: Blocks
-  - index: 24B
-    title: Blocks to Cars
-options:
+  entries:
+    - index: 180M
+      title: CARs
+    - index: 16B
+      title: Blocks
+    - index: 24B
+      title: Blocks to Cars
   horizontal: true
 
 ---
 title: Take home lessons
-content: What can we learn from this long journey?
+content:
+  - What can we learn from this long journey?
 items:
-  - icon: heart
-    title: K.I.S.S.
-    text: IPFS protocols are very complex. Simplifying is the only way to have viable products.
-  - icon: world-www
-    title: HTTP is not dead yet
-    text: New protocols are very fashionable, but sometimes going back to good old HTTP can be very performant.
-  - icon: affiliate
-    title: Democracy is good
-    text: Being unable to lock in a single cloud provider led to flexible and lean architecture.
-options:
+  entries:
+    - icon: heart
+      title: K.I.S.S.
+      text: IPFS protocols are very complex. Simplifying is the only way to have viable products.
+    - icon: globe-pointer
+      title: HTTP is not dead yet
+      text: New protocols are very fashionable, but the good old HTTP can still be very performant.
+    - icon: chart-network
+      title: Democracy is good
+      text: Being unable to lock in a single cloud provider led to flexible and lean architecture.
   horizontal: true
 
 ---
 layout: quote
-sentence: Keep your eyes on the stars, and your feet on the ground.
-author: Theodore Roosevelt
+quote:
+  sentence: |
+    Keep your eyes on the stars,
+    and your feet on the ground.
+  author: Theodore Roosevelt
 
 ---
 layout: end
+# ---
+

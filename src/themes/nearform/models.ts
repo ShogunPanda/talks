@@ -1,4 +1,31 @@
-import { type Slide as FreyaSlide } from '@perseveranza-pets/freya'
+import { type BaseSlide, type CodeDefinition } from '@perseveranza-pets/freya'
+
+export interface ItemClasses {
+  root?: string
+  index?: string
+  icon?: string
+  image?: string
+  title?: string
+  text?: string
+  contents?: string
+  qr?: string
+  code?: string
+}
+
+export interface DecorationsClasses {
+  number?: string
+  icon?: string
+  permalink?: string
+}
+
+export interface SlideClasses {
+  root?: string
+  title?: string
+  subtitle?: string
+  content?: string
+  qr?: string
+  raw?: string
+}
 
 export interface Item {
   index?: string
@@ -7,71 +34,75 @@ export interface Item {
   title?: string
   text?: string
   qr?: string
-  code?: FreyaSlide['code']
-  classes?: {
-    item?: string
-    index?: string
-    icon?: string
-    image?: string
-    title?: string
-    text?: string
-    contents?: string
-    qr?: string
-    code?: string
-  }
+  code?: CodeDefinition
+  className?: ItemClasses
+}
+
+export interface Items {
+  entries: Item[]
+  className?: string
+  horizontal?: boolean
+  sequence?: boolean
+  spacer?: boolean
+  gap?: boolean
+  defaultClasses?: boolean
 }
 
 export interface Grid {
-  items: Item[]
-  template?: string
-  gap?: string
+  entries: Item[]
+  sequence?: boolean
+  className?: string
 }
 
-export interface Slide {
-  layout?: string
-  title?: string
-  subtitle?: string
-  content: string[]
-  items?: Item[]
-  grids?: Grid[]
-  image?: string
-  code?: FreyaSlide['code']
-  highlight?: string
+export interface Image {
+  url: string
+  className?: string
+}
+
+export interface Highlight {
+  text: string
+  className?: string
+}
+
+export interface Quote {
   sentence?: string
   author?: string
-  sequence?: string
+  light?: boolean
+  icons?: boolean
+  primaryIcon?: string
+  secondaryIcon?: string
+  primaryIconClassName?: string
+  secondaryIconClassName?: string
+}
+
+export interface Decorations {
+  number?: string
   icon?: string
-  logo?: string
+  logo?: boolean | string
+  permalink?: boolean | string
+  // The following are optional in the YAML but defined in the className
+  className: DecorationsClasses
+}
+
+export interface Options {
   foreground?: string
   background?: string
-  options: {
-    light?: boolean
-    icons?: boolean
-    horizontal?: boolean
-    noGap?: boolean
-    skipDecorations?: boolean
-    skipSpacer?: boolean
-    skipDefaultClasses?: boolean
-    highlightWidth: number
-    author?: Record<string, any>
-    quote: {
-      primaryIcon?: string
-      secondaryIcon?: string
-    }
-  }
-  classes: {
-    slide?: string
-    title?: string
-    subtitle?: string
-    content?: string
-    raw?: string
-    items?: string
-    image?: string
-    code?: string
-    sequence?: string
-    icon?: string
-    highlight: string
-    qr?: string
-  }
-  notes?: string
+  accent?: string
+  author?: Record<string, string> // Used by the hello layout
+}
+
+export interface Slide extends BaseSlide {
+  layout?: string
+  subtitle?: string
+  content: string[]
+  items?: Items
+  grids?: Grid[]
+  image?: Image
+  code?: CodeDefinition
+  highlight?: Highlight
+  quote: Quote
+  // The following are optional in the YAML but defined in the className
+  decorations: Decorations
+  options: Options
+  className: SlideClasses
 }

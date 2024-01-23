@@ -3,6 +3,7 @@ config: common.config
 document:
   title: Milo, a new HTTP parser for Node.js
   titleFormatted: |
-    Milo, a new HTTP parser for Node.js
+    Milo, a new HTTP parser
+    for Node.js
   author: common.author
   company: common.company

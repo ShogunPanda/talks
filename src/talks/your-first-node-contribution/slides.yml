@@ -1,21 +1,28 @@
 ---
 layout: cover
-# ...
+# ---
 
 ---
 layout: separator
-title: 'All hope abandon ye who enter here!'
-image: '@talk/hell.webp'
-background: nf-orange-split
+title: All hope abandon ye who enter here!
+image:
+  url: '@talk/hell.webp'
+options:
+  background: nf-green
 
 ---
 layout: image
-image: '@talk/marco.webp'
+image:
+  url: '@talk/marco.webp'
+decorations:
+  logo: white
 
 ---
 layout: hello
+# ---
+
 options:
-  author: # Keep in sync with common.yml
+  author:
     name: Paolo Insogna
     description: Node.js Core, NearForm
     roles:
@@ -34,30 +41,29 @@ options:
 ---
 title: Getting started (1/2)!
 items:
-  - qr: https://github.com/nodejs/node
-    title: Navigate to [the Node.js repository](https://github.com/nodejs/node).
-    text: |
-      On MacOS / Linux:
-      `open https://github.com/nodejs/node`
-  - icon: git-fork
-    title: Fork the repository.
-    text: |
-      If you have the GitHub CLI:
-      `gh repo clone nodejs/node`
-options:
+  entries:
+    - qr: https://github.com/nodejs/node
+      title: Navigate to [the Node.js repository](https://github.com/nodejs/node).
+      text: |
+        On MacOS / Linux:
+        `open https://github.com/nodejs/node`
+    - icon: code-fork
+      title: Fork the repository.
+      text: |
+        If you have the GitHub CLI:
+        `gh repo clone nodejs/node`
   horizontal: true
 
 ---
 title: Getting started (2/2)!
 items:
-  - icon: file-download
-    title: Clone it.
-    text: '`git clone git@github.com:$YOURNAME/node.git`'
-  - qr: https://github.com/nodejs/node/blob/main/BUILDING.md
-    title: Read the [BUILDING.MD](https://github.com/nodejs/node/blob/main/BUILDING.md) file.
-    text: |
-      `cd node && open BUILDING.md`
-options:
+  entries:
+    - icon: file-download
+      title: Clone it.
+      text: '`git clone git@github.com:$YOURNAME/node.git`'
+    - qr: https://github.com/nodejs/node/blob/main/BUILDING.md
+      title: Read the [BUILDING.MD](https://github.com/nodejs/node/blob/main/BUILDING.md) file.
+      text: '`cd node && open BUILDING.md`'
   horizontal: true
 
 ---
@@ -68,20 +74,19 @@ code:
   content: |
     ./configure
     make -j 4
-classes:
-  code: font-size-1_3em
 
 ---
 title: Choose an issue
-content: |
-  You can pick one from any of the sources below.
-  *If you claim one, put your name on it!*
+content:
+  - |
+    You can pick one from any of the sources below.
+    *If you claim one, put your name on it!*
 items:
-  - qr: 'https://docs.google.com/spreadsheets/d/1mqLZafbDSI_2h6hijO4IYxoibjayzHYt__ZMbVc1s2A/edit#gid=0'
-    title: Our list of [good first issue](https://docs.google.com/spreadsheets/d/1mqLZafbDSI_2h6hijO4IYxoibjayzHYt__ZMbVc1s2A/edit#gid=0).
-  - qr: 'https://github.com/nodejs/node/issues'
-    title: Node.js [public issues list](https://github.com/nodejs/node/issues).
-options:
+  entries:
+    - qr: https://docs.google.com/spreadsheets/d/1mqLZafbDSI_2h6hijO4IYxoibjayzHYt__ZMbVc1s2A/edit#gid=0
+      title: Our list of [good first issue](https://docs.google.com/spreadsheets/d/1mqLZafbDSI_2h6hijO4IYxoibjayzHYt__ZMbVc1s2A/edit#gid=0).
+    - qr: https://github.com/nodejs/node/issues
+      title: Node.js [public issues list](https://github.com/nodejs/node/issues).
   horizontal: true
 
 ---
@@ -92,41 +97,38 @@ code:
   content: |
     make jstest
     make lint-js-fix
-classes:
-  code: font-size-1_3em
 
 ---
 title: Configure GIT before committing
-content: Make sure to have `git config` configured with your GitHub account.
+content:
+  - Make sure to have `git config` configured with your GitHub account.
 code:
   language: shell
   numbers: false
   content: |
     git config user.name "$NAME"
     git config user.email "$EMAIL"
-classes:
-  code: font-size-1_3em
 
 ---
 title: Make sure to follow commit guidelines
 items:
-  - qr: https://github.com/nodejs/node/blob/main/doc/contributing/pull-requests.md#commit-message-guidelines
-    title: You can found them [here](https://github.com/nodejs/node/blob/main/doc/contributing/pull-requests.md#commit-message-guidelines).
-  - code:
-      language: shell
-      numbers: false
-      content: |
-        # How to validate the commit locally
-        npm install -g @node-core/utils
-        core-validate-commit HEAD
-    classes:
-      code: font-size-1_3em text-left
-options:
+  entries:
+    - qr: https://github.com/nodejs/node/blob/main/doc/contributing/pull-requests.md#commit-message-guidelines
+      title: You can found them [here](https://github.com/nodejs/node/blob/main/doc/contributing/pull-requests.md#commit-message-guidelines).
+    - code:
+        language: shell
+        numbers: false
+        content: |
+          # How to validate the commit locally
+          npm install -g @node-core/utils
+          core-validate-commit HEAD
   horizontal: true
 
 ---
 layout: nearform
-# ...
+# ---
 
 ---
 layout: end
+# ---
+

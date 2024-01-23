@@ -1,64 +1,80 @@
 ---
 layout: cover
-# ...
+# ---
 
 ---
 layout: separator
 title: Being reckless (sometimes) pays off!
-image: '@talk/ski.webp'
-background: nf-neon-blue
+image:
+  url: '@talk/ski.webp'
+options:
+  background: nf-blue
+decorations:
+  logo: black
 
 ---
 layout: hello
-# ...
+# ---
 
 ---
 layout: nearform
-# ...
+# ---
 
 ---
 layout: separator
 title: We all love HTTP!
-image: '@talk/love.webp'
-background: nf-brunch-pink
+image:
+  url: '@talk/love.webp'
+options:
+  background: nf-purple
+decorations:
+  logo: black
 
 ---
 layout: separator
-title: Which HTTP are you?
-image: '@talk/palette.webp'
-background: nf-orange-split
+title: |
+  Which HTTP
+  are you?
+image:
+  url: '@talk/palette.webp'
+options:
+  background: nf-green
 
 ---
 title: The choice is narrow
-content: Even if the HTTP protocol is more than 30 years old, only *three* current versions of it exist as of today.
+content:
+  - Even if the HTTP protocol is more than 30 years old, only *three* current versions of it exist as of today. The others are considered obsolete.
 items:
-  - index: 1
-    title: HTTP/1.1
-    text: The last version of the initial protocol. By far the most famous and most used.
-  - index: 2
-    title: HTTP/2
-    text: Developed on top of SPDY to remove some problems of HTTP.
-  - index: 3
-    title: HTTP/3
-    text: Developed on top of QUIC to solve TCP problems.
+  entries:
+    - index: 1
+      title: HTTP/1.1
+      text: The last version of the initial protocol. By far the most famous and most used.
+    - index: 2
+      title: HTTP/2
+      text: Developed on top of SPDY to remove some problems of HTTP.
+    - index: 3
+      title: HTTP/3
+      text: Developed on top of QUIC to solve TCP problems.
 
 ---
 title: What about Node.js?
 items:
-  - index: 1+2
-    title: HTTP/1.1 and HTTP/2
-    text: Node.js has a stable implementation.
-  - index: 3
-    title: HTTP/3
-    text: Work in progress, *stay tuned!*
-options:
+  entries:
+    - index: 1+2
+      title: HTTP/1.1 and HTTP/2
+      text: Node.js has a stable implementation.
+    - index: 3
+      title: HTTP/3
+      text: Work in progress, *stay tuned!*
   horizontal: true
 
 ---
 layout: separator
 title: Let's focus!
-image: '@talk/focus.webp'
-background: nf-midnight-blue
+image:
+  url: '@talk/focus.webp'
+options:
+  background: nf-blue
 
 ---
 layout: side
@@ -66,188 +82,215 @@ title: The current parser
 content:
   - '**llhttp** is the current HTTP parser.'
   - Written by Fedor Indutny in 2019, is the default since Node.js 12.
-image: '@talk/llhttp.webp'
+image:
+  url: '@talk/llhttp.webp'
 
 ---
 layout: side
 title: How it works?
 content:
-  - 'llhttp is a state based HTTP parser based on llparse.'
+  - llhttp is a state based HTTP parser based on llparse.
   - llparse is capable to generate a very performant C code out of a TypeScript description of the possible states.
-image: '@talk/llhttp_states.webp'
+image:
+  url: '@talk/llhttp_states.webp'
 
 ---
 title: "llhttp: what's wrong with it?"
 items:
-  - icon: 'bug'
-    title: Hard to debug and release
-    text: The transpilation makes hard to debug issues.
-  - icon: 'history'
-    title: Backward compatibility
-    text: Supporting different versions of HTTP (included obsoleted) introduces unneeded complexity.
-  - icon: 'heart-handshake'
-    title: You give them a finger, they take the arm
-    text: Leniency-prone approach opens the door for edge cases and vulnerabilities opportunities.
+  entries:
+    - icon: bug
+      title: Hard to debug and release
+      text: The transpilation makes hard to debug issues.
+    - icon: history
+      title: Backward compatibility
+      text: Supporting obsolete versions of HTTP introduces unneeded complexity.
+    - icon: handshake
+      title: You give them a finger, they take the arm
+      text: Leniency-prone approach opens the door for edge cases and vulnerabilities opportunities.
 
 ---
 layout: separator
 title: Do we have the solution?
-image: '@talk/solution.webp'
-background: nf-brunch-pink
+image:
+  url: '@talk/solution.webp'
+options:
+  background: nf-purple
 
 ---
 layout: separator
 title: Yes, start fresh!
-image: '@talk/fresh.webp'
-background: nf-orange-split
+image:
+  url: '@talk/fresh.webp'
+options:
+  background: nf-green
 
 ---
 layout: separator
-title: Say hello to Milo!
-image: '@talk/milo.webp'
-background: nf-brunch-pink
+title: Say hello to <span class="text-nf-green">Milo</span>!
+image:
+  url: '@talk/milo.webp'
+options:
+  background: nf-blue
+decorations:
+  logo: black
+  permalink: white
 
 ---
 layout: side
 title: Let's drop the bomb!
 items:
-  - icon: 'source-code'
-    title: Milo is written in Rust
-    text: The language has proven flexible and performant to achieve the task.
-  - icon: 'history'
-    title: I did not know it before Milo
-    text: I purposely choose Rust to see how hard is to embrace for a new prospect contributor.
-  - icon: 'heart'
-    title: Be cool
-    text: "I don't want to start another language flame. *Please.* ❤️"
-image: '@talk/rust-logo.webp'
+  entries:
+    - icon: code
+      title: Milo is written in Rust
+      text: The language has proven flexible and performant to achieve the task.
+    - icon: history
+      title: I did not know it before Milo
+      text: I purposely made the choice to see how hard it is for a new prospect contributor.
+    - icon: heart
+      title: Be cool
+      text: I don't want to start another language flame. *Please.* ❤️
+image:
+  url: '@talk/rust-logo.webp'
 
 ---
 title: Do not throw the goods away
 items:
-  - icon: 'heart'
-    title: llhttp is a piece of art
-    text: It deeply inspires Milo and I kept most of his architecture. *Kudos to Fedor!*
-  - icon: 'status-change'
-    title: Still a state machine, but simpler
-    text: llhttp has **80** possible states, Milo only *32*.
-  - icon: 'git-branch'
-    title: Declarative, reinvented
-    text: Rust enables to declare states with no code restriction.
+  entries:
+    - icon: heart
+      title: llhttp is a piece of art
+      text: It deeply inspires Milo and I kept most of his architecture. *Kudos to Fedor!*
+    - icon: diagram-project
+      title: Still a state machine, but simpler
+      text: llhttp has **80** possible states, Milo only *32*.
+    - icon: code-branch
+      title: Declarative, reinvented
+      text: Rust enables to declare states with no code restriction.
 
 ---
 layout: separator
 title: How is that possible?
-image: '@talk/dog.webp'
-background: nf-midnight-blue
+image:
+  url: '@talk/dog.webp'
+options:
+  background: nf-blue
 
 ---
 layout: separator
 title: It's all in the macros!
-image: '@talk/macro.webp'
-background: nf-orange-split
+image:
+  url: '@talk/macro.webp'
+options:
+  background: nf-green
 
 ---
 title: Rust macro system is insanely powerful
 items:
-  - icon: 'plug-connected'
-    title: It is evaluated at compile time
-    text: The executed code is inherently optimized.
-  - icon: 'brain'
-    title: No code limitation
-    text: As long as you return valid Rust code, everything is permitted.
-  - icon: 'bug'
-    title: Easily debuggable
-    text: Via [*cargo-expand*](https://github.com/dtolnay/cargo-expand), it's easy to see what is the final compiled code.
+  entries:
+    - icon: gear-complex-code
+      title: It is evaluated at compile time
+      text: The executed code is inherently optimized.
+    - icon: brain
+      title: No code limitation
+      text: As long as you return valid Rust code, everything is permitted.
+    - icon: bug
+      title: Easily debuggable
+      text: Via [*cargo-expand*](https://github.com/dtolnay/cargo-expand), it's easy to see what is the final compiled code.
 
 ---
 title: Examples are worth more than 1000 words
 items:
-  - code:
-      language: rust
-      content: |
-        state!(chunk_end, {
-          match data {
-            crlf!() => {
-              parser.chunk_size = 0;
-              parser.remaining_chunk_size = 0;
-              move_to!(chunk_length, 2)
-            }
-            otherwise!(2) => fail!(
-              UNEXPECTED_CHARACTER, 
-              "Unexpected character after chunk data"
-            ),
-            _ => suspend!(),
-          }
-        });
-    classes:
-      item: flex-initial
-      code: talk@w-auto talk@h-auto talk@mb-0 talk@text-left
-  - image: '@talk/arrow-right.webp'
-    classes:
-      item: flex-initial talk@min-h-auto
-      image: talk@w-auto talk@h-auto talk@min-w-auto talk@min-h-auto talk@h-0_5sp talk@mx-4ch talk@mb-0
-  - code:
-      language: rust
-      content: |
-        #[inline(always)]
-        fn state_chunk_end(parser: &mut Parser, data: &[c_uchar]) -> isize {
-            let mut data = data;
+  entries:
+    - code:
+        language: rust
+        content: |
+          state!(chunk_end, {
             match data {
-                [b'\r', b'\n', ..] => {
-                    parser.chunk_size = 0;
-                    parser.remaining_chunk_size = 0;
-                    parser.move_to(State::CHUNK_LENGTH, (2) as isize)
-                }
-                [_u0, _u1, ..] => {
-                    parser.fail_str(
-                      Error::UNEXPECTED_CHARACTER,
-                      "Unexpected character after chunk data",
-                    )
-                }
-                _ => SUSPEND,
+              crlf!() => {
+                parser.chunk_size = 0;
+                parser.remaining_chunk_size = 0;
+                move_to!(chunk_length, 2)
+              }
+              otherwise!(2) => fail!(
+                UNEXPECTED_CHARACTER,
+                "Unexpected character after chunk data"
+              ),
+              _ => suspend!(),
             }
-        }
-    classes:
-      item: flex-initial
-      code: talk@w-auto talk@h-auto talk@mb-0 talk@text-left
-classes:
-  items: flex flex-1 gap-x-0sp font-size-0_8em items-center
-options:
+          });
+      className:
+        root: flex-initial
+    - image: '@talk/arrow-right.webp'
+      className:
+        root: flex-initial min-h-auto
+        image: w-auto h-auto min-w-auto min-h-auto h-0_5sp mx-1ch mb-0
+    - code:
+        language: rust
+        content: |
+          #[inline(always)]
+          fn state_chunk_end(
+            parser: &mut Parser, data: &[c_uchar]
+          ) -> isize {
+              let mut data = data;
+              match data {
+                  [b'\r', b'\n', ..] => {
+                      parser.chunk_size = 0;
+                      parser.remaining_chunk_size = 0;
+                      parser.move_to(State::CHUNK_LENGTH, (2) as isize)
+                  }
+                  [_u0, _u1, ..] => {
+                      parser.fail_str(
+                        Error::UNEXPECTED_CHARACTER,
+                        "Unexpected character after chunk data",
+                      )
+                  }
+                  _ => SUSPEND,
+              }
+          }
+      className:
+        root: flex-initial
+  className: flex flex-1 gap-x-0sp font-size-0_9em items-center
   horizontal: true
-  skipSpacer: true
-  skipDefaultClasses: true
-  noGap: true
+  spacer: false
+  gap: false
+  defaultclassName: false
 
 ---
 layout: separator
 title: What about resources?
-image: '@talk/piggy-bank.webp'
-background: nf-midnight-blue
+image:
+  url: '@talk/piggy-bank.webp'
+options:
+  background: nf-blue
+decorations:
+  logo: black
 
 ---
 title: Milo has very small memory footprint
 items:
-  - icon: 'rocket'
-    title: (Almost) No copy eager parsing
-    text: Data is analyzed in place without copying it.
-  - icon: 'link'
-    title: Only one exception (optional)
-    text: When parsing, only the unconsumed part of the input is copied in the parser.
-  - icon: 'heart'
-    title: Convenience at your service
-    text: Milo manages unconsumed data for you, making your life easier.
+  entries:
+    - icon: rocket
+      title: (Almost) No copy eager parsing
+      text: Data is analyzed in place without copying it.
+    - icon: link
+      title: Only one exception (optional)
+      text: When parsing, only the unconsumed part of the input is copied in the parser.
+    - icon: heart
+      title: Convenience at your service
+      text: Milo manages unconsumed data for you, making your life easier.
 
 ---
 layout: separator
 title: Strict, period!
-image: '@talk/wall.webp'
-background: nf-darkest-blue
+image:
+  url: '@talk/wall.webp'
+options:
+  background: nf-midnight
 
 ---
 layout: image
 title: Let's see it in action!
-image: '@talk/action.webp'
+image:
+  url: '@talk/action.webp'
 
 ---
 title: Sample code (Rust)
@@ -290,21 +333,29 @@ code:
 
 ---
 layout: separator
-title: But Node.js uses C++!
-image: '@talk/incompatible.webp'
-background: nf-brunch-pink
+title: |
+  But Node.js
+  uses C++!
+image:
+  url: '@talk/incompatible.webp'
+options:
+  background: nf-purple
+decorations:
+  logo: black
 
 ---
 layout: side
 title: The C++ workflow
-image: '@talk/cbindgen.webp'
+image:
+  url: '@talk/cbindgen.webp'
 items:
-  - icon: 'puzzle-2'
-    title: 'A tool generates the headers'
-    text: '[*cbindgen*](https://github.com/mozilla/cbindgen) generates a fully working C or C++ header file. Only a small TOML file is needed.'
-  - icon: 'link'
-    title: Cargo generates a static library
-    text: Rust supports this out of the box. The generated *libmilo.a* file can be statically linked in any C/C++ executable.
+  entries:
+    - icon: gear-complex-code
+      title: A tool generates the headers
+      text: '[*cbindgen*](https://github.com/mozilla/cbindgen) generates a fully working C or C++ header file. Only a small TOML file is needed.'
+    - icon: link
+      title: Cargo generates a static library
+      text: The generated *libmilo.a* file can be statically linked in any C/C++ executable.
 
 ---
 title: Sample code (C++)
@@ -321,14 +372,15 @@ code:
       milo::Parser* parser = milo::milo_create();
       const char* message = "HTTP/1.1 200 OK\r\nContent-Length: 3\r\n\r\nabc";
 
-      parser->callbacks.on_data = [](const milo::Parser* p, const uchar_t* data, uintptr_t size) -> intptr_t {
-        uchar_t* content = reinterpret_cast<uchar_t*>(malloc(sizeof(uchar_t) * size));
-        strncpy(reinterpret_cast<char*>(content), reinterpret_cast<const char*>(data), size);
+      parser->callbacks.on_data =
+        [](const milo::Parser* p, const uchar_t* data, uintptr_t size) -> intptr_t {
+          uchar_t* content = reinterpret_cast<uchar_t*>(malloc(sizeof(uchar_t) * size));
+          strncpy(reinterpret_cast<char*>(content), reinterpret_cast<const char*>(data), size);
 
-        printf("Pos=%llu Body: %s\n", p->position, content);
-        free(content);
-        return 0;
-      };
+          printf("Pos=%llu Body: %s\n", p->position, content);
+          free(content);
+          return 0;
+        };
 
       milo::milo_parse(parser, reinterpret_cast<const uchar_t*>(message), strlen(message));
     }
@@ -344,21 +396,28 @@ code:
 
 ---
 layout: separator
-title: But I want to support SmartOS!
-image: '@talk/incompatible.webp'
-background: nf-brunch-pink
+title: |
+  But I want
+  to support
+  SmartOS!
+image:
+  url: '@talk/incompatible.webp'
+options:
+  background: nf-purple
 
 ---
 layout: side
 title: WASM will save us!
-image: '@talk/wasm-bindgen.webp'
+image:
+  url: '@talk/wasm-bindgen.webp'
 items:
-  - icon: 'puzzle-2'
-    title: 'WebAssembly is fully supported'
-    text: 'Rust has always considered WebAssembly a first class citizen.'
-  - icon: 'link'
-    title: The toolchain makes it easy
-    text: '[*wasm-bindgen*](https://github.com/rustwasm/wasm-bindgen) generates a fully working JS module which internally loads a WASM file.'
+  entries:
+    - icon: gear-complex-code
+      title: WebAssembly is fully supported
+      text: Rust has always considered WebAssembly a first class citizen.
+    - icon: link
+      title: The toolchain makes it easy
+      text: '[*wasm-bindgen*](https://github.com/rustwasm/wasm-bindgen) generates a fully working JS module which internally loads a WASM file.'
 
 ---
 title: Sample code (Node.js with WebAssembly)
@@ -392,87 +451,90 @@ code:
 ---
 layout: image
 title: And that's Milo!
-image: '@talk/safe.webp'
+image:
+  url: '@talk/safe.webp'
 
 ---
 title: Performance in Node (native, preliminary)
 items:
-  - code:
-      language: console
-      content: |
-        ======================================== llhttp ====================================
+  entries:
+    - code:
+        language: none
+        content: |
+          ======================================== llhttp ====================================
 
-        ┌─────────┬──────┬──────┬───────┬──────┬─────────┬─────────┬───────┐
-        │ Stat    │ 2.5% │ 50%  │ 97.5% │ 99%  │ Avg     │ Stdev   │ Max   │
-        ├─────────┼──────┼──────┼───────┼──────┼─────────┼─────────┼───────┤
-        │ Latency │ 0 ms │ 0 ms │ 0 ms  │ 0 ms │ 0.01 ms │ 0.12 ms │ 17 ms │
-        └─────────┴──────┴──────┴───────┴──────┴─────────┴─────────┴───────┘
-        ┌───────────┬─────────┬─────────┬─────────┬─────────┬─────────┬─────────┬─────────┐
-        │ Stat      │ 1%      │ 2.5%    │ 50%     │ 97.5%   │ Avg     │ Stdev   │ Min     │
-        ├───────────┼─────────┼─────────┼─────────┼─────────┼─────────┼─────────┼─────────┤
-        │ Req/Sec   │ 25119   │ 25119   │ 29055   │ 30447   │ 28808   │ 1411.49 │ 25114   │
-        ├───────────┼─────────┼─────────┼─────────┼─────────┼─────────┼─────────┼─────────┤
-        │ Bytes/Sec │ 2.11 MB │ 2.11 MB │ 2.44 MB │ 2.56 MB │ 2.42 MB │ 118 kB  │ 2.11 MB │
-        └───────────┴─────────┴─────────┴─────────┴─────────┴─────────┴─────────┴─────────┘
+          ┌─────────┬──────┬──────┬───────┬──────┬─────────┬─────────┬───────┐
+          │ Stat    │ 2.5% │ 50%  │ 97.5% │ 99%  │ Avg     │ Stdev   │ Max   │
+          ├─────────┼──────┼──────┼───────┼──────┼─────────┼─────────┼───────┤
+          │ Latency │ 0 ms │ 0 ms │ 0 ms  │ 0 ms │ 0.01 ms │ 0.12 ms │ 17 ms │
+          └─────────┴──────┴──────┴───────┴──────┴─────────┴─────────┴───────┘
+          ┌───────────┬─────────┬─────────┬─────────┬─────────┬─────────┬─────────┬─────────┐
+          │ Stat      │ 1%      │ 2.5%    │ 50%     │ 97.5%   │ Avg     │ Stdev   │ Min     │
+          ├───────────┼─────────┼─────────┼─────────┼─────────┼─────────┼─────────┼─────────┤
+          │ Req/Sec   │ 25119   │ 25119   │ 29055   │ 30447   │ 28808   │ 1411.49 │ 25114   │
+          ├───────────┼─────────┼─────────┼─────────┼─────────┼─────────┼─────────┼─────────┤
+          │ Bytes/Sec │ 2.11 MB │ 2.11 MB │ 2.44 MB │ 2.56 MB │ 2.42 MB │ 118 kB  │ 2.11 MB │
+          └───────────┴─────────┴─────────┴─────────┴─────────┴─────────┴─────────┴─────────┘
 
-        Req/Bytes counts sampled once per second.
-        # of samples: 11
+          Req/Bytes counts sampled once per second.
+          # of samples: 11
 
-        317k requests in 11.02s, 26.6 MB read
-    classes:
-      item: flex
-      code: talk@w-auto talk@h-auto talk@mb-0 talk@text-left talk@font-size-0_8em
-  - code:
-      language: console
-      content: |
-        ========================================  milo  ====================================
+          317k requests in 11.02s, 26.6 MB read
+      className:
+        root: flex
+    - code:
+        language: none
+        content: |
+          ========================================  milo  ====================================
 
-        ┌─────────┬──────┬──────┬───────┬──────┬─────────┬─────────┬───────┐
-        │ Stat    │ 2.5% │ 50%  │ 97.5% │ 99%  │ Avg     │ Stdev   │ Max   │
-        ├─────────┼──────┼──────┼───────┼──────┼─────────┼─────────┼───────┤
-        │ Latency │ 0 ms │ 0 ms │ 0 ms  │ 0 ms │ 0.01 ms │ 0.11 ms │ 17 ms │
-        └─────────┴──────┴──────┴───────┴──────┴─────────┴─────────┴───────┘
-        ┌───────────┬────────┬────────┬─────────┬─────────┬─────────┬────────┬─────────┐
-        │ Stat      │ 1%     │ 2.5%   │ 50%     │ 97.5%   │ Avg     │ Stdev  │ Min     │
-        ├───────────┼────────┼────────┼─────────┼─────────┼─────────┼────────┼─────────┤
-        │ Req/Sec   │ 28511  │ 28511  │ 30287   │ 33407   │ 30765.1 │ 1458.2 │ 28507   │
-        ├───────────┼────────┼────────┼─────────┼─────────┼─────────┼────────┼─────────┤
-        │ Bytes/Sec │ 2.4 MB │ 2.4 MB │ 2.55 MB │ 2.81 MB │ 2.58 MB │ 122 kB │ 2.39 MB │
-        └───────────┴────────┴────────┴─────────┴─────────┴─────────┴────────┴─────────┘
+          ┌─────────┬──────┬──────┬───────┬──────┬─────────┬─────────┬───────┐
+          │ Stat    │ 2.5% │ 50%  │ 97.5% │ 99%  │ Avg     │ Stdev   │ Max   │
+          ├─────────┼──────┼──────┼───────┼──────┼─────────┼─────────┼───────┤
+          │ Latency │ 0 ms │ 0 ms │ 0 ms  │ 0 ms │ 0.01 ms │ 0.11 ms │ 17 ms │
+          └─────────┴──────┴──────┴───────┴──────┴─────────┴─────────┴───────┘
+          ┌───────────┬────────┬────────┬─────────┬─────────┬─────────┬────────┬─────────┐
+          │ Stat      │ 1%     │ 2.5%   │ 50%     │ 97.5%   │ Avg     │ Stdev  │ Min     │
+          ├───────────┼────────┼────────┼─────────┼─────────┼─────────┼────────┼─────────┤
+          │ Req/Sec   │ 28511  │ 28511  │ 30287   │ 33407   │ 30765.1 │ 1458.2 │ 28507   │
+          ├───────────┼────────┼────────┼─────────┼─────────┼─────────┼────────┼─────────┤
+          │ Bytes/Sec │ 2.4 MB │ 2.4 MB │ 2.55 MB │ 2.81 MB │ 2.58 MB │ 122 kB │ 2.39 MB │
+          └───────────┴────────┴────────┴─────────┴─────────┴─────────┴────────┴─────────┘
 
-        Req/Bytes counts sampled once per second.
-        # of samples: 11
+          Req/Bytes counts sampled once per second.
+          # of samples: 11
 
-        338k requests in 11.02s, 28.4 MB read
-    classes:
-      item: flex
-      code: talk@w-auto talk@h-auto talk@mb-0 talk@text-left talk@font-size-0_8em
-classes:
-  items: flex flex-1 talk@gap-x-3ch talk@font-size-0_7em items-center
-options:
+          338k requests in 11.02s, 28.4 MB read
+      className:
+        root: flex
+  className: flex flex-1 gap-x-1ch font-size-0_6em items-center
   horizontal: true
-  skipDefaultClasses: true
-  noGap: true
+  gap: false
+  defaultclassName: false
 
 ---
 title: What's missing?
 items:
-  - icon: 'puzzle-2'
-    title: Node.js integration
-    text: I just finished integrating the WebAssembly version in undici. Our beloved runtime is next.
-  - icon: 'rocket'
-    title: SIMD in WebAssembly
-    text: Milo matches or outperforms llhttp in native mode, but it is slower when compiled in WebAssembly.
-  - icon: 'checks'
-    title: Migrate llhttp test suite
-    text: The llhttp test suite (originally from http_parser) is crucial to ensure correctness of the parser.
-options:
+  entries:
+    - icon: link
+      title: Node.js integration
+      text: I just finished integrating the WebAssembly version in undici. Our beloved runtime is next.
+    - icon: rocket
+      title: SIMD in WebAssembly
+      text: Milo matches or outperforms llhttp in native mode, but it is slower when compiled in WebAssembly.
+    - icon: list-check
+      title: Migrate llhttp test suite
+      text: The llhttp test suite (originally from http_parser) is crucial to ensure correctness of the parser.
   horizontal: true
 
 ---
 layout: quote
-sentence: A person who never made a mistake never tried anything new.
-author: Albert Einstein
+quote:
+  sentence: |
+    A person who never made a mistake
+    never tried anything new.
+  author: Albert Einstein
 
 ---
 layout: end
+# ---
+

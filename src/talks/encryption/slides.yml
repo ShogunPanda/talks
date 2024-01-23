@@ -1,220 +1,282 @@
 ---
 layout: cover
-# ...
+# ---
 
 ---
 layout: separator
 title: |
   Encrypting is like painting!
-image: '@talk/painting.webp'
-background: nf-orange-split
+image:
+  url: '@talk/painting.webp'
+options:
+  background: nf-green
+decorations:
+  logo: black
 
 ---
 layout: hello
-# ...
+# ---
 
 ---
 layout: nearform
-# ...
+# ---
 
 ---
 layout: half
 title: First of all, let’s give credits!
 content:
   - This talk has originally been written by my colleague and friend **Michele Riva**.
-  - <span class="text-nf-brunch-pink">**Whatever goes wrong today, please complain directly to him on Twitter!**</span>
-  - <span class="text-nf-neon-blue font-bold">[@MicheleRivaCode](https://twitter.com/@MicheleRivaCode)</span>
-image: '@talk/michele.webp'
+  - <span class="text-nf-purple">**Whatever goes wrong today, please complain directly to him on Twitter!**</span>
+  - <span class="text-nf-blue font-bold">[@MicheleRivaCode](https://twitter.com/@MicheleRivaCode)</span>
+image:
+  url: '@talk/michele.webp'
+decorations:
+  logo: white
 
 ---
 title: Why do we need end-to-end encryption?
 items:
-  - icon: network
-    title: Network communications are complicated
-    text: To reach a distant peer, many compromisable network devices and links are used.
-  - icon: spy
-    title: Wireless networks can be extremely insecure
-    text: Misconfigured networks allow an attacker to listen to all the traffic.
-  - icon: plug-connected
-    title: LAN connectors can be hacked
-    text: '*Do you believe in conspiracies?*'
+  entries:
+    - icon: network-wired
+      title: Network communications are complicated
+      text: To reach a distant peer, many compromisable network devices and links are used.
+    - icon: user-secret
+      title: Wireless networks can be extremely insecure
+      text: Misconfigured networks allow an attacker to listen to all the traffic.
+    - icon: ethernet
+      title: LAN connectors can be hacked
+      text: '*Do you believe in conspiracies?*'
 
 ---
 layout: separator
 title: Let's send a message ...
-image: '@talk/pidgeons.webp'
-background: nf-orange-split
-logo: black
+image:
+  url: '@talk/pidgeons.webp'
+options:
+  background: nf-green
+decorations:
+  logo: black
+  permalink: white
 
 ---
 layout: separator
 title: That was not an encrypted channel!
-image: '@talk/dali.webp'
-background: nf-darkest-blue
-logo: black
+image:
+  url: '@talk/dali.webp'
+options:
+  background: nf-midnight
+decorations:
+  logo: black
 
 ---
 layout: quote
 title: What is encryption anyway?
-sentence: The act of putting information into a special code, especially in order to prevent people from looking at it without authority
-author: The Oxford Dictionary
-options:
-  icons: false
+quote:
+  sentence: The act of putting information into a special code, especially in order to prevent people from looking at it without authority
+  author: The Oxford Dictionary
   light: true
+  icons: false
 
 ---
 layout: separator
-title: 'An example:<br/> The Caesar Cipher'
-image: '@talk/caesar-salad.webp'
-background: nf-brunch-pink
+title: An example:<br/> The Caesar Cipher
+image:
+  url: '@talk/caesar-salad.webp'
+options:
+  background: nf-purple
+decorations:
+  permalink: black
 
 ---
-title: 'How does the Caesar Cipher work?'
-image: '@talk/caesar-cipher-1.webp'
+title: How does the Caesar Cipher work?
+image:
+  url: '@talk/caesar-cipher-1.webp'
 
 ---
-title: 'How does the Caesar Cipher work?'
-image: '@talk/caesar-cipher-2.webp'
+title: How does the Caesar Cipher work?
+image:
+  url: '@talk/caesar-cipher-2.webp'
 
 ---
-title: 'How does the Caesar Cipher work?'
-image: '@talk/caesar-cipher-3.webp'
+title: How does the Caesar Cipher work?
+image:
+  url: '@talk/caesar-cipher-3.webp'
 
 ---
-title: 'How does the Caesar Cipher work?'
-image: '@talk/caesar-cipher-4.webp'
+title: How does the Caesar Cipher work?
+image:
+  url: '@talk/caesar-cipher-4.webp'
 
 ---
-title: 'How does the Caesar Cipher work?'
-image: '@talk/caesar-cipher-5.webp'
+title: How does the Caesar Cipher work?
+image:
+  url: '@talk/caesar-cipher-5.webp'
 
 ---
-title: 'How does the Caesar Cipher work?'
-image: '@talk/caesar-cipher-6.webp'
-
----
-layout: side
-title: Trivia question
-content: 'Where does its name come from?'
-image: '@talk/hal.webp'
+title: How does the Caesar Cipher work?
+image:
+  url: '@talk/caesar-cipher-6.webp'
 
 ---
 layout: side
 title: Trivia question
 content:
-  - 'Where does its name come from?'
-  - '<span class="text-nf-brunch-pink font-bold font-size-1_6em">It''s a Caesar Cipher!</span>'
-image: '@talk/hal.webp'
+  - Where does its name come from?
+image:
+  url: '@talk/hal.webp'
+
+---
+layout: side
+title: Trivia question
+content:
+  - Where does its name come from?
+  - <span class="text-nf-purple font-bold font-size-1_6em">It's a Caesar Cipher!</span>
+image:
+  url: '@talk/hal.webp'
 
 ---
 title: And now, a bit of pain for some of us
-content: 'How old are you? Do you recognize this?'
-image: '@talk/rot13.webp'
+content:
+  - How old are you? Do you recognize this?
+image:
+  url: '@talk/rot13.webp'
 
 ---
 title: Why is Caesar Cipher weak?
-content: Since only few permutations are possible, brute forcing is quite easy (especially if using letter frequency analysis).
-image: '@talk/letter-analysis.webp'
+content:
+  - Since only few permutations are possible, brute forcing is quite easy (especially if using letter frequency analysis).
+image:
+  url: '@talk/letter-analysis.webp'
 
 ---
 layout: side
 title: A good algorithm
 items:
-  - icon: checks
-    title: The algorithm **must** be public
-    text: Public algorithms can be continously analyzed and validated from everyone.
-  - icon: adjustments
-    title: The security is in the parameters
-    text: The parameters must be chosen so that brute forcing is unfeasible.
-image: '@talk/algorithm.webp'
+  entries:
+    - icon: user-check
+      title: The algorithm **must** be public
+      text: Public algorithms can be continously analyzed and validated from everyone.
+    - icon: sliders
+      title: The security is in the parameters
+      text: The parameters must be chosen so that brute forcing is unfeasible.
+image:
+  url: '@talk/algorithm.webp'
 
 ---
 title: What are our choices today?
-content: The **Advanced Encryption Standard** (AES) is a secure symmetric block algorithm.
-image: '@talk/aes.webp'
+content:
+  - The **Advanced Encryption Standard** (AES) is a secure symmetric block algorithm.
+image:
+  url: '@talk/aes.webp'
 
 ---
 title: Let's make the communication secure
 content:
-  - Before starting encrypting the traffic, the peers have to choose a shared key. Shared key handshaking is not and cannot be encrypted.
+  - Before starting encrypting the traffic, the peers have to choose a shared key.
+  - Shared key handshaking is not and cannot be encrypted.
   - '*Anybody could steal the key.*'
 
 ---
 layout: image
 title: Do we have a solution?
-image: '@talk/solution.webp'
-logo: black
+image:
+  url: '@talk/solution.webp'
+decorations:
+  logo: black
 
 ---
 layout: image
 title: Of course!
-image: '@talk/diffie-hellman.webp'
-logo: white
+image:
+  url: '@talk/diffie-hellman.webp'
+decorations:
+  logo: black
 
 ---
 title: The Diffie-Hellman algorithm
 items:
-  - icon: lock-access
-    title: Brings security in the insecurity
-    text: It allows to securely exchange cryptographic keys over a public channel.
-  - icon: abacus
-    title: Strong mathematical basis
-    text: It uses asymmetric keys to build a shared key.
-  - icon: recycle
-    title: It is fast and easy to implement
-    text: Keys can (and should) be rotated in each message to improve security.
+  entries:
+    - icon: lock
+      title: Brings security in the insecurity
+      text: It allows to securely exchange cryptographic keys over a public channel.
+    - icon: calculator
+      title: Strong mathematical basis
+      text: It uses asymmetric keys to build a shared key.
+    - icon: rotate
+      title: It is fast and easy to implement
+      text: Keys can (and should) be rotated in each message to improve security.
 
 ---
 layout: separator
 title: It's time to paint!
-image: '@talk/baby-hand.webp'
-background: nf-orange-split
+image:
+  url: '@talk/baby-hand.webp'
+options:
+  background: nf-green
+decorations:
+  logo: black
 
 ---
 title: Generate the private and public keys
-image: '@talk/generate.webp'
+image:
+  url: '@talk/generate.webp'
 index: 1
 
 ---
 title: Exchange the public keys
-image: '@talk/exchange.webp'
+image:
+  url: '@talk/exchange.webp'
 index: 2
 
 ---
 title: Generate the shared keys
-image: '@talk/shared.webp'
+image:
+  url: '@talk/shared.webp'
 index: 3
 
 ---
 layout: separator
-title: Let's make some m<span class="text-nf-brunch-pink">a</span>th!
-image: '@talk/walter-white.webp'
-background: nf-midnight-blue
+title: Let's make some m<span class="text-nf-green">a</span>th!
+image:
+  url: '@talk/walter-white.webp'
+options:
+  background: nf-blue
 
 ---
-title: 'How is this possible?'
-image: '@talk/handshake-1.webp'
+title: How is this possible?
+image:
+  url: '@talk/handshake-1.webp'
 
 ---
-title: 'How is this possible?'
-image: '@talk/handshake-2.webp'
+title: How is this possible?
+image:
+  url: '@talk/handshake-2.webp'
 
 ---
-title: 'How is this possible?'
-image: '@talk/handshake-3.webp'
+title: How is this possible?
+image:
+  url: '@talk/handshake-3.webp'
 
 ---
-title: 'How is this possible?'
-image: '@talk/shared-calculation.webp'
+title: How is this possible?
+image:
+  url: '@talk/shared-calculation.webp'
 
 ---
 title: Let's prove it!
-image: '@talk/prove.webp'
+image:
+  url: '@talk/prove.webp'
 
 ---
 layout: quote
-sentence: The decisions we make about communication security today will determine the kind of society we live in tomorrow.
-author: Whitfield Diffie
+quote:
+  sentence: |
+    The decisions we make about communication
+    security today will determine the kind of
+    society we live in tomorrow.
+  author: Whitfield Diffie
 
 ---
 layout: end
+# ---
+

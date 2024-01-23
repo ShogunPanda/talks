@@ -1,484 +1,614 @@
 ---
 layout: cover
-# ...
+# ---
 
 ---
 layout: separator
-title: 'No automation, no party!'
-image: '@talk/smart-home.webp'
-background: nf-neon-blue
-classes:
-  title: talk@font-size-35pt
-logo: black
+title: No automation, no party!
+image:
+  url: '@talk/smart-home.webp'
+options:
+  background: nf-blue
+decorations:
+  logo: black
 
 ---
 layout: hello
-# ...
+# ---
 
 ---
 layout: nearform
-# ...
+# ---
 
 ---
 title: A lot has changed in the last few years
 items:
-  - icon: network
-    title: Networking is everywhere
-    text: Have you ever heard of a connected coffee machine?
-  - icon: device-mobile
-    title: The majority of the (western) population has a smartphone
-    text: "*There's an app for everything™*, isn't it?"
-  - icon: puzzle-2
-    title: Just connect the dots
-    text: Internet of Things was just a matter of times.
+  entries:
+    - icon: network-wired
+      title: Networking is everywhere
+      text: Have you ever heard of a connected coffee machine?
+    - icon: mobile
+      title: The majority of the (western) population has a smartphone
+      text: "*There's an app for everything™*, isn't it?"
+    - icon: puzzle
+      title: Just connect the dots
+      text: Internet of Things was just a matter of times.
 
 ---
 layout: separator
 title: I'm literally surrounded by lovely chubby cats...
-image: '@talk/ciurma-1.webp'
-background: nf-orange-split
-logo: black
+image:
+  url: '@talk/ciurma-1.webp'
+options:
+  background: nf-green
+decorations:
+  logo: black
 
 ---
 layout: separator
 title: ...and I deeply love them!
-image: '@talk/io.webp'
-background: nf-orange-split theme@flex-row-reverse
+image:
+  url: '@talk/io.webp'
+className:
+  root: theme@separator--reverse
+options:
+  background: nf-green
+decorations:
+  logo: total-white
 
 ---
 title: There are three types of people
 items:
-  - index: 1
-    title: People who worship cats
-    text: You'll enjoy this talks and probably get some evil ideas.
-  - index: 2
-    title: People who are fine with cats
-    text: I'll make you happy with the home automation.
-  - index: 3
-    title: People who hate cats
-    text: '*Please leave, NOW!*'
+  entries:
+    - index: 1
+      title: People who worship cats
+      text: You'll enjoy this talks and probably get some evil ideas.
+    - index: 2
+      title: People who are fine with cats
+      text: I'll make you happy with the home automation.
+    - index: 3
+      title: People who hate cats
+      text: '*Please leave, NOW!*'
 
 ---
 layout: separator
 title: I automated their lives...
-image: '@talk/mangioni.webp'
-background: nf-brunch-pink
+image:
+  url: '@talk/mangioni.webp'
+options:
+  background: nf-purple
+decorations:
+  permalink: black
 
 ---
 layout: separator
 title: ...since my wife kept collecting new cats!
-image: '@talk/kuro-loki.webp'
-background: nf-brunch-pink theme@flex-row-reverse
+image:
+  url: '@talk/kuro-loki.webp'
+className:
+  root: theme@separator--reverse
+options:
+  background: nf-purple
 
 ---
 title: A little disclaimer
-content: In this talk I'll mention many brands and products.
+content:
+  - In this talk I'll mention many brands and products.
 items:
-  - icon: coin-euro
-    title: Nobody is sponsoring me
-    text: It just happen that these products were the best for my specific needs.
-  - icon: mood-silence
-    title: No brand knows I'm here
-    text: So everything that follows is just my personal opinion and experience.
-options:
+  entries:
+    - icon: sack-dollar
+      title: Nobody is sponsoring me
+      text: It just happen that these products were the best for my specific needs.
+    - icon: face-zipper
+      title: No brand knows I'm here
+      text: So everything that follows is just my personal opinion and experience.
   horizontal: true
 
 ---
 layout: separator
 title: Let's start!
-subtitle: Say hello to Bree!
-image: '@talk/bree-1.webp'
-background: nf-brunch-pink
+subtitle: Say hello to <span className="theme@separator__callout__highlight">Bree</span>!
+image:
+  url: '@talk/bree-1.webp'
+options:
+  background: nf-purple
+className:
+  subtitle: theme@separator__callout
 
 ---
 layout: side
 title: The beginning
-content: The starting point was my home alarm system.
-image: '@talk/ksenia.webp'
+content:
+  - The starting point was my home alarm system.
+image:
+  url: '@talk/ksenia.webp'
 items:
-  - icon: 'shield-lock'
-    title: KSenia Lares 4.0
-    text: It is a innovative home alarm and automation system all *made in Italy*.
-  - icon: 'adjustments'
-    title: Comprehensive solution
-    text: It can control alarms, sensors, doors, windows and many other devices.
+  entries:
+    - icon: lock
+      title: KSenia Lares 4.0
+      text: It is a innovative home alarm and automation system all *made in Italy*.
+    - icon: chart-network
+      title: Comprehensive solution
+      text: It can control alarms, sensors, doors, windows and many other devices.
 
 ---
 title: 'KSenia Lares 4.0: How do you control it?'
 items:
-  - icon: 'network'
-    title: WebSocket based protocol
-    text: There is a WebSocket endpoint which is both used by the Web UI and also exposed as API.
-  - icon: 'book'
-    title: Documentation is available
-    text: Once you know how to obtain the SDK documentation, you are good to go.
-options:
+  entries:
+    - icon: network-wired
+      title: WebSocket based protocol
+      text: There is a WebSocket endpoint which is both used by the Web UI and also exposed as API.
+    - icon: book
+      title: Documentation is available
+      text: Once you know how to obtain the SDK documentation, you are good to go.
   horizontal: true
 
 ---
 layout: separator
 title: |
   It's hot...
-  no wait, it's cold!
-subtitle: Say hello to Cali!
-image: '@talk/cali.webp'
-background: nf-neon-blue
-logo: black
+  no wait,
+  it's cold!
+subtitle: Say hello to <span className="theme@separator__callout__highlight">Cali</span>!
+image:
+  url: '@talk/cali.webp'
+options:
+  background: nf-blue
+decorations:
+  logo: black
+  permalink: white
+className:
+  subtitle: theme@separator__callout
 
 ---
 layout: side
 title: Let's optimize
-content: Once the house was under control, it was time to take care of climate control.
-image: '@talk/aquarea.webp'
+content:
+  - Once the house was under control, it was time to take care of climate control.
+image:
+  url: '@talk/aquarea.webp'
 items:
-  - icon: 'temperature'
-    title: Panasonic Aquarea as primary device
-    text: It's an electric heat pump which can either heat or cool your house.
-  - icon: 'flame'
-    title: Ferroli BlueHelix as secondary heater
-    text: Despite the name, it's connected via sealed Chinese cloud. *I gave up here!*
+  entries:
+    - icon: temperature-three-quarters
+      title: Panasonic Aquarea as primary device
+      text: It's an electric heat pump which can either heat or cool your house.
+    - icon: flame
+      title: Ferroli BlueHelix as secondary heater
+      text: Despite the name, it's connected via sealed Chinese cloud. *I gave up here!*
 
 ---
 title: 'Panasonic Aquarea: How do you control it?'
 items:
-  - index: 1
-    title: Use their service Website
-    text: The availability of the service was unfortunately questionable.
-  - index: 2
-    title: Use a custom MQTT firmware
-    text: Let's thank some nice devs of GitHub!<br/>I modified the LAN interface.
-options:
+  entries:
+    - index: 1
+      title: Use their service Website
+      text: The availability of the service was unfortunately questionable.
+    - index: 2
+      title: Use a custom MQTT firmware
+      text: Let's thank some nice devs of GitHub!<br/>I modified the LAN interface.
   horizontal: true
 
 ---
 layout: separator
-title: You need a power plant for it!
-subtitle: Say hello to Cleo!
-image: '@talk/cleo.webp'
-background: nf-orange-split
-logo: black
+title: |
+  Shall I buy a
+  power plant?
+subtitle: Say hello to <span className="theme@separator__callout__highlight">Cleo</span>!
+image:
+  url: '@talk/cleo.webp'
+options:
+  background: nf-green
+decorations:
+  logo: black
+  permalink: white
+className:
+  subtitle: theme@separator__callout
 
 ---
 layout: side
-title: 'With the power of the Sun I will win!'
-content: After installing solar panels I was able to optimize power consumption.
-image: '@talk/fronius.webp'
+title: With the power of the Sun I will win!
+content:
+  - After installing solar panels I was able to optimize power consumption.
+image:
+  url: '@talk/fronius.webp'
 items:
-  - icon: 'sun'
-    title: Fronius Primo
-    text: A very easy to use and connected inverter.
-  - icon: 'coin-euro'
-    title: This was a blessing
-    text: I reduce my power bills by *66%*!
+  entries:
+    - icon: sun
+      title: Fronius Primo
+      text: A very easy to use and connected inverter.
+    - icon: sack-dollar
+      title: This was a blessing
+      text: I reduce my power bills by *66%*!
 
 ---
 title: 'Fronius Primo: How do you control it?'
 items:
-  - icon: 'network'
-    title: HTTP enabled
-    text: The inverter exposes an API to query data.
-  - icon: 'book'
-    title: Documentation is available
-    text: You can download it from the Fronius website.
-options:
+  entries:
+    - icon: network-wired
+      title: HTTP enabled
+      text: The inverter exposes an API to query data.
+    - icon: book
+      title: Documentation is available
+      text: You can download it from the Fronius website.
   horizontal: true
 
 ---
 layout: separator
-title: Don't brag, you still use gas to move!
-subtitle: Say hello to Freya!
-image: '@talk/freya-1.webp'
-background: nf-brunch-pink
-logo: black
+title: |
+  Don't brag,
+  you still use
+  gas to move!
+subtitle: Say hello to <span className="theme@separator__callout__highlight">Freya</span>!
+image:
+  url: '@talk/freya-1.webp'
+options:
+  background: nf-purple
+decorations:
+  logo: black
+className:
+  subtitle: theme@separator__callout
 
 ---
 layout: side
-title: 'What have I told you about the sun?'
-content: I switched to electric cars and therefore I installed a wallbox.
-image: '@talk/abb.webp'
+title: What have I told you about the sun?
+content:
+  - I switched to electric cars and therefore I installed a wallbox.
+image:
+  url: '@talk/abb.webp'
 items:
-  - icon: 'recharging'
-    title: ABB Terra
-    text: It supports single-phases or three-phases system, up to 22KW power.
-  - icon: 'bolt'
-    title: ENEL is my enemy now
-    text: The voltage level in my house is completely unreliable. Somebody protect my devices!
+  entries:
+    - icon: battery-bolt
+      title: ABB Terra
+      text: It supports single-phases or three-phases system, up to 22KW power.
+    - icon: bolt
+      title: ENEL is my enemy now
+      text: The voltage level in my house is completely unreliable. Somebody protect my devices!
 
 ---
 title: 'ABB Terra: How do you control it?'
 items:
-  - index: 1
-    title: OCPP
-    text: |
-      It's a open standard for wallboxes.
-      I couldn't find a Node.js implementation.
-  - index: 2
-    title: ModBus
-    text: |
-      Via a RS485 to (W)LAN adapter,
-      I was able to control the device.
-options:
+  entries:
+    - index: 1
+      title: OCPP
+      text: |
+        It's a open standard for wallboxes.
+        I couldn't find a Node.js implementation.
+    - index: 2
+      title: ModBus
+      text: |
+        Via a RS485 to (W)LAN adapter,
+        I was able to control the device.
   horizontal: true
 
 ---
 layout: image
 title: Gimme the cats!
-image: '@talk/freya-2.webp'
-logo: black
+image:
+  url: '@talk/freya-2.webp'
+decorations:
+  logo: black
+  permalink: white
 
 ---
 layout: image
 title: It all started with Bree
-image: '@talk/bree-2.webp'
+image:
+  url: '@talk/bree-2.webp'
+decorations:
+  logo: white
+  permalink: white
 
 ---
 title: He was *always* hungry
 items:
-  - icon: alarm
-    title: No matter the time
-    text: It's food o' clock!
-  - icon: world
-    title: No matter if you had a life
-    text: You had to feed him 3-4 times a day.
-  - icon: bomb
-    title: Persistent staring or vocalizing can kill you
-    text: His biological clock was better than an atomic one.
+  entries:
+    - icon: alarm-clock
+      title: No matter the time
+      text: It's food o' clock!
+    - icon: globe
+      title: No matter if you had a life
+      text: You had to feed him 3-4 times a day.
+    - icon: face-explode
+      title: Persistent staring or vocalizing can kill you
+      text: His biological clock was better than an atomic one.
 
 ---
 layout: side
 title: Thanks progress
-content: After many years of struggling, I found the perfect solution.
-image: '@talk/petkit.webp'
+content:
+  - After many years of struggling, I found the perfect solution.
+image:
+  url: '@talk/petkit.webp'
 items:
-  - icon: tools-kitchen-2
-    title: PetKit FreshElement Solo
-    text: Cheap, easy to use and reliable.
-  - icon: device-mobile
-    title: App controlled
-    text: But the UX is *questionable*.
+  entries:
+    - icon: pot-food
+      title: PetKit FreshElement Solo
+      text: Cheap, easy to use and reliable.
+    - icon: mobile
+      title: App controlled
+      text: But the UX is *questionable*.
 
 ---
 title: 'PetKit FreshElement: How do you control it?'
 items:
-  - icon: network
-    title: HTTP API
-    text: It has an easy to use HTTP API.
-  - icon: tools-kitchen-2
-    title: Let them be fat
-    text: The API accuracy varies per device.
-options:
+  entries:
+    - icon: network-wired
+      title: HTTP API
+      text: It has an easy to use HTTP API.
+    - icon: pot-food
+      title: Let them be fat
+      text: The API accuracy varies per device.
   horizontal: true
 
 ---
 layout: separator
 title: Why don't you complicate things?
-subtitle: Say hello to Yuna!
-image: '@talk/yuna.webp'
-background: nf-brunch-pink
-logo: black
+subtitle: Say hello to <span className="theme@separator__callout__highlight">Yuna</span>!
+image:
+  url: '@talk/yuna.webp'
+options:
+  background: nf-purple
+decorations:
+  logo: black
+  permalink: white
+className:
+  subtitle: theme@separator__callout
 
 ---
-title: 'In 2020 we moved'
+title: In 2020 we moved
 items:
-  - icon: home
-    title: Bigger house, more cats
-    text: Do you remember what I said about collecting?
-  - icon: world
-    title: We (kinda) still live in the city
-    text: But we are literally on the border, in the countryside.
-  - icon: deer
-    title: Wild animals are everywhere
-    text: 'After `${30+x}` years I had to deal daily with foxes and similar.'
+  entries:
+    - icon: home
+      title: Bigger house, more cats
+      text: Do you remember what I said about collecting?
+    - icon: globe
+      title: We (kinda) still live in the city
+      text: But we are literally on the border, in the countryside.
+    - icon: deer
+      title: Wild animals are everywhere
+      text: After `${30+x}` years I had to deal daily with foxes and similar.
 
 ---
 layout: separator
 title: Let's protect them!
-subtitle: Say hello to Kuro!
-image: '@talk/kuro.webp'
-background: nf-orange-split
+subtitle: Say hello to <span className="theme@separator__callout__highlight">Kuro</span>!
+image:
+  url: '@talk/kuro.webp'
+options:
+  background: nf-green
+className:
+  subtitle: theme@separator__callout
 
 ---
 layout: side
 title: Can't beat a classic
-content: There are some solutions that take advantage of pets' subcutaneous chip.
-image: '@talk/petdoor.webp'
+content:
+  - There are some solutions that take advantage of pets' subcutaneous chip.
+image:
+  url: '@talk/petdoor.webp'
 items:
-  - icon: door
-    title: Sure PetCare Microchip Pet Door
-    text: Modern and comprehensive. Also pretty cute.
-  - icon: cpu
-    title: Just the good, old RFID.
-    text: The base technology is more than 50 years old.
+  entries:
+    - icon: door-open
+      title: Sure PetCare Microchip Pet Door
+      text: Modern and comprehensive. Also pretty cute.
+    - icon: microchip
+      title: Just the good, old RFID.
+      text: The base technology is more than 50 years old.
 
 ---
 title: 'Microchip Pet Door: How do you control it?'
 items:
-  - icon: network
-    title: HTTP API
-    text: |
-      The same used by the app and the website.
-      *Yes, the app is just a web view.*
-  - icon: lock-open
-    title: MQTT on the way
-    text: Some other good people on GitHub are working on a custom firmware.
-options:
+  entries:
+    - icon: network-wired
+      title: HTTP API
+      text: |
+        The same used by the app and the website.
+        *Yes, the app is just a web view.*
+    - icon: microchip
+      title: MQTT on the way
+      text: Some other good people on GitHub are working on a custom firmware.
   horizontal: true
 
 ---
 layout: separator
 title: Did you really believe it was just about cats?
-subtitle: Say hello to Braciolone!
-image: '@talk/bracio-1.webp'
-background: nf-orange-split
+subtitle: Say hello to <s>Snappy Shine</s> <span className="theme@separator__callout__highlight">Braciolone</span>!
+image:
+  url: '@talk/bracio-1.webp'
+options:
+  background: nf-green
+className:
+  subtitle: theme@separator__callout
 
 ---
 layout: separator
-title: Sadly, I couldn't automate his life (yet)...
-image: '@talk/bracio-2.webp'
-background: nf-neon-blue theme@flex-row-reverse
+title: |
+  Sadly, I couldn't
+  automate his
+  life (yet)...
+image:
+  url: '@talk/bracio-2.webp'
+options:
+  background: nf-blue
+decorations:
+  permalink: black
 
 ---
 layout: separator
 title: ... but I could automate his. Why not?
-subtitle: Say hello to Oscar!
-image: '@talk/oscar.webp'
-background: nf-brunch-pink
-classes:
-  title: font-size-35pt
+subtitle: Say hello to <span className="theme@separator__callout__highlight">Oscar</span>!
+image:
+  url: '@talk/oscar.webp'
+className:
+  root: theme@separator--reverse
+  subtitle: theme@separator__callout
+options:
+  background: nf-purple
 
 ---
 layout: side
-title: 'What is the fastest way to get a divorce?'
-content: Just discovered a new brand.
-image: '@talk/shelly.webp'
+title: What is the fastest way to get a divorce?
+content:
+  - Just discovered a new brand.
+image:
+  url: '@talk/shelly.webp'
 items:
-  - icon: puzzle-2
-    title: Shelly devices
-    text: Small, cheap and made for the geeks.
-  - icon: cloud
-    title: They support a lot of protocols
-    text: MQTT, HTTP, WebSocket, you name it.
+  entries:
+    - icon: chart-network
+      title: Shelly devices
+      text: Small, cheap and made for the geeks.
+    - icon: cloud
+      title: They support a lot of protocols
+      text: MQTT, HTTP, WebSocket, you name it.
 
 ---
 layout: separator
 title: It also helps with X-Mas!
 subtitle: Why?! Why not!
-image: '@talk/albero.webp'
-background: nf-darkest-blue
-logo: black
+image:
+  url: '@talk/albero.webp'
+options:
+  background: nf-midnight
+decorations:
+  logo: black
+className:
+  subtitle: theme@separator__callout
 
 ---
 layout: separator
-title: And that's my house!
-subtitle: Say hello to Loki!
-image: '@talk/loki.webp'
-background: nf-brunch-pink
-classes:
-  title: font-size-35pt
+title: |
+  And that's
+  my house!
+subtitle: Say hello to <span className="theme@separator__callout__highlight">Loki</span>!
+image:
+  url: '@talk/loki.webp'
+options:
+  background: nf-purple
+decorations:
+  permalink: black
+className:
+  subtitle: theme@separator__callout
 
 ---
 title: Home assistants
-content: Let's talk about the most known vendors.
+content:
+  - Let's talk about the most known vendors.
 items:
-  - image: '@talk/homekit.webp'
-    title: Apple HomeKit
-  - image: '@talk/google-home.webp'
-    title: Google Home
-  - image: '@talk/alexa.webp'
-    title: Amazon Alexa
-  - image: '@talk/home-assistant.webp'
-    title: Home Assistant
-options:
+  entries:
+    - image: '@talk/homekit.webp'
+      title: Apple HomeKit
+    - image: '@talk/google-home.webp'
+      title: Google Home
+    - image: '@talk/alexa.webp'
+      title: Amazon Alexa
+    - image: '@talk/home-assistant.webp'
+      title: Home Assistant
   horizontal: true
 
 ---
 title: What do they have in common?
 items:
-  - icon: circuit-changeover
-    title: Do not reinvent the wheel
-    text: All integrations are (mostly) based on existing technologies.
-  - icon: puzzle-2
-    title: It's all about presentation
-    text: Connecting the dots was the deal breaker.
-  - icon: book
-    title: They expose a (semi) public API
-    text: '*Anybody can write new devices or new integration.*'
+  entries:
+    - icon: code-branch
+      title: Do not reinvent the wheel
+      text: All integrations are (mostly) based on existing technologies.
+    - icon: puzzle
+      title: It's all about presentation
+      text: Connecting the dots was the deal breaker.
+    - icon: book
+      title: They expose a (semi) public API
+      text: '*Anybody can write new devices or new integration.*'
 
 ---
 title: The Perseveranza™ technical stack (1/2)
 items:
-  - image: '@talk/nodejs.webp'
-    title: Node.js
-    classes:
-      image: talk@w-auto
-  - image: '@talk/redis.webp'
-    title: Redis
-  - image: '@talk/mosquitto.webp'
-    title: Mosquitto
-options:
+  entries:
+    - image: '@talk/nodejs.webp'
+      title: Node.js
+      className:
+        image: w-auto
+    - image: '@talk/redis.webp'
+      title: Redis
+    - image: '@talk/mosquitto.webp'
+      title: Mosquitto
   horizontal: true
 
 ---
 title: The Perseveranza™ technical stack (2/2)
 items:
-  - image: '@talk/fastify.webp'
-    title: Fastify
-  - image: '@talk/homebridge.webp'
-    title: HAP (Homebridge)
-  - image: '@talk/graphql.webp'
-    title: GraphQL
-options:
+  entries:
+    - image: '@talk/fastify.webp'
+      title: Fastify
+    - image: '@talk/homebridge.webp'
+      title: HAP (Homebridge)
+    - image: '@talk/graphql.webp'
+      title: GraphQL
   horizontal: true
 
 ---
 layout: separator
 title: Gimme the details!
-subtitle: Say hello to Mora!
-image: '@talk/mora.webp'
-background: nf-neon-blue
+subtitle: Say hello to <span className="theme@separator__callout__highlight">Mora</span>!
+image:
+  url: '@talk/mora.webp'
+options:
+  background: nf-blue
+decorations:
+  permalink: black
+className:
+  subtitle: theme@separator__callout
 
 ---
 title: Where is code?
 items:
-  - icon: 'lock-square'
-    title: None of your business. 😘
-    text: All the code is in GitHub private repositories.
-  - icon: 'user'
-    title: It's completely opinionated
-    text: This time I was not aiming for the public.
-  - icon: 'mood-sad-squint'
-    title: You (should) know how to write an API
-    text: "*Don't be lazy!*"
+  entries:
+    - icon: lock
+      title: None of your business. 😘
+      text: All the code is in GitHub private repositories.
+    - icon: user
+      title: It's completely opinionated
+      text: This time I was not aiming for the public.
+    - icon: face-laugh-squint
+      title: You (should) know how to write an API
+      text: "*Don't be lazy!*"
 
 ---
 layout: quote
 title: Remember ...
-sentence: Home is where the heart is.
-author: Plinius the Elder
-options:
-  quote:
-    primaryIcon: home
-  light: true
+light: true
+primaryIcon: home
+quote:
+  sentence: Home is where the heart is.
+  author: Plinius the Elder
 
 ---
 layout: quote
-sentence: |
-  In ancient times cats were
-  worshipped as gods. 
-  They have not forgotten this.
-author: Terry Pratchett
+quote:
+  sentence: |
+    In ancient times cats were
+    worshipped as gods.
+    They have not forgotten this.
+  author: Terry Pratchett
 
 ---
 layout: end
+# ---
+
 title: This was my usual ending slide...
-classes:
-  title: talk@font-size-25pt
+className:
+  title: font-size-25pt
 
 ---
 layout: end
-image: '@talk/bree-freya.webp'
+# ---
+
+image:
+  url: '@talk/bree-freya.webp'
 title: But this talk is special. Thank you!
-content: We miss you both, a very lot! ❤️
-classes:
-  title: talk@bg-nf-darkest-blue border-nf-neon-blue talk@font-size-25pt
-  content: text-nf-orange-split
+content:
+  - We miss you both, a very lot! ❤️
+decorations:
+  permalink: black-with-bg
+className:
+  title: bg-nf-midnight border-nf-blue text-white font-size-25pt
+  subtitle: text-nf-green

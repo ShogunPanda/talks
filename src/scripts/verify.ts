@@ -1,3 +1,4 @@
+import { type BuildContext } from '@perseveranza-pets/dante'
 import { filterWhitelistedTalks, getAllTalks, getTalk, getTheme, setWhitelistedTalks } from '@perseveranza-pets/freya'
 import { program, type Command } from 'commander'
 import { chromium, type Browser, type BrowserContext, type Page } from 'playwright'
@@ -105,7 +106,10 @@ program
       const { compare, remote, delay, only }: Options = this.optsWithGlobals()
       setWhitelistedTalks(only)
 
-      for (const talk of filterWhitelistedTalks(await getAllTalks())) {
+      for (const talk of filterWhitelistedTalks(
+        { isProduction: false } as unknown as BuildContext,
+        await getAllTalks()
+      )) {
         await verify(talk, compare, remote, delay)
       }
     } catch (error) {

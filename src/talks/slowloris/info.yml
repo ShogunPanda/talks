@@ -2,5 +2,9 @@
 config: common.config
 document:
   title: The tale of avoiding a time-based DDOS attack in Node.js
+  titleFormatted: |
+    The tale of avoiding a
+    time-based DDOS attack
+    in Node.js
   author: common.author
   company: common.company

@@ -1,116 +1,83 @@
-import { Svg, useFreya, type SlideProps } from '@perseveranza-pets/freya/client'
-import { SlideWrapper } from '../components/common.js'
-import { SvgIcon } from '../components/icons.js'
+import { Svg, useClient, useSlide, type SlideProps } from '@perseveranza-pets/freya/client'
+import { Accent, SlideWrapper } from '../components/common.js'
 import { type Slide } from '../models.js'
 
-export default function NearFormLayout({ slide, index, className }: SlideProps<Slide>): JSX.Element {
-  const {
-    talk: {
-      id,
-      document: {
-        company: { count, npm }
-      }
-    },
-    resolveClasses,
-    resolveImage
-  } = useFreya()
+export default function NearFormLayout({ className, style }: SlideProps): JSX.Element {
+  const { resolveClasses } = useClient()
+  const { slide, index } = useSlide<Slide>()
 
-  const worldImageUrl = resolveImage('nearform', id, '@theme/world.webp')
+  slide.decorations.logo = false
+  slide.decorations.permalink = 'white'
 
   return (
     <SlideWrapper
       slide={slide}
       index={index}
-      className={resolveClasses('theme@nearform', className, slide.className)}
-      skipDecorations={true}
+      className={resolveClasses('theme@nearform', className, slide.className?.root)}
+      style={style}
     >
-      <div className={resolveClasses('theme@nearform__contents')}>
-        <header className={resolveClasses('theme@nearform__header')}>
-          <Svg path="@theme/nearform-logo.svg" className={resolveClasses('theme@nearform__logo')} />
+      <main className={resolveClasses('theme@nearform__contents')}>
+        <h1 className={resolveClasses('theme@nearform__title')}>
+          Introducing <span>Nearform</span>
+          <Accent />
+        </h1>
 
-          <p className={resolveClasses('theme@nearform__tagline')}>
-            WE’RE BOLD
-            <br />
-            WE’RE FLEXIBLE
-            <br />
-            WE’RE OPEN
-            <br />
-            WE’RE EMPOWERING
-            <br />
-          </p>
-        </header>
+        <h4 className={resolveClasses('theme@nearform__subtitle')}>
+          We’re a global consultancy of experienced engineers working in lean teams, designing and building high quality
+          digital products at speed and scale to realise business and end user value.
+        </h4>
 
-        <div
-          className={resolveClasses('theme@nearform__description')}
-          style={{ backgroundImage: `url(${worldImageUrl})` }}
+        <aside className={resolveClasses('theme@nearform__cta')}>
+          <div className={resolveClasses('theme@nearform__cta__description')}>
+            <dl>
+              <dt className={resolveClasses('theme@nearform__cta__description__number')}>10+ </dt>
+              <dd className={resolveClasses('theme@nearform__cta__description__name')}>Years experience</dd>
+              <dt className={resolveClasses('theme@nearform__cta__description__number')}>400+</dt>
+              <dd className={resolveClasses('theme@nearform__cta__description__name')}>Nearformers</dd>
+              <dt className={resolveClasses('theme@nearform__cta__description__number')}>
+                28<span className={resolveClasses('theme@nearform__cta__description__number__spacer')}>+</span>
+              </dt>
+              <dd className={resolveClasses('theme@nearform__cta__description__name')}>Countries</dd>
+              <dt className={resolveClasses('theme@nearform__cta__description__number')}>700+</dt>
+              <dd className={resolveClasses('theme@nearform__cta__description__name')}>Engagements</dd>
+              <dt className={resolveClasses('theme@nearform__cta__description__number')}>380+</dt>
+              <dd className={resolveClasses('theme@nearform__cta__description__name')}>Customers</dd>
+            </dl>
+          </div>
+
+          <h3 className={resolveClasses('theme@nearform__cta__hiring')}>We are hiring!</h3>
+        </aside>
+
+        <Svg src="@theme/world.svg" className={resolveClasses('theme@nearform__globe')} />
+      </main>
+
+      <footer className={resolveClasses('theme@nearform__categories')}>
+        <h4
+          className={resolveClasses(
+            'theme@nearform__categories__category',
+            'theme@nearform__categories__category--with-border'
+          )}
         >
-          <h2 className={resolveClasses('theme@nearform__description__text')}>
-            Global Delivery Org with {count}+ and counting
-          </h2>
-        </div>
-
-        <h1 className={resolveClasses('theme@nearform__hiring')}>We are hiring!</h1>
-      </div>
-
-      <footer className={resolveClasses('theme@nearform__footer')}>
-        <a href="https://nearform.com" className={resolveClasses('theme@nearform__footer__link')}>
-          nearform.com
-        </a>
-        <div className={resolveClasses('theme@nearform__footer__follow')} />
-        <span>follow us on</span>
-
-        <a
-          href="https://www.linkedin.com/company/nearform/"
-          className={resolveClasses('theme@nearform__footer__social-link')}
+          Product Solutions
+        </h4>
+        <h4
+          className={resolveClasses(
+            'theme@nearform__categories__category',
+            'theme@nearform__categories__category--with-border'
+          )}
         >
-          <SvgIcon name="linkedin" />
-        </a>
-
-        <a href="https://twitter.com/nearform" className={resolveClasses('theme@nearform__footer__social-link')}>
-          <SvgIcon name="twitter" />
-        </a>
-
-        <a href="https://github.com/nearform" className={resolveClasses('theme@nearform__footer__social-link')}>
-          <SvgIcon name="github" />
-        </a>
-
-        <a
-          href="https://www.youtube.com/channel/UCp2Tsbjd3P8itnBHUNHi82A"
-          className={resolveClasses('theme@nearform__footer__social-link')}
+          Modern Platforms
+        </h4>
+        <h4
+          className={resolveClasses(
+            'theme@nearform__categories__category',
+            'theme@nearform__categories__category--with-border'
+          )}
         >
-          <SvgIcon name="youtube" />
-        </a>
-
-        <a
-          href="https://www.facebook.com/NearFormLtd"
-          className={resolveClasses('theme@nearform__footer__social-link')}
-        >
-          <SvgIcon name="facebook" />
-        </a>
-
-        <div className={resolveClasses('theme@nearform__footer__spacer')} />
-
-        <Svg
-          path="@theme/nearform-logo-with-text-right.svg"
-          className={resolveClasses('theme@nearform__footer__logo')}
-        />
+          Data & AI Solutions
+        </h4>
+        <h4 className={resolveClasses('theme@nearform__categories__category')}>Enhanced Capability</h4>
       </footer>
-
-      <Svg path="@theme/nearform-curve-bottom-right.svg" className={resolveClasses('theme@nearform__curve')} />
-
-      <div className={resolveClasses('theme@nearform__npm')}>
-        <h2 className={resolveClasses('theme@nearform__npm__title')}>
-          Major Contributors to the Open Source Web Platform
-        </h2>
-
-        <h3 className={resolveClasses('theme@nearform__npm__header')}>NPM monthly downloads</h3>
-        <h1 className={resolveClasses('theme@nearform__npm__value')}>{npm.monthly}</h1>
-
-        <hr className={resolveClasses('theme@nearform__npm__separator')} />
-
-        <h4 className={resolveClasses('theme@nearform__npm__header')}>Represents modules used globally</h4>
-        <h1 className={resolveClasses('theme@nearform__npm__value')}>{npm.percentage}</h1>
-      </div>
     </SlideWrapper>
   )
 }

@@ -1,171 +1,199 @@
 ---
 layout: cover
-# ...
+# ---
 
 ---
 layout: separator
-title: 'Mothers are always right!'
-image: '@talk/lollipops.webp'
-background: nf-brunch-pink
-logo: black
+title: Mothers are always right!
+image:
+  url: '@talk/lollipops.webp'
+options:
+  background: nf-purple
+decorations:
+  logo: black
 
 ---
 layout: hello
-# ...
+# ---
 
 ---
 layout: nearform
-# ...
+# ---
 
 ---
 layout: separator
-title: 'Our entire existence is on their shoulders!'
-image: '@talk/bee.webp'
-background: nf-neon-blue
+title: Our entire existence is on their shoulders!
+image:
+  url: '@talk/bee.webp'
+options:
+  background: nf-blue
 
 ---
 title: How is that?
 items:
-  - icon: 'pot-food'
-    title: 'They are related to our food'
-    text: 'Over 70% of the food we eat is directly or indirectly related to their pollination.'
-  - icon: 'dinosaur'
-    title: 'We are endangering them'
-    text: 'Pesticides and climate change made them an endangered species.'
-  - icon: 'timeline-arrow'
-    title: 'No coming back'
-    text: 'If they disappear, we have no natural or artificial replacement.'
+  entries:
+    - icon: pot-food
+      title: They are related to our food
+      text: Over 70% of the food we eat is directly or indirectly related to their pollination.
+    - icon: dinosaur
+      title: We are endangering them
+      text: Pesticides and climate change made them an endangered species.
+    - icon: timeline-arrow
+      title: No coming back
+      text: If they disappear, we have no natural or artificial replacement.
 
 ---
 layout: separator
-title: "Aren't we here for dev stuff?"
-image: '@talk/dog.webp'
-background: nf-brunch-pink
+title: Aren't we here for dev stuff?
+image:
+  url: '@talk/dog.webp'
+options:
+  background: nf-purple
 
 ---
 title: Yes, we do!
 items:
-  - icon: 'webhook'
-    title: 'APIs are related to our application'
-    text: 'Over 100% of the application we use is directly or indirectly related to their quality.'
-  - icon: 'dinosaur'
-    title: 'We are endangering them'
-    text: 'Adding complexity between applications and APIs made them an endangered species.'
-  - icon: 'timeline-arrow'
-    title: 'No coming back'
-    text: 'If they disappear, we have no other replacement.'
+  entries:
+    - icon: webhook
+      title: APIs are related to our application
+      text: Over 100% of the application we use is directly or indirectly related to their quality.
+    - icon: dinosaur
+      title: We are endangering them
+      text: Adding complexity between applications and APIs made them an endangered species.
+    - icon: timeline-arrow
+      title: No coming back
+      text: If they disappear, we have no other replacement.
 
 ---
 layout: separator
-title: 'Are you trolling us?'
-image: '@talk/troll.webp'
-background: nf-brunch-pink
+title: Are you <br/>trolling us?
+image:
+  url: '@talk/troll.webp'
+options:
+  background: nf-purple
+decorations:
+  logo: black
 
 ---
 layout: separator
-title: 'Well, try to translate <span class="text-nf-neon-blue">bees</span> in Italian!'
-image: '@theme/location.webp'
-background: nf-brunch-pink
-classes:
-  slide: talk@flex-row-reverse
+title: Well, try to translate <span class="text-nf-green">bees</span> in Italian!
+image:
+  url: '@theme/location.webp'
+className:
+  root: theme@separator--reverse
+options:
+  background: nf-blue
 
 ---
 title: Say hello to SDKs
 items:
-  - icon: 'webhook'
-    title: "We don't do everything by ourself"
-    text: 'Our application and servers often talk to third party services.'
-  - icon: 'gear-code'
-    title: 'Third party usually give use a SDK'
-    text: 'The kit makes our life easier by simplifying integration.'
-  - icon: 'gift'
-    title: 'Lot of goodies'
-    text: 'Authentication, retry logic and other boring tasks are already implemented.'
+  entries:
+    - icon: webhook
+      title: We don't do everything by ourself
+      text: Our application and servers often talk to third party services.
+    - icon: gear-code
+      title: Third party usually give use a SDK
+      text: The kit makes our life easier by simplifying integration.
+    - icon: gift
+      title: Lot of goodies
+      text: Authentication, retry logic and other boring tasks are already implemented.
 
 ---
 title: What do we get, in short?
 items:
-  - icon: 'arrows-to-circle'
-    title: 'Focus'
-    text: |
-      All the API services are made simpler to use,
-      hiding all implementation details.
-  - icon: 'home'
-    title: 'Feel at home'
-    text: |
-      Each SDK is designed to be easily adopted
-      by your favorite programming language.
-options:
+  entries:
+    - icon: arrows-to-circle
+      title: Focus
+      text: |
+        All the API services are made simpler to use,
+        hiding all implementation details.
+    - icon: home
+      title: Feel at home
+      text: |
+        Each SDK is designed to be easily adopted
+        by your favorite programming language.
   horizontal: true
 
 ---
 layout: image
 title: Are there just pros?
-image: '@talk/happiness.webp'
+image:
+  url: '@talk/happiness.webp'
 
 ---
 layout: separator
 title: You already know the answer...
-image: '@talk/laugh.webp'
-background: nf-brunch-pink
+image:
+  url: '@talk/laugh.webp'
+options:
+  background: nf-purple
 
 ---
 title: What do we ALSO get, in short? (1/2)
 items:
-  - icon: 'list-check'
-    title: 'Roadmap dependency'
-    text: |
-      Since you don't control the SDK development,
-      you can't embrace new API or features at your pace.
-  - icon: 'truck'
-    title: 'Supply chain'
-    text: |
-      If you have a bug or security vulnerability in the SDK, 
-      you have to wait for the vendor to solve it.
-options:
+  entries:
+    - icon: list-check
+      title: Roadmap dependency
+      text: |
+        Since you don't control the SDK development,
+        you can't embrace new API or features at your pace.
+    - icon: truck
+      title: Supply chain
+      text: |
+        If you have a bug or security vulnerability in the SDK,
+        you have to wait for the vendor to solve it.
   horizontal: true
 
 ---
 title: What do we ALSO get, in short? (2/2)
 items:
-  - icon: 'solid:star-sharp-half-stroke'
-    title: 'Quality'
-    text: Sometimes vendor automate the generation of the SDK out of API definitions. Native language experience is lost.
-  - icon: 'rocket'
-    title: 'Performance'
-    text: SDK are often underperforming due to the attempt to keep a unique architecture across languages.
-options:
+  entries:
+    - icon: solid:star-sharp-half-stroke
+      title: Quality
+      text: Often vendor automate the generation of the SDK out of API definitions. Native language experience is lost.
+    - icon: rocket
+      title: Performance
+      text: SDK are often underperforming due to the attempt to keep a unique architecture across languages.
   horizontal: true
 
 ---
 layout: separator
 title: Only an example can enlighten us!
-background: nf-orange-split
-image: '@talk/sun.webp'
+image:
+  url: '@talk/sun.webp'
+options:
+  background: nf-green
+decorations:
+  permalink: black-with-bg
 
 ---
 title: 'Case study: uploaded a file to AWS S3'
 items:
-  - icon: 'code'
-    title: 'Why?'
-    text: "It's a pretty simple use case that we all faced sometimes."
-  - icon: 'code-compare'
-    title: 'Which one?'
-    text: "I'm gonna analyze two different version of the AWS JavaScript SDK."
-  - icon: 'truck'
-    title: 'How?'
-    text: "I'm gonna show you how many dependency the SDK brings and how it performs."
+  entries:
+    - icon: code
+      title: Why?
+      text: It's a pretty simple use case that we all faced sometimes.
+    - icon: code-compare
+      title: Which one?
+      text: I'm gonna analyze two different version of the AWS JavaScript SDK.
+    - icon: truck
+      title: How?
+      text: I'm gonna show you how many dependency the SDK brings and how it performs.
 
 ---
 layout: image
 title: Let's go!
-image: '@talk/start.webp'
+image:
+  url: '@talk/start.webp'
+decorations:
+  logo: white
 
 ---
 title: 'AWS SDK v2: Dependencies in theory'
-content: We only add dependency in the `package.json` file ...
+content:
+  - We only add dependency in the `package.json` file ...
 code:
-  language: 'json'
+  language: json
   content: |
     {
       "name": "aws-sdk-v2",
@@ -179,9 +207,10 @@ code:
 
 ---
 title: 'AWS SDK v2: Dependencies in reality'
-content: ... but we actually get a lot more!
+content:
+  - ... but we actually get a lot more!
 code:
-  language: 'shell'
+  language: shell
   content: |
     shogun@panda:~$ pnpm list --depth=2 | wc -l
     28
@@ -189,13 +218,14 @@ code:
 ---
 title: 'AWS SDK v2: The code'
 code:
-  language: 'javascript'
+  language: javascript
   content: |
     import AWS from 'aws-sdk'
     import { readFile } from 'node:fs/promises'
 
-    // Create the client
-    // This implicitly reads the AWS_ACCESS_KEY_ID and AWS_SECRET_ACCESS_KEY environment variables
+    // Create the client, this implicitly reads
+    // the AWS_ACCESS_KEY_ID and AWS_SECRET_ACCESS_KEY
+    // environment variables.
     const client = new AWS.S3({
       apiVersion: '2006-03-01',
       region: process.env.AWS_DEFAULT_REGION
@@ -216,7 +246,7 @@ code:
 ---
 title: 'AWS SDK v2: How does it perform?'
 code:
-  language: 'console'
+  language: console
   content: |
     shogun@panda:~$ time node index.mjs
     ________________________________________________________
@@ -226,17 +256,25 @@ code:
 
 ---
 title: "AWS SDK v2: What's happening under the hood?"
-image: '@talk/flame-sdk-v2.webp'
-classes:
-  image: talk@max-h-4sp talk@max-w-none
+image:
+  url: '@talk/flame-sdk-v2.webp'
 
-# TODO@PI: Add separator here
+---
+layout: separator
+title: Let's get modern!
+image:
+  url: '@talk/modern.webp'
+options:
+  background: nf-green
+decorations:
+  logo: white
 
 ---
 title: 'AWS SDK v3: Dependencies in theory'
-content: A little more detailed dependencies in `package.json` ...
+content:
+  - A little more detailed dependencies in `package.json` ...
 code:
-  language: 'json'
+  language: json
   content: |
     {
       "name": "aws-sdk-v3",
@@ -251,9 +289,10 @@ code:
 
 ---
 title: 'AWS SDK v3: Dependencies in reality'
-content: ... but we actually get even more packages!
+content:
+  - ... but we actually get even more packages!
 code:
-  language: 'shell'
+  language: shell
   content: |
     shogun@panda:~$ pnpm list --depth=2 | wc -l
     524
@@ -261,7 +300,7 @@ code:
 ---
 title: 'AWS SDK v3: The code'
 code:
-  language: 'javascript'
+  language: javascript
   content: |
     import { readFile } from 'node:fs/promises'
     import { S3Client, PutObjectCommand } from '@aws-sdk/client-s3'
@@ -270,7 +309,9 @@ code:
     // Create the client
     const client = new S3Client({
       region: process.env.AWS_DEFAULT_REGION,
-      // This implicitly reads the AWS_ACCESS_KEY_ID and AWS_SECRET_ACCESS_KEY environment variables
+      // This implicitly reads
+      // the AWS_ACCESS_KEY_ID and AWS_SECRET_ACCESS_KEY
+      // environment variables.
       credentials: fromEnv()
     })
 
@@ -288,7 +329,7 @@ code:
 ---
 title: 'AWS SDK v3: How does it perform?'
 code:
-  language: 'console'
+  language: console
   content: |
     shogun@panda:~$ time node index.mjs
     ________________________________________________________
@@ -298,44 +339,51 @@ code:
 
 ---
 title: "AWS SDK v3: What's happening under the hood?"
-image: '@talk/flame-sdk-v3.webp'
-classes:
-  image: talk@max-h-4sp talk@max-w-none
+image:
+  url: '@talk/flame-sdk-v3.webp'
 
 ---
 layout: half
 title: Quod Erat Demonstrandum
 items:
-  - icon: eye-slash
-    title: 'You only see a bit of it'
-    text: Each SDK brings a lot more complexity which is hidden under the rug.
-  - icon: explosion
-    title: 'Not really a monolith'
-    text: How many point of failures can you afford?
-image: '@talk/iceberg.webp'
-#
+  entries:
+    - icon: eye-slash
+      title: You only see a bit of it
+      text: Each SDK brings a lot more complexity which is hidden under the rug.
+    - icon: explosion
+      title: Not really a monolith
+      text: How many point of failures can you afford?
+image:
+  url: '@talk/iceberg.webp'
+decorations:
+  logo: white
+
 ---
 layout: separator
 title: Do we have the solution?
-image: '@talk/solution.webp'
-background: nf-brunch-pink
+image:
+  url: '@talk/solution.webp'
+options:
+  background: nf-purple
 
 ---
 layout: separator
 title: Yes, use the APIs directly!
-image: '@talk/bee.webp'
-background: nf-orange-split
+image:
+  url: '@talk/bee.webp'
+options:
+  background: nf-green
 
 ---
-title: 'How many will you use?'
+title: How many will you use?
 items:
-  - index: 1
-    title: 'One algorithm for authentication'
-    text: Each API in AWS uses the same [signing algorithm](https://docs.aws.amazon.com/AmazonS3/latest/API/sig-v4-authenticating-requests.html).
-  - index: 2
-    title: 'One HTTP call'
-    text: Uploading a file to S3 only uses one [REST API call](https://docs.aws.amazon.com/AmazonS3/latest/API/API_PutObject.html).
-options:
+  entries:
+    - index: 1
+      title: One algorithm for authentication
+      text: Each API in AWS uses the same [signing algorithm](https://docs.aws.amazon.com/AmazonS3/latest/API/sig-v4-authenticating-requests.html).
+    - index: 2
+      title: One HTTP call
+      text: Uploading a file to S3 only uses one [REST API call](https://docs.aws.amazon.com/AmazonS3/latest/API/API_PutObject.html).
   horizontal: true
 
 ---
@@ -343,14 +391,17 @@ layout: separator
 title: |
   Let's get to
   the action!
-image: '@talk/action.webp'
-background: nf-neon-blue
+image:
+  url: '@talk/action.webp'
+options:
+  background: nf-blue
 
 ---
-title: 'Direct API call: Setup'
-content: No dependencies in `package.json`, Node.js already got our backs ...
+title: 'No SDK: Setup'
+content:
+  - No dependencies in `package.json`, Node.js already got our backs ...
 code:
-  language: 'json'
+  language: json
   content: |
     {
       "name": "direct",
@@ -361,9 +412,9 @@ code:
     }
 
 ---
-title: 'Direct API call: Signing the call'
+title: 'No SDK: Signing the call'
 code:
-  language: 'javascript'
+  language: javascript
   content: |
     import { createHash, createHmac } from 'node:crypto'
     import { readFile } from 'node:fs/promises'
@@ -378,9 +429,8 @@ code:
       return createHmac('sha256', key).update(contents).digest()
     }
 
+    // Implements the Authenticating Requests (AWS Signature Version 4) algorithm.
     function signS3Upload(keyId, accessKey, region, method, rawUrl, headers, payloadHash) {
-      // This implements the Authenticating Requests (AWS Signature Version 4) algorithm.
-
       // CanonicalRequest calculation
       // StringToSign calculation
       // Signature calculation
@@ -388,23 +438,24 @@ code:
   numbers: true
 
 ---
-title: 'Direct API call: signS3Upload (CanonicalRequest)'
+title: 'No SDK: CanonicalRequest'
 code:
-  language: 'javascript'
+  language: javascript
   content: |
     // CanonicalRequest calculation
     const url = new URL(rawUrl)
     const path = encodeURIComponent(url.pathname).replaceAll('%2F', '/')
-    const canonicalRequestComponents = [method, path, ''] // The last one is for the queryString, which is empty
+    // The last one is for the queryString, which is empty
+    const canonicalRequestComponents = [method, path, '']
     const signedHeadersComponents = []
 
     // Next step: StringToSign calculation
   numbers: true
 
 ---
-title: 'Direct API call: signS3Upload (StringToSign)'
+title: 'No SDK: StringToSign'
 code:
-  language: 'javascript'
+  language: javascript
   content: |
     // Previous step: CanonicalRequest calculation
 
@@ -412,14 +463,20 @@ code:
     const timestamp = headers['x-amz-date']
     const date = timestamp.slice(0, 8)
     const scope = `${date}/${region}/s3/aws4_request`
-    const stringToSign = ['AWS4-HMAC-SHA256', timestamp, scope, sha256(canonicalRequest)].join('\n')
+    const stringToSign = [
+      'AWS4-HMAC-SHA256',
+      timestamp,
+      scope,
+      sha256(canonicalRequest)
+    ].join('\n')
 
     // Next step: Signature calculation
   numbers: true
+
 ---
-title: 'Direct API call: signS3Upload (Signature)'
+title: 'No SDK: Signature'
 code:
-  language: 'javascript'
+  language: javascript
   content: |
     // Previous step: StringToSign calculation
 
@@ -427,17 +484,21 @@ code:
     const dateKey = hmacSha256(`AWS4${accessKey}`, date)
     const dateRegionKey = hmacSha256(dateKey, region)
     const dateRegionServiceKey = hmacSha256(dateRegionKey, 's3')
+
     const signingKey = hmacSha256(dateRegionServiceKey, 'aws4_request')
     const signature = hmacSha256(signingKey, stringToSign).toString('hex')
 
-    const credentialHeader = `${keyId}/${date}/${region}/s3/aws4_request`
-    return `AWS4-HMAC-SHA256 Credential=${credentialHeader},SignedHeaders=${signedHeaders},Signature=${signature}`
+    return [
+      `AWS4-HMAC-SHA256 Credential=${keyId}/${date}/${region}/s3/aws4_request`
+      `SignedHeaders=${signedHeaders}`,
+      `Signature=${signature}`
+    ].join(',')
   numbers: true
 
 ---
-title: 'Direct API call: REST API call'
+title: 'No SDK: REST API call'
 code:
-  language: 'javascript'
+  language: javascript
   content: |
     function uploadFile(keyId, accessKey, region, bucket, key, contents) {
       const host = `${bucket}.s3.${region}.amazonaws.com`
@@ -452,16 +513,19 @@ code:
       }
 
       const url = `https://${host}/${key}`
-      headers.authorization = signS3Upload(keyId, accessKey, region, 'PUT', url, headers, payloadHash)
+      headers.authorization = signS3Upload(
+        keyId, accessKey, region,
+        'PUT', url, headers, payloadHash
+      )
 
       return fetch(url, { method: 'PUT', headers, body: contents })
     }
   numbers: true
 
 ---
-title: 'Direct API call: Main loop'
+title: 'No SDK: Main loop'
 code:
-  language: 'javascript'
+  language: javascript
   content: |
     for (let i = 0; i < 100; i++) {
       await uploadFile(
@@ -476,9 +540,9 @@ code:
   numbers: true
 
 ---
-title: 'Direct API call: How does it perform?'
+title: 'No SDK: How does it perform?'
 code:
-  language: 'console'
+  language: console
   content: |
     shogun@panda:~$ time node index.mjs
     ________________________________________________________
@@ -487,40 +551,47 @@ code:
       sys time   42.81 millis  513.00 micros   42.30 millis
 
 ---
-title: "Direct API call: What's happening under the hood?"
-image: '@talk/flame-direct.webp'
-classes:
-  image: talk@max-h-4sp talk@max-w-none
+title: "No SDK: What's happening under the hood?"
+image:
+  url: '@talk/flame-direct.webp'
 
 ---
 layout: separator
 title: Mission completed!
-image: '@talk/completed.webp'
-icon: party-horn
-background: nf-darkest-blue
-classes:
-  icon: talk@w-2sp talk@h-2sp talk@left-1sp talk@-bottom-0_2sp var-[ct-icon-primary-color]-[#133f91] stroke-width-0
+image:
+  url: '@talk/completed.webp'
+options:
+  background: nf-midnight
+decorations:
+  icon: party-horn
+  permalink: black
+  className:
+    icon: w-2sp h-2sp left-1sp -bottom-0_2sp theme@var-[nf-icon-primary-color]-[--nf-color-midnight-80] stroke-width-0
 
 ---
 title: Take home lessons
-content: What can we learn from this long journey?
+content:
+  - What can we learn from this long journey?
 items:
-  - icon: timer
-    title: SDK are not always bad
-    text: Some times making things manually will *cost too much time*.
-  - icon: route
-    title: Be flexible
-    text: You don't have to remove all SDKs. But you can *optimize some calls*.
-  - icon: book
-    title: Read the API docs
-    text: If it's simple to use, maybe you *don't need an SDK*.
-options:
+  entries:
+    - icon: timer
+      title: SDK are not always bad
+      text: Some times making things manually will *cost too much time*.
+    - icon: route
+      title: Be flexible
+      text: You don't have to remove all SDKs. But you can *optimize some calls*.
+    - icon: book
+      title: Read the API docs
+      text: If it's simple to use, maybe you *don't need an SDK*.
   horizontal: true
 
 ---
 layout: quote
-sentence: Don't take candies from strangers
-author: Every mother in the world
+quote:
+  sentence: Don't take candies from strangers
+  author: Every mother in the world
 
 ---
 layout: end
+# ---
+

@@ -1,49 +1,71 @@
-import { useFreya, type SlideProps } from '@perseveranza-pets/freya/client'
-import { SlideWrapper, Text } from '../components/common.js'
+import { useClient, useSlide, type SlideProps } from '@perseveranza-pets/freya/client'
+import { Accent, SlideWrapper, Text } from '../components/common.js'
 import { SvgIcon } from '../components/icons.js'
 import { type Slide } from '../models.js'
 
-export default function QuoteLayout({ slide, index, className }: SlideProps<Slide>): JSX.Element {
-  const { resolveClasses, resolveImage } = useFreya()
+export default function QuoteLayout({ className, style }: SlideProps): JSX.Element {
+  const { resolveClasses } = useClient()
+  const { slide, index } = useSlide<Slide>()
 
   const {
     title,
-    sentence,
-    author,
-    options: { light, icons, quote },
-    classes: { slide: slideClassName }
+    quote: { sentence, author, primaryIcon, primaryIconClassName, secondaryIcon, secondaryIconClassName, light, icons },
+    className: { root: rootClassName, title: titleClassName }
   } = slide
-  const { primaryIcon, secondaryIcon } = quote ?? {}
 
-  const [backgroundColor, sentenceColor, authorColor, foregroundColor] = light
-    ? ['theme@bg-white', 'theme@text-nf-midnight-blue', 'text-black', '']
-    : ['theme@bg-nf-brunch-pink', 'theme@text-white', 'text-nf-midnight-blue', 'text-white']
+  const variant = light ? 'light' : 'dark'
+
+  if (variant === 'dark') {
+    slide.decorations.permalink = 'white'
+  }
+
+  // const backgroundImage = resolveImage(themeId, id, '@theme/bg-purple.webp')
 
   return (
     <SlideWrapper
       slide={slide}
       index={index}
-      className={resolveClasses(backgroundColor, className, slideClassName)}
+      className={resolveClasses('theme@quote', `theme@quote--${variant}`, className, rootClassName)}
       defaultLogoColor={light ? 'black' : 'white'}
+      style={style}
     >
-      <h1 className={resolveClasses(foregroundColor)}>
-        <Text text={title ?? 'One last thing™'} />
-      </h1>
+      {/* <Image src={backgroundImage} className={resolveClasses('theme@quote__background')} /> */}
+      <div className={resolveClasses('theme@quote__contents')}>
+        <h1 className={resolveClasses('theme@quote__title', titleClassName)}>
+          <Text text={title ?? 'One last thing™'} />
+          <Accent />
+        </h1>
 
-      <h1 className={resolveClasses('theme@quote__title', sentenceColor)}>
-        <Text className={resolveClasses('theme@quote__sentence')} text={`&ldquo;${sentence?.trim()}&rdquo;`} />
-        <strong className={resolveClasses('theme@quote__author', authorColor)}>{author}</strong>
-      </h1>
+        <h1 className={resolveClasses('theme@quote__quote')}>
+          <Text
+            className={resolveClasses('theme@quote__quote__sentence', `theme@quote__quote__sentence--${variant}`)}
+            text={`&ldquo;${sentence?.trim()}&rdquo;`}
+          />
+          <strong className={resolveClasses('theme@quote__quote__author', `theme@quote__quote__author--${variant}`)}>
+            {author}
+          </strong>
+        </h1>
+      </div>
 
       {icons !== false && (
         <>
           <SvgIcon
-            name={primaryIcon ?? 'puzzle-piece'}
-            className={resolveClasses('theme@quote__primary-icon', foregroundColor)}
+            name={primaryIcon ?? 'lightbulb-on'}
+            className={resolveClasses(
+              'theme@quote__icon',
+              'theme@quote__icon--primary',
+              `theme@quote__icon--primary--${variant}`,
+              primaryIconClassName
+            )}
           />
           <SvgIcon
-            name={secondaryIcon ?? 'lightbulb-on'}
-            className={resolveClasses('theme@quote__secondary-icon', foregroundColor)}
+            name={secondaryIcon ?? 'puzzle-piece'}
+            className={resolveClasses(
+              'theme@quote__icon',
+              'theme@quote__icon--secondary',
+              `theme@quote__icon--secondary--${variant}`,
+              secondaryIconClassName
+            )}
           />
         </>
       )}

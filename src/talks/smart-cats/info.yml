@@ -3,7 +3,7 @@ config: common.config
 document:
   title: 'From Smart Home to Smart Cats: extending my home automation to my pets'
   titleFormatted: |
-    From Smart Home to Smart Cats: 
+    From Smart Home to Smart Cats:
     extending home automation to pets
   author: common.author
   company: common.company

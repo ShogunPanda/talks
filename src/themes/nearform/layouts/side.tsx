@@ -1,14 +1,15 @@
-import { Code, Image, useFreya, type SlideProps } from '@perseveranza-pets/freya/client'
-import { ComplexContent, SlideWrapper, Text } from '../components/common.js'
+import { Code, Image, useClient, useSlide, type SlideProps } from '@perseveranza-pets/freya/client'
+import { Accent, ComplexContent, SlideWrapper, Text } from '../components/common.js'
 import { Items } from '../components/item.js'
 import { type Slide } from '../models.js'
 
-export default function SideLayout({ slide, index, className }: SlideProps<Slide>): JSX.Element {
+export default function SideLayout({ className, style }: SlideProps): JSX.Element {
   const {
     talk: { id },
     resolveClasses,
     resolveImage
-  } = useFreya()
+  } = useClient()
+  const { slide, index } = useSlide<Slide>()
 
   const {
     title,
@@ -17,28 +18,23 @@ export default function SideLayout({ slide, index, className }: SlideProps<Slide
     code,
     items,
     highlight,
-    options: { horizontal, noGap, skipSpacer, skipDefaultClasses },
-    classes: {
-      slide: slideClassName,
-      image: imageClassName,
-      code: codeClassName,
-      highlight: highlightClassName,
-      items: itemsClassName
-    }
+    className: { root: rootClassName }
   } = slide
 
-  const imageUrl = resolveImage('nearform', id, image)
+  const imageUrl = resolveImage('nearform', id, image?.url)
 
   return (
     <SlideWrapper
       slide={slide}
       index={index}
-      className={resolveClasses('theme@slide--half-wrapper', className, slideClassName)}
+      className={resolveClasses('theme@side', highlight && 'theme@side--with-highlight', className, rootClassName)}
+      style={style}
     >
-      <div className={resolveClasses('theme@side')}>
+      <div className={resolveClasses('theme@side__primary')}>
         {title && (
           <h1>
             <Text text={title} />
+            <Accent />
           </h1>
         )}
 
@@ -50,41 +46,31 @@ export default function SideLayout({ slide, index, className }: SlideProps<Slide
           }
 
           return (
-            <h4 key={key} className={resolveClasses('theme@side__content')}>
+            <h4 key={key} className={resolveClasses('theme@side__subtitle')}>
               <Text text={c} />
             </h4>
           )
         })}
 
-        {items && (
-          <Items
-            items={items}
-            horizontal={horizontal}
-            className={resolveClasses(itemsClassName)}
-            noGap={noGap}
-            skipSpacer={skipSpacer}
-            skipDefaultClasses={skipDefaultClasses}
-          />
-        )}
+        {items && <Items items={items} />}
       </div>
-      {image && (
-        <div className={resolveClasses('theme@side__image-wrapper')}>
-          <Image src={imageUrl} className={resolveClasses('theme@side__image', imageClassName)} />
-        </div>
-      )}
-      {!image && highlight && (
-        <div className={resolveClasses('theme@side__highlight', highlightClassName)}>
-          <h4 className={resolveClasses('m-0')}>
-            <Text text={highlight} />
-          </h4>
-        </div>
-      )}
 
-      {!image && !highlight && code && (
-        <div className={resolveClasses('theme@side__code', highlightClassName)}>
-          <Code {...code} className={resolveClasses(codeClassName)} />
-        </div>
-      )}
+      <div
+        className={resolveClasses(
+          'theme@side__secondary',
+          highlight && 'theme@side__secondary--with-highlight',
+          highlight?.className
+        )}
+      >
+        {image && <Image src={imageUrl} className={resolveClasses('theme@side__image', image.className)} />}
+        {!image && highlight && (
+          <h4 className={resolveClasses('theme@side__highlight')}>
+            <Text text={highlight.text} />
+          </h4>
+        )}
+
+        {!image && !highlight && code && <Code {...code} />}
+      </div>
     </SlideWrapper>
   )
 }

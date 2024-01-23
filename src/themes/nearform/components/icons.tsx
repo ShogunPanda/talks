@@ -1,4 +1,4 @@
-import { generateSVGId, useFreya } from '@perseveranza-pets/freya/client'
+import { generateSVGId, useClient } from '@perseveranza-pets/freya/client'
 import { type VNode } from 'preact'
 import { render } from 'preact-render-to-string'
 
@@ -21,7 +21,7 @@ export function resolveIcon(icon: string): Record<string, string> {
 }
 
 export function SvgIcon({ name: icon, className }: SvgIconProps): VNode {
-  const { assets, resolveClasses, serverData } = useFreya()
+  const { assets, resolveClasses, serverData } = useClient()
 
   const { alias, name } = resolveIcon(icon)
   const key = `icon:${alias ?? name}`

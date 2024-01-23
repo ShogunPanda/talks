@@ -1,8 +1,8 @@
-import { Svg, useFreya, type SlideProps } from '@perseveranza-pets/freya/client'
+import { Svg, useClient, useSlide, type SlideProps } from '@perseveranza-pets/freya/client'
 import { SlideWrapper, Text } from '../components/common.js'
 import { type Slide } from '../models.js'
 
-export default function EndLayout({ slide, index, className }: SlideProps<Slide>): JSX.Element {
+export default function EndLayout({ className, style }: SlideProps): JSX.Element {
   const {
     talk: {
       id,
@@ -10,50 +10,69 @@ export default function EndLayout({ slide, index, className }: SlideProps<Slide>
     },
     resolveClasses,
     resolveImage
-  } = useFreya()
+  } = useClient()
+  const { slide, index } = useSlide<Slide>()
+
+  slide.decorations.logo = false
+  if (typeof slide.decorations.permalink === 'undefined') {
+    slide.decorations.permalink = 'white'
+  }
 
   const {
     title,
-    content,
+    subtitle,
     image,
-    classes: { slide: slideClassName, title: titleClasses, content: contentClasses }
+    className: { root: rootClassName, title: titleClassName, subtitle: subtitleClassName }
   } = slide
 
-  const pandaImageUrl = resolveImage('nearform', id, image ?? '@theme/panda.webp')
+  const pandaImageUrl = resolveImage('nearform', id, image?.url ?? '@theme/panda.webp')
 
   return (
     <SlideWrapper
       slide={slide}
       index={index}
-      className={resolveClasses('theme@end', className, slideClassName)}
-      style={{ backgroundImage: `url(${pandaImageUrl})` }}
-      skipDecorations={true}
+      className={resolveClasses('theme@end', className, rootClassName)}
+      style={{ ...style, backgroundImage: `url(${pandaImageUrl})` }}
     >
-      <div className={resolveClasses('theme@end__spacer')} />
-
-      <h1 className={resolveClasses('theme@end__title', titleClasses)}>
-        {title ?? 'Thank you!'}
-        {content && <Text className={resolveClasses('theme@end__subtitle', contentClasses)} text={content} />}
-      </h1>
+      <main className={resolveClasses('theme@end__contents')}>
+        <h1 className={resolveClasses('theme@end__title', titleClassName)}>
+          {title ?? 'Thank you!'}
+          {subtitle && <Text className={resolveClasses('theme@end__subtitle', subtitleClassName)} text={subtitle} />}
+        </h1>
+      </main>
 
       <footer className={resolveClasses('theme@end__footer')}>
-        <div className={resolveClasses('theme@end__socials')}>
-          <strong className={resolveClasses('theme@end__social', 'grid-area-[a]')}>{author.name}</strong>
-          <a
-            className={resolveClasses('theme@end__social grid-area-[b]')}
-            href={`https://twitter.com/${author.twitter}`}
-          >
-            @{author.twitter}
-          </a>
-          <span className={resolveClasses('theme@end__social', 'grid-area-[c]')}>{author.description}</span>
-          <a className={resolveClasses('theme@end__social', 'grid-area-[d]')} href={`mailto:${author.email}`}>
-            {author.email}
-          </a>
-          <Svg path="@theme/nearform-logo-with-text-right.svg" className={resolveClasses('theme@end__logo')} />
-        </div>
-      </footer>
+        <strong
+          className={resolveClasses('theme@end__social', 'theme@end__social--highlight', 'theme@end__social__author')}
+        >
+          {author.name}
+        </strong>
 
-      <Svg path="@theme/nearform-curve-bottom-right.svg" className={resolveClasses('theme@end__curve')} />
+        <a
+          className={resolveClasses('theme@end__social', 'theme@end__social__twitter')}
+          href={`https://twitter.com/${author.twitter}`}
+        >
+          @{author.twitter}
+        </a>
+
+        <span
+          className={resolveClasses(
+            'theme@end__social',
+            'theme@end__social--highlight',
+            'theme@end__social__description'
+          )}
+        >
+          {author.description}
+        </span>
+
+        <a className={resolveClasses('theme@end__social', 'theme@end__social__email')} href={`mailto:${author.email}`}>
+          {author.email}
+        </a>
+
+        <aside className={resolveClasses('theme@end__logo--wrapper')}>
+          <Svg src="@theme/logo-with-text-white.svg" className={resolveClasses('theme@end__logo')} />
+        </aside>
+      </footer>
     </SlideWrapper>
   )
 }

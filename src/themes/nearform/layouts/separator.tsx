@@ -1,61 +1,81 @@
-import { Image, useFreya, type SlideProps } from '@perseveranza-pets/freya/client'
-import { ComplexContent, SlideWrapper, Text } from '../components/common.js'
+import { useClient, useSlide, type SlideProps } from '@perseveranza-pets/freya/client'
+import { SlideWrapper, Text } from '../components/common.js'
 import { type Slide } from '../models.js'
 
-export default function SeparatorLayout({ slide, index, className }: SlideProps<Slide>): JSX.Element {
+export default function SeparatorLayout({ className, style }: SlideProps): JSX.Element {
   const {
     talk: { id },
     resolveClasses,
     resolveImage
-  } = useFreya()
+  } = useClient()
+  const { slide, index } = useSlide<Slide>()
 
   const {
     title,
     subtitle,
-    content,
     image,
-    classes: { slide: slideClassName, image: imageClassName, title: titleClassName, subtitle: subtitleClassName }
+    options: { background },
+    className: { root: rootClassName, title: titleClassName, subtitle: subtitleClassName }
   } = slide
 
-  const imageUrl = resolveImage('nearform', id, image)
+  let { foreground } = slide.options
+
+  const imageUrl = resolveImage('nearform', id, image?.url)
+
+  if (
+    !foreground &&
+    background?.match(/nf-(midnight|midnight-80|midnight-50|purple|purple-80|blue|blue-80|grey-80)$/)
+  ) {
+    foreground = 'white'
+  }
+
+  // if (!accent && background?.includes('nf-green')) {
+  //   accent = 'white'
+  // }
+
+  if (!slide.decorations.logo && !image && background?.includes('nf-green')) {
+    slide.decorations.logo = 'total-white'
+  }
+
+  if (typeof slide.decorations.permalink === 'undefined' && slide.decorations.logo !== 'black') {
+    slide.decorations.permalink = 'white'
+  }
 
   return (
     <SlideWrapper
       slide={slide}
       index={index}
-      className={resolveClasses('theme@slide--half-wrapper', 'theme@separator', className, slideClassName)}
+      className={resolveClasses(
+        'theme@separator',
+        !image && 'theme@separator--no-image',
+        background && `theme@bg-${background}`,
+        foreground && `theme@text-${foreground}`,
+        className,
+        rootClassName
+      )}
+      style={style}
       defaultLogoColor="white"
     >
-      {title && (
-        <h1 className={resolveClasses('theme@separator__title', titleClassName)}>
-          <Text text={title} />
-        </h1>
-      )}
+      <div className={resolveClasses('theme@separator__contents')}>
+        {title && (
+          <h1 className={resolveClasses('theme@separator__title', titleClassName)}>
+            <Text text={title} />
+            {/* <Accent className={accent && `theme@after:bg-${accent}`} /> */}
+          </h1>
+        )}
+
+        {subtitle && (
+          <h4 className={resolveClasses('theme@separator__subtitle', subtitleClassName)}>
+            <Text text={subtitle} />
+          </h4>
+        )}
+      </div>
 
       {image && (
-        <div className={resolveClasses('theme@separator__wrapper')}>
-          <Image src={imageUrl} className={resolveClasses('theme@separator__image', imageClassName)} />
-
-          {content?.filter(Boolean).map((c: string | object, contentIndex: number) => {
-            const key = `content:${index}:${contentIndex}`
-
-            if (typeof c === 'object') {
-              return <ComplexContent key={key} raw={c} slide={slide} />
-            }
-
-            return (
-              <h4 key={key} className={resolveClasses('theme@separator__content')}>
-                <Text text={c} />
-              </h4>
-            )
-          })}
-
-          {subtitle && (
-            <h3 className={resolveClasses('theme@separator__subtitle', subtitleClassName)}>
-              <Text text={subtitle} />
-            </h3>
-          )}
-        </div>
+        <div
+          className={resolveClasses('theme@separator__image', image.className)}
+          style={{ backgroundImage: `url(${imageUrl})` }}
+        />
       )}
     </SlideWrapper>
   )

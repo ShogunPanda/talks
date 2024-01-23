@@ -2,5 +2,8 @@
 config: common.config
 document:
   title: Don’t break GraphQL, extend it!
+  titleFormatted: |
+    Don’t break GraphQL,
+    extend it!
   author: common.author
   company: common.company

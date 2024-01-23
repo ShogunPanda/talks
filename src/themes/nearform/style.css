@@ -1,24 +1,48 @@
-@import 'virtual:theme-fonts';
 @import '@freya/normalize.css';
 @import '@freya/reset.css';
 @import '@freya/default.css';
+@import '@theme/fonts';
 
 html {
-  @apply font-extralight;
-  @apply font-lexend;
-  --ct-color-nf-dark-grey: #272d3a;
-  --ct-color-nf-light-grey: #f2f2f0;
-  --ct-color-nf-darkest-blue: #130048;
-  --ct-color-nf-brunch-pink: #fb7a9c;
-  --ct-color-nf-midnight-blue: #194caa;
-  --ct-color-nf-neon-blue: #2165e3;
-  --ct-color-nf-orange-split: #ecb22e;
+  @apply font-inter;
+  @apply font-light;
+
+  --nf-padding: 80px; /* 0.4sp */
+
+  --nf-color-midnight: #000e38;
+  --nf-color-midnight-80: #0c3d60;
+  --nf-color-midnight-50: #526288;
+  --nf-color-midnight-30: #97a1b8;
+  --nf-color-midnight-10: #f4f8fa;
+  --nf-color-green: #00e5a4;
+  --nf-color-green-80: #33eaae;
+  --nf-color-green-50: #78eec5;
+  --nf-color-green-30: #b2f7e1;
+  --nf-color-green-10: #e5fcf5;
+  --nf-color-purple: #8950ff;
+  --nf-color-purple-80: #a173ff;
+  --nf-color-purple-50: #c4a7ff;
+  --nf-color-purple-30: #dccaff;
+  --nf-color-purple-10: #f3edff;
+  --nf-color-blue: #166bff;
+  --nf-color-blue-80: #4589ff;
+  --nf-color-blue-50: #8ab5ff;
+  --nf-color-blue-30: #b9d3ff;
+  --nf-color-blue-10: #e8f0ff;
+  /* Note: there are no grey and grey-50 in the official palette */
+  --nf-color-grey-80: #454551;
+  --nf-color-grey-30: #d9d9d9;
+  --nf-color-grey-10: #eaebed;
+}
+
+body {
+  @apply font-size-16pt;
 }
 
 h1,
 h2,
 h3 {
-  @apply font-poppins;
+  @apply font-inter;
   @apply font-bold;
 }
 
@@ -26,8 +50,8 @@ p,
 h4,
 h5,
 h6 {
-  @apply font-lexend;
-  @apply font-extralight;
+  @apply font-inter;
+  @apply font-light;
 }
 
 h1,
@@ -45,7 +69,8 @@ code {
   @apply font-bold;
 }
 
-code {
+code,
+pre {
   @apply font-fira-code;
   @apply font-100;
 }
@@ -53,26 +78,23 @@ code {
 em {
   @apply font-bold;
   @apply not-italic;
-  @apply text-nf-brunch-pink;
+  @apply text-nf-blue;
 }
 
 h1 {
+  @apply font-extrabold;
   @apply mb-0_4sp;
   @apply font-size-25pt;
-  @apply after:content-empty;
-  @apply after:relative;
-  @apply after:block;
-  @apply after:-bottom-0_1sp;
-  @apply after:left-0;
-  @apply after:w-1sp;
-  @apply after:h-0_05sp;
-  @apply after:bg-nf-brunch-pink;
 }
 
 h4 {
-  @apply font-size-18pt;
+  @apply font-size-15pt;
   @apply leading-normal;
   @apply mb-0_4sp;
+}
+
+a {
+  @apply line-height-1;
 }
 
 a,
@@ -80,9 +102,7 @@ a:hover,
 a:active,
 a:visited,
 a:focus {
-  @apply text-nf-neon-blue;
-  @apply line-height-1;
-  @apply line-height-1;
+  @apply text-nf-blue;
 }
 
 a:not([class]) {

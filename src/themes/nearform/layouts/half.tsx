@@ -1,33 +1,42 @@
-import { Image, useFreya, type SlideProps } from '@perseveranza-pets/freya/client'
-import { ComplexContent, SlideWrapper, Text } from '../components/common.js'
+import { useClient, useSlide, type SlideProps } from '@perseveranza-pets/freya/client'
+import { Accent, ComplexContent, SlideWrapper, Text } from '../components/common.js'
 import { Items } from '../components/item.js'
 import { type Slide } from '../models.js'
 
-export default function HalfLayout({ slide, index, className }: SlideProps<Slide>): JSX.Element {
-  const { talk, resolveClasses, resolveImage } = useFreya()
+export default function HalfLayout({ className, style }: SlideProps): JSX.Element {
+  const { talk, resolveClasses, resolveImage } = useClient()
+  const { slide, index } = useSlide<Slide>()
 
   const {
     title,
     content,
     image,
     items,
-    options: { horizontal, noGap, skipSpacer, skipDefaultClasses },
-    classes: { slide: slideClassName, image: imageClassName, items: itemsClassName }
+    className: { root: rootClassName, title: titleClassName, subtitle: subtitleClassName }
   } = slide
 
-  const imageUrl = resolveImage('nearform', talk.id, image)
+  const imageUrl = resolveImage('nearform', talk.id, image?.url)
+
+  if (
+    typeof slide.decorations.permalink === 'undefined' &&
+    (slide.decorations.logo === 'white' || slide.decorations.logo === 'total-white')
+  ) {
+    slide.decorations.permalink = 'white'
+  }
 
   return (
     <SlideWrapper
       slide={slide}
       index={index}
-      className={resolveClasses('theme@slide--half-wrapper', 'theme@half', className, slideClassName)}
-      defaultLogoColor="white"
+      className={resolveClasses('theme@half', className, rootClassName)}
+      style={style}
+      defaultLogoColor="black"
     >
       <div className={resolveClasses('theme@half__contents')}>
         {title && (
-          <h1>
+          <h1 className={resolveClasses(titleClassName)}>
             <Text text={title} />
+            <Accent />
           </h1>
         )}
 
@@ -39,29 +48,16 @@ export default function HalfLayout({ slide, index, className }: SlideProps<Slide
           }
 
           return (
-            <h4 key={key} className={resolveClasses('theme@half__subtitle')}>
+            <h4 key={key} className={resolveClasses('theme@half__subtitle', subtitleClassName)}>
               <Text text={c} />
             </h4>
           )
         })}
 
-        {items && (
-          <Items
-            items={items}
-            horizontal={horizontal}
-            className={resolveClasses(itemsClassName)}
-            noGap={noGap}
-            skipSpacer={skipSpacer}
-            skipDefaultClasses={skipDefaultClasses}
-          />
-        )}
+        {items && <Items items={items} />}
       </div>
 
-      {image && (
-        <div className={resolveClasses('theme@half__image-wrapper')}>
-          <Image src={imageUrl} className={resolveClasses('theme@half__image', imageClassName)} />
-        </div>
-      )}
+      {image && <div className={resolveClasses('theme@half__image')} style={{ backgroundImage: `url(${imageUrl})` }} />}
     </SlideWrapper>
   )
 }

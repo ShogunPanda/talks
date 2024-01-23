@@ -1,14 +1,15 @@
-import { Code, Image, useFreya, type SlideProps } from '@perseveranza-pets/freya/client'
-import { ComplexContent, SlideWrapper, Text } from '../components/common.js'
+import { Code, Image, useClient, useSlide, type SlideProps } from '@perseveranza-pets/freya/client'
+import { Accent, ComplexContent, SlideWrapper, Text } from '../components/common.js'
 import { Grids, Items } from '../components/item.js'
 import { type Slide } from '../models.js'
 
-export default function DefaultLayout({ slide, index, className }: SlideProps<Slide>): JSX.Element {
+export default function DefaultLayout({ className, style }: SlideProps): JSX.Element {
   const {
     talk: { id },
     resolveClasses,
     resolveImage
-  } = useFreya()
+  } = useClient()
+  const { slide, index } = useSlide<Slide>()
 
   const {
     title,
@@ -17,24 +18,17 @@ export default function DefaultLayout({ slide, index, className }: SlideProps<Sl
     image,
     items,
     code,
-    options: { horizontal, noGap, skipSpacer, skipDefaultClasses },
-    classes: {
-      slide: slideClassName,
-      image: imageClassName,
-      items: itemsClassName,
-      highlight: highlightClassName,
-      code: codeClassName,
-      contents: contentsClassName
-    }
+    className: { root: rootClassName, title: titleClassName, subtitle: subtitleClassName }
   } = slide
 
-  const imageUrl = resolveImage('nearform', id, image)
+  const imageUrl = resolveImage('nearform', id, image?.url)
 
   return (
-    <SlideWrapper slide={slide} index={index} className={resolveClasses(className, slideClassName)}>
+    <SlideWrapper slide={slide} index={index} className={resolveClasses(className, rootClassName)} style={style}>
       {title && (
-        <h1>
+        <h1 className={resolveClasses(titleClassName)}>
           <Text text={title} />
+          <Accent />
         </h1>
       )}
 
@@ -46,7 +40,7 @@ export default function DefaultLayout({ slide, index, className }: SlideProps<Sl
         }
 
         return (
-          <h4 key={key} className={resolveClasses('theme@default__subtitle', contentsClassName)}>
+          <h4 key={key} className={resolveClasses('theme@default__subtitle', subtitleClassName)}>
             <Text text={c} />
           </h4>
         )
@@ -59,27 +53,18 @@ export default function DefaultLayout({ slide, index, className }: SlideProps<Sl
             className={resolveClasses(
               'theme@default__image',
               `theme@default__image--${content?.length ? 'with' : 'no'}-content`,
-              imageClassName
+              image.className
             )}
           />
         </div>
       )}
 
-      {!image && items && (
-        <Items
-          items={items}
-          horizontal={horizontal}
-          className={resolveClasses(itemsClassName)}
-          noGap={noGap}
-          skipSpacer={skipSpacer}
-          skipDefaultClasses={skipDefaultClasses}
-        />
-      )}
+      {!image && items && <Items items={items} />}
       {!image && !items && grids && <Grids grids={grids} />}
 
       {!image && !items && !grids && code && (
-        <div className={resolveClasses('theme@default__code', highlightClassName)}>
-          <Code {...code} className={resolveClasses(codeClassName)} />
+        <div className={resolveClasses('theme@default__code')}>
+          <Code {...code} />
         </div>
       )}
     </SlideWrapper>

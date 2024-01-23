@@ -3,7 +3,7 @@ config: common.config
 document:
   title: 'The bees are important: use SDKs wisely'
   titleFormatted: |
-    The bees are important: 
+    The bees are important:
     use SDKs wisely
   author: common.author
   company: common.company

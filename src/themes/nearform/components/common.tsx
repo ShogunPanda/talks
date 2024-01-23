@@ -1,4 +1,4 @@
-import { Progress, QRCode, Svg, useFreya } from '@perseveranza-pets/freya/client'
+import { Progress, QRCode, Svg, useClient, useSlide, type CSSClassToken } from '@perseveranza-pets/freya/client'
 import { type ComponentChildren, type JSX, type VNode } from 'preact'
 import { type Slide } from '../models.js'
 import { SvgIcon } from './icons.js'
@@ -6,7 +6,6 @@ import { SvgIcon } from './icons.js'
 interface SlideWrapperProps {
   slide: Slide
   index: number
-  skipDecorations?: boolean
   defaultLogoColor?: 'black' | 'white'
   className?: string
   style?: JSX.CSSProperties
@@ -23,14 +22,30 @@ interface ComplexContentProps {
   raw: Record<string, any>
 }
 
-type DecorationProps = Pick<SlideWrapperProps, 'slide' | 'index' | 'defaultLogoColor'>
+interface AccentProps {
+  className?: string
+}
+
+type DecorationProps = Pick<SlideWrapperProps, 'defaultLogoColor'>
+
+export function wrapTalkClasses(...klasses: (CSSClassToken | CSSClassToken[])[]): string {
+  return klasses
+    .flat(Number.MAX_SAFE_INTEGER)
+    .filter(k => k)
+    .map(k => (k as string).split(' '))
+    .flat(Number.MAX_SAFE_INTEGER)
+    .map(k => (k as string).trim())
+    .filter(k => k)
+    .map(klass => (klass.includes('@') ? klass : `talk@${klass}`))
+    .join(' ')
+}
 
 export function Text({ text, className }: TextProps): VNode {
-  const { resolveClasses, parseContent } = useFreya()
+  const { resolveClasses, parseContent } = useClient()
 
   text = parseContent(text).replaceAll(
-    / class="([^"]+)"/g,
-    (_: string, classes: string) => ` class="${resolveClasses(classes)}"`
+    / class(?:(?:Name)?)="([^"]+)"/g,
+    (_: string, className: string) => ` class="${resolveClasses(wrapTalkClasses(className))}"`
   )
 
   return (
@@ -39,54 +54,65 @@ export function Text({ text, className }: TextProps): VNode {
 }
 
 export function ComplexContent({ raw, slide }: ComplexContentProps): JSX.Element {
-  const { resolveClasses } = useFreya()
+  const { resolveClasses } = useClient()
 
   if (raw.qr) {
-    return <QRCode data={raw.qr} classes={{ code: resolveClasses(slide.classes.qr) }} />
+    return <QRCode data={raw.qr} className={{ code: resolveClasses(slide.className.qr) }} />
   }
 
   return <></>
 }
 
-export function Decorations({ slide, index, defaultLogoColor }: DecorationProps): JSX.Element {
+export function Accent({ className }: AccentProps): JSX.Element {
+  const { resolveClasses } = useClient()
+
+  return <span className={resolveClasses('theme@accent', className)} />
+}
+
+export function Decorations({ defaultLogoColor }: DecorationProps): JSX.Element {
   const {
     isProduction,
     talk: { id, slidesPadding },
     theme: { urls },
     resolveClasses
-  } = useFreya()
+  } = useClient()
+  const { slide, index } = useSlide<Slide>()
 
   const {
-    sequence,
+    number,
     icon,
     logo,
-    classes: { icon: iconClasses, sequence: sequenceClasses, qr: qrClassName }
-  } = slide
+    permalink,
+    className: { icon: iconClassName, number: numberClassName, permalink: permalinkClassName }
+  } = slide.decorations ?? {}
 
   return (
     <>
-      {sequence && (
-        <h2 className={resolveClasses('theme@sequence', sequenceClasses)}>
-          <Text text={sequence} />
+      {number && (
+        <h2 className={resolveClasses('theme@number', numberClassName)}>
+          <Text text={number} />
         </h2>
       )}
-      {!sequence && icon && <SvgIcon name={icon} className={resolveClasses('theme@callout__icon', iconClasses)} />}
-      <QRCode
-        data={`${urls[isProduction ? 'production' : 'development']}/${id}/${index
-          .toString()
-          .padStart(slidesPadding, '0')}.pdf`}
-        // image={resolveImage(themeId, id, '@theme/icons/world.svg')}
-        // imageRatio={1}
-        classes={{
-          code: resolveClasses('theme@page-qr', `theme@page-qr--${qrClassName ?? defaultLogoColor}`),
-          qr: resolveClasses('theme@page-qr__qr'),
-          image: resolveClasses('theme@page-qr__image')
-        }}
-      />
-      <Svg
-        path="@theme/nearform-logo.svg"
-        className={resolveClasses('theme@logo', `theme@logo--${logo ?? defaultLogoColor}`)}
-      />
+      {!number && icon && <SvgIcon name={icon} className={resolveClasses('theme@slide-icon', iconClassName)} />}
+      {permalink !== false && (
+        <QRCode
+          data={`${urls[isProduction ? 'production' : 'development']}/${id}/${index
+            .toString()
+            .padStart(slidesPadding, '0')}.pdf`}
+          className={{
+            root: resolveClasses(
+              'theme@permalink',
+              typeof permalink === 'string' && `theme@permalink--${permalink}`,
+              permalinkClassName
+            ),
+            code: resolveClasses('theme@permalink__code'),
+            image: resolveClasses('theme@permalink__image')
+          }}
+        />
+      )}
+      {logo !== false && (
+        <Svg src={`@theme/logo-${logo ?? defaultLogoColor}.svg`} className={resolveClasses('theme@logo')} />
+      )}
     </>
   )
 }
@@ -96,14 +122,11 @@ export function SlideWrapper({
   index,
   style,
   className,
-  skipDecorations,
   defaultLogoColor,
   children
 }: SlideWrapperProps): JSX.Element {
-  const { resolveClasses } = useFreya()
-
-  const optionSkipDecorations = slide.options.skipDecorations
-  const { foreground, background } = slide
+  const { resolveClasses } = useClient()
+  const { foreground, background } = slide.options
 
   // These two should be moved to the SlideWrapper component
   const foregroundClass = foreground ? `theme@text-${foreground}` : ''
@@ -113,14 +136,14 @@ export function SlideWrapper({
     defaultLogoColor = 'black'
   }
 
+  // If you want to show QR again, remove this
+  slide.decorations.permalink = false
+
   return (
     <article className={resolveClasses('freya@slide', foregroundClass, backgroundClass, className)} style={style}>
       {children}
       <Progress current={index} />
-
-      {!skipDecorations && !optionSkipDecorations && (
-        <Decorations slide={slide} index={index} defaultLogoColor={defaultLogoColor} />
-      )}
+      <Decorations defaultLogoColor={defaultLogoColor} />
     </article>
   )
 }

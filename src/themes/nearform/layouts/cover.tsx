@@ -1,80 +1,85 @@
-import { QRCode, Svg, useFreya, type SlideProps } from '@perseveranza-pets/freya/client'
+import { Image, QRCode, Svg, useClient, useSlide, type SlideProps } from '@perseveranza-pets/freya/client'
 import { SlideWrapper, Text } from '../components/common.js'
+import { SvgIcon } from '../components/icons.js'
 import { type Slide } from '../models.js'
 
-export default function CoverLayout({ slide, index, className }: SlideProps<Slide>): JSX.Element {
+export default function CoverLayout({ className, style }: SlideProps): JSX.Element {
   const {
     isProduction,
     talk: {
       id,
       document: { author, title, titleFormatted }
     },
-    theme: { id: themeId, urls },
+    theme: { urls },
     resolveClasses,
     resolveImage
-  } = useFreya()
+  } = useClient()
+  const { slide, index } = useSlide<Slide>()
 
   const {
-    classes: { slide: slideClassName, qr: qrClassName }
+    className: { root: rootClassName, qr: qrClassName }
   } = slide
+
+  slide.decorations.logo = 'total-white'
+  slide.decorations.permalink = false
+
+  const backgroundImage = resolveImage('nearform', id, '@theme/bg-green.webp')
 
   return (
     <SlideWrapper
       slide={slide}
       index={index}
-      className={resolveClasses('theme@cover', className, slideClassName)}
-      skipDecorations={true}
+      className={resolveClasses('theme@cover', className, rootClassName)}
+      style={style}
     >
-      <Svg path="@theme/cover-curve-top-left.svg" className={resolveClasses('theme@cover__curve-top-left')} />
-      <Svg path="@theme/cover-curve-bottom-right.svg" className={resolveClasses('theme@cover__curve-bottom-right')} />
-
+      <Image src={backgroundImage} className={resolveClasses('theme@cover__background')} />
       <div className={resolveClasses('theme@cover__contents')}>
-        <h1 className={resolveClasses('theme@cover__title')}>
-          <Text text={titleFormatted || title} />
-        </h1>
+        <Svg src="@theme/logo-with-text-total-white.svg" className={resolveClasses('theme@cover__logo')} />
 
-        <h2 className={resolveClasses('theme@cover__author')}>
-          <strong className={resolveClasses('theme@cover__author__name')}>
-            <Text text={author.name} />
-          </strong>
+        <main className={resolveClasses('theme@cover__header')}>
+          <h1 className={resolveClasses('theme@cover__header__title')}>
+            <Text text={titleFormatted ?? title} />
+          </h1>
 
-          <Text text={author.descriptionShort || author.description} />
-        </h2>
+          <h2 className={resolveClasses('theme@cover__header__author')}>
+            <strong className={resolveClasses('theme@cover__header__author__name')}>
+              <Text text={author.name} />
+            </strong>
 
-        <div className={resolveClasses('theme@cover__separator')} />
+            <span className={resolveClasses('theme@cover__header__author__description')}>
+              <Text text={author.descriptionShort ?? author.description} />
+            </span>
+          </h2>
+        </main>
 
         <h3 className={resolveClasses('theme@cover__copyright')}>
           &#169; Copyright {new Date().getFullYear()} NearForm Ltd. All Rights Reserved.
         </h3>
 
-        <Svg path="@theme/nearform-logo-with-text-right.svg" className={resolveClasses('theme@cover__logo')} />
-
-        <div className={resolveClasses('theme@cover__qrs')}>
+        <aside className={resolveClasses('theme@cover__qrs')}>
           <QRCode
             data={`${urls[isProduction ? 'production' : 'development']}/${id}`}
-            image={resolveImage(themeId, id, '@theme/icons/world.svg')}
+            image={<SvgIcon name="desktop" className={resolveClasses('theme@cover__qrs__qr__image')} />}
             imageRatio={1}
             label="View online"
-            classes={{
-              code: resolveClasses('theme@cover__qr__code', qrClassName),
-              qr: resolveClasses('theme@cover__qr__qr'),
-              label: resolveClasses('theme@cover__qr__label'),
-              image: resolveClasses('theme@cover__qr__image')
+            className={{
+              root: resolveClasses('theme@cover__qrs__qr', qrClassName),
+              code: resolveClasses('theme@cover__qrs__qr__code'),
+              label: resolveClasses('theme@cover__qrs__qr__label')
             }}
           />
           <QRCode
             data={`${urls[isProduction ? 'production' : 'development']}/pdfs/${id}.pdf`}
-            image={resolveImage(themeId, id, '@theme/icons/pdf.svg')}
+            image={<SvgIcon name="file-pdf" className={resolveClasses('theme@cover__qrs__qr__image')} />}
             imageRatio={1}
             label="Download PDF"
-            classes={{
-              code: resolveClasses('theme@cover__qr__code', qrClassName),
-              qr: resolveClasses('theme@cover__qr__qr'),
-              label: resolveClasses('theme@cover__qr__label'),
-              image: resolveClasses('theme@cover__qr__image')
+            className={{
+              root: resolveClasses('theme@cover__qrs__qr', qrClassName),
+              code: resolveClasses('theme@cover__qrs__qr__code'),
+              label: resolveClasses('theme@cover__qrs__qr__label')
             }}
           />
-        </div>
+        </aside>
       </div>
     </SlideWrapper>
   )
