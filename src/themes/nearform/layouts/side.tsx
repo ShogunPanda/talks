@@ -1,4 +1,4 @@
-import { Code, Image, useClient, useSlide, type SlideProps } from '@perseveranza-pets/freya/client'
+import { Code, Image, cleanCssClasses, useClient, useSlide, type SlideProps } from '@perseveranza-pets/freya/client'
 import { Accent, ComplexContent, SlideWrapper, Text } from '../components/common.js'
 import { Items } from '../components/item.js'
 import { type Slide } from '../models.js'
@@ -27,7 +27,7 @@ export default function SideLayout({ className, style }: SlideProps): JSX.Elemen
     <SlideWrapper
       slide={slide}
       index={index}
-      className={resolveClasses('theme@side', highlight && 'theme@side--with-highlight', className, rootClassName)}
+      className={cleanCssClasses('theme@side', highlight && 'theme@side--with-highlight', className, rootClassName)}
       style={style}
     >
       <div className={resolveClasses('theme@side__primary')}>
@@ -62,7 +62,7 @@ export default function SideLayout({ className, style }: SlideProps): JSX.Elemen
           highlight?.className
         )}
       >
-        {image && <Image src={imageUrl} className={resolveClasses('theme@side__image', image.className)} />}
+        {image && <Image src={imageUrl} className={cleanCssClasses('theme@side__image', image.className)} />}
         {!image && highlight && (
           <h4 className={resolveClasses('theme@side__highlight')}>
             <Text text={highlight.text} />

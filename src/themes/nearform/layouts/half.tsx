@@ -1,4 +1,4 @@
-import { useClient, useSlide, type SlideProps } from '@perseveranza-pets/freya/client'
+import { cleanCssClasses, useClient, useSlide, type SlideProps } from '@perseveranza-pets/freya/client'
 import { Accent, ComplexContent, SlideWrapper, Text } from '../components/common.js'
 import { Items } from '../components/item.js'
 import { type Slide } from '../models.js'
@@ -28,7 +28,7 @@ export default function HalfLayout({ className, style }: SlideProps): JSX.Elemen
     <SlideWrapper
       slide={slide}
       index={index}
-      className={resolveClasses('theme@half', className, rootClassName)}
+      className={cleanCssClasses('theme@half', className, rootClassName)}
       style={style}
       defaultLogoColor="black"
     >

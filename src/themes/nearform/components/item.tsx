@@ -1,4 +1,4 @@
-import { Code, Image, QRCode, useClient, useSlide } from '@perseveranza-pets/freya/client'
+import { cleanCssClasses, Code, Image, QRCode, useClient, useSlide } from '@perseveranza-pets/freya/client'
 import { Fragment, type ComponentChildren } from 'preact'
 import { useCallback, useEffect, useMemo, useState } from 'preact/hooks'
 import { type Grid, type Item as ItemDefinition, type Items as ItemsDefinition } from '../models.js'
@@ -54,13 +54,17 @@ export function Item(props: ItemProps): JSX.Element {
       {imageUrl && (
         <Image
           src={imageUrl}
-          className={resolveClasses('theme@item__image', horizontal && 'theme@item__image--horizontal', imageClassName)}
+          className={cleanCssClasses(
+            'theme@item__image',
+            horizontal && 'theme@item__image--horizontal',
+            imageClassName
+          )}
         />
       )}
       {!imageUrl && icon && (
         <SvgIcon
           name={icon}
-          className={resolveClasses('theme@item__icon', horizontal && 'theme@item__icon--horizontal', iconClassName)}
+          className={cleanCssClasses('theme@item__icon', horizontal && 'theme@item__icon--horizontal', iconClassName)}
         />
       )}
       {!imageUrl && !icon && qr && (
@@ -68,7 +72,7 @@ export function Item(props: ItemProps): JSX.Element {
           label=""
           data={qr}
           className={{
-            code: resolveClasses('theme@item__qr', horizontal && 'theme@item__qr--horizontal', qrClassName)
+            code: cleanCssClasses('theme@item__qr', horizontal && 'theme@item__qr--horizontal', qrClassName)
           }}
         />
       )}
@@ -208,7 +212,7 @@ export function Grids({ grids }: GridsProps): JSX.Element {
                 spacer: false,
                 defaultClasses: false,
                 sequence: grid.sequence,
-                className: resolveClasses(
+                className: cleanCssClasses(
                   'theme@items--grid',
                   'theme@items--grid--default-template',
                   'theme@items--grid--default-gap',

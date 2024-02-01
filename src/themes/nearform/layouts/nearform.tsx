@@ -1,4 +1,4 @@
-import { Svg, useClient, useSlide, type SlideProps } from '@perseveranza-pets/freya/client'
+import { Svg, cleanCssClasses, useClient, useSlide, type SlideProps } from '@perseveranza-pets/freya/client'
 import { Accent, SlideWrapper } from '../components/common.js'
 import { type Slide } from '../models.js'
 
@@ -13,7 +13,7 @@ export default function NearFormLayout({ className, style }: SlideProps): JSX.El
     <SlideWrapper
       slide={slide}
       index={index}
-      className={resolveClasses('theme@nearform', className, slide.className?.root)}
+      className={cleanCssClasses('theme@nearform', className, slide.className?.root)}
       style={style}
     >
       <main className={resolveClasses('theme@nearform__contents')}>
@@ -48,7 +48,7 @@ export default function NearFormLayout({ className, style }: SlideProps): JSX.El
           <h3 className={resolveClasses('theme@nearform__cta__hiring')}>We are hiring!</h3>
         </aside>
 
-        <Svg src="@theme/world.svg" className={resolveClasses('theme@nearform__globe')} />
+        <Svg src="@theme/world.svg" className={cleanCssClasses('theme@nearform__globe')} />
       </main>
 
       <footer className={resolveClasses('theme@nearform__categories')}>

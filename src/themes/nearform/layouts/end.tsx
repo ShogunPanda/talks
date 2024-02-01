@@ -1,4 +1,4 @@
-import { Svg, useClient, useSlide, type SlideProps } from '@perseveranza-pets/freya/client'
+import { Svg, cleanCssClasses, useClient, useSlide, type SlideProps } from '@perseveranza-pets/freya/client'
 import { SlideWrapper, Text } from '../components/common.js'
 import { type Slide } from '../models.js'
 
@@ -31,13 +31,13 @@ export default function EndLayout({ className, style }: SlideProps): JSX.Element
     <SlideWrapper
       slide={slide}
       index={index}
-      className={resolveClasses('theme@end', className, rootClassName)}
+      className={cleanCssClasses('theme@end', className, rootClassName)}
       style={{ ...style, backgroundImage: `url(${pandaImageUrl})` }}
     >
       <main className={resolveClasses('theme@end__contents')}>
         <h1 className={resolveClasses('theme@end__title', titleClassName)}>
           {title ?? 'Thank you!'}
-          {subtitle && <Text className={resolveClasses('theme@end__subtitle', subtitleClassName)} text={subtitle} />}
+          {subtitle && <Text className={cleanCssClasses('theme@end__subtitle', subtitleClassName)} text={subtitle} />}
         </h1>
       </main>
 
@@ -70,7 +70,7 @@ export default function EndLayout({ className, style }: SlideProps): JSX.Element
         </a>
 
         <aside className={resolveClasses('theme@end__logo--wrapper')}>
-          <Svg src="@theme/logo-with-text-white.svg" className={resolveClasses('theme@end__logo')} />
+          <Svg src="@theme/logo-with-text-white.svg" className={cleanCssClasses('theme@end__logo')} />
         </aside>
       </footer>
     </SlideWrapper>

@@ -1,4 +1,12 @@
-import { Progress, QRCode, Svg, useClient, useSlide, type CSSClassToken } from '@perseveranza-pets/freya/client'
+import {
+  Progress,
+  QRCode,
+  Svg,
+  cleanCssClasses,
+  useClient,
+  useSlide,
+  type CSSClassToken
+} from '@perseveranza-pets/freya/client'
 import { type ComponentChildren, type JSX, type VNode } from 'preact'
 import { type Slide } from '../models.js'
 import { SvgIcon } from './icons.js'
@@ -54,10 +62,8 @@ export function Text({ text, className }: TextProps): VNode {
 }
 
 export function ComplexContent({ raw, slide }: ComplexContentProps): JSX.Element {
-  const { resolveClasses } = useClient()
-
   if (raw.qr) {
-    return <QRCode data={raw.qr} className={{ code: resolveClasses(slide.className.qr) }} />
+    return <QRCode data={raw.qr} className={{ code: cleanCssClasses(slide.className.qr) }} />
   }
 
   return <></>
@@ -93,25 +99,25 @@ export function Decorations({ defaultLogoColor }: DecorationProps): JSX.Element 
           <Text text={number} />
         </h2>
       )}
-      {!number && icon && <SvgIcon name={icon} className={resolveClasses('theme@slide-icon', iconClassName)} />}
+      {!number && icon && <SvgIcon name={icon} className={cleanCssClasses('theme@slide-icon', iconClassName)} />}
       {permalink !== false && (
         <QRCode
           data={`${urls[isProduction ? 'production' : 'development']}/${id}/${index
             .toString()
             .padStart(slidesPadding, '0')}.pdf`}
           className={{
-            root: resolveClasses(
+            root: cleanCssClasses(
               'theme@permalink',
               typeof permalink === 'string' && `theme@permalink--${permalink}`,
               permalinkClassName
             ),
-            code: resolveClasses('theme@permalink__code'),
-            image: resolveClasses('theme@permalink__image')
+            code: cleanCssClasses('theme@permalink__code'),
+            image: cleanCssClasses('theme@permalink__image')
           }}
         />
       )}
       {logo !== false && (
-        <Svg src={`@theme/logo-${logo ?? defaultLogoColor}.svg`} className={resolveClasses('theme@logo')} />
+        <Svg src={`@theme/logo-${logo ?? defaultLogoColor}.svg`} className={cleanCssClasses('theme@logo')} />
       )}
     </>
   )

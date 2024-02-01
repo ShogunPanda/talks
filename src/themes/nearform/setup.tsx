@@ -35,7 +35,6 @@ const baseIcons = [
   'facebook@free/brands:facebook'
 ]
 
-// TODO@PI: Can you simplify classes with uno.css - Only in production
 export async function setupServer(context: BuildContext, theme: Theme, talk: Talk): Promise<object> {
   const loadedIcons: Record<string, Icon> = {}
   const iconsToLoad: string[] = [...baseIcons]

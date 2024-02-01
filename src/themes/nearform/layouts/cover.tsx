@@ -1,4 +1,12 @@
-import { Image, QRCode, Svg, useClient, useSlide, type SlideProps } from '@perseveranza-pets/freya/client'
+import {
+  Image,
+  QRCode,
+  Svg,
+  cleanCssClasses,
+  useClient,
+  useSlide,
+  type SlideProps
+} from '@perseveranza-pets/freya/client'
 import { SlideWrapper, Text } from '../components/common.js'
 import { SvgIcon } from '../components/icons.js'
 import { type Slide } from '../models.js'
@@ -29,12 +37,12 @@ export default function CoverLayout({ className, style }: SlideProps): JSX.Eleme
     <SlideWrapper
       slide={slide}
       index={index}
-      className={resolveClasses('theme@cover', className, rootClassName)}
+      className={cleanCssClasses('theme@cover', className, rootClassName)}
       style={style}
     >
-      <Image src={backgroundImage} className={resolveClasses('theme@cover__background')} />
+      <Image src={backgroundImage} className={cleanCssClasses('theme@cover__background')} />
       <div className={resolveClasses('theme@cover__contents')}>
-        <Svg src="@theme/logo-with-text-total-white.svg" className={resolveClasses('theme@cover__logo')} />
+        <Svg src="@theme/logo-with-text-total-white.svg" className={cleanCssClasses('theme@cover__logo')} />
 
         <main className={resolveClasses('theme@cover__header')}>
           <h1 className={resolveClasses('theme@cover__header__title')}>
@@ -59,24 +67,24 @@ export default function CoverLayout({ className, style }: SlideProps): JSX.Eleme
         <aside className={resolveClasses('theme@cover__qrs')}>
           <QRCode
             data={`${urls[isProduction ? 'production' : 'development']}/${id}`}
-            image={<SvgIcon name="desktop" className={resolveClasses('theme@cover__qrs__qr__image')} />}
+            image={<SvgIcon name="desktop" className={cleanCssClasses('theme@cover__qrs__qr__image')} />}
             imageRatio={1}
             label="View online"
             className={{
-              root: resolveClasses('theme@cover__qrs__qr', qrClassName),
-              code: resolveClasses('theme@cover__qrs__qr__code'),
-              label: resolveClasses('theme@cover__qrs__qr__label')
+              root: cleanCssClasses('theme@cover__qrs__qr', qrClassName),
+              code: cleanCssClasses('theme@cover__qrs__qr__code'),
+              label: cleanCssClasses('theme@cover__qrs__qr__label')
             }}
           />
           <QRCode
             data={`${urls[isProduction ? 'production' : 'development']}/pdfs/${id}.pdf`}
-            image={<SvgIcon name="file-pdf" className={resolveClasses('theme@cover__qrs__qr__image')} />}
+            image={<SvgIcon name="file-pdf" className={cleanCssClasses('theme@cover__qrs__qr__image')} />}
             imageRatio={1}
             label="Download PDF"
             className={{
-              root: resolveClasses('theme@cover__qrs__qr', qrClassName),
-              code: resolveClasses('theme@cover__qrs__qr__code'),
-              label: resolveClasses('theme@cover__qrs__qr__label')
+              root: cleanCssClasses('theme@cover__qrs__qr', qrClassName),
+              code: cleanCssClasses('theme@cover__qrs__qr__code'),
+              label: cleanCssClasses('theme@cover__qrs__qr__label')
             }}
           />
         </aside>

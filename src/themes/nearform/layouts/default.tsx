@@ -1,4 +1,4 @@
-import { Code, Image, useClient, useSlide, type SlideProps } from '@perseveranza-pets/freya/client'
+import { Code, Image, cleanCssClasses, useClient, useSlide, type SlideProps } from '@perseveranza-pets/freya/client'
 import { Accent, ComplexContent, SlideWrapper, Text } from '../components/common.js'
 import { Grids, Items } from '../components/item.js'
 import { type Slide } from '../models.js'
@@ -24,7 +24,7 @@ export default function DefaultLayout({ className, style }: SlideProps): JSX.Ele
   const imageUrl = resolveImage('nearform', id, image?.url)
 
   return (
-    <SlideWrapper slide={slide} index={index} className={resolveClasses(className, rootClassName)} style={style}>
+    <SlideWrapper slide={slide} index={index} className={cleanCssClasses(className, rootClassName)} style={style}>
       {title && (
         <h1 className={resolveClasses(titleClassName)}>
           <Text text={title} />
@@ -50,7 +50,7 @@ export default function DefaultLayout({ className, style }: SlideProps): JSX.Ele
         <div className={resolveClasses('theme@default__image-wrapper')}>
           <Image
             src={imageUrl}
-            className={resolveClasses(
+            className={cleanCssClasses(
               'theme@default__image',
               `theme@default__image--${content?.length ? 'with' : 'no'}-content`,
               image.className

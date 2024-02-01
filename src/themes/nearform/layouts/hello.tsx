@@ -1,4 +1,4 @@
-import { Image, useClient, useSlide, type SlideProps } from '@perseveranza-pets/freya/client'
+import { Image, cleanCssClasses, useClient, useSlide, type SlideProps } from '@perseveranza-pets/freya/client'
 import { Fragment } from 'preact'
 import { Accent, SlideWrapper, Text } from '../components/common.js'
 import { Item } from '../components/item.js'
@@ -27,7 +27,7 @@ export default function HelloLayout({ className, style }: SlideProps): JSX.Eleme
     <SlideWrapper
       slide={slide}
       index={index}
-      className={resolveClasses('theme@hello', className, slide.className.root)}
+      className={cleanCssClasses('theme@hello', className, slide.className.root)}
       style={style}
       defaultLogoColor="white"
     >
@@ -36,17 +36,17 @@ export default function HelloLayout({ className, style }: SlideProps): JSX.Eleme
       </h1>
 
       <aside className={resolveClasses('theme@hello__location-wrapper')}>
-        <Image src={locationImage} className={resolveClasses('theme@hello__location')} />
+        <Image src={locationImage} className={cleanCssClasses('theme@hello__location')} />
       </aside>
 
       <main className={resolveClasses('theme@hello__contents')}>
         <section className={resolveClasses('theme@hello__description')}>
-          <Image src={avatarImage} className={resolveClasses('theme@hello__logo')} />
+          <Image src={avatarImage} className={cleanCssClasses('theme@hello__logo')} />
 
           <Item
             className={{
-              root: resolveClasses('theme@hello__roles-wrapper', 'theme@hello__roles__item'),
-              text: resolveClasses('theme@hello__roles__text')
+              root: cleanCssClasses('theme@hello__roles-wrapper', 'theme@hello__roles__item'),
+              text: cleanCssClasses('theme@hello__roles__text')
             }}
           >
             <strong className={resolveClasses('theme@hello__roles')}>
@@ -68,9 +68,9 @@ export default function HelloLayout({ className, style }: SlideProps): JSX.Eleme
         <Item
           qr={author.website}
           className={{
-            root: resolveClasses('theme@hello__social', 'theme@hello__social__website'),
-            qr: resolveClasses('theme@hello__social__qr'),
-            contents: resolveClasses('theme@hello__social__text')
+            root: cleanCssClasses('theme@hello__social', 'theme@hello__social__website'),
+            qr: cleanCssClasses('theme@hello__social__qr'),
+            contents: cleanCssClasses('theme@hello__social__text')
           }}
           horizontal={true}
         >
@@ -82,9 +82,9 @@ export default function HelloLayout({ className, style }: SlideProps): JSX.Eleme
         <Item
           icon="github"
           className={{
-            root: resolveClasses('theme@hello__social', 'theme@hello__social__github'),
-            icon: resolveClasses('theme@hello__social__icon'),
-            contents: resolveClasses('theme@hello__social__text')
+            root: cleanCssClasses('theme@hello__social', 'theme@hello__social__github'),
+            icon: cleanCssClasses('theme@hello__social__icon'),
+            contents: cleanCssClasses('theme@hello__social__text')
           }}
           horizontal={true}
         >
@@ -96,9 +96,9 @@ export default function HelloLayout({ className, style }: SlideProps): JSX.Eleme
         <Item
           icon="twitter"
           className={{
-            root: resolveClasses('theme@hello__social', 'theme@hello__social__twitter'),
-            icon: resolveClasses('theme@hello__social__icon'),
-            contents: resolveClasses('theme@hello__social__text')
+            root: cleanCssClasses('theme@hello__social', 'theme@hello__social__twitter'),
+            icon: cleanCssClasses('theme@hello__social__icon'),
+            contents: cleanCssClasses('theme@hello__social__text')
           }}
           horizontal={true}
         >
@@ -110,9 +110,9 @@ export default function HelloLayout({ className, style }: SlideProps): JSX.Eleme
         <Item
           icon="linkedin"
           className={{
-            root: resolveClasses('theme@hello__social', 'theme@hello__social__linkedin'),
-            icon: resolveClasses('theme@hello__social__icon'),
-            contents: resolveClasses('theme@hello__social__text')
+            root: cleanCssClasses('theme@hello__social', 'theme@hello__social__linkedin'),
+            icon: cleanCssClasses('theme@hello__social__icon'),
+            contents: cleanCssClasses('theme@hello__social__text')
           }}
           horizontal={true}
         >

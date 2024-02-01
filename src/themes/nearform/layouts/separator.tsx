@@ -1,4 +1,4 @@
-import { useClient, useSlide, type SlideProps } from '@perseveranza-pets/freya/client'
+import { cleanCssClasses, useClient, useSlide, type SlideProps } from '@perseveranza-pets/freya/client'
 import { SlideWrapper, Text } from '../components/common.js'
 import { type Slide } from '../models.js'
 
@@ -45,7 +45,7 @@ export default function SeparatorLayout({ className, style }: SlideProps): JSX.E
     <SlideWrapper
       slide={slide}
       index={index}
-      className={resolveClasses(
+      className={cleanCssClasses(
         'theme@separator',
         !image && 'theme@separator--no-image',
         background && `theme@bg-${background}`,

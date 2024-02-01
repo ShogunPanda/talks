@@ -6,7 +6,7 @@
   }
 
   &slide {
-    @apply freya@p-[--nf-padding];
+    @apply p-[--nf-padding];
   }
 
   &code {
@@ -21,7 +21,7 @@
     @apply counter-reset-[step];
     @apply counter-increment-[step_0];
     @apply text-left;
-    
+
     &__line {
       @apply relative;
       @apply inline-block;
@@ -291,16 +291,16 @@
     @apply rounded-0_05sp;
 
     &--white {
-      @apply text-white;      
+      @apply text-white;
     }
 
     &--black {
-      @apply text-black;      
+      @apply text-black;
     }
 
     &--black-with-bg {
-      @apply text-black;      
-      @apply bg-white;      
+      @apply text-black;
+      @apply bg-white;
     }
 
     &__code {
@@ -760,7 +760,7 @@
           @apply p-0_05sp;
           @apply rounded-0_05sp;
           @apply text-black;
-          @apply bg-nf-transparent;
+          @apply bg-white;
         }
 
         &__label {

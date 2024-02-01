@@ -1,4 +1,4 @@
-import { generateSVGId, useClient } from '@perseveranza-pets/freya/client'
+import { cleanCssClasses, generateSVGId, useClient } from '@perseveranza-pets/freya/client'
 import { type VNode } from 'preact'
 import { render } from 'preact-render-to-string'
 
@@ -35,8 +35,8 @@ export function SvgIcon({ name: icon, className }: SvgIconProps): VNode {
     }
 
     const pathProperties = [
-      { className: resolveClasses('theme@icon__path--primary') },
-      { className: resolveClasses('theme@icon__path--secondary') }
+      { className: cleanCssClasses('theme@icon__path--primary') },
+      { className: cleanCssClasses('theme@icon__path--secondary') }
     ]
 
     const id = generateSVGId(assets.svgsDefinitions.length)

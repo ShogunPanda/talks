@@ -1,4 +1,4 @@
-import { useClient, useSlide, type SlideProps } from '@perseveranza-pets/freya/client'
+import { cleanCssClasses, useClient, useSlide, type SlideProps } from '@perseveranza-pets/freya/client'
 import { Accent, SlideWrapper, Text } from '../components/common.js'
 import { SvgIcon } from '../components/icons.js'
 import { type Slide } from '../models.js'
@@ -25,11 +25,11 @@ export default function QuoteLayout({ className, style }: SlideProps): JSX.Eleme
     <SlideWrapper
       slide={slide}
       index={index}
-      className={resolveClasses('theme@quote', `theme@quote--${variant}`, className, rootClassName)}
+      className={cleanCssClasses('theme@quote', `theme@quote--${variant}`, className, rootClassName)}
       defaultLogoColor={light ? 'black' : 'white'}
       style={style}
     >
-      {/* <Image src={backgroundImage} className={resolveClasses('theme@quote__background')} /> */}
+      {/* <Image src={backgroundImage} className={cleanCssClasses('theme@quote__background')} /> */}
       <div className={resolveClasses('theme@quote__contents')}>
         <h1 className={resolveClasses('theme@quote__title', titleClassName)}>
           <Text text={title ?? 'One last thing™'} />
@@ -38,7 +38,7 @@ export default function QuoteLayout({ className, style }: SlideProps): JSX.Eleme
 
         <h1 className={resolveClasses('theme@quote__quote')}>
           <Text
-            className={resolveClasses('theme@quote__quote__sentence', `theme@quote__quote__sentence--${variant}`)}
+            className={cleanCssClasses('theme@quote__quote__sentence', `theme@quote__quote__sentence--${variant}`)}
             text={`&ldquo;${sentence?.trim()}&rdquo;`}
           />
           <strong className={resolveClasses('theme@quote__quote__author', `theme@quote__quote__author--${variant}`)}>
@@ -51,7 +51,7 @@ export default function QuoteLayout({ className, style }: SlideProps): JSX.Eleme
         <>
           <SvgIcon
             name={primaryIcon ?? 'lightbulb-on'}
-            className={resolveClasses(
+            className={cleanCssClasses(
               'theme@quote__icon',
               'theme@quote__icon--primary',
               `theme@quote__icon--primary--${variant}`,
@@ -60,7 +60,7 @@ export default function QuoteLayout({ className, style }: SlideProps): JSX.Eleme
           />
           <SvgIcon
             name={secondaryIcon ?? 'puzzle-piece'}
-            className={resolveClasses(
+            className={cleanCssClasses(
               'theme@quote__icon',
               'theme@quote__icon--secondary',
               `theme@quote__icon--secondary--${variant}`,

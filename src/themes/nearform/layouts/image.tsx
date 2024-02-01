@@ -1,4 +1,4 @@
-import { useClient, useSlide, type SlideProps } from '@perseveranza-pets/freya/client'
+import { cleanCssClasses, useClient, useSlide, type SlideProps } from '@perseveranza-pets/freya/client'
 import { SlideWrapper, Text } from '../components/common.js'
 import { type Slide } from '../models.js'
 
@@ -28,7 +28,7 @@ export default function ImageLayout({ className, style }: SlideProps): JSX.Eleme
     <SlideWrapper
       slide={slide}
       index={index}
-      className={resolveClasses('theme@image', className, rootClassName)}
+      className={cleanCssClasses('theme@image', className, rootClassName)}
       style={{ ...style, backgroundImage: `url(${imageUrl})` }}
     >
       <main className={resolveClasses('theme@image__contents')}>
@@ -36,7 +36,7 @@ export default function ImageLayout({ className, style }: SlideProps): JSX.Eleme
           <h1 className={resolveClasses('theme@image__title', titleClassName)}>
             {title}
             {subtitle && (
-              <Text className={resolveClasses('theme@image__subtitle', subtitleClassName)} text={subtitle} />
+              <Text className={cleanCssClasses('theme@image__subtitle', subtitleClassName)} text={subtitle} />
             )}
           </h1>
         )}
