@@ -3,6 +3,10 @@ layout: cover
 # ---
 
 ---
+layout: nearform
+# ---
+
+---
 layout: separator
 title: Being reckless (sometimes) pays off!
 image:
@@ -14,10 +18,6 @@ decorations:
 
 ---
 layout: hello
-# ---
-
----
-layout: nearform
 # ---
 
 ---
@@ -218,7 +218,7 @@ items:
             }
           });
       className:
-        root: flex-initial
+        root: p-0 flex-initial font-size-0_8em
     - image: '@talk/arrow-right.webp'
       className:
         root: flex-initial min-h-auto
@@ -247,8 +247,8 @@ items:
               }
           }
       className:
-        root: flex-initial
-  className: flex flex-1 gap-x-0sp font-size-0_9em items-center
+        root: flex-initial font-size-0_8em
+  className: flex flex-1 gap-x-1ch items-center justify-center
   horizontal: true
   spacer: false
   gap: false
@@ -323,9 +323,9 @@ code:
 ---
 title: Output (Rust)
 code:
-  language: console
+  language: output
   content: |
-    shogun@panda:~$ cargo run
+    shogun@panda:~/example$ cargo run
     Pos=9 Status: 200
     Pos=17 Header name: Content-Length
     Pos=33 Header value: 3
@@ -388,10 +388,10 @@ code:
 ---
 title: Output (C++)
 code:
-  language: console
+  language: output
   content: |
-    shogun@panda:~$ clang++ -std=c++11 -o example libmilo.a main.cc
-    shogun@panda:~$ ./example
+    shogun@panda:~/example$ clang++ -std=c++11 -o example libmilo.a main.cc
+    shogun@panda:~/example$ ./example
     Pos=38 Body: abc
 
 ---
@@ -443,9 +443,9 @@ code:
 ---
 title: Output (Node.js with WebAssembly)
 code:
-  language: console
+  language: output
   content: |
-    shogun@panda:~$ node index.mjs
+    shogun@panda:~/example$ node index.mjs
     Pos=38 Body: abc
 
 ---
@@ -506,7 +506,7 @@ items:
           338k requests in 11.02s, 28.4 MB read
       className:
         root: flex
-  className: flex flex-1 gap-x-1ch font-size-0_6em items-center
+  className: flex flex-1 gap-x-1ch font-size-0_5em items-center
   horizontal: true
   gap: false
   defaultclassName: false

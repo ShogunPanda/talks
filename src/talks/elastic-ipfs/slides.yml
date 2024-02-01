@@ -3,6 +3,10 @@ layout: cover
 # ---
 
 ---
+layout: nearform
+# ---
+
+---
 layout: separator
 title: |
   All you need to succeed
@@ -14,10 +18,6 @@ options:
 
 ---
 layout: hello
-# ---
-
----
-layout: nearform
 # ---
 
 ---
@@ -119,7 +119,7 @@ title: Hi, I'm Elastic IPFS!
 content:
   - The architecture is divided into three independent and stateless subsystems.
   - New nodes can be added or remove at any time, global replication can be easily achieved.
-  - '[https://github.com/elastic-ipfs/elastic-ipfs](https://github.com/elastic-ipfs/elastic-ipfs)'
+  - <a href="https://github.com/elastic-ipfs/elastic-ipfs" className="font-size-0_9em font-bold">https://github.com/elastic-ipfs/elastic-ipfs</a>
 image:
   url: '@talk/eipfs-architecture-complete.webp'
 

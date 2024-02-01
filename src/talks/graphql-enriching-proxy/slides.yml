@@ -3,9 +3,14 @@ layout: cover
 # ---
 
 ---
+layout: nearform
+# ---
+
+---
 layout: separator
 title: |
-  Being kind never hurts!
+  Being kind
+  never hurts!
 image:
   url: '@talk/kindness.webp'
 options:
@@ -15,10 +20,6 @@ decorations:
 
 ---
 layout: hello
-# ---
-
----
-layout: nearform
 # ---
 
 ---
@@ -171,7 +172,7 @@ decorations:
 ---
 title: Check it out!
 content:
-  - We can reuse the parsing and serialization from the reference GraphQL Javascript implementation.
+  - We can reuse parsing and serialization from the reference GraphQL Javascript implementation.
   - qr: https://github.com/ShogunPanda/graphql-enrich-proxy
   - <span class="block text-center">[https://github.com/ShogunPanda/graphql-enrich-proxy](https://github.com/ShogunPanda/graphql-enrich-proxy)</span>
 className:
@@ -206,7 +207,7 @@ items:
   entries:
     - icon: code
       title: Extensions are for developers
-      text: The specification specifically states that field is reserved for developers to extend the protocol.
+      text: The specification states that the field is reserved for developers.
     - icon: code-fork
       title: Existing clients will ignore them
       text: Unaware clients will ignore the field and the server is still specification compliant.
@@ -253,7 +254,7 @@ items:
       text: Never return these to the client.
     - icon: code-compare
       title: Leverage field aliasing
-      text: Use field aliasing to easily spot the fields added.
+      text: Use it to easily spot the fields added.
 code:
   language: graphql
   highlight: 3, 6, 9
@@ -313,6 +314,8 @@ code:
 
       return [updatedDocument, injectedFieldId]
     }
+  className:
+    root: font-size-0_5em
 decorations:
   logo: white
   permalink: black-with-bg
@@ -351,15 +354,15 @@ items:
   entries:
     - icon: star
       title: Well known
-      text: You are already using JSONPath or similar.
+      text: You are already using JSONPath or a similar syntax.
     - icon: tools
       title: Easily implementable
       text: The syntax is easy to understand and implement.
 code:
-  language: console
+  language: output
   numbers: false
   content: |
-    shogun@panda:~$ cat example.json
+    shogun@panda:~/example$ cat example.json
     {
       "countries": [
         { "name": "Iceland", capital: "Reykjavík", },
@@ -367,7 +370,7 @@ code:
       ]
     }
 
-    shogun@panda:~$ jq ".countries[1].capital" example.json
+    shogun@panda:~/example$ jq ".countries[1].capital" example.json
     "Roma"
 
 ---
@@ -589,8 +592,9 @@ code:
         }
       }
     }
+  className:
+    root: font-size-0_5em
 decorations:
-  logo: white
   permalink: black-with-bg
 
 ---

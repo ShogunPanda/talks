@@ -3,6 +3,10 @@ layout: cover
 # ---
 
 ---
+layout: nearform
+# ---
+
+---
 layout: separator
 title: |
   Sometimes, your worst enemy is slowness!
@@ -13,10 +17,6 @@ options:
 
 ---
 layout: hello
-# ---
-
----
-layout: nearform
 # ---
 
 ---
@@ -74,18 +74,24 @@ decorations:
 
 ---
 layout: side
-title: The Slowloris Attack
+title: The Slowloris attack
 items:
   entries:
     - icon: bug
       title: What is it?
-      text: A DDoS attack which uses minimal bandwidth.
+      text: |
+        A DDoS attack which
+        uses minimal bandwidth.
     - icon: calendar-time
       title: When it was created?
-      text: Robert “RSnake” Hansen carved it on June 2009.
+      text: |
+        Robert “RSnake” Hansen
+        carved it on June 2009.
     - icon: split
       title: It’s not just HTTP!
-      text: This attack can be abstracted to similar protocols.
+      text: |
+        This attack can be abstracted
+        to similar protocols.
 image:
   url: '@talk/slowloris-intro.webp'
 
@@ -293,8 +299,9 @@ items:
       title: Make sure sockets cannot be idle
       text: <code>http.Server.timeout</code> must be greater than 0 to detect malicious idle sockets.
     - icon: lock
-      title: Limit the time for each request
-      text: <code>http.Server.requestTimeout</code> must be greater than 0 to limit the total time allowed for a client to finish a request.
+      title: Limit the total time for each request
+      text: |
+        <code>http.Server.requestTimeout</code> must be greater than 0.
     - icon: minimize
       title: Have a lower timeout for the headers
       text: <code>http.Server.headersTimeout</code> should also be set to detect a malicious client earlier.
@@ -330,8 +337,8 @@ items:
     - icon: history
       title: Request are checked periodically
       text: |
-        The HTTP server regularly checks for requests
-        which have not completed in the allowed time.
+        The HTTP server regularly checks for
+        requests which might have timed out.
 
         <br/>See the new option:
         `connectionsCheckingInterval`

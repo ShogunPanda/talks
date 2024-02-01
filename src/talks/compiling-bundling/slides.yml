@@ -3,6 +3,10 @@ layout: cover
 # ---
 
 ---
+layout: nearform
+# ---
+
+---
 layout: separator
 title: |
   Fight your fears!
@@ -13,10 +17,6 @@ options:
 
 ---
 layout: hello
-# ---
-
----
-layout: nearform
 # ---
 
 ---
@@ -56,7 +56,9 @@ decorations:
 layout: quote
 title: 'A bit of terminology: Compiling'
 quote:
-  sentence: To change a computer program into a machine language
+  sentence: |
+    To change a computer program
+    into a machine language
   author: Cambridge Dictionary
   light: true
   icons: false
@@ -69,7 +71,9 @@ decorations:
 layout: quote
 title: 'A bit of terminology: Transpiling'
 quote:
-  sentence: To translate a source code into a different language source code
+  sentence: |
+    To translate a source code into 
+    a different language source code
   author: Michele Riva
   light: true
   icons: false
@@ -82,7 +86,9 @@ decorations:
 layout: quote
 title: 'A bit of terminology: Bundling'
 quote:
-  sentence: To pack all code and resources in a single source file or executable
+  sentence: |
+    To pack all code and resources in
+    a single source file or executable
   author: Me, a.k.a. Paolo Insogna
   light: true
   icons: false
@@ -108,7 +114,7 @@ items:
     - icon: rocket
       title: Adopt new language features
       text: |
-        Runtimes update much slower than the languages.
+        Runtimes update slower than the languages.
         *We don’t want to wait.*
     - icon: chart-network
       title: Write once, run everywhere™
@@ -687,7 +693,7 @@ items:
       className:
         root: absolute z-1 top-0_5gs left-50p z-1
         image: w-1sp h-1sp mb-0
-  className: relative flex-initial h-2sp mt-8ch
+  className: relative flex-initial h-2sp mt-4ch
   horizontal: true
   spacer: false
   gap: false

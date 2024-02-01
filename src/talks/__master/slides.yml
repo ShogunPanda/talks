@@ -3,11 +3,11 @@ layout: cover
 # ---
 
 ---
-layout: hello
+layout: nearform
 # ---
 
 ---
-layout: nearform
+layout: hello
 # ---
 
 ---
@@ -60,6 +60,9 @@ decorations:
 title: Default with vertical items
 items:
   entries:
+    - index: 1
+      title: Exercitation nisi do in mollit aliqua.
+      text: Qui minim eu do veniam magna quis non.
     - icon: chevron-left
       title: Exercitation nisi do in mollit aliqua.
       text: Qui minim eu do veniam magna quis non.
@@ -74,6 +77,9 @@ items:
 title: Default with horizontal items
 items:
   entries:
+    - index: 1
+      title: Exercitation nisi do in mollit aliqua.
+      text: Qui minim eu do veniam magna quis non.
     - icon: chevron-left
       title: Exercitation nisi do in mollit aliqua.
       text: Qui minim eu do veniam magna quis non.
@@ -271,8 +277,7 @@ decorations:
 ---
 layout: image
 title: Image with content
-content:
-  - Excepteur ullamco reprehenderit amet ea sunt esse.
+subtitle: Excepteur ullamco reprehenderit amet ea sunt esse.
 image:
   url: '@theme/panda.webp'
 decorations:
@@ -373,10 +378,13 @@ decorations:
 ---
 layout: separator
 title: Irure consectetur officia aliquip nostrud.
+subtitle: Dolor id enim magna quis aute ex esse officia amet officia occaecat.
 image:
   url: '@theme/panda.webp'
 options:
   background: nf-midnight
+className:
+  subtitle: theme@separator__callout
 
 ---
 layout: separator

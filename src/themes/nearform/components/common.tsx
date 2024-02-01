@@ -3,6 +3,7 @@ import {
   QRCode,
   Svg,
   cleanCssClasses,
+  tokenizeCssClasses,
   useClient,
   useSlide,
   type CSSClassToken
@@ -37,15 +38,11 @@ interface AccentProps {
 type DecorationProps = Pick<SlideWrapperProps, 'defaultLogoColor'>
 
 export function wrapTalkClasses(...klasses: (CSSClassToken | CSSClassToken[])[]): string {
-  return klasses
-    .flat(Number.MAX_SAFE_INTEGER)
-    .filter(k => k)
-    .map(k => (k as string).split(' '))
-    .flat(Number.MAX_SAFE_INTEGER)
-    .map(k => (k as string).trim())
-    .filter(k => k)
-    .map(klass => (klass.includes('@') ? klass : `talk@${klass}`))
-    .join(' ')
+  return (
+    tokenizeCssClasses(...klasses)
+      // .map(klass => (klass.includes('@') ? klass : `talk@${klass}`))
+      .join(' ')
+  )
 }
 
 export function Text({ text, className }: TextProps): VNode {

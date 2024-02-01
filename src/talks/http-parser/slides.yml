@@ -3,8 +3,14 @@ layout: cover
 # ---
 
 ---
+layout: nearform
+# ---
+
+---
 layout: separator
-title: Nothing beats a classic!
+title: |
+  Nothing
+  beats a classic!
 image:
   url: '@talk/500.webp'
 options:
@@ -12,10 +18,6 @@ options:
 
 ---
 layout: hello
-# ---
-
----
-layout: nearform
 # ---
 
 ---
@@ -220,6 +222,8 @@ code:
     off=18 headers complete method=1 v=5/6 flags=0 content_length=0
     off=18 message complete
     ```
+  className:
+    root: font-size-0_5em
 
 ---
 layout: separator
@@ -277,10 +281,14 @@ items:
   entries:
     - icon: brain
       title: Piece of art design
-      text: llhttp has a wonderful and performant architecture.
+      text: |
+        llhttp has a wonderful
+        and performant architecture.
     - icon: list-check
       title: Testability
-      text: The test suite is invaluable to ensure correctness.
+      text: |
+        The test suite is invaluable
+        to ensure correctness.
   horizontal: true
 
 ---

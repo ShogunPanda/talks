@@ -3,6 +3,10 @@ layout: cover
 # ---
 
 ---
+layout: nearform
+# ---
+
+---
 layout: separator
 title: |
   Encrypting is like painting!
@@ -15,10 +19,6 @@ decorations:
 
 ---
 layout: hello
-# ---
-
----
-layout: nearform
 # ---
 
 ---
@@ -130,7 +130,7 @@ layout: side
 title: Trivia question
 content:
   - Where does its name come from?
-  - <span class="text-nf-purple font-bold font-size-1_6em">It's a Caesar Cipher!</span>
+  - <span class="text-nf-purple font-bold font-size-1_5em">It's a Caesar Cipher!</span>
 image:
   url: '@talk/hal.webp'
 

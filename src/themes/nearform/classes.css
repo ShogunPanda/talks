@@ -7,6 +7,7 @@
 
   &slide {
     @apply p-[--nf-padding];
+    @apply var-[nf-icon-size]-[0_5sp];
   }
 
   &code {
@@ -28,7 +29,8 @@
       @apply pl-2ch;
       @apply pr-3ch;
       @apply py-0_2rem;
-      @apply h-[calc(1em+0.4rem)];
+      @apply h-[calc(1em+0.5rem)];
+      @apply letter-spacing-1px;
 
       &--not-highlighted {
         @apply w-full;
@@ -76,10 +78,10 @@
     @apply m-0;
     @apply py-0_1sp;
     @apply px-1ch;
-    @apply border-0;
     @apply border-solid;
+    @apply border-0;
+    @apply border-b-0_1sp;
     @apply border-transparent;
-    @apply theme@border-b-0_1sp;
     @apply border-b-nf-midnight;
   }
 
@@ -112,36 +114,23 @@
     @apply min-h-0_8sp;
     @apply z-1;
 
-    &__icon {
+    &__icon,
+    &__image,
+    &__qr {
       @apply inline;
-      @apply w-0_5sp;
-      @apply h-0_5sp;
-      @apply min-w-0_5sp;
-      @apply min-h-0_5sp;
+      @apply w-[var(--nf-icon-size)];
+      @apply h-[var(--nf-icon-size)];
+      @apply min-w-[var(--nf-icon-size)];
+      @apply min-h-[var(--nf-icon-size)];
+      @apply mt-0_1em;
+      @apply mr-0_2sp;
+    }
+
+    &__icon {
       @apply var-[nf-icon-primary-color]-[--nf-color-blue];
       @apply var-[nf-icon-secondary-color]-[--nf-color-blue];
       @apply var-[nf-icon-secondary-opacity]-[70%];
       @apply stroke-0;
-      @apply mt-0_1em;
-      @apply mr-0_2sp;
-    }
-
-    &__image {
-      @apply inline;
-      @apply w-0_5sp;
-      @apply min-w-0_5sp;
-      @apply mt-0_1em;
-      @apply mr-0_2sp;
-    }
-
-    &__qr {
-      @apply inline;
-      @apply w-0_5sp;
-      @apply h-0_5sp;
-      @apply min-w-0_5sp;
-      @apply min-h-0_5sp;
-      @apply mt-0_1em;
-      @apply mr-0_2sp;
     }
 
     &__index {
@@ -179,33 +168,30 @@
 
     &__icon--horizontal,
     &__qr--horizontal {
-      @apply theme@w-1sp;
-      @apply theme@h-1sp;
-      @apply theme@min-w-1sp;
-      @apply theme@min-h-1sp;
-      @apply theme@mt-0;
-      @apply theme@mr-0;
-      @apply theme@mb-0_2sp;
+      @apply var-[nf-icon-size]-[1sp];
+      @apply mt-0;
+      @apply mr-0;
+      @apply mb-0_2sp;
     }
 
     &__image--horizontal {
-      @apply theme@w-auto;
-      @apply theme@h-1sp;
-      @apply theme@min-w-auto;
-      @apply theme@min-h-1sp;
-      @apply theme@mt-0;
-      @apply theme@mr-0;
-      @apply theme@mb-0_2sp;
+      @apply w-auto;
+      @apply h-1sp;
+      @apply min-w-auto;
+      @apply min-h-1sp;
+      @apply mt-0;
+      @apply mr-0;
+      @apply mb-0_2sp;
     }
 
     &__index--horizontal {
-      @apply theme@w-auto;
-      @apply theme@h-auto;
-      @apply theme@min-w-auto;
-      @apply theme@min-h-auto;
-      @apply theme@mt-0;
-      @apply theme@mr-0;
-      @apply theme@mb-0_2sp;
+      @apply w-auto;
+      @apply h-auto;
+      @apply min-w-auto;
+      @apply min-h-auto;
+      @apply mt-0;
+      @apply mr-0;
+      @apply mb-0_2sp;
       @apply font-size-45pt;
     }
 
@@ -386,9 +372,8 @@
   }
 
   &half {
-    @apply theme@p-0;
-    @apply theme@flex-row;
-    @apply theme@grid;
+    @apply p-0;
+    @apply grid;
     @apply grid-areas-[a_b];
     @apply grid-cols-[1fr_1fr];
 
@@ -419,7 +404,7 @@
   }
 
   &image {
-    @apply theme@p-0;
+    @apply p-0;
     @apply bg-no-repeat;
     @apply bg-cover;
 
@@ -437,7 +422,7 @@
 
     &__subtitle {
       @apply block;
-      @apply theme@font-size-18pt;
+      @apply font-size-18pt;
       @apply mt-0_1sp;
     }
   }
@@ -448,13 +433,13 @@
     @apply justify-center;
 
     &--dark {
-      @apply theme@bg-nf-purple;
-      @apply theme@text-white;
+      @apply bg-nf-purple;
+      @apply text-white;
     }
 
     &--light {
-      @apply theme@bg-white;
-      @apply theme@text-black;
+      @apply bg-white;
+      @apply text-black;
     }
 
     &__title {
@@ -550,9 +535,8 @@
   }
 
   &side {
-    @apply theme@p-0;
-    @apply theme@flex-row;
-    @apply theme@grid;
+    @apply p-0;
+    @apply grid;
     @apply grid-areas-[a_b];
     @apply grid-cols-[1fr_1fr];
 
@@ -597,9 +581,8 @@
   }
 
   &separator {
-    @apply theme@p-0;
-    @apply theme@flex-row;
-    @apply theme@grid;
+    @apply p-0;
+    @apply grid;
     @apply grid-areas-[a_b];
     @apply grid-cols-[1fr_1fr];
     @apply items-center;
@@ -647,25 +630,25 @@
       @apply absolute;
       @apply block;
       @apply bottom-[calc(var(--nf-padding))];
-      @apply left-[calc(62%)];
+      @apply left-[calc(61%)];
       @apply m-0;
-      @apply w-2_6sp;
+      @apply w-2_8sp;
       @apply py-0_05sp;
       @apply px-1ch;
       @apply border-0;
       @apply border-solid;
       @apply border-transparent;
-      @apply theme@border-b-0_06sp;
+      @apply border-b-0_06sp;
       @apply border-b-nf-green;
       @apply bg-nf-midnight;
       @apply text-white;
       @apply font-size-20pt;
       @apply font-bold;
       @apply font-bitter;
-      @apply theme@text-center;
+      @apply text-center;
 
       &--reverse {
-        @apply left-[calc(12%)];
+        @apply left-[calc(11%)];
       }
 
       &__highlight {
@@ -677,7 +660,7 @@
 
   /* Special slides */
   &cover {
-    @apply theme@bg-nf-green;
+    @apply bg-nf-green;
     @apply text-nf-midnight;
 
     &__background {
@@ -708,7 +691,7 @@
       @apply justify-center;
 
       &__title {
-        @apply theme@text-nf-midnight;
+        @apply text-nf-midnight;
         @apply mb-0;
         @apply font-bitter;
         @apply font-size-38pt;
@@ -782,8 +765,8 @@
   }
 
   &hello {
-    @apply theme@grid;
-    @apply theme@p-0;
+    @apply grid;
+    @apply p-0;
     @apply grid-areas-[a_b]-[c_b];
     @apply grid-rows-[min-content_1fr];
     @apply grid-cols-[1fr_1fr];
@@ -864,10 +847,10 @@
         @apply mr-0_2sp;
         @apply text-right;
         @apply font-extrabold;
-        @apply theme@text-nf-blue;
-        @apply theme@hover:text-nf-blue;
-        @apply theme@active:text-nf-blue;
-        @apply theme@visited:text-nf-blue;
+        @apply text-nf-blue;
+        @apply hover:text-nf-blue;
+        @apply active:text-nf-blue;
+        @apply visited:text-nf-blue;
       }
 
       &__description {
@@ -877,15 +860,12 @@
 
     &__social {
       @apply items-center;
-      @apply theme@min-h-0;
+      @apply min-h-0;
       @apply w-full;
 
       &__qr,
       &__icon {
-        @apply special@w-0_5sp;
-        @apply special@h-0_5sp;
-        @apply special@min-w-0_5sp;
-        @apply special@min-h-0_5sp;
+        @apply var-[nf-icon-size]-[0_5sp];
         @apply var-[nf-icon-primary-color]-[black];
         @apply var-[nf-icon-secondary-color]-[black];
       }
@@ -898,8 +878,8 @@
       &__link {
         @apply font-size-0_8em;
         @apply font-bold;
-        @apply theme@text-black;
-        @apply theme@visited:text-black;
+        @apply text-black;
+        @apply visited:text-black;
       }
 
       &__website {
@@ -921,8 +901,8 @@
   }
 
   &nearform {
-    @apply theme@p-0;
-    @apply theme@bg-nf-midnight;
+    @apply p-0;
+    @apply bg-nf-midnight;
     @apply text-white;
 
     &__contents {
@@ -1019,7 +999,7 @@
   }
 
   &end {
-    @apply theme@p-0;
+    @apply p-0;
     @apply bg-no-repeat;
     @apply bg-cover;
 
@@ -1037,7 +1017,7 @@
 
     &__subtitle {
       @apply block;
-      @apply theme@font-size-18pt;
+      @apply font-size-18pt;
       @apply mt-0_1sp;
     }
 
@@ -1066,17 +1046,17 @@
       @apply whitespace-nowrap;
       @apply font-normal;
       @apply text-white;
-      @apply theme@hover:text-white;
-      @apply theme@active:text-white;
-      @apply theme@visited:text-white;
+      @apply hover:text-white;
+      @apply active:text-white;
+      @apply visited:text-white;
 
       &--highlight {
         @apply cursor-pointer;
-        @apply theme@font-bold;
-        @apply theme@text-nf-green;
-        @apply theme@hover:text-nf-green;
-        @apply theme@active:text-nf-green;
-        @apply theme@visited:text-nf-green;
+        @apply font-bold;
+        @apply text-nf-green;
+        @apply hover:text-nf-green;
+        @apply active:text-nf-green;
+        @apply visited:text-nf-green;
       }
     }
 

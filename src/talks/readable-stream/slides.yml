@@ -3,6 +3,10 @@ layout: cover
 # ---
 
 ---
+layout: nearform
+# ---
+
+---
 layout: separator
 title: Panta rei!
 image:
@@ -15,10 +19,6 @@ decorations:
 
 ---
 layout: hello
-# ---
-
----
-layout: nearform
 # ---
 
 ---
@@ -87,7 +87,7 @@ items:
       text: All references to other node modules are removed.
     - index: 4
       title: Add custom modules
-      text: Custom and platform-agnostic version of the needed modules re-inserted in the distribution.
+      text: Custom and platform-agnostic version of the needed modules are re-inserted.
   className: gap-y-0_2sp
 
 ---
@@ -221,6 +221,8 @@ code:
 
     const rs = createReadStream('archive.tar')
     await finished(rs.resume())
+  className:
+    root: font-size-0_5em
 
 ---
 title: Functional style helpers
@@ -288,7 +290,9 @@ items:
         image: w-auto min-w-auto
     - image: '@talk/playwright.webp'
       title: Playwright
-      text: It used to easily test in all major browsers.
+      text: |
+        It used to easily test 
+        in all major browsers.
   horizontal: true
 
 ---

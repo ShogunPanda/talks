@@ -3,6 +3,10 @@ layout: cover
 # ---
 
 ---
+layout: nearform
+# ---
+
+---
 layout: separator
 title: No automation, no party!
 image:
@@ -14,10 +18,6 @@ decorations:
 
 ---
 layout: hello
-# ---
-
----
-layout: nearform
 # ---
 
 ---
@@ -119,7 +119,7 @@ className:
 layout: side
 title: The beginning
 content:
-  - The starting point was my home alarm system.
+  - It started with my home alarm system.
 image:
   url: '@talk/ksenia.webp'
 items:
@@ -393,7 +393,7 @@ items:
       text: Modern and comprehensive. Also pretty cute.
     - icon: microchip
       title: Just the good, old RFID.
-      text: The base technology is more than 50 years old.
+      text: The technology is more than 50 years old.
 
 ---
 title: 'Microchip Pet Door: How do you control it?'
@@ -412,7 +412,10 @@ items:
 ---
 layout: separator
 title: Did you really believe it was just about cats?
-subtitle: Say hello to <s>Snappy Shine</s> <span className="theme@separator__callout__highlight">Braciolone</span>!
+subtitle: |
+  Say hello to 
+  <s>Snappy Shine</s>
+  <span className="theme@separator__callout__highlight">Braciolone</span>!
 image:
   url: '@talk/bracio-1.webp'
 options:
@@ -441,7 +444,7 @@ image:
   url: '@talk/oscar.webp'
 className:
   root: theme@separator--reverse
-  subtitle: theme@separator__callout
+  subtitle: theme@separator__callout theme@separator__callout--reverse
 options:
   background: nf-purple
 
@@ -605,8 +608,7 @@ layout: end
 image:
   url: '@talk/bree-freya.webp'
 title: But this talk is special. Thank you!
-content:
-  - We miss you both, a very lot! ❤️
+subtitle: We miss you both, a very lot! ❤️
 decorations:
   permalink: black-with-bg
 className:

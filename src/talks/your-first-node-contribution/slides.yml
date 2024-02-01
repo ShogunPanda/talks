@@ -3,6 +3,10 @@ layout: cover
 # ---
 
 ---
+layout: nearform
+# ---
+
+---
 layout: separator
 title: All hope abandon ye who enter here!
 image:
@@ -60,20 +64,21 @@ items:
   entries:
     - icon: file-download
       title: Clone it.
-      text: '`git clone git@github.com:$YOURNAME/node.git`'
+      text: '<span className="font-size-0_8em">`git clone git@github.com:$YOURNAME/node.git`</span>'
     - qr: https://github.com/nodejs/node/blob/main/BUILDING.md
       title: Read the [BUILDING.MD](https://github.com/nodejs/node/blob/main/BUILDING.md) file.
-      text: '`cd node && open BUILDING.md`'
+      text: '<span className="font-size-0_8em">`cd node && open BUILDING.md`</span>'
   horizontal: true
+  className: gap-x-0
 
 ---
 title: Build Node.js
 code:
-  language: shell
+  language: output
   numbers: false
   content: |
-    ./configure
-    make -j 4
+    shogun@panda:~/example$ ./configure
+    shogun@panda:~/example$ make -j 4
 
 ---
 title: Choose an issue
@@ -92,22 +97,22 @@ items:
 ---
 title: Build, then run the tests and the linter
 code:
-  language: shell
+  language: output
   numbers: false
   content: |
-    make jstest
-    make lint-js-fix
+    shogun@panda:~/example$ make jstest
+    shogun@panda:~/example$ make lint-js-fix
 
 ---
 title: Configure GIT before committing
 content:
   - Make sure to have `git config` configured with your GitHub account.
 code:
-  language: shell
+  language: output
   numbers: false
   content: |
-    git config user.name "$NAME"
-    git config user.email "$EMAIL"
+    shogun@panda:~/example$ git config user.name "$NAME"
+    shogun@panda:~/example$ git config user.email "$EMAIL"
 
 ---
 title: Make sure to follow commit guidelines
@@ -116,17 +121,12 @@ items:
     - qr: https://github.com/nodejs/node/blob/main/doc/contributing/pull-requests.md#commit-message-guidelines
       title: You can found them [here](https://github.com/nodejs/node/blob/main/doc/contributing/pull-requests.md#commit-message-guidelines).
     - code:
-        language: shell
+        language: output
         numbers: false
         content: |
-          # How to validate the commit locally
-          npm install -g @node-core/utils
-          core-validate-commit HEAD
+          shogun@panda:~/example$ npm install -g @node-core/utils
+          shogun@panda:~/example$ core-validate-commit HEAD
   horizontal: true
-
----
-layout: nearform
-# ---
 
 ---
 layout: end

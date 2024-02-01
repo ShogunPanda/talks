@@ -3,6 +3,10 @@ layout: cover
 # ---
 
 ---
+layout: nearform
+# ---
+
+---
 layout: separator
 title: Don't ask if you can't handle the answers!
 image:
@@ -14,10 +18,6 @@ decorations:
 
 ---
 layout: hello
-# ---
-
----
-layout: nearform
 # ---
 
 ---
@@ -308,7 +308,8 @@ items:
 ---
 layout: separator
 title: |
-  Being kind never hurts!
+  Being kind
+  never hurts!
 image:
   url: '@talk/kindness.webp'
 options:
@@ -563,13 +564,13 @@ className:
 ---
 title: Show me some examples
 code:
-  language: shell
+  language: output
   content: |
-    git commit -m "feat!: send an email to the customer when a product is shipped"
-    git commit -m "feat: allow provided config object to extend other configs"
-    git commit -m "fix: prevent racing of requests"
-    git commit -m "chore!: drop support for Node 6"
-    git commit -m "docs: correct spelling of CHANGELOG"
+    shogun@panda:~/repo$ git commit -m "feat!: send an email to the customer when a product is shipped"
+    shogun@panda:~/repo$ git commit -m "feat: allow provided config object to extend other configs"
+    shogun@panda:~/repo$ git commit -m "fix: prevent racing of requests"
+    shogun@panda:~/repo$ git commit -m "chore!: drop support for Node 6"
+    shogun@panda:~/repo$ git commit -m "docs: correct spelling of CHANGELOG"
   numbers: false
 
 ---
