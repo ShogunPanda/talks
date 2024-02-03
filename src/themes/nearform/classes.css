@@ -30,7 +30,6 @@
       @apply pr-3ch;
       @apply py-0_2rem;
       @apply h-[calc(1em+0.5rem)];
-      @apply letter-spacing-1px;
 
       &--not-highlighted {
         @apply w-full;
@@ -39,7 +38,6 @@
 
       &--highlighted {
         @apply w-full;
-        /*@apply bg-#528BFF3D;*/
       }
 
       &-number {

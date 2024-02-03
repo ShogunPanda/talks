@@ -1,6 +1,5 @@
 import {
   customUnits,
-  numericRule,
   parseNumericValue,
   systemFonts,
   systemMonospaceFonts,
@@ -42,7 +41,6 @@ config.rules!.push(
   ['font-inter', { 'font-family': `Inter, ${systemFonts}` }],
   ['font-bitter', { 'font-family': `Bitter, ${systemFonts}` }],
   ['font-fira-code', { 'font-family': `"Fira Code", ${systemMonospaceFonts}` }],
-  [/^letter-spacing-(\d+(?:_\d+)?px)$/, ([, value]: string[]) => numericRule('letter-spacing', value, 'px')],
   [
     /^bg-size-\[(.+)\]-\[(.+)\]/,
     ([, x, y]: string[]) => {
