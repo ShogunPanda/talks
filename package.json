@@ -27,7 +27,7 @@
     "lint": "eslint src --ext .ts,.tsx",
     "typecheck": "tsc -p . --noEmit",
     "deploy": "freya deploy",
-    "postdeploy": "node --import tsx src/scripts/postdeploy.ts && cd dist/deploy && netlify deploy --site $NETLIFY_SITE_ID --prod",
+    "postdeploy": "node --import tsx src/scripts/postdeploy.ts && cd dist/deploy && netlify deploy --site $NETLIFY_SITE_ID --dir site --prod",
     "verify": "node --import tsx src/scripts/verify.ts",
     "list": "find src/talks -type d -depth 1 -exec basename {} \\; | sort",
     "optimize-images": "fd -e .webp -x cwebp {} -o {} -short"
@@ -39,7 +39,7 @@
     "@fortawesome/pro-light-svg-icons": "^6.5.1",
     "@fortawesome/pro-regular-svg-icons": "^6.5.1",
     "@fortawesome/pro-solid-svg-icons": "^6.5.1",
-    "@perseveranza-pets/freya": "^0.63.4"
+    "@perseveranza-pets/freya": "^0.65.3"
   },
   "devDependencies": {
     "@cowtech/eslint-config": "^9.0.3",

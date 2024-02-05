@@ -725,7 +725,6 @@
 
     &__qrs {
       @apply absolute;
-      @apply grid;
       @apply top-[--nf-padding];
       @apply right-[--nf-padding];
       @apply justify-items-center;
