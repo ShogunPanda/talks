@@ -69,8 +69,8 @@ export interface Quote {
   author?: string
   light?: boolean
   icons?: boolean
-  primaryIcon?: string
-  secondaryIcon?: string
+  primaryIcon?: string | false
+  secondaryIcon?: string | false
   primaryIconClassName?: string
   secondaryIconClassName?: string
 }

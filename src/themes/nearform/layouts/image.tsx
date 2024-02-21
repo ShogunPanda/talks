@@ -34,7 +34,7 @@ export default function ImageLayout({ className, style }: SlideProps): JSX.Eleme
       <main className={resolveClasses('theme@image__contents')}>
         {(title || subtitle) && (
           <h1 className={resolveClasses('theme@image__title', titleClassName)}>
-            {title}
+            <Text text={title} />
             {subtitle && (
               <Text className={cleanCssClasses('theme@image__subtitle', subtitleClassName)} text={subtitle} />
             )}

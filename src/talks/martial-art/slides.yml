@@ -1,0 +1,630 @@
+---
+layout: cover
+# ---
+
+---
+layout: nearform
+# ---
+
+---
+layout: separator
+title: There is no knowledge that is not power!
+image:
+  url: '@talk/mortal-kombat.webp'
+options:
+  background: nf-grey-80
+
+---
+layout: hello
+# ---
+
+---
+layout: separator
+title: What is <span class="text-nf-green">programming</span>?
+image:
+  url: '@talk/programming-1.webp'
+options:
+  background: nf-midnight
+
+---
+layout: quote
+title: What is programming?
+quote:
+  sentence: |
+    The process of writing and
+    testing programs for computers
+  author: The Oxford Dictionary
+  light: true
+  icons: false
+
+---
+layout: separator
+title: |
+  What is a
+  <span class="text-nf-green">martial art</span>?
+image:
+  url: '@talk/wing-tsun-1.webp'
+options:
+  background: nf-purple
+
+---
+layout: quote
+title: What is programming?
+quote:
+  sentence: |
+    A traditional form of fighting or defending
+    yourself, practised as a sport or as exercise.
+  author: The Cambrige Dictionary
+  light: true
+  icons: false
+
+---
+layout: separator
+title: But they are completely unrelated!
+image:
+  url: '@talk/oil-drops.webp'
+options:
+  background: nf-midnight
+
+---
+title: It's all about us ...
+items:
+  entries:
+    - icon: people-group
+      title: Everybody is a multitude of traits
+      text: For instance, we are programmers, spouses or parents.
+    - icon: handshake
+      title: The different traits are not disjoint
+      text: They all influence the other ones.
+    - icon: people-roof
+      title: The process is not voluntary
+      text: No matter how much you try, all the traits define you.
+
+---
+title: ... and our brain, in particular
+items:
+  entries:
+    - icon: brain-circuit
+      title: Everything you learn is useful
+      text: New brain connections are literally created every second.
+    - icon: elephant
+      title: You don't fully control your brain ...
+      text: '*Do not* think about an elephant. *You have lost! 😂*'
+    - icon: bed-front
+      title: ... and that is a good thing
+      text: How many times your subconcious solved the problem?
+
+---
+layout: image
+title: Take me, for instance
+image:
+  url: '@talk/me-1.webp'
+
+---
+title: I have several passions (1/2)
+items:
+  entries:
+    - icon: paw
+      title: (Chubby) Cats
+      text: Those furry balls have seriously messed with my mind.
+    - icon: court-sport
+      title: (Played) Soccer
+      text: |
+        Pretty obvious for a
+        '84 Italian male. *Boring!*
+    - icon: thought-bubble
+      title: Manga & Animes
+      text: |
+        It's easy to be an otaku now.
+        Try in 2000's Southern Italy.
+  horizontal: true
+
+---
+title: I have several passions (2/2)
+items:
+  entries:
+    - icon: game-console-handheld
+      title: Videogames
+      text: Since I was 6, as many developers. *Boring, again!*
+    - icon: swords
+      title: RPG & LARP
+      text: I started them late and they also seriously messed with my mind.
+    - icon: code
+      title: Programming
+      text: |
+        As most of us, isn't it?
+        *How boring am I?*
+  horizontal: true
+
+---
+layout: separator
+title: One last <s>thing™</s> passion
+image:
+  url: '@talk/larp.webp'
+options:
+  background: nf-midnight
+
+---
+layout: separator
+title: Martial art
+image:
+  url: '@talk/wing-tsun-2.webp'
+options:
+  background: nf-blue
+
+---
+layout: separator
+title: |
+  The wait
+  is over ...
+image:
+  url: '@talk/award.webp'
+options:
+  background: nf-purple
+
+---
+layout: image
+title: Wing Tsun*
+subtitle: '*Romanization is controversial'
+image:
+  url: '@talk/wing-tsun-3.webp'
+className:
+  subtitle: font-italic font-size-0_3em
+decorations:
+  logo: white
+
+---
+title: What is that?
+items:
+  entries:
+    - icon: language
+      title: It has various possible translation
+      text: The most commonly used is "Eternal Spring". *Who catches the citation?*
+    - icon: uniform-martial-arts
+      title: It is part of kung fu
+      text: In particular, it is part of the Southern China martial arts.
+    - icon: triangle
+      title: Pretty atypical
+      text: You won't see any spectacular roundhouse kicks or similar.
+
+---
+title: Where did it come from?
+items:
+  entries:
+    - icon: venus
+      title: It was made for women
+      text: The tradition says it was created for Yim Wing Tsun to defend herself.
+    - icon: vihara
+      title: It derives from Shaolin
+      text: The tradition states the women monk Ng Mui as her original creator.
+    - icon: sword
+      title: It also includes weapons
+      text: Butterfly knives and 3m staff are trained regularly.
+
+---
+layout: separator
+title: Meet our training dummy
+image:
+  url: '@talk/mokujin.webp'
+options:
+  background: nf-purple
+
+---
+layout: separator
+title: |
+  Sorry, I totally
+  could not resist!
+image:
+  url: '@talk/troll.webp'
+options:
+  background: nf-green
+decorations:
+  logo: black
+
+---
+layout: separator
+title: Meet our <span class="text-nf-green">real</span> training dummy
+image:
+  url: '@talk/wooden-dummy.webp'
+options:
+  background: nf-blue
+className:
+  root: theme@separator--reverse
+
+---
+title: Why did I chose Wing Tsun?
+items:
+  entries:
+    - icon: gauge-max
+      title: It focuses on effectiveness
+      text: Every millisecond matters. *Ring a bell?*
+    - icon: user-ninja
+      title: It is for everyone
+      text: You don't need to be able to do splits to throw a kick.
+    - icon: dumbbell
+      title: It redefines the concept of strength
+      text: You don't really need muscles.
+
+---
+layout: separator
+title: What about programming?
+image:
+  url: '@talk/programming-2.webp'
+options:
+  background: nf-midnight
+
+---
+title: Let's clarify few things
+items:
+  entries:
+    - icon: swords
+      title: Fighting is everywhere
+      text: Is not only on the ring or on the street. It's a general principle.
+    - icon: vihara
+      title: Martial arts are not just about fighting
+      text: Sometimes, they become a life philosophy.
+    - icon: people-roof
+      title: Remember about the personas?
+      text: I unconsciously use what I learned in Wing Tsun everwhere.
+
+---
+layout: separator
+title: Let's apply the Wing Tsun principles to programming!
+subtitle: ... finally! 😂
+image:
+  url: '@talk/programming-3.webp'
+options:
+  background: nf-green
+className:
+  subtitle: font-bitter font-bold font-size-0_8em
+
+---
+layout: image
+title: |
+  No <span class="text-nf-blue">sifu</span> has proof
+  checked this talk!
+subtitle: Opinions are mine and I'm still learning. Be gentle! 🙏
+image:
+  url: '@talk/kid.webp'
+className:
+  subtitle: font-bitter font-bold font-size-0_3em
+decorations:
+  logo: white
+
+---
+layout: separator
+title: Energy Principles
+image:
+  url: '@talk/energy.webp'
+options:
+  background: nf-blue
+
+---
+layout: quote
+title: Energy Principles (1/4)
+quote:
+  sentence: Give up your own Force.
+  author: 1st Energy Principle
+  light: true
+  primaryIcon: false
+  secondaryIcon: sword
+decorations:
+  number: 1
+  className:
+    number: left-auto right-2sp
+
+---
+layout: quote
+title: Give up your own Force
+quote:
+  sentence: "K.I.S.S. and don't be stubborn."
+  author: 1st Energy Principle applied to programming
+  primaryIcon: false
+  secondaryIcon: code
+decorations:
+  number: 1
+  className:
+    number: left-auto right-2sp text-nf-purple-80
+
+---
+layout: quote
+title: Energy Principles (2/4)
+quote:
+  sentence: Give up your opponent's Force.
+  author: 2nd Energy Principle
+  light: true
+  primaryIcon: false
+  secondaryIcon: sword
+decorations:
+  number: 2
+  className:
+    number: left-auto right-2sp
+
+---
+layout: quote
+title: Give up your opponent's Force
+quote:
+  sentence: |
+    Contain or redirect any point
+    of failure where it cannot harm.
+  author: 2nd Energy Principle applied to programming
+  primaryIcon: false
+  secondaryIcon: code
+decorations:
+  number: 2
+  className:
+    number: left-auto right-2sp text-nf-purple-80
+
+---
+layout: quote
+title: Energy Principles (3/4)
+quote:
+  sentence: Use your attacker's Force against him/her.
+  author: 3rd Energy Principle
+  light: true
+  primaryIcon: false
+  secondaryIcon: sword
+decorations:
+  number: 3
+  className:
+    number: left-auto right-2sp
+
+---
+layout: quote
+title: Use your attacker's Force against him/her
+quote:
+  sentence: |
+    Thoroughly study the APIs and
+    existing systems you have to work with.
+  author: 3rd Energy Principle applied to programming
+  primaryIcon: false
+  secondaryIcon: code
+decorations:
+  number: 3
+  className:
+    number: left-auto right-2sp text-nf-purple-80
+
+---
+layout: quote
+title: Energy Principles (4/4)
+quote:
+  sentence: Add your own Force.
+  author: 4th Energy Principle
+  light: true
+  primaryIcon: false
+  secondaryIcon: sword
+decorations:
+  number: 4
+  className:
+    number: left-auto right-2sp
+
+---
+layout: quote
+title: Add your own Force
+quote:
+  sentence: |
+    Apply lateral thinking when
+    solving others' complex problems.
+  author: 2nd Energy Principle applied to programming
+  primaryIcon: false
+  secondaryIcon: code
+decorations:
+  number: 4
+  className:
+    number: left-auto right-2sp text-nf-purple-80
+
+---
+layout: separator
+title: Chi Sao principles
+image:
+  url: '@talk/chisao.webp'
+options:
+  background: nf-blue
+
+---
+layout: separator
+title: But what is exactly <span class="text-nf-green">Chi Sao</span>?
+image:
+  url: '@talk/confused.webp'
+options:
+  background: nf-midnight
+
+---
+title: Chi Sao
+items:
+  entries:
+    - icon: hand
+      title: It means "sticky hands"
+      text: It's a drill system which focuses on *NEVER* losing contact with opponent's arms.
+    - icon: sensor-fire
+      title: It stimulates reflexes
+      text: As soon as you feel the way is free, *you hit*.
+    - icon: user
+      title: It stimulates self-perception
+      text: You must be careful in how much and where you use your force.
+
+---
+layout: separator
+title: Back to Chi Sao principles!
+image:
+  url: '@talk/chisao.webp'
+options:
+  background: nf-blue
+
+---
+layout: quote
+title: Chi Sao Principles (1/4)
+quote:
+  sentence: If the way is free, go forward.
+  author: 1st Chi Sao Principle
+  light: true
+  primaryIcon: false
+  secondaryIcon: hand
+decorations:
+  number: 1
+  className:
+    number: left-auto right-2sp
+
+---
+layout: quote
+title: If the way is free, go forward
+quote:
+  sentence: |
+    Never think short-term
+    and deliver continously.
+  author: 1st Chi Sao Principle applied to programming
+  primaryIcon: false
+  secondaryIcon: code
+decorations:
+  number: 1
+  className:
+    number: left-auto right-2sp text-nf-purple-80
+
+---
+layout: quote
+title: Chi Sao Principles (2/4)
+quote:
+  sentence: If the way is not free, stick to the opponent.
+  author: 2nd Chi Sao Principle
+  light: true
+  primaryIcon: false
+  secondaryIcon: hand
+decorations:
+  number: 2
+  className:
+    number: left-auto right-2sp
+
+---
+layout: quote
+title: If the way is not free, stick to the opponent
+quote:
+  sentence: |
+    When there is an obstacle, put it aside
+    for a little but continue to monitor.
+  author: 2nd Chi Sao Principle applied to programming
+  primaryIcon: false
+  secondaryIcon: code
+decorations:
+  number: 2
+  className:
+    number: left-auto right-2sp text-nf-purple-80
+
+---
+layout: quote
+title: Chi Sao Principles (3/4)
+quote:
+  sentence: If the opponent is stronger, yield.
+  author: 3rd Chi Sao Principle
+  light: true
+  primaryIcon: false
+  secondaryIcon: hand
+decorations:
+  number: 3
+  className:
+    number: left-auto right-2sp
+
+---
+layout: quote
+title: If the opponent is stronger, yield
+quote:
+  sentence: |
+    You can't always have it your way.
+    Be ready to yield in a controlled way.
+  author: 3rd Chi Sao Principle applied to programming
+  primaryIcon: false
+  secondaryIcon: code
+decorations:
+  number: 3
+  className:
+    number: left-auto right-2sp text-nf-purple-80
+
+---
+layout: quote
+title: Chi Sao Principles (4/4)
+quote:
+  sentence: If the opponent goes back, him/her.
+  author: 4th Chi Sao Principle
+  light: true
+  primaryIcon: false
+  secondaryIcon: hand
+decorations:
+  number: 4
+  className:
+    number: left-auto right-2sp
+
+---
+layout: quote
+title: If the opponent goes back, follow him/her
+quote:
+  sentence: |
+    When debugging, always follow a
+    problem up to its resolution.
+    Don't believe in luck.
+  author: 4th Chi Sao Principle applied to programming
+  primaryIcon: false
+  secondaryIcon: code
+decorations:
+  number: 4
+  className:
+    number: left-auto right-2sp text-nf-purple-80
+
+---
+layout: separator
+title: Bonus principle!
+image:
+  url: '@talk/mokujin.webp'
+options:
+  background: nf-purple
+
+---
+layout: image
+subtitle: The Chum Kiu principle
+title: |
+  A good Chum Kiu shall be performed
+  within the space occupied by a laying cow.
+image:
+  url: '@talk/cow.webp'
+className:
+  title: font-size-1_5em
+  subtitle: font-size-0_7em
+decorations:
+  logo: white
+
+---
+layout: separator
+title: Sorry, could not resist (again)!
+image:
+  url: '@talk/troll.webp'
+options:
+  background: nf-blue
+decorations:
+  logo: black
+
+---
+title: Take home lessons
+content:
+  - What can we learn from this long journey?
+items:
+  entries:
+    - icon: people-roof
+      title: Everything matters
+      text: All the knowledge we have help us in our daily tasks.
+    - icon: elephant
+      title: You can't control everything
+      text: Including your own brain. *Remember the elephant?*
+    - icon: sword
+      title: Programming is like fighting
+      text: Fighting strategies can improve our approach to programming.
+  horizontal: true
+
+---
+layout: quote
+quote:
+  sentence: |
+    Mastering others is strength.
+    Mastering yourself is true power.
+  author: 'Lao Tzu'
+
+---
+layout: end
+# ---

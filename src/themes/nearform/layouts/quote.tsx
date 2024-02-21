@@ -49,24 +49,28 @@ export default function QuoteLayout({ className, style }: SlideProps): JSX.Eleme
 
       {icons !== false && (
         <>
-          <SvgIcon
-            name={primaryIcon ?? 'lightbulb-on'}
-            className={cleanCssClasses(
-              'theme@quote__icon',
-              'theme@quote__icon--primary',
-              `theme@quote__icon--primary--${variant}`,
-              primaryIconClassName
-            )}
-          />
-          <SvgIcon
-            name={secondaryIcon ?? 'puzzle-piece'}
-            className={cleanCssClasses(
-              'theme@quote__icon',
-              'theme@quote__icon--secondary',
-              `theme@quote__icon--secondary--${variant}`,
-              secondaryIconClassName
-            )}
-          />
+          {primaryIcon !== false && (
+            <SvgIcon
+              name={primaryIcon ?? 'lightbulb-on'}
+              className={cleanCssClasses(
+                'theme@quote__icon',
+                'theme@quote__icon--primary',
+                `theme@quote__icon--primary--${variant}`,
+                primaryIconClassName
+              )}
+            />
+          )}
+          {secondaryIcon !== false && (
+            <SvgIcon
+              name={secondaryIcon ?? 'puzzle-piece'}
+              className={cleanCssClasses(
+                'theme@quote__icon',
+                'theme@quote__icon--secondary',
+                `theme@quote__icon--secondary--${variant}`,
+                secondaryIconClassName
+              )}
+            />
+          )}
         </>
       )}
     </SlideWrapper>
