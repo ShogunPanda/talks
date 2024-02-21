@@ -7,7 +7,7 @@ document:
     Node.js Contribution
   author:
     name: 'Marco Ippolito, Paolo Insogna'
-    description: Node.js Core, NearForm
+    description: Node.js TSC, NearForm
     twitter: nearform
     email: info@nearform.com
   company: common.company

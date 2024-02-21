@@ -6,10 +6,10 @@ config:
   url: https://talks.paoloinsogna.dev
 author:
   name: Paolo Insogna
-  description: Node.js Core, NearForm
+  description: Node.js TSC, NearForm
   roles:
     - where: Node.js
-      what: Core Member
+      what: Technical Steering Committee Member
       url: https://nodejs.org
     - where: NearForm
       what: Staff Developer Experience Engineer

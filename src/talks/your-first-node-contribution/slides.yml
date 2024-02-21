@@ -28,7 +28,7 @@ layout: hello
 options:
   author:
     name: Paolo Insogna
-    description: Node.js Core, NearForm
+    description: Node.js TSC, NearForm
     roles:
       - where: Node.js
         what: Core Member
