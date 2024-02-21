@@ -529,7 +529,7 @@ title: If the opponent is stronger, yield
 quote:
   sentence: |
     You can't always have it your way.
-    Be ready to yield in a controlled way.
+    Be ready to yield in a controlled manner.
   author: 3rd Chi Sao Principle applied to programming
   primaryIcon: false
   secondaryIcon: code
@@ -559,7 +559,7 @@ quote:
   sentence: |
     When debugging, always follow a
     problem up to its resolution.
-    Don't believe in luck.
+    Don't believe in luck or coincidences.
   author: 4th Chi Sao Principle applied to programming
   primaryIcon: false
   secondaryIcon: code
@@ -608,7 +608,9 @@ items:
   entries:
     - icon: people-roof
       title: Everything matters
-      text: All the knowledge we have help us in our daily tasks.
+      text: |
+        All the knowledge we have 
+        helps us in our daily tasks.
     - icon: elephant
       title: You can't control everything
       text: Including your own brain. *Remember the elephant?*
