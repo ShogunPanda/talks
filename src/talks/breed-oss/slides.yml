@@ -12,7 +12,7 @@ title: Don't ask if you can't handle the answers!
 image:
   url: '@talk/dog.webp'
 options:
-  background: nf-green
+  background: green
 decorations:
   logo: black
 
@@ -26,7 +26,7 @@ title: So, you want to mess with Open Source...
 image:
   url: '@talk/code.webp'
 options:
-  background: nf-green
+  background: green
 decorations:
   permalink: black-with-bg
 
@@ -66,7 +66,7 @@ content:
     The [Open Source Initiative](https://opensource.org) maintains a list of such licenses.
   - qr: https://opensource.org
 className:
-  qr: block w-2sp h-2sp mx-auto mb-0_2sp flex-1
+  qr: theme-misc@qr--big
 
 ---
 layout: separator
@@ -74,7 +74,7 @@ title: Beware!
 image:
   url: '@talk/hell.webp'
 options:
-  background: nf-midnight
+  background: midnight
 
 ---
 layout: side
@@ -105,7 +105,7 @@ title: Wait a sec...
 image:
   url: '@talk/thinker.webp'
 options:
-  background: nf-blue
+  background: blue
 decorations:
   logo: black
 
@@ -117,7 +117,7 @@ image:
 className:
   root: theme@separator--reverse
 options:
-  background: nf-blue
+  background: blue
 decorations:
   logo: white
   permalink: white
@@ -142,13 +142,13 @@ image:
 layout: raw
 content:
   - |
-    <h1 class="text-white font-size-150pt line-height-1 m-0 p-0">BAD!</h1>
-    <h1 class="text-nf-green font-size-150pt line-height-1 m-0 p-0">DON'T!</h1>
+    <h1 class="theme@fg-white theme-misc@bad__text">BAD!</h1>
+    <h1 class="theme@fg-green theme-misc@bad__text">DON'T!</h1>
 className:
-  raw: flex flex-1 w-full h-full flex-col items-center justify-center text-center
-  root: items-center justify-center p-0
+  raw: theme-misc@bad
+  root: theme-misc@bad__root
 options:
-  background: nf-midnight
+  background: midnight
 decorations:
   logo: white
   permalink: white
@@ -188,7 +188,7 @@ title: Trust the community!
 image:
   url: '@talk/community.webp'
 options:
-  background: nf-green
+  background: green
 decorations:
   logo: black
   permalink: white
@@ -230,7 +230,7 @@ title: But here we're talking about breeding...
 image:
   url: '@talk/breeding.webp'
 options:
-  background: nf-green
+  background: green
 
 ---
 title: The job NEVER ends
@@ -252,7 +252,7 @@ title: Nobody wants to be sued!
 image:
   url: '@talk/justice.webp'
 options:
-  background: nf-purple
+  background: purple
 
 ---
 title: Why do we need legal licenses
@@ -298,7 +298,7 @@ items:
     - image: '@talk/nodejs-logo.webp'
       title: Node.js
       className:
-        image: w-auto
+        image: theme-misc@width-auto
     - image: '@talk/terraform.webp'
       title: Terraform
     - image: '@talk/rust-logo.webp'
@@ -313,7 +313,7 @@ title: |
 image:
   url: '@talk/kindness.webp'
 options:
-  background: nf-purple
+  background: purple
 decorations:
   logo: black
 
@@ -341,7 +341,7 @@ title: |
 image:
   url: '@talk/action.webp'
 options:
-  background: nf-blue
+  background: blue
 
 ---
 title: First of all, choose the hosting
@@ -376,7 +376,7 @@ title: How do we get started?
 image:
   url: '@talk/do-it.webp'
 options:
-  background: nf-purple
+  background: purple
 decorations:
   logo: black
 
@@ -484,7 +484,7 @@ title: |
 image:
   url: '@talk/pillars.webp'
 options:
-  background: nf-green
+  background: green
 
 ---
 title: Pull Request
@@ -559,7 +559,7 @@ content:
     Check the [official website](https://www.conventionalcommits.org/en/v1.0.0/)!
   - qr: https://www.conventionalcommits.org/en/v1.0.0/
 className:
-  qr: block w-2sp h-2sp mx-auto mb-0_2sp flex-1
+  qr: theme-misc@qr--big
 
 ---
 title: Show me some examples
@@ -581,7 +581,7 @@ content:
     Check the [official website](https://semver.org/)!
   - qr: https://semver.org/
 className:
-  qr: block w-2sp h-2sp mx-auto mb-0_2sp flex-1
+  qr: theme-misc@qr--big
 
 ---
 layout: side
@@ -613,7 +613,7 @@ title: Humans are social beings
 image:
   url: '@talk/people.webp'
 options:
-  background: nf-purple
+  background: purple
 decorations:
   permalink: black
 
@@ -671,7 +671,7 @@ title: Diversity and Inclusion
 image:
   url: '@talk/diversity.webp'
 options:
-  background: nf-purple
+  background: purple
 
 ---
 title: Conscious and unconscious bias
@@ -681,7 +681,7 @@ items:
   entries:
     - index: 1
       title: Conscious
-      text: We all have attitudes and heuristic we apply every day.
+      text: We all have and use some attitudes and heuristic.
     - index: 2
       title: Unconscious
       text: More subtle because we don't control them.
@@ -732,7 +732,7 @@ title: Everybody is responsible for moderation!
 image:
   url: '@talk/police.webp'
 options:
-  background: nf-midnight
+  background: midnight
 decorations:
   logo: black
   permalink: black

@@ -1,0 +1,13 @@
+/* stylelint-disable-next-line selector-class-pattern */
+.talk@ {
+  &end {
+    &--usual {
+      font-size: 25--pt;
+    }
+
+    &--real {
+      border-bottom-color: var(--nf-color-blue);
+      font-size: 25--pt;
+    }
+  }
+}

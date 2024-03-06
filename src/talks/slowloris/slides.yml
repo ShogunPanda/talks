@@ -13,7 +13,7 @@ title: |
 image:
   url: '@talk/sloth.webp'
 options:
-  background: nf-green
+  background: green
 
 ---
 layout: hello
@@ -37,7 +37,7 @@ title: We are all vulnerable!
 image:
   url: '@talk/hacking.webp'
 options:
-  background: nf-purple
+  background: purple
 
 ---
 title: Denial of Service Attack
@@ -61,7 +61,7 @@ title: Fear the real enemy ...
 image:
   url: '@talk/hacking.webp'
 options:
-  background: nf-purple
+  background: purple
 
 ---
 layout: image
@@ -189,7 +189,7 @@ content:
 decorations:
   icon: block-brick-fire
   className:
-    icon: left-3_5sp
+    icon: talk@brick-fire
 
 ---
 title: Mitigation strategies
@@ -229,14 +229,14 @@ items:
 decorations:
   number: 10
   className:
-    number: left-auto -right-0_3sp -bottom-1sp font-size-300pt text-red-300
+    number: talk@ten-years
 
 ---
 layout: side
 title: Trust the frameworks
 highlight:
   text: The philosophy behind this choice was to <strong>support</strong> serverless environments which needed long running connections.
-  className: bg-nf-blue text-white
+  className: theme@bg-blue theme@fg-white
 items:
   entries:
     - icon: alarm-snooze
@@ -278,7 +278,7 @@ title: Yes, almost!
 image:
   url: '@talk/hacking.webp'
 options:
-  background: nf-purple
+  background: purple
 
 ---
 title: The countermeasures were loose
@@ -362,10 +362,10 @@ image:
 notes: |
   Do a nice victory gesture and shout!
 options:
-  background: nf-midnight
+  background: midnight
 decorations:
   className:
-    icon: w-2sp h-2sp left-1sp -bottom-0_2sp theme@var-[nf-icon-primary-color]-[--nf-color-midnight-80] stroke-width-0
+    icon: theme-misc@mission-completed
   icon: party-horn
   logo: black
 

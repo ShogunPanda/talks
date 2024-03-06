@@ -5,6 +5,15 @@ document:
   titleFormatted: |
     The last 5 years of
     streams in Node.js
+  abstract: |
+    Thanks to a community of passionate contributors, Node.js is constantly evolving. Streams have been a core feature
+    since the beginning but are still very much in active development.
+
+    In this talk I will guide the audience through the changes that have been added in the last five years of Node.js
+    development and how they impacted performance. Do you already know how to use them properly?
+
+    Finally I’ll introduce readable-stream v4.0.0, a full refactor which brings all these changes to user-land,
+    regardless of the Node.js version installed on the system.
   author: common.author
   company: common.company
   archived: true

@@ -5,5 +5,14 @@ document:
   titleFormatted: |
     How to breed
     a good OSS community
+  abstract: |
+    You started creating a new amazing framework, or library, or proof-of-concept. Then you are amazed by your work and
+    want to enable other to use it. A new Open Source Software (OSS) is just born and you are now responsible for it.
+
+    Not too late, new people start using, and contributing to it. The community grows and with it, its maintenance
+    burden and complexity. If only you knew which good choices to make from the very first day…
+
+    Fear no more, this talk will give you a pletora of good indications and advices on how to breed a healthy OSS
+    community from the very first day.
   author: common.author
   company: common.company

@@ -46,19 +46,19 @@ export function wrapTalkClasses(...klasses: (CSSClassToken | CSSClassToken[])[])
 }
 
 export function Text({ text, className }: TextProps): VNode {
-  const { resolveClasses, parseContent } = useClient()
+  const { parseContent } = useClient()
 
   text = parseContent(text).replaceAll(
     / class(?:(?:Name)?)="([^"]+)"/g,
-    (_: string, className: string) => ` class="${resolveClasses(wrapTalkClasses(className))}"`
+    (_: string, className: string) => ` class="${cleanCssClasses(wrapTalkClasses(className))}"`
   )
 
   return (
-    <span className={className ? resolveClasses(className) : undefined} dangerouslySetInnerHTML={{ __html: text }} />
+    <span className={className ? cleanCssClasses(className) : undefined} dangerouslySetInnerHTML={{ __html: text }} />
   )
 }
 
-export function ComplexContent({ raw, slide }: ComplexContentProps): JSX.Element {
+export function ComplexContent({ raw, slide }: ComplexContentProps): VNode {
   if (raw.qr) {
     return <QRCode data={raw.qr} className={{ code: cleanCssClasses(slide.className.qr) }} />
   }
@@ -66,18 +66,15 @@ export function ComplexContent({ raw, slide }: ComplexContentProps): JSX.Element
   return <></>
 }
 
-export function Accent({ className }: AccentProps): JSX.Element {
-  const { resolveClasses } = useClient()
-
-  return <span className={resolveClasses('theme@accent', className)} />
+export function Accent({ className }: AccentProps): VNode {
+  return <span className={cleanCssClasses('theme@accent', className)} />
 }
 
-export function Decorations({ defaultLogoColor }: DecorationProps): JSX.Element {
+export function Decorations({ defaultLogoColor }: DecorationProps): VNode {
   const {
     isProduction,
     talk: { id, slidesPadding },
-    theme: { urls },
-    resolveClasses
+    theme: { urls }
   } = useClient()
   const { slide, index } = useSlide<Slide>()
 
@@ -92,7 +89,7 @@ export function Decorations({ defaultLogoColor }: DecorationProps): JSX.Element 
   return (
     <>
       {number && (
-        <h2 className={resolveClasses('theme@number', numberClassName)}>
+        <h2 className={cleanCssClasses('theme@number', numberClassName)}>
           <Text text={number} />
         </h2>
       )}
@@ -120,19 +117,11 @@ export function Decorations({ defaultLogoColor }: DecorationProps): JSX.Element 
   )
 }
 
-export function SlideWrapper({
-  slide,
-  index,
-  style,
-  className,
-  defaultLogoColor,
-  children
-}: SlideWrapperProps): JSX.Element {
-  const { resolveClasses } = useClient()
+export function SlideWrapper({ slide, index, style, className, defaultLogoColor, children }: SlideWrapperProps): VNode {
   const { foreground, background } = slide.options
 
   // These two should be moved to the SlideWrapper component
-  const foregroundClass = foreground ? `theme@text-${foreground}` : ''
+  const foregroundClass = foreground ? `theme@fg-${foreground}` : ''
   const backgroundClass = background ? `theme@bg-${background}` : ''
 
   if (!defaultLogoColor) {
@@ -143,7 +132,7 @@ export function SlideWrapper({
   slide.decorations.permalink = false
 
   return (
-    <article className={resolveClasses('freya@slide', foregroundClass, backgroundClass, className)} style={style}>
+    <article className={cleanCssClasses('freya@slide', foregroundClass, backgroundClass, className)} style={style}>
       {children}
       <Progress current={index} />
       <Decorations defaultLogoColor={defaultLogoColor} />

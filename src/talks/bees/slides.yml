@@ -12,7 +12,7 @@ title: Mothers are always right!
 image:
   url: '@talk/lollipops.webp'
 options:
-  background: nf-purple
+  background: purple
 decorations:
   logo: black
 
@@ -26,7 +26,7 @@ title: Our entire existence is on their shoulders!
 image:
   url: '@talk/bee.webp'
 options:
-  background: nf-blue
+  background: blue
 
 ---
 title: How is that?
@@ -48,7 +48,7 @@ title: Aren't we here for dev stuff?
 image:
   url: '@talk/dog.webp'
 options:
-  background: nf-purple
+  background: purple
 
 ---
 title: Yes, we do!
@@ -70,19 +70,19 @@ title: Are you <br/>trolling us?
 image:
   url: '@talk/troll.webp'
 options:
-  background: nf-purple
+  background: purple
 decorations:
   logo: black
 
 ---
 layout: separator
-title: Well, try to translate <span class="text-nf-green">bees</span> in Italian!
+title: Well, try to translate <span class="theme@fg-green">bees</span> in Italian!
 image:
   url: '@theme/location.webp'
 className:
   root: theme@separator--reverse
 options:
-  background: nf-blue
+  background: blue
 
 ---
 title: Say hello to SDKs
@@ -126,7 +126,7 @@ title: You already know the answer...
 image:
   url: '@talk/laugh.webp'
 options:
-  background: nf-purple
+  background: purple
 
 ---
 title: What do we ALSO get, in short? (1/2)
@@ -167,7 +167,7 @@ title: Only an example can enlighten us!
 image:
   url: '@talk/sun.webp'
 options:
-  background: nf-green
+  background: green
 decorations:
   permalink: black-with-bg
 
@@ -270,7 +270,7 @@ title: Let's get modern!
 image:
   url: '@talk/modern.webp'
 options:
-  background: nf-green
+  background: green
 decorations:
   logo: white
 
@@ -369,7 +369,7 @@ title: Do we have the solution?
 image:
   url: '@talk/solution.webp'
 options:
-  background: nf-purple
+  background: purple
 
 ---
 layout: separator
@@ -377,7 +377,7 @@ title: Yes, use the APIs directly!
 image:
   url: '@talk/bee.webp'
 options:
-  background: nf-green
+  background: green
 
 ---
 title: How many will you use?
@@ -399,7 +399,7 @@ title: |
 image:
   url: '@talk/action.webp'
 options:
-  background: nf-blue
+  background: blue
 
 ---
 title: 'No SDK: Setup'
@@ -566,12 +566,12 @@ title: Mission completed!
 image:
   url: '@talk/completed.webp'
 options:
-  background: nf-midnight
+  background: midnight
 decorations:
   icon: party-horn
   permalink: black
   className:
-    icon: w-2sp h-2sp left-1sp -bottom-0_2sp theme@var-[nf-icon-primary-color]-[--nf-color-midnight-80] stroke-width-0
+    icon: theme-misc@mission-completed
 
 ---
 title: Take home lessons

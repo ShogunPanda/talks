@@ -1,9 +1,9 @@
-import { cleanCssClasses, useClient, useSlide, type SlideProps } from '@perseveranza-pets/freya/client'
+import { cleanCssClasses, useSlide, type SlideProps } from '@perseveranza-pets/freya/client'
+import { type VNode } from 'preact'
 import { SlideWrapper, Text } from '../components/common.js'
 import { type Slide } from '../models.js'
 
-export default function RawLayout({ className, style }: SlideProps): JSX.Element {
-  const { resolveClasses } = useClient()
+export default function RawLayout({ className, style }: SlideProps): VNode {
   const { slide, index } = useSlide<Slide>()
 
   const {
@@ -13,7 +13,7 @@ export default function RawLayout({ className, style }: SlideProps): JSX.Element
 
   return (
     <SlideWrapper slide={slide} index={index} className={cleanCssClasses(className, rootClassName)} style={style}>
-      <div className={resolveClasses(rawClassName)}>
+      <div className={cleanCssClasses(rawClassName)}>
         <Text text={content.join('')} />
       </div>
     </SlideWrapper>

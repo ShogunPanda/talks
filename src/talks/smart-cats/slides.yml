@@ -12,7 +12,7 @@ title: No automation, no party!
 image:
   url: '@talk/smart-home.webp'
 options:
-  background: nf-blue
+  background: blue
 decorations:
   logo: black
 
@@ -40,7 +40,7 @@ title: I'm literally surrounded by lovely chubby cats...
 image:
   url: '@talk/ciurma-1.webp'
 options:
-  background: nf-green
+  background: green
 decorations:
   logo: black
 
@@ -52,7 +52,7 @@ image:
 className:
   root: theme@separator--reverse
 options:
-  background: nf-green
+  background: green
 decorations:
   logo: total-white
 
@@ -76,7 +76,7 @@ title: I automated their lives...
 image:
   url: '@talk/mangioni.webp'
 options:
-  background: nf-purple
+  background: purple
 decorations:
   permalink: black
 
@@ -88,7 +88,7 @@ image:
 className:
   root: theme@separator--reverse
 options:
-  background: nf-purple
+  background: purple
 
 ---
 title: A little disclaimer
@@ -107,11 +107,11 @@ items:
 ---
 layout: separator
 title: Let's start!
-subtitle: Say hello to <span className="theme@separator__callout__highlight">Bree</span>!
+subtitle: Say hello to <span class="theme@separator__callout__highlight">Bree</span>!
 image:
   url: '@talk/bree-1.webp'
 options:
-  background: nf-purple
+  background: purple
 className:
   subtitle: theme@separator__callout
 
@@ -149,11 +149,11 @@ title: |
   It's hot...
   no wait,
   it's cold!
-subtitle: Say hello to <span className="theme@separator__callout__highlight">Cali</span>!
+subtitle: Say hello to <span class="theme@separator__callout__highlight">Cali</span>!
 image:
   url: '@talk/cali.webp'
 options:
-  background: nf-blue
+  background: blue
 decorations:
   logo: black
   permalink: white
@@ -193,11 +193,11 @@ layout: separator
 title: |
   Shall I buy a
   power plant?
-subtitle: Say hello to <span className="theme@separator__callout__highlight">Cleo</span>!
+subtitle: Say hello to <span class="theme@separator__callout__highlight">Cleo</span>!
 image:
   url: '@talk/cleo.webp'
 options:
-  background: nf-green
+  background: green
 decorations:
   logo: black
   permalink: white
@@ -238,11 +238,11 @@ title: |
   Don't brag,
   you still use
   gas to move!
-subtitle: Say hello to <span className="theme@separator__callout__highlight">Freya</span>!
+subtitle: Say hello to <span class="theme@separator__callout__highlight">Freya</span>!
 image:
   url: '@talk/freya-1.webp'
 options:
-  background: nf-purple
+  background: purple
 decorations:
   logo: black
 className:
@@ -343,11 +343,11 @@ items:
 ---
 layout: separator
 title: Why don't you complicate things?
-subtitle: Say hello to <span className="theme@separator__callout__highlight">Yuna</span>!
+subtitle: Say hello to <span class="theme@separator__callout__highlight">Yuna</span>!
 image:
   url: '@talk/yuna.webp'
 options:
-  background: nf-purple
+  background: purple
 decorations:
   logo: black
   permalink: white
@@ -371,11 +371,11 @@ items:
 ---
 layout: separator
 title: Let's protect them!
-subtitle: Say hello to <span className="theme@separator__callout__highlight">Kuro</span>!
+subtitle: Say hello to <span class="theme@separator__callout__highlight">Kuro</span>!
 image:
   url: '@talk/kuro.webp'
 options:
-  background: nf-green
+  background: green
 className:
   subtitle: theme@separator__callout
 
@@ -415,11 +415,11 @@ title: Did you really believe it was just about cats?
 subtitle: |
   Say hello to 
   <s>Snappy Shine</s>
-  <span className="theme@separator__callout__highlight">Braciolone</span>!
+  <span class="theme@separator__callout__highlight">Braciolone</span>!
 image:
   url: '@talk/bracio-1.webp'
 options:
-  background: nf-green
+  background: green
 className:
   subtitle: theme@separator__callout
 
@@ -432,21 +432,21 @@ title: |
 image:
   url: '@talk/bracio-2.webp'
 options:
-  background: nf-blue
+  background: blue
 decorations:
   permalink: black
 
 ---
 layout: separator
 title: ... but I could automate his. Why not?
-subtitle: Say hello to <span className="theme@separator__callout__highlight">Oscar</span>!
+subtitle: Say hello to <span class="theme@separator__callout__highlight">Oscar</span>!
 image:
   url: '@talk/oscar.webp'
 className:
   root: theme@separator--reverse
   subtitle: theme@separator__callout theme@separator__callout--reverse
 options:
-  background: nf-purple
+  background: purple
 
 ---
 layout: side
@@ -471,7 +471,7 @@ subtitle: Why?! Why not!
 image:
   url: '@talk/albero.webp'
 options:
-  background: nf-midnight
+  background: midnight
 decorations:
   logo: black
 className:
@@ -482,11 +482,11 @@ layout: separator
 title: |
   And that's
   my house!
-subtitle: Say hello to <span className="theme@separator__callout__highlight">Loki</span>!
+subtitle: Say hello to <span class="theme@separator__callout__highlight">Loki</span>!
 image:
   url: '@talk/loki.webp'
 options:
-  background: nf-purple
+  background: purple
 decorations:
   permalink: black
 className:
@@ -529,7 +529,7 @@ items:
     - image: '@talk/nodejs.webp'
       title: Node.js
       className:
-        image: w-auto
+        image: theme-misc@width-auto
     - image: '@talk/redis.webp'
       title: Redis
     - image: '@talk/mosquitto.webp'
@@ -551,11 +551,11 @@ items:
 ---
 layout: separator
 title: Gimme the details!
-subtitle: Say hello to <span className="theme@separator__callout__highlight">Mora</span>!
+subtitle: Say hello to <span class="theme@separator__callout__highlight">Mora</span>!
 image:
   url: '@talk/mora.webp'
 options:
-  background: nf-blue
+  background: blue
 decorations:
   permalink: black
 className:
@@ -599,7 +599,7 @@ layout: end
 
 title: This was my usual ending slide...
 className:
-  title: font-size-25pt
+  title: talk@end--usual
 
 ---
 layout: end
@@ -612,5 +612,5 @@ subtitle: We miss you both, a very lot! ❤️
 decorations:
   permalink: black-with-bg
 className:
-  title: bg-nf-midnight border-nf-blue text-white font-size-25pt
-  subtitle: text-nf-green
+  title: theme@bg-midnight theme@fg-white talk@end--real
+  subtitle: theme@fg-green

@@ -14,7 +14,7 @@ title: |
 image:
   url: '@talk/love.webp'
 options:
-  background: nf-green
+  background: green
 
 ---
 layout: hello
@@ -33,7 +33,7 @@ content:
   - A service that makes storing files on IPFS easier and more accessible for non-technical people.
 image:
   url: '@talk/web3-storage.svg'
-  className: w-5sp
+  className: talk@image-big
 
 ---
 layout: side
@@ -119,7 +119,7 @@ title: Hi, I'm Elastic IPFS!
 content:
   - The architecture is divided into three independent and stateless subsystems.
   - New nodes can be added or remove at any time, global replication can be easily achieved.
-  - <a href="https://github.com/elastic-ipfs/elastic-ipfs" className="font-size-0_9em font-bold">https://github.com/elastic-ipfs/elastic-ipfs</a>
+  - <a href="https://github.com/elastic-ipfs/elastic-ipfs" class="talk@link--small">https://github.com/elastic-ipfs/elastic-ipfs</a>
 image:
   url: '@talk/eipfs-architecture-complete.webp'
 
@@ -188,7 +188,7 @@ code:
 layout: separator
 title: Indexing subsystem
 options:
-  background: nf-green
+  background: green
 decorations:
   permalink: black
 
@@ -227,7 +227,7 @@ items:
 layout: separator
 title: Let's talk about DHT
 options:
-  background: nf-purple
+  background: purple
 
 ---
 title: DHT Challenges
@@ -393,7 +393,7 @@ code:
 layout: separator
 title: Publishing subsystem
 options:
-  background: nf-green
+  background: green
 decorations:
   permalink: black
 
@@ -433,7 +433,7 @@ content:
   - The solution was to split the publishing process into two steps in order to reduce the size of the problem.
 highlight:
   text: The resulting subsystem is capable to easily advertise <strong>a billion blocks per day</strong>.
-  className: bg-nf-blue text-white
+  className: theme@bg-blue theme@fg-white
 items:
   entries:
     - index: 1
@@ -450,7 +450,7 @@ decorations:
 layout: separator
 title: Peer subsystem
 options:
-  background: nf-green
+  background: green
 decorations:
   permalink: black
 
@@ -478,7 +478,7 @@ items:
 layout: separator
 title: How does E-IPFS perform?
 options:
-  background: nf-green
+  background: green
 decorations:
   permalink: black
 

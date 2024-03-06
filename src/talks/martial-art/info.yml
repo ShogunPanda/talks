@@ -5,5 +5,14 @@ document:
   titleFormatted: |
     Programming with a 
     martial art principles
+  abstract: |
+    In our daily studying effort, we all read article, blogs, books, watch video or attend conferences to learn
+    something new about this bizarre industry we live in.
+
+    But we are not only developers and we have a life far from our keyboards. If we bring our other passions and
+    philosophies in our coding experience we reach a broad new set of possibilities.
+
+    For instance, I’m a martial art practitioner (Which one? No spoilers!) and I recently started noticing that when I
+    bring that art principles in my coding activities I get unblocked much faster. In this talk I will show how.
   author: common.author
   company: common.company

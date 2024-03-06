@@ -17,5 +17,10 @@
         "@typescript-eslint/require-await": 0
       }
     }
-  ]
+  ],
+  "settings": {
+    "react": {
+      "version": "18.0.0"
+    }
+  }
 }

@@ -12,7 +12,7 @@ title: Panta rei!
 image:
   url: '@talk/lava.webp'
 options:
-  background: nf-green
+  background: green
 decorations:
   logo: black
   permalink: black-with-bg
@@ -27,7 +27,7 @@ title: What are streams anyway?
 image:
   url: '@talk/island.webp'
 options:
-  background: nf-midnight
+  background: midnight
 
 ---
 layout: quote
@@ -58,7 +58,7 @@ title: Can I use it in the browser?
 image:
   url: '@talk/laptop.webp'
 options:
-  background: nf-purple
+  background: purple
 decorations:
   logo: black
   permalink: white
@@ -68,9 +68,9 @@ title: Meet readable-stream
 content:
   - It is a NPM package which mirrors the Node.js stream module and additionally adapts it to use in the browsers and/or bundlers.
   - qr: https://www.npmjs.com/package/readable-stream
-  - <span class="font-bold block text-center">[https://www.npmjs.com/package/readable-stream](https://www.npmjs.com/package/readable-stream)</span>
+  - <span class="theme-misc@qr__footer">[https://www.npmjs.com/package/readable-stream](https://www.npmjs.com/package/readable-stream)</span>
 className:
-  qr: block w-2sp h-2sp mx-auto mb-0_2sp flex-1
+  qr: theme-misc@qr--big
 
 ---
 title: How is the package built?
@@ -88,7 +88,6 @@ items:
     - index: 4
       title: Add custom modules
       text: Custom and platform-agnostic version of the needed modules are re-inserted.
-  className: gap-y-0_2sp
 
 ---
 layout: half
@@ -114,7 +113,7 @@ decorations:
 layout: separator
 title: Sorry for the long wait!
 options:
-  background: nf-purple
+  background: purple
 
 ---
 layout: separator
@@ -122,7 +121,7 @@ title: What has changed in streams<br/> since then?
 image:
   url: '@talk/changes.webp'
 options:
-  background: nf-green
+  background: green
 
 ---
 title: Broader status handling
@@ -156,13 +155,13 @@ items:
 layout: separator
 title: ... so boring ...
 options:
-  background: nf-midnight
+  background: midnight
 
 ---
 layout: separator
 title: Let's see the exciting parts!
 options:
-  background: nf-green
+  background: green
 decorations:
   permalink: black
 
@@ -203,7 +202,7 @@ layout: side
 title: Promises API
 content:
   - 'A new module exposes was added to Node.js: `stream/promises`.'
-  - It exposes a promises based API version of `stream.finished` and `stream.pipeline`.
+  - It exposes a promises based API version of `finished` and `pipeline`.
 code:
   language: javascript
   content: |
@@ -222,7 +221,7 @@ code:
     const rs = createReadStream('archive.tar')
     await finished(rs.resume())
   className:
-    root: font-size-0_5em
+    root: theme-misc@code--small
 
 ---
 title: Functional style helpers
@@ -239,7 +238,6 @@ items:
     - icon: file-download
       title: Fetching
       text: '`toArray`'
-  className: gap-y-0_2sp
 
 ---
 layout: half
@@ -256,7 +254,7 @@ decorations:
 layout: separator
 title: What is used under the hood?
 options:
-  background: nf-blue
+  background: blue
 
 ---
 title: Build toolchain
@@ -269,7 +267,7 @@ items:
     - image: '@talk/babel.webp'
       title: Babel
       className:
-        image: w-auto
+        image: theme-misc@width-auto
     - image: '@talk/prettier.webp'
       title: Prettier
   horizontal: true
@@ -287,7 +285,7 @@ items:
       title: Tape
       text: Along with custom runner and parser, it is used to test browsers.
       className:
-        image: w-auto min-w-auto
+        image: theme-misc@width-auto
     - image: '@talk/playwright.webp'
       title: Playwright
       text: |
@@ -301,7 +299,7 @@ title: We test 100 configurations in the CI!
 image:
   url: '@talk/100.webp'
 options:
-  background: nf-green
+  background: green
 
 ---
 title: ... that's all folks!™

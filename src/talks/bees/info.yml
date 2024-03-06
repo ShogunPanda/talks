@@ -5,5 +5,18 @@ document:
   titleFormatted: |
     The bees are important:
     use SDKs wisely
+  abstract: |
+    It is a well-known fact that if bees go extinct, many things in the world (if not the world itself)
+    would disappear.
+
+    The same goes for third-party APIs (which, with a horrible pun, translates to bees in Italian).
+    Most of the time vendors providea SDK for your language to interact with their API. While this
+    speeds up productivity, it slows down performance and makes you dependent on SDK bugs or supply
+    chain vulnerabilities, that are not always addressed at the speed you would expect. Moreover, you
+    never deal with the API directly and this removes the pressure to vendors for a developer-first
+    designed APIs.
+
+    In this talk, I will show how most of the time you don’t need an SDK since you can easily code
+    everything you need by yourself using a simple HTTP call.
   author: common.author
   company: common.company

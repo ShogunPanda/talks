@@ -12,7 +12,7 @@ title: All hope abandon ye who enter here!
 image:
   url: '@talk/hell.webp'
 options:
-  background: nf-green
+  background: green
 
 ---
 layout: image
@@ -64,12 +64,12 @@ items:
   entries:
     - icon: file-download
       title: Clone it.
-      text: '<span className="font-size-0_8em">`git clone git@github.com:$YOURNAME/node.git`</span>'
+      text: '<span class="talk@narrow-grid__link">`git clone git@github.com:$YOURNAME/node.git`</span>'
     - qr: https://github.com/nodejs/node/blob/main/BUILDING.md
       title: Read the [BUILDING.MD](https://github.com/nodejs/node/blob/main/BUILDING.md) file.
-      text: '<span className="font-size-0_8em">`cd node && open BUILDING.md`</span>'
+      text: '<span class="talk@narrow-grid__link">`cd node && open BUILDING.md`</span>'
   horizontal: true
-  className: gap-x-0
+  className: talk@narrow-grid
 
 ---
 title: Build Node.js

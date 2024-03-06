@@ -12,7 +12,7 @@ title: There is no knowledge that is not power!
 image:
   url: '@talk/mortal-kombat.webp'
 options:
-  background: nf-grey-80
+  background: grey-80
 
 ---
 layout: hello
@@ -20,11 +20,11 @@ layout: hello
 
 ---
 layout: separator
-title: What is <span class="text-nf-green">programming</span>?
+title: What is <span class="theme@fg-green">programming</span>?
 image:
   url: '@talk/programming-1.webp'
 options:
-  background: nf-midnight
+  background: midnight
 
 ---
 layout: quote
@@ -41,11 +41,11 @@ quote:
 layout: separator
 title: |
   What is a
-  <span class="text-nf-green">martial art</span>?
+  <span class="theme@fg-green">martial art</span>?
 image:
   url: '@talk/wing-tsun-1.webp'
 options:
-  background: nf-purple
+  background: purple
 
 ---
 layout: quote
@@ -64,7 +64,7 @@ title: But they are completely unrelated!
 image:
   url: '@talk/oil-drops.webp'
 options:
-  background: nf-midnight
+  background: midnight
 
 ---
 title: It's all about us ...
@@ -142,7 +142,7 @@ title: One last <s>thing™</s> passion
 image:
   url: '@talk/larp.webp'
 options:
-  background: nf-midnight
+  background: midnight
 
 ---
 layout: separator
@@ -150,7 +150,7 @@ title: Martial art
 image:
   url: '@talk/wing-tsun-2.webp'
 options:
-  background: nf-blue
+  background: blue
 
 ---
 layout: separator
@@ -160,7 +160,7 @@ title: |
 image:
   url: '@talk/award.webp'
 options:
-  background: nf-purple
+  background: purple
 
 ---
 layout: image
@@ -169,7 +169,7 @@ subtitle: '*Romanization is controversial'
 image:
   url: '@talk/wing-tsun-3.webp'
 className:
-  subtitle: font-italic font-size-0_3em
+  subtitle: talk@romanization
 decorations:
   logo: white
 
@@ -207,7 +207,7 @@ title: Meet our training dummy
 image:
   url: '@talk/mokujin.webp'
 options:
-  background: nf-purple
+  background: purple
 
 ---
 layout: separator
@@ -217,17 +217,17 @@ title: |
 image:
   url: '@talk/troll.webp'
 options:
-  background: nf-green
+  background: green
 decorations:
   logo: black
 
 ---
 layout: separator
-title: Meet our <span class="text-nf-green">real</span> training dummy
+title: Meet our <span class="theme@fg-green">real</span> training dummy
 image:
   url: '@talk/wooden-dummy.webp'
 options:
-  background: nf-blue
+  background: blue
 className:
   root: theme@separator--reverse
 
@@ -251,7 +251,7 @@ title: What about programming?
 image:
   url: '@talk/programming-2.webp'
 options:
-  background: nf-midnight
+  background: midnight
 
 ---
 title: Let's clarify few things
@@ -274,20 +274,20 @@ subtitle: ... finally! 😂
 image:
   url: '@talk/programming-3.webp'
 options:
-  background: nf-green
+  background: green
 className:
-  subtitle: font-bitter font-bold font-size-0_8em
+  subtitle: talk@separator__subtitle
 
 ---
 layout: image
 title: |
-  No <span class="text-nf-blue">sifu</span> has proof
+  No <span class="theme@fg-blue">sifu</span> has proof
   checked this talk!
 subtitle: Opinions are mine and I'm still learning. Be gentle! 🙏
 image:
   url: '@talk/kid.webp'
 className:
-  subtitle: font-bitter font-bold font-size-0_3em
+  subtitle: talk@separator__subtitle
 decorations:
   logo: white
 
@@ -297,7 +297,7 @@ title: Energy Principles
 image:
   url: '@talk/energy.webp'
 options:
-  background: nf-blue
+  background: blue
 
 ---
 layout: quote
@@ -311,7 +311,7 @@ quote:
 decorations:
   number: 1
   className:
-    number: left-auto right-2sp
+    number: talk@principle-icon
 
 ---
 layout: quote
@@ -324,7 +324,7 @@ quote:
 decorations:
   number: 1
   className:
-    number: left-auto right-2sp text-nf-purple-80
+    number: theme@fg-purple-80 talk@principle-icon
 
 ---
 layout: quote
@@ -338,7 +338,7 @@ quote:
 decorations:
   number: 2
   className:
-    number: left-auto right-2sp
+    number: talk@principle-icon
 
 ---
 layout: quote
@@ -353,7 +353,7 @@ quote:
 decorations:
   number: 2
   className:
-    number: left-auto right-2sp text-nf-purple-80
+    number: theme@fg-purple-80 talk@principle-icon
 
 ---
 layout: quote
@@ -367,7 +367,7 @@ quote:
 decorations:
   number: 3
   className:
-    number: left-auto right-2sp
+    number: talk@principle-icon
 
 ---
 layout: quote
@@ -382,7 +382,7 @@ quote:
 decorations:
   number: 3
   className:
-    number: left-auto right-2sp text-nf-purple-80
+    number: theme@fg-purple-80 talk@principle-icon
 
 ---
 layout: quote
@@ -396,7 +396,7 @@ quote:
 decorations:
   number: 4
   className:
-    number: left-auto right-2sp
+    number: talk@principle-icon
 
 ---
 layout: quote
@@ -411,7 +411,7 @@ quote:
 decorations:
   number: 4
   className:
-    number: left-auto right-2sp text-nf-purple-80
+    number: theme@fg-purple-80 talk@principle-icon
 
 ---
 layout: separator
@@ -419,15 +419,15 @@ title: Chi Sao principles
 image:
   url: '@talk/chisao.webp'
 options:
-  background: nf-blue
+  background: blue
 
 ---
 layout: separator
-title: But what is exactly <span class="text-nf-green">Chi Sao</span>?
+title: But what is exactly <span class="theme@fg-green">Chi Sao</span>?
 image:
   url: '@talk/confused.webp'
 options:
-  background: nf-midnight
+  background: midnight
 
 ---
 title: Chi Sao
@@ -449,7 +449,7 @@ title: Back to Chi Sao principles!
 image:
   url: '@talk/chisao.webp'
 options:
-  background: nf-blue
+  background: blue
 
 ---
 layout: quote
@@ -463,7 +463,7 @@ quote:
 decorations:
   number: 1
   className:
-    number: left-auto right-2sp
+    number: talk@principle-icon
 
 ---
 layout: quote
@@ -478,7 +478,7 @@ quote:
 decorations:
   number: 1
   className:
-    number: left-auto right-2sp text-nf-purple-80
+    number: theme@fg-purple-80 talk@principle-icon
 
 ---
 layout: quote
@@ -492,7 +492,7 @@ quote:
 decorations:
   number: 2
   className:
-    number: left-auto right-2sp
+    number: talk@principle-icon
 
 ---
 layout: quote
@@ -507,7 +507,7 @@ quote:
 decorations:
   number: 2
   className:
-    number: left-auto right-2sp text-nf-purple-80
+    number: theme@fg-purple-80 talk@principle-icon
 
 ---
 layout: quote
@@ -521,7 +521,7 @@ quote:
 decorations:
   number: 3
   className:
-    number: left-auto right-2sp
+    number: talk@principle-icon
 
 ---
 layout: quote
@@ -536,7 +536,7 @@ quote:
 decorations:
   number: 3
   className:
-    number: left-auto right-2sp text-nf-purple-80
+    number: theme@fg-purple-80 talk@principle-icon
 
 ---
 layout: quote
@@ -550,7 +550,7 @@ quote:
 decorations:
   number: 4
   className:
-    number: left-auto right-2sp
+    number: talk@principle-icon
 
 ---
 layout: quote
@@ -566,7 +566,7 @@ quote:
 decorations:
   number: 4
   className:
-    number: left-auto right-2sp text-nf-purple-80
+    number: theme@fg-purple-80 talk@principle-icon
 
 ---
 layout: separator
@@ -574,7 +574,7 @@ title: Bonus principle!
 image:
   url: '@talk/mokujin.webp'
 options:
-  background: nf-purple
+  background: purple
 
 ---
 layout: image
@@ -585,8 +585,8 @@ title: |
 image:
   url: '@talk/cow.webp'
 className:
-  title: font-size-1_5em
-  subtitle: font-size-0_7em
+  title: talk@chum-kiu__title
+  subtitle: talk@chum-kiu__subtitle
 decorations:
   logo: white
 
@@ -596,7 +596,7 @@ title: Sorry, could not resist (again)!
 image:
   url: '@talk/troll.webp'
 options:
-  background: nf-blue
+  background: blue
 decorations:
   logo: black
 
@@ -609,7 +609,7 @@ items:
     - icon: people-roof
       title: Everything matters
       text: |
-        All the knowledge we have 
+        All the knowledge we have
         helps us in our daily tasks.
     - icon: elephant
       title: You can't control everything

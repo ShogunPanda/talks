@@ -6,5 +6,13 @@ document:
     The tale of avoiding a
     time-based DDOS attack
     in Node.js
+  abstract: |
+    Web applications are commonly vulnerable to several Distributed Denial of Service attacks, sometimes in unexpected
+    ways. An example is the SlowLoris attack, an exploit that leads to service interruption by simply sending the data
+    to the server as slowest as possible.
+
+    In this talk I will tell the tale of how it took almost 13 years for Node to be completely protected by SlowLoris
+    attack. I will also show that sometimes prioritizing performance can lead to incorrect fixes that can result in a
+    false sense of protection.
   author: common.author
   company: common.company

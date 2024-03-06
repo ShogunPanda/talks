@@ -49,7 +49,7 @@ export async function setupServer(context: BuildContext, theme: Theme, talk: Tal
 
     for (const item of slide.items?.entries ?? []) {
       if (item.code) {
-        await ensureRenderedCode(context, item.code)
+        await ensureRenderedCode(item.code)
       }
 
       if (item.icon) {
@@ -70,7 +70,7 @@ export async function setupServer(context: BuildContext, theme: Theme, talk: Tal
     for (const grid of slide.grids ?? []) {
       for (const item of grid.entries ?? []) {
         if (item.code) {
-          await ensureRenderedCode(context, item.code)
+          await ensureRenderedCode(item.code)
         }
 
         if (item.icon) {
@@ -108,7 +108,7 @@ export async function setupServer(context: BuildContext, theme: Theme, talk: Tal
         }
       }
 
-      await ensureRenderedCode(context, slide.code)
+      await ensureRenderedCode(slide.code)
     }
 
     if (slide.highlight?.className) {

@@ -1,14 +1,14 @@
 import { Svg, cleanCssClasses, useClient, useSlide, type SlideProps } from '@perseveranza-pets/freya/client'
+import { type VNode } from 'preact'
 import { SlideWrapper, Text } from '../components/common.js'
 import { type Slide } from '../models.js'
 
-export default function EndLayout({ className, style }: SlideProps): JSX.Element {
+export default function EndLayout({ className, style }: SlideProps): VNode {
   const {
     talk: {
       id,
       document: { author }
     },
-    resolveClasses,
     resolveImage
   } = useClient()
   const { slide, index } = useSlide<Slide>()
@@ -34,29 +34,29 @@ export default function EndLayout({ className, style }: SlideProps): JSX.Element
       className={cleanCssClasses('theme@end', className, rootClassName)}
       style={{ ...style, backgroundImage: `url(${pandaImageUrl})` }}
     >
-      <main className={resolveClasses('theme@end__contents')}>
-        <h1 className={resolveClasses('theme@end__title', titleClassName)}>
+      <main className={cleanCssClasses('theme@end__contents')}>
+        <h1 className={cleanCssClasses('theme@callout theme@end__title', titleClassName)}>
           {title ?? 'Thank you!'}
           {subtitle && <Text className={cleanCssClasses('theme@end__subtitle', subtitleClassName)} text={subtitle} />}
         </h1>
       </main>
 
-      <footer className={resolveClasses('theme@end__footer')}>
+      <footer className={cleanCssClasses('theme@end__footer')}>
         <strong
-          className={resolveClasses('theme@end__social', 'theme@end__social--highlight', 'theme@end__social__author')}
+          className={cleanCssClasses('theme@end__social', 'theme@end__social--highlight', 'theme@end__social__author')}
         >
           {author.name}
         </strong>
 
         <a
-          className={resolveClasses('theme@end__social', 'theme@end__social__twitter')}
+          className={cleanCssClasses('theme@end__social', 'theme@end__social__twitter')}
           href={`https://twitter.com/${author.twitter}`}
         >
           @{author.twitter}
         </a>
 
         <span
-          className={resolveClasses(
+          className={cleanCssClasses(
             'theme@end__social',
             'theme@end__social--highlight',
             'theme@end__social__description'
@@ -65,11 +65,11 @@ export default function EndLayout({ className, style }: SlideProps): JSX.Element
           {author.description}
         </span>
 
-        <a className={resolveClasses('theme@end__social', 'theme@end__social__email')} href={`mailto:${author.email}`}>
+        <a className={cleanCssClasses('theme@end__social', 'theme@end__social__email')} href={`mailto:${author.email}`}>
           {author.email}
         </a>
 
-        <aside className={resolveClasses('theme@end__logo--wrapper')}>
+        <aside className={cleanCssClasses('theme@end__logo--wrapper')}>
           <Svg src="@theme/logo-with-text-white.svg" className={cleanCssClasses('theme@end__logo')} />
         </aside>
       </footer>

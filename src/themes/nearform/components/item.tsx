@@ -1,5 +1,5 @@
 import { cleanCssClasses, Code, Image, QRCode, useClient, useSlide } from '@perseveranza-pets/freya/client'
-import { Fragment, type ComponentChildren } from 'preact'
+import { Fragment, type ComponentChildren, type VNode } from 'preact'
 import { useCallback, useEffect, useMemo, useState } from 'preact/hooks'
 import { type Grid, type Item as ItemDefinition, type Items as ItemsDefinition } from '../models.js'
 import { Text } from './common.js'
@@ -18,8 +18,8 @@ interface GridsProps {
   grids: Grid[]
 }
 
-export function Item(props: ItemProps): JSX.Element {
-  const { talk, resolveClasses, resolveImage } = useClient()
+export function Item(props: ItemProps): VNode {
+  const { talk, resolveImage } = useClient()
 
   const { horizontal, index, icon, image, title, text, qr, code, className, children } = props
 
@@ -39,14 +39,18 @@ export function Item(props: ItemProps): JSX.Element {
 
   if (code && codeClassName) {
     code.className ??= {}
-    code.className.root = resolveClasses(code.className.root, codeClassName)
+    code.className.root = cleanCssClasses(code.className.root, codeClassName)
   }
 
   return (
-    <section className={resolveClasses('theme@item', horizontal && 'theme@item--horizontal', rootClassName)}>
+    <section className={cleanCssClasses('theme@item', horizontal && 'theme@item--horizontal', rootClassName)}>
       {index && (
         <h5
-          className={resolveClasses('theme@item__index', horizontal && 'theme@item__index--horizontal', indexClassName)}
+          className={cleanCssClasses(
+            'theme@item__index',
+            horizontal && 'theme@item__index--horizontal',
+            indexClassName
+          )}
         >
           <Text text={index} />
         </h5>
@@ -82,11 +86,11 @@ export function Item(props: ItemProps): JSX.Element {
       {/* eslint-disable-next-line @typescript-eslint/prefer-nullish-coalescing */}
       {!code && (title || text || children) && (
         <div
-          className={resolveClasses('theme@item__text', horizontal && 'theme@item__text--horizontal', textClassName)}
+          className={cleanCssClasses('theme@item__text', horizontal && 'theme@item__text--horizontal', textClassName)}
         >
           {title && (
             <h4
-              className={resolveClasses(
+              className={cleanCssClasses(
                 'theme@item__title',
                 horizontal && 'theme@item__title--horizontal',
                 titleClassName
@@ -96,11 +100,11 @@ export function Item(props: ItemProps): JSX.Element {
             </h4>
           )}
           {text && (
-            <p className={resolveClasses('theme@item__contents', contentsClassName)}>
+            <p className={cleanCssClasses('theme@item__contents', contentsClassName)}>
               <Text text={text} />
             </p>
           )}
-          {!text && <p className={resolveClasses('theme@item__contents', contentsClassName)}>{children}</p>}
+          {!text && <p className={cleanCssClasses('theme@item__contents', contentsClassName)}>{children}</p>}
         </div>
       )}
     </section>
@@ -109,8 +113,7 @@ export function Item(props: ItemProps): JSX.Element {
 
 export function Items({
   items: { entries, horizontal, gap, defaultClasses, spacer, className, sequence }
-}: ItemsProps): JSX.Element {
-  const { resolveClasses } = useClient()
+}: ItemsProps): VNode {
   const { index, previousIndex, navigator, presenter } = useSlide()
   const [step, setStep] = useState<number>(0)
 
@@ -174,7 +177,7 @@ export function Items({
 
   return (
     <div
-      className={resolveClasses(
+      className={cleanCssClasses(
         defaultClasses !== false && 'theme@items',
         defaultClasses !== false && dispositionClasses,
         className
@@ -183,7 +186,7 @@ export function Items({
       {visibleEntries.map((item: ItemDefinition, index: number) => {
         return (
           <Fragment key={`item:${index}`}>
-            {spacer !== false && horizontal && index > 0 && <div className={resolveClasses('theme@item__spacer')} />}
+            {spacer !== false && horizontal && index > 0 && <div className={cleanCssClasses('theme@item__spacer')} />}
             <Item horizontal={horizontal} {...item} />
           </Fragment>
         )
@@ -192,19 +195,17 @@ export function Items({
   )
 }
 
-export function Grids({ grids }: GridsProps): JSX.Element {
-  const { resolveClasses } = useClient()
-
+export function Grids({ grids }: GridsProps): VNode {
   if (!Array.isArray(grids)) {
     grids = [grids]
   }
 
   return (
-    <div className={resolveClasses('theme@items--grid__wrapper')}>
+    <div className={cleanCssClasses('theme@items--grid__wrapper')}>
       {grids.map((grid: Grid, index: number) => {
         return (
           <Fragment key={`item:${index}`}>
-            {index > 0 && <div className={resolveClasses('theme@item__spacer')} />}
+            {index > 0 && <div className={cleanCssClasses('theme@item__spacer')} />}
             <Items
               items={{
                 entries: grid.entries,

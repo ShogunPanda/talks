@@ -1,11 +1,11 @@
 import { cleanCssClasses, useClient, useSlide, type SlideProps } from '@perseveranza-pets/freya/client'
+import { type VNode } from 'preact'
 import { SlideWrapper, Text } from '../components/common.js'
 import { type Slide } from '../models.js'
 
-export default function ImageLayout({ className, style }: SlideProps): JSX.Element {
+export default function ImageLayout({ className, style }: SlideProps): VNode {
   const {
     talk: { id },
-    resolveClasses,
     resolveImage
   } = useClient()
   const { slide, index } = useSlide<Slide>()
@@ -31,9 +31,9 @@ export default function ImageLayout({ className, style }: SlideProps): JSX.Eleme
       className={cleanCssClasses('theme@image', className, rootClassName)}
       style={{ ...style, backgroundImage: `url(${imageUrl})` }}
     >
-      <main className={resolveClasses('theme@image__contents')}>
+      <main className={cleanCssClasses('theme@image__contents')}>
         {(title || subtitle) && (
-          <h1 className={resolveClasses('theme@image__title', titleClassName)}>
+          <h1 className={cleanCssClasses('theme@callout theme@image__title', titleClassName)}>
             <Text text={title} />
             {subtitle && (
               <Text className={cleanCssClasses('theme@image__subtitle', subtitleClassName)} text={subtitle} />

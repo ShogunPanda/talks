@@ -6,5 +6,16 @@ document:
     Maths or magic?
     End-to-end encryption
     explained with art
+  abstract: |
+    Every time we send a message on the most popular messaging platforms, we want to make sure that our communication is
+    private and inaccessible to malicious users.
+
+    We also want to ensure that in case of a data breach, the messages will be encrypted so that no one could
+    potentially easily decrypt them. But how do we do that?
+
+    How does end-to-end encryption work, and is it really that secure?
+
+    In this interactive talk, we will see how to make our communications secure by implementing one of the most popular
+    e2e encryption algorithms... with some help from the public!
   author: common.author
   company: common.company

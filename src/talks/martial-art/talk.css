@@ -1,0 +1,28 @@
+/* stylelint-disable-next-line selector-class-pattern */
+.talk@ {
+  &romanization {
+    font-size: 0.3em;
+    font-style: italic;
+  }
+
+  &separator__subtitle {
+    font-family: var(--nf-font-bitter);
+    font-size: 0.4em;
+    font-weight: 700;
+  }
+
+  &principle-icon {
+    left: auto;
+    right: 2--sp;
+  }
+
+  &chum-kiu {
+    &__title {
+      font-size: 1.5em;
+    }
+
+    &__subtitle {
+      font-size: 0.7em;
+    }
+  }
+}

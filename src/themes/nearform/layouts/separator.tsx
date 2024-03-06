@@ -1,11 +1,11 @@
 import { cleanCssClasses, useClient, useSlide, type SlideProps } from '@perseveranza-pets/freya/client'
+import { type VNode } from 'preact'
 import { SlideWrapper, Text } from '../components/common.js'
 import { type Slide } from '../models.js'
 
-export default function SeparatorLayout({ className, style }: SlideProps): JSX.Element {
+export default function SeparatorLayout({ className, style }: SlideProps): VNode {
   const {
     talk: { id },
-    resolveClasses,
     resolveImage
   } = useClient()
   const { slide, index } = useSlide<Slide>()
@@ -22,10 +22,7 @@ export default function SeparatorLayout({ className, style }: SlideProps): JSX.E
 
   const imageUrl = resolveImage('nearform', id, image?.url)
 
-  if (
-    !foreground &&
-    background?.match(/nf-(midnight|midnight-80|midnight-50|purple|purple-80|blue|blue-80|grey-80)$/)
-  ) {
+  if (!foreground && background?.match(/(midnight|midnight-80|midnight-50|purple|purple-80|blue|blue-80|grey-80)$/)) {
     foreground = 'white'
   }
 
@@ -49,23 +46,23 @@ export default function SeparatorLayout({ className, style }: SlideProps): JSX.E
         'theme@separator',
         !image && 'theme@separator--no-image',
         background && `theme@bg-${background}`,
-        foreground && `theme@text-${foreground}`,
+        foreground && `theme@fg-${foreground}`,
         className,
         rootClassName
       )}
       style={style}
       defaultLogoColor="white"
     >
-      <div className={resolveClasses('theme@separator__contents')}>
+      <div className={cleanCssClasses('theme@separator__contents')}>
         {title && (
-          <h1 className={resolveClasses('theme@separator__title', titleClassName)}>
+          <h1 className={cleanCssClasses('theme@separator__title', titleClassName)}>
             <Text text={title} />
             {/* <Accent className={accent && `theme@after:bg-${accent}`} /> */}
           </h1>
         )}
 
         {subtitle && (
-          <h4 className={resolveClasses('theme@separator__subtitle', subtitleClassName)}>
+          <h4 className={cleanCssClasses('theme@separator__subtitle', subtitleClassName)}>
             <Text text={subtitle} />
           </h4>
         )}
@@ -73,7 +70,7 @@ export default function SeparatorLayout({ className, style }: SlideProps): JSX.E
 
       {image && (
         <div
-          className={resolveClasses('theme@separator__image', image.className)}
+          className={cleanCssClasses('theme@separator__image', image.className)}
           style={{ backgroundImage: `url(${imageUrl})` }}
         />
       )}

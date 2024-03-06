@@ -1,10 +1,11 @@
 import { cleanCssClasses, useClient, useSlide, type SlideProps } from '@perseveranza-pets/freya/client'
+import { type VNode } from 'preact'
 import { Accent, ComplexContent, SlideWrapper, Text } from '../components/common.js'
 import { Items } from '../components/item.js'
 import { type Slide } from '../models.js'
 
-export default function HalfLayout({ className, style }: SlideProps): JSX.Element {
-  const { talk, resolveClasses, resolveImage } = useClient()
+export default function HalfLayout({ className, style }: SlideProps): VNode {
+  const { talk, resolveImage } = useClient()
   const { slide, index } = useSlide<Slide>()
 
   const {
@@ -32,9 +33,9 @@ export default function HalfLayout({ className, style }: SlideProps): JSX.Elemen
       style={style}
       defaultLogoColor="black"
     >
-      <div className={resolveClasses('theme@half__contents')}>
+      <div className={cleanCssClasses('theme@half__contents')}>
         {title && (
-          <h1 className={resolveClasses(titleClassName)}>
+          <h1 className={cleanCssClasses(titleClassName)}>
             <Text text={title} />
             <Accent />
           </h1>
@@ -48,7 +49,7 @@ export default function HalfLayout({ className, style }: SlideProps): JSX.Elemen
           }
 
           return (
-            <h4 key={key} className={resolveClasses('theme@half__subtitle', subtitleClassName)}>
+            <h4 key={key} className={cleanCssClasses('theme@half__subtitle', subtitleClassName)}>
               <Text text={c} />
             </h4>
           )
@@ -57,7 +58,9 @@ export default function HalfLayout({ className, style }: SlideProps): JSX.Elemen
         {items && <Items items={items} />}
       </div>
 
-      {image && <div className={resolveClasses('theme@half__image')} style={{ backgroundImage: `url(${imageUrl})` }} />}
+      {image && (
+        <div className={cleanCssClasses('theme@half__image')} style={{ backgroundImage: `url(${imageUrl})` }} />
+      )}
     </SlideWrapper>
   )
 }

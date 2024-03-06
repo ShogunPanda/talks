@@ -5,5 +5,13 @@ document:
   titleFormatted: |
     Milo, a new HTTP parser
     for Node.js
+  abstract: |
+    Node.js HTTP parsing currently relies on llhttp, a parser which provides very good performance but has currently
+    some challenges for the health of the runtime.
+
+    Is it possible to create a modern, maintenable, well documented, secure and performant alternative? Yes it is!
+
+    Let me introduce you Milo, a new Rust based HTTP parser which I plan to integrate into Node.js and let me show you
+    how you can help be a part of its first Rust component.
   author: common.author
   company: common.company

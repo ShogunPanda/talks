@@ -12,7 +12,7 @@ title: Being reckless (sometimes) pays off!
 image:
   url: '@talk/ski.webp'
 options:
-  background: nf-blue
+  background: blue
 decorations:
   logo: black
 
@@ -26,7 +26,7 @@ title: We all love HTTP!
 image:
   url: '@talk/love.webp'
 options:
-  background: nf-purple
+  background: purple
 decorations:
   logo: black
 
@@ -38,7 +38,7 @@ title: |
 image:
   url: '@talk/palette.webp'
 options:
-  background: nf-green
+  background: green
 
 ---
 title: The choice is narrow
@@ -74,7 +74,7 @@ title: Let's focus!
 image:
   url: '@talk/focus.webp'
 options:
-  background: nf-blue
+  background: blue
 
 ---
 layout: side
@@ -114,7 +114,7 @@ title: Do we have the solution?
 image:
   url: '@talk/solution.webp'
 options:
-  background: nf-purple
+  background: purple
 
 ---
 layout: separator
@@ -122,15 +122,15 @@ title: Yes, start fresh!
 image:
   url: '@talk/fresh.webp'
 options:
-  background: nf-green
+  background: green
 
 ---
 layout: separator
-title: Say hello to <span class="text-nf-green">Milo</span>!
+title: Say hello to <span class="theme@fg-green">Milo</span>!
 image:
   url: '@talk/milo.webp'
 options:
-  background: nf-blue
+  background: blue
 decorations:
   logo: black
   permalink: white
@@ -172,7 +172,7 @@ title: How is that possible?
 image:
   url: '@talk/dog.webp'
 options:
-  background: nf-blue
+  background: blue
 
 ---
 layout: separator
@@ -180,7 +180,7 @@ title: It's all in the macros!
 image:
   url: '@talk/macro.webp'
 options:
-  background: nf-green
+  background: green
 
 ---
 title: Rust macro system is insanely powerful
@@ -218,11 +218,11 @@ items:
             }
           });
       className:
-        root: p-0 flex-initial font-size-0_8em
+        root: talk@example__from
     - image: '@talk/arrow-right.webp'
       className:
-        root: flex-initial min-h-auto
-        image: w-auto h-auto min-w-auto min-h-auto h-0_5sp mx-1ch mb-0
+        root: talk@example__arrow
+        image: talk@example__arrow__image
     - code:
         language: rust
         content: |
@@ -247,8 +247,8 @@ items:
               }
           }
       className:
-        root: flex-initial font-size-0_8em
-  className: flex flex-1 gap-x-1ch items-center justify-center
+        root: talk@example__to
+  className: talk@example
   horizontal: true
   spacer: false
   gap: false
@@ -260,7 +260,7 @@ title: What about resources?
 image:
   url: '@talk/piggy-bank.webp'
 options:
-  background: nf-blue
+  background: blue
 decorations:
   logo: black
 
@@ -284,7 +284,7 @@ title: Strict, period!
 image:
   url: '@talk/wall.webp'
 options:
-  background: nf-midnight
+  background: midnight
 
 ---
 layout: image
@@ -339,7 +339,7 @@ title: |
 image:
   url: '@talk/incompatible.webp'
 options:
-  background: nf-purple
+  background: purple
 decorations:
   logo: black
 
@@ -403,7 +403,7 @@ title: |
 image:
   url: '@talk/incompatible.webp'
 options:
-  background: nf-purple
+  background: purple
 
 ---
 layout: side
@@ -481,7 +481,7 @@ items:
 
           317k requests in 11.02s, 26.6 MB read
       className:
-        root: flex
+        root: talk@performance__result
     - code:
         language: none
         content: |
@@ -505,8 +505,8 @@ items:
 
           338k requests in 11.02s, 28.4 MB read
       className:
-        root: flex
-  className: flex flex-1 gap-x-1ch font-size-0_5em items-center
+        root: talk@performance__result
+  className: talk@performance
   horizontal: true
   gap: false
   defaultclassName: false

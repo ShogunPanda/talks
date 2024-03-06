@@ -6,6 +6,17 @@ document:
     Compiling and
     bundling JS,
     the painless way
+  abstract: |
+    In the last years, the JavaScript ecosystem has grown exponentially.
+
+    With it, many different compilers and build systems came to life to compete to reach the best possible performances,
+    better stability, and compatibility with the language features.
+
+    While five years ago, we had a few choices for compiling and bundling JavaScript (for either client or server),
+    today, we have many good alternatives. ESBuild, SWC, Vite, WebPack... what are the differences between those tools?
+    How do I choose the right one for my project?
+
+    What can we predict about the future of the JavaScript ecosystem?
   author: common.author
   company: common.company
   archived: true

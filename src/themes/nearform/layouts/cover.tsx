@@ -7,11 +7,12 @@ import {
   useSlide,
   type SlideProps
 } from '@perseveranza-pets/freya/client'
+import { type VNode } from 'preact'
 import { SlideWrapper, Text } from '../components/common.js'
 import { SvgIcon } from '../components/icons.js'
 import { type Slide } from '../models.js'
 
-export default function CoverLayout({ className, style }: SlideProps): JSX.Element {
+export default function CoverLayout({ className, style }: SlideProps): VNode {
   const {
     isProduction,
     talk: {
@@ -19,7 +20,6 @@ export default function CoverLayout({ className, style }: SlideProps): JSX.Eleme
       document: { author, title, titleFormatted }
     },
     theme: { urls },
-    resolveClasses,
     resolveImage
   } = useClient()
   const { slide, index } = useSlide<Slide>()
@@ -41,30 +41,30 @@ export default function CoverLayout({ className, style }: SlideProps): JSX.Eleme
       style={style}
     >
       <Image src={backgroundImage} className={cleanCssClasses('theme@cover__background')} />
-      <div className={resolveClasses('theme@cover__contents')}>
+      <div className={cleanCssClasses('theme@cover__contents')}>
         <Svg src="@theme/logo-with-text-total-white.svg" className={cleanCssClasses('theme@cover__logo')} />
 
-        <main className={resolveClasses('theme@cover__header')}>
-          <h1 className={resolveClasses('theme@cover__header__title')}>
+        <main className={cleanCssClasses('theme@cover__header')}>
+          <h1 className={cleanCssClasses('theme@cover__header__title')}>
             <Text text={titleFormatted ?? title} />
           </h1>
 
-          <h2 className={resolveClasses('theme@cover__header__author')}>
-            <strong className={resolveClasses('theme@cover__header__author__name')}>
+          <h2 className={cleanCssClasses('theme@cover__header__author')}>
+            <strong className={cleanCssClasses('theme@cover__header__author__name')}>
               <Text text={author.name} />
             </strong>
 
-            <span className={resolveClasses('theme@cover__header__author__description')}>
+            <span className={cleanCssClasses('theme@cover__header__author__description')}>
               <Text text={author.descriptionShort ?? author.description} />
             </span>
           </h2>
         </main>
 
-        <h3 className={resolveClasses('theme@cover__copyright')}>
+        <h3 className={cleanCssClasses('theme@cover__copyright')}>
           &#169; Copyright {new Date().getFullYear()} NearForm Ltd. All Rights Reserved.
         </h3>
 
-        <aside className={resolveClasses('theme@cover__qrs')}>
+        <aside className={cleanCssClasses('theme@cover__qrs')}>
           <QRCode
             data={`${urls[isProduction ? 'production' : 'development']}/${id}`}
             image={<SvgIcon name="desktop" className={cleanCssClasses('theme@cover__qrs__qr__image')} />}

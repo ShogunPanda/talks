@@ -14,7 +14,7 @@ title: |
 image:
   url: '@talk/kindness.webp'
 options:
-  background: nf-purple
+  background: purple
 decorations:
   logo: black
 
@@ -28,7 +28,7 @@ content:
   - We all know how this technology has made our life easier.
 image:
   url: '@talk/graphql.webp'
-  className: absolute -bottom-1_5sp left-2_5sp w-5sp max-h-none
+  className: talk@graphql-logo
 
 ---
 title: Why is it good?
@@ -77,7 +77,7 @@ layout: half
 title: The server knows<br/>it better
 content:
   - It’s relative easy to attach new data sources to the server.
-  - <em class="text-nf-blue">How to push additional data to a client that didn’t ask for it?</em>
+  - <em class="theme@fg-blue">How to push additional data to a client that didn’t ask for it?</em>
 image:
   url: '@talk/server.webp'
 decorations:
@@ -117,7 +117,7 @@ title: You already know the answer...
 image:
   url: '@talk/laugh.webp'
 options:
-  background: nf-purple
+  background: purple
 
 ---
 title: The happy case is mostly theoretical
@@ -137,13 +137,13 @@ items:
 layout: raw
 content:
   - |
-    <h1 class="text-white font-size-150pt line-height-1 m-0 p-0">BAD!</h1>
-    <h1 class="text-nf-green font-size-150pt line-height-1 m-0 p-0">DON'T!</h1>
+    <h1 class="theme@fg-white theme-misc@bad__text">BAD!</h1>
+    <h1 class="theme@fg-green theme-misc@bad__text">DON'T!</h1>
 className:
-  raw: flex flex-1 w-full h-full flex-col items-center justify-center text-center
-  root: items-center justify-center p-0
+  raw: theme-misc@bad
+  root: theme-misc@bad__root
 options:
-  background: nf-midnight
+  background: midnight
 decorations:
   logo: white
   permalink: white
@@ -160,12 +160,12 @@ decorations:
 layout: separator
 title: |
   Yes, let's make
-  an <span class="text-nf-green">enriching</span>
+  an <span class="theme@fg-green">enriching</span>
   proxy!
 image:
   url: '@talk/san-bernardo.webp'
 options:
-  background: nf-blue
+  background: blue
 decorations:
   logo: black
 
@@ -174,9 +174,9 @@ title: Check it out!
 content:
   - We can reuse parsing and serialization from the reference GraphQL Javascript implementation.
   - qr: https://github.com/ShogunPanda/graphql-enrich-proxy
-  - <span class="block text-center">[https://github.com/ShogunPanda/graphql-enrich-proxy](https://github.com/ShogunPanda/graphql-enrich-proxy)</span>
+  - <span class="theme-misc@qr__footer">[https://github.com/ShogunPanda/graphql-enrich-proxy](https://github.com/ShogunPanda/graphql-enrich-proxy)</span>
 className:
-  qr: block w-2sp h-2sp mx-auto mb-0_2sp flex-1
+  qr: theme-misc@qr--big
 
 ---
 title: How it works
@@ -315,7 +315,7 @@ code:
       return [updatedDocument, injectedFieldId]
     }
   className:
-    root: font-size-0_5em
+    root: theme-misc@code--small
 decorations:
   logo: white
   permalink: black-with-bg
@@ -338,7 +338,7 @@ items:
 layout: separator
 title: Let me introduce two friends...
 options:
-  background: nf-purple
+  background: purple
 
 ---
 title: Depth first tree traversal
@@ -377,7 +377,7 @@ code:
 layout: separator
 title: ... and now the show goes on!
 options:
-  background: nf-green
+  background: green
 decorations:
   permalink: black
 
@@ -502,7 +502,7 @@ title: Only an example can enlighten us!
 image:
   url: '@talk/sun.webp'
 options:
-  background: nf-green
+  background: green
 decorations:
   permalink: black-with-bg
 
@@ -593,7 +593,7 @@ code:
       }
     }
   className:
-    root: font-size-0_5em
+    root: theme-misc@code--small
 decorations:
   permalink: black-with-bg
 
@@ -671,12 +671,12 @@ title: Mission completed!
 image:
   url: '@talk/completed.webp'
 options:
-  background: nf-midnight
+  background: midnight
 decorations:
   icon: party-horn
   permalink: black
   className:
-    icon: w-2sp h-2sp left-1sp -bottom-0_2sp theme@var-[nf-icon-primary-color]-[--nf-color-midnight-80] stroke-width-0
+    icon: theme-misc@mission-completed
 
 ---
 title: Take home lessons

@@ -14,7 +14,7 @@ title: |
 image:
   url: '@talk/500.webp'
 options:
-  background: nf-midnight
+  background: midnight
 
 ---
 layout: hello
@@ -26,7 +26,7 @@ title: We all love HTTP!
 image:
   url: '@talk/love.webp'
 options:
-  background: nf-purple
+  background: purple
 decorations:
   logo: black
 
@@ -38,7 +38,7 @@ title: |
 image:
   url: '@talk/palette.webp'
 options:
-  background: nf-green
+  background: green
 decorations:
   logo: black
 
@@ -118,7 +118,7 @@ title: Let's focus!
 image:
   url: '@talk/focus.webp'
 options:
-  background: nf-blue
+  background: blue
 
 ---
 layout: side
@@ -181,7 +181,7 @@ title: Wait, what?!
 image:
   url: '@talk/what.webp'
 options:
-  background: nf-green
+  background: green
 
 ---
 layout: separator
@@ -191,7 +191,7 @@ title: |
 image:
   url: '@talk/possible.webp'
 options:
-  background: nf-blue
+  background: blue
 
 ---
 layout: side
@@ -223,7 +223,7 @@ code:
     off=18 message complete
     ```
   className:
-    root: font-size-0_5em
+    root: theme-misc@code--small
 
 ---
 layout: separator
@@ -233,7 +233,7 @@ title: |
 image:
   url: '@talk/genius.webp'
 options:
-  background: nf-green
+  background: green
 
 ---
 title: "llhttp: what's wrong with it?"
@@ -257,7 +257,7 @@ title: |
 image:
   url: '@talk/postit.webp'
 options:
-  background: nf-midnight
+  background: midnight
 
 ---
 layout: separator
@@ -265,7 +265,7 @@ title: Do we have the solution?
 image:
   url: '@talk/solution.webp'
 options:
-  background: nf-purple
+  background: purple
 
 ---
 layout: separator
@@ -273,7 +273,7 @@ title: Yes, start fresh!
 image:
   url: '@talk/fresh.webp'
 options:
-  background: nf-green
+  background: green
 
 ---
 title: Keep the goods
@@ -314,7 +314,7 @@ title: |
 image:
   url: '@talk/road.webp'
 options:
-  background: nf-green
+  background: green
 
 ---
 layout: quote

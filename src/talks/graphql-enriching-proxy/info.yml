@@ -5,5 +5,15 @@ document:
   titleFormatted: |
     Don’t break GraphQL,
     extend it!
+  abstract: |
+    GraphQL is powerful technology to retrieve and send complex structures from remote locations with a simple and
+    effective syntax. One of its perks is avoid under-fetching and over-fetching as the client specifically requests the
+    fields it’s interested in. 
+
+    But what happens if we need to enrich or customize the data set and we can’t modify the upstream GraphQL server?
+    Shall we break the spec?
+
+    In this talk I will show you how to use the resources the GraphQL specification already gives us to solve this issue
+    without having to break the rules.
   author: common.author
   company: common.company

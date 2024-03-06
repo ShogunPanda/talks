@@ -1,12 +1,12 @@
 import { Code, Image, cleanCssClasses, useClient, useSlide, type SlideProps } from '@perseveranza-pets/freya/client'
+import { type VNode } from 'preact'
 import { Accent, ComplexContent, SlideWrapper, Text } from '../components/common.js'
 import { Items } from '../components/item.js'
 import { type Slide } from '../models.js'
 
-export default function SideLayout({ className, style }: SlideProps): JSX.Element {
+export default function SideLayout({ className, style }: SlideProps): VNode {
   const {
     talk: { id },
-    resolveClasses,
     resolveImage
   } = useClient()
   const { slide, index } = useSlide<Slide>()
@@ -30,7 +30,7 @@ export default function SideLayout({ className, style }: SlideProps): JSX.Elemen
       className={cleanCssClasses('theme@side', highlight && 'theme@side--with-highlight', className, rootClassName)}
       style={style}
     >
-      <div className={resolveClasses('theme@side__primary')}>
+      <div className={cleanCssClasses('theme@side__primary')}>
         {title && (
           <h1>
             <Text text={title} />
@@ -46,7 +46,7 @@ export default function SideLayout({ className, style }: SlideProps): JSX.Elemen
           }
 
           return (
-            <h4 key={key} className={resolveClasses('theme@side__subtitle')}>
+            <h4 key={key} className={cleanCssClasses('theme@side__subtitle')}>
               <Text text={c} />
             </h4>
           )
@@ -56,7 +56,7 @@ export default function SideLayout({ className, style }: SlideProps): JSX.Elemen
       </div>
 
       <div
-        className={resolveClasses(
+        className={cleanCssClasses(
           'theme@side__secondary',
           highlight && 'theme@side__secondary--with-highlight',
           highlight?.className
@@ -64,7 +64,7 @@ export default function SideLayout({ className, style }: SlideProps): JSX.Elemen
       >
         {image && <Image src={imageUrl} className={cleanCssClasses('theme@side__image', image.className)} />}
         {!image && highlight && (
-          <h4 className={resolveClasses('theme@side__highlight')}>
+          <h4 className={cleanCssClasses('theme@side__highlight')}>
             <Text text={highlight.text} />
           </h4>
         )}

@@ -5,6 +5,11 @@ document:
   titleFormatted: |
     Node.js HTTP parser,
     what's going on?
+  abstract: |
+    Node.js HTTP relies on llhttp parser, which is a both a semi-obscure piece of code and semi-abandoned project.
+
+    As the parser is a critical part of Node.js, do we have better alternatives for easier maintainability? Let's find
+    out.
   author: common.author
   company: common.company
   archived: true

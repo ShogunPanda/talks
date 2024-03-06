@@ -1,12 +1,12 @@
 import { Code, Image, cleanCssClasses, useClient, useSlide, type SlideProps } from '@perseveranza-pets/freya/client'
+import { type VNode } from 'preact'
 import { Accent, ComplexContent, SlideWrapper, Text } from '../components/common.js'
 import { Grids, Items } from '../components/item.js'
 import { type Slide } from '../models.js'
 
-export default function DefaultLayout({ className, style }: SlideProps): JSX.Element {
+export default function DefaultLayout({ className, style }: SlideProps): VNode {
   const {
     talk: { id },
-    resolveClasses,
     resolveImage
   } = useClient()
   const { slide, index } = useSlide<Slide>()
@@ -26,7 +26,7 @@ export default function DefaultLayout({ className, style }: SlideProps): JSX.Ele
   return (
     <SlideWrapper slide={slide} index={index} className={cleanCssClasses(className, rootClassName)} style={style}>
       {title && (
-        <h1 className={resolveClasses(titleClassName)}>
+        <h1 className={cleanCssClasses(titleClassName)}>
           <Text text={title} />
           <Accent />
         </h1>
@@ -40,14 +40,14 @@ export default function DefaultLayout({ className, style }: SlideProps): JSX.Ele
         }
 
         return (
-          <h4 key={key} className={resolveClasses('theme@default__subtitle', subtitleClassName)}>
+          <h4 key={key} className={cleanCssClasses('theme@default__subtitle', subtitleClassName)}>
             <Text text={c} />
           </h4>
         )
       })}
 
       {image && (
-        <div className={resolveClasses('theme@default__image-wrapper')}>
+        <div className={cleanCssClasses('theme@default__image-wrapper')}>
           <Image
             src={imageUrl}
             className={cleanCssClasses(
@@ -63,7 +63,7 @@ export default function DefaultLayout({ className, style }: SlideProps): JSX.Ele
       {!image && !items && grids && <Grids grids={grids} />}
 
       {!image && !items && !grids && code && (
-        <div className={resolveClasses('theme@default__code')}>
+        <div className={cleanCssClasses('theme@default__code')}>
           <Code {...code} />
         </div>
       )}

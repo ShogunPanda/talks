@@ -13,7 +13,7 @@ title: |
 image:
   url: '@talk/painting.webp'
 options:
-  background: nf-green
+  background: green
 decorations:
   logo: black
 
@@ -26,8 +26,8 @@ layout: half
 title: First of all, let’s give credits!
 content:
   - This talk has originally been written by my colleague and friend **Michele Riva**.
-  - <span class="text-nf-purple">**Whatever goes wrong today, please complain directly to him on Twitter!**</span>
-  - <span class="text-nf-blue font-bold">[@MicheleRivaCode](https://twitter.com/@MicheleRivaCode)</span>
+  - <span class="theme@fg-purple">**Whatever goes wrong today, please complain directly to him on Twitter!**</span>
+  - <strong class="theme@fg-blue">[@MicheleRivaCode](https://twitter.com/@MicheleRivaCode)</strong>
 image:
   url: '@talk/michele.webp'
 decorations:
@@ -53,7 +53,7 @@ title: Let's send a message ...
 image:
   url: '@talk/pidgeons.webp'
 options:
-  background: nf-green
+  background: green
 decorations:
   logo: black
   permalink: white
@@ -64,7 +64,7 @@ title: That was not an encrypted channel!
 image:
   url: '@talk/dali.webp'
 options:
-  background: nf-midnight
+  background: midnight
 decorations:
   logo: black
 
@@ -83,7 +83,7 @@ title: An example:<br/> The Caesar Cipher
 image:
   url: '@talk/caesar-salad.webp'
 options:
-  background: nf-purple
+  background: purple
 decorations:
   permalink: black
 
@@ -120,17 +120,11 @@ image:
 ---
 layout: side
 title: Trivia question
-content:
-  - Where does its name come from?
-image:
-  url: '@talk/hal.webp'
-
----
-layout: side
-title: Trivia question
-content:
-  - Where does its name come from?
-  - <span class="text-nf-purple font-bold font-size-1_5em">It's a Caesar Cipher!</span>
+items:
+  entries:
+    - title: Where does its name come from?
+    - title: <h1 class="theme@fg-purple">It's a Caesar Cipher!</h1>
+  sequence: true
 image:
   url: '@talk/hal.webp'
 
@@ -212,7 +206,7 @@ title: It's time to paint!
 image:
   url: '@talk/baby-hand.webp'
 options:
-  background: nf-green
+  background: green
 decorations:
   logo: black
 
@@ -236,11 +230,11 @@ index: 3
 
 ---
 layout: separator
-title: Let's make some m<span class="text-nf-green">a</span>th!
+title: Let's make some m<span class="theme@fg-green">a</span>th!
 image:
   url: '@talk/walter-white.webp'
 options:
-  background: nf-blue
+  background: blue
 
 ---
 title: How is this possible?

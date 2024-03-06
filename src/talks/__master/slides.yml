@@ -23,9 +23,9 @@ quote:
   author: Nice person
   light: true
   primaryIcon: network-wired
-  primaryIconClassName: text-red
+  primaryIconClassName: talk@quote__primary-icon
   secondaryIcon: chart-network
-  secondaryIconClassName: text-green
+  secondaryIconClassName: talk@quote__secondary-icon
 
 ---
 layout: quote
@@ -134,7 +134,7 @@ grids:
       - icon: chevron-up
       - icon: chevron-right
     sequence: true
-    className: grid-cols-[1fr_1fr_1fr] gap-1ch
+    className: talk@grid
 decorations:
   icon: lightbulb-on
 
@@ -229,8 +229,8 @@ code:
       return { ...response, extensions: { ...response.extensions, ...extensions }}
     })
   className:
-    lineNotHighlighted: bg-red theme@opacity-100
-    lineHighlighted: bg-green
+    lineNotHighlighted: talk@line-not-highlighted
+    lineHighlighted: talk@line-highlighted
 decorations:
   icon: lightbulb-on
 
@@ -327,7 +327,7 @@ items:
       text: Dolore Lorem aliquip tempor tempor cillum aute qui qui Lorem.
 highlight:
   text: Deserunt fugiat voluptate adipisicing consectetur nostrud esse cillum. Est veniam est cupidatat reprehenderit esse pariatur sint dolore velit incididunt laboris.
-  className: bg-nf-purple text-white
+  className: talk@highlight
 decorations:
   logo: white
   permalink: white
@@ -382,7 +382,7 @@ subtitle: Dolor id enim magna quis aute ex esse officia amet officia occaecat.
 image:
   url: '@theme/panda.webp'
 options:
-  background: nf-midnight
+  background: midnight
 className:
   subtitle: theme@separator__callout
 
@@ -392,7 +392,7 @@ title: Irure consectetur officia aliquip nostrud.
 image:
   url: '@theme/panda.webp'
 options:
-  background: nf-midnight-80
+  background: midnight-80
 
 ---
 layout: separator
@@ -400,7 +400,7 @@ title: Irure consectetur officia aliquip nostrud.
 image:
   url: '@theme/panda.webp'
 options:
-  background: nf-midnight-50
+  background: midnight-50
 
 ---
 layout: separator
@@ -408,7 +408,7 @@ title: Irure consectetur officia aliquip nostrud.
 image:
   url: '@theme/panda.webp'
 options:
-  background: nf-midnight-30
+  background: midnight-30
 
 ---
 layout: separator
@@ -416,7 +416,7 @@ title: Irure consectetur officia aliquip nostrud.
 image:
   url: '@theme/panda.webp'
 options:
-  background: nf-midnight-10
+  background: midnight-10
 
 ---
 layout: separator
@@ -424,7 +424,7 @@ title: Irure consectetur officia aliquip nostrud.
 image:
   url: '@theme/panda.webp'
 options:
-  background: nf-green
+  background: green
 
 ---
 layout: separator
@@ -432,7 +432,7 @@ title: Irure consectetur officia aliquip nostrud.
 image:
   url: '@theme/panda.webp'
 options:
-  background: nf-green-80
+  background: green-80
 
 ---
 layout: separator
@@ -440,7 +440,7 @@ title: Irure consectetur officia aliquip nostrud.
 image:
   url: '@theme/panda.webp'
 options:
-  background: nf-green-50
+  background: green-50
 
 ---
 layout: separator
@@ -448,7 +448,7 @@ title: Irure consectetur officia aliquip nostrud.
 image:
   url: '@theme/panda.webp'
 options:
-  background: nf-green-30
+  background: green-30
 
 ---
 layout: separator
@@ -456,7 +456,7 @@ title: Irure consectetur officia aliquip nostrud.
 image:
   url: '@theme/panda.webp'
 options:
-  background: nf-green-10
+  background: green-10
 
 ---
 layout: separator
@@ -464,7 +464,7 @@ title: Irure consectetur officia aliquip nostrud.
 image:
   url: '@theme/panda.webp'
 options:
-  background: nf-purple
+  background: purple
 
 ---
 layout: separator
@@ -472,7 +472,7 @@ title: Irure consectetur officia aliquip nostrud.
 image:
   url: '@theme/panda.webp'
 options:
-  background: nf-purple-80
+  background: purple-80
 
 ---
 layout: separator
@@ -480,7 +480,7 @@ title: Irure consectetur officia aliquip nostrud.
 image:
   url: '@theme/panda.webp'
 options:
-  background: nf-purple-50
+  background: purple-50
 
 ---
 layout: separator
@@ -488,7 +488,7 @@ title: Irure consectetur officia aliquip nostrud.
 image:
   url: '@theme/panda.webp'
 options:
-  background: nf-purple-30
+  background: purple-30
 
 ---
 layout: separator
@@ -496,7 +496,7 @@ title: Irure consectetur officia aliquip nostrud.
 image:
   url: '@theme/panda.webp'
 options:
-  background: nf-purple-10
+  background: purple-10
 
 ---
 layout: separator
@@ -504,7 +504,7 @@ title: Irure consectetur officia aliquip nostrud.
 image:
   url: '@theme/panda.webp'
 options:
-  background: nf-blue
+  background: blue
 
 ---
 layout: separator
@@ -512,7 +512,7 @@ title: Irure consectetur officia aliquip nostrud.
 image:
   url: '@theme/panda.webp'
 options:
-  background: nf-blue-80
+  background: blue-80
 
 ---
 layout: separator
@@ -520,7 +520,7 @@ title: Irure consectetur officia aliquip nostrud.
 image:
   url: '@theme/panda.webp'
 options:
-  background: nf-blue-50
+  background: blue-50
 
 ---
 layout: separator
@@ -528,7 +528,7 @@ title: Irure consectetur officia aliquip nostrud.
 image:
   url: '@theme/panda.webp'
 options:
-  background: nf-blue-30
+  background: blue-30
 
 ---
 layout: separator
@@ -536,7 +536,7 @@ title: Irure consectetur officia aliquip nostrud.
 image:
   url: '@theme/panda.webp'
 options:
-  background: nf-blue-10
+  background: blue-10
 
 ---
 layout: separator
@@ -544,7 +544,7 @@ title: Irure consectetur officia aliquip nostrud.
 image:
   url: '@theme/panda.webp'
 options:
-  background: nf-grey-80
+  background: grey-80
 
 ---
 layout: separator
@@ -552,7 +552,7 @@ title: Irure consectetur officia aliquip nostrud.
 image:
   url: '@theme/panda.webp'
 options:
-  background: nf-grey-30
+  background: grey-30
 
 ---
 layout: separator
@@ -560,4 +560,4 @@ title: Irure consectetur officia aliquip nostrud.
 image:
   url: '@theme/panda.webp'
 options:
-  background: nf-grey-10
+  background: grey-10

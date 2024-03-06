@@ -6,6 +6,19 @@ document:
     Horizontal Scaling of
     a Web3 system to the sky
     and beyond in AWS
+  abstract: |
+    [web3.storage](http://web3.storage) is a system living on top of [Interplanetary File System
+    (IPFS)](https://ipfs.io) to provide non technical people access to a completely decentralized file sharing network
+    designed to preserve and grow humanity's knowledge.
+
+    The massive success of the initiative quickly brought the system to a point were it was not able to handle the
+    growth. Uploaded files were only available for downloads after several days due to limited capacity. Adding new
+    processing nodes took literally days due to the complex bootstrap procedures mandated by the different network
+    protocols involved.
+
+    In this talk I will show how we have been able to migrate to a new fully stateless system by carefully making
+    assumption and leveraging AWS services. We developed a system that now can perform infinite horizontal scalability
+    and it is able to consistently handle millions of uploads per day.
   author: common.author
   company: common.company
   archived: true

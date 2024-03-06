@@ -1,16 +1,15 @@
 import { Image, cleanCssClasses, useClient, useSlide, type SlideProps } from '@perseveranza-pets/freya/client'
-import { Fragment } from 'preact'
+import { Fragment, type VNode } from 'preact'
 import { Accent, SlideWrapper, Text } from '../components/common.js'
 import { Item } from '../components/item.js'
 import { type Slide } from '../models.js'
 
-export default function HelloLayout({ className, style }: SlideProps): JSX.Element {
+export default function HelloLayout({ className, style }: SlideProps): VNode {
   const {
     talk: {
       id,
       document: { author: documentAuthor }
     },
-    resolveClasses,
     resolveImage
   } = useClient()
   const { slide, index } = useSlide<Slide>()
@@ -31,16 +30,16 @@ export default function HelloLayout({ className, style }: SlideProps): JSX.Eleme
       style={style}
       defaultLogoColor="white"
     >
-      <h1 className={resolveClasses('theme@hello__title')}>
-        Hello, I'm <span className={resolveClasses('theme@hello__title__name')}>{name}</span>!<Accent />
+      <h1 className={cleanCssClasses('theme@hello__title')}>
+        Hello, I'm <span className={cleanCssClasses('theme@hello__title__name')}>{name}</span>!<Accent />
       </h1>
 
-      <aside className={resolveClasses('theme@hello__location-wrapper')}>
+      <aside className={cleanCssClasses('theme@hello__location-wrapper')}>
         <Image src={locationImage} className={cleanCssClasses('theme@hello__location')} />
       </aside>
 
-      <main className={resolveClasses('theme@hello__contents')}>
-        <section className={resolveClasses('theme@hello__description')}>
+      <main className={cleanCssClasses('theme@hello__contents')}>
+        <section className={cleanCssClasses('theme@hello__description')}>
           <Image src={avatarImage} className={cleanCssClasses('theme@hello__logo')} />
 
           <Item
@@ -49,14 +48,14 @@ export default function HelloLayout({ className, style }: SlideProps): JSX.Eleme
               text: cleanCssClasses('theme@hello__roles__text')
             }}
           >
-            <strong className={resolveClasses('theme@hello__roles')}>
+            <strong className={cleanCssClasses('theme@hello__roles')}>
               {author.roles.map(({ what, where, url }: Record<string, string>, index: number) => {
                 return (
                   <Fragment key={`role:${index}`}>
-                    <a href={url} className={resolveClasses('theme@hello__role__company')}>
+                    <a href={url} className={cleanCssClasses('theme@hello__role__company')}>
                       {where}
                     </a>
-                    <span className={resolveClasses('theme@hello__role__description')}>{what}</span>
+                    <span className={cleanCssClasses('theme@hello__role__description')}>{what}</span>
                     <br />
                   </Fragment>
                 )
@@ -74,7 +73,7 @@ export default function HelloLayout({ className, style }: SlideProps): JSX.Eleme
           }}
           horizontal={true}
         >
-          <a href={author.website} className={resolveClasses('theme@hello__social__link')}>
+          <a href={author.website} className={cleanCssClasses('theme@hello__social__link')}>
             <Text text={author.website.replace('https://', '')} />
           </a>
         </Item>
@@ -88,7 +87,7 @@ export default function HelloLayout({ className, style }: SlideProps): JSX.Eleme
           }}
           horizontal={true}
         >
-          <a href={`https://github.com/${author.github}`} className={resolveClasses('theme@hello__social__link')}>
+          <a href={`https://github.com/${author.github}`} className={cleanCssClasses('theme@hello__social__link')}>
             <Text text={author.github} />
           </a>
         </Item>
@@ -102,7 +101,7 @@ export default function HelloLayout({ className, style }: SlideProps): JSX.Eleme
           }}
           horizontal={true}
         >
-          <a href={`https://twitter.com/${author.twitter}`} className={resolveClasses('theme@hello__social__link')}>
+          <a href={`https://twitter.com/${author.twitter}`} className={cleanCssClasses('theme@hello__social__link')}>
             <Text text={author.twitter} />
           </a>
         </Item>
@@ -118,7 +117,7 @@ export default function HelloLayout({ className, style }: SlideProps): JSX.Eleme
         >
           <a
             href={`https://linkedin.com/in/${author.linkedin}`}
-            className={resolveClasses('theme@hello__social__link')}
+            className={cleanCssClasses('theme@hello__social__link')}
           >
             <Text text={author.linkedin} />
           </a>

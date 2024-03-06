@@ -21,7 +21,7 @@ export function resolveIcon(icon: string): Record<string, string> {
 }
 
 export function SvgIcon({ name: icon, className }: SvgIconProps): VNode {
-  const { assets, resolveClasses, serverData } = useClient()
+  const { assets, serverData } = useClient()
 
   const { alias, name } = resolveIcon(icon)
   const key = `icon:${alias ?? name}`
@@ -58,7 +58,7 @@ export function SvgIcon({ name: icon, className }: SvgIconProps): VNode {
   const [id, viewBox] = assets.svgs[key]
 
   return (
-    <svg className={resolveClasses('freya@svg', 'theme@icon', className)} viewBox={viewBox}>
+    <svg className={cleanCssClasses('freya@svg', 'theme@icon', className)} viewBox={viewBox}>
       <use xlinkHref={`#${id}`} />
     </svg>
   )

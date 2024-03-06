@@ -13,7 +13,7 @@ title: |
 image:
   url: '@talk/skydiving.webp'
 options:
-  background: nf-blue
+  background: blue
 
 ---
 layout: hello
@@ -24,8 +24,8 @@ layout: half
 title: First of all, let’s give credits!
 content:
   - This talk has originally been written by my colleague and friend **Michele Riva**.
-  - <span class="text-nf-purple">**Whatever goes wrong today, please complain directly to him on Twitter!**</span>
-  - <span class="text-nf-blue font-bold">[@MicheleRivaCode](https://twitter.com/@MicheleRivaCode)</span>
+  - <span class="theme@fg-purple">**Whatever goes wrong today, please complain directly to him on Twitter!**</span>
+  - <strong class="theme@fg-blue">[@MicheleRivaCode](https://twitter.com/@MicheleRivaCode)</strong>
 image:
   url: '@talk/michele.webp'
 decorations:
@@ -37,7 +37,7 @@ title: Compiling and bundling JavaScript is often a pain ...
 image:
   url: '@talk/complicated.webp'
 options:
-  background: nf-purple
+  background: purple
 
 ---
 layout: separator
@@ -47,7 +47,7 @@ image:
 className:
   root: theme@separator--reverse
 options:
-  background: nf-green
+  background: green
 decorations:
   logo: total-white
   permalink: black
@@ -65,7 +65,7 @@ quote:
 decorations:
   number: 1
   className:
-    number: left-6sp
+    number: talk@terminology
 
 ---
 layout: quote
@@ -80,7 +80,7 @@ quote:
 decorations:
   number: 2
   className:
-    number: left-6sp
+    number: talk@terminology
 
 ---
 layout: quote
@@ -95,13 +95,13 @@ quote:
 decorations:
   number: 3
   className:
-    number: left-6sp
+    number: talk@terminology
 
 ---
 layout: separator
 title: Transpilation
 options:
-  background: nf-green
+  background: green
 decorations:
   permalink: black
 
@@ -158,7 +158,7 @@ grids:
       - image: '@talk/firefox.webp'
       - image: '@talk/safari.webp'
       - image: '@talk/edge.webp'
-  - className: grid-cols-[1fr_1fr_1fr]
+  - className: talk@icons-grid
     entries:
       - image: '@talk/node.webp'
       - image: '@talk/deno.webp'
@@ -171,7 +171,7 @@ notes: |
 ---
 title: There is a transpiler for everything…™
 grids:
-  - className: grid-gap-2ch grid-cols-[1fr_1fr_1fr]
+  - className: talk@icons-grid
     entries:
       - image: '@talk/f-sharp.webp'
         title: F#
@@ -209,17 +209,17 @@ items:
   entries:
     - image: '@talk/babel-pipe-from.webp'
       className:
-        root: flex-initial
-        image: w-auto h-auto max-w-8sp max-h-3sp mb-0
+        root: talk@transform__root
+        image: talk@transform__image
     - image: '@talk/babel-transform.webp'
       className:
-        root: flex-initial
-        image: w-auto h-auto w-1_5sp mx-1ch
+        root: talk@transform__root
+        image: talk@transform__arrow
     - image: '@talk/babel-pipe-to.webp'
       className:
-        root: flex-initial
-        image: w-auto h-auto max-w-8sp max-h-3sp mb-0
-  className: justify-center
+        root: talk@transform__root
+        image: talk@transform__image
+  className: talk@transform
   horizontal: true
   spacer: false
   gap: false
@@ -234,17 +234,17 @@ items:
   entries:
     - image: '@talk/babel-ts-from.webp'
       className:
-        root: flex-initial
-        image: w-auto h-auto max-w-8sp max-h-3sp mb-0
+        root: talk@transform__root
+        image: talk@transform__image
     - image: '@talk/babel-transform.webp'
       className:
-        root: flex-initial
-        image: w-auto h-auto w-1_5sp mx-1ch
+        root: talk@transform__root
+        image: talk@transform__arrow
     - image: '@talk/babel-ts-to.webp'
       className:
-        root: flex-initial
-        image: w-auto h-auto max-w-8sp max-h-3sp mb-0
-  className: justify-center
+        root: talk@transform__root
+        image: talk@transform__image
+  className: talk@transform
   horizontal: true
   spacer: false
   gap: false
@@ -258,7 +258,7 @@ subtitle: Let’s have a deep look on how a transpiler really works.
 image:
   url: '@talk/server.webp'
 options:
-  background: nf-blue
+  background: blue
 
 ---
 title: Generated code is not always readable…
@@ -266,17 +266,17 @@ items:
   entries:
     - image: '@talk/clojurescript-from.webp'
       className:
-        root: flex-initial
-        image: w-auto h-auto w-3_5sp mb-0
+        root: talk@generation--vertical__root
+        image: talk@generation--vertical__image
     - image: '@talk/arrow-down.webp'
       className:
-        root: flex-initial
-        image: w-auto h-auto min-w-auto min-h-auto h-0_5sp my-1ch
+        root: talk@generation--vertical__root
+        image: talk@generation--vertical__arrow
     - image: '@talk/clojurescript-to.webp'
       className:
-        root: flex-initial
-        image: w-auto h-auto w-3_5sp mb-0
-  className: items-center
+        root: talk@generation--vertical__root
+        image: talk@generation--vertical__image
+  className: talk@generation--vertical
   spacer: false
   gap: false
 
@@ -286,17 +286,17 @@ items:
   entries:
     - image: '@talk/reasonml-from.webp'
       className:
-        root: flex-initial
-        image: w-auto h-auto h-2sp mb-0
+        root: talk@generation--horizontal__root
+        image: talk@generation--horizontal__image
     - image: '@talk/arrow-right.webp'
       className:
-        root: flex-initial min-h-auto
-        image: w-auto h-auto min-w-auto min-h-auto min-h-auto h-0_5sp mx-1ch mb-0
+        root: talk@generation--horizontal__root
+        image: talk@generation--horizontal__arrow
     - image: '@talk/reasonml-to.webp'
       className:
-        root: flex-initial
-        image: w-auto h-auto h-2sp mb-0
-  className: talks@items-center
+        root: talk@generation--horizontal__root
+        image: talk@generation--horizontal__image
+  className: talk@generation--horizontal
   horizontal: true
   spacer: false
   gap: false
@@ -321,7 +321,7 @@ title: No transpiler is perfect!
 image:
   url: '@talk/incomplete.webp'
 options:
-  background: nf-purple
+  background: purple
 decorations:
   logo: black
 
@@ -341,7 +341,7 @@ grids:
 decorations:
   number: 1
   className:
-    number: left-4sp
+    number: talk@problem-number
 
 ---
 title: 'Problem #2: Output optimization'
@@ -361,7 +361,7 @@ options:
 decorations:
   number: 2
   className:
-    number: left-4sp
+    number: talk@problem-number
 
 ---
 title: Let’s focus on the popular one!
@@ -402,16 +402,16 @@ items:
     - image: '@talk/parsing-1-1.webp'
       title: Input
       className:
-        image: max-w-none max-h-none w-3sp h-auto
+        image: talk@parsing__image
     - image: '@talk/parsing-1-2.webp'
       title: Output
       className:
-        image: max-w-none max-h-none w-3sp h-auto
+        image: talk@parsing__image
   horizontal: true
 decorations:
   number: 1
   className:
-    number: left-0_1sp
+    number: talk@parsing__step
 
 ---
 title: 'Parsing step #2: Syntactical Analysis'
@@ -423,17 +423,17 @@ items:
       title: Input
       text: (user code)
       className:
-        image: max-w-none max-h-none w-3sp h-auto
+        image: talk@parsing__image
     - image: '@talk/parsing-2-2.webp'
       title: Parse Tree
       text: (a.k.a. Concrete Syntax Tree)
       className:
-        image: max-w-none max-h-none w-3sp h-auto
+        image: talk@parsing__image
   horizontal: true
 decorations:
   number: 2
   className:
-    number: left-0_1sp
+    number: talk@parsing__step
 
 ---
 title: 'Parsing step #3: Prepare the AST'
@@ -444,7 +444,7 @@ image:
 decorations:
   number: 3
   className:
-    number: left-0_1sp
+    number: talk@parsing__step
 
 ---
 title: 'Parsing step #4: Build the AST'
@@ -455,7 +455,7 @@ image:
 decorations:
   number: 4
   className:
-    number: left-0_1sp
+    number: talk@parsing__step
 
 ---
 title: Traversing the AST
@@ -480,11 +480,11 @@ items:
     - image: '@talk/codegen-input.webp'
       title: Input
       className:
-        image: max-w-none max-h-none w-3sp h-auto
+        image: talk@parsing__image
     - image: '@talk/codegen-output.webp'
       title: Output
       className:
-        image: max-w-none max-h-none w-3sp h-auto
+        image: talk@parsing__image
   horizontal: true
 
 ---
@@ -494,7 +494,7 @@ items:
     - image: '@talk/babel.webp'
       title: Babel
       className:
-        image: w-auto
+        image: theme-misc@width-auto
     - image: '@talk/prettier.webp'
       title: Prettier
     - image: '@talk/eslint.webp'
@@ -511,11 +511,11 @@ items:
     - image: '@talk/jscodeshift-from.webp'
       title: Input
       className:
-        image: max-w-none max-h-none h-2sp w-auto
+        image: talk@problem__image
     - image: '@talk/jscodeshift-to.webp'
       title: Desired output
       className:
-        image: max-w-none max-h-none h-2sp w-auto
+        image: talk@problem__image
   horizontal: true
 
 ---
@@ -527,7 +527,7 @@ image:
 layout: separator
 title: Bundling
 options:
-  background: nf-green
+  background: green
 decorations:
   permalink: black
 
@@ -569,9 +569,9 @@ layout: separator
 title: Is webpack still worth it?
 image:
   url: '@talk/webpack.webp'
-  className: bg-center bg-size-[3sp]-[3sp]
+  className: talk@logo
 options:
-  background: nf-midnight
+  background: midnight
 
 ---
 title: Are there any better alternatives?
@@ -583,7 +583,7 @@ grids:
       - image: '@talk/swc.webp'
         title: SWC
         className:
-          image: w-auto
+          image: theme-misc@width-auto
       - image: '@talk/vite.webp'
         title: Vite
       - image: '@talk/snowpack.webp'
@@ -594,9 +594,9 @@ layout: separator
 title: ESBuild
 image:
   url: '@talk/esbuild.webp'
-  className: bg-center bg-size-[3sp]-[3sp]
+  className: talk@logo
 options:
-  background: nf-midnight
+  background: midnight
 
 ---
 title: How fast ESBuild is?
@@ -617,9 +617,9 @@ layout: separator
 title: SWC
 image:
   url: '@talk/swc.webp'
-  className: bg-center bg-auto bg-size-[3sp]-[auto]
+  className: talk@logo--auto
 options:
-  background: nf-midnight
+  background: midnight
 
 ---
 title: How does it compare to ESBuild?
@@ -630,11 +630,11 @@ items:
     - image: '@talk/esbuild-vs-swc-es2019.webp'
       title: ES2019
       className:
-        image: max-w-none max-h-none w-3sp h-auto
+        image: talk@parsing__image
     - image: '@talk/esbuild-vs-swc-es2020.webp'
       title: ES2020
       className:
-        image: max-w-none max-h-none w-3sp h-auto
+        image: talk@parsing__image
   horizontal: true
 
 ---
@@ -648,16 +648,16 @@ title: SWC can run in a browser thanks to WASM
 image:
   url: '@talk/matrioska.webp'
 options:
-  background: nf-purple
+  background: purple
 
 ---
 layout: separator
 title: Vite
 image:
   url: '@talk/vite.webp'
-  className: bg-center bg-auto bg-size-[3sp]-[3sp]
+  className: talk@logo
 options:
-  background: nf-midnight
+  background: midnight
 
 ---
 title: A little insights into Vite
@@ -683,17 +683,17 @@ items:
   entries:
     - image: '@talk/esbuild.webp'
       className:
-        root: absolute z-1 top-0_5gs left-50p -ml-1sp z-1
-        image: w-1sp h-1sp mb-0
+        root: talk@vite__esbuild__root
+        image: talk@vite__esbuild__image
     - image: '@talk/vite.webp'
       className:
-        root: z-2
-        image: w-2sp h-2sp mb-0 relative
+        root: talk@vite__vite__root
+        image: talk@vite__vite__image
     - image: '@talk/rollup.webp'
       className:
-        root: absolute z-1 top-0_5gs left-50p z-1
-        image: w-1sp h-1sp mb-0
-  className: relative flex-initial h-2sp mt-4ch
+        root: talk@vite__rollup__root
+        image: talk@vite__rollup__image
+  className: talk@vite
   horizontal: true
   spacer: false
   gap: false
@@ -703,9 +703,9 @@ layout: separator
 title: Snowpack
 image:
   url: '@talk/snowpack.webp'
-  className: bg-center bg-auto bg-size-[3sp]-[auto]
+  className: talk@logo--auto
 options:
-  background: nf-midnight
+  background: midnight
 
 ---
 title: And now something completely different™
