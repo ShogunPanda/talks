@@ -1,32 +1,5 @@
 :root {
   --nf-padding: 0.4--sp;
-  --nf-color-white: white;
-  --nf-color-black: black;
-  --nf-color-midnight: #000e38;
-  --nf-color-midnight-80: #0c3d60;
-  --nf-color-midnight-50: #526288;
-  --nf-color-midnight-30: #97a1b8;
-  --nf-color-midnight-10: #f4f8fa;
-  --nf-color-green: #00e5a4;
-  --nf-color-green-80: #33eaae;
-  --nf-color-green-50: #78eec5;
-  --nf-color-green-30: #b2f7e1;
-  --nf-color-green-10: #e5fcf5;
-  --nf-color-purple: #8950ff;
-  --nf-color-purple-80: #a173ff;
-  --nf-color-purple-50: #c4a7ff;
-  --nf-color-purple-30: #dccaff;
-  --nf-color-purple-10: #f3edff;
-  --nf-color-blue: #166bff;
-  --nf-color-blue-80: #4589ff;
-  --nf-color-blue-50: #8ab5ff;
-  --nf-color-blue-30: #b9d3ff;
-  --nf-color-blue-10: #e8f0ff;
-  /* stylelint-disable-next-line comment-empty-line-before */
-  /* Note: there are no grey and grey-50 in the official palette */
-  --nf-color-grey-80: #454551;
-  --nf-color-grey-30: #d9d9d9;
-  --nf-color-grey-10: #eaebed;
   --nf-font-inter: Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif,
     'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol';
   --nf-font-bitter: Bitter, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif,
@@ -127,7 +100,7 @@
     border-bottom: 0.1--sp solid var(--nf-color-midnight);
     background-color: var(--nf-color-green);
     color: var(--nf-color-midnight);
-    font-size: 38--pt;
+    font-size: 35--pt;
     font-weight: 700;
   }
 
@@ -184,7 +157,7 @@
       margin-right: 0.2--sp;
       color: var(--nf-color-blue);
       font-family: var(--nf-font-bitter);
-      font-size: 38--pt;
+      font-size: 40--pt;
       font-weight: 700;
       line-height: 1;
       text-align: right;
@@ -479,7 +452,7 @@
     justify-content: center;
 
     &--dark {
-      background-color: var(--nf-color-purple);
+      background-color: var(--freya-color-blue-700);
       color: white;
     }
 
@@ -528,7 +501,7 @@
         }
 
         &--light {
-          color: var(--nf-color-blue);
+          color: var(--freya-blue-700);
         }
       }
 
@@ -537,7 +510,7 @@
         font-weight: 700;
 
         &--dark {
-          color: var(--nf-color-green);
+          color: var(--freya-color-amber-300);
         }
 
         &--light {
@@ -557,7 +530,7 @@
         left: 2--sp;
 
         &--dark {
-          --nf-icon-primary-color: var(--nf-color-purple-80);
+          --nf-icon-primary-color: var(--freya-color-blue-600);
         }
 
         &--light {
@@ -571,7 +544,7 @@
         transform: rotate(180deg);
 
         &--dark {
-          --nf-icon-primary-color: var(--nf-color-purple-80);
+          --nf-icon-primary-color: var(--freya-color-blue-600);
         }
 
         &--light {
@@ -661,7 +634,7 @@
     &__title {
       margin-bottom: 0;
       font-family: var(--nf-font-bitter);
-      font-size: 38--pt;
+      font-size: 33--pt;
       font-weight: 700;
     }
 
@@ -739,7 +712,7 @@
         margin-bottom: 0;
         color: var(--nf-color-midnight);
         font-family: var(--nf-font-bitter);
-        font-size: 38--pt;
+        font-size: 35--pt;
         font-weight: 700;
       }
 
@@ -1145,208 +1118,11 @@
       border-left: 2px solid var(--nf-color-green);
     }
   }
-
-  /* Colors, leave at the end of theme@ to ensure they take precedence */
-  &bg-white {
-    background-color: var(--nf-color-white);
-  }
-
-  &fg-white {
-    color: var(--nf-color-white);
-  }
-
-  &bg-black {
-    background-color: var(--nf-color-black);
-  }
-
-  &fg-black {
-    color: var(--nf-color-black);
-  }
-
-  &bg-midnight {
-    background-color: var(--nf-color-midnight);
-  }
-
-  &fg-midnight {
-    color: var(--nf-color-midnight);
-  }
-
-  &bg-midnight-80 {
-    background-color: var(--nf-color-midnight-80);
-  }
-
-  &fg-midnight-80 {
-    color: var(--nf-color-midnight-80);
-  }
-
-  &bg-midnight-50 {
-    background-color: var(--nf-color-midnight-50);
-  }
-
-  &fg-midnight-50 {
-    color: var(--nf-color-midnight-50);
-  }
-
-  &bg-midnight-30 {
-    background-color: var(--nf-color-midnight-30);
-  }
-
-  &fg-midnight-30 {
-    color: var(--nf-color-midnight-30);
-  }
-
-  &bg-midnight-10 {
-    background-color: var(--nf-color-midnight-10);
-  }
-
-  &fg-midnight-10 {
-    color: var(--nf-color-midnight-10);
-  }
-
-  &bg-green {
-    background-color: var(--nf-color-green);
-  }
-
-  &fg-green {
-    color: var(--nf-color-green);
-  }
-
-  &bg-green-80 {
-    background-color: var(--nf-color-green-80);
-  }
-
-  &fg-green-80 {
-    color: var(--nf-color-green-80);
-  }
-
-  &bg-green-50 {
-    background-color: var(--nf-color-green-50);
-  }
-
-  &fg-green-50 {
-    color: var(--nf-color-green-50);
-  }
-
-  &bg-green-30 {
-    background-color: var(--nf-color-green-30);
-  }
-
-  &fg-green-30 {
-    color: var(--nf-color-green-30);
-  }
-
-  &bg-green-10 {
-    background-color: var(--nf-color-green-10);
-  }
-
-  &fg-green-10 {
-    color: var(--nf-color-green-10);
-  }
-
-  &bg-purple {
-    background-color: var(--nf-color-purple);
-  }
-
-  &fg-purple {
-    color: var(--nf-color-purple);
-  }
-
-  &bg-purple-80 {
-    background-color: var(--nf-color-purple-80);
-  }
-
-  &fg-purple-80 {
-    color: var(--nf-color-purple-80);
-  }
-
-  &bg-purple-50 {
-    background-color: var(--nf-color-purple-50);
-  }
-
-  &fg-purple-50 {
-    color: var(--nf-color-purple-50);
-  }
-
-  &bg-purple-30 {
-    background-color: var(--nf-color-purple-30);
-  }
-
-  &fg-purple-30 {
-    color: var(--nf-color-purple-30);
-  }
-
-  &bg-purple-10 {
-    background-color: var(--nf-color-purple-10);
-  }
-
-  &fg-purple-10 {
-    color: var(--nf-color-purple-10);
-  }
-
-  &bg-blue {
-    background-color: var(--nf-color-blue);
-  }
-
-  &fg-blue {
-    color: var(--nf-color-blue);
-  }
-
-  &bg-blue-80 {
-    background-color: var(--nf-color-blue-80);
-  }
-
-  &fg-blue-80 {
-    color: var(--nf-color-blue-80);
-  }
-
-  &bg-blue-50 {
-    background-color: var(--nf-color-blue-50);
-  }
-
-  &fg-blue-50 {
-    color: var(--nf-color-blue-50);
-  }
-
-  &bg-blue-30 {
-    background-color: var(--nf-color-blue-30);
-  }
-
-  &fg-blue-30 {
-    color: var(--nf-color-blue-30);
-  }
-
-  &bg-blue-10 {
-    background-color: var(--nf-color-blue-10);
-  }
-
-  &fg-blue-10 {
-    color: var(--nf-color-blue-10);
-  }
-
-  &bg-grey-80 {
-    background-color: var(--nf-color-grey-80);
-  }
-
-  &fg-grey-80 {
-    color: var(--nf-color-grey-80);
-  }
-
-  &bg-grey-30 {
-    background-color: var(--nf-color-grey-30);
-  }
-
-  &fg-grey-30 {
-    color: var(--nf-color-grey-30);
-  }
-
-  &bg-grey-10 {
-    background-color: var(--nf-color-grey-10);
-  }
-
-  &fg-grey-10 {
-    color: var(--nf-color-grey-10);
-  }
 }
+
+/* Colors, leave at the end of theme@ to ensure they take precedence */
+/* stylelint-disable-next-line no-invalid-position-at-import-rule */
+@import '@theme/colors.css';
 
 /* stylelint-disable-next-line selector-class-pattern */
 .theme-misc@ {

@@ -1,13 +1,29 @@
 /* stylelint-disable-next-line selector-class-pattern */
 .talk@ {
+  &pet {
+    border-bottom-color: var(--freya-color-amber-500);
+    background-color: var(--freya-color-blue-900);
+    color: var(--freya-color-white);
+
+    &__name {
+      color: var(--freya-color-amber-500);
+    }
+  }
+
   &end {
     &--usual {
       font-size: 25--pt;
     }
 
     &--real {
-      border-bottom-color: var(--nf-color-blue);
+      border-bottom-color: var(--freya-color-amber-500);
+      background-color: var(--freya-color-blue-900);
+      color: white;
       font-size: 25--pt;
+
+      &__subtitle {
+        color: var(--freya-color-amber-500);
+      }
     }
   }
 }

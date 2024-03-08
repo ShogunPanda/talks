@@ -18,25 +18,25 @@ export default function SeparatorLayout({ className, style }: SlideProps): VNode
     className: { root: rootClassName, title: titleClassName, subtitle: subtitleClassName }
   } = slide
 
-  let { foreground } = slide.options
+  const { foreground } = slide.options
 
   const imageUrl = resolveImage('nearform', id, image?.url)
 
-  if (!foreground && background?.match(/(midnight|midnight-80|midnight-50|purple|purple-80|blue|blue-80|grey-80)$/)) {
-    foreground = 'white'
-  }
+  // if (!foreground && background?.match(/(midnight|midnight-80|midnight-50|purple|purple-80|blue|blue-80|grey-80)$/)) {
+  //   foreground = 'white'
+  // }
 
   // if (!accent && background?.includes('nf-green')) {
   //   accent = 'white'
   // }
 
-  if (!slide.decorations.logo && !image && background?.includes('nf-green')) {
-    slide.decorations.logo = 'total-white'
-  }
+  // if (!slide.decorations.logo && !image && background?.includes('nf-green')) {
+  //   slide.decorations.logo = 'total-white'
+  // }
 
-  if (typeof slide.decorations.permalink === 'undefined' && slide.decorations.logo !== 'black') {
-    slide.decorations.permalink = 'white'
-  }
+  // if (typeof slide.decorations.permalink === 'undefined' && slide.decorations.logo !== 'black') {
+  //   slide.decorations.permalink = 'white'
+  // }
 
   return (
     <SlideWrapper

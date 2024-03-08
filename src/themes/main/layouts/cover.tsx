@@ -25,7 +25,7 @@ export default function CoverLayout({ className, style }: SlideProps): VNode {
   const { slide, index } = useSlide<Slide>()
 
   const {
-    className: { root: rootClassName, qr: qrClassName }
+    className: { root: rootClassName, qr: qrClassName, title: titleClassName }
   } = slide
 
   slide.decorations.logo = 'total-white'
@@ -45,7 +45,7 @@ export default function CoverLayout({ className, style }: SlideProps): VNode {
         <Svg src="@theme/logo-with-text-total-white.svg" className={cleanCssClasses('theme@cover__logo')} />
 
         <main className={cleanCssClasses('theme@cover__header')}>
-          <h1 className={cleanCssClasses('theme@cover__header__title')}>
+          <h1 className={cleanCssClasses('theme@cover__header__title', titleClassName)}>
             <Text text={titleFormatted ?? title} />
           </h1>
 
