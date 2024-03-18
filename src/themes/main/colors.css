@@ -1,16 +1,7 @@
-@import '@freya/colors/material-1/basic.css';
-@import '@freya/colors/material-1/red.css';
-@import '@freya/colors/material-1/green.css';
-@import '@freya/colors/material-1/blue.css';
-@import '@freya/colors/material-1/teal.css';
-@import '@freya/colors/material-1/amber.css';
-@import '@freya/colors/material-1/orange.css';
-@import '@freya/colors/material-1/deep-orange.css';
-@import '@freya/colors/material-1/yellow.css';
-@import '@freya/colors/material-1/purple.css';
-@import '@freya/colors/material-1/pink.css';
-@import '@freya/colors/material-1/cyan.css';
-@import '@freya/colors/material-1/lime.css';
+@import '@freya/colors/basic.css';
+@import '@freya/colors/windi/600.css';
+@import '@freya/colors/windi/500.css';
+@import '@freya/colors/windi/300.css';
 
 :root {
   --nf-color-white: white;
@@ -47,24 +38,17 @@
   .theme@ {
     @apply color(white, freya-color-white);
     @apply color(black, freya-color-black);
-    @apply color(red-700, freya-color-red-700);
-    @apply color(green-a700, freya-color-green-a700);
-    @apply color(green-500, freya-color-green-500);
-    @apply color(green-900, freya-color-green-900);
-    @apply color(blue-600, freya-color-blue-600);
-    @apply color(blue-700, freya-color-blue-700);
-    @apply color(blue-900, freya-color-blue-900);
-    @apply color(teal-900, freya-color-teal-900);
-    @apply color(amber-300, freya-color-amber-300);
-    @apply color(amber-500, freya-color-amber-500);
-    @apply color(orange-500, freya-color-orange-500);
-    @apply color(yellow-500, freya-color-yellow-500);
-    @apply color(purple-500, freya-color-purple-500);
-    @apply color(pink-400, freya-color-pink-400);
-    @apply color(pink-a200, freya-color-pink-a200);
-    @apply color(deep-orange-500, freya-color-deep-orange-500);
-    @apply color(cyan-a400, freya-color-cyan-a400);
-    @apply color(lime-a200, freya-color-lime-a200);
+
+    @apply color(sky, freya-color-windi-sky-600);
+    @apply color(blue, freya-color-windi-blue-600);
+    @apply color(pink, freya-color-windi-pink-600);
+    @apply color(green, freya-color-windi-green-600);
+    @apply color(fuchsia, freya-color-windi-fuchsia-600);
+    @apply color(amber, freya-color-windi-amber-300);
+    @apply color(red, freya-color-windi-red-600);
+
+    @apply color(light-blue, freya-color-windi-blue-500);
+    @apply color(light-grey, freya-color-windi-grey-300);
 
     @apply color(nf-midnight, nf-color-midnight);
     @apply color(nf-midnight-80, nf-color-midnight-80);

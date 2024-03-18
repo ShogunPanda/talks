@@ -452,7 +452,7 @@
     justify-content: center;
 
     &--dark {
-      background-color: var(--freya-color-blue-700);
+      background-color: var(--freya-color-windi-blue-600);
       color: white;
     }
 
@@ -501,7 +501,7 @@
         }
 
         &--light {
-          color: var(--freya-blue-700);
+          color: var(--freya-blue);
         }
       }
 
@@ -510,7 +510,7 @@
         font-weight: 700;
 
         &--dark {
-          color: var(--freya-color-amber-300);
+          color: var(--freya-color-windi-amber-300);
         }
 
         &--light {
@@ -530,11 +530,11 @@
         left: 2--sp;
 
         &--dark {
-          --nf-icon-primary-color: var(--freya-color-blue-600);
+          --nf-icon-primary-color: var(--freya-color-windi-blue-500);
         }
 
         &--light {
-          --nf-icon-primary-color: var(--nf-color-grey-30);
+          --nf-icon-primary-color: var(--freya-color-windi-grey-300);
         }
       }
 
@@ -544,11 +544,11 @@
         transform: rotate(180deg);
 
         &--dark {
-          --nf-icon-primary-color: var(--freya-color-blue-600);
+          --nf-icon-primary-color: var(--freya-color-windi-blue-500);
         }
 
         &--light {
-          --nf-icon-primary-color: var(--nf-color-grey-30);
+          --nf-icon-primary-color: var(--freya-color-windi-grey-300);
         }
       }
     }

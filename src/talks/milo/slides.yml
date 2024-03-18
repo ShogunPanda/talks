@@ -15,7 +15,7 @@ title: |
 image:
   url: '@talk/ski.webp'
 options:
-  background: blue-700
+  background: blue
   foreground: white
 decorations:
   logo: black
@@ -30,7 +30,7 @@ title: We all love HTTP!
 image:
   url: '@talk/love.webp'
 options:
-  background: pink-400
+  background: pink
   foreground: white
 decorations:
   logo: black
@@ -43,7 +43,7 @@ title: |
 image:
   url: '@talk/palette.webp'
 options:
-  background: green-500
+  background: green
   foreground: white
 
 ---
@@ -80,7 +80,7 @@ title: Let's focus!
 image:
   url: '@talk/focus.webp'
 options:
-  background: blue-700
+  background: blue
   foreground: white
 
 ---
@@ -121,7 +121,7 @@ title: Do we have the solution?
 image:
   url: '@talk/solution.webp'
 options:
-  background: purple-500
+  background: fuchsia
   foreground: white
 
 ---
@@ -130,16 +130,16 @@ title: Yes, start fresh!
 image:
   url: '@talk/fresh.webp'
 options:
-  background: green-900
+  background: green
   foreground: white
 
 ---
 layout: separator
-title: Say hello to <span class="theme@fg-green">Milo</span>!
+title: Say hello to <span class="theme@fg-black">Milo</span>!
 image:
   url: '@talk/milo.webp'
 options:
-  background: pink-400
+  background: pink
   foreground: white
 decorations:
   logo: black
@@ -182,7 +182,7 @@ title: How is that possible?
 image:
   url: '@talk/dog.webp'
 options:
-  background: blue-700
+  background: blue
   foreground: white
 
 ---
@@ -191,7 +191,7 @@ title: It's all in the macros!
 image:
   url: '@talk/macro.webp'
 options:
-  background: green-900
+  background: green
   foreground: white
 
 ---
@@ -271,7 +271,7 @@ title: What about resources?
 image:
   url: '@talk/piggy-bank.webp'
 options:
-  background: amber-500
+  background: amber
 decorations:
   logo: black
 
@@ -295,7 +295,7 @@ title: Strict, period!
 image:
   url: '@talk/wall.webp'
 options:
-  background: red-700
+  background: red
   foreground: white
 
 ---
@@ -351,7 +351,7 @@ title: |
 image:
   url: '@talk/incompatible.webp'
 options:
-  background: green-500
+  background: green
   foreground: white
 decorations:
   logo: black
@@ -416,7 +416,7 @@ title: |
 image:
   url: '@talk/incompatible.webp'
 options:
-  background: purple-500
+  background: fuchsia
   foreground: white
 
 ---
@@ -440,9 +440,12 @@ code:
   content: |
     import milo from 'milo'
 
+    // Prepare a message
+    const message = 'HTTP/1.1 200 OK\r\nContent-Length: 3\r\n\r\nabc'
+
     // Create a buffer using the WebAssembly shared memory space
-    const shared = milo.alloc(1000)
-    const buffer = Buffer.from(milo.memory.buffer, 1000)
+    const ptr = milo.alloc(1000)
+    const buffer = Buffer.from(milo.memory.buffer, ptr, 1000)
 
     // Create a parser and set a callback
     const parser = milo.create()
@@ -451,12 +454,11 @@ code:
       return 0
     })
 
-    // Copy a message in the shshared memory spaceared 
-    const message = 'HTTP/1.1 200 OK\r\nContent-Length: 3\r\n\r\nabc'
+    // Copy the message in the shared memory 
     buffer.set(Buffer.from(message))
 
     // Parse!
-    milo.parse(parser, shared, message.length)
+    milo.parse(parser, ptr, message.length)
 
 ---
 title: Output (Node.js with WebAssembly)
