@@ -15,7 +15,7 @@ export default function SeparatorLayout({ className, style }: SlideProps): VNode
     subtitle,
     image,
     options: { background },
-    className: { root: rootClassName, title: titleClassName, subtitle: subtitleClassName }
+    className: { root: rootClassName, contents: contentsClassName, title: titleClassName, subtitle: subtitleClassName }
   } = slide
 
   const { foreground } = slide.options
@@ -53,7 +53,7 @@ export default function SeparatorLayout({ className, style }: SlideProps): VNode
       style={style}
       defaultLogoColor="white"
     >
-      <div className={cleanCssClasses('theme@separator__contents')}>
+      <div className={cleanCssClasses('theme@separator__contents', contentsClassName)}>
         {title && (
           <h1 className={cleanCssClasses('theme@separator__title', titleClassName)}>
             <Text text={title} />

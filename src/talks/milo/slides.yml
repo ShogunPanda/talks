@@ -8,11 +8,15 @@ layout: nearform
 
 ---
 layout: separator
-title: Being reckless (sometimes) pays off!
+title: |
+  Being reckless
+  (sometimes) 
+  pays off!
 image:
   url: '@talk/ski.webp'
 options:
-  background: blue
+  background: blue-700
+  foreground: white
 decorations:
   logo: black
 
@@ -26,7 +30,8 @@ title: We all love HTTP!
 image:
   url: '@talk/love.webp'
 options:
-  background: purple
+  background: pink-400
+  foreground: white
 decorations:
   logo: black
 
@@ -38,7 +43,8 @@ title: |
 image:
   url: '@talk/palette.webp'
 options:
-  background: green
+  background: green-500
+  foreground: white
 
 ---
 title: The choice is narrow
@@ -74,7 +80,8 @@ title: Let's focus!
 image:
   url: '@talk/focus.webp'
 options:
-  background: blue
+  background: blue-700
+  foreground: white
 
 ---
 layout: side
@@ -114,7 +121,8 @@ title: Do we have the solution?
 image:
   url: '@talk/solution.webp'
 options:
-  background: purple
+  background: purple-500
+  foreground: white
 
 ---
 layout: separator
@@ -122,7 +130,8 @@ title: Yes, start fresh!
 image:
   url: '@talk/fresh.webp'
 options:
-  background: green
+  background: green-900
+  foreground: white
 
 ---
 layout: separator
@@ -130,7 +139,8 @@ title: Say hello to <span class="theme@fg-green">Milo</span>!
 image:
   url: '@talk/milo.webp'
 options:
-  background: blue
+  background: pink-400
+  foreground: white
 decorations:
   logo: black
   permalink: white
@@ -172,7 +182,8 @@ title: How is that possible?
 image:
   url: '@talk/dog.webp'
 options:
-  background: blue
+  background: blue-700
+  foreground: white
 
 ---
 layout: separator
@@ -180,7 +191,8 @@ title: It's all in the macros!
 image:
   url: '@talk/macro.webp'
 options:
-  background: green
+  background: green-900
+  foreground: white
 
 ---
 title: Rust macro system is insanely powerful
@@ -206,13 +218,13 @@ items:
           state!(chunk_end, {
             match data {
               crlf!() => {
-                parser.chunk_size = 0;
-                parser.remaining_chunk_size = 0;
+                parser.chunk_size.set(0);
+                parser.remaining_chunk_size.set(0);
                 move_to!(chunk_length, 2)
               }
               otherwise!(2) => fail!(
-                UNEXPECTED_CHARACTER,
-                "Unexpected character after chunk data"
+                UNEXPECTED_CHARACTER, 
+                "Unexpected character after chunk data",
               ),
               _ => suspend!(),
             }
@@ -227,20 +239,19 @@ items:
         language: rust
         content: |
           #[inline(always)]
-          fn state_chunk_end(
-            parser: &mut Parser, data: &[c_uchar]
-          ) -> isize {
+          pub fn state_chunk_end(parser: &Parser, data: &[c_uchar]) -> isize {
               let mut data = data;
               match data {
                   [b'\r', b'\n', ..] => {
-                      parser.chunk_size = 0;
-                      parser.remaining_chunk_size = 0;
-                      parser.move_to(State::CHUNK_LENGTH, (2) as isize)
+                      parser.chunk_size.set(0);
+                      parser.remaining_chunk_size.set(0);
+                      move_to(parser, STATE_CHUNK_LENGTH, (2) as isize)
                   }
                   [_u0, _u1, ..] => {
-                      parser.fail_str(
-                        Error::UNEXPECTED_CHARACTER,
-                        "Unexpected character after chunk data",
+                      fail(
+                          parser,
+                          ERROR_UNEXPECTED_CHARACTER,
+                          "Unexpected character after chunk data",
                       )
                   }
                   _ => SUSPEND,
@@ -260,7 +271,7 @@ title: What about resources?
 image:
   url: '@talk/piggy-bank.webp'
 options:
-  background: blue
+  background: amber-500
 decorations:
   logo: black
 
@@ -284,7 +295,8 @@ title: Strict, period!
 image:
   url: '@talk/wall.webp'
 options:
-  background: midnight
+  background: red-700
+  foreground: white
 
 ---
 layout: image
@@ -300,7 +312,7 @@ code:
     use std::os::raw::c_uchar;
     use std::{slice, str};
 
-    use milo::Parser;
+    use milo::create;
 
     fn log(what: &str, p: &Parser, data: *const c_uchar, size: usize) -> isize {
       let contents = unsafe { str::from_utf8_unchecked(slice::from_raw_parts(data, size)) };
@@ -309,7 +321,7 @@ code:
     }
 
     fn main() {
-      let parser = Parser::new();
+      let parser = create(None);
       let message = "HTTP/1.1 200 OK\r\nContent-Length: 3\r\n\r\nabc";
 
       parser.callbacks.on_status.set(|p, data, size| log("Status", p, data, size));
@@ -317,7 +329,7 @@ code:
       parser.callbacks.on_header_value.set(|p, data, size| log("Header value", p, data, size));
       parser.callbacks.on_data.set(|p, data, size| log("Body", p, data, size));
 
-      parser.parse(message.as_ptr(), message.len());
+      parse(&parser, message);
     }
 
 ---
@@ -339,7 +351,8 @@ title: |
 image:
   url: '@talk/incompatible.webp'
 options:
-  background: purple
+  background: green-500
+  foreground: white
 decorations:
   logo: black
 
@@ -403,7 +416,8 @@ title: |
 image:
   url: '@talk/incompatible.webp'
 options:
-  background: purple
+  background: purple-500
+  foreground: white
 
 ---
 layout: side
@@ -426,19 +440,23 @@ code:
   content: |
     import milo from 'milo'
 
-    const message = Buffer.from('HTTP/1.1 200 OK\r\nContent-Length: 3\r\n\r\nabc')
+    // Create a buffer using the WebAssembly shared memory space
+    const shared = milo.alloc(1000)
+    const buffer = Buffer.from(milo.memory.buffer, 1000)
 
-    const buffer = milo.__wasm.__wbindgen_malloc(4096, 1) >>> 0
-
-    const parser = new milo.Parser()
-
+    // Create a parser and set a callback
+    const parser = milo.create()
     parser.setOnData((at, len) => {
       console.log(`Pos=${Number(parser.position)} Body: ${message.slice(at, at + len).toString()}`)
       return 0
     })
 
-    new Uint8Array(milo.__wasm.memory.buffer, buffer, 4096).set(message)
-    parser.parse(buffer, message.length)
+    // Copy a message in the shshared memory spaceared 
+    const message = 'HTTP/1.1 200 OK\r\nContent-Length: 3\r\n\r\nabc'
+    buffer.set(Buffer.from(message))
+
+    // Parse!
+    milo.parse(parser, shared, message.length)
 
 ---
 title: Output (Node.js with WebAssembly)

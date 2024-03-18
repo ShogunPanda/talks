@@ -22,7 +22,7 @@ export interface SlideClasses {
   root?: string
   title?: string
   subtitle?: string
-  content?: string
+  contents?: string
   qr?: string
   raw?: string
 }

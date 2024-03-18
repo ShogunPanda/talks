@@ -603,6 +603,38 @@ items:
       text: "*Don't be lazy!*"
 
 ---
+layout: separator
+title: What is her name?
+subtitle: Let's play a little game ...
+image:
+  url: '@talk/cleo.webp'
+options:
+  background: yellow-500
+decorations:
+  logo: black
+  permalink: white
+className:
+  root: talk@game
+  contents: talk@game
+  subtitle: talk@game__subtitle
+
+---
+layout: separator
+title: Cleo!
+subtitle: The answer is ...
+image:
+  url: '@talk/cleo.webp'
+options:
+  background: yellow-500
+decorations:
+  logo: black
+  permalink: white
+className:
+  root: theme@separator--reverse
+  contents: talk@game
+  subtitle: talk@game__subtitle
+
+---
 layout: quote
 title: Remember ...
 light: true

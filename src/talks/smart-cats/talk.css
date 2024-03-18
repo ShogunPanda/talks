@@ -10,6 +10,15 @@
     }
   }
 
+  &game {
+    flex-direction: column-reverse;
+
+    &__subtitle {
+      margin-bottom: 1ch;
+      font-weight: 700;
+    }
+  }
+
   &end {
     &--usual {
       font-size: 25--pt;
