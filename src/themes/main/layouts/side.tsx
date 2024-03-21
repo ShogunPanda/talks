@@ -1,8 +1,9 @@
 import { Code, Image, cleanCssClasses, useClient, useSlide, type SlideProps } from '@perseveranza-pets/freya/client'
 import { type VNode } from 'preact'
-import { Accent, ComplexContent, SlideWrapper, Text } from '../components/common.js'
-import { Items } from '../components/item.js'
-import { type Slide } from '../models.js'
+import { ComplexContent, Text } from '../../common/components/common.js'
+import { Items } from '../../common/components/item.js'
+import { type Slide } from '../../common/models.js'
+import { Accent, SlideWrapper } from '../components/common.js'
 
 export default function SideLayout({ className, style }: SlideProps): VNode {
   const {

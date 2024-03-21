@@ -1,7 +1,7 @@
 import { Svg, cleanCssClasses, useSlide, type SlideProps } from '@perseveranza-pets/freya/client'
 import { type VNode } from 'preact'
+import { type Slide } from '../../common/models.js'
 import { Accent, SlideWrapper } from '../components/common.js'
-import { type Slide } from '../models.js'
 
 export default function NearFormLayout({ className, style }: SlideProps): VNode {
   const { slide, index } = useSlide<Slide>()

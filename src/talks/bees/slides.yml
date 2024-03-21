@@ -8,11 +8,14 @@ layout: nearform
 
 ---
 layout: separator
-title: Mothers are always right!
+title: |
+  Mothers are
+  always right!
 image:
   url: '@talk/lollipops.webp'
 options:
-  background: purple
+  background: fuchsia
+  foreground: white
 decorations:
   logo: black
 
@@ -27,6 +30,7 @@ image:
   url: '@talk/bee.webp'
 options:
   background: blue
+  foreground: white
 
 ---
 title: How is that?
@@ -48,7 +52,7 @@ title: Aren't we here for dev stuff?
 image:
   url: '@talk/dog.webp'
 options:
-  background: purple
+  background: amber
 
 ---
 title: Yes, we do!
@@ -70,19 +74,24 @@ title: Are you <br/>trolling us?
 image:
   url: '@talk/troll.webp'
 options:
-  background: purple
+  background: pink
+  foreground: white
 decorations:
   logo: black
 
 ---
 layout: separator
-title: Well, try to translate <span class="theme@fg-green">bees</span> in Italian!
+title: |
+  Well, try to 
+  translate <span class="theme@fg-black">bees</span>
+  in Italian!
 image:
   url: '@theme/location.webp'
 className:
   root: theme@separator--reverse
 options:
-  background: blue
+  background: pink
+  foreground: white
 
 ---
 title: Say hello to SDKs
@@ -126,7 +135,8 @@ title: You already know the answer...
 image:
   url: '@talk/laugh.webp'
 options:
-  background: purple
+  background: green
+  foreground: white
 
 ---
 title: What do we ALSO get, in short? (1/2)
@@ -167,7 +177,7 @@ title: Only an example can enlighten us!
 image:
   url: '@talk/sun.webp'
 options:
-  background: green
+  background: amber
 decorations:
   permalink: black-with-bg
 
@@ -270,7 +280,8 @@ title: Let's get modern!
 image:
   url: '@talk/modern.webp'
 options:
-  background: green
+  background: sky
+  foreground: white
 decorations:
   logo: white
 
@@ -369,7 +380,8 @@ title: Do we have the solution?
 image:
   url: '@talk/solution.webp'
 options:
-  background: purple
+  background: fuchsia
+  foreground: white
 
 ---
 layout: separator
@@ -377,7 +389,8 @@ title: Yes, use the APIs directly!
 image:
   url: '@talk/bee.webp'
 options:
-  background: green
+  background: blue
+  foreground: white
 
 ---
 title: How many will you use?
@@ -399,7 +412,8 @@ title: |
 image:
   url: '@talk/action.webp'
 options:
-  background: blue
+  background: red
+  foreground: white
 
 ---
 title: 'No SDK: Setup'
@@ -566,10 +580,10 @@ title: Mission completed!
 image:
   url: '@talk/completed.webp'
 options:
-  background: midnight
+  background: blue
+  foreground: white
 decorations:
   icon: party-horn
-  permalink: black
   className:
     icon: theme-misc@mission-completed
 

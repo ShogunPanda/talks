@@ -1,8 +1,7 @@
-import { cleanCssClasses, useClient, useSlide, type SlideProps } from '@perseveranza-pets/freya/client'
+import { Progress, cleanCssClasses, useClient, useSlide, type SlideProps } from '@perseveranza-pets/freya/client'
 import { type VNode } from 'preact'
 import { Text } from '../../common/components/common.js'
 import { type Slide } from '../../common/models.js'
-import { SlideWrapper } from '../components/common.js'
 
 export default function ImageLayout({ className, style }: SlideProps): VNode {
   const {
@@ -19,17 +18,15 @@ export default function ImageLayout({ className, style }: SlideProps): VNode {
     decorations: { logo }
   } = slide
 
-  const imageUrl = resolveImage('nearform', id, image?.url)
+  const imageUrl = resolveImage('codemotion-workshop-fest', id, image?.url)
 
   if (typeof slide.decorations.permalink === 'undefined' && (logo === 'white' || logo === 'total-white')) {
     slide.decorations.permalink = 'white'
   }
 
   return (
-    <SlideWrapper
-      slide={slide}
-      index={index}
-      className={cleanCssClasses('theme@image', className, rootClassName)}
+    <article
+      className={cleanCssClasses('freya@slide', 'theme@image', rootClassName, className)}
       style={{ ...style, backgroundImage: `url(${imageUrl})` }}
     >
       <main className={cleanCssClasses('theme@image__contents')}>
@@ -42,6 +39,7 @@ export default function ImageLayout({ className, style }: SlideProps): VNode {
           </h1>
         )}
       </main>
-    </SlideWrapper>
+      <Progress current={index} />
+    </article>
   )
 }

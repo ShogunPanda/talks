@@ -1,8 +1,9 @@
 import { cleanCssClasses, useSlide, type SlideProps } from '@perseveranza-pets/freya/client'
 import { type VNode } from 'preact'
-import { Accent, SlideWrapper, Text } from '../components/common.js'
-import { SvgIcon } from '../components/icons.js'
-import { type Slide } from '../models.js'
+import { Text } from '../../common/components/common.js'
+import { SvgIcon } from '../../common/components/icons.js'
+import { type Slide } from '../../common/models.js'
+import { Accent, SlideWrapper } from '../components/common.js'
 
 export default function QuoteLayout({ className, style }: SlideProps): VNode {
   const { slide, index } = useSlide<Slide>()

@@ -1,0 +1,44 @@
+/* stylelint-disable-next-line selector-class-pattern */
+.talk@ {
+  &title {
+    display: inline-block;
+    margin-top: 10rem;
+    font-size: 40--pt;
+    font-weight: bold;
+    line-height: 1.5em;
+  }
+
+  &author {
+    display: inline-block;
+    font-size: 20--pt;
+
+    &__name {
+      font-weight: bold;
+    }
+  }
+
+  &social {
+    position: absolute;
+    top: 64rem;
+    font-weight: bold;
+
+    &--first {
+      left: 26rem;
+    }
+
+    &--second {
+      left: 86.5rem;
+    }
+
+    &--third {
+      left: 145rem;
+    }
+
+    &,
+    &:active,
+    &:focus,
+    &:hover {
+      color: white;
+    }
+  }
+}

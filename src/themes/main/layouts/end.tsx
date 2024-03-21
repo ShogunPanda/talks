@@ -1,7 +1,8 @@
 import { Svg, cleanCssClasses, useClient, useSlide, type SlideProps } from '@perseveranza-pets/freya/client'
 import { type VNode } from 'preact'
-import { SlideWrapper, Text } from '../components/common.js'
-import { type Slide } from '../models.js'
+import { Text } from '../../common/components/common.js'
+import { type Slide } from '../../common/models.js'
+import { SlideWrapper } from '../components/common.js'
 
 export default function EndLayout({ className, style }: SlideProps): VNode {
   const {

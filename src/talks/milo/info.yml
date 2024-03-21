@@ -3,8 +3,8 @@ config: common.config
 document:
   title: Milo, a new HTTP parser for Node.js
   titleFormatted: |
-    Milo, a new HTTP parser
-    for Node.js
+    Milo, a new HTTP 
+    parser for Node.js
   abstract: |
     Node.js HTTP parsing currently relies on llhttp, a parser which provides very good performance but has currently
     some challenges for the health of the runtime.

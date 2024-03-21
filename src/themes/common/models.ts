@@ -88,7 +88,8 @@ export interface Options {
   foreground?: string
   background?: string
   accent?: string
-  author?: Record<string, string> // Used by the hello layout
+  author?: Record<string, string> // Used by the main.hello layout
+  decorations?: boolean
 }
 
 export interface Slide extends BaseSlide {

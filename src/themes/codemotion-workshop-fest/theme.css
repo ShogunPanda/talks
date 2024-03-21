@@ -1,0 +1,119 @@
+:root {
+  --cm-padding: 0.4--sp;
+  --cm-font-ibm-plex-sans: 'IBM Plex Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial,
+    sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol';
+  --cm-font-ibm-plex-mono: 'IBM Plex Mono', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial,
+    sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol';
+  font-family: var(--cm-font-ibm-plex-sans);
+  font-weight: 300;
+}
+
+/* stylelint-disable-next-line no-invalid-position-at-import-rule */
+@import '@./themes/common/theme.css';
+
+/* stylelint-disable-next-line selector-class-pattern */
+.freya@ {
+  &root {
+    font-family: var(--cm-font-ibm-plex-sans);
+  }
+
+  &slide {
+    --cm-icon-size: 0.5--sp;
+    padding: 0.5--sp;
+    background-color: white;
+  }
+
+  &code {
+    font-size: 0.5em;
+  }
+}
+
+/* stylelint-disable-next-line selector-class-pattern */
+.theme@ {
+  &icon {
+    color: var(--cm-icon-primary-color);
+
+    &__path {
+      &--primary {
+        opacity: var(--cm-icon-primary-opacity);
+        color: var(--cm-icon-primary-color);
+      }
+
+      &--secondary {
+        opacity: var(--cm-icon-secondary-opacity);
+        color: var(--cm-icon-secondary-color);
+      }
+    }
+  }
+
+  &item {
+    &__icon,
+    &__image,
+    &__qr {
+      width: var(--cm-icon-size);
+      height: var(--cm-icon-size);
+      min-width: var(--cm-icon-size);
+      min-height: var(--cm-icon-size);
+    }
+
+    &__icon {
+      --cm-icon-primary-color: var(--freya-color-windi-blue-500);
+      --cm-icon-secondary-color: var(--freya-color-windi-blue-500);
+      --cm-icon-secondary-opacity: 70%;
+    }
+
+    &__index {
+      color: var(--freya-color-windi-blue-500);
+      font-family: var(--cm-font-ibm-plex-sans);
+    }
+
+    &__icon--horizontal,
+    &__qr--horizontal {
+      --cm-icon-size: 1--sp;
+    }
+  }
+
+  /* Layouts */
+  &separator {
+    justify-content: center;
+
+    &__title {
+      margin-bottom: 0;
+      font-family: var(--nf-font-bitter);
+      font-size: 33--pt;
+      font-weight: 700;
+    }
+  }
+}
+
+/* Colors, leave at the end of theme@ to ensure they take precedence */
+/* stylelint-disable-next-line no-invalid-position-at-import-rule */
+@import '@theme/colors.css';
+
+/* stylelint-disable-next-line selector-class-pattern */
+.theme-misc@ {
+  &width-auto {
+    width: auto;
+  }
+
+  &qr {
+    &--big {
+      display: block;
+      flex: 1;
+      width: 2--sp;
+      height: 2--sp;
+      margin: 0 auto;
+      margin-bottom: 0.2--sp;
+    }
+
+    &__footer {
+      display: block;
+      font-weight: 700;
+      text-align: center;
+    }
+  }
+
+  &code--small {
+    font-size: 0.5em;
+  }
+}

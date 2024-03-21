@@ -671,10 +671,10 @@ title: Mission completed!
 image:
   url: '@talk/completed.webp'
 options:
-  background: midnight
+  background: blue
+  foreground: white
 decorations:
   icon: party-horn
-  permalink: black
   className:
     icon: theme-misc@mission-completed
 

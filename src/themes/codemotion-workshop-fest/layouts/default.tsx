@@ -1,9 +1,16 @@
-import { Code, Image, cleanCssClasses, useClient, useSlide, type SlideProps } from '@perseveranza-pets/freya/client'
+import {
+  Code,
+  Image,
+  Progress,
+  cleanCssClasses,
+  useClient,
+  useSlide,
+  type SlideProps
+} from '@perseveranza-pets/freya/client'
 import { type VNode } from 'preact'
 import { ComplexContent, Text } from '../../common/components/common.js'
 import { Grids, Items } from '../../common/components/item.js'
 import { type Slide } from '../../common/models.js'
-import { Accent, SlideWrapper } from '../components/common.js'
 
 export default function DefaultLayout({ className, style }: SlideProps): VNode {
   const {
@@ -19,17 +26,21 @@ export default function DefaultLayout({ className, style }: SlideProps): VNode {
     image,
     items,
     code,
-    className: { root: rootClassName, title: titleClassName, subtitle: subtitleClassName }
+    className: { root: rootClassName, title: titleClassName, subtitle: subtitleClassName },
+    options: { background }
   } = slide
 
-  const imageUrl = resolveImage('nearform', id, image?.url)
+  const backgroundUrl = resolveImage('codemotion-workshop-fest', id, background ?? '@theme/blank.webp')
+  const imageUrl = resolveImage('codemotion-workshop-fest', id, image?.url)
 
   return (
-    <SlideWrapper slide={slide} index={index} className={cleanCssClasses(className, rootClassName)} style={style}>
+    <article
+      className={cleanCssClasses('freya@slide', rootClassName, className)}
+      style={{ backgroundImage: `url("${backgroundUrl}")`, ...style }}
+    >
       {title && (
         <h1 className={cleanCssClasses(titleClassName)}>
           <Text text={title} />
-          <Accent />
         </h1>
       )}
 
@@ -68,6 +79,8 @@ export default function DefaultLayout({ className, style }: SlideProps): VNode {
           <Code {...code} />
         </div>
       )}
-    </SlideWrapper>
+
+      <Progress current={index} />
+    </article>
   )
 }

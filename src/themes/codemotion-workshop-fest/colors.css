@@ -1,0 +1,23 @@
+@import '@freya/colors/basic.css';
+@import '@freya/colors/windi/600.css';
+@import '@freya/colors/windi/500.css';
+@import '@freya/colors/windi/300.css';
+
+@layer colors {
+  /* stylelint-disable-next-line selector-class-pattern */
+  .theme@ {
+    @apply color(white, freya-color-white);
+    @apply color(black, freya-color-black);
+
+    @apply color(sky, freya-color-windi-sky-600);
+    @apply color(blue, freya-color-windi-blue-600);
+    @apply color(pink, freya-color-windi-pink-600);
+    @apply color(green, freya-color-windi-green-600);
+    @apply color(fuchsia, freya-color-windi-fuchsia-600);
+    @apply color(amber, freya-color-windi-amber-300);
+    @apply color(red, freya-color-windi-red-600);
+
+    @apply color(light-blue, freya-color-windi-blue-500);
+    @apply color(light-grey, freya-color-windi-grey-300);
+  }
+}

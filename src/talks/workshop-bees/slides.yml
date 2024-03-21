@@ -1,0 +1,191 @@
+---
+layout: cover
+# ---
+
+---
+title: What are we talking about?
+content:
+  - Let's start with a brief introduction.
+  - qr: https://talks.paoloinsogna.dev/bees
+  - <span class="theme-misc@qr__footer">[https://talks.paoloinsogna.dev/bees](https://talks.paoloinsogna.dev/bees)</span>
+className:
+  qr: theme-misc@qr--big
+
+---
+title: The details lie in the documentation
+items:
+  entries:
+    - qr: https://docs.aws.amazon.com/AmazonS3/latest/API/API_PutObject.html
+      title: AWS S3 PutObject REST API
+      text: '[Documentation](https://docs.aws.amazon.com/AmazonS3/latest/API/API_PutObject.html)'
+    - qr: https://docs.aws.amazon.com/AmazonS3/latest/API/sig-v4-header-based-auth.html
+      title: AWS Signature Version 4
+      text: '[Calculations for the Authorization Header](https://docs.aws.amazon.com/AmazonS3/latest/API/sig-v4-header-based-auth.html)'
+  horizontal: true
+# ---
+
+---
+layout: separator
+title: Let's get to the action!
+options:
+  background: '@theme/side.webp'
+
+---
+title: 'Setup'
+content:
+  - No dependencies in `package.json`, Node.js already got our backs ...
+code:
+  language: json
+  content: |
+    {
+      "name": "direct",
+      "version": "1.0.0",
+      "main": "index.mjs",
+      "scripts": {},
+      "dependencies": {}
+    }
+
+---
+title: 'The skeleton'
+code:
+  language: javascript
+  content: |
+    import { createHash, createHmac } from 'node:crypto'
+    import { readFile } from 'node:fs/promises'
+
+    const awsS3UnsignedPayload = 'UNSIGNED-PAYLOAD'
+
+    function sha256(contents) {
+      return createHash('sha256').update(contents).digest('hex')
+    }
+
+    function hmacSha256(key, contents) {
+      return createHmac('sha256', key).update(contents).digest()
+    }
+
+    // Implements the Authenticating Requests (AWS Signature Version 4) algorithm.
+    function signS3Upload(keyId, accessKey, region, method, rawUrl, headers, payloadHash) {
+      // CanonicalRequest calculation
+      // StringToSign calculation
+      // Signature calculation
+    }
+  numbers: true
+
+---
+title: 'Task 1: Create a Canonical Request'
+code:
+  language: javascript
+  content: |
+    // Since the S3 Key might contain an URL escaped key, we have to clean it up
+    const url = new URL(rawUrl)
+    const path = encodeURIComponent(url.pathname).replaceAll('%2F', '/')
+
+    // Prepare the components. Since we don't have a querystring, we insert an empty string.
+    const canonicalRequestComponents = [method, path, ""]
+
+    // Sort headers
+    const sortedHeaders = Object.entries(headers).sort((a, b) => a[0].localeCompare(b[0]))
+    const signedHeadersComponents = []
+
+    // Insert each header in CanonicalRequest as key-value and in the SignedHeaders list.
+    for (const header of sortedHeaders) {
+      canonicalRequestComponents.push(`${header[0]}:${header[1]}`)
+      signedHeadersComponents.push(header[0])
+    }
+
+    // Finalize the CanonicalRequest creation - Note that there is an empty string before the signedHeaders
+    const signedHeaders = signedHeadersComponents.join(';')
+    canonicalRequestComponents.push('', signedHeadersComponents.join(';'), payloadHash as string)
+    const canonicalRequest = canonicalRequestComponents.join('\n')
+  numbers: true
+
+---
+title: 'Task 2: Create a String to Sign'
+code:
+  language: javascript
+  content: |
+    const timestamp = headers['x-amz-date']
+    const date = timestamp.slice(0, 8)
+    const scope = `${date}/${region}/s3/aws4_request`
+
+    const stringToSign = ['AWS4-HMAC-SHA256', timestamp, scope, sha256(canonicalRequest)].join('\n')
+  numbers: true
+
+---
+title: 'Task 3: Calculate Signature'
+code:
+  language: javascript
+  content: |
+    const dateKey = hmacSha256(`AWS4${accessKey}`, date)
+    const dateRegionKey = hmacSha256(dateKey, region)
+    const dateRegionServiceKey = hmacSha256(dateRegionKey, 's3')
+
+    const signatureHeader = `AWS4-HMAC-SHA256 Credential=${keyId}/${date}/${region}/s3/aws4_request`
+    const signingKey = hmacSha256(dateRegionServiceKey, 'aws4_request')
+    const signature = hmacSha256(signingKey, stringToSign).toString('hex')
+
+    return [signatureHeader, `SignedHeaders=${signedHeaders}`, `Signature=${signature}`].join(',')
+  numbers: true
+
+---
+title: 'REST API call'
+code:
+  language: javascript
+  content: |
+    function uploadFile(keyId, accessKey, region, bucket, key, contents) {
+      const host = `${bucket}.s3.${region}.amazonaws.com`
+      const payloadHash = 'UNSIGNED-PAYLOAD'
+      const headers = {
+        'x-amz-content-sha256': payloadHash,
+        'x-amz-date': new Date()
+          .toISOString()
+          .replace(/\.\d{0,3}/, '')
+          .replaceAll(/[:-]/g, ''),
+        host
+      }
+
+      const url = `https://${host}/${key}`
+      headers.authorization = signS3Upload(
+        keyId, accessKey, region,
+        'PUT', url, headers, payloadHash
+      )
+
+      return fetch(url, { method: 'PUT', headers, body: contents })
+    }
+  numbers: true
+
+---
+title: 'Main function'
+code:
+  language: javascript
+  content: |
+    await uploadFile(
+      process.env.AWS_ACCESS_KEY_ID,
+      process.env.AWS_SECRET_ACCESS_KEY,
+      process.env.AWS_DEFAULT_REGION,
+      process.env.BUCKET,
+      process.env.KEY,
+      await readFile(process.env.FILE, 'utf-8')
+    )
+  numbers: true
+
+---
+content:
+  - <a class="talk@social talk@social--first" href="https://twitter.com/p_insogna">@p_insogna</a>
+  - <a class="talk@social talk@social--second" href="https://github.com/ShogunPanda">@ShogunPanda</a>
+  - <a class="talk@social talk@social--third" href="https://www.linkedin.com/in/pinsogna">@pinsogna</a>
+options:
+  background: '@theme/socials.webp'
+# ---
+
+---
+layout: image
+image:
+  url: '@theme/rate.webp'
+# ---
+
+---
+layout: image
+image:
+  url: '@theme/thanks.webp'
+# ---
