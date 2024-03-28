@@ -1,12 +1,4 @@
 ---
-layout: image
-image:
-  url: '@theme/milan-webday-2024-cover.webp'
-options:
-  decorations: false
-# ---
-
----
 layout: cover
 # ---
 
@@ -586,20 +578,4 @@ quote:
 
 ---
 layout: end
-# ---
-
----
-layout: image
-image:
-  url: '@theme/milan-webday-2024-sponsors.webp'
-options:
-  decorations: false
-# ---
-
----
-layout: image
-image:
-  url: '@theme/milan-webday-2024-qa.webp'
-options:
-  decorations: false
 # ---
