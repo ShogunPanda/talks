@@ -223,17 +223,16 @@ items:
     - code:
         language: rust
         content: |
-          state!(chunk_end, {
+          state!(request_protocol, {
             match data {
-              crlf!() => {
-                parser.chunk_size.set(0);
-                parser.remaining_chunk_size.set(0);
-                move_to!(chunk_length, 2)
+              string!("HTTP/") | string!("RTSP/") => {
+                callback!(on_protocol, 4);
+                parser.position += 4;
+
+                move_to!(request_version, 1)
               }
-              otherwise!(2) => fail!(
-                UNEXPECTED_CHARACTER, 
-                "Unexpected character after chunk data",
-              ),
+              otherwise!(5) => 
+                fail!(UNEXPECTED_CHARACTER, "Expected protocol"),
               _ => suspend!(),
             }
           });
@@ -247,19 +246,26 @@ items:
         language: rust
         content: |
           #[inline(always)]
-          pub fn state_chunk_end(parser: &Parser, data: &[c_uchar]) -> isize {
+          pub fn state_request_protocol(
+            parser: &mut Parser, data: &[c_uchar],
+          ) -> usize {
               let mut data = data;
               match data {
-                  [b'\r', b'\n', ..] => {
-                      parser.chunk_size.set(0);
-                      parser.remaining_chunk_size.set(0);
-                      move_to(parser, STATE_CHUNK_LENGTH, (2) as isize)
+                  [72u8, 84u8, 84u8, 80u8, 47u8, ..] | 
+                  [82u8, 84u8, 83u8, 80u8, 47u8, ..] => {
+                      #[cfg(not(target_family = "wasm"))]
+                      {
+                          (parser.callbacks.on_protocol)(
+                            parser, parser.position, 4,
+                          );
+                      };
+                      parser.position += 4;
+                      parser.move_to(STATE_REQUEST_VERSION, 1)
                   }
-                  [_u0, _u1, ..] => {
-                      fail(
-                          parser,
-                          ERROR_UNEXPECTED_CHARACTER,
-                          "Unexpected character after chunk data",
+                  [_u0, _u1, _u2, _u3, _u4, ..] => {
+                      parser.fail(
+                        ERROR_UNEXPECTED_CHARACTER, 
+                        "Expected protocol",
                       )
                   }
                   _ => SUSPEND,
@@ -317,28 +323,33 @@ title: Sample code (Rust)
 code:
   language: rust
   content: |
-    use std::os::raw::c_uchar;
-    use std::{slice, str};
-
-    use milo::create;
-
-    fn log(what: &str, p: &Parser, data: *const c_uchar, size: usize) -> isize {
-      let contents = unsafe { str::from_utf8_unchecked(slice::from_raw_parts(data, size)) };
-      println!("Pos={} {}: {}", p.position.get(), what, contents);
-      0
-    }
+    use core::ffi::c_void;
+    use core::slice;
+    use milo::Parser;
 
     fn main() {
-      let parser = create(None);
-      let message = "HTTP/1.1 200 OK\r\nContent-Length: 3\r\n\r\nabc";
+      // Create the parser.
+      let mut parser = Parser::new();
 
-      parser.callbacks.on_status.set(|p, data, size| log("Status", p, data, size));
-      parser.callbacks.on_header_name.set(|p, data, size| log("Header name", p, data, size));
-      parser.callbacks.on_header_value.set(|p, data, size| log("Header value", p, data, size));
-      parser.callbacks.on_data.set(|p, data, size| log("Body", p, data, size));
+      // Prepare a message to parse.
+      let message = String::from("HTTP/1.1 200 OK\r\nContent-Length: 3\r\n\r\nabc");
+      parser.context = message.as_ptr() as *mut c_void;
 
-      parse(&parser, message);
+      // Milo works using callbacks, All callbacks have the same signature.
+      parser.callbacks.on_data = |p: &mut Parser, from: usize, size: usize| {
+        let message = unsafe { 
+          std::str::from_utf8_unchecked(slice::from_raw_parts(p.context.add(from) as *const u8, size)) 
+        };
+
+        // Do something with the informations.
+        println!("Pos={} Body: {}", p.position, message);
+      };
+
+      // Now perform the main parsing using milo.parse.
+      parser.parse(message.as_ptr(), message.len());
     }
+  className:
+    root: talk@code
 
 ---
 title: Output (Rust)
@@ -346,9 +357,6 @@ code:
   language: output
   content: |
     shogun@panda:~/example$ cargo run
-    Pos=9 Status: 200
-    Pos=17 Header name: Content-Length
-    Pos=33 Header value: 3
     Pos=38 Body: abc
 
 ---
@@ -381,30 +389,37 @@ items:
 ---
 title: Sample code (C++)
 code:
+  # TODO@PI: Why is C++ Highlighting not working?
   language: rust
   content: |
     #include "milo.h"
     #include "stdio.h"
     #include "string.h"
 
-    typedef unsigned char uchar_t;
-
     int main() {
+      // Create the parser.
       milo::Parser* parser = milo::milo_create();
+
+      // Prepare a message to parse.
       const char* message = "HTTP/1.1 200 OK\r\nContent-Length: 3\r\n\r\nabc";
+      parser->context = (char*) message;
 
-      parser->callbacks.on_data =
-        [](const milo::Parser* p, const uchar_t* data, uintptr_t size) -> intptr_t {
-          uchar_t* content = reinterpret_cast<uchar_t*>(malloc(sizeof(uchar_t) * size));
-          strncpy(reinterpret_cast<char*>(content), reinterpret_cast<const char*>(data), size);
+      // Milo works using callbacks, All callbacks have the same signature.
+      parser->callbacks.on_data = [](milo::Parser* p, uintptr_t from, uintptr_t size) {
+        char* payload = reinterpret_cast<char*>(malloc(sizeof(char) * size));
+        strncpy(payload, reinterpret_cast<const char*>(p->context) + from, size);
+        printf("Pos=%lu Body: %s\n", p->position, payload);
+        free(payload);
+      };
 
-          printf("Pos=%llu Body: %s\n", p->position, content);
-          free(content);
-          return 0;
-        };
+      // Now perform the main parsing using milo.parse. The method returns the number of consumed characters.
+      milo::milo_parse(parser, reinterpret_cast<const unsigned char*>(message), strlen(message));
 
-      milo::milo_parse(parser, reinterpret_cast<const uchar_t*>(message), strlen(message));
+      // Cleanup used resources.
+      milo::milo_destroy(parser);
     }
+  className:
+    root: talk@code
 
 ---
 title: Output (C++)
@@ -446,27 +461,34 @@ title: Sample code (Node.js with WebAssembly)
 code:
   language: javascript
   content: |
-    import milo from 'milo'
+    import { milo } from ''@perseveranza-pets/milo''
 
-    // Prepare a message
-    const message = 'HTTP/1.1 200 OK\r\nContent-Length: 3\r\n\r\nabc'
+    // Prepare a message to parse.
+    const message = Buffer.from('HTTP/1.1 200 OK\r\nContent-Length: 3\r\n\r\nabc')
 
-    // Create a buffer using the WebAssembly shared memory space
-    const ptr = milo.alloc(1000)
-    const buffer = Buffer.from(milo.memory.buffer, ptr, 1000)
+    // Allocate a memory in the WebAssembly space. This speeds up data copying to the WebAssembly layer.
+    const ptr = milo.alloc(message.length)
 
-    // Create a parser and set a callback
+    // Create a buffer we can use normally.
+    const buffer = Buffer.from(milo.memory.buffer, ptr, message.length)
+
+    // Create the parser.
     const parser = milo.create()
-    parser.setOnData((at, len) => {
-      console.log(`Pos=${Number(parser.position)} Body: ${message.slice(at, at + len).toString()}`)
-      return 0
+
+    // Milo works using callbacks, All callbacks have the same signature.
+    milo.setOnData(parser, (p, from, size) => {
+      console.log(`Pos=${milo.getPosition(p)} Body: ${message.slice(from, from + size).toString()}`)
     })
 
-    // Copy the message in the shared memory 
-    buffer.set(Buffer.from(message))
+    // Now perform the main parsing using milo.parse. The method returns the number of consumed characters.
+    buffer.set(Buffer.from(message), 0)
+    const consumed = milo.parse(parser, ptr, message.length)
 
-    // Parse!
-    milo.parse(parser, ptr, message.length)
+    // Cleanup used resources.
+    milo.destroy(parser)
+    milo.dealloc(ptr, message.length)
+  className:
+    root: talk@code
 
 ---
 title: Output (Node.js with WebAssembly)

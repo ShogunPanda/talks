@@ -1,5 +1,9 @@
 /* stylelint-disable-next-line selector-class-pattern */
 .talk@ {
+  &code {
+    font-size: 0.5em;
+  }
+
   &example {
     display: flex;
     flex: 1;
