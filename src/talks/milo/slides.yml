@@ -453,7 +453,7 @@ title: Sample code (Node.js with WebAssembly)
 code:
   language: javascript
   content: |
-    import { milo } from ''@perseveranza-pets/milo''
+    import { milo } from '@perseveranza-pets/milo'
 
     // Prepare a message to parse.
     const message = Buffer.from('HTTP/1.1 200 OK\r\nContent-Length: 3\r\n\r\nabc')
