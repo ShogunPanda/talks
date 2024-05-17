@@ -3,7 +3,7 @@ import { Fragment, type VNode } from 'preact'
 import { Text } from '../../common/components/common.js'
 import { Item } from '../../common/components/item.js'
 import { type Slide } from '../../common/models.js'
-import { Accent, SlideWrapper } from '../components/common.js'
+import { SlideWrapper } from '../components/common.js'
 
 export default function HelloLayout({ className, style }: SlideProps): VNode {
   const {
@@ -18,8 +18,8 @@ export default function HelloLayout({ className, style }: SlideProps): VNode {
   const author = slide.options.author ?? documentAuthor
 
   const name = author.name.split(' ')[0]
-  const locationImage = resolveImage('nearform', id, '@theme/location.webp')
-  const avatarImage = resolveImage('nearform', id, '@theme/avatar-with-shadow.webp')
+  const locationImage = resolveImage('main', id, '@theme/location.webp')
+  const avatarImage = resolveImage('main', id, '@theme/avatar-with-shadow.webp')
 
   slide.decorations.permalink = 'white'
 
@@ -32,7 +32,7 @@ export default function HelloLayout({ className, style }: SlideProps): VNode {
       defaultLogoColor="white"
     >
       <h1 className={cleanCssClasses('theme@hello__title')}>
-        Hello, I'm <span className={cleanCssClasses('theme@hello__title__name')}>{name}</span>!<Accent />
+        Hello, I'm <span className={cleanCssClasses('theme@hello__title__name')}>{name}</span>!
       </h1>
 
       <aside className={cleanCssClasses('theme@hello__location-wrapper')}>

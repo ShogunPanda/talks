@@ -6,7 +6,7 @@ config:
   url: https://talks.paoloinsogna.dev
 author:
   name: Paolo Insogna
-  description: Node.js TSC, NearForm
+  description: Node.js TSC, Platformatic
 document:
   title: 'Workshop: The bees are important: use SDKs wisely'
   titleFormatted: |

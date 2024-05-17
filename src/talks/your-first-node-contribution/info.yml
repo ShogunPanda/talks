@@ -18,7 +18,7 @@ document:
     Come and make your first Node.js core contribution!
   author:
     name: 'Marco Ippolito, Paolo Insogna'
-    description: Node.js TSC, NearForm
-    twitter: nearform
-    email: info@nearform.com
+    description: Node.js TSC, Platformatic
+    twitter: platformatic
+    email: info@platformatic.dev
   company: common.company

@@ -1,12 +1,4 @@
-import {
-  Image,
-  QRCode,
-  Svg,
-  cleanCssClasses,
-  useClient,
-  useSlide,
-  type SlideProps
-} from '@perseveranza-pets/freya/client'
+import { QRCode, Svg, cleanCssClasses, useClient, useSlide, type SlideProps } from '@perseveranza-pets/freya/client'
 import { type VNode } from 'preact'
 import { Text } from '../../common/components/common.js'
 import { SvgIcon } from '../../common/components/icons.js'
@@ -29,10 +21,8 @@ export default function CoverLayout({ className, style }: SlideProps): VNode {
     className: { root: rootClassName, qr: qrClassName, title: titleClassName }
   } = slide
 
-  slide.decorations.logo = 'total-white'
+  slide.decorations.logo = false
   slide.decorations.permalink = false
-
-  const backgroundImage = resolveImage('nearform', id, '@theme/bg-green.webp')
 
   return (
     <SlideWrapper
@@ -41,9 +31,13 @@ export default function CoverLayout({ className, style }: SlideProps): VNode {
       className={cleanCssClasses('theme@cover', className, rootClassName)}
       style={style}
     >
-      <Image src={backgroundImage} className={cleanCssClasses('theme@cover__background')} />
+      <Svg src="@theme/corner.svg" className={cleanCssClasses('theme@cover__corner')} />
+
       <div className={cleanCssClasses('theme@cover__contents')}>
-        <Svg src="@theme/logo-with-text-total-white.svg" className={cleanCssClasses('theme@cover__logo')} />
+        <a href="https://platformatic.dev" className={cleanCssClasses('theme@cover__logo')}>
+          <Svg src="@theme/logo-white.svg" className={cleanCssClasses('theme@cover__logo__image')} />
+          <span className={cleanCssClasses('theme@cover__logo__text')}>Platformatic</span>
+        </a>
 
         <main className={cleanCssClasses('theme@cover__header')}>
           <h1 className={cleanCssClasses('theme@cover__header__title', titleClassName)}>
@@ -60,10 +54,6 @@ export default function CoverLayout({ className, style }: SlideProps): VNode {
             </span>
           </h2>
         </main>
-
-        <h3 className={cleanCssClasses('theme@cover__copyright')}>
-          &#169; Copyright {new Date().getFullYear()} NearForm Ltd. All Rights Reserved.
-        </h3>
 
         <aside className={cleanCssClasses('theme@cover__qrs')}>
           <QRCode

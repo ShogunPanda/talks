@@ -3,16 +3,12 @@ layout: cover
 # ---
 
 ---
-layout: nearform
-# ---
-
----
 layout: separator
 title: There is no knowledge that is not power!
 image:
   url: '@talk/mortal-kombat.webp'
 options:
-  background: grey-80
+  background: gray-300
 
 ---
 layout: hello

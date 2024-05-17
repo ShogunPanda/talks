@@ -2,7 +2,7 @@ import { Code, cleanCssClasses, useSlide, type SlideProps } from '@perseveranza-
 import { type VNode } from 'preact'
 import { Text } from '../../common/components/common.js'
 import { type Slide } from '../../common/models.js'
-import { Accent, SlideWrapper } from '../components/common.js'
+import { SlideWrapper } from '../components/common.js'
 
 export default function CodeLayout({ className, style }: SlideProps): VNode {
   const { slide, index } = useSlide<Slide>()
@@ -18,7 +18,6 @@ export default function CodeLayout({ className, style }: SlideProps): VNode {
       {title && (
         <h1 className={cleanCssClasses(titleClassName)}>
           <Text text={title} />
-          <Accent />
         </h1>
       )}
 

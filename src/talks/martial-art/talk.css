@@ -6,7 +6,7 @@
   }
 
   &separator__subtitle {
-    font-family: var(--nf-font-bitter);
+    font-family: var(--pi-font-bitter);
     font-size: 0.4em;
     font-weight: 700;
   }

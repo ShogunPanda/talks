@@ -3,7 +3,7 @@ import { type VNode } from 'preact'
 import { ComplexContent, Text } from '../../common/components/common.js'
 import { Grids, Items } from '../../common/components/item.js'
 import { type Slide } from '../../common/models.js'
-import { Accent, SlideWrapper } from '../components/common.js'
+import { SlideWrapper } from '../components/common.js'
 
 export default function DefaultLayout({ className, style }: SlideProps): VNode {
   const {
@@ -22,14 +22,13 @@ export default function DefaultLayout({ className, style }: SlideProps): VNode {
     className: { root: rootClassName, title: titleClassName, subtitle: subtitleClassName }
   } = slide
 
-  const imageUrl = resolveImage('nearform', id, image?.url)
+  const imageUrl = resolveImage('main', id, image?.url)
 
   return (
     <SlideWrapper slide={slide} index={index} className={cleanCssClasses(className, rootClassName)} style={style}>
       {title && (
         <h1 className={cleanCssClasses(titleClassName)}>
           <Text text={title} />
-          <Accent />
         </h1>
       )}
 

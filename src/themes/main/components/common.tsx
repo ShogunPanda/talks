@@ -13,15 +13,7 @@ interface SlideWrapperProps {
   children: ComponentChildren | ComponentChildren[]
 }
 
-interface AccentProps {
-  className?: string
-}
-
 type DecorationProps = Pick<SlideWrapperProps, 'defaultLogoColor'>
-
-export function Accent({ className }: AccentProps): VNode {
-  return <span className={cleanCssClasses('theme@accent', className)} />
-}
 
 export function Decorations({ defaultLogoColor }: DecorationProps): VNode {
   const {

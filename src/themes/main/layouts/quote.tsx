@@ -3,7 +3,7 @@ import { type VNode } from 'preact'
 import { Text } from '../../common/components/common.js'
 import { SvgIcon } from '../../common/components/icons.js'
 import { type Slide } from '../../common/models.js'
-import { Accent, SlideWrapper } from '../components/common.js'
+import { SlideWrapper } from '../components/common.js'
 
 export default function QuoteLayout({ className, style }: SlideProps): VNode {
   const { slide, index } = useSlide<Slide>()
@@ -20,8 +20,6 @@ export default function QuoteLayout({ className, style }: SlideProps): VNode {
     slide.decorations.permalink = 'white'
   }
 
-  // const backgroundImage = resolveImage(themeId, id, '@theme/bg-purple.webp')
-
   return (
     <SlideWrapper
       slide={slide}
@@ -34,7 +32,6 @@ export default function QuoteLayout({ className, style }: SlideProps): VNode {
       <div className={cleanCssClasses('theme@quote__contents')}>
         <h1 className={cleanCssClasses('theme@quote__title', titleClassName)}>
           <Text text={title ?? 'One last thing™'} />
-          <Accent />
         </h1>
 
         <h1 className={cleanCssClasses('theme@quote__quote')}>

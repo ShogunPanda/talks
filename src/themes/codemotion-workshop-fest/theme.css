@@ -79,7 +79,7 @@
 
     &__title {
       margin-bottom: 0;
-      font-family: var(--nf-font-bitter);
+      font-family: var(--cm-font-bitter);
       font-size: 33--pt;
       font-weight: 700;
     }

@@ -2,11 +2,11 @@
 .talk@ {
   &quote {
     &__primary-icon {
-      --nf-icon-primary-color: red;
+      --pi-icon-primary-color: red;
     }
 
     &__secondary-icon {
-      --nf-icon-primary-color: green;
+      --pi-icon-primary-color: green;
     }
   }
 
@@ -25,7 +25,7 @@
   }
 
   &highlight {
-    background-color: var(--nf-color-purple);
-    color: var(--nf-color-white);
+    background-color: var(--pi-color-purple);
+    color: var(--pi-color-white);
   }
 }

@@ -3,7 +3,7 @@ import { type VNode } from 'preact'
 import { ComplexContent, Text } from '../../common/components/common.js'
 import { Items } from '../../common/components/item.js'
 import { type Slide } from '../../common/models.js'
-import { Accent, SlideWrapper } from '../components/common.js'
+import { SlideWrapper } from '../components/common.js'
 
 export default function HalfLayout({ className, style }: SlideProps): VNode {
   const { talk, resolveImage } = useClient()
@@ -17,7 +17,7 @@ export default function HalfLayout({ className, style }: SlideProps): VNode {
     className: { root: rootClassName, title: titleClassName, subtitle: subtitleClassName }
   } = slide
 
-  const imageUrl = resolveImage('nearform', talk.id, image?.url)
+  const imageUrl = resolveImage('main', talk.id, image?.url)
 
   if (
     typeof slide.decorations.permalink === 'undefined' &&
@@ -38,7 +38,6 @@ export default function HalfLayout({ className, style }: SlideProps): VNode {
         {title && (
           <h1 className={cleanCssClasses(titleClassName)}>
             <Text text={title} />
-            <Accent />
           </h1>
         )}
 

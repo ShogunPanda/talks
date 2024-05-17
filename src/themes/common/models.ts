@@ -87,7 +87,6 @@ export interface Decorations {
 export interface Options {
   foreground?: string
   background?: string
-  accent?: string
   author?: Record<string, string> // Used by the main.hello layout
   decorations?: boolean
 }

@@ -3,10 +3,6 @@ layout: cover
 # ---
 
 ---
-layout: nearform
-# ---
-
----
 layout: hello
 # ---
 
@@ -66,7 +62,7 @@ items:
     - icon: chevron-left
       title: Exercitation nisi do in mollit aliqua.
       text: Qui minim eu do veniam magna quis non.
-    - qr: https://nearform.com
+    - qr: https://cowtech.it
       title: Cupidatat tempor eiusmod sint nulla.
       text: Velit enim laborum qui minim incididunt eu.
     - image: '@theme/panda.webp'
@@ -83,7 +79,7 @@ items:
     - icon: chevron-left
       title: Exercitation nisi do in mollit aliqua.
       text: Qui minim eu do veniam magna quis non.
-    - qr: https://nearform.com
+    - qr: https://cowtech.it
       title: Cupidatat tempor eiusmod sint nulla.
       text: Velit enim laborum qui minim incididunt eu.
     - image: '@theme/panda.webp'
@@ -125,7 +121,7 @@ title: Default with grid
 grids:
   - entries:
       - icon: chevron-left
-      - qr: https://nearform.com
+      - qr: https://cowtech.it
       - icon: chevron-right
       - image: '@theme/panda.webp'
     sequence: true
@@ -253,7 +249,7 @@ items:
     - icon: chevron-left
       title: Exercitation nisi do in mollit aliqua.
       text: Qui minim eu do veniam magna quis non.
-    - qr: https://nearform.com
+    - qr: https://cowtech.it
       title: Cupidatat tempor eiusmod sint nulla.
       text: Velit enim laborum qui minim incididunt eu.
     - image: '@theme/panda.webp'
@@ -300,7 +296,7 @@ items:
     - icon: chevron-left
       title: Exercitation nisi do in mollit aliqua.
       text: Qui minim eu do veniam magna quis non.
-    - qr: https://nearform.com
+    - qr: https://cowtech.it
       title: Cupidatat tempor eiusmod sint nulla.
       text: Velit enim laborum qui minim incididunt eu.
     - image: '@theme/panda.webp'
@@ -319,7 +315,7 @@ items:
     - icon: chevron-left
       title: Exercitation nisi do in mollit aliqua.
       text: Qui minim eu do veniam magna quis non.
-    - qr: https://nearform.com
+    - qr: https://cowtech.it
       title: Cupidatat tempor eiusmod sint nulla.
       text: Velit enim laborum qui minim incididunt eu.
     - image: '@theme/panda.webp'
@@ -329,7 +325,6 @@ highlight:
   text: Deserunt fugiat voluptate adipisicing consectetur nostrud esse cillum. Est veniam est cupidatat reprehenderit esse pariatur sint dolore velit incididunt laboris.
   className: talk@highlight
 decorations:
-  logo: white
   permalink: white
 
 ---
@@ -340,7 +335,7 @@ items:
     - icon: chevron-left
       title: Exercitation nisi do in mollit aliqua.
       text: Qui minim eu do veniam magna quis non.
-    - qr: https://nearform.com
+    - qr: https://cowtech.it
       title: Cupidatat tempor eiusmod sint nulla.
       text: Velit enim laborum qui minim incididunt eu.
     - image: '@theme/panda.webp'
@@ -392,111 +387,7 @@ title: Irure consectetur officia aliquip nostrud.
 image:
   url: '@theme/panda.webp'
 options:
-  background: nf-midnight-80
-
----
-layout: separator
-title: Irure consectetur officia aliquip nostrud.
-image:
-  url: '@theme/panda.webp'
-options:
-  background: nf-midnight-50
-
----
-layout: separator
-title: Irure consectetur officia aliquip nostrud.
-image:
-  url: '@theme/panda.webp'
-options:
-  background: nf-midnight-30
-
----
-layout: separator
-title: Irure consectetur officia aliquip nostrud.
-image:
-  url: '@theme/panda.webp'
-options:
-  background: nf-midnight-10
-
----
-layout: separator
-title: Irure consectetur officia aliquip nostrud.
-image:
-  url: '@theme/panda.webp'
-options:
-  background: green
-
----
-layout: separator
-title: Irure consectetur officia aliquip nostrud.
-image:
-  url: '@theme/panda.webp'
-options:
-  background: nf-green-80
-
----
-layout: separator
-title: Irure consectetur officia aliquip nostrud.
-image:
-  url: '@theme/panda.webp'
-options:
-  background: nf-green-50
-
----
-layout: separator
-title: Irure consectetur officia aliquip nostrud.
-image:
-  url: '@theme/panda.webp'
-options:
-  background: nf-green-30
-
----
-layout: separator
-title: Irure consectetur officia aliquip nostrud.
-image:
-  url: '@theme/panda.webp'
-options:
-  background: nf-green-10
-
----
-layout: separator
-title: Irure consectetur officia aliquip nostrud.
-image:
-  url: '@theme/panda.webp'
-options:
-  background: purple
-
----
-layout: separator
-title: Irure consectetur officia aliquip nostrud.
-image:
-  url: '@theme/panda.webp'
-options:
-  background: nf-purple-80
-
----
-layout: separator
-title: Irure consectetur officia aliquip nostrud.
-image:
-  url: '@theme/panda.webp'
-options:
-  background: nf-purple-50
-
----
-layout: separator
-title: Irure consectetur officia aliquip nostrud.
-image:
-  url: '@theme/panda.webp'
-options:
-  background: nf-purple-30
-
----
-layout: separator
-title: Irure consectetur officia aliquip nostrud.
-image:
-  url: '@theme/panda.webp'
-options:
-  background: nf-purple-10
+  background: sky
 
 ---
 layout: separator
@@ -512,7 +403,7 @@ title: Irure consectetur officia aliquip nostrud.
 image:
   url: '@theme/panda.webp'
 options:
-  background: nf-blue-80
+  background: pink
 
 ---
 layout: separator
@@ -520,7 +411,7 @@ title: Irure consectetur officia aliquip nostrud.
 image:
   url: '@theme/panda.webp'
 options:
-  background: nf-blue-50
+  background: green
 
 ---
 layout: separator
@@ -528,7 +419,7 @@ title: Irure consectetur officia aliquip nostrud.
 image:
   url: '@theme/panda.webp'
 options:
-  background: nf-blue-30
+  background: fuchsia
 
 ---
 layout: separator
@@ -536,7 +427,7 @@ title: Irure consectetur officia aliquip nostrud.
 image:
   url: '@theme/panda.webp'
 options:
-  background: nf-blue-10
+  background: amber
 
 ---
 layout: separator
@@ -544,7 +435,7 @@ title: Irure consectetur officia aliquip nostrud.
 image:
   url: '@theme/panda.webp'
 options:
-  background: nf-grey-80
+  background: red
 
 ---
 layout: separator
@@ -552,7 +443,7 @@ title: Irure consectetur officia aliquip nostrud.
 image:
   url: '@theme/panda.webp'
 options:
-  background: nf-grey-30
+  background: light-blue
 
 ---
 layout: separator
@@ -560,4 +451,4 @@ title: Irure consectetur officia aliquip nostrud.
 image:
   url: '@theme/panda.webp'
 options:
-  background: nf-grey-10
+  background: light-gray

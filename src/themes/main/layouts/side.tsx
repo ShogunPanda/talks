@@ -3,7 +3,7 @@ import { type VNode } from 'preact'
 import { ComplexContent, Text } from '../../common/components/common.js'
 import { Items } from '../../common/components/item.js'
 import { type Slide } from '../../common/models.js'
-import { Accent, SlideWrapper } from '../components/common.js'
+import { SlideWrapper } from '../components/common.js'
 
 export default function SideLayout({ className, style }: SlideProps): VNode {
   const {
@@ -22,7 +22,7 @@ export default function SideLayout({ className, style }: SlideProps): VNode {
     className: { root: rootClassName }
   } = slide
 
-  const imageUrl = resolveImage('nearform', id, image?.url)
+  const imageUrl = resolveImage('main', id, image?.url)
 
   return (
     <SlideWrapper
@@ -35,7 +35,6 @@ export default function SideLayout({ className, style }: SlideProps): VNode {
         {title && (
           <h1>
             <Text text={title} />
-            <Accent />
           </h1>
         )}
 

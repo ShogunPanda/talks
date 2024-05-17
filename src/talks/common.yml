@@ -6,21 +6,16 @@ config:
   url: https://talks.paoloinsogna.dev
 author:
   name: Paolo Insogna
-  description: Node.js TSC, NearForm
+  description: Node.js TSC, Principal Engineer
   roles:
     - where: Node.js
       what: Technical Steering Committee Member
       url: https://nodejs.org
-    - where: NearForm
-      what: Staff Developer Experience Engineer
-      url: https://nearform.com
-  email: paolo.insogna@nearform.com
+    - where: Platformatic
+      what: Principal Engineer
+      url: https://platformatic.dev
+  email: paolo.insogna@platformatic.dev
   website: https://paoloinsogna.dev
   twitter: p_insogna
   github: ShogunPanda
   linkedin: pinsogna
-company:
-  count: 400
-  npm:
-    monthly: 1B
-    percentage: 8%
