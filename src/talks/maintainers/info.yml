@@ -1,0 +1,12 @@
+---
+config: common.config
+document:
+  title: Love your maintainers
+  abstract: |
+    No developer is an island and no developer is perfect. This means that you cannot create anything without using components written by someone else and these components will have defects or missing features. At some point in our life we all asked for support to someone else.
+
+    But being a maintainer is not an easy task at all. Think about receiving tons of reports with partial or missing information, or being yelled by strangers for not being responsive or fast enough.
+
+    For the health of our industry we must love our maintainers more: in this talk I’ll show how to politely ask for help and how to make sure you provide all the necessary informations.
+  author: common.author
+  company: common.company

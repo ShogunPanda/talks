@@ -1,0 +1,284 @@
+---
+layout: cover
+# ---
+
+---
+layout: separator
+title: |
+  The secret is
+  in the manners!
+image:
+  url: '@talk/lollipops.webp'
+options:
+  background: fuchsia
+  foreground: white
+decorations:
+  logo: black
+
+---
+layout: hello
+# ---
+
+---
+layout: separator
+title: What do you <s>expect</s> pretend from Open Source?
+image:
+  url: '@talk/code.webp'
+options:
+  background: green
+  foreground: white
+decorations:
+  permalink: black-with-bg
+
+---
+title: Let's clarify things
+items:
+  entries:
+    - icon: code-fork
+      title: What is it?
+      text: A decentralized software development model that *encourages open collaboration*.
+    - icon: heart
+      title: How is it possible?
+      text: The secret is in the *passion* of the people.
+    - icon: bolt
+      title: Is it working?
+      text: Open Source has proven to be really effective in improving software quality.
+
+---
+title: How it started?
+items:
+  entries:
+    - icon: sack-dollar
+      title: Initially, it was free, not open
+      text: In the 70s the *free software movement* challenged the for-profit based development.
+    - icon: split
+      title: Free means too much
+      text: In English, the word free is ambiguous. *Not paid* was the most understood meaning.
+    - icon: code-fork
+      title: Open Source was branched off the Free Software Movement
+      text: OSS software can be used for commercial purposes. *The freedom is retained.*
+
+---
+title: Why would somebody want to go Open Source?
+items:
+  entries:
+    - icon: rocket
+      title: The best of the best of the best
+      text: You can access a developer base not physically close to you.
+    - icon: globe
+      title: Different cultures, backgrounds and capabilities
+      text: You get different point of views, which increases quality.
+    - icon: circle-euro
+      title: Low maintenance cost
+      text: You don't need an office, just a version control server.
+
+---
+layout: separator
+title: Wait a sec...
+image:
+  url: '@talk/thinker.webp'
+options:
+  background: blue
+  foreground: white
+decorations:
+  logo: black
+
+---
+layout: separator
+title: Ring a bell?
+image:
+  url: '@talk/bell.webp'
+className:
+  root: theme@separator--reverse
+options:
+  background: blue
+  foreground: white
+decorations:
+  logo: white
+  permalink: white
+
+---
+layout: half
+title: It's similar, not the same!
+content:
+  - The Open Source development model is similar to Remote Working.
+  - The huge difference is that people are driven by *passion*, not money.
+  - '*You are not their boss!*'
+image:
+  url: '@talk/people.webp'
+
+---
+layout: side
+title: Everybody is nice if people are kind.
+items:
+  entries:
+    - icon: heart
+      title: Passion
+      text: Maintainers love that you use their software.
+    - icon: timer
+      title: Respect
+      text: They don't owe you anything. They are giving you their *free* time.
+    - icon: rocket
+      title: Action have consequences
+      text: Pretending fixes, features or simply attention *will push* people away.
+image:
+  url: '@talk/kindness.webp'
+decorations:
+  logo: black
+
+---
+layout: side
+title: Avoid burnouts!
+content:
+  - Needless to say, people have *sentiments* and a life in the real world.
+  - Even a single small act of rudeness can *burn people out*.
+image:
+  url: '@talk/burnout.webp'
+
+---
+layout: separator
+title: |
+  How do you 
+  ask for help?
+image:
+  url: '@talk/sos.webp'
+options:
+  background: amber
+
+---
+title: It all starts with a detailed search
+items:
+  entries:
+    - index: 1
+      title: Issues
+      text: The easier is to reproduce a problem, the higher the chance somebody already reported it.
+    - index: 2
+      title: PRs
+      text: Similarly to the above, somebody might already be working on it.
+    - index: 3
+      title: Code
+      text: Examples, tests or just the plain source code might already have the solution.
+    - index: 4
+      title: Documentation
+      text: Known workaround or out of scope problems are usually well documented.
+
+---
+title: Don't worry about overcommunicating
+items:
+  entries:
+    - icon: globe
+      title: We are distributed
+      text: Working across the globe introduced delays.
+    - icon: chart-network
+      title: We are different
+      text: Developers come from different cultures and expertises.
+    - icon: timer
+      title: Time is finite
+      text: We all have our lives. We don't have time to request missing informations.
+
+---
+title: It is like journalism
+items:
+  content: Do you remember the W-h rule?
+  entries:
+    - index: 1
+      title: Who and Where
+      text: This is usually implicit, but it's always better to be explicit.
+    - index: 2
+      title: What and When
+      text: Explain what happened, what did not happen and what were you expecting.
+    - index: 3
+      title: How
+      text: What is the smallest way to reproduce the problem? *This will return*.
+
+---
+layout: separator
+title: Dude, you forgot the <span class="theme@fg-black">Why</span>!
+subtitle: No, I have not ...
+image:
+  url: '@talk/why.webp'
+options:
+  background: red
+  foreground: white
+
+---
+title: Narrow things down
+items:
+  entries:
+    - icon: face-zipper
+      title: Avoid flooding
+      text: Even if you don't worry to overcommunicate, you can't just paste tons of output.
+    - icon: arrows-to-circle
+      title: Keep focus
+      text: Reports with lot of superflous information will likely distract the maintainer.
+    - icon: bug
+      title: It's for your own good
+      text: The more superflous information you give, the less the chance to see you problem solved.
+
+---
+layout: side
+title: Reproducible repos
+items:
+  entries:
+    - icon: cut
+      title: Reduce to the minimum
+      text: You want to rule out all unrelevant details.
+    - icon: lock
+      title: Remove sensitive information
+      text: Nobody wants to get in trouble.
+    - icon: globe
+      title: Provide a public repository
+      text: It will facilitate the triagers' work.
+image:
+  url: '@talk/repro.webp'
+
+---
+title: Follow up
+items:
+  entries:
+    - icon: comments-question
+      title: Look out for clarification requests
+      text: The maintainer might need additional information in order to process the report.
+    - icon: lightbulb
+      title: Be heard
+      text: Following up on the report is your only way to give your feedback before it's too late.
+    - icon: bell
+      title: Setup notifications
+      text: This is the easiest way to follow the discussion.
+
+---
+title: Contribute to the development
+items:
+  entries:
+    - icon: code
+      title: Engage
+      text: If you have the expertise you can propose to provide a PR.
+    - icon: bug
+      title: Test
+      text: Once the issue has been reported fixed, test it right away.
+    - icon: comments
+      title: Give feedback
+      text: Let the maintainer know if the issue is solved.
+
+---
+layout: separator
+title: And don't forget to <span class="theme@fg-black">thank them</span>!
+image:
+  url: '@talk/thanks.webp'
+options:
+  background: pink
+  foreground: white
+decorations:
+  logo: black
+
+---
+layout: quote
+quote:
+  sentence: |
+    No act of kindness, no matter 
+    how small, is ever wasted.
+  author: Aesop
+
+---
+layout: end
+# ---
