@@ -9,7 +9,7 @@ title: |
 image:
   url: '@talk/sloth.webp'
 options:
-  background: green
+  background: fuchsia
 
 ---
 layout: hello
@@ -33,7 +33,7 @@ title: We are all vulnerable!
 image:
   url: '@talk/hacking.webp'
 options:
-  background: purple
+  background: red
 
 ---
 title: Denial of Service Attack
@@ -53,11 +53,13 @@ notes: |
 
 ---
 layout: separator
-title: Fear the real enemy ...
+title: |
+  Fear the 
+  real enemy ...
 image:
   url: '@talk/hacking.webp'
 options:
-  background: purple
+  background: pink
 
 ---
 layout: image
@@ -274,7 +276,7 @@ title: Yes, almost!
 image:
   url: '@talk/hacking.webp'
 options:
-  background: purple
+  background: pink
 
 ---
 title: The countermeasures were loose
@@ -358,7 +360,7 @@ image:
 notes: |
   Do a nice victory gesture and shout!
 options:
-  background: midnight
+  background: green
 decorations:
   className:
     icon: theme-misc@mission-completed

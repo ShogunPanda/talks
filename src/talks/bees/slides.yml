@@ -11,7 +11,6 @@ image:
   url: '@talk/lollipops.webp'
 options:
   background: fuchsia
-  foreground: white
 decorations:
   logo: black
 
@@ -26,7 +25,6 @@ image:
   url: '@talk/bee.webp'
 options:
   background: blue
-  foreground: white
 
 ---
 title: How is that?
@@ -68,10 +66,9 @@ items:
 layout: separator
 title: Are you <br/>trolling us?
 image:
-  url: '@talk/troll.webp'
+  url: '@common/troll.webp'
 options:
-  background: pink
-  foreground: white
+  background: amber
 decorations:
   logo: black
 
@@ -87,7 +84,6 @@ className:
   root: theme@separator--reverse
 options:
   background: pink
-  foreground: white
 
 ---
 title: Say hello to SDKs
@@ -131,8 +127,7 @@ title: You already know the answer...
 image:
   url: '@talk/laugh.webp'
 options:
-  background: green
-  foreground: white
+  background: gray
 
 ---
 title: What do we ALSO get, in short? (1/2)
@@ -277,7 +272,6 @@ image:
   url: '@talk/modern.webp'
 options:
   background: sky
-  foreground: white
 decorations:
   logo: white
 
@@ -376,8 +370,7 @@ title: Do we have the solution?
 image:
   url: '@talk/solution.webp'
 options:
-  background: fuchsia
-  foreground: white
+  background: amber
 
 ---
 layout: separator
@@ -385,8 +378,7 @@ title: Yes, use the APIs directly!
 image:
   url: '@talk/bee.webp'
 options:
-  background: blue
-  foreground: white
+  background: green
 
 ---
 title: How many will you use?
@@ -406,10 +398,9 @@ title: |
   Let's get to
   the action!
 image:
-  url: '@talk/action.webp'
+  url: '@common/action.webp'
 options:
-  background: red
-  foreground: white
+  background: sky
 
 ---
 title: 'No SDK: Setup'
@@ -576,8 +567,7 @@ title: Mission completed!
 image:
   url: '@talk/completed.webp'
 options:
-  background: blue
-  foreground: white
+  background: green
 decorations:
   icon: party-horn
   className:

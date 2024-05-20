@@ -8,7 +8,7 @@ title: There is no knowledge that is not power!
 image:
   url: '@talk/mortal-kombat.webp'
 options:
-  background: gray-300
+  background: fuchsia
 
 ---
 layout: hello
@@ -16,11 +16,11 @@ layout: hello
 
 ---
 layout: separator
-title: What is <span class="theme@fg-green">programming</span>?
+title: What is <span class="theme@fg-blue">programming</span>?
 image:
   url: '@talk/programming-1.webp'
 options:
-  background: midnight
+  background: amber
 
 ---
 layout: quote
@@ -37,11 +37,11 @@ quote:
 layout: separator
 title: |
   What is a
-  <span class="theme@fg-green">martial art</span>?
+  <span class="theme@fg-blue">martial art</span>?
 image:
   url: '@talk/wing-tsun-1.webp'
 options:
-  background: purple
+  background: amber
 
 ---
 layout: quote
@@ -60,7 +60,7 @@ title: But they are completely unrelated!
 image:
   url: '@talk/oil-drops.webp'
 options:
-  background: midnight
+  background: red
 
 ---
 title: It's all about us ...
@@ -138,7 +138,7 @@ title: One last <s>thing™</s> passion
 image:
   url: '@talk/larp.webp'
 options:
-  background: midnight
+  background: gray
 
 ---
 layout: separator
@@ -156,7 +156,7 @@ title: |
 image:
   url: '@talk/award.webp'
 options:
-  background: purple
+  background: sky
 
 ---
 layout: image
@@ -203,7 +203,7 @@ title: Meet our training dummy
 image:
   url: '@talk/mokujin.webp'
 options:
-  background: purple
+  background: blue
 
 ---
 layout: separator
@@ -211,15 +211,15 @@ title: |
   Sorry, I totally
   could not resist!
 image:
-  url: '@talk/troll.webp'
+  url: '@common/troll.webp'
 options:
-  background: green
+  background: pink
 decorations:
   logo: black
 
 ---
 layout: separator
-title: Meet our <span class="theme@fg-green">real</span> training dummy
+title: Meet our <span class="theme@fg-amber">real</span> training dummy
 image:
   url: '@talk/wooden-dummy.webp'
 options:
@@ -247,7 +247,7 @@ title: What about programming?
 image:
   url: '@talk/programming-2.webp'
 options:
-  background: midnight
+  background: amber
 
 ---
 title: Let's clarify few things
@@ -270,9 +270,9 @@ subtitle: ... finally! 😂
 image:
   url: '@talk/programming-3.webp'
 options:
-  background: green
+  background: sky
 className:
-  subtitle: talk@separator__subtitle
+  subtitle: talk@separator__subtitle--finally
 
 ---
 layout: image
@@ -293,7 +293,7 @@ title: Energy Principles
 image:
   url: '@talk/energy.webp'
 options:
-  background: blue
+  background: sky
 
 ---
 layout: quote
@@ -415,15 +415,15 @@ title: Chi Sao principles
 image:
   url: '@talk/chisao.webp'
 options:
-  background: blue
+  background: sky
 
 ---
 layout: separator
-title: But what is exactly <span class="theme@fg-green">Chi Sao</span>?
+title: But what is exactly <span class="theme@fg-blue">Chi Sao</span>?
 image:
   url: '@talk/confused.webp'
 options:
-  background: midnight
+  background: amber
 
 ---
 title: Chi Sao
@@ -445,7 +445,7 @@ title: Back to Chi Sao principles!
 image:
   url: '@talk/chisao.webp'
 options:
-  background: blue
+  background: sky
 
 ---
 layout: quote
@@ -570,7 +570,7 @@ title: Bonus principle!
 image:
   url: '@talk/mokujin.webp'
 options:
-  background: purple
+  background: blue
 
 ---
 layout: image
@@ -590,9 +590,9 @@ decorations:
 layout: separator
 title: Sorry, could not resist (again)!
 image:
-  url: '@talk/troll.webp'
+  url: '@common/troll.webp'
 options:
-  background: blue
+  background: pink
 decorations:
   logo: black
 

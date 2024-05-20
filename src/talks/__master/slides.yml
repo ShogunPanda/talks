@@ -7,6 +7,10 @@ layout: hello
 # ---
 
 ---
+layout: end
+# ---
+
+---
 layout: quote
 quote:
   sentence: This is a very intelligent sentence
@@ -29,10 +33,6 @@ quote:
   sentence: This has no icons
   author: Nice person
   icons: false
-
----
-layout: end
-# ---
 
 ---
 title: Default with simple content
@@ -272,6 +272,16 @@ decorations:
 
 ---
 layout: image
+title: Image with no content
+image:
+  url: '@theme/panda.webp'
+decorations:
+  logo: total-white
+className:
+  title: theme@callout--dark
+
+---
+layout: image
 title: Image with content
 subtitle: Excepteur ullamco reprehenderit amet ea sunt esse.
 image:
@@ -377,9 +387,20 @@ subtitle: Dolor id enim magna quis aute ex esse officia amet officia occaecat.
 image:
   url: '@theme/panda.webp'
 options:
-  background: midnight
+  background: blue
 className:
   subtitle: theme@separator__callout
+
+---
+layout: separator
+title: Irure consectetur officia aliquip nostrud.
+subtitle: Dolor id enim magna quis aute ex esse officia amet officia occaecat.
+image:
+  url: '@theme/panda.webp'
+options:
+  background: blue
+className:
+  subtitle: theme@separator__callout theme@separator__callout--light
 
 ---
 layout: separator
@@ -388,14 +409,6 @@ image:
   url: '@theme/panda.webp'
 options:
   background: sky
-
----
-layout: separator
-title: Irure consectetur officia aliquip nostrud.
-image:
-  url: '@theme/panda.webp'
-options:
-  background: blue
 
 ---
 layout: separator
@@ -436,6 +449,14 @@ image:
   url: '@theme/panda.webp'
 options:
   background: red
+
+---
+layout: separator
+title: Irure consectetur officia aliquip nostrud.
+image:
+  url: '@theme/panda.webp'
+options:
+  background: gray
 
 ---
 layout: separator

@@ -1,5 +1,5 @@
 import { Svg, cleanCssClasses, useClient, useSlide, type SlideProps } from '@perseveranza-pets/freya/client'
-import { type VNode } from 'preact'
+import { Fragment, type VNode } from 'preact'
 import { Text } from '../../common/components/common.js'
 import { type Slide } from '../../common/models.js'
 import { SlideWrapper } from '../components/common.js'
@@ -8,7 +8,7 @@ export default function EndLayout({ className, style }: SlideProps): VNode {
   const {
     talk: {
       id,
-      document: { author }
+      document: { author, authors }
     },
     resolveImage
   } = useClient()
@@ -43,32 +43,63 @@ export default function EndLayout({ className, style }: SlideProps): VNode {
       </main>
 
       <footer className={cleanCssClasses('theme@end__footer')}>
-        <strong
-          className={cleanCssClasses('theme@end__social', 'theme@end__social--highlight', 'theme@end__social__author')}
-        >
-          {author.name}
-        </strong>
+        {authors?.map((author: Record<string, string>) => (
+          <Fragment key={author.name}>
+            <strong
+              className={cleanCssClasses(
+                'theme@end__social',
+                'theme@end__social--highlight',
+                'theme@end__social__author'
+              )}
+            >
+              {author.name}
+            </strong>
 
-        <a
-          className={cleanCssClasses('theme@end__social', 'theme@end__social__twitter')}
-          href={`https://twitter.com/${author.twitter}`}
-        >
-          @{author.twitter}
-        </a>
+            <a
+              className={cleanCssClasses('theme@end__social', 'theme@end__social__twitter')}
+              href={`https://twitter.com/${author.twitter}`}
+            >
+              @{author.twitter}
+            </a>
+          </Fragment>
+        ))}
+        {!authors && (
+          <>
+            <strong
+              className={cleanCssClasses(
+                'theme@end__social',
+                'theme@end__social--highlight',
+                'theme@end__social__author'
+              )}
+            >
+              {author.name}
+            </strong>
 
-        <span
-          className={cleanCssClasses(
-            'theme@end__social',
-            'theme@end__social--highlight',
-            'theme@end__social__description'
-          )}
-        >
-          {author.description}
-        </span>
+            <a
+              className={cleanCssClasses('theme@end__social', 'theme@end__social__twitter')}
+              href={`https://twitter.com/${author.twitter}`}
+            >
+              @{author.twitter}
+            </a>
 
-        <a className={cleanCssClasses('theme@end__social', 'theme@end__social__email')} href={`mailto:${author.email}`}>
-          {author.email}
-        </a>
+            <span
+              className={cleanCssClasses(
+                'theme@end__social',
+                'theme@end__social--highlight',
+                'theme@end__social__description'
+              )}
+            >
+              {author.description}
+            </span>
+
+            <a
+              className={cleanCssClasses('theme@end__social', 'theme@end__social__email')}
+              href={`mailto:${author.email}`}
+            >
+              {author.email}
+            </a>
+          </>
+        )}
 
         <aside className={cleanCssClasses('theme@end__logo--wrapper')}>
           <a href="https://platformatic.dev" className={cleanCssClasses('theme@end__logo')}>

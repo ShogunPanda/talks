@@ -10,7 +10,7 @@ title: |
 image:
   url: '@talk/love.webp'
 options:
-  background: green
+  background: fuchsia
 
 ---
 layout: hello
@@ -53,10 +53,12 @@ code:
     | [ varint | DAG-CBOR block ] | | [ varint | CID | block ] [ varint | CID | block ] ... |
 
 ---
-layout: image
+layout: separator
 title: What was wrong?
 image:
   url: '@talk/obstacle.webp'
+options:
+  background: amber
 
 ---
 title: Previous Challenges
@@ -184,7 +186,7 @@ code:
 layout: separator
 title: Indexing subsystem
 options:
-  background: green
+  background: sky
 decorations:
   permalink: black
 
@@ -223,7 +225,7 @@ items:
 layout: separator
 title: Let's talk about DHT
 options:
-  background: purple
+  background: sky
 
 ---
 title: DHT Challenges
@@ -389,7 +391,7 @@ code:
 layout: separator
 title: Publishing subsystem
 options:
-  background: green
+  background: sky
 decorations:
   permalink: black
 
@@ -446,7 +448,7 @@ decorations:
 layout: separator
 title: Peer subsystem
 options:
-  background: green
+  background: sky
 decorations:
   permalink: black
 
@@ -474,9 +476,10 @@ items:
 layout: separator
 title: How does E-IPFS perform?
 options:
-  background: green
+  background: amber
 decorations:
   permalink: black
+  logo: black
 
 ---
 title: Hit rate went almost to 100%

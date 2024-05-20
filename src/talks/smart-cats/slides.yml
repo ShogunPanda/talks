@@ -10,8 +10,7 @@ title: |
 image:
   url: '@talk/smart-home.webp'
 options:
-  background: blue-700
-  foreground: white
+  background: fuchsia
 decorations:
   logo: black
 
@@ -39,8 +38,7 @@ title: I'm literally surrounded by lovely chubby cats...
 image:
   url: '@talk/ciurma-1.webp'
 options:
-  background: purple-500
-  foreground: white
+  background: blue
 decorations:
   logo: black
 
@@ -54,8 +52,7 @@ image:
 className:
   root: theme@separator--reverse
 options:
-  background: purple-500
-  foreground: white
+  background: blue
 decorations:
   logo: total-white
 
@@ -82,8 +79,7 @@ title: |
 image:
   url: '@talk/mangioni.webp'
 options:
-  background: purple-500
-  foreground: white
+  background: pink
 decorations:
   permalink: black
 
@@ -95,8 +91,7 @@ image:
 className:
   root: theme@separator--reverse
 options:
-  background: purple-500
-  foreground: white
+  background: pink
 
 ---
 title: A little disclaimer
@@ -119,8 +114,7 @@ subtitle: Say hello to <span class="theme@separator__callout__highlight talk@pet
 image:
   url: '@talk/bree-1.webp'
 options:
-  background: green-a700
-  foreground: white
+  background: sky
 className:
   subtitle: theme@separator__callout talk@pet
 
@@ -161,8 +155,7 @@ subtitle: Say hello to <span class="theme@separator__callout__highlight talk@pet
 image:
   url: '@talk/cali.webp'
 options:
-  background: red-700
-  foreground: white
+  background: blue
 decorations:
   logo: black
   permalink: white
@@ -206,7 +199,7 @@ subtitle: Say hello to <span class="theme@separator__callout__highlight talk@pet
 image:
   url: '@talk/cleo.webp'
 options:
-  background: yellow-500
+  background: amber
 decorations:
   logo: black
   permalink: white
@@ -251,7 +244,7 @@ subtitle: Say hello to <span class="theme@separator__callout__highlight talk@pet
 image:
   url: '@talk/freya-1.webp'
 options:
-  background: orange-500
+  background: red
 decorations:
   logo: black
 className:
@@ -360,8 +353,7 @@ subtitle: Say hello to <span class="theme@separator__callout__highlight talk@pet
 image:
   url: '@talk/yuna.webp'
 options:
-  background: pink-a200
-  foreground: white
+  background: amber
 decorations:
   logo: black
   permalink: white
@@ -389,8 +381,7 @@ subtitle: Say hello to <span class="theme@separator__callout__highlight talk@pet
 image:
   url: '@talk/kuro.webp'
 options:
-  background: teal-900
-  foreground: white
+  background: sky
 className:
   subtitle: theme@separator__callout talk@pet
 
@@ -434,8 +425,7 @@ subtitle: |
 image:
   url: '@talk/bracio-1.webp'
 options:
-  background: deep-orange-500
-  foreground: white
+  background: amber
 className:
   subtitle: theme@separator__callout talk@pet
 
@@ -448,8 +438,7 @@ title: |
 image:
   url: '@talk/bracio-2.webp'
 options:
-  background: deep-orange-500
-  foreground: white
+  background: pink
 decorations:
   permalink: black
 
@@ -465,7 +454,7 @@ className:
 decorations:
   logo: total-white
 options:
-  background: cyan-a400
+  background: pink
 
 ---
 layout: side
@@ -492,8 +481,7 @@ subtitle: Why?! Why not!
 image:
   url: '@talk/albero.webp'
 options:
-  background: green-900
-  foreground: white
+  background: gray
 decorations:
   logo: black
 className:
@@ -508,8 +496,7 @@ subtitle: Say hello to <span class="theme@separator__callout__highlight talk@pet
 image:
   url: '@talk/loki.webp'
 options:
-  background: blue-700
-  foreground: white
+  background: green
 decorations:
   permalink: black
 className:
@@ -578,7 +565,7 @@ subtitle: Say hello to <span class="theme@separator__callout__highlight talk@pet
 image:
   url: '@talk/mora.webp'
 options:
-  background: lime-a200
+  background: pink
 decorations:
   permalink: black
 className:
@@ -605,7 +592,7 @@ subtitle: Let's play a little game ...
 image:
   url: '@talk/cleo.webp'
 options:
-  background: yellow-500
+  background: amber
 decorations:
   logo: black
   permalink: white
@@ -621,7 +608,7 @@ subtitle: The answer is ...
 image:
   url: '@talk/cleo.webp'
 options:
-  background: yellow-500
+  background: green
 decorations:
   logo: black
   permalink: white

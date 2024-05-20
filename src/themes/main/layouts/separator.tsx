@@ -19,7 +19,11 @@ export default function SeparatorLayout({ className, style }: SlideProps): VNode
     className: { root: rootClassName, contents: contentsClassName, title: titleClassName, subtitle: subtitleClassName }
   } = slide
 
-  const { foreground } = slide.options
+  let { foreground } = slide.options
+
+  if (typeof foreground === 'undefined' && background && background !== 'amber' && background !== 'light-gray') {
+    foreground = 'white'
+  }
 
   const imageUrl = resolveImage('main', id, image?.url)
 

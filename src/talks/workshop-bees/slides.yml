@@ -26,9 +26,11 @@ items:
 
 ---
 layout: separator
-title: Let's get to the action!
-options:
-  background: '@theme/side.webp'
+title: |
+  Let's get to
+  the action!
+image:
+  url: '@common/action.webp'
 
 ---
 title: 'Setup'

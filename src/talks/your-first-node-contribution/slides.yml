@@ -8,7 +8,7 @@ title: All hope abandon ye who enter here!
 image:
   url: '@talk/hell.webp'
 options:
-  background: green
+  background: pink
 
 ---
 layout: image

@@ -38,7 +38,7 @@
     &:active,
     &:focus,
     &:hover {
-      color: white;
+      color: var(--freya-color-white);
     }
   }
 }

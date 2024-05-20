@@ -9,6 +9,12 @@
     font-family: var(--pi-font-bitter);
     font-size: 0.4em;
     font-weight: 700;
+
+    &--finally {
+      font-family: var(--pi-font-bitter);
+      font-size: 1em;
+      font-weight: 700;
+    }
   }
 
   &principle-icon {

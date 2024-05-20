@@ -9,7 +9,7 @@ title: |
 image:
   url: '@talk/painting.webp'
 options:
-  background: green
+  background: fuchsia
 decorations:
   logo: black
 
@@ -49,7 +49,7 @@ title: Let's send a message ...
 image:
   url: '@talk/pidgeons.webp'
 options:
-  background: green
+  background: sky
 decorations:
   logo: black
   permalink: white
@@ -60,7 +60,7 @@ title: That was not an encrypted channel!
 image:
   url: '@talk/dali.webp'
 options:
-  background: midnight
+  background: red
 decorations:
   logo: black
 
@@ -79,7 +79,7 @@ title: An example:<br/> The Caesar Cipher
 image:
   url: '@talk/caesar-salad.webp'
 options:
-  background: purple
+  background: sky
 decorations:
   permalink: black
 
@@ -119,8 +119,9 @@ title: Trivia question
 items:
   entries:
     - title: Where does its name come from?
-    - title: <h1 class="theme@fg-purple">It's a Caesar Cipher!</h1>
+    - title: <h1 class="theme@fg-pink">It's a Caesar Cipher!</h1>
   sequence: true
+  gap: false
 image:
   url: '@talk/hal.webp'
 
@@ -202,7 +203,7 @@ title: It's time to paint!
 image:
   url: '@talk/baby-hand.webp'
 options:
-  background: green
+  background: sky
 decorations:
   logo: black
 
@@ -226,11 +227,11 @@ index: 3
 
 ---
 layout: separator
-title: Let's make some m<span class="theme@fg-green">a</span>th!
+title: Let's make some m<span class="theme@fg-amber">a</span>th!
 image:
   url: '@talk/walter-white.webp'
 options:
-  background: blue
+  background: sky
 
 ---
 title: How is this possible?

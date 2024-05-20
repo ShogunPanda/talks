@@ -1,5 +1,5 @@
 import { QRCode, Svg, cleanCssClasses, useClient, useSlide, type SlideProps } from '@perseveranza-pets/freya/client'
-import { type VNode } from 'preact'
+import { Fragment, type VNode } from 'preact'
 import { Text } from '../../common/components/common.js'
 import { SvgIcon } from '../../common/components/icons.js'
 import { type Slide } from '../../common/models.js'
@@ -10,7 +10,7 @@ export default function CoverLayout({ className, style }: SlideProps): VNode {
     isProduction,
     talk: {
       id,
-      document: { author, title, titleFormatted }
+      document: { author, authors, title, titleFormatted }
     },
     theme: { urls },
     resolveImage
@@ -44,15 +44,29 @@ export default function CoverLayout({ className, style }: SlideProps): VNode {
             <Text text={titleFormatted ?? title} />
           </h1>
 
-          <h2 className={cleanCssClasses('theme@cover__header__author')}>
-            <strong className={cleanCssClasses('theme@cover__header__author__name')}>
-              <Text text={author.name} />
-            </strong>
+          {authors && (
+            <h2 className={cleanCssClasses('theme@cover__header__author')}>
+              {authors.map((author: Record<string, string>, index: number) => (
+                <Fragment key={author.name}>
+                  {index > 0 && <span className={cleanCssClasses('theme@cover__header__author__separator')} />}
+                  <strong className={cleanCssClasses('theme@cover__header__author__name')}>
+                    <Text text={author.name} />
+                  </strong>
+                </Fragment>
+              ))}
+            </h2>
+          )}
+          {!authors && (
+            <h2 className={cleanCssClasses('theme@cover__header__author')}>
+              <strong className={cleanCssClasses('theme@cover__header__author__name')}>
+                <Text text={author.name} />
+              </strong>
 
-            <span className={cleanCssClasses('theme@cover__header__author__description')}>
-              <Text text={author.descriptionShort ?? author.description} />
-            </span>
-          </h2>
+              <span className={cleanCssClasses('theme@cover__header__author__description')}>
+                <Text text={author.descriptionShort ?? author.description} />
+              </span>
+            </h2>
+          )}
         </main>
 
         <aside className={cleanCssClasses('theme@cover__qrs')}>

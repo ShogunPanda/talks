@@ -2,7 +2,7 @@
 .freya@ {
   &loading__text {
     display: block;
-    color: white;
+    color: var(--freya-color-white);
     font-weight: 300;
   }
 

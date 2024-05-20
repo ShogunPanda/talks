@@ -20,7 +20,7 @@
   &slide {
     --cm-icon-size: 0.5--sp;
     padding: 0.5--sp;
-    background-color: white;
+    background-color: var(--freya-color-white);
   }
 
   &code {

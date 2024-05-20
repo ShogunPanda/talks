@@ -16,9 +16,11 @@ document:
     Contributors of all skill levels and experiences are welcome (not every contribution has to be a code change). 
 
     Come and make your first Node.js core contribution!
-  author:
-    name: 'Marco Ippolito, Paolo Insogna'
-    description: Node.js TSC, Platformatic
-    twitter: platformatic
-    email: info@platformatic.dev
-  company: common.company
+  author: common.author
+  authors:
+    - name: Paolo Insogna
+      email: paolo@cowtech.it
+      twitter: p_insogna
+    - name: Marco Ippolito
+      email: marcoippolito54@gmail.com
+      twitter: marco-ippolito

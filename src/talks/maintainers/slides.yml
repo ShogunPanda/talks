@@ -11,7 +11,6 @@ image:
   url: '@talk/lollipops.webp'
 options:
   background: fuchsia
-  foreground: white
 decorations:
   logo: black
 
@@ -25,8 +24,7 @@ title: What do you <s>expect</s> pretend from Open Source?
 image:
   url: '@talk/code.webp'
 options:
-  background: green
-  foreground: white
+  background: amber
 decorations:
   permalink: black-with-bg
 
@@ -79,7 +77,6 @@ image:
   url: '@talk/thinker.webp'
 options:
   background: blue
-  foreground: white
 decorations:
   logo: black
 
@@ -92,7 +89,6 @@ className:
   root: theme@separator--reverse
 options:
   background: blue
-  foreground: white
 decorations:
   logo: white
   permalink: white
@@ -108,7 +104,7 @@ image:
   url: '@talk/people.webp'
 
 ---
-layout: side
+layout: half
 title: Everybody is nice if people are kind.
 items:
   entries:
@@ -199,7 +195,6 @@ image:
   url: '@talk/why.webp'
 options:
   background: red
-  foreground: white
 
 ---
 title: Narrow things down
@@ -266,8 +261,7 @@ title: And don't forget to <span class="theme@fg-black">thank them</span>!
 image:
   url: '@talk/thanks.webp'
 options:
-  background: pink
-  foreground: white
+  background: green
 decorations:
   logo: black
 

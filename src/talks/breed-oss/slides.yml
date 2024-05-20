@@ -8,7 +8,7 @@ title: Don't ask if you can't handle the answers!
 image:
   url: '@talk/dog.webp'
 options:
-  background: green
+  background: fuchsia
 decorations:
   logo: black
 
@@ -18,11 +18,11 @@ layout: hello
 
 ---
 layout: separator
-title: So, you want to mess with Open Source...
+title: Do you want to mess with Open Source?
 image:
   url: '@talk/code.webp'
 options:
-  background: green
+  background: amber
 decorations:
   permalink: black-with-bg
 
@@ -70,7 +70,7 @@ title: Beware!
 image:
   url: '@talk/hell.webp'
 options:
-  background: midnight
+  background: red
 
 ---
 layout: side
@@ -138,13 +138,13 @@ image:
 layout: raw
 content:
   - |
-    <h1 class="theme@fg-white theme-misc@bad__text">BAD!</h1>
-    <h1 class="theme@fg-green theme-misc@bad__text">DON'T!</h1>
+    <h1 class="theme@fg-black theme-misc@bad__text">BAD!</h1>
+    <h1 class="theme@fg-white theme-misc@bad__text">DON'T!</h1>
 className:
   raw: theme-misc@bad
   root: theme-misc@bad__root
 options:
-  background: midnight
+  background: red
 decorations:
   logo: white
   permalink: white
@@ -226,7 +226,7 @@ title: But here we're talking about breeding...
 image:
   url: '@talk/breeding.webp'
 options:
-  background: green
+  background: blue
 
 ---
 title: The job NEVER ends
@@ -244,11 +244,13 @@ items:
 
 ---
 layout: separator
-title: Nobody wants to be sued!
+title: |
+  Nobody wants
+  to be sued!
 image:
   url: '@talk/justice.webp'
 options:
-  background: purple
+  background: red
 
 ---
 title: Why do we need legal licenses
@@ -309,7 +311,7 @@ title: |
 image:
   url: '@talk/kindness.webp'
 options:
-  background: purple
+  background: green
 decorations:
   logo: black
 
@@ -335,9 +337,9 @@ title: |
   Let's get to
   the action!
 image:
-  url: '@talk/action.webp'
+  url: '@common/action.webp'
 options:
-  background: blue
+  background: sky
 
 ---
 title: First of all, choose the hosting
@@ -372,7 +374,7 @@ title: How do we get started?
 image:
   url: '@talk/do-it.webp'
 options:
-  background: purple
+  background: amber
 decorations:
   logo: black
 
@@ -480,7 +482,7 @@ title: |
 image:
   url: '@talk/pillars.webp'
 options:
-  background: green
+  background: sky
 
 ---
 title: Pull Request
@@ -605,11 +607,13 @@ decorations:
 
 ---
 layout: separator
-title: Humans are social beings
+title: |
+  Humans are 
+  social beings
 image:
   url: '@talk/people.webp'
 options:
-  background: purple
+  background: sky
 decorations:
   permalink: black
 
@@ -667,7 +671,7 @@ title: Diversity and Inclusion
 image:
   url: '@talk/diversity.webp'
 options:
-  background: purple
+  background: sky
 
 ---
 title: Conscious and unconscious bias

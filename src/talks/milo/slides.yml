@@ -11,8 +11,7 @@ title: |
 image:
   url: '@talk/ski.webp'
 options:
-  background: blue
-  foreground: white
+  background: fuchsia
 decorations:
   logo: black
 
@@ -26,8 +25,7 @@ title: We all love HTTP!
 image:
   url: '@talk/love.webp'
 options:
-  background: pink
-  foreground: white
+  background: blue
 decorations:
   logo: black
 
@@ -39,8 +37,7 @@ title: |
 image:
   url: '@talk/palette.webp'
 options:
-  background: green
-  foreground: white
+  background: amber
 
 ---
 title: The choice is narrow
@@ -76,8 +73,7 @@ title: Let's focus!
 image:
   url: '@talk/focus.webp'
 options:
-  background: blue
-  foreground: white
+  background: sky
 
 ---
 layout: side
@@ -117,8 +113,7 @@ title: Do we have the solution?
 image:
   url: '@talk/solution.webp'
 options:
-  background: fuchsia
-  foreground: white
+  background: amber
 
 ---
 layout: separator
@@ -127,7 +122,6 @@ image:
   url: '@talk/fresh.webp'
 options:
   background: green
-  foreground: white
 
 ---
 layout: separator
@@ -136,7 +130,6 @@ image:
   url: '@talk/milo.webp'
 options:
   background: pink
-  foreground: white
 decorations:
   logo: black
   permalink: white
@@ -178,8 +171,7 @@ title: How is that possible?
 image:
   url: '@talk/dog.webp'
 options:
-  background: blue
-  foreground: white
+  background: amber
 
 ---
 layout: separator
@@ -188,7 +180,6 @@ image:
   url: '@talk/macro.webp'
 options:
   background: green
-  foreground: white
 
 ---
 title: Rust macro system is insanely powerful
@@ -298,13 +289,16 @@ image:
   url: '@talk/wall.webp'
 options:
   background: red
-  foreground: white
 
 ---
-layout: image
-title: Let's see it in action!
+layout: separator
+title: |
+  Let's get to
+  the action!
 image:
-  url: '@talk/action.webp'
+  url: '@common/action.webp'
+options:
+  background: sky
 
 ---
 title: Sample code (Rust)
@@ -355,8 +349,7 @@ title: |
 image:
   url: '@talk/incompatible.webp'
 options:
-  background: green
-  foreground: white
+  background: red
 decorations:
   logo: black
 
@@ -427,8 +420,7 @@ title: |
 image:
   url: '@talk/incompatible.webp'
 options:
-  background: fuchsia
-  foreground: white
+  background: red
 
 ---
 layout: side

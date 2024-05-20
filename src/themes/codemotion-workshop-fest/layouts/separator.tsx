@@ -16,7 +16,7 @@ export default function DefaultLayout({ className, style }: SlideProps): VNode {
     options: { background }
   } = slide
 
-  const backgroundUrl = resolveImage('codemotion-workshop-fest', id, background ?? '@theme/blank.webp')
+  const backgroundUrl = resolveImage('codemotion-workshop-fest', id, background ?? '@theme/side.webp')
 
   return (
     <article

@@ -38,6 +38,12 @@
     color: var(--plt-blue);
     font-size: 35--pt;
     font-weight: 700;
+
+    &--dark {
+      border-bottom-color: var(--plt-green);
+      background-color: var(--plt-blue);
+      color: var(--freya-color-white);
+    }
   }
 
   &icon {
@@ -100,19 +106,19 @@
     width: 0.5--sp;
     padding: 0.05--sp;
     border-radius: 0.05--sp;
-    color: black;
+    color: var(--freya-color-black);
 
     &--white {
-      color: white;
+      color: var(--freya-color-white);
     }
 
     &--black {
-      color: black;
+      color: var(--freya-color-black);
     }
 
     &--black-with-bg {
-      background-color: white;
-      color: black;
+      background-color: var(--freya-color-white);
+      color: var(--freya-color-black);
     }
 
     &__code {
@@ -211,12 +217,12 @@
 
     &--dark {
       background-color: var(--freya-color-windi-blue-600);
-      color: white;
+      color: var(--freya-color-white);
     }
 
     &--light {
-      background-color: white;
-      color: black;
+      background-color: var(--freya-color-white);
+      color: var(--freya-color-black);
     }
 
     &__title {
@@ -255,11 +261,11 @@
         font-style: italic;
 
         &--dark {
-          color: white;
+          color: var(--freya-color-white);
         }
 
         &--light {
-          color: var(--freya-blue);
+          color: var(--freya-color-blue);
         }
       }
 
@@ -272,7 +278,7 @@
         }
 
         &--light {
-          color: var(--plt-blue);
+          color: var(--freya-color-black);
         }
       }
     }
@@ -415,7 +421,7 @@
       border: 0 solid transparent;
       border-bottom: 0.06--sp solid var(--plt-green);
       background-color: var(--plt-blue);
-      color: white;
+      color: var(--freya-color-white);
       font-family: var(--pi-font-bitter);
       font-size: 20--pt;
       font-weight: 700;
@@ -423,6 +429,12 @@
 
       &--reverse {
         left: calc(11%);
+      }
+
+      &--light {
+        border-bottom-color: var(--plt-blue);
+        background-color: var(--plt-green);
+        color: var(--plt-blue);
       }
 
       &__highlight {
@@ -521,11 +533,16 @@
           margin-left: 1ch;
           font-weight: 400;
         }
+
+        &__separator {
+          display: inline-block;
+          margin-left: 3ch;
+        }
       }
     }
 
     &__qrs {
-      --pi-icon-primary-color: black;
+      --pi-icon-primary-color: var(--freya-color-black);
       position: absolute;
       display: flex;
       z-index: 10;
@@ -543,8 +560,8 @@
         &__code {
           padding: 0.05--sp;
           border-radius: 0.05--sp;
-          background-color: white;
-          color: black;
+          background-color: var(--freya-color-white);
+          color: var(--freya-color-black);
         }
 
         &__label {
@@ -680,8 +697,8 @@
       &__qr,
       &__icon {
         --pi-icon-size: 0.5--sp;
-        --pi-icon-primary-color: black;
-        --pi-icon-secondary-color: black;
+        --pi-icon-primary-color: var(--freya-color-black);
+        --pi-icon-secondary-color: var(--freya-color-black);
       }
 
       &__text {
@@ -695,7 +712,7 @@
 
         &,
         &:visited {
-          color: black;
+          color: var(--freya-color-black);
         }
       }
 
@@ -752,7 +769,7 @@
       width: 100%;
       padding: 0.05--sp var(--pi-padding);
       background-color: var(--freya-color-black);
-      color: white;
+      color: var(--freya-color-white);
       font-family: var(--pi-font-bitter);
       font-size: 12--pt;
       font-weight: 700;
@@ -767,7 +784,7 @@
       &:hover,
       &:active,
       &:visited {
-        color: white;
+        color: var(--freya-color-white);
       }
 
       &--highlight {
@@ -843,7 +860,7 @@
   }
 
   &mission-completed {
-    --pi-icon-primary-color: var(--freya-color-windi-blue-500);
+    --pi-icon-primary-color: var(--freya-color-windi-green-700);
     bottom: -0.02--sp;
     left: 1--sp;
     width: 2--sp;

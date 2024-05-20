@@ -10,7 +10,7 @@ title: |
 image:
   url: '@talk/kindness.webp'
 options:
-  background: purple
+  background: fuchsia
 decorations:
   logo: black
 
@@ -113,7 +113,7 @@ title: You already know the answer...
 image:
   url: '@talk/laugh.webp'
 options:
-  background: purple
+  background: gray
 
 ---
 title: The happy case is mostly theoretical
@@ -133,13 +133,13 @@ items:
 layout: raw
 content:
   - |
-    <h1 class="theme@fg-white theme-misc@bad__text">BAD!</h1>
-    <h1 class="theme@fg-green theme-misc@bad__text">DON'T!</h1>
+    <h1 class="theme@fg-black theme-misc@bad__text">BAD!</h1>
+    <h1 class="theme@fg-white theme-misc@bad__text">DON'T!</h1>
 className:
   raw: theme-misc@bad
   root: theme-misc@bad__root
 options:
-  background: midnight
+  background: red
 decorations:
   logo: white
   permalink: white
@@ -156,12 +156,12 @@ decorations:
 layout: separator
 title: |
   Yes, let's make
-  an <span class="theme@fg-green">enriching</span>
+  an <span class="theme@fg-amber">enriching</span>
   proxy!
 image:
   url: '@talk/san-bernardo.webp'
 options:
-  background: blue
+  background: green
 decorations:
   logo: black
 
@@ -334,7 +334,9 @@ items:
 layout: separator
 title: Let me introduce two friends...
 options:
-  background: purple
+  background: sky
+decorations:
+  logo: black
 
 ---
 title: Depth first tree traversal
@@ -373,7 +375,7 @@ code:
 layout: separator
 title: ... and now the show goes on!
 options:
-  background: green
+  background: sky
 decorations:
   permalink: black
 
@@ -498,7 +500,7 @@ title: Only an example can enlighten us!
 image:
   url: '@talk/sun.webp'
 options:
-  background: green
+  background: amber
 decorations:
   permalink: black-with-bg
 
@@ -667,8 +669,7 @@ title: Mission completed!
 image:
   url: '@talk/completed.webp'
 options:
-  background: blue
-  foreground: white
+  background: green
 decorations:
   icon: party-horn
   className:

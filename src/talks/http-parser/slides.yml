@@ -10,7 +10,7 @@ title: |
 image:
   url: '@talk/500.webp'
 options:
-  background: midnight
+  background: fuchsia
 
 ---
 layout: hello
@@ -22,7 +22,7 @@ title: We all love HTTP!
 image:
   url: '@talk/love.webp'
 options:
-  background: purple
+  background: blue
 decorations:
   logo: black
 
@@ -34,7 +34,7 @@ title: |
 image:
   url: '@talk/palette.webp'
 options:
-  background: green
+  background: amber
 decorations:
   logo: black
 
@@ -114,7 +114,7 @@ title: Let's focus!
 image:
   url: '@talk/focus.webp'
 options:
-  background: blue
+  background: sky
 
 ---
 layout: side
@@ -164,7 +164,7 @@ image:
 
 ---
 layout: side
-title: How it works?
+title: How does it work?
 content:
   - llhttp is a state based HTTP parser based on llparse.
   - llparse is capable to generate a very performant C code out of a TypeScript description of the possible states.
@@ -177,7 +177,7 @@ title: Wait, what?!
 image:
   url: '@talk/what.webp'
 options:
-  background: green
+  background: red
 
 ---
 layout: separator
@@ -187,7 +187,7 @@ title: |
 image:
   url: '@talk/possible.webp'
 options:
-  background: blue
+  background: green
 
 ---
 layout: side
@@ -229,7 +229,7 @@ title: |
 image:
   url: '@talk/genius.webp'
 options:
-  background: green
+  background: blue
 
 ---
 title: "llhttp: what's wrong with it?"
@@ -261,7 +261,7 @@ title: Do we have the solution?
 image:
   url: '@talk/solution.webp'
 options:
-  background: purple
+  background: amber
 
 ---
 layout: separator
@@ -310,7 +310,7 @@ title: |
 image:
   url: '@talk/road.webp'
 options:
-  background: green
+  background: gray
 
 ---
 layout: quote

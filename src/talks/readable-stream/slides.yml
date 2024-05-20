@@ -8,7 +8,7 @@ title: Panta rei!
 image:
   url: '@talk/lava.webp'
 options:
-  background: green
+  background: fuchsia
 decorations:
   logo: black
   permalink: black-with-bg
@@ -23,7 +23,7 @@ title: What are streams anyway?
 image:
   url: '@talk/island.webp'
 options:
-  background: midnight
+  background: amber
 
 ---
 layout: quote
@@ -54,7 +54,7 @@ title: Can I use it in the browser?
 image:
   url: '@talk/laptop.webp'
 options:
-  background: purple
+  background: amber
 decorations:
   logo: black
   permalink: white
@@ -109,7 +109,7 @@ decorations:
 layout: separator
 title: Sorry for the long wait!
 options:
-  background: purple
+  background: blue
 
 ---
 layout: separator
@@ -117,7 +117,7 @@ title: What has changed in streams<br/> since then?
 image:
   url: '@talk/changes.webp'
 options:
-  background: green
+  background: amber
 
 ---
 title: Broader status handling
@@ -151,13 +151,13 @@ items:
 layout: separator
 title: ... so boring ...
 options:
-  background: midnight
+  background: red
 
 ---
 layout: separator
 title: Let's see the exciting parts!
 options:
-  background: green
+  background: sky
 decorations:
   permalink: black
 
@@ -250,7 +250,7 @@ decorations:
 layout: separator
 title: What is used under the hood?
 options:
-  background: blue
+  background: amber
 
 ---
 title: Build toolchain

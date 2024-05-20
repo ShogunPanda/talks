@@ -9,7 +9,7 @@ title: |
 image:
   url: '@talk/skydiving.webp'
 options:
-  background: blue
+  background: fuchsia
 
 ---
 layout: hello
@@ -33,7 +33,7 @@ title: Compiling and bundling JavaScript is often a pain ...
 image:
   url: '@talk/complicated.webp'
 options:
-  background: purple
+  background: blue
 
 ---
 layout: separator
@@ -43,7 +43,7 @@ image:
 className:
   root: theme@separator--reverse
 options:
-  background: green
+  background: red
 decorations:
   logo: total-white
   permalink: black
@@ -97,7 +97,7 @@ decorations:
 layout: separator
 title: Transpilation
 options:
-  background: green
+  background: sky
 decorations:
   permalink: black
 
@@ -254,7 +254,7 @@ subtitle: Let’s have a deep look on how a transpiler really works.
 image:
   url: '@talk/server.webp'
 options:
-  background: blue
+  background: sky
 
 ---
 title: Generated code is not always readable…
@@ -317,7 +317,7 @@ title: No transpiler is perfect!
 image:
   url: '@talk/incomplete.webp'
 options:
-  background: purple
+  background: blue
 decorations:
   logo: black
 
@@ -523,7 +523,7 @@ image:
 layout: separator
 title: Bundling
 options:
-  background: green
+  background: sky
 decorations:
   permalink: black
 
@@ -567,7 +567,9 @@ image:
   url: '@talk/webpack.webp'
   className: talk@logo
 options:
-  background: midnight
+  background: amber
+decorations:
+  logo: black
 
 ---
 title: Are there any better alternatives?
@@ -592,7 +594,7 @@ image:
   url: '@talk/esbuild.webp'
   className: talk@logo
 options:
-  background: midnight
+  background: sky
 
 ---
 title: How fast ESBuild is?
@@ -615,7 +617,7 @@ image:
   url: '@talk/swc.webp'
   className: talk@logo--auto
 options:
-  background: midnight
+  background: sky
 
 ---
 title: How does it compare to ESBuild?
@@ -644,7 +646,7 @@ title: SWC can run in a browser thanks to WASM
 image:
   url: '@talk/matrioska.webp'
 options:
-  background: purple
+  background: green
 
 ---
 layout: separator
@@ -653,7 +655,7 @@ image:
   url: '@talk/vite.webp'
   className: talk@logo
 options:
-  background: midnight
+  background: sky
 
 ---
 title: A little insights into Vite
@@ -701,7 +703,7 @@ image:
   url: '@talk/snowpack.webp'
   className: talk@logo--auto
 options:
-  background: midnight
+  background: sky
 
 ---
 title: And now something completely different™
