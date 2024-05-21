@@ -7,7 +7,7 @@ layout: separator
 title: |
   Sometimes, your worst enemy is slowness!
 image:
-  url: '@talk/sloth.webp'
+  url: '@common/sloth.webp'
 options:
   background: fuchsia
 
@@ -22,7 +22,7 @@ content:
   - Web applications play a very important part of our lives.
   - _They must not go down!_
 image:
-  url: '@talk/online-banking.webp'
+  url: '@common/online-banking.webp'
 decorations:
   logo: white
   permalink: white
@@ -31,7 +31,7 @@ decorations:
 layout: separator
 title: We are all vulnerable!
 image:
-  url: '@talk/hacking.webp'
+  url: '@common/hacking.webp'
 options:
   background: red
 
@@ -57,7 +57,7 @@ title: |
   Fear the 
   real enemy ...
 image:
-  url: '@talk/hacking.webp'
+  url: '@common/hacking.webp'
 options:
   background: pink
 
@@ -171,12 +171,14 @@ decorations:
   number: 3
 
 ---
-layout: image
+layout: separator
 title: How do we stop it?
 image:
-  url: '@talk/wall.webp'
+  url: '@common/wall.webp'
 notes: |
   Emphasize **“How”** and **“stop it”**?
+options:
+  background: amber
 decorations:
   logo: white
 
@@ -204,10 +206,12 @@ items:
   horizontal: true
 
 ---
-layout: image
+layout: separator
 title: What about Node.js?
 image:
-  url: '@talk/node.webp'
+  url: '@common/node.webp'
+options:
+  background: amber
 decorations:
   logo: white
 
@@ -233,7 +237,7 @@ decorations:
 layout: side
 title: Trust the frameworks
 highlight:
-  text: The philosophy behind this choice was to <strong>support</strong> serverless environments which needed long running connections.
+  text: The philosophy behind this choice was to <strong class="theme@fg-amber">support</strong> serverless environments which needed long running connections.
   className: theme@bg-blue theme@fg-white
 items:
   entries:
@@ -265,18 +269,20 @@ items:
       text: Adding a timer for each new request is an expensive operation.
 
 ---
-layout: image
+layout: separator
 title: Are we safe now?
 image:
-  url: '@talk/safe.webp'
+  url: '@common/completed.webp'
+options:
+  background: amber
 
 ---
 layout: separator
 title: Yes, almost!
 image:
-  url: '@talk/hacking.webp'
+  url: '@common/hacking.webp'
 options:
-  background: pink
+  background: gray
 
 ---
 title: The countermeasures were loose
@@ -356,7 +362,7 @@ notes: |
 layout: separator
 title: We made it!
 image:
-  url: '@talk/turtle.webp'
+  url: '@common/turtle.webp'
 notes: |
   Do a nice victory gesture and shout!
 options:

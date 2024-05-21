@@ -8,7 +8,7 @@ title: |
   Being kind
   never hurts!
 image:
-  url: '@talk/kindness.webp'
+  url: '@common/kindness.webp'
 options:
   background: fuchsia
 decorations:
@@ -75,17 +75,19 @@ content:
   - It’s relative easy to attach new data sources to the server.
   - <em class="theme@fg-blue">How to push additional data to a client that didn’t ask for it?</em>
 image:
-  url: '@talk/server.webp'
+  url: '@common/server.webp'
 decorations:
   logo: white
 
 ---
-layout: image
+layout: separator
 title: How to be proactive?
 image:
-  url: '@talk/what-now.webp'
+  url: '@common/what-now.webp'
+options:
+  background: amber
 decorations:
-  logo: white
+  logo: black
 
 ---
 title: 'Happy case: we control everything'
@@ -102,16 +104,18 @@ items:
       text: Update queries in the client to use the new data.
 
 ---
-layout: image
+layout: separator
 title: Are we done?
 image:
-  url: '@talk/happiness.webp'
+  url: '@common/happiness.webp'
+options:
+  background: amber
 
 ---
 layout: separator
 title: You already know the answer...
 image:
-  url: '@talk/laugh.webp'
+  url: '@common/laugh.webp'
 options:
   background: gray
 
@@ -145,10 +149,12 @@ decorations:
   permalink: white
 
 ---
-layout: image
+layout: separator
 title: Do we have a choice?
 image:
-  url: '@talk/alternatives.webp'
+  url: '@common/alternatives.webp'
+options:
+  background: amber
 decorations:
   logo: white
 
@@ -159,7 +165,7 @@ title: |
   an <span class="theme@fg-amber">enriching</span>
   proxy!
 image:
-  url: '@talk/san-bernardo.webp'
+  url: '@common/san-bernardo.webp'
 options:
   background: green
 decorations:
@@ -498,9 +504,9 @@ decorations:
 layout: separator
 title: Only an example can enlighten us!
 image:
-  url: '@talk/sun.webp'
+  url: '@common/sun.webp'
 options:
-  background: amber
+  background: blue
 decorations:
   permalink: black-with-bg
 
@@ -667,7 +673,7 @@ decorations:
 layout: separator
 title: Mission completed!
 image:
-  url: '@talk/completed.webp'
+  url: '@common/completed.webp'
 options:
   background: green
 decorations:

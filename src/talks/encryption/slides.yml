@@ -7,7 +7,7 @@ layout: separator
 title: |
   Encrypting is like painting!
 image:
-  url: '@talk/painting.webp'
+  url: '@common/painting.webp'
 options:
   background: fuchsia
 decorations:
@@ -47,7 +47,7 @@ items:
 layout: separator
 title: Let's send a message ...
 image:
-  url: '@talk/pidgeons.webp'
+  url: '@common/pidgeons.webp'
 options:
   background: sky
 decorations:
@@ -58,7 +58,7 @@ decorations:
 layout: separator
 title: That was not an encrypted channel!
 image:
-  url: '@talk/dali.webp'
+  url: '@common/dali.webp'
 options:
   background: red
 decorations:
@@ -77,7 +77,7 @@ quote:
 layout: separator
 title: An example:<br/> The Caesar Cipher
 image:
-  url: '@talk/caesar-salad.webp'
+  url: '@common/caesar-salad.webp'
 options:
   background: sky
 decorations:
@@ -140,7 +140,7 @@ image:
   url: '@talk/letter-analysis.webp'
 
 ---
-layout: side
+layout: half
 title: A good algorithm
 items:
   entries:
@@ -151,7 +151,7 @@ items:
       title: The security is in the parameters
       text: The parameters must be chosen so that brute forcing is unfeasible.
 image:
-  url: '@talk/algorithm.webp'
+  url: '@common/algorithm.webp'
 
 ---
 title: What are our choices today?
@@ -168,12 +168,14 @@ content:
   - '*Anybody could steal the key.*'
 
 ---
-layout: image
+layout: separator
 title: Do we have a solution?
 image:
-  url: '@talk/solution.webp'
+  url: '@common/solution-1.webp'
+options:
+  background: amber
 decorations:
-  logo: black
+  logo: white
 
 ---
 layout: image
@@ -201,7 +203,7 @@ items:
 layout: separator
 title: It's time to paint!
 image:
-  url: '@talk/baby-hand.webp'
+  url: '@common/baby-hand.webp'
 options:
   background: sky
 decorations:

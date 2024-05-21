@@ -12,8 +12,7 @@ export default function CoverLayout({ className, style }: SlideProps): VNode {
       id,
       document: { author, authors, title, titleFormatted }
     },
-    theme: { urls },
-    resolveImage
+    theme: { urls }
   } = useClient()
   const { slide, index } = useSlide<Slide>()
 

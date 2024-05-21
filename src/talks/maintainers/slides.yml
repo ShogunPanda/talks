@@ -8,7 +8,7 @@ title: |
   The secret is
   in the manners!
 image:
-  url: '@talk/lollipops.webp'
+  url: '@common/lollipops.webp'
 options:
   background: fuchsia
 decorations:
@@ -22,7 +22,7 @@ layout: hello
 layout: separator
 title: What do you <s>expect</s> pretend from Open Source?
 image:
-  url: '@talk/code.webp'
+  url: '@common/code.webp'
 options:
   background: amber
 decorations:
@@ -74,7 +74,7 @@ items:
 layout: separator
 title: Wait a sec...
 image:
-  url: '@talk/thinker.webp'
+  url: '@common/thinker.webp'
 options:
   background: blue
 decorations:
@@ -84,7 +84,7 @@ decorations:
 layout: separator
 title: Ring a bell?
 image:
-  url: '@talk/bell.webp'
+  url: '@common/bell.webp'
 className:
   root: theme@separator--reverse
 options:
@@ -101,7 +101,7 @@ content:
   - The huge difference is that people are driven by *passion*, not money.
   - '*You are not their boss!*'
 image:
-  url: '@talk/people.webp'
+  url: '@common/people.webp'
 
 ---
 layout: half
@@ -118,7 +118,7 @@ items:
       title: Action have consequences
       text: Pretending fixes, features or simply attention *will push* people away.
 image:
-  url: '@talk/kindness.webp'
+  url: '@common/kindness.webp'
 decorations:
   logo: black
 
@@ -137,7 +137,7 @@ title: |
   How do you 
   ask for help?
 image:
-  url: '@talk/sos.webp'
+  url: '@common/sos.webp'
 options:
   background: amber
 
@@ -192,7 +192,7 @@ layout: separator
 title: Dude, you forgot the <span class="theme@fg-black">Why</span>!
 subtitle: No, I have not ...
 image:
-  url: '@talk/why.webp'
+  url: '@common/why.webp'
 options:
   background: red
 
@@ -259,7 +259,7 @@ items:
 layout: separator
 title: And don't forget to <span class="theme@fg-black">thank them</span>!
 image:
-  url: '@talk/thanks.webp'
+  url: '@common/thanks.webp'
 options:
   background: green
 decorations:

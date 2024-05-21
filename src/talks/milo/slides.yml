@@ -9,7 +9,7 @@ title: |
   (sometimes) 
   pays off!
 image:
-  url: '@talk/ski.webp'
+  url: '@common/ski.webp'
 options:
   background: fuchsia
 decorations:
@@ -23,7 +23,7 @@ layout: hello
 layout: separator
 title: We all love HTTP!
 image:
-  url: '@talk/love.webp'
+  url: '@common/love-2.webp'
 options:
   background: blue
 decorations:
@@ -35,7 +35,7 @@ title: |
   Which HTTP
   are you?
 image:
-  url: '@talk/palette.webp'
+  url: '@common/palette.webp'
 options:
   background: amber
 
@@ -71,7 +71,7 @@ items:
 layout: separator
 title: Let's focus!
 image:
-  url: '@talk/focus.webp'
+  url: '@common/focus.webp'
 options:
   background: sky
 
@@ -111,7 +111,7 @@ items:
 layout: separator
 title: Do we have the solution?
 image:
-  url: '@talk/solution.webp'
+  url: '@common/solution-1.webp'
 options:
   background: amber
 
@@ -119,7 +119,7 @@ options:
 layout: separator
 title: Yes, start fresh!
 image:
-  url: '@talk/fresh.webp'
+  url: '@common/fresh.webp'
 options:
   background: green
 
@@ -169,7 +169,7 @@ items:
 layout: separator
 title: How is that possible?
 image:
-  url: '@talk/dog.webp'
+  url: '@common/dog-1.webp'
 options:
   background: amber
 
@@ -177,7 +177,7 @@ options:
 layout: separator
 title: It's all in the macros!
 image:
-  url: '@talk/macro.webp'
+  url: '@common/macro.webp'
 options:
   background: green
 
@@ -262,7 +262,7 @@ items:
 layout: separator
 title: What about resources?
 image:
-  url: '@talk/piggy-bank.webp'
+  url: '@common/piggy-bank.webp'
 options:
   background: amber
 decorations:
@@ -286,7 +286,7 @@ items:
 layout: separator
 title: Strict, period!
 image:
-  url: '@talk/wall.webp'
+  url: '@common/wall.webp'
 options:
   background: red
 
@@ -347,7 +347,7 @@ title: |
   But Node.js
   uses C++!
 image:
-  url: '@talk/incompatible.webp'
+  url: '@common/incompatible.webp'
 options:
   background: red
 decorations:
@@ -370,7 +370,6 @@ items:
 ---
 title: Sample code (C++)
 code:
-  # TODO@PI: Why is C++ Highlighting not working?
   language: rust
   content: |
     #include "milo.h"
@@ -418,9 +417,11 @@ title: |
   to support
   SmartOS!
 image:
-  url: '@talk/incompatible.webp'
+  url: '@common/incompatible.webp'
 options:
   background: red
+decorations:
+  logo: black
 
 ---
 layout: side
@@ -479,10 +480,16 @@ code:
     Pos=38 Body: abc
 
 ---
-layout: image
+layout: separator
 title: And that's Milo!
 image:
-  url: '@talk/safe.webp'
+  url: '@common/completed.webp'
+options:
+  background: green
+decorations:
+  icon: party-horn
+  className:
+    icon: theme-misc@mission-completed
 
 ---
 title: Performance in Node (native, preliminary)

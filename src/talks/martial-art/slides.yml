@@ -58,7 +58,7 @@ quote:
 layout: separator
 title: But they are completely unrelated!
 image:
-  url: '@talk/oil-drops.webp'
+  url: '@common/oil-drops.webp'
 options:
   background: red
 
@@ -134,9 +134,11 @@ items:
 
 ---
 layout: separator
-title: One last <s>thing™</s> passion
+title: |
+  One last
+  <s>thing™</s> passion
 image:
-  url: '@talk/larp.webp'
+  url: '@common/larp.webp'
 options:
   background: gray
 
@@ -154,7 +156,7 @@ title: |
   The wait
   is over ...
 image:
-  url: '@talk/award.webp'
+  url: '@common/award.webp'
 options:
   background: sky
 
@@ -278,11 +280,11 @@ className:
 ---
 layout: image
 title: |
-  No <span class="theme@fg-blue">sifu</span> has proof
+  No <span class="theme@fg-amber">sifu</span> has proof
   checked this talk!
 subtitle: Opinions are mine and I'm still learning. Be gentle! 🙏
 image:
-  url: '@talk/kid.webp'
+  url: '@common/kid.webp'
 className:
   subtitle: talk@separator__subtitle
 decorations:
@@ -292,7 +294,7 @@ decorations:
 layout: separator
 title: Energy Principles
 image:
-  url: '@talk/energy.webp'
+  url: '@common/energy.webp'
 options:
   background: sky
 
@@ -422,7 +424,7 @@ options:
 layout: separator
 title: But what is exactly <span class="theme@fg-blue">Chi Sao</span>?
 image:
-  url: '@talk/confused.webp'
+  url: '@common/confused.webp'
 options:
   background: amber
 
@@ -580,7 +582,7 @@ title: |
   A good Chum Kiu shall be performed
   within the space occupied by a laying cow.
 image:
-  url: '@talk/cow.webp'
+  url: '@common/cow.webp'
 className:
   title: talk@chum-kiu__title
   subtitle: talk@chum-kiu__subtitle

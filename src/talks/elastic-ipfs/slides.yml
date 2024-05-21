@@ -8,7 +8,7 @@ title: |
   All you need to succeed
   is love!
 image:
-  url: '@talk/love.webp'
+  url: '@common/love-1.webp'
 options:
   background: fuchsia
 
@@ -56,7 +56,7 @@ code:
 layout: separator
 title: What was wrong?
 image:
-  url: '@talk/obstacle.webp'
+  url: '@common/obstacle.webp'
 options:
   background: amber
 
@@ -73,12 +73,12 @@ items:
   horizontal: true
 
 ---
-layout: image
-title: The Problem
+layout: separator
+title: What was the problem?
 image:
-  url: '@theme/questions.webp'
-decorations:
-  logo: white
+  url: '@common/questions-2.webp'
+options:
+  background: amber
 
 ---
 layout: quote
@@ -104,12 +104,12 @@ items:
   horizontal: true
 
 ---
-layout: image
-title: The Solution
+layout: separator
+title: The solution
 image:
-  url: '@talk/solution.webp'
-decorations:
-  logo: white
+  url: '@common/solution-1.webp'
+options:
+  background: green
 
 ---
 layout: side
@@ -417,10 +417,12 @@ items:
       text: Concurrency control must be applied to the processors.
 
 ---
-layout: image
+layout: separator
 title: What now?
 image:
-  url: '@talk/dont-panic.webp'
+  url: '@common/dont-panic.webp'
+options:
+  background: amber
 decorations:
   permalink: white
 

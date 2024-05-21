@@ -8,7 +8,7 @@ title: |
   Nothing
   beats a classic!
 image:
-  url: '@talk/500.webp'
+  url: '@common/500.webp'
 options:
   background: fuchsia
 
@@ -20,7 +20,7 @@ layout: hello
 layout: separator
 title: We all love HTTP!
 image:
-  url: '@talk/love.webp'
+  url: '@common/love-2.webp'
 options:
   background: blue
 decorations:
@@ -32,7 +32,7 @@ title: |
   Which HTTP
   are you?
 image:
-  url: '@talk/palette.webp'
+  url: '@common/palette.webp'
 options:
   background: amber
 decorations:
@@ -112,7 +112,7 @@ items:
 layout: separator
 title: Let's focus!
 image:
-  url: '@talk/focus.webp'
+  url: '@common/focus.webp'
 options:
   background: sky
 
@@ -175,9 +175,9 @@ image:
 layout: separator
 title: Wait, what?!
 image:
-  url: '@talk/what.webp'
+  url: '@common/what.webp'
 options:
-  background: red
+  background: amber
 
 ---
 layout: separator
@@ -185,7 +185,7 @@ title: |
   Yes, you
   got it right!
 image:
-  url: '@talk/possible.webp'
+  url: '@common/possible.webp'
 options:
   background: green
 
@@ -227,7 +227,7 @@ title: |
   That's a genius
   in action!
 image:
-  url: '@talk/genius.webp'
+  url: '@common/genius.webp'
 options:
   background: blue
 
@@ -251,7 +251,7 @@ title: |
   Where are
   the docs?
 image:
-  url: '@talk/postit.webp'
+  url: '@common/postit.webp'
 options:
   background: amber
 
@@ -259,7 +259,7 @@ options:
 layout: separator
 title: Do we have the solution?
 image:
-  url: '@talk/solution.webp'
+  url: '@common/solution-1.webp'
 options:
   background: amber
 
@@ -267,7 +267,7 @@ options:
 layout: separator
 title: Yes, start fresh!
 image:
-  url: '@talk/fresh.webp'
+  url: '@common/fresh.webp'
 options:
   background: green
 
@@ -308,7 +308,7 @@ title: |
   Work in progress,
   stay tuned!
 image:
-  url: '@talk/road.webp'
+  url: '@common/road.webp'
 options:
   background: gray
 

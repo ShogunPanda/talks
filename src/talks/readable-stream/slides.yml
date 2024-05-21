@@ -6,7 +6,7 @@ layout: cover
 layout: separator
 title: Panta rei!
 image:
-  url: '@talk/lava.webp'
+  url: '@common/lava.webp'
 options:
   background: fuchsia
 decorations:
@@ -21,7 +21,7 @@ layout: hello
 layout: separator
 title: What are streams anyway?
 image:
-  url: '@talk/island.webp'
+  url: '@common/island.webp'
 options:
   background: amber
 
@@ -50,9 +50,9 @@ items:
 
 ---
 layout: separator
-title: Can I use it in the browser?
+title: Can I use them in the browser?
 image:
-  url: '@talk/laptop.webp'
+  url: '@common/laptop.webp'
 options:
   background: amber
 decorations:
@@ -100,7 +100,7 @@ items:
       title: Long overdue
       text: Series 3.x.x shipped the module present in Node.js **10.x.x** (2018).
 image:
-  url: '@talk/server.webp'
+  url: '@common/server.webp'
 decorations:
   logo: white
   permalink: white
@@ -115,7 +115,7 @@ options:
 layout: separator
 title: What has changed in streams<br/> since then?
 image:
-  url: '@talk/changes.webp'
+  url: '@common/changes.webp'
 options:
   background: amber
 
@@ -242,7 +242,7 @@ content:
   - The `toArray` method **reads the entire stream into memory**, which is exactly what streams are meant to avoid.
   - '*Promise me you will only use it when absolutely necessary!*'
 image:
-  url: '@talk/spiderman.webp'
+  url: '@common/spiderman.webp'
 decorations:
   permalink: white
 
@@ -293,7 +293,7 @@ items:
 layout: separator
 title: We test 100 configurations in the CI!
 image:
-  url: '@talk/100.webp'
+  url: '@common/100.webp'
 options:
   background: green
 
@@ -302,7 +302,7 @@ title: ... that's all folks!™
 content:
   - There are obviously more changes, but these were the most juicy.
 image:
-  url: '@talk/thats-all-folks.webp'
+  url: '@common/thats-all-folks.webp'
 
 ---
 title: Remember to thank these guys!

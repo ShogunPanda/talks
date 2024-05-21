@@ -25,6 +25,7 @@
 
   &code {
     font-size: 0.5em;
+    font-weight: 400;
   }
 }
 
@@ -68,8 +69,13 @@
     }
 
     &__icon--horizontal,
+    &__image--horizontal,
     &__qr--horizontal {
       --cm-icon-size: 1--sp;
+    }
+
+    &__index--horizontal {
+      width: auto;
     }
   }
 

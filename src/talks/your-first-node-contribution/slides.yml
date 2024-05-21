@@ -6,7 +6,7 @@ layout: cover
 layout: separator
 title: All hope abandon ye who enter here!
 image:
-  url: '@talk/hell.webp'
+  url: '@common/hell.webp'
 options:
   background: pink
 

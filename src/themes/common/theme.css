@@ -23,8 +23,9 @@
     &__line {
       position: relative;
       display: inline-block;
-      height: calc(1.3em);
+      height: 1.3em;
       padding: 0.2rem 3ch 0.2rem 2ch;
+      line-height: 1.3em;
 
       &,
       & span[style] {

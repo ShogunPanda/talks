@@ -8,7 +8,7 @@ title: |
   Mothers are
   always right!
 image:
-  url: '@talk/lollipops.webp'
+  url: '@common/lollipops.webp'
 options:
   background: fuchsia
 decorations:
@@ -44,7 +44,7 @@ items:
 layout: separator
 title: Aren't we here for dev stuff?
 image:
-  url: '@talk/dog.webp'
+  url: '@common/dog-1.webp'
 options:
   background: amber
 
@@ -117,16 +117,18 @@ items:
   horizontal: true
 
 ---
-layout: image
+layout: separator
 title: Are there just pros?
 image:
-  url: '@talk/happiness.webp'
+  url: '@common/happiness.webp'
+options:
+  background: amber
 
 ---
 layout: separator
 title: You already know the answer...
 image:
-  url: '@talk/laugh.webp'
+  url: '@common/laugh.webp'
 options:
   background: gray
 
@@ -167,9 +169,9 @@ items:
 layout: separator
 title: Only an example can enlighten us!
 image:
-  url: '@talk/sun.webp'
+  url: '@common/sun.webp'
 options:
-  background: amber
+  background: blue
 decorations:
   permalink: black-with-bg
 
@@ -188,12 +190,14 @@ items:
       text: I'm gonna show you how many dependency the SDK brings and how it performs.
 
 ---
-layout: image
+layout: separator
 title: Let's go!
 image:
-  url: '@talk/start.webp'
+  url: '@common/start.webp'
 decorations:
   logo: white
+options:
+  background: sky
 
 ---
 title: 'AWS SDK v2: Dependencies in theory'
@@ -270,7 +274,7 @@ image:
 layout: separator
 title: Let's get modern!
 image:
-  url: '@talk/modern.webp'
+  url: '@common/modern.webp'
 options:
   background: sky
 decorations:
@@ -361,7 +365,7 @@ items:
       title: Not really a monolith
       text: How many point of failures can you afford?
 image:
-  url: '@talk/iceberg.webp'
+  url: '@common/iceberg.webp'
 decorations:
   logo: white
 
@@ -369,7 +373,7 @@ decorations:
 layout: separator
 title: Do we have the solution?
 image:
-  url: '@talk/solution.webp'
+  url: '@common/solution-1.webp'
 options:
   background: amber
 
@@ -566,7 +570,7 @@ image:
 layout: separator
 title: Mission completed!
 image:
-  url: '@talk/completed.webp'
+  url: '@common/completed.webp'
 options:
   background: green
 decorations:

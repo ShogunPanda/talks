@@ -7,7 +7,7 @@ layout: separator
 title: |
   Fight your fears!
 image:
-  url: '@talk/skydiving.webp'
+  url: '@common/skydiving.webp'
 options:
   background: fuchsia
 
@@ -31,7 +31,7 @@ decorations:
 layout: separator
 title: Compiling and bundling JavaScript is often a pain ...
 image:
-  url: '@talk/complicated.webp'
+  url: '@common/complicated.webp'
 options:
   background: blue
 
@@ -39,7 +39,7 @@ options:
 layout: separator
 title: …but it<br/> should not!
 image:
-  url: '@talk/easy.webp'
+  url: '@common/easy.webp'
 className:
   root: theme@separator--reverse
 options:
@@ -252,7 +252,7 @@ title: |
   in depth
 subtitle: Let’s have a deep look on how a transpiler really works.
 image:
-  url: '@talk/server.webp'
+  url: '@common/server.webp'
 options:
   background: sky
 
@@ -315,7 +315,7 @@ grids:
 layout: separator
 title: No transpiler is perfect!
 image:
-  url: '@talk/incomplete.webp'
+  url: '@common/incomplete.webp'
 options:
   background: blue
 decorations:
@@ -644,7 +644,7 @@ image:
 layout: separator
 title: SWC can run in a browser thanks to WASM
 image:
-  url: '@talk/matrioska.webp'
+  url: '@common/matrioska.webp'
 options:
   background: green
 

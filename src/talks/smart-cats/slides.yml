@@ -8,7 +8,7 @@ title: |
   No automation,
   no party!
 image:
-  url: '@talk/smart-home.webp'
+  url: '@common/smart-home.webp'
 options:
   background: fuchsia
 decorations:
@@ -420,7 +420,7 @@ layout: separator
 title: Did you really believe it was just about cats?
 subtitle: |
   Say hello to 
-  <s>Snappy Shine</s>
+  <span class="theme@separator__callout__highlight talk@pet__name"><s>Snappy Shine</s></span>
   <span class="theme@separator__callout__highlight talk@pet__name">Braciolone</span>!
 image:
   url: '@talk/bracio-1.webp'
@@ -536,7 +536,7 @@ items:
 title: The Perseveranza™ technical stack (1/2)
 items:
   entries:
-    - image: '@talk/nodejs.webp'
+    - image: '@common/nodejs.webp'
       title: Node.js
       className:
         image: theme-misc@width-auto

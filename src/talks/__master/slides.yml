@@ -37,8 +37,8 @@ quote:
 ---
 title: Default with simple content
 content:
-  - Sit enim aliqua in velit ipsum voluptate reprehenderit occaecat anim irure non.
-  - Mollit ea nulla labore esse quis ut amet magna sunt culpa sint amet.
+  - Sit enim aliqua in *velit ipsum* voluptate **reprehenderit occaecat** anim irure non.
+  - Mollit ea nulla `labore esse quis` ut amet magna sunt culpa sint amet.
 
 ---
 title: Default with simple content and image
@@ -46,7 +46,7 @@ content:
   - Sit enim aliqua in velit ipsum voluptate reprehenderit occaecat anim irure non.
   - Mollit ea nulla labore esse quis ut amet magna sunt culpa sint amet.
 image:
-  url: '@theme/panda.webp'
+  url: '@common/panda.webp'
 decorations:
   number: 2
   logo: false
@@ -65,7 +65,7 @@ items:
     - qr: https://cowtech.it
       title: Cupidatat tempor eiusmod sint nulla.
       text: Velit enim laborum qui minim incididunt eu.
-    - image: '@theme/panda.webp'
+    - image: '@common/panda.webp'
       title: Aute aute minim sint pariatur sunt magna voluptate aute.
       text: Dolore Lorem aliquip tempor tempor cillum aute qui qui Lorem.
 
@@ -82,7 +82,7 @@ items:
     - qr: https://cowtech.it
       title: Cupidatat tempor eiusmod sint nulla.
       text: Velit enim laborum qui minim incididunt eu.
-    - image: '@theme/panda.webp'
+    - image: '@common/panda.webp'
       title: Aute aute minim sint pariatur sunt magna voluptate aute.
       text: Dolore Lorem aliquip tempor tempor cillum aute qui qui Lorem.
   horizontal: true
@@ -123,7 +123,7 @@ grids:
       - icon: chevron-left
       - qr: https://cowtech.it
       - icon: chevron-right
-      - image: '@theme/panda.webp'
+      - image: '@common/panda.webp'
     sequence: true
   - entries:
       - icon: chevron-left
@@ -237,7 +237,7 @@ content:
   - Sit enim aliqua in velit ipsum voluptate reprehenderit occaecat anim irure non.
   - Mollit ea nulla labore esse quis ut amet magna sunt culpa sint amet.
 image:
-  url: '@theme/panda.webp'
+  url: '@common/panda.webp'
 decorations:
   logo: white
 
@@ -252,11 +252,11 @@ items:
     - qr: https://cowtech.it
       title: Cupidatat tempor eiusmod sint nulla.
       text: Velit enim laborum qui minim incididunt eu.
-    - image: '@theme/panda.webp'
+    - image: '@common/panda.webp'
       title: Aute aute minim sint pariatur sunt magna voluptate aute.
       text: Dolore Lorem aliquip tempor tempor cillum aute qui qui Lorem.
 image:
-  url: '@theme/panda.webp'
+  url: '@common/panda.webp'
 decorations:
   number: 3
 className:
@@ -266,7 +266,7 @@ className:
 layout: image
 title: Image with no content
 image:
-  url: '@theme/panda.webp'
+  url: '@common/panda.webp'
 decorations:
   logo: total-white
 
@@ -274,7 +274,7 @@ decorations:
 layout: image
 title: Image with no content
 image:
-  url: '@theme/panda.webp'
+  url: '@common/panda.webp'
 decorations:
   logo: total-white
 className:
@@ -285,7 +285,7 @@ layout: image
 title: Image with content
 subtitle: Excepteur ullamco reprehenderit amet ea sunt esse.
 image:
-  url: '@theme/panda.webp'
+  url: '@common/panda.webp'
 decorations:
   logo: total-white
 
@@ -296,7 +296,7 @@ content:
   - Sit enim aliqua in velit ipsum voluptate reprehenderit occaecat anim irure non.
   - Mollit ea nulla labore esse quis ut amet magna sunt culpa sint amet.
 image:
-  url: '@theme/panda.webp'
+  url: '@common/panda.webp'
 
 ---
 layout: side
@@ -309,11 +309,11 @@ items:
     - qr: https://cowtech.it
       title: Cupidatat tempor eiusmod sint nulla.
       text: Velit enim laborum qui minim incididunt eu.
-    - image: '@theme/panda.webp'
+    - image: '@common/panda.webp'
       title: Aute aute minim sint pariatur sunt magna voluptate aute.
       text: Dolore Lorem aliquip tempor tempor cillum aute qui qui Lorem.
 image:
-  url: '@theme/panda.webp'
+  url: '@common/panda.webp'
 decorations:
   number: 3
 
@@ -328,7 +328,7 @@ items:
     - qr: https://cowtech.it
       title: Cupidatat tempor eiusmod sint nulla.
       text: Velit enim laborum qui minim incididunt eu.
-    - image: '@theme/panda.webp'
+    - image: '@common/panda.webp'
       title: Aute aute minim sint pariatur sunt magna voluptate aute.
       text: Dolore Lorem aliquip tempor tempor cillum aute qui qui Lorem.
 highlight:
@@ -348,7 +348,7 @@ items:
     - qr: https://cowtech.it
       title: Cupidatat tempor eiusmod sint nulla.
       text: Velit enim laborum qui minim incididunt eu.
-    - image: '@theme/panda.webp'
+    - image: '@common/panda.webp'
       title: Aute aute minim sint pariatur sunt magna voluptate aute.
       text: Dolore Lorem aliquip tempor tempor cillum aute qui qui Lorem.
 code:
@@ -367,14 +367,14 @@ code:
 layout: separator
 title: Irure consectetur officia aliquip nostrud.
 image:
-  url: '@theme/panda.webp'
+  url: '@common/panda.webp'
 
 ---
 layout: separator
 title: Irure consectetur officia aliquip nostrud.
 subtitle: Dolor id enim magna quis aute ex esse officia amet officia occaecat.
 image:
-  url: '@theme/panda.webp'
+  url: '@common/panda.webp'
 className:
   root: theme@separator--reverse
 decorations:
@@ -385,7 +385,7 @@ layout: separator
 title: Irure consectetur officia aliquip nostrud.
 subtitle: Dolor id enim magna quis aute ex esse officia amet officia occaecat.
 image:
-  url: '@theme/panda.webp'
+  url: '@common/panda.webp'
 options:
   background: blue
 className:
@@ -396,7 +396,7 @@ layout: separator
 title: Irure consectetur officia aliquip nostrud.
 subtitle: Dolor id enim magna quis aute ex esse officia amet officia occaecat.
 image:
-  url: '@theme/panda.webp'
+  url: '@common/panda.webp'
 options:
   background: blue
 className:
@@ -406,7 +406,7 @@ className:
 layout: separator
 title: Irure consectetur officia aliquip nostrud.
 image:
-  url: '@theme/panda.webp'
+  url: '@common/panda.webp'
 options:
   background: sky
 
@@ -414,7 +414,7 @@ options:
 layout: separator
 title: Irure consectetur officia aliquip nostrud.
 image:
-  url: '@theme/panda.webp'
+  url: '@common/panda.webp'
 options:
   background: pink
 
@@ -422,7 +422,7 @@ options:
 layout: separator
 title: Irure consectetur officia aliquip nostrud.
 image:
-  url: '@theme/panda.webp'
+  url: '@common/panda.webp'
 options:
   background: green
 
@@ -430,7 +430,7 @@ options:
 layout: separator
 title: Irure consectetur officia aliquip nostrud.
 image:
-  url: '@theme/panda.webp'
+  url: '@common/panda.webp'
 options:
   background: fuchsia
 
@@ -438,7 +438,7 @@ options:
 layout: separator
 title: Irure consectetur officia aliquip nostrud.
 image:
-  url: '@theme/panda.webp'
+  url: '@common/panda.webp'
 options:
   background: amber
 
@@ -446,7 +446,7 @@ options:
 layout: separator
 title: Irure consectetur officia aliquip nostrud.
 image:
-  url: '@theme/panda.webp'
+  url: '@common/panda.webp'
 options:
   background: red
 
@@ -454,7 +454,7 @@ options:
 layout: separator
 title: Irure consectetur officia aliquip nostrud.
 image:
-  url: '@theme/panda.webp'
+  url: '@common/panda.webp'
 options:
   background: gray
 
@@ -462,7 +462,7 @@ options:
 layout: separator
 title: Irure consectetur officia aliquip nostrud.
 image:
-  url: '@theme/panda.webp'
+  url: '@common/panda.webp'
 options:
   background: light-blue
 
@@ -470,6 +470,6 @@ options:
 layout: separator
 title: Irure consectetur officia aliquip nostrud.
 image:
-  url: '@theme/panda.webp'
+  url: '@common/panda.webp'
 options:
   background: light-gray

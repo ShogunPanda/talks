@@ -1,11 +1,12 @@
 /* stylelint-disable-next-line selector-class-pattern */
 .talk@ {
   &romanization {
+    color: var(--freya-color-windi-amber-300);
     font-size: 0.3em;
-    font-style: italic;
   }
 
   &separator__subtitle {
+    color: var(--freya-color-windi-amber-300);
     font-family: var(--pi-font-bitter);
     font-size: 0.4em;
     font-weight: 700;
