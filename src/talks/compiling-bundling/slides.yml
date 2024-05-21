@@ -20,7 +20,7 @@ layout: half
 title: First of all, let’s give credits!
 content:
   - This talk has originally been written by my colleague and friend **Michele Riva**.
-  - <span class="theme@fg-purple">**Whatever goes wrong today, please complain directly to him on Twitter!**</span>
+  - <span class="theme@fg-pink">**Whatever goes wrong today, please complain directly to him on Twitter!**</span>
   - <strong class="theme@fg-blue">[@MicheleRivaCode](https://twitter.com/@MicheleRivaCode)</strong>
 image:
   url: '@talk/michele.webp'

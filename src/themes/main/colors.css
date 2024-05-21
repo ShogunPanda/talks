@@ -6,8 +6,7 @@
 @import '@freya/colors/windi/900.css';
 
 :root {
-  --plt-blue: #00283d;
-  --plt-green: #21fa90;
+  --plt-blue: #00050b;
 }
 
 @layer colors {
@@ -21,7 +20,7 @@
     @apply color(pink, freya-color-windi-pink-600); /* Humour */
     @apply color(green, freya-color-windi-green-600); /* Good practice or action */
     @apply color(fuchsia, freya-color-windi-fuchsia-600); /* Intro */
-    @apply color(amber, freya-color-windi-amber-300); /* Qyestion */
+    @apply color(amber, freya-color-windi-amber-300); /* Question */
     @apply color(red, freya-color-windi-red-600); /* Bad practice or danger */
     @apply color(gray, freya-color-windi-gray-600); /* Secondary separator */
 

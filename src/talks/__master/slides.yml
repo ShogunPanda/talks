@@ -278,7 +278,7 @@ image:
 decorations:
   logo: total-white
 className:
-  title: theme@callout--dark
+  title: theme@callout--light
 
 ---
 layout: image

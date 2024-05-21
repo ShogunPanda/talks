@@ -32,17 +32,14 @@
   &callout {
     margin: 0;
     padding: 0.1--sp 1ch;
-    border: 0 solid transparent;
-    border-bottom: 0.1--sp solid var(--plt-blue);
-    background-color: var(--plt-green);
-    color: var(--plt-blue);
+    background-color: var(--plt-blue);
+    color: var(--freya-color-white);
     font-size: 35--pt;
     font-weight: 700;
 
-    &--dark {
-      border-bottom-color: var(--plt-green);
-      background-color: var(--plt-blue);
-      color: var(--freya-color-white);
+    &--light {
+      background-color: var(--freya-color-white);
+      color: var(--plt-blue);
     }
   }
 
@@ -206,7 +203,9 @@
     &__subtitle {
       display: block;
       margin-top: 0.1--sp;
+      font-family: var(--pi-font-inter);
       font-size: 18--pt;
+      font-weight: 400;
     }
   }
 
@@ -418,8 +417,6 @@
       width: 2.8--sp;
       margin: 0;
       padding: 0.05--sp 1ch;
-      border: 0 solid transparent;
-      border-bottom: 0.06--sp solid var(--plt-green);
       background-color: var(--plt-blue);
       color: var(--freya-color-white);
       font-family: var(--pi-font-bitter);
@@ -432,8 +429,7 @@
       }
 
       &--light {
-        border-bottom-color: var(--plt-blue);
-        background-color: var(--plt-green);
+        background-color: var(--freya-color-white);
         color: var(--plt-blue);
       }
 
@@ -446,7 +442,7 @@
 
   /* Special slides */
   &cover {
-    background-color: var(--freya-color-black);
+    background-color: var(--plt-blue);
     color: var(--freya-color-white);
 
     &__corner {
@@ -768,7 +764,7 @@
       align-items: center;
       width: 100%;
       padding: 0.05--sp var(--pi-padding);
-      background-color: var(--freya-color-black);
+      background-color: var(--plt-blue);
       color: var(--freya-color-white);
       font-family: var(--pi-font-bitter);
       font-size: 12--pt;
@@ -911,5 +907,10 @@
       font-size: 150--pt;
       line-height: 1;
     }
+  }
+
+  &troll {
+    width: 70vh;
+    height: 70vh;
   }
 }

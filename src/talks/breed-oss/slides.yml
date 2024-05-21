@@ -732,7 +732,7 @@ title: Everybody is responsible for moderation!
 image:
   url: '@talk/police.webp'
 options:
-  background: midnight
+  background: blue
 decorations:
   logo: black
   permalink: black

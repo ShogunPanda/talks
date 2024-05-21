@@ -253,7 +253,7 @@ title: |
 image:
   url: '@talk/postit.webp'
 options:
-  background: midnight
+  background: amber
 
 ---
 layout: separator

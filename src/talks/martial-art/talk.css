@@ -20,6 +20,11 @@
   &principle-icon {
     left: auto;
     right: 2--sp;
+    color: var(--freya-color-windi-blue-500);
+
+    &--light {
+      color: var(--freya-color-windi-gray-300);
+    }
   }
 
   &chum-kiu {

@@ -211,7 +211,8 @@ title: |
   Sorry, I totally
   could not resist!
 image:
-  url: '@common/troll.webp'
+  url: '@common/troll.svg'
+  className: theme-misc@troll
 options:
   background: pink
 decorations:
@@ -307,7 +308,7 @@ quote:
 decorations:
   number: 1
   className:
-    number: talk@principle-icon
+    number: talk@principle-icon talk@principle-icon--light
 
 ---
 layout: quote
@@ -320,7 +321,7 @@ quote:
 decorations:
   number: 1
   className:
-    number: theme@fg-purple-80 talk@principle-icon
+    number: talk@principle-icon
 
 ---
 layout: quote
@@ -334,7 +335,7 @@ quote:
 decorations:
   number: 2
   className:
-    number: talk@principle-icon
+    number: talk@principle-icon talk@principle-icon--light
 
 ---
 layout: quote
@@ -349,7 +350,7 @@ quote:
 decorations:
   number: 2
   className:
-    number: theme@fg-purple-80 talk@principle-icon
+    number: talk@principle-icon
 
 ---
 layout: quote
@@ -363,7 +364,7 @@ quote:
 decorations:
   number: 3
   className:
-    number: talk@principle-icon
+    number: talk@principle-icon talk@principle-icon--light
 
 ---
 layout: quote
@@ -378,7 +379,7 @@ quote:
 decorations:
   number: 3
   className:
-    number: theme@fg-purple-80 talk@principle-icon
+    number: talk@principle-icon
 
 ---
 layout: quote
@@ -392,7 +393,7 @@ quote:
 decorations:
   number: 4
   className:
-    number: talk@principle-icon
+    number: talk@principle-icon talk@principle-icon--light
 
 ---
 layout: quote
@@ -407,7 +408,7 @@ quote:
 decorations:
   number: 4
   className:
-    number: theme@fg-purple-80 talk@principle-icon
+    number: talk@principle-icon
 
 ---
 layout: separator
@@ -459,7 +460,7 @@ quote:
 decorations:
   number: 1
   className:
-    number: talk@principle-icon
+    number: talk@principle-icon talk@principle-icon--light
 
 ---
 layout: quote
@@ -474,7 +475,7 @@ quote:
 decorations:
   number: 1
   className:
-    number: theme@fg-purple-80 talk@principle-icon
+    number: talk@principle-icon
 
 ---
 layout: quote
@@ -488,7 +489,7 @@ quote:
 decorations:
   number: 2
   className:
-    number: talk@principle-icon
+    number: talk@principle-icon talk@principle-icon--light
 
 ---
 layout: quote
@@ -503,7 +504,7 @@ quote:
 decorations:
   number: 2
   className:
-    number: theme@fg-purple-80 talk@principle-icon
+    number: talk@principle-icon
 
 ---
 layout: quote
@@ -517,7 +518,7 @@ quote:
 decorations:
   number: 3
   className:
-    number: talk@principle-icon
+    number: talk@principle-icon talk@principle-icon--light
 
 ---
 layout: quote
@@ -532,7 +533,7 @@ quote:
 decorations:
   number: 3
   className:
-    number: theme@fg-purple-80 talk@principle-icon
+    number: talk@principle-icon
 
 ---
 layout: quote
@@ -546,7 +547,7 @@ quote:
 decorations:
   number: 4
   className:
-    number: talk@principle-icon
+    number: talk@principle-icon talk@principle-icon--light
 
 ---
 layout: quote
@@ -562,7 +563,7 @@ quote:
 decorations:
   number: 4
   className:
-    number: theme@fg-purple-80 talk@principle-icon
+    number: talk@principle-icon
 
 ---
 layout: separator
@@ -590,7 +591,8 @@ decorations:
 layout: separator
 title: Sorry, could not resist (again)!
 image:
-  url: '@common/troll.webp'
+  url: '@common/troll.svg'
+  className: theme-misc@troll
 options:
   background: pink
 decorations:

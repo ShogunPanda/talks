@@ -637,16 +637,12 @@ quote:
 
 ---
 layout: end
-# ---
-
 title: This was my usual ending slide...
 className:
   title: talk@end--usual
 
 ---
 layout: end
-# ---
-
 image:
   url: '@talk/bree-freya.webp'
 title: But this talk is special. Thank you!
@@ -654,5 +650,5 @@ subtitle: We miss you both, a very lot! ❤️
 decorations:
   permalink: black-with-bg
 className:
-  title: theme@bg-midnight theme@fg-white talk@end--real
+  title: talk@end--real
   subtitle: talk@end--real__subtitle

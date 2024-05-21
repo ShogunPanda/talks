@@ -66,7 +66,8 @@ items:
 layout: separator
 title: Are you <br/>trolling us?
 image:
-  url: '@common/troll.webp'
+  url: '@common/troll.svg'
+  className: theme-misc@troll
 options:
   background: amber
 decorations:
