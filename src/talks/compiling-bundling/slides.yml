@@ -45,8 +45,7 @@ className:
 options:
   background: red
 decorations:
-  logo: total-white
-  permalink: black
+  logo: black
 
 ---
 layout: quote
@@ -98,8 +97,6 @@ layout: separator
 title: Transpilation
 options:
   background: sky
-decorations:
-  permalink: black
 
 ---
 title: Why do we want to transpile our code?
@@ -524,8 +521,6 @@ layout: separator
 title: Bundling
 options:
   background: sky
-decorations:
-  permalink: black
 
 ---
 title: Why do we want to bundle our code?

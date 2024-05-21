@@ -25,7 +25,6 @@ image:
   url: '@common/online-banking.webp'
 decorations:
   logo: white
-  permalink: white
 
 ---
 layout: separator
@@ -252,7 +251,6 @@ notes: |
   * Restify, Express and Koa did not.
 decorations:
   logo: white
-  permalink: white
 
 ---
 title: http.Server.requestTimeout

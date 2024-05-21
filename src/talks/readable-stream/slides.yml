@@ -11,7 +11,6 @@ options:
   background: fuchsia
 decorations:
   logo: black
-  permalink: black-with-bg
 
 ---
 layout: hello
@@ -57,7 +56,6 @@ options:
   background: amber
 decorations:
   logo: black
-  permalink: white
 
 ---
 title: Meet readable-stream
@@ -103,7 +101,6 @@ image:
   url: '@common/server.webp'
 decorations:
   logo: white
-  permalink: white
 
 ---
 layout: separator
@@ -152,14 +149,14 @@ layout: separator
 title: ... so boring ...
 options:
   background: red
+decorations:
+  logo: black
 
 ---
 layout: separator
 title: Let's see the exciting parts!
 options:
   background: sky
-decorations:
-  permalink: black
 
 ---
 title: Stream from iterables
@@ -243,14 +240,14 @@ content:
   - '*Promise me you will only use it when absolutely necessary!*'
 image:
   url: '@common/spiderman.webp'
-decorations:
-  permalink: white
 
 ---
 layout: separator
 title: What is used under the hood?
 options:
   background: amber
+decorations:
+  logo: black
 
 ---
 title: Build toolchain

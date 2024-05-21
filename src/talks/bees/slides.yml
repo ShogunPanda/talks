@@ -172,8 +172,6 @@ image:
   url: '@common/sun.webp'
 options:
   background: blue
-decorations:
-  permalink: black-with-bg
 
 ---
 title: 'Case study: uploaded a file to AWS S3'

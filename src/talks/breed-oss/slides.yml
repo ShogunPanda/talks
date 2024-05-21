@@ -23,8 +23,6 @@ image:
   url: '@common/code.webp'
 options:
   background: amber
-decorations:
-  permalink: black-with-bg
 
 ---
 title: Let's clarify things
@@ -116,7 +114,6 @@ options:
   background: blue
 decorations:
   logo: white
-  permalink: white
 
 ---
 title: It's similar, but it's not!
@@ -147,7 +144,6 @@ options:
   background: red
 decorations:
   logo: white
-  permalink: white
 
 ---
 title: Diversity and freedom are a huge treasure
@@ -187,7 +183,6 @@ options:
   background: green
 decorations:
   logo: black
-  permalink: white
 
 ---
 layout: half
@@ -427,8 +422,6 @@ content:
   - It is in your rights to close bugs or features without solving them.
 image:
   url: '@common/baloons.webp'
-decorations:
-  permalink: white
 
 ---
 title: ... but don't forget kindess!
@@ -618,8 +611,6 @@ image:
   url: '@common/people.webp'
 options:
   background: sky
-decorations:
-  permalink: black
 
 ---
 layout: half
@@ -631,7 +622,6 @@ image:
   url: '@common/community.webp'
 decorations:
   logo: black
-  permalink: white
 
 ---
 title: Where do you store the code?
@@ -685,7 +675,7 @@ items:
   entries:
     - index: 1
       title: Conscious
-      text: We all have and use some attitudes and heuristic.
+      text: We all have and use attitudes and heuristics.
     - index: 2
       title: Unconscious
       text: More subtle because we don't control them.
@@ -739,7 +729,6 @@ options:
   background: blue
 decorations:
   logo: black
-  permalink: black
 
 ---
 title: Last advices

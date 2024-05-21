@@ -80,8 +80,6 @@ image:
   url: '@talk/mangioni.webp'
 options:
   background: pink
-decorations:
-  permalink: black
 
 ---
 layout: separator
@@ -158,7 +156,6 @@ options:
   background: blue
 decorations:
   logo: black
-  permalink: white
 className:
   subtitle: theme@separator__callout talk@pet
 
@@ -202,7 +199,6 @@ options:
   background: amber
 decorations:
   logo: black
-  permalink: white
 className:
   subtitle: theme@separator__callout talk@pet
 
@@ -289,7 +285,6 @@ image:
   url: '@talk/freya-2.webp'
 decorations:
   logo: black
-  permalink: white
 className:
   title: talk@pet
 
@@ -300,7 +295,6 @@ image:
   url: '@talk/bree-2.webp'
 decorations:
   logo: white
-  permalink: white
 className:
   title: talk@pet
 
@@ -356,7 +350,6 @@ options:
   background: amber
 decorations:
   logo: black
-  permalink: white
 className:
   subtitle: theme@separator__callout talk@pet
 
@@ -439,8 +432,6 @@ image:
   url: '@talk/bracio-2.webp'
 options:
   background: pink
-decorations:
-  permalink: black
 
 ---
 layout: separator
@@ -497,8 +488,6 @@ image:
   url: '@talk/loki.webp'
 options:
   background: green
-decorations:
-  permalink: black
 className:
   subtitle: theme@separator__callout talk@pet
 
@@ -536,7 +525,7 @@ items:
 title: The Perseveranza™ technical stack (1/2)
 items:
   entries:
-    - image: '@common/nodejs.webp'
+    - image: '@talk/nodejs.webp'
       title: Node.js
       className:
         image: theme-misc@width-auto
@@ -566,8 +555,6 @@ image:
   url: '@talk/mora.webp'
 options:
   background: pink
-decorations:
-  permalink: black
 className:
   subtitle: theme@separator__callout talk@pet
 
@@ -595,7 +582,6 @@ options:
   background: amber
 decorations:
   logo: black
-  permalink: white
 className:
   root: talk@game
   contents: talk@game
@@ -611,7 +597,6 @@ options:
   background: green
 decorations:
   logo: black
-  permalink: white
 className:
   root: theme@separator--reverse
   contents: talk@game
@@ -647,8 +632,6 @@ image:
   url: '@talk/bree-freya.webp'
 title: But this talk is special. Thank you!
 subtitle: We miss you both, a very lot! ❤️
-decorations:
-  permalink: black-with-bg
 className:
   title: talk@end--real
   subtitle: talk@end--real__subtitle

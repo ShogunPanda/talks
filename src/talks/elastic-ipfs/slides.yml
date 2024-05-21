@@ -187,8 +187,6 @@ layout: separator
 title: Indexing subsystem
 options:
   background: sky
-decorations:
-  permalink: black
 
 ---
 title: Overview
@@ -392,8 +390,6 @@ layout: separator
 title: Publishing subsystem
 options:
   background: sky
-decorations:
-  permalink: black
 
 ---
 title: Overview
@@ -423,8 +419,6 @@ image:
   url: '@common/dont-panic.webp'
 options:
   background: amber
-decorations:
-  permalink: white
 
 ---
 layout: side
@@ -444,15 +438,12 @@ items:
       text: Concurrency is limited to <strong>1</strong>, with <strong>10000</strong> advertisement sent per execution.
 decorations:
   logo: white
-  permalink: white
 
 ---
 layout: separator
 title: Peer subsystem
 options:
   background: sky
-decorations:
-  permalink: black
 
 ---
 title: Overview
@@ -480,7 +471,6 @@ title: How does E-IPFS perform?
 options:
   background: amber
 decorations:
-  permalink: black
   logo: black
 
 ---

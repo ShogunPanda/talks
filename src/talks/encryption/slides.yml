@@ -52,7 +52,6 @@ options:
   background: sky
 decorations:
   logo: black
-  permalink: white
 
 ---
 layout: separator
@@ -61,8 +60,6 @@ image:
   url: '@common/dali.webp'
 options:
   background: red
-decorations:
-  logo: black
 
 ---
 layout: quote
@@ -80,8 +77,6 @@ image:
   url: '@common/caesar-salad.webp'
 options:
   background: sky
-decorations:
-  permalink: black
 
 ---
 title: How does the Caesar Cipher work?

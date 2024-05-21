@@ -146,7 +146,6 @@ options:
   background: red
 decorations:
   logo: white
-  permalink: white
 
 ---
 layout: separator
@@ -320,7 +319,6 @@ code:
     root: theme-misc@code--small
 decorations:
   logo: white
-  permalink: black-with-bg
 
 ---
 title: Cache the queries
@@ -382,8 +380,6 @@ layout: separator
 title: ... and now the show goes on!
 options:
   background: sky
-decorations:
-  permalink: black
 
 ---
 layout: side
@@ -423,7 +419,6 @@ code:
     }
 decorations:
   logo: white
-  permalink: black-with-bg
 
 ---
 layout: side
@@ -458,8 +453,6 @@ code:
         }
       }
     }
-decorations:
-  permalink: black-with-bg
 
 ---
 layout: side
@@ -498,7 +491,6 @@ code:
     }
 decorations:
   logo: white
-  permalink: black-with-bg
 
 ---
 layout: separator
@@ -507,8 +499,6 @@ image:
   url: '@common/sun.webp'
 options:
   background: blue
-decorations:
-  permalink: black-with-bg
 
 ---
 layout: code
@@ -598,8 +588,6 @@ code:
     }
   className:
     root: theme-misc@code--small
-decorations:
-  permalink: black-with-bg
 
 ---
 layout: side
@@ -636,8 +624,6 @@ code:
         /* ... */
       }
     }
-decorations:
-  permalink: black-with-bg
 
 ---
 layout: side
@@ -666,8 +652,6 @@ code:
         }
       }
     }
-decorations:
-  permalink: black-with-bg
 
 ---
 layout: separator

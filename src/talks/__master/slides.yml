@@ -50,7 +50,6 @@ image:
 decorations:
   number: 2
   logo: false
-  permalink: false
 
 ---
 title: Default with vertical items
@@ -334,8 +333,6 @@ items:
 highlight:
   text: Deserunt fugiat voluptate adipisicing consectetur nostrud esse cillum. Est veniam est cupidatat reprehenderit esse pariatur sint dolore velit incididunt laboris.
   className: talk@highlight
-decorations:
-  permalink: white
 
 ---
 layout: side
