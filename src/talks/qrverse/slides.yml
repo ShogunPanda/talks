@@ -223,8 +223,8 @@ code:
     import { Url } from "../types";
 
     export default async function (fastify: FastifyInstance) {
-      fastify.withTypeProvider<JsonSchemaToTsProvider>().put("/:id/track", 
-        { schema: { /* ... */ }, },
+      fastify.withTypeProvider<JsonSchemaToTsProvider>().put(
+        "/:id/track", 
         async function (request): Promise<Url> {
           const id = request.params.id!;
 
@@ -242,15 +242,8 @@ title: URL service - Shorten a URL
 code:
   language: typescript
   content: |
-    server.post("/", {
-      schema: { 
-          body: { /* ... */ },
-          response: {
-            200: { /* ... */ },
-            500: { /* ... */ }
-          },
-        },
-      },
+    server.post(
+      "/",
       async function (request, reply): Promise<Url | FastifyError> {
         const response = await request.database.createUrl({ id: randomUUID(), url: request.body.url });
 
@@ -261,7 +254,10 @@ code:
         }
 
         const url = new URL(`/urls/${response.id!}`, `http://${request.headers["x-forwarded-host"]}` );
-        return { url: url.toString() };
+        const url64 = Buffer.from(url.toString()).toString("base64url");
+        const qr = new URL(`/qr/?data=${url64}`, `http://${request.headers["x-forwarded-host"]}`);
+
+        return { url: qr.toString() };
       }
     );
   numbers: true
@@ -273,11 +269,6 @@ code:
   content: |
     server.get(
       "/:id", 
-      {
-        schema: {
-          params: { /* ... */ },
-        },
-      },
       async function (request, reply) {
         const url = (await request.database.trackUrl({id: request.params.id })) as unknown as Url;
 
