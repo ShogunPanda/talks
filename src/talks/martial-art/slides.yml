@@ -213,12 +213,12 @@ title: |
   Sorry, I totally
   could not resist!
 image:
-  url: '@common/troll.svg'
+  url: '@common/troll-white.svg'
   className: theme-misc@troll
 options:
   background: pink
 decorations:
-  logo: black
+  logo: white
 
 ---
 layout: separator
@@ -593,12 +593,12 @@ decorations:
 layout: separator
 title: Sorry, could not resist (again)!
 image:
-  url: '@common/troll.svg'
+  url: '@common/troll-white.svg'
   className: theme-misc@troll
 options:
   background: pink
 decorations:
-  logo: black
+  logo: white
 
 ---
 title: Take home lessons

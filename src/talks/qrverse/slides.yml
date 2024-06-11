@@ -1,0 +1,569 @@
+---
+layout: cover
+# ---
+
+---
+layout: separator
+title: |
+  Phenomenal cosmic powers...
+  Itty bitty living space.
+image:
+  url: '@talk/genius.webp'
+options:
+  background: fuchsia
+
+---
+layout: hello
+# ---
+
+---
+layout: separator
+title: |
+  Have you ever heard of QR codes?
+image:
+  url: '@talk/qr-intro.webp'
+options:
+  background: amber
+decorations:
+  logo: black
+
+---
+layout: separator
+title: Yes, of course!
+image:
+  url: '@common/troll-white.svg'
+  className: theme-misc@troll
+options:
+  background: pink
+decorations:
+  logo: white
+
+---
+title: They are everywhere
+items:
+  entries:
+    - icon: globe
+      title: Easy to use
+      text: Static codes can be printed, while dynamic codes can be generated with low effort.
+    - icon: file-zipper
+      title: Lot of space
+      text: Each code can contain up to **7089** numbers, **4296** characters, **2953** byte or **1817** Kanji.
+  horizontal: true
+
+---
+title: History of QR Codes
+items:
+  entries:
+    - icon: torii-gate
+      title: Created in Japan in 1994
+      text: '**Denso Wave** invented it to carry more data in a single code for its automotive parts.'
+    - icon: check-double
+      title: Over 30 years of standards
+      text: Several revision of the **ISO 18004** standard were created to ensure compliancy.
+    - icon: brain-circuit
+      title: Far beyond the original use case
+      text: QR are currently used in many aspect of our life, from official uses to games.
+
+---
+title: Main characteristics
+items:
+  entries:
+    - icon: square
+      title: 2-dimension code
+      text: The size and orientation are detected at scan time.
+    - icon: alt
+      title: Multiple modes
+      text: The data is encoded by choosing between 4 different modes.
+    - icon: sliders
+      title: Configurable resiliency
+      text: Four error thresholds that can recover up to **30%** damaged block.
+  horizontal: true
+
+---
+layout: separator
+title: |
+  QR Codes make our life way easier ...
+image:
+  url: '@talk/green-pass.webp'
+options:
+  background: green
+
+---
+layout: separator
+title: ... sometimes in a weird way!
+image:
+  url: '@talk/grave.webp'
+options:
+  background: red
+
+---
+layout: separator
+title: |
+  If we look closely...
+image:
+  url: '@common/microscope.webp'
+options:
+  background: sky
+
+---
+title: Position markers (finders)
+content: They are positioned in three corners to help the scanner determine the boundaries.
+image:
+  url: '@talk/qr-position.webp'
+
+---
+title: Alignment markers
+content: They are complementary to the position markers to determine the orientation.
+image:
+  url: '@talk/qr-alignment.webp'
+
+---
+title: Timing markers
+content: They are used from the scanner to understand the size.
+image:
+  url: '@talk/qr-timing.webp'
+
+---
+title: Version information
+content: They specify which of the many QR version has been chosen.
+image:
+  url: '@talk/qr-version.webp'
+
+---
+title: Format information
+content: Similarly, they specify the encoding chosen.
+image:
+  url: '@talk/qr-format.webp'
+
+---
+title: Data and Error correction
+content: The rest of the code delivers the data and the error correction (ECC), one next to each other.
+image:
+  url: '@talk/qr-data-ecc.webp'
+
+---
+title: Quiet zone
+content: To help the scanner identify a QR code, it is required to pad the code in all directions.
+image:
+  url: '@talk/qr-quiet.webp'
+
+---
+layout: side
+title: The best path might not be the straight one
+content:
+  - The data and ECC sections in a code are filled from the bottom right to the top left.
+  - Each sequence of 8 bits is written in block divided in two columns. When encountering alignments, rows are skipped.
+image:
+  url: '@talk/qr-fill.webp'
+
+---
+layout: separator
+title: |
+  Can we get to the practice please?
+image:
+  url: '@common/easy.webp'
+options:
+  background: amber
+
+---
+title: Let's building a QR rendering service
+items:
+  entries:
+    - icon: book
+      title: QR codes are easy to draw
+      text: Everything is well documented in ISO 18004 standard.
+    - icon: code-simple
+      title: (Almost) no libraries needed
+      text: Once you know which color each cell is, you're good to go.
+    - image: '@theme/logo-black.svg'
+      title: Suited for backends
+      text: |
+        Let's prove it with the 
+        best one out there, *Platformatic*.
+  horizontal: true
+
+---
+layout: separator
+title: Let's go!
+image:
+  url: '@common/start.webp'
+decorations:
+  logo: white
+options:
+  background: sky
+
+---
+title: Create the skeleton
+content: 'We can use **create-platformatic**, it is that simple!'
+image:
+  url: '@talk/plt-create.webp'
+
+---
+title: Database service - Create a migration
+content: All the data schema is managed via migrations.
+code:
+  language: sql
+  content: |
+    CREATE TABLE IF NOT EXISTS urls (
+      id VARCHAR(36) PRIMARY KEY,
+      url TEXT NOT NULL,
+      count INTEGER DEFAULT 0
+    );
+
+---
+title: Database service - Track our clicks
+code:
+  language: typescript
+  content: |
+    /// <reference path="../global.d.ts" />
+
+    import sql from "@databases/sql";
+    import { JsonSchemaToTsProvider } from "@fastify/type-provider-json-schema-to-ts";
+    import { FastifyInstance } from "fastify";
+    import { Url } from "../types";
+
+    export default async function (fastify: FastifyInstance) {
+      fastify.withTypeProvider<JsonSchemaToTsProvider>().put("/:id/track", 
+        { schema: { /* ... */ }, },
+        async function (request): Promise<Url> {
+          const id = request.params.id!;
+
+          await fastify.platformatic.db.query(sql`UPDATE urls SET count = count + 1 WHERE id = ${id}`);
+          const matching = await fastify.platformatic.entities.url.find({ where: { id: { eq: id } } });
+
+          return matching[0] as Url;
+        }
+      );
+    }
+  numbers: true
+
+---
+title: URL service - Shorten a URL
+code:
+  language: typescript
+  content: |
+    server.post("/", {
+      schema: { 
+          body: { /* ... */ },
+          response: {
+            200: { /* ... */ },
+            500: { /* ... */ }
+          },
+        },
+      },
+      async function (request, reply): Promise<Url | FastifyError> {
+        const response = await request.database.createUrl({ id: randomUUID(), url: request.body.url });
+
+        if ("statusCode" in response && response.statusCode !== 200) {
+          const error = response as unknown as FastifyError;
+          reply.status(error.statusCode!);
+          return error;
+        }
+
+        const url = new URL(`/urls/${response.id!}`, `http://${request.headers["x-forwarded-host"]}` );
+        return { url: url.toString() };
+      }
+    );
+  numbers: true
+
+---
+title: URL service - Track clicks
+code:
+  language: typescript
+  content: |
+    server.get(
+      "/:id", 
+      {
+        schema: {
+          params: { /* ... */ },
+        },
+      },
+      async function (request, reply) {
+        const url = (await request.database.trackUrl({id: request.params.id })) as unknown as Url;
+
+        request.log.info({ response: url }, "TRACK");
+
+        if ("statusCode" in url && url.statusCode !== 200) {
+          const error = url as unknown as FastifyError;
+          reply.status(error.statusCode!);
+          return error;
+        }
+
+        reply.header("x-clicks", url.count);
+        reply.redirect(301, url.url);
+      }
+    );
+  numbers: true
+
+---
+title: URL service - Get all stats
+code:
+  language: typescript
+  content: |
+    server.get(
+      "/stats",
+      async function (request: FastifyRequest, _reply: FastifyReply): Promise<Url[]> {
+        const urls = (await request.database.getUrls()) as Url[];
+        return urls;
+      }
+    );
+  numbers: true
+
+---
+title: Composer - Add a rendering UI
+content: The frontend file uses [Preact **without** JSX](https://preactjs.com/guide/v10/getting-started#alternatives-to-jsx). No transpilation needed.
+code:
+  language: typescript
+  content: |
+    /// <reference path="../global.d.ts" />
+
+    import { FastifyInstance, FastifyReply, FastifyRequest } from "fastify";
+    import { readFile } from "node:fs/promises";
+    import { resolve } from "node:path";
+
+    export default async function (fastify: FastifyInstance) {
+      fastify.get(
+        "/",
+        async function (request: FastifyRequest, reply: FastifyReply) {
+          reply.type("text/html");
+
+          return readFile(resolve(__dirname, "../../assets/frontend.html"), "utf-8");
+        }
+      );
+    }
+  numbers: true
+
+---
+layout: separator
+title: |
+  Where are 
+  the QR codes?
+image:
+  url: '@common/dog-1.webp'
+options:
+  background: amber
+
+---
+layout: separator
+title: Let's dive in!
+image:
+  url: '@common/dive.webp'
+options:
+  background: blue
+
+---
+title: QR service - Some helpers (1/5)
+code:
+  language: typescript
+  content: |
+    export function isFinder(modules: number, y: number, x: number): boolean {
+      return (
+        (y < 7 && (x < 7 || x > modules - 8)) || // Top corners
+        (y > modules - 8 && x < 7) // Bottom left corner
+      );
+    }
+  numbers: true
+decorations:
+  number: 1
+
+---
+title: QR service - Some helpers (2/5)
+code:
+  language: typescript
+  content: |
+    export function getAlignments(modules: number): number[][] {
+      const version = (modules - 17) / 4;
+      const aligments = [];
+
+      const currentAlignments = alignmentsByVersion[version - 1];
+      for (const i of currentAlignments) {
+        for (const j of currentAlignments) {
+          if (isFinder(modules, i, j)) {
+            // Skip the one overlapping with finders
+            continue;
+          }
+
+          aligments.push([i - 2, j - 2]);
+        }
+      }
+
+      return aligments;
+    }
+  numbers: true
+decorations:
+  number: 2
+
+---
+title: QR service - Some helpers (3/5)
+code:
+  language: typescript
+  content: |
+    export function isFinder(modules: number, y: number, x: number): boolean {
+      return (
+        (y < 7 && (x < 7 || x > modules - 8)) || // Top corners
+        (y > modules - 8 && x < 7) // Bottom left corner
+      );
+    }
+  numbers: true
+decorations:
+  number: 3
+
+---
+title: QR service - Some helpers (4/5)
+code:
+  language: typescript
+  content: |
+    export function isAlignment(aligments: number[][], y: number, x: number): boolean {
+      return aligments.some(([topLevelY, topLevelX]: number[]) => {
+        return (
+          y >= topLevelY &&
+          y <= topLevelY + 4 &&
+          x >= topLevelX &&
+          x <= topLevelX + 4
+        );
+      });
+    }
+  numbers: true
+decorations:
+  number: 4
+
+---
+title: QR service - Some helpers (5/5)
+content: |
+  Similarly, **drawFinder** and **drawAligment** behave the same.
+  They are way more complex and I omitted them here to preserve your mental health.
+code:
+  language: typescript
+  content: |
+    export function drawCircle(x: number, y: number): string {
+      const posX = padding + x * unit;
+      const posY = padding + y * unit + radius;
+
+      return `M${posX},${posY} a${radius},${radius},0,1,0,${diameter},0 a${radius},${radius},0,1,0,${-diameter},0 `;
+    }
+  numbers: true
+decorations:
+  number: 5
+
+---
+title: QR service - Handler skeleton
+code:
+  language: typescript
+  content: |
+    /// <reference path="../global.d.ts" />
+
+    /* ... */
+
+    export default async function (fastify: FastifyInstance) {
+      fastify.withTypeProvider<JsonSchemaToTsProvider>().get(
+        "/",
+        {
+          schema: {
+            querystring: {
+              type: "object",
+              properties: {
+                data: { type: "string" },
+              },
+              required: ["data"],
+              additionalProperties: false,
+            },
+          },
+        },
+        async function (request, reply): Promise<string> { /* ... * }
+      );
+    }
+  numbers: true
+
+---
+title: QR service - Compute modules
+content: The service uses [qrcode-generator](https://www.npmjs.com/package/qrcode-generator) from *Kazuhiko Arase* (which has no other dependencies).
+code:
+  language: typescript
+  content: |
+    const qr = QRCodeGenerator(0, "H");
+    qr.addData(Buffer.from(request.query.data, "base64url").toString("utf-8"));
+    qr.make();
+
+    const modules = qr.getModuleCount();
+    const aligments = getAlignments(modules);
+    const dimension = modules * unit + padding;
+    let svgPath = "";
+    let svgPoints = "";
+  numbers: true
+
+---
+title: QR service - Draw regular modules
+code:
+  language: typescript
+  content: |
+    // Draw regular modules
+    for (let x = 0; x < modules; x++) {
+      for (let y = 0; y < modules; y++) {
+        if (
+          !qr.isDark(y, x) ||
+          isFinder(modules, y, x) ||
+          isAlignment(aligments, y, x)
+        ) {
+          continue;
+        }
+
+        svgPoints += drawCircle(x, y);
+      }
+    }
+
+    svgPath += `&lt;path d="${svgPoints}" fill="currentColor" stroke="none" />`;
+  numbers: true
+
+---
+title: QR service - Draw other elements
+code:
+  language: typescript
+  content: |
+    // Draw the finders
+    svgPath += drawFinder(0, 0);
+    svgPath += drawFinder(modules - 7, 0);
+    svgPath += drawFinder(0, modules - 7);
+
+    // Draw the aligments
+    for (const aligment of aligments) {
+      svgPath += drawAlignment(aligment[0], aligment[1]);
+    }
+  numbers: true
+
+---
+title: QR service - Return the SVG
+code:
+  language: typescript
+  content: |
+    reply.type("image/svg+xml");
+
+    return `
+      &lt;svg 
+        xmlns="http://www.w3.org/2000/svg" version="1.1" 
+        width="${dimension}" height="${dimension}" viewBox="0 0 ${dimension} ${dimension}"
+      &gt;
+        ${svgPath}
+      &lt;/svg&gt;
+    `;
+  numbers: true
+
+---
+title: Check it out!
+content:
+  - All the code shown today is online on GitHub.
+  - qr: https://github.com/ShogunPanda/plt-qr-rendering
+  - <span class="theme-misc@qr__footer">[https://github.com/ShogunPanda/plt-qr-rendering](https://github.com/ShogunPanda/plt-qr-rendering)</span>
+className:
+  qr: theme-misc@qr--big
+
+---
+layout: quote
+quote:
+  sentence: |
+    Sharing is good, and with digital 
+    technology, sharing is easy.
+  author: Richard Stallman
+
+---
+layout: end
+# ---

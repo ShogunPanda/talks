@@ -1,0 +1,18 @@
+---
+config: common.config
+document:
+  title: "Welcome to the QRverse: let's build a rendering service"
+  titleFormatted: |
+    Welcome to the QRverse: 
+    let's build 
+    a rendering service
+  abstract: |
+    Despite being 30 years old, QR codes have only recently started becoming widely used in mainstream applications,
+    thanks to the availability of mobile phones and ease of implementation.
+
+    Have you ever wondered how these codes work? How hard would it be to implement a rendering service?
+
+    Bear with me on this amazing journey where I will show you how Platformatic makes it very easy to create a
+    QR code rendering service in just a few minutes.
+  author: common.author
+  company: common.company
