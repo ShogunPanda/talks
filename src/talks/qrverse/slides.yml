@@ -47,7 +47,7 @@ items:
       text: Static codes can be printed, while dynamic codes can be generated with low effort.
     - icon: file-zipper
       title: Lot of space
-      text: Each code can contain up to **7089** numbers, **4296** characters, **2953** byte or **1817** Kanji.
+      text: Each code can contain up to **7089** numbers, **4296** characters, **2953** bytes or **1817** kanjis.
   horizontal: true
 
 ---
@@ -343,7 +343,7 @@ options:
   background: blue
 
 ---
-title: QR service - Some helpers (1/5)
+title: QR service - Some helpers (1/4)
 code:
   language: typescript
   content: |
@@ -358,7 +358,7 @@ decorations:
   number: 1
 
 ---
-title: QR service - Some helpers (2/5)
+title: QR service - Some helpers (2/4)
 code:
   language: typescript
   content: |
@@ -385,22 +385,7 @@ decorations:
   number: 2
 
 ---
-title: QR service - Some helpers (3/5)
-code:
-  language: typescript
-  content: |
-    export function isFinder(modules: number, y: number, x: number): boolean {
-      return (
-        (y < 7 && (x < 7 || x > modules - 8)) || // Top corners
-        (y > modules - 8 && x < 7) // Bottom left corner
-      );
-    }
-  numbers: true
-decorations:
-  number: 3
-
----
-title: QR service - Some helpers (4/5)
+title: QR service - Some helpers (3/4)
 code:
   language: typescript
   content: |
@@ -416,10 +401,10 @@ code:
     }
   numbers: true
 decorations:
-  number: 4
+  number: 3
 
 ---
-title: QR service - Some helpers (5/5)
+title: QR service - Some helpers (4/4)
 content: |
   Similarly, **drawFinder** and **drawAligment** behave the same.
   They are way more complex and I omitted them here to preserve your mental health.
@@ -434,7 +419,7 @@ code:
     }
   numbers: true
 decorations:
-  number: 5
+  number: 4
 
 ---
 title: QR service - Handler skeleton
