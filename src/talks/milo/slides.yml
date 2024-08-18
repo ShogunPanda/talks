@@ -563,6 +563,13 @@ items:
   horizontal: true
 
 ---
+title: A due thanks to ...
+content:
+  - Without their trust, support and sponsorship, Milo would have never been possible. **Love you! ❤️**
+image:
+  url: '@talk/nearform.svg'
+
+---
 layout: quote
 quote:
   sentence: |
