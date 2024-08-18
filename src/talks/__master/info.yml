@@ -5,3 +5,4 @@ document:
   abstract: Master template for testing. Never deployed to production.
   author: common.author
   company: common.company
+  branding: false

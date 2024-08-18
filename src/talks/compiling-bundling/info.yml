@@ -3,8 +3,7 @@ config: common.config
 document:
   title: Compiling and bundling JS, the painless way
   titleFormatted: |
-    Compiling and
-    bundling JS,
+    Compiling and bundling JS,
     the painless way
   abstract: |
     In the last years, the JavaScript ecosystem has grown exponentially.
@@ -20,3 +19,4 @@ document:
   author: common.author
   company: common.company
   archived: true
+  branding: false

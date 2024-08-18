@@ -1,4 +1,12 @@
-import { QRCode, Svg, cleanCssClasses, useClient, useSlide, type SlideProps } from '@perseveranza-pets/freya/client'
+import {
+  Image,
+  QRCode,
+  Svg,
+  cleanCssClasses,
+  useClient,
+  useSlide,
+  type SlideProps
+} from '@perseveranza-pets/freya/client'
 import { Fragment, type VNode } from 'preact'
 import { Text } from '../../common/components/common.js'
 import { SvgIcon } from '../../common/components/icons.js'
@@ -10,9 +18,10 @@ export default function CoverLayout({ className, style }: SlideProps): VNode {
     isProduction,
     talk: {
       id,
-      document: { author, authors, title, titleFormatted }
+      document: { author, authors, title, titleFormatted, branding }
     },
-    theme: { urls }
+    theme: { id: theme, urls },
+    resolveImage
   } = useClient()
   const { slide, index } = useSlide<Slide>()
 
@@ -22,6 +31,24 @@ export default function CoverLayout({ className, style }: SlideProps): VNode {
 
   slide.decorations.logo = false
   slide.decorations.permalink = false
+
+  let logo = (
+    <a href="https://platformatic.dev" className={cleanCssClasses('theme@cover__logo')}>
+      <Svg src="@theme/logo-white.svg" className={cleanCssClasses('theme@cover__logo__image')} />
+      <span className={cleanCssClasses('theme@cover__logo__text')}>Platformatic</span>
+    </a>
+  )
+
+  if (branding === false) {
+    logo = (
+      <a href={author.website} className={cleanCssClasses('theme@cover__logo theme@cover__logo--no-branding')}>
+        <Image
+          src={resolveImage(theme, id, '@common/cowtech.webp')}
+          className={cleanCssClasses('theme@cover__logo__image')}
+        />
+      </a>
+    )
+  }
 
   return (
     <SlideWrapper
@@ -33,10 +60,7 @@ export default function CoverLayout({ className, style }: SlideProps): VNode {
       <Svg src="@theme/corner.svg" className={cleanCssClasses('theme@cover__corner')} />
 
       <div className={cleanCssClasses('theme@cover__contents')}>
-        <a href="https://platformatic.dev" className={cleanCssClasses('theme@cover__logo')}>
-          <Svg src="@theme/logo-white.svg" className={cleanCssClasses('theme@cover__logo__image')} />
-          <span className={cleanCssClasses('theme@cover__logo__text')}>Platformatic</span>
-        </a>
+        {logo}
 
         <main className={cleanCssClasses('theme@cover__header')}>
           <h1 className={cleanCssClasses('theme@cover__header__title', titleClassName)}>
@@ -62,7 +86,11 @@ export default function CoverLayout({ className, style }: SlideProps): VNode {
               </strong>
 
               <span className={cleanCssClasses('theme@cover__header__author__description')}>
-                <Text text={author.descriptionShort ?? author.description} />
+                <Text
+                  text={
+                    branding === false ? author.descriptionNoBranding : author.descriptionShort ?? author.description
+                  }
+                />
               </span>
             </h2>
           )}

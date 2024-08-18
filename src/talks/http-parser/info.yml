@@ -2,9 +2,6 @@
 config: common.config
 document:
   title: Node.js HTTP parser, what's going on?
-  titleFormatted: |
-    Node.js HTTP parser,
-    what's going on?
   abstract: |
     Node.js HTTP relies on llhttp parser, which is a both a semi-obscure piece of code and semi-abandoned project.
 
@@ -13,3 +10,4 @@ document:
   author: common.author
   company: common.company
   archived: true
+  branding: false

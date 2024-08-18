@@ -2,9 +2,6 @@
 config: common.config
 document:
   title: 'Your First Node.js Contribution'
-  titleFormatted: |
-    Your First
-    Node.js Contribution
   abstract: |
     Have you ever wanted to contribute to a foundational open source project like Node.js? Maybe you don’t know where to
     start. Maybe you always assumed that was work reserved for “someone else.” 
@@ -24,3 +21,4 @@ document:
     - name: Marco Ippolito
       email: marcoippolito54@gmail.com
       twitter: marco-ippolito
+  branding: false

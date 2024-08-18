@@ -2,9 +2,6 @@
 config: common.config
 document:
   title: 'How to breed a good OSS community'
-  titleFormatted: |
-    How to breed
-    a good OSS community
   abstract: |
     You started creating a new amazing framework, or library, or proof-of-concept. Then you are amazed by your work and
     want to enable other to use it. A new Open Source Software (OSS) is just born and you are now responsible for it.
@@ -16,3 +13,4 @@ document:
     community from the very first day.
   author: common.author
   company: common.company
+  branding: false

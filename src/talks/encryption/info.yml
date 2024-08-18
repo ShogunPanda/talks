@@ -4,8 +4,7 @@ document:
   title: Maths or magic? End-to-end encryption explained with art
   titleFormatted: |
     Maths or magic?
-    End-to-end encryption
-    explained with art
+    End-to-end encryption explained with art
   abstract: |
     Every time we send a message on the most popular messaging platforms, we want to make sure that our communication is
     private and inaccessible to malicious users.
@@ -19,3 +18,4 @@ document:
     e2e encryption algorithms... with some help from the public!
   author: common.author
   company: common.company
+  branding: false

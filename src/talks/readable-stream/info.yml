@@ -2,9 +2,6 @@
 config: common.config
 document:
   title: The last 5 years of streams in Node.js
-  titleFormatted: |
-    The last 5 years of
-    streams in Node.js
   abstract: |
     Thanks to a community of passionate contributors, Node.js is constantly evolving. Streams have been a core feature
     since the beginning but are still very much in active development.
@@ -17,3 +14,4 @@ document:
   author: common.author
   company: common.company
   archived: true
+  branding: false

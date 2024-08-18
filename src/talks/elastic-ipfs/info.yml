@@ -3,9 +3,8 @@ config: common.config
 document:
   title: Horizontal Scaling of a Web3 system to the sky and beyond in AWS
   titleFormatted: |
-    Horizontal Scaling of
-    a Web3 system to the sky
-    and beyond in AWS
+    Horizontal Scaling of a Web3 system
+    to the sky and beyond in AWS
   abstract: |
     [web3.storage](http://web3.storage) is a system living on top of [Interplanetary File System
     (IPFS)](https://ipfs.io) to provide non technical people access to a completely decentralized file sharing network
@@ -22,3 +21,4 @@ document:
   author: common.author
   company: common.company
   archived: true
+  branding: false

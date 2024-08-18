@@ -4,8 +4,7 @@ document:
   title: "Welcome to the QRverse: let's build a rendering service"
   titleFormatted: |
     Welcome to the QRverse: 
-    let's build 
-    a rendering service
+    let's build a rendering service
   abstract: |
     Despite being 30 years old, QR codes have only recently started becoming widely used in mainstream applications,
     thanks to the availability of mobile phones and ease of implementation.

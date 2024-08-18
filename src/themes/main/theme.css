@@ -466,6 +466,10 @@
       height: 60%;
       margin: 0 auto;
 
+      &--no-branding {
+        justify-content: center;
+      }
+
       &--wrapper {
         display: flex;
         grid-area: e;
@@ -497,13 +501,12 @@
       flex-direction: column;
       flex: 1 1 0%;
       justify-content: center;
-      max-width: 8--sp;
+      max-width: 10--sp;
       margin: 0 auto;
       text-align: center;
 
       &__title {
         display: block;
-
         margin-bottom: 0;
         font-family: var(--pi-font-montserrat);
         font-size: 30--pt;
@@ -512,7 +515,7 @@
 
       &__author {
         grid-area: b;
-        margin-top: 0.1--sp;
+        margin-top: 0.3--sp;
         margin-bottom: 0;
         font-family: var(--pi-font-montserrat);
         font-size: 16--pt;
@@ -523,8 +526,8 @@
         }
 
         &__description {
-          display: inline-block;
-          margin-left: 1ch;
+          display: block;
+          margin-left: 0;
           font-weight: 400;
         }
 

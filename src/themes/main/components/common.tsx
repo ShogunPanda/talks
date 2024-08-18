@@ -18,7 +18,11 @@ type DecorationProps = Pick<SlideWrapperProps, 'defaultLogoColor'>
 export function Decorations({ defaultLogoColor }: DecorationProps): VNode {
   const {
     isProduction,
-    talk: { id, slidesPadding },
+    talk: {
+      id,
+      slidesPadding,
+      document: { branding }
+    },
     theme: { urls }
   } = useClient()
   const { slide, index } = useSlide<Slide>()
@@ -55,7 +59,7 @@ export function Decorations({ defaultLogoColor }: DecorationProps): VNode {
           }}
         />
       )}
-      {logo !== false && (
+      {logo !== false && branding !== false && (
         <Svg src={`@theme/logo-${logo ?? defaultLogoColor}.svg`} className={cleanCssClasses('theme@logo')} />
       )}
     </>

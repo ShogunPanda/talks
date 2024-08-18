@@ -3,7 +3,8 @@ config: common.config
 document:
   title: 'From Smart Home to Smart Cats: extending my home automation to my pets'
   titleFormatted: |
-    From Smart Home to Smart Cats: extending home automation to pets
+    From Smart Home to Smart Cats:
+    extending home automation to pets
   abstract: |
     When going online and searching for new gadgets for our home, we often find Alexa, HomeKit or Google Assistant
     compatibility badges. Are these compatibility layers hard to code? What if I want to code mine?
@@ -14,3 +15,4 @@ document:
     In this talk, I will show you how I easily made my cat’s life way technological.
   author: common.author
   company: common.company
+  branding: false

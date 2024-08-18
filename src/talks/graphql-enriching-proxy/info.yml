@@ -2,9 +2,6 @@
 config: common.config
 document:
   title: Don’t break GraphQL, extend it!
-  titleFormatted: |
-    Don’t break GraphQL,
-    extend it!
   abstract: |
     GraphQL is powerful technology to retrieve and send complex structures from remote locations with a simple and
     effective syntax. One of its perks is avoid under-fetching and over-fetching as the client specifically requests the
@@ -17,3 +14,4 @@ document:
     without having to break the rules.
   author: common.author
   company: common.company
+  branding: false

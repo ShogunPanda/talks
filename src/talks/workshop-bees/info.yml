@@ -28,3 +28,4 @@ document:
     everything you need by yourself using a simple HTTP call.
   author: common.author
   company: common.company
+  branding: false
