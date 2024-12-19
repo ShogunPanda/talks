@@ -12,12 +12,13 @@ interface Options {
 async function generateCFP(talks: Set<string>, output: string): Promise<void> {
   const json = []
 
+  let i = 0
   for (const id of talks) {
     const talk = await getTalk(id)
 
     json.push({
       name: talk.document.title,
-      keyword: 'abstract',
+      keyword: `cfp§${++i}`,
       text:
         talk.document.title +
         '\n\n' +
