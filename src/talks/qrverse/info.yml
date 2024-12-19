@@ -11,7 +11,7 @@ document:
 
     Have you ever wondered how these codes work? How hard would it be to implement a rendering service?
 
-    Bear with me on this amazing journey where I will show you how Platformatic makes it very easy to create a
-    QR code rendering service in just a few minutes.
+    In this talk, I will show you how Platformatic makes it very easy to create a QR code rendering 
+    service in just a few minutes.
   author: common.author
   company: common.company

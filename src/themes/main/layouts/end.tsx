@@ -1,4 +1,4 @@
-import { Svg, cleanCssClasses, useClient, useSlide, type SlideProps } from '@perseveranza-pets/freya/client'
+import { cleanCssClasses, Image, useClient, useSlide, type SlideProps } from '@perseveranza-pets/freya/client'
 import { Fragment, type VNode } from 'preact'
 import { Text } from '../../common/components/common.js'
 import { type Slide } from '../../common/models.js'
@@ -10,7 +10,8 @@ export default function EndLayout({ className, style }: SlideProps): VNode {
       id,
       document: { author, authors }
     },
-    resolveImage
+    resolveImage,
+    theme: { id: theme }
   } = useClient()
   const { slide, index } = useSlide<Slide>()
 
@@ -103,7 +104,10 @@ export default function EndLayout({ className, style }: SlideProps): VNode {
 
         <aside className={cleanCssClasses('theme@end__logo--wrapper')}>
           <a href="https://platformatic.dev" className={cleanCssClasses('theme@end__logo')}>
-            <Svg src="@theme/logo-white.svg" className={cleanCssClasses('theme@end__logo__image')} />
+            <Image
+              src={resolveImage(theme, id, '@theme/logo-white.webp')}
+              className={cleanCssClasses('theme@end__logo__image')}
+            />
             <span className={cleanCssClasses('theme@end__logo__text')}>Platformatic</span>
           </a>
         </aside>

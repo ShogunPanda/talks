@@ -175,11 +175,11 @@ items:
     - icon: code-simple
       title: (Almost) no libraries needed
       text: Once you know which color each cell is, you're good to go.
-    - image: '@theme/logo-black.svg'
+    - image: '@theme/logo-black.webp'
       title: Suited for backends
       text: |
         Let's prove it with the 
-        best one out there, *Platformatic*.
+        best one out there, *Watt*.
   horizontal: true
 
 ---
@@ -195,8 +195,11 @@ options:
 ---
 title: Create the skeleton
 content: 'We can use **create-platformatic**, it is that simple!'
-image:
-  url: '@talk/plt-create.webp'
+code:
+  language: output
+  content: |
+    shogun@panda:~/qr$ pnpx wattpm init
+    [12:28:13.861] DONE (63654): Created a watt application in /Volumes/DATI/Users/Shogun/qr.
 
 ---
 title: Database service - Create a migration
@@ -213,114 +216,124 @@ code:
 ---
 title: Database service - Track our clicks
 code:
-  language: typescript
+  language: javascript
   content: |
-    /// <reference path="../global.d.ts" />
+    import sql from '@databases/sql'
 
-    import sql from "@databases/sql";
-    import { JsonSchemaToTsProvider } from "@fastify/type-provider-json-schema-to-ts";
-    import { FastifyInstance } from "fastify";
-    import { Url } from "../types";
+    export default async function (app) {
+      app.put(
+        '/urls/:id/track',
+        { // ... schema definition ... },
+        async function (request) {
+          const id = request.params.id
 
-    export default async function (fastify: FastifyInstance) {
-      fastify.withTypeProvider<JsonSchemaToTsProvider>().put(
-        "/:id/track", 
-        async function (request): Promise<Url> {
-          const id = request.params.id!;
+          await app.platformatic.db.query(
+            sql`UPDATE urls SET count = count + 1 WHERE id = ${id}`
+          )
 
-          await fastify.platformatic.db.query(sql`UPDATE urls SET count = count + 1 WHERE id = ${id}`);
-          const matching = await fastify.platformatic.entities.url.find({ where: { id: { eq: id } } });
+          const matching = await app.platformatic.entities.url.find({
+            where: { id: { eq: id } }
+          })
 
-          return matching[0] as Url;
+          return matching[0]
         }
-      );
+      )
     }
+
   numbers: true
 
 ---
 title: URL service - Shorten a URL
 code:
-  language: typescript
+  language: javascript
   content: |
     server.post(
       "/",
-      async function (request, reply): Promise<Url | FastifyError> {
-        const response = await request.database.createUrl({ id: randomUUID(), url: request.body.url });
+      { // ... schema definition ... },
+      async function (request, reply) {
+        const rootUrl = `http://${request.headers['x-forwarded-host']}`
+        const response = await fetch('http://database.plt.local/urls', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({ id: randomUUID(), url: request.body.url })
+        })
 
-        if ("statusCode" in response && response.statusCode !== 200) {
-          const error = response as unknown as FastifyError;
-          reply.status(error.statusCode!);
-          return error;
-        }
+        // ... Response error handling ...
 
-        const url = new URL(`/urls/${response.id!}`, `http://${request.headers["x-forwarded-host"]}` );
-        const url64 = Buffer.from(url.toString()).toString("base64url");
-        const qr = new URL(`/qr/?data=${url64}`, `http://${request.headers["x-forwarded-host"]}`);
+        const { id } = await response.json()
+        const url = new URL(`/urls/${id}`, rootUrl)
+        const url64 = Buffer.from(url.toString()).toString('base64url')
+        const qr = new URL(`/qr/${url64}`, rootUrl)
 
-        return { url: qr.toString() };
+        return { url: qr.toString() }
       }
-    );
+    )
   numbers: true
 
 ---
 title: URL service - Track clicks
 code:
-  language: typescript
+  language: javascript
   content: |
     server.get(
       "/:id", 
+      { // ... schema definition ... },
       async function (request, reply) {
-        const url = (await request.database.trackUrl({id: request.params.id })) as unknown as Url;
+        const response = await fetch(
+          `http://database.plt.local/urls/${request.params.id}/track`,
+          { method: 'PUT' }
+        )
 
-        request.log.info({ response: url }, "TRACK");
-
-        if ("statusCode" in url && url.statusCode !== 200) {
-          const error = url as unknown as FastifyError;
-          reply.status(error.statusCode!);
-          return error;
+        if (response.status !== 200) {
+          const error = await response.text()
+          reply.status(response.status)
+          return error
         }
 
-        reply.header("x-clicks", url.count);
-        reply.redirect(301, url.url);
+        const url = await response.json()
+        reply.header('x-clicks', url.count)
+        reply.redirect(url.url, 301)
       }
-    );
+    )
   numbers: true
 
 ---
 title: URL service - Get all stats
 code:
-  language: typescript
+  language: javascript
   content: |
-    server.get(
-      "/stats",
-      async function (request: FastifyRequest, _reply: FastifyReply): Promise<Url[]> {
-        const urls = (await request.database.getUrls()) as Url[];
-        return urls;
+    server.get('/stats', async function (_, reply) {
+      const response = await fetch('http://database.plt.local/urls')
+
+      if (response.status !== 200) {
+        const error = await response.text()
+        reply.status(response.status)
+        return error
       }
-    );
+
+      const urls = await response.json()
+      return urls
+    })
   numbers: true
 
 ---
-title: Composer - Add a rendering UI
+title: Frontend - Add a rendering UI
 content: The frontend file uses [Preact **without** JSX](https://preactjs.com/guide/v10/getting-started#alternatives-to-jsx). No transpilation needed.
 code:
-  language: typescript
+  language: javascript
   content: |
-    /// <reference path="../global.d.ts" />
+    import fastifyStatic from '@fastify/static'
+    import fastify from 'fastify'
+    import { fileURLToPath } from 'node:url'
 
-    import { FastifyInstance, FastifyReply, FastifyRequest } from "fastify";
-    import { readFile } from "node:fs/promises";
-    import { resolve } from "node:path";
+    export async function create() {
+      const server = fastify({ logger: true })
+      await server.register(
+        fastifyStatic, 
+        { root: fileURLToPath(new URL('./public', import.meta.url)) }
+      )
 
-    export default async function (fastify: FastifyInstance) {
-      fastify.get(
-        "/",
-        async function (request: FastifyRequest, reply: FastifyReply) {
-          reply.type("text/html");
-
-          return readFile(resolve(__dirname, "../../assets/frontend.html"), "utf-8");
-        }
-      );
+      return server
     }
   numbers: true
 
@@ -345,13 +358,13 @@ options:
 ---
 title: QR service - Some helpers (1/4)
 code:
-  language: typescript
+  language: javascript
   content: |
-    export function isFinder(modules: number, y: number, x: number): boolean {
+    export function isFinder(modules, y, x) {
       return (
         (y < 7 && (x < 7 || x > modules - 8)) || // Top corners
         (y > modules - 8 && x < 7) // Bottom left corner
-      );
+      )
     }
   numbers: true
 decorations:
@@ -360,25 +373,25 @@ decorations:
 ---
 title: QR service - Some helpers (2/4)
 code:
-  language: typescript
+  language: javascript
   content: |
-    export function getAlignments(modules: number): number[][] {
-      const version = (modules - 17) / 4;
-      const aligments = [];
+    export function getAlignments(modules) {
+      const version = (modules - 17) / 4
+      const aligments = []
 
-      const currentAlignments = alignmentsByVersion[version - 1];
+      const currentAlignments = alignmentsByVersion[version - 1]
       for (const i of currentAlignments) {
         for (const j of currentAlignments) {
           if (isFinder(modules, i, j)) {
             // Skip the one overlapping with finders
-            continue;
+            continue
           }
 
-          aligments.push([i - 2, j - 2]);
+          aligments.push([i - 2, j - 2])
         }
       }
 
-      return aligments;
+      return aligments
     }
   numbers: true
 decorations:
@@ -387,17 +400,17 @@ decorations:
 ---
 title: QR service - Some helpers (3/4)
 code:
-  language: typescript
+  language: javascript
   content: |
-    export function isAlignment(aligments: number[][], y: number, x: number): boolean {
-      return aligments.some(([topLevelY, topLevelX]: number[]) => {
+    export function isAlignment(aligments, y, x) {
+      return aligments.some(([topLevelY, topLevelX]) => {
         return (
           y >= topLevelY &&
           y <= topLevelY + 4 &&
           x >= topLevelX &&
           x <= topLevelX + 4
-        );
-      });
+        )
+      })
     }
   numbers: true
 decorations:
@@ -409,68 +422,67 @@ content: |
   Similarly, **drawFinder** and **drawAligment** behave the same.
   They are way more complex and I omitted them here to preserve your mental health.
 code:
-  language: typescript
+  language: javascript
   content: |
-    export function drawCircle(x: number, y: number): string {
-      const posX = padding + x * unit;
-      const posY = padding + y * unit + radius;
+    export function drawCircle(x, y) {
+      const posX = padding + x * unit
+      const posY = padding + y * unit + radius
 
-      return `M${posX},${posY} a${radius},${radius},0,1,0,${diameter},0 a${radius},${radius},0,1,0,${-diameter},0 `;
+      return `M${posX},${posY} a${radius},${radius},0,1,0,${diameter},0 a${radius},${radius},0,1,0,${-diameter},0 `
     }
   numbers: true
 decorations:
   number: 4
 
 ---
-title: QR service - Handler skeleton
+title: QR service - Service skeleton
 code:
-  language: typescript
+  language: javascript
   content: |
-    /// <reference path="../global.d.ts" />
+    import { createServer } from 'node:http'
+    import QRCodeGenerator from 'qrcode-generator'
+    import {
+      drawAlignment,
+      drawCircle,
+      drawFinder,
+      getAlignments,
+      isAlignment,
+      isFinder,
+      padding,
+      unit
+    } from './rendering.js'
 
-    /* ... */
+    export function create() {
+      return createServer((req, res) => {
+        const data = req.url.split('/').at(-1)
+        const url = Buffer.from(data, 'base64url').toString('utf-8')
 
-    export default async function (fastify: FastifyInstance) {
-      fastify.withTypeProvider<JsonSchemaToTsProvider>().get(
-        "/",
-        {
-          schema: {
-            querystring: {
-              type: "object",
-              properties: {
-                data: { type: "string" },
-              },
-              required: ["data"],
-              additionalProperties: false,
-            },
-          },
-        },
-        async function (request, reply): Promise<string> { /* ... * }
-      );
-    }
+        // Generate and return the QR code ...
+      }
+    })
   numbers: true
 
 ---
 title: QR service - Compute modules
 content: The service uses [qrcode-generator](https://www.npmjs.com/package/qrcode-generator) from *Kazuhiko Arase* (which has no other dependencies).
 code:
-  language: typescript
+  language: javascript
   content: |
-    const qr = QRCodeGenerator(0, "H");
-    qr.addData(Buffer.from(request.query.data, "base64url").toString("utf-8"));
-    qr.make();
+    const qr = QRCodeGenerator(0, "H")
+    qr.addData(url)
+    qr.make()
 
-    const modules = qr.getModuleCount();
-    const aligments = getAlignments(modules);
-    const dimension = modules * unit + padding;
-    let svgPath = "";
-    let svgPoints = "";
+    const modules = qr.getModuleCount()
+    const aligments = getAlignments(modules)
+    const dimension = modules * unit + padding
+    let svgPath = ""
+    let svgPoints = ""
   numbers: true
 
 ---
 title: QR service - Draw regular modules
 code:
-  language: typescript
+  language: javascript
   content: |
     // Draw regular modules
     for (let x = 0; x < modules; x++) {
@@ -480,47 +492,46 @@ code:
           isFinder(modules, y, x) ||
           isAlignment(aligments, y, x)
         ) {
-          continue;
+          continue
         }
 
-        svgPoints += drawCircle(x, y);
+        svgPoints += drawCircle(x, y)
       }
     }
 
-    svgPath += `&lt;path d="${svgPoints}" fill="currentColor" stroke="none" />`;
+    svgPath += `&lt;path d="${svgPoints}" fill="currentColor" stroke="none" />`
   numbers: true
 
 ---
 title: QR service - Draw other elements
 code:
-  language: typescript
+  language: javascript
   content: |
     // Draw the finders
-    svgPath += drawFinder(0, 0);
-    svgPath += drawFinder(modules - 7, 0);
-    svgPath += drawFinder(0, modules - 7);
+    svgPath += drawFinder(0, 0)
+    svgPath += drawFinder(modules - 7, 0)
+    svgPath += drawFinder(0, modules - 7)
 
     // Draw the aligments
     for (const aligment of aligments) {
-      svgPath += drawAlignment(aligment[0], aligment[1]);
+      svgPath += drawAlignment(aligment[0], aligment[1])
     }
   numbers: true
 
 ---
 title: QR service - Return the SVG
 code:
-  language: typescript
+  language: javascript
   content: |
-    reply.type("image/svg+xml");
-
-    return `
+    res.writeHead(200, { 'x-plt-qr': url, 'content-type': 'image/svg+xml' })
+    res.end(`
       &lt;svg 
         xmlns="http://www.w3.org/2000/svg" version="1.1" 
         width="${dimension}" height="${dimension}" viewBox="0 0 ${dimension} ${dimension}"
-      &gt;
+      >
         ${svgPath}
-      &lt;/svg&gt;
-    `;
+      &lt;/svg>
+    `)
   numbers: true
 
 ---

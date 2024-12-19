@@ -32,7 +32,8 @@
     "verify": "node --import tsx src/scripts/verify.ts",
     "list": "find src/talks -type d -depth 1 -exec basename {} \\; | sort",
     "optimize-images": "fd -e .webp -x cwebp {} -o {} -short",
-    "fix-downloads-visibility": "nodemon -e jpg,png,webp --exec chflags nohidden ."
+    "fix-downloads-visibility": "nodemon -e jpg,png,webp --exec chflags nohidden .",
+    "generate-cfp": "node --import tsx src/scripts/generate-cfp.ts"
   },
   "dependencies": {
     "@fortawesome/free-brands-svg-icons": "^6.5.1",

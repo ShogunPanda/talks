@@ -34,7 +34,10 @@ export default function CoverLayout({ className, style }: SlideProps): VNode {
 
   let logo = (
     <a href="https://platformatic.dev" className={cleanCssClasses('theme@cover__logo')}>
-      <Svg src="@theme/logo-white.svg" className={cleanCssClasses('theme@cover__logo__image')} />
+      <Image
+        src={resolveImage(theme, id, '@theme/logo-white.webp')}
+        className={cleanCssClasses('theme@cover__logo__image')}
+      />
       <span className={cleanCssClasses('theme@cover__logo__text')}>Platformatic</span>
     </a>
   )

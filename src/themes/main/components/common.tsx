@@ -1,4 +1,4 @@
-import { Progress, QRCode, Svg, cleanCssClasses, useClient, useSlide } from '@perseveranza-pets/freya/client'
+import { Image, Progress, QRCode, cleanCssClasses, useClient, useSlide } from '@perseveranza-pets/freya/client'
 import { type ComponentChildren, type JSX, type VNode } from 'preact'
 import { Text } from '../../common/components/common.js'
 import { SvgIcon } from '../../common/components/icons.js'
@@ -23,7 +23,8 @@ export function Decorations({ defaultLogoColor }: DecorationProps): VNode {
       slidesPadding,
       document: { branding }
     },
-    theme: { urls }
+    theme: { id: theme, urls },
+    resolveImage
   } = useClient()
   const { slide, index } = useSlide<Slide>()
 
@@ -60,7 +61,10 @@ export function Decorations({ defaultLogoColor }: DecorationProps): VNode {
         />
       )}
       {logo !== false && branding !== false && (
-        <Svg src={`@theme/logo-${logo ?? defaultLogoColor}.svg`} className={cleanCssClasses('theme@logo')} />
+        <Image
+          src={resolveImage(theme, id, `@theme/logo-${logo ?? defaultLogoColor}.webp`)}
+          className={cleanCssClasses('theme@logo')}
+        />
       )}
     </>
   )
