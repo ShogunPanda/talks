@@ -83,7 +83,6 @@ export function Item(props: ItemProps): VNode {
 
       {!imageUrl && !icon && !qr && code && <Code {...code} />}
 
-      {/* eslint-disable-next-line @typescript-eslint/prefer-nullish-coalescing */}
       {!code && (title || text || children) && (
         <div
           className={cleanCssClasses('theme@item__text', horizontal && 'theme@item__text--horizontal', textClassName)}
@@ -124,7 +123,6 @@ export function Items({
 
   const validEntries = useMemo(() => entries.filter(Boolean), [entries])
   const visibleEntries = useMemo(() => {
-    // eslint-disable-next-line @typescript-eslint/prefer-nullish-coalescing
     if (sequence !== true || navigator || typeof window === 'undefined') {
       return validEntries
     }
@@ -150,11 +148,10 @@ export function Items({
       messageEvent.data.cancel = true
       setStep(step + delta)
     },
-    [step, validEntries, setStep]
+    [step, validEntries, setStep, index]
   )
 
   useEffect(() => {
-    // eslint-disable-next-line @typescript-eslint/prefer-nullish-coalescing
     if (sequence !== true || navigator || presenter || typeof window === 'undefined') {
       return
     }
@@ -164,16 +161,15 @@ export function Items({
     return () => {
       window.removeEventListener('freya:slide:changed', handleNavigation)
     }
-  }, [handleNavigation])
+  }, [navigator, presenter, sequence, handleNavigation])
 
   useEffect(() => {
-    // eslint-disable-next-line @typescript-eslint/prefer-nullish-coalescing
     if (sequence !== true || navigator || presenter || typeof window === 'undefined') {
       return
     }
 
     setStep(index === previousIndex - 1 ? validEntries.length - 1 : 0)
-  }, [index, previousIndex, setStep])
+  }, [index, previousIndex, navigator, presenter, sequence, validEntries, setStep])
 
   return (
     <div

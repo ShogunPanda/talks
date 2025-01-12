@@ -109,7 +109,7 @@ items:
       text: |
         Runtimes update slower than the languages.
         *We don’t want to wait.*
-    - icon: chart-network
+    - icon: circle-nodes
       title: Write once, run everywhere™
       text: We want to write our scripts in our language despite of the runtime environment.
   horizontal: true
@@ -531,7 +531,7 @@ items:
     - icon: rocket
       title: To create a single executable file
       text: A single file, especially if statically linked, is much easier to distribute and to install.
-    - icon: chart-network
+    - icon: circle-nodes
       title: To serve a single JavaScript file
       text: Serving only a single file reduces the overhead and improves the user experience.
   horizontal: true
@@ -659,7 +659,7 @@ items:
     - icon: code
       title: Complete developer experience
       text: It provides a webserver with Hot Module Reload support.
-    - icon: chart-network
+    - icon: circle-nodes
       title: A bundler that doesn’t actually bundle
       text: It completely leverages ECMAScript Modules.
     - icon: rocket

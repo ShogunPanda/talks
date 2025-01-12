@@ -41,7 +41,7 @@ items:
     - icon: bug
       title: Denial of Service Attack (DoS)
       text: A network resource is maliciously made unavailable to its intended users.
-    - icon: chart-network
+    - icon: circle-nodes
       title: Distributed Denial of Service (DDoS)
       text: The incoming flooding traffic originates from many different sources.
     - icon: sack-dollar
@@ -79,12 +79,12 @@ items:
       text: |
         A DDoS attack which
         uses minimal bandwidth.
-    - icon: calendar-time
+    - icon: calendar
       title: When it was created?
       text: |
         Robert “RSnake” Hansen
         carved it on June 2009.
-    - icon: split
+    - icon: arrows-split-up-and-left
       title: It’s not just HTTP!
       text: |
         This attack can be abstracted
@@ -134,7 +134,7 @@ items:
     - icon: file
       title: Each socket is backed by a file descriptor
       text: Each process has a limited number of descriptor available, managed via <code>ulimit</code>.
-    - icon: browser
+    - icon: globe
       title: The application manages high-level operations
       text: The application representation of the socket adds extra memory overhead.
 
@@ -186,9 +186,9 @@ title: Use a reverse proxy
 content:
   - Never put Node.js as the direct point of contact to the clients.<br/> Servers like Nginx have better protection from DDoS attacks.
 decorations:
-  icon: block-brick-fire
+  icon: person-military-pointing
   className:
-    icon: talk@brick-fire
+    icon: talk@reverse-proxy-icon
 
 ---
 title: Mitigation strategies
@@ -224,7 +224,7 @@ items:
     - icon: handshake-angle
       title: Body handling is delegated
       text: Applications are responsible for body timeouts.
-    - icon: calendar-time
+    - icon: calendar
       title: Node.js 10.14.0, November 28th, 2018
       text: <em>Node.js has been completely unprotected for 10 years.</em>
 decorations:
@@ -240,10 +240,10 @@ highlight:
   className: theme@bg-blue theme@fg-white
 items:
   entries:
-    - icon: alarm-snooze
+    - icon: eye-slash
       title: Disable http.Server.timeout by default
       text: The default value has been changed to nothing.
-    - icon: calendar-time
+    - icon: calendar
       title: Node.js 13.0.0, October 22th, 2019
       text: _From now on, attacker can delay transfer indefinitely._
 notes: |
@@ -256,15 +256,15 @@ decorations:
 title: http.Server.requestTimeout
 items:
   entries:
-    - icon: shield-check
+    - icon: shield
       title: Complete fix
       text: The client has now limited time to finish.
-    - icon: calendar-time
+    - icon: calendar
       title: Available on all active Node.js lines
       text: Added to Node.js 14.11.0, released on September 15th, 2020.
     - icon: thumbs-down
       title: Disabled by default
-      text: Adding a timer for each new request is an expensive operation.
+      text: Adding a clock for each new request is an expensive operation.
 
 ---
 layout: separator
@@ -368,7 +368,7 @@ options:
 decorations:
   className:
     icon: theme-misc@mission-completed
-  icon: party-horn
+  icon: champagne-glasses
   logo: black
 
 ---
@@ -380,7 +380,7 @@ items:
     - icon: lock
       title: Security, always
       text: Always think about security implication when implementing new features or fixing bugs.
-    - icon: turtle
+    - icon: traffic-light
       title: Sacrifice Performance
       text: Putting performance aside can drive to correct, innovative and eventually performant solutions.
     - icon: history

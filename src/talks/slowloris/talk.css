@@ -1,6 +1,6 @@
 /* stylelint-disable-next-line selector-class-pattern */
 .talk@ {
-  &brick-fire {
+  &reverse-proxy-icon {
     left: 3.5--sp;
   }
 

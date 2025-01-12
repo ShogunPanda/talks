@@ -95,7 +95,7 @@ items:
     - icon: user-plus
       title: Handle growth
       text: The system should be able to handle the massive amount of data uploaded on web3.storage.
-    - icon: chart-network
+    - icon: circle-nodes
       title: Stateless services
       text: Having stateless services helps horizontal scaling and greatly improves fault tolerance.
     - icon: cloud
@@ -231,10 +231,10 @@ content:
   - IPFS uses the Kademlia DHT for keeping peers and blocks information.
 items:
   entries:
-    - icon: chart-network
+    - icon: circle-nodes
       title: The Elastic IPFS claims to be a single node
       text: Even though internally a lot of resources are used, only one <code>PeerID</code> is used.
-    - icon: link-horizontal-slash
+    - icon: link-slash
       title: No long connection
       text: E-IPFS cannot directly participate to the DHT as it is not capable to connect to GossipSub.
     - icon: handshake-angle
@@ -250,7 +250,7 @@ items:
     - icon: search
       title: When
       text: Hydra nodes are created to have an high chance to incur into one of them when looking up data.
-    - icon: chart-network
+    - icon: circle-nodes
       title: What
       text: Content Routing Delegation via shared storage and third party systems as the Indexer Nodes.
     - icon: globe
@@ -274,7 +274,7 @@ items:
     - icon: sack-dollar
       title: E-IPFS is on the cloud
       text: Maintaining long living connection, when possible, is expensive.
-    - icon: messages
+    - icon: comments
       title: GossipSub is verbose
       text: A lot of data is exchanged and it will impact costs as well.
     - icon: code-fork
@@ -294,7 +294,7 @@ items:
     - icon: link
       title: Advertisements are strictly ordered
       text: Each is linked to the previous one. The <code>/head</code> one is regularly updated.
-    - icon: phone-outgoing
+    - icon: phone
       title: Notify Indexers on <code>/ingest/announce</code> when ready to be queried
       text: <code>HTTP PUT</code> requests will signal that new data has been published.
 
@@ -408,7 +408,7 @@ items:
     - icon: link
       title: No advertisement can be lost
       text: If data is not correctly received by the Indexer, it will be unreachable.
-    - icon: timeline-arrow
+    - icon: timeline
       title: The head of the queue must be updated atomically
       text: Concurrency control must be applied to the processors.
 
@@ -454,7 +454,7 @@ image:
 title: Peer subsystem characteristic
 items:
   entries:
-    - icon: chart-network
+    - icon: circle-nodes
       title: Fully automatic
       text: The subsystem is an autoscaling EKS Node.js cluster managed by an Elastic Load Balancer.
     - icon: cloud
@@ -508,10 +508,10 @@ items:
     - icon: heart
       title: K.I.S.S.
       text: IPFS protocols are very complex. Simplifying is the only way to have viable products.
-    - icon: globe-pointer
+    - icon: globe
       title: HTTP is not dead yet
       text: New protocols are very fashionable, but the good old HTTP can still be very performant.
-    - icon: chart-network
+    - icon: circle-nodes
       title: Democracy is good
       text: Being unable to lock in a single cloud provider led to flexible and lean architecture.
   horizontal: true

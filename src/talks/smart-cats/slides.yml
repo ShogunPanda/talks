@@ -28,7 +28,7 @@ items:
     - icon: mobile
       title: The majority of the (western) population has a smartphone
       text: "*There's an app for everything™*, isn't it?"
-    - icon: puzzle
+    - icon: puzzle-piece
       title: Just connect the dots
       text: Internet of Things was just a matter of times.
 
@@ -100,7 +100,7 @@ items:
     - icon: sack-dollar
       title: Nobody is sponsoring me
       text: It just happen that these products were the best for my specific needs.
-    - icon: face-zipper
+    - icon: face-grimace
       title: No brand knows I'm here
       text: So everything that follows is just my personal opinion and experience.
   horizontal: true
@@ -128,7 +128,7 @@ items:
     - icon: lock
       title: KSenia Lares 4.0
       text: It is a innovative home alarm and automation system all *made in Italy*.
-    - icon: chart-network
+    - icon: circle-nodes
       title: Comprehensive solution
       text: It can control alarms, sensors, doors, windows and many other devices.
 
@@ -171,7 +171,7 @@ items:
     - icon: temperature-three-quarters
       title: Panasonic Aquarea as primary device
       text: It's an electric heat pump which can either heat or cool your house.
-    - icon: flame
+    - icon: fire
       title: Ferroli BlueHelix as secondary heater
       text: Despite the name, it's connected via sealed Chinese cloud. *I gave up here!*
 
@@ -255,7 +255,7 @@ image:
   url: '@talk/abb.webp'
 items:
   entries:
-    - icon: battery-bolt
+    - icon: battery-full
       title: ABB Terra
       text: It supports single-phases or three-phases system, up to 22KW power.
     - icon: bolt
@@ -302,13 +302,13 @@ className:
 title: He was *always* hungry
 items:
   entries:
-    - icon: alarm-clock
+    - icon: bell
       title: No matter the time
       text: It's food o' clock!
     - icon: globe
       title: No matter if you had a life
       text: You had to feed him 3-4 times a day.
-    - icon: face-explode
+    - icon: face-rolling-eyes
       title: Persistent staring or vocalizing can kill you
       text: His biological clock was better than an atomic one.
 
@@ -321,7 +321,7 @@ image:
   url: '@talk/petkit.webp'
 items:
   entries:
-    - icon: pot-food
+    - icon: bowl-food
       title: PetKit FreshElement Solo
       text: Cheap, easy to use and reliable.
     - icon: mobile
@@ -335,7 +335,7 @@ items:
     - icon: network-wired
       title: HTTP API
       text: It has an easy to use HTTP API.
-    - icon: pot-food
+    - icon: bowl-food
       title: Let them be fat
       text: The API accuracy varies per device.
   horizontal: true
@@ -363,7 +363,7 @@ items:
     - icon: globe
       title: We (kinda) still live in the city
       text: But we are literally on the border, in the countryside.
-    - icon: deer
+    - icon: tree
       title: Wild animals are everywhere
       text: After `${30+x}` years I had to deal daily with foxes and similar.
 
@@ -456,7 +456,7 @@ image:
   url: '@talk/shelly.webp'
 items:
   entries:
-    - icon: chart-network
+    - icon: circle-nodes
       title: Shelly devices
       text: Small, cheap and made for the geeks.
     - icon: cloud
@@ -514,7 +514,7 @@ items:
     - icon: code-branch
       title: Do not reinvent the wheel
       text: All integrations are (mostly) based on existing technologies.
-    - icon: puzzle
+    - icon: puzzle-piece
       title: It's all about presentation
       text: Connecting the dots was the deal breaker.
     - icon: book

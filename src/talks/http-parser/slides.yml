@@ -58,13 +58,13 @@ items:
 title: "HTTP/1.1: Can't beat a classic"
 items:
   entries:
-    - icon: calendar-time
+    - icon: calendar
       title: The grandparent
       text: Developed in 1989 and by far the mostly used (80% of websites).
-    - icon: message-text
+    - icon: message
       title: Textual protocol
       text: Parsing can be easily implemented in any language.
-    - icon: timeline-arrow
+    - icon: timeline
       title: Keep-Alive and FIFO pipelining
       text: A single TCP connection can be reused.
 
@@ -72,7 +72,7 @@ items:
 title: "HTTP/2: Don't break too much"
 items:
   entries:
-    - icon: calendar-time
+    - icon: calendar
       title: The parent
       text: Development started in 2012 and end up being standardized in 2015.
     - icon: history
@@ -86,13 +86,13 @@ items:
 title: HTTP/3
 items:
   entries:
-    - icon: calendar-time
+    - icon: calendar
       title: The sibling
       text: Development started in 2018 and end up being standardized in 2022.
     - icon: code-branch
       title: Farewell, TCP!
       text: QUIC is now used, which means HTTP has switched to UDP.
-    - icon: split
+    - icon: arrows-split-up-and-left
       title: No head of line blocking
       text: Using multiplexing over UDP minimizes problems introduced by lost packets.
 
@@ -146,7 +146,7 @@ items:
     - icon: c
       title: Written in C
       text: It is not the most user friendly language.
-    - icon: face-downcast-sweat
+    - icon: face-tired
       title: Hard to maintain
       text: Over the course of ten years, the codebase became unmaintainable.
     - icon: bug

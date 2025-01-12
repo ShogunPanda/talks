@@ -24,7 +24,7 @@
     "server": "freya server",
     "pdf": "freya pdf",
     "format": "prettier -w src",
-    "lint": "eslint src --ext .ts,.tsx",
+    "lint": "eslint --cache",
     "lint:css": "stylelint --cache src/**/*.css",
     "typecheck": "tsc -p . --noEmit",
     "deploy": "freya deploy",
@@ -36,22 +36,19 @@
     "generate-cfp": "node --import tsx src/scripts/generate-cfp.ts"
   },
   "dependencies": {
-    "@fortawesome/free-brands-svg-icons": "^6.5.1",
-    "@fortawesome/free-solid-svg-icons": "^6.5.1",
-    "@fortawesome/pro-duotone-svg-icons": "^6.5.1",
-    "@fortawesome/pro-light-svg-icons": "^6.5.1",
-    "@fortawesome/pro-regular-svg-icons": "^6.5.1",
-    "@fortawesome/pro-solid-svg-icons": "^6.5.1",
-    "@perseveranza-pets/freya": "^0.72.0"
+    "@fortawesome/free-brands-svg-icons": "^6.7.2",
+    "@fortawesome/free-solid-svg-icons": "^6.7.2",
+    "@perseveranza-pets/freya": "^0.74.2"
   },
   "devDependencies": {
-    "@cowtech/eslint-config": "^9.0.3",
-    "@cowtech/stylelint-config": "^0.2.0",
-    "concurrently": "^8.2.2",
-    "eslint": "^8.56.0",
-    "prettier": "^3.2.4",
-    "stylelint": "^16.2.1",
-    "tsx": "^4.7.0",
-    "typescript": "^5.3.3"
+    "@cowtech/eslint-config": "^10.2.0",
+    "@cowtech/stylelint-config": "^1.0.1",
+    "@types/node": "^22.10.5",
+    "concurrently": "^9.1.2",
+    "eslint": "^9.18.0",
+    "prettier": "^3.4.2",
+    "stylelint": "^16.12.0",
+    "tsx": "^4.19.2",
+    "typescript": "^5.7.3"
   }
 }

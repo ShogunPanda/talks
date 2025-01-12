@@ -184,7 +184,7 @@ options:
 title: Rust macro system is insanely powerful
 items:
   entries:
-    - icon: gear-complex-code
+    - icon: code
       title: It is evaluated at compile time
       text: The executed code is inherently optimized.
     - icon: brain
@@ -359,7 +359,7 @@ image:
   url: '@talk/cbindgen.webp'
 items:
   entries:
-    - icon: gear-complex-code
+    - icon: code
       title: A tool generates the headers
       text: '[*cbindgen*](https://github.com/mozilla/cbindgen) generates a fully working C or C++ header file. Only a small TOML file is needed.'
     - icon: link
@@ -429,7 +429,7 @@ image:
   url: '@talk/wasm-bindgen.webp'
 items:
   entries:
-    - icon: gear-complex-code
+    - icon: code
       title: WebAssembly is fully supported
       text: Rust has always considered WebAssembly a first class citizen.
     - icon: link
@@ -486,7 +486,7 @@ image:
 options:
   background: green
 decorations:
-  icon: party-horn
+  icon: champagne-glasses
   className:
     icon: theme-misc@mission-completed
 

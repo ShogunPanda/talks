@@ -25,7 +25,7 @@ function camelCase(source: any): string {
 const baseIcons = [
   'desktop',
   'file-pdf',
-  'lightbulb-on',
+  'lightbulb',
   'puzzle-piece',
 
   'linkedin@free/brands:linkedin',
@@ -165,7 +165,7 @@ export async function setupServer(context: BuildContext, theme: Theme, talk: Tal
 
         loadedIcons[alias ?? icon] = { width, height, svgPathData }
       } catch (e) {
-        context.logger.error(`Invalid icon: \x1b[1m${icon}\x1b[22m, ignoring it.`)
+        context.logger.error(`Invalid icon: \x1b[1m${icon}\x1b[22m (${path}), ignoring it.`)
         loadedIcons[alias ?? icon] = { width: 0, height: 0, svgPathData: '' }
       }
     }

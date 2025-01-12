@@ -36,7 +36,7 @@ items:
     - icon: cut
       title: No overfetching or underfetching
       text: The server will return exactly the data we asked for. <em>This will return.</em>
-    - icon: chart-network
+    - icon: circle-nodes
       title: Federation
       text: Multiple schemas can be easily joined.
 
@@ -44,7 +44,7 @@ items:
 title: Federation
 items:
   entries:
-    - icon: chart-network
+    - icon: circle-nodes
       title: Split the schema in subgraphs
       text: This is great for separation of concerns.
     - icon: link
@@ -126,10 +126,10 @@ items:
     - icon: globe
       title: You have to be in control of the clients
       text: You also have to consider users that don’t usually upgrade their applications often.
-    - icon: camera-cctv
+    - icon: tower-observation
       title: Nothing can go out of sight
       text: If even a single component is not updated at the right time, compatibility problems will arise.
-    - icon: file-certificate
+    - icon: certificate
       title: Specification will be broken
       text: Even if the client is able to handle data it didn’t ask for, <em>we are breaking the specification</em>.
 
@@ -661,7 +661,7 @@ image:
 options:
   background: green
 decorations:
-  icon: party-horn
+  icon: champagne-glasses
   className:
     icon: theme-misc@mission-completed
 
@@ -671,7 +671,7 @@ content:
   - What can we learn from this long journey?
 items:
   entries:
-    - icon: file-certificate
+    - icon: certificate
       title: Read the specification
       text: The specifications are formal and verbose but they <em>might already contain what you need</em>.
     - icon: list-check

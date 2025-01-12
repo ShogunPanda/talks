@@ -91,7 +91,7 @@ export default function CoverLayout({ className, style }: SlideProps): VNode {
               <span className={cleanCssClasses('theme@cover__header__author__description')}>
                 <Text
                   text={
-                    branding === false ? author.descriptionNoBranding : author.descriptionShort ?? author.description
+                    branding === false ? author.descriptionNoBranding : (author.descriptionShort ?? author.description)
                   }
                 />
               </span>

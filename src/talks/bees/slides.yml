@@ -30,13 +30,13 @@ options:
 title: How is that?
 items:
   entries:
-    - icon: pot-food
+    - icon: pizza-slice
       title: They are related to our food
       text: Over 70% of the food we eat is directly or indirectly related to their pollination.
-    - icon: dinosaur
+    - icon: meteor
       title: We are endangering them
       text: Pesticides and climate change made them an endangered species.
-    - icon: timeline-arrow
+    - icon: timeline
       title: No coming back
       text: If they disappear, we have no natural or artificial replacement.
 
@@ -52,13 +52,13 @@ options:
 title: Yes, we do!
 items:
   entries:
-    - icon: webhook
+    - icon: bezier-curve
       title: APIs are related to our application
       text: Over 100% of the application we use is directly or indirectly related to their quality.
-    - icon: dinosaur
+    - icon: meteor
       title: We are endangering them
       text: Adding complexity between applications and APIs made them an endangered species.
-    - icon: timeline-arrow
+    - icon: timeline
       title: No coming back
       text: If they disappear, we have no other replacement.
 
@@ -90,10 +90,10 @@ options:
 title: Say hello to SDKs
 items:
   entries:
-    - icon: webhook
+    - icon: bezier-curve
       title: We don't do everything by ourself
       text: Our application and servers often talk to third party services.
-    - icon: gear-code
+    - icon: code
       title: Third party usually give use a SDK
       text: The kit makes our life easier by simplifying integration.
     - icon: gift
@@ -152,7 +152,7 @@ items:
 title: What do we ALSO get, in short? (2/2)
 items:
   entries:
-    - icon: solid:star-sharp-half-stroke
+    - icon: star-half
       title: Quality
       text: |
         Often vendor automate the generation of the SDK out of API definitions. 
@@ -572,7 +572,7 @@ image:
 options:
   background: green
 decorations:
-  icon: party-horn
+  icon: champagne-glasses
   className:
     icon: theme-misc@mission-completed
 
@@ -582,7 +582,7 @@ content:
   - What can we learn from this long journey?
 items:
   entries:
-    - icon: timer
+    - icon: clock
       title: SDK are not always bad
       text: Some times making things manually will *cost too much time*.
     - icon: route

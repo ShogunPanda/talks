@@ -60,7 +60,7 @@ items:
     - icon: check-double
       title: Over 30 years of standards
       text: Several revision of the **ISO 18004** standard were created to ensure compliancy.
-    - icon: brain-circuit
+    - icon: brain
       title: Far beyond the original use case
       text: QR are currently used in many aspect of our life, from official uses to games.
 
@@ -71,7 +71,7 @@ items:
     - icon: square
       title: 2-dimension code
       text: The size and orientation are detected at scan time.
-    - icon: alt
+    - icon: language
       title: Multiple modes
       text: The data is encoded by choosing between 4 different modes.
     - icon: sliders
@@ -172,7 +172,7 @@ items:
     - icon: book
       title: QR codes are easy to draw
       text: Everything is well documented in ISO 18004 standard.
-    - icon: code-simple
+    - icon: code
       title: (Almost) no libraries needed
       text: Once you know which color each cell is, you're good to go.
     - image: '@theme/logo-black.webp'

@@ -49,7 +49,7 @@ export default function QuoteLayout({ className, style }: SlideProps): VNode {
         <>
           {primaryIcon !== false && (
             <SvgIcon
-              name={primaryIcon ?? 'lightbulb-on'}
+              name={primaryIcon ?? 'lightbulb'}
               className={cleanCssClasses(
                 'theme@quote__icon',
                 'theme@quote__icon--primary',

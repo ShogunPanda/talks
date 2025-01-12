@@ -45,7 +45,7 @@ items:
     - icon: sack-dollar
       title: Initially, it was free, not open
       text: In the 70s the *free software movement* challenged the for-profit based development.
-    - icon: split
+    - icon: arrows-split-up-and-left
       title: Free means too much
       text: In English, the word free is ambiguous. *Not paid* was the most understood meaning.
     - icon: code-fork
@@ -89,7 +89,7 @@ items:
     - icon: globe
       title: Different cultures, backgrounds and capabilities
       text: You get different point of views, which increases quality.
-    - icon: circle-euro
+    - icon: sack-dollar
       title: Low maintenance cost
       text: You don't need an office, just a version control server.
 
@@ -152,7 +152,7 @@ items:
     - icon: route
       title: Let them follow their path
       text: The Open Source model works because people can freely follow their paths.
-    - icon: party-horn
+    - icon: champagne-glasses
       title: It's a hobby
       text: Most collaborators send code in their free time, after a day of boring coding.
     - icon: code-fork
@@ -450,10 +450,10 @@ quote:
 title: Label everything
 items:
   entries:
-    - icon: arrow-progress
+    - icon: forward
       title: Have a process
       text: Following procedures will speed you up.
-    - icon: split
+    - icon: arrows-split-up-and-left
       title: Divide et impera
       text: Using labels helps categorizing and dividing tasks.
     - icon: heart
@@ -534,13 +534,13 @@ decorations:
 title: CI and workflows
 items:
   entries:
-    - icon: flame
+    - icon: fire
       title: Available everywhere
       text: In modern service you have a CI and workflow system.
     - icon: heart
       title: It's so easy
       text: Most of these tools are very easy to use.
-    - icon: shield-check
+    - icon: shield
       title: CI is a life saver
       text: Don't merge any PR with a red CI.
 
@@ -627,7 +627,7 @@ decorations:
 title: Where do you store the code?
 items:
   entries:
-    - icon: split
+    - icon: arrows-split-up-and-left
       title: It's better to keep things separate
       text: The management will be simplified.
     - icon: globe
@@ -655,7 +655,7 @@ items:
     - icon: hourglass
       title: ... but it doesn't end with you ...
       text: People are still owners and responsible for their contributions.
-    - icon: chart-network
+    - icon: circle-nodes
       title: ... so don't forget about others!
       text: Contributors should have a say in relevant administrative tasks.
 
@@ -691,7 +691,7 @@ items:
     - icon: globe
       title: New experiences
       text: All people are having their lives ...
-    - icon: chart-network
+    - icon: circle-nodes
       title: New perspectives
       text: ... and different point of views.
   horizontal: true

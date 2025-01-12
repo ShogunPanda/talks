@@ -80,13 +80,13 @@ items:
 title: ... and our brain, in particular
 items:
   entries:
-    - icon: brain-circuit
+    - icon: brain
       title: Everything you learn is useful
       text: New brain connections are literally created every second.
-    - icon: elephant
+    - icon: face-grin-tongue-wink
       title: You don't fully control your brain ...
-      text: '*Do not* think about an elephant. *You have lost! 😂*'
-    - icon: bed-front
+      text: '*Do not* think about an elephant. *You have lost!*'
+    - icon: bed
       title: ... and that is a good thing
       text: How many times your subconcious solved the problem?
 
@@ -103,12 +103,12 @@ items:
     - icon: paw
       title: (Chubby) Cats
       text: Those furry balls have seriously messed with my mind.
-    - icon: court-sport
+    - icon: futbol
       title: (Played) Soccer
       text: |
         Pretty obvious for a
         '84 Italian male. *Boring!*
-    - icon: thought-bubble
+    - icon: comment-dots
       title: Manga & Animes
       text: |
         It's easy to be an otaku now.
@@ -119,10 +119,10 @@ items:
 title: I have several passions (2/2)
 items:
   entries:
-    - icon: game-console-handheld
+    - icon: gamepad
       title: Videogames
       text: Since I was 6, as many developers. *Boring, again!*
-    - icon: swords
+    - icon: dice-d20
       title: RPG & LARP
       text: I started them late and they also seriously messed with my mind.
     - icon: code
@@ -178,10 +178,10 @@ items:
     - icon: language
       title: It has various possible translation
       text: The most commonly used is "Eternal Spring". *Who catches the citation?*
-    - icon: uniform-martial-arts
+    - icon: dragon
       title: It is part of kung fu
       text: In particular, it is part of the Southern China martial arts.
-    - icon: triangle
+    - icon: hand-fist
       title: Pretty atypical
       text: You won't see any spectacular roundhouse kicks or similar.
 
@@ -195,7 +195,7 @@ items:
     - icon: vihara
       title: It derives from Shaolin
       text: The tradition states the women monk Ng Mui as her original creator.
-    - icon: sword
+    - icon: gun
       title: It also includes weapons
       text: Butterfly knives and 3m staff are trained regularly.
 
@@ -234,7 +234,7 @@ className:
 title: Why did I chose Wing Tsun?
 items:
   entries:
-    - icon: gauge-max
+    - icon: gauge-high
       title: It focuses on effectiveness
       text: Every millisecond matters. *Ring a bell?*
     - icon: user-ninja
@@ -256,7 +256,7 @@ options:
 title: Let's clarify few things
 items:
   entries:
-    - icon: swords
+    - icon: chess-knight
       title: Fighting is everywhere
       text: Is not only on the ring or on the street. It's a general principle.
     - icon: vihara
@@ -306,7 +306,7 @@ quote:
   author: 1st Energy Principle
   light: true
   primaryIcon: false
-  secondaryIcon: sword
+  secondaryIcon: atom
 decorations:
   number: 1
   className:
@@ -333,7 +333,7 @@ quote:
   author: 2nd Energy Principle
   light: true
   primaryIcon: false
-  secondaryIcon: sword
+  secondaryIcon: atom
 decorations:
   number: 2
   className:
@@ -362,7 +362,7 @@ quote:
   author: 3rd Energy Principle
   light: true
   primaryIcon: false
-  secondaryIcon: sword
+  secondaryIcon: atom
 decorations:
   number: 3
   className:
@@ -391,7 +391,7 @@ quote:
   author: 4th Energy Principle
   light: true
   primaryIcon: false
-  secondaryIcon: sword
+  secondaryIcon: atom
 decorations:
   number: 4
   className:
@@ -435,7 +435,7 @@ items:
     - icon: hand
       title: It means "sticky hands"
       text: It's a drill system which focuses on *NEVER* losing contact with opponent's arms.
-    - icon: sensor-fire
+    - icon: hand-sparkles
       title: It stimulates reflexes
       text: As soon as you feel the way is free, *you hit*.
     - icon: user
@@ -611,10 +611,10 @@ items:
       text: |
         All the knowledge we have
         helps us in our daily tasks.
-    - icon: elephant
+    - icon: brain
       title: You can't control everything
       text: Including your own brain. *Remember the elephant?*
-    - icon: sword
+    - icon: user-ninja
       title: Programming is like fighting
       text: Fighting strategies can improve our approach to programming.
   horizontal: true

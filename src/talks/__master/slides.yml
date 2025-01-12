@@ -24,7 +24,7 @@ quote:
   light: true
   primaryIcon: network-wired
   primaryIconClassName: talk@quote__primary-icon
-  secondaryIcon: chart-network
+  secondaryicon: circle-nodes
   secondaryIconClassName: talk@quote__secondary-icon
 
 ---
@@ -131,7 +131,7 @@ grids:
     sequence: true
     className: talk@grid
 decorations:
-  icon: lightbulb-on
+  icon: lightbulb
 
 ---
 title: Default with code
@@ -162,7 +162,7 @@ code:
     }
   highlight: 2, 4
 decorations:
-  icon: lightbulb-on
+  icon: lightbulb
 
 ---
 layout: code
@@ -227,7 +227,7 @@ code:
     lineNotHighlighted: talk@line-not-highlighted
     lineHighlighted: talk@line-highlighted
 decorations:
-  icon: lightbulb-on
+  icon: lightbulb
 
 ---
 layout: half

@@ -47,7 +47,7 @@ items:
     - icon: sack-dollar
       title: Initially, it was free, not open
       text: In the 70s the *free software movement* challenged the for-profit based development.
-    - icon: split
+    - icon: arrows-split-up-and-left
       title: Free means too much
       text: In English, the word free is ambiguous. *Not paid* was the most understood meaning.
     - icon: code-fork
@@ -64,7 +64,7 @@ items:
     - icon: globe
       title: Different cultures, backgrounds and capabilities
       text: You get different point of views, which increases quality.
-    - icon: circle-euro
+    - icon: sack-dollar
       title: Low maintenance cost
       text: You don't need an office, just a version control server.
 
@@ -108,7 +108,7 @@ items:
     - icon: heart
       title: Passion
       text: Maintainers love that you use their software.
-    - icon: timer
+    - icon: clock
       title: Respect
       text: They don't owe you anything. They are giving you their *free* time.
     - icon: rocket
@@ -162,10 +162,10 @@ items:
     - icon: globe
       title: We are distributed
       text: Working across the globe introduced delays.
-    - icon: chart-network
+    - icon: circle-nodes
       title: We are different
       text: Developers come from different cultures and expertises.
-    - icon: timer
+    - icon: clock
       title: Time is finite
       text: We all have our lives. We don't have time to request missing informations.
 
@@ -197,7 +197,7 @@ options:
 title: Narrow things down
 items:
   entries:
-    - icon: face-zipper
+    - icon: face-tired
       title: Avoid flooding
       text: Even if you don't worry to overcommunicate, you can't just paste tons of output.
     - icon: arrows-to-circle
@@ -228,7 +228,7 @@ image:
 title: Follow up
 items:
   entries:
-    - icon: comments-question
+    - icon: comments
       title: Look out for clarification requests
       text: The maintainer might need additional information in order to process the report.
     - icon: lightbulb

@@ -17,7 +17,7 @@ export function resolveIcon(icon: string): Record<string, string> {
 
   const { package: pkg, alias, name, section } = groups
 
-  return { package: pkg ?? 'pro', alias, name, section: section ?? 'light' }
+  return { package: pkg ?? 'free', alias, name, section: section ?? 'solid' }
 }
 
 export function SvgIcon({ name: icon, className }: SvgIconProps): VNode {
