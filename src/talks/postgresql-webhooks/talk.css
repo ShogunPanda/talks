@@ -1,0 +1,15 @@
+/* stylelint-disable-next-line selector-class-pattern */
+.talk@ {
+  &code {
+    font-size: 0.45em;
+  }
+
+  &disabled {
+    opacity: 0.2;
+
+    &__icon {
+      --pi-icon-primary-color: var(--freya-color-gray);
+      opacity: 0.2;
+    }
+  }
+}

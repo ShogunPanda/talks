@@ -218,7 +218,8 @@
     justify-content: center;
 
     &--dark {
-      background-color: var(--freya-color-windi-blue-600);
+      /* background-color: var(--freya-color-windi-blue-600); */
+      background-color: var(--freya-color-windi-orange-600);
       color: var(--freya-color-white);
     }
 
@@ -276,7 +277,8 @@
         font-weight: 700;
 
         &--dark {
-          color: var(--freya-color-windi-amber-300);
+          /* color: var(--freya-color-windi-amber-300); */
+          color: var(--freya-color-black);
         }
 
         &--light {
@@ -292,11 +294,12 @@
       height: 2.5--sp;
 
       &--primary {
-        bottom: -0.4--sp;
+        bottom: -0.2--sp;
         left: 2--sp;
 
         &--dark {
-          --pi-icon-primary-color: var(--freya-color-windi-blue-500);
+          /* --pi-icon-primary-color: var(--freya-color-windi-blue-500); */
+          --pi-icon-primary-color: var(--freya-color-windi-orange-500);
         }
 
         &--light {
@@ -310,7 +313,8 @@
         transform: rotate(180deg);
 
         &--dark {
-          --pi-icon-primary-color: var(--freya-color-windi-blue-500);
+          /* --pi-icon-primary-color: var(--freya-color-windi-blue-500); */
+          --pi-icon-primary-color: var(--freya-color-windi-orange-500);
         }
 
         &--light {

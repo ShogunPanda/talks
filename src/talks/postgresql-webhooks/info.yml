@@ -1,0 +1,20 @@
+---
+config: common.config
+document:
+  title: 'How to create a PostgreSQL based webhook system'
+  titleFormatted: |
+    How to create a PostgreSQL
+    based webhook system
+  abstract: |
+    Webhooks are essential in modern API interactions, as they eliminate the need for polling-based 
+    architectures and significantly improve latency in distributed workflows by providing 
+    near-instantaneous responses to changes, enabling more efficient and real-time data 
+    synchronization across systems.
+
+    In this talk, I will demonstrate how to leverage PostgreSQL as a centralized message store for
+    queuing and managing webhook events with transactional integrity. 
+    Additionally, I will cover the implementation of a dead-letter queue (DLQ) to gracefully handle failures, 
+    cron jobs for managing recurring events, and a leader election mechanism to enforce an exactly-once
+    execution model, ensuring reliable and consistent event processing across distributed systems.
+  author: common.author
+  company: common.company

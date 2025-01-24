@@ -1,0 +1,724 @@
+---
+layout: cover
+# ---
+
+---
+layout: separator
+title: Don't shoot a fly with a cannon!
+image:
+  url: '@common/cannon.webp'
+options:
+  background: fuchsia
+
+---
+layout: hello
+# ---
+
+---
+title: Distributed data in a distributed world
+items:
+  entries:
+    - icon: globe
+      title: We don't live a in simple world
+      text: The complexity of data cannot be handled by a single system.
+    - icon: code-fork
+      title: Divide et impera
+      text: This represents the only possible path to have a scalable and reliable architecture.
+    - icon: bomb
+      title: With new powers come new challenges
+      text: How many point of failure would you like to have?
+
+---
+title: Time matters, as usual!
+items:
+  entries:
+    - icon: rotate
+      title: Distribution implies synchronization
+      text: When the data is distributed, keeping a global consistent state is **hard**.
+    - icon: plane-departure
+      title: Do it right or you will fail miserably
+      text: Not all customers want to deal with things like overbooking, so be careful with your data.
+  horizontal: true
+
+---
+layout: separator
+title: How do we keep updated?
+image:
+  url: '@common/server.webp'
+options:
+  background: amber
+
+---
+title: 'Batch updates via FTP or similar'
+items:
+  entries:
+    - icon: boxes-packing
+      title: The old good way
+      text: |
+        Still popular, especially in banks.
+        Your money depends on this, unfortunately.
+    - icon: car-burst
+      title: Not realtime and fragile
+      text: Data is processed with massive delays. A failure might impact the entire batch.
+  horizontal: true
+
+---
+title: Polling (pull)
+items:
+  entries:
+    - icon: clipboard-question
+      title: Relatively simple
+      text: Is responsibility of dependent system to periodically checks for updates.
+    - icon: clock
+      title: Almost realtime
+      text: The system receives the list of updates in much shorter time.
+    - icon: network-wired
+      title: Network intensive
+      text: A lot of uncessary requests are made, especially when updates are not frequent.
+
+---
+title: Events based (push)
+items:
+  entries:
+    - icon: bolt
+      title: Realtime
+      text: As soon as an update is available, all dependent systems are notified.
+    - icon: sack-dollar
+      title: Network optimized
+      text: Not a single unnecessary byte is sent over the wire.
+    - icon: hexagon-nodes
+      title: Delivery state is complex
+      text: The system must maintain the list of subscribers and handle delivery failures.
+
+---
+layout: separator
+title: |
+  Which one
+  shall we choose?
+image:
+  url: '@common/alternatives.webp'
+options:
+  background: amber
+
+---
+layout: separator
+title: Say hello to <span class="theme@fg-black">Webhooks</span>!
+image:
+  url: '@common/hook.webp'
+options:
+  background: green
+decorations:
+  logo: black
+
+---
+layout: quote
+title: What are we talking about?
+quote:
+  sentence: |
+    Webhooks are user-defined HTTP callbacks. They are usually triggered by some event, such as [...] a comment being posted to a blog and many more use cases.
+  author: Wikipedia
+  light: true
+  icons: false
+
+---
+layout: separator
+title: |
+  Let's implement
+  a real one!
+image:
+  url: '@common/action.webp'
+options:
+  background: orange
+decorations:
+  logo: black
+
+---
+title: General architeture
+items:
+  entries:
+    - icon: list-ol
+      title: Model as a queue
+      text: A webhook system is modeled as a queue of events.
+    - icon: diagram-next
+      title: Single target
+      text: Each queue is associated to a single URL.
+    - icon: table
+      title: Simple data structure
+      text: Few tables in a (No)SQL database are more than enough.
+
+---
+title: Yes, but which kind of queue?
+items:
+  entries:
+    - icon: link-slash
+      title: Eventual
+      text: The queue might not deliver all messages.
+    - icon: clone
+      title: At least once
+      text: The queue guarantees that all messages are delivered, but there might be repetitions.
+    - icon: '1'
+      title: Exactly once
+      text: Each message is guaranteed to be delivered only once.
+
+---
+title: Yes, but which kind of queue?
+items:
+  entries:
+    - icon: link-slash
+      title: Eventual
+      text: The queue might not deliver all messages.
+      className:
+        root: talk@disabled
+        icon: talk@disabled__icon
+    - icon: clone
+      title: At least once
+      text: The queue guarantees that all messages are delivered, but there might be repetitions.
+      className:
+        root: talk@disabled
+        icon: talk@disabled__icon
+    - icon: '1'
+      title: Exactly once
+      text: Each message is guaranteed to be delivered only once.
+
+---
+layout: separator
+title: What about failures?
+image:
+  url: '@common/firefighter.webp'
+options:
+  background: amber
+
+---
+title: Dead letter queue (DLQ)
+items:
+  entries:
+    - icon: rotate-right
+      title: Limited retries
+      text: A messages is retried a limited number of times.
+    - icon: bug
+      title: Separate queue for troubleshooting
+      text: Messages that cannot be delivered are moved to a separate queue.
+    - icon: circle-user
+      title: Manual intervention
+      text: A human operator is required to evaluate the DLQ.
+
+---
+title: Cron jobs
+items:
+  entries:
+    - icon: calendar-days
+      title: Messages can be repeated
+      text: A system can mark a message as "to be repeated regularly".
+    - icon: code-fork
+      title: Easy extension of the queue system
+      text: Once a message is delivered, it is enqueued again.
+    - icon: certificate
+      title: Standard syntax
+      text: The repetition interval syntax is really flexible.
+
+---
+layout: separator
+title: What about race conditions?
+image:
+  url: '@common/horses-race.webp'
+options:
+  background: amber
+decorations:
+  logo: black
+
+---
+title: Being equal is hard
+items:
+  entries:
+    - icon: atom
+      title: Atomicity is hard
+      text: On distributed system, atomic access is complex and easily leads to an inconsistent state.
+    - icon: users
+      title: Concurrency is even harder
+      text: If implemented wrong, multiple peers will easily ending up operating on the same resource.
+    - icon: handshake-slash
+      title: The queue model might be violated
+      text: Without coordination, policies like exactly-one might not be guaranteed.
+
+---
+title: Leader based queue system
+items:
+  entries:
+    - icon: people-line
+      title: All concur to elect a leader
+      text: All instance of the queue system must choose a leader.
+    - icon: user-large
+      title: Only the leader is active
+      text: No contention for resources and massive lock access attempts.
+    - icon: user-injured
+      title: Automatic failover
+      text: When the leader resigns or fails, a new leader is automatically selected.
+
+---
+title: A simple selection implementation
+items:
+  entries:
+    - icon: user-lock
+      title: Lock based
+      text: A distributed lock is used to select the leader.
+    - icon: traffic-light
+      title: Exclusivity is the key
+      text: Only one instance can hold the lock at any given time.
+    - icon: person-running
+      title: Bully-like algorithm
+      text: We are going replace the original concept of "higher ID" with locks.
+
+---
+layout: separator
+title: How do you easily get such a lock implementation?
+image:
+  url: '@common/algorithm.webp'
+options:
+  background: amber
+
+---
+layout: separator
+title: PostgreSQL <span class="theme@fg-black">Advisory Locks</span>
+image:
+  url: '@common/semaphore.webp'
+options:
+  background: green
+
+---
+title: The leader election prcoess
+items:
+  entries:
+    - index: 1
+      title: Lock access
+      text: All the peers, potentially at the same time, will try to get an exclusive acces to the lock.
+    - index: 2
+      title: Become the leader
+      text: Only one peer receives the lock and becomes the leader, other will be denied.
+    - index: 3
+      title: Leader coordinates
+      text: The leader will start the operation, potentially delegating to other peers.
+    - index: 4
+      title: Leader resigns or fail
+      text: When the leader voluntarily resigns or fails, the other peers start a new election.
+
+---
+layout: separator
+title: |
+  Stop talking please.
+  Show me the <span class="theme@fg-black">code</span>!
+image:
+  url: '@common/code.webp'
+options:
+  background: fuchsia
+
+---
+title: Technical stack
+grids:
+  - className: talk@icons-grid
+    entries:
+      - image: '@talk/nodejs.webp'
+        title: Node.js
+        className:
+          image: theme-misc@width-auto
+      - image: '@talk/postgresql.webp'
+        title: PostgreSQL
+      - image: '@talk/fastify.webp'
+        title: Fastify
+      - image: '@theme/logo-black.webp'
+        title: Watt
+
+---
+title: 'Database schema (1/2)'
+code:
+  language: sql
+  content: |
+    CREATE TABLE IF NOT EXISTS queues (
+      id SERIAL PRIMARY KEY,
+      name VARCHAR(255) NOT NULL,
+      url VARCHAR(2048) NOT NULL,
+      method VARCHAR(10) NOT NULL,
+      headers JSON DEFAULT NULL,
+      max_retries INTEGER NOT NULL DEFAULT 5,
+      created_at TIMESTAMPTZ NOT NULL DEFAULT NOW(),
+      UNIQUE(name, url, method, max_retries)
+    );
+
+---
+title: 'Database schema (2/2)'
+code:
+  language: sql
+  content: |
+    CREATE TABLE pending_messages (
+      id SERIAL PRIMARY KEY,
+      queue_id INTEGER NOT NULL REFERENCES queues(id),
+      headers JSON,
+      payload BYTEA DEFAULT NULL,
+      retries INTEGER DEFAULT 0,
+      schedule VARCHAR(100) DEFAULT NULL,
+      execute_at TIMESTAMPTZ DEFAULT NOW(),
+      created_at TIMESTAMPTZ NOT NULL DEFAULT NOW()
+    );
+
+    CREATE TABLE completed_messages (
+      id INTEGER,
+      queue_id INTEGER NOT NULL REFERENCES queues(id),
+      headers JSON,
+      payload BYTEA DEFAULT NULL,
+      retries INTEGER DEFAULT 0,
+      response TEXT,
+      created_at TIMESTAMPTZ NOT NULL DEFAULT NOW()
+    );
+
+    CREATE TABLE failed_messages (
+      id INTEGER,
+      queue_id INTEGER NOT NULL REFERENCES queues(id),
+      headers JSON,
+      payload BYTEA DEFAULT NULL,
+      retries INTEGER DEFAULT 0,
+      error TEXT,
+      created_at TIMESTAMPTZ NOT NULL DEFAULT NOW()
+    );
+  className:
+    root: talk@code
+
+---
+title: Services
+items:
+  entries:
+    - icon: brain
+      title: Processor
+      text: The queue system that deliver messages.
+    - icon: network-wired
+      title: API
+      text: It is used to add messages to the queue.
+    - icon: globe
+      title: Composer
+      text: A `@platformatic/composer` service which orchestrates all other services.
+    - icon: bullseye
+      title: Target
+      text: A sample Fastify application that receives the messages. It implements random failures.
+
+---
+title: 'Processor: Main'
+code:
+  language: javascript
+  content: |
+    async function main () {
+      const db = createConnectionPool({ bigIntMode: 'bigint' })
+
+      globalThis.platformatic.events.on('stop', async () => {
+        logger.info('Received stop event. Stopping processing jobs...')
+        abortController.abort()
+      })
+
+      const abortController = new AbortController()
+
+      while (!abortController.signal.aborted) {
+        await runAsLeader(db, () => {
+          logger.info('Successfully elected as leader. Starting processing jobs...')
+          return processJobs(db, abortController.signal)
+        })
+
+        await scheduler.wait(1000)
+      }
+
+      await db.dispose()
+    }
+
+---
+title: 'Processor: Leader election and main loop'
+code:
+  language: javascript
+  content: |
+    async function runAsLeader (db, task) {
+      return db.task(async leaderConnection => {
+        const [result] = await leaderConnection.query(
+          sql`SELECT pg_try_advisory_lock(0) as lock`
+        )
+
+        if (!result.lock) {
+          return
+        }
+
+        try {
+          await task()
+        } finally {
+          await leaderConnection.query(
+            sql`SELECT pg_advisory_unlock(0) as unlock`
+          )
+        }
+      })
+    }
+
+---
+layout: separator
+title: And now, let's deliver some messages!
+image:
+  url: '@common/letter.webp'
+options:
+  background: orange
+decorations:
+  logo: black
+
+---
+title: 'Processor: Query to select the next message'
+code:
+  language: javascript
+  content: |
+    export function getNextPendingMessageQuery () {
+      return sql`
+        SELECT
+          messages.id, messages.queue_id as queue, messages.headers as message_headers,
+          messages.payload, messages.retries, messages.schedule,
+          queues.url, queues.method, queues.headers as queue_headers, queues.max_retries
+        FROM
+          pending_messages as messages
+        INNER JOIN
+          queues ON messages.queue_id = queues.id
+        WHERE
+          execute_at < NOW()
+        ORDER BY
+          messages.execute_at ASC
+        LIMIT 1
+      `
+    }
+
+---
+title: 'Processor: Select and deliver a message'
+code:
+  language: javascript
+  content: |
+    async function processJobs (db, abortSignal) {
+      while (!abortSignal.aborted) {
+        let message
+        try {
+          const pending = await db.query(getNextPendingMessageQuery())
+          message = pending[0]
+
+          // Mark the message as "in-process" by clearing the execute_at field
+          if (message) {
+            await db.query(sql`UPDATE pending_messages SET execute_at = NULL WHERE id = ${id}`)
+          }
+        } catch (e) {
+          /* ... */
+          return
+        }
+
+        // No messages, wait for a while then continue
+        if (!message) {
+          await scheduler.wait(100)
+          continue
+        }
+
+        // Call the target, a non 2xx will be considered a failure
+        await invokeHook(db, message)
+      }
+    }
+  className:
+    root: talk@code
+
+---
+title: 'Processor: Deliver a message'
+code:
+  language: javascript
+  content: |
+    async function invokeHook (db, message) {
+      try {
+        const response = await fetch(message.url, {
+          method: message.method,
+          headers: {
+            'content-type': 'application/octet-stream',
+            ...message.queue_headers,
+            ...message.message_headers
+          },
+          body: message.payload
+        })
+
+        const responsePayload = {
+          status: response.status,
+          headers: Object.fromEntries(response.headers.entries()),
+          body: await response.text()
+        }
+
+        if (response.ok) {
+          await handleMessageSuccess(db, message, responsePayload)
+        } else {
+          await handleMessageFailure(db, message, responsePayload)
+        }
+      } catch (e) {
+        await handleMessageFailure(db, message, e)
+      }
+    }
+  className:
+    root: talk@code
+
+---
+layout: separator
+title: Why all those delays?
+image:
+  url: '@common/confused.webp'
+options:
+  background: amber
+decorations:
+  logo: black
+
+---
+title: 'Notifications based scheduling'
+items:
+  entries:
+    - icon: bed
+      title: Polling is not very efficient
+      text: But it was the easiest to implement. **Forgive my laziness.**
+    - icon: bolt
+      title: Pushing based scheduling is way better
+      text: The processor can listen for notifications and act accordingly.
+    - icon: bell
+      title: PostgreSQL pub/sub works flawlessly
+      text: Take a look at the `LISTEN` and `NOTIFY` commands. But don't forget about cron jobs.
+
+---
+title: 'Processor: Retry and error handling'
+code:
+  language: javascript
+  content: |
+    function markMessageAsCompletedQuery (message, response) {
+      return sql`
+        INSERT INTO completed_messages (id, queue_id, headers, payload, retries, response)
+        VALUES (${message.id}, ${message.queue}, ${message.message_headers}, NULL, ${message.retries}, ${JSON.stringify(response, null, 2)})
+      `
+    }
+
+    function deletePendingMessageQuery (id) {
+      return sql`DELETE FROM pending_messages WHERE id = ${id}`
+    }
+
+    async function handleMessageFailure (db, message, error) {
+      if (message.retries < message.max_retries) {
+        const timestamp = new Date(Date.now() + exponentialBackoff(message.retries + 1)).toISOString()
+        try {
+          await db.query(sql`UPDATE pending_messages  SET retries = retries + 1, execute_at = ${timestamp} WHERE id = ${message.id}`)
+        } catch (e) {
+          /* ... */
+        }
+      } else {
+        try {
+          await db.tx(async db => {
+            await db.query(markMessageAsFailedQuery(message, error))
+            await db.query(deletePendingMessageQuery(id))
+          })
+        } catch (e) {
+          /* ... */
+        }
+      }
+    }
+  className:
+    root: talk@code
+
+---
+title: 'Processor: Reschedule a successful cron job'
+code:
+  language: javascript
+  content: |
+    function markMessageAsCompletedQuery (message, response) {
+      const serializedResponse = JSON.stringify(response, null, 2)
+
+      return sql`
+        INSERT INTO completed_messages (id, queue_id, headers, payload, retries, response)
+        VALUES (${message.id}, ${message.queue}, ${message.message_headers}, NULL, ${message.retries}, ${serializedResponse})
+      `
+    }
+
+    function rescheduleMessageQuery (message) {
+      return sql`
+        UPDATE pending_messages
+        SET retries=0, execute_at = ${parser.parseExpression(message.schedule).next()} WHERE id=${message.id}
+      `
+    }
+
+    async function handleMessageSuccess (db, message, response) {
+      try {
+        await db.tx(async db => {
+          await db.query(markMessageAsCompletedQuery(message, response))
+          await db.query(message.schedule ? rescheduleMessageQuery(message) ? deletePendingMessageQuery(message.id))
+        })
+      } catch (e) {
+        /* ... */
+      }
+    }
+  className:
+    root: talk@code
+
+---
+layout: separator
+title: Remember, successful message <span class="theme@fg-black">cannot</span> be retried!
+image:
+  url: '@common/danger-line.webp'
+options:
+  background: red
+
+---
+title: 'API: Message creation endpoint'
+code:
+  language: javascript
+  content: |
+    server.route({
+      method: 'POST',
+      url: '/messages',
+      async handler (request, reply) {
+        let { queue, headers, payload, schedule } = body
+
+        if (typeof queue === 'string') {
+          /* ... Find the queue by name */
+        }
+
+        if (!Buffer.isBuffer(payload)) {
+          payload = typeof payload !== 'string' ? JSON.stringify(payload) : payload.toString()
+        }
+
+        const [row] = await db.query(sql`
+          INSERT INTO pending_messages (queue_id, headers, payload, schedule)
+          VALUES (${queue}, ${headers ?? null}, ${payload}, ${schedule})
+          RETURNING id;
+        `)
+
+        reply.code(201)
+        return row
+      },
+      schema: {/* ... */}
+    })
+  className:
+    root: talk@code
+
+---
+layout: separator
+title: Mission completed!
+image:
+  url: '@common/completed.webp'
+options:
+  background: green
+decorations:
+  icon: champagne-glasses
+  className:
+    icon: theme-misc@mission-completed
+
+---
+title: Check it out!
+content:
+  - All the code is on GitHub!
+  - qr: https://github.com/ShogunPanda/postgresql-webhooks
+  - <span class="theme-misc@qr__footer">[https://github.com/ShogunPanda/postgresql-webhooks](https://github.com/ShogunPanda/postgresql-webhooks)</span>
+className:
+  qr: theme-misc@qr--big
+
+---
+layout: quote
+quote:
+  sentence: |
+    Progress is man's ability
+    to complicate simplicity.
+  author: Thor Heyerdahl
+
+---
+layout: end
+# ---
+
