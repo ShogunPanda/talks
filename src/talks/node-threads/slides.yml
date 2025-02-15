@@ -1,0 +1,687 @@
+---
+layout: cover
+# ---
+
+---
+layout: separator
+title: |
+  There is a lot 
+  in the unknown!
+image:
+  url: '@talk/unknown.webp'
+options:
+  background: fuchsia
+
+---
+layout: hello
+# ---
+
+---
+layout: half
+title: First of all, let’s give credits!
+content:
+  - This talk is co-authored by Platformatic CTO and friend of mine, the only **Matteo Collina**.
+  - <span class="theme@fg-pink">**Whatever goes wrong today, please complain directly to him on Twitter!**</span>
+  - <strong class="theme@fg-blue">[@matteocollina](https://twitter.com/@matteocollina)</strong>
+image:
+  url: '@talk/matteo.webp'
+decorations:
+  logo: white
+
+# TODO@PI: Slide su Matteo
+
+---
+title: "Let's start the right way! 🤦‍♂️"
+image:
+  url: '@talk/chatgpt.webp'
+
+---
+layout: separator
+title: |
+  Node.js is 
+  (no longer) 
+  single threaded ...
+subtitle: '... and it hasn’t been for a while now!'
+image:
+  url: '@talk/postman.webp'
+options:
+  background: orange
+
+---
+title: '2018: “Node.js has threads!”'
+content:
+  - image: '@talk/anna.webp'
+  - <span class="theme-misc@qr__footer">[https://www.youtube.com/watch?v=-ssCzHoUI7M](https://www.youtube.com/watch?v=-ssCzHoUI7M)</span>
+className:
+  image: talk@anna
+
+---
+title: Worker Thread API
+content:
+  - This is supported from Node.js 10.5.0 (June 2018).
+items:
+  entries:
+    - icon: code
+      title: 'Create workers via `worker_threads` module'
+      text: 'https://nodejs.org/dist/latest-v22.x/docs/api/worker_threads.html'
+    - icon: code-fork
+      title: Each thread has an independent event loop
+      text: This is crucial to off-load CPU intensive tasks out of the main thread.
+
+---
+title: How do threads communicate?
+items:
+  entries:
+    - icon: envelope
+      title: The API is fairly simple and straightforward.
+      text: Each thread can communicate with others by sending messages over a `MessagePort`.
+    - icon: car-tunnel
+      title: Additional channels can be created via the `MessageChannel` API.
+      text: It returns a pair of message ports, one meant to be sent to the other thread.
+
+---
+layout: separator
+title: Do you see how far we have gone?
+image:
+  url: '@talk/pidgeon.webp'
+options:
+  background: orange
+
+---
+title: How do threads communicate?
+content: The graph below shows a summary of parent-children thread communication.
+image:
+  url: '@talk/worker-threads-communication.webp'
+
+---
+layout: side
+title: 'BroadcastChannel API'
+content:
+  - Less known, equally powerful.
+  - This can be used to implement a simple Pub/Sub pattern.
+  - All channels are identified by a global ID and each thread can subscribe to events.
+code:
+  language: javascript
+  content: |
+    import { 
+      BroadcastChannel, 
+      isMainThread, 
+      Worker 
+    } from 'node:worker_threads'
+
+    const channel = new BroadcastChannel('main')
+
+    if (isMainThread) {
+      channel.onmessage = function (event) {
+        console.log(event.data) // Will print 10 events
+      }
+
+      for (let n = 0; n < 10; n++) {
+        new Worker(new URL(import.meta.url))
+      }
+    } else {
+      channel.postMessage('ready')
+    }
+
+---
+layout: side
+title: postMessageToThread
+content:
+  - This is only available in Node 22.5.0+.
+  - The API enables for direct thread to thread communication without the need of using `MessageChannel`.
+  - The recipient has to install a handler for the `process.workerMessage` event in order to receive messages.
+code:
+  language: javascript
+  content: |
+    import { 
+      isMainThread, 
+      postMessageToThread, 
+      threadId, 
+      Worker 
+    } from 'node:worker_threads'
+
+    if (isMainThread) {
+      for (let n = 0; n < 3; n++) {
+        new Worker(new URL(import.meta.url))
+      }
+    } else if (threadId === 1) {
+      postMessageToThread(3, { message: 'ready' })
+    } else {
+      process.on('workerMessage', (value, source) => {
+        // Will print "1 -> 3: Ready"
+        console.log(`${source} -> ${threadId}:`, value) 
+      })
+    }
+
+---
+layout: image
+title: How can threads communicate?
+image:
+  url: '@talk/children.webp'
+
+---
+title: Efficient inter-thread RPC
+items:
+  entries:
+    - icon: 'code'
+      title: The `node:events` API alow is not suitable for the job.
+      text: It is not designed to work between threads.
+    - icon: 'handshake'
+      title: Let's add promises!
+      text: By leveraging the EventEmitter and the Promise API, we can easily build a RPC system.
+    - icon: 'id-card'
+      title: All you need is an unique identifier and `resolve` method.
+      text: The ID is sent to the other thread so that can be used later in a shared event handler.
+
+---
+title: 'Example: multithreaded HTTP server'
+content: We all know this snippet is more worth than 1000 words.
+code:
+  language: javascript
+  content: |
+    // In the server creation function, define the following
+    const pending = {}
+    worker.on('message', message => {
+      pending[message.id](message)
+    })
+
+    // In the route handler, define the following
+    let resolve
+    const promise = new Promise(_resolve => {
+      pending[request.reqId] = _resolve
+    })
+
+    worker.postMessage({id: request.reqId })
+    const hash = await promise
+
+---
+title: Is all that easy?
+layout: separator
+image:
+  url: '@talk/messages-flood.webp'
+decorations:
+  logo: white
+options:
+  background: amber
+
+---
+title: Structured Clone
+content:
+  - The reality is a bit harsher.
+items:
+  entries:
+    - icon: 'envelope'
+      title: Not all objects can be sent via a MessagePort.
+      text: A object cannot contain functions or some native Node.js object (as `net.Socket`).
+
+    - icon: 'code'
+      title: The object will be cloned according to the Structured Clone Algorithm.
+      text: |
+        [Check the documentation on MDN!](https://developer.mozilla.org/en-US/docs/Web/API/Web_Workers_API/Structured_clone_algorithm)
+
+---
+title: Transferable (1/2)
+content:
+  - You can’t always clone everything.
+  - |
+    Some objects, usually the ones backed by a C++ representation, 
+    can only be **moved** between threads.
+  - |
+    These objects are called **transferrable** and thus must be 
+    explicitly listed in the second argument of `postMessage`.
+
+---
+title: Transferable (2/2)
+content:
+  - |
+    Some example of transferable objects are:
+    * `MessagePort`
+    * `CryptoKey`
+    * `FileHandle`
+    * `WebStream` (`ReadableStream` and `WritableStream`)
+  - The full list can be found in the [MessagePort documentation](https://nodejs.org/docs/latest/api/worker_threads.html#portpostmessagevalue-transferlist).
+
+---
+layout: separator
+title: |
+  Ready for 
+  another dive?
+image:
+  url: '@talk/turtle-pool.webp'
+options:
+  background: amber
+
+---
+title: Piscina
+layout: side
+content:
+  - It is a powerful NPM module which provides an easy to use API.
+  - A Piscina instance dynamically adjusts the number of workers to the maximum number of parallelism available on the machine.
+  - All the messaging and synchronization is managed so you focus on the core logic.
+  - https://www.npmjs.com/package/piscina
+image:
+  url: '@talk/piscina.webp'
+
+---
+title: How to use Piscina
+content: How easy can multithreading be?
+items:
+  entries:
+    - code:
+        language: javascript
+        content: |
+          // Main thread
+
+          import { Piscina } from 'piscina'
+
+          const piscina = new Piscina({
+            filename: new URL(
+              './worker.mjs', import.meta.url
+            ).href
+          })
+
+          const result = await piscina.run({ a: 4, b: 6 })
+          console.log(result) // Prints 10
+    - image: '@talk/arrow-right.webp'
+      className:
+        root: talk@example__arrow
+        image: talk@example__arrow__image
+    - code:
+        language: javascript
+        content: |
+          // Worker thread
+
+          export default ({ a, b }) => {
+            return a + b
+          }
+  horizontal: true
+  spacer: false
+  gap: false
+  defaultclassName: false
+
+---
+layout: separator
+title: Are we done?
+image:
+  url: '@talk/turtles-tired.webp'
+decorations:
+  logo: white
+options:
+  background: fuchsia
+
+---
+layout: separator
+title: |
+  Do you know what
+  you can use Worker 
+  Threads for?
+image:
+  url: '@talk/batman-superman.webp'
+decorations:
+  logo: white
+options:
+  background: amber
+
+---
+layout: separator
+subtitle: |
+  “It's not who you are underneath, 
+  it’s what you do that defines you”
+title: “Everything is impossible until somebody does it”
+image:
+  url: '@talk/batman.webp'
+options:
+  background: black
+decorations:
+  logo: white
+className:
+  root: talk@batman
+  contents: theme@separator__contents--reverse
+  title: theme@separator__title--reverse
+  subtitle: theme@separator__subtitle--reverse
+
+---
+title: How can a Promise be invoked synchronously?
+content: You can use Worker Threads to invoke an async function... **synchronously**!
+code:
+  language: javascript
+  content: |
+    import { setTimeout as sleep } from 'node:timers/promises'
+
+    async function echo (value) {
+      await sleep(1000)
+      return value
+    }
+
+---
+title: everysync (1/2)
+layout: side
+content:
+  - A tiny utility to expose an asynchronous API via a worker thread… synchronously!
+  - qr: https://github.com/mcollina/everysync
+  - <span class="theme-misc@qr__footer">[https://github.com/mcollina/everysync](https://github.com/mcollina/everysync)
+code:
+  language: javascript
+  content: |
+    import { join } from 'node:path'
+    import { strictEqual } from 'node:assert'
+    import { Worker } from 'node:worker_threads'
+    import { makeSync } from 'everysync'
+
+    const buffer = new SharedArrayBuffer(1024, {
+      maxByteLength: 64 * 1024 * 1024,
+    })
+    const worker = new Worker(join(__dirname, 'echo.mjs'), {
+      workerData: { data: buffer },
+    })
+    const api = makeSync(buffer)
+
+    assert.strictEqual(api.echo(42), 42)
+    worker.terminate()
+className:
+  qr: theme-misc@qr--big
+
+---
+title: everysync (2/2)
+content: This is all you need to expose an API from a thread.
+code:
+  language: javascript
+  content: |
+    import { wire } from 'everysync'
+    import { workerData } from 'node:worker_threads'
+    import { setTimeout } from 'node:timers/promises'
+
+    wire(workerData.data, {
+      async echo(value) {
+          await setTimeout(1000)
+          return value
+      }
+    })
+
+    // Keep the event loop alive
+    setInterval(() => {}, 100000)
+
+---
+layout: separator
+title: How?
+image:
+  url: '@talk/batcave.webp'
+options:
+  background: black
+decorations:
+  logo: white
+className:
+  root: talk@batman
+
+---
+title: '`Atomics.waitAsync` and `SharedArrayBuffer`'
+content:
+  - '`Atomics.waitAsync` is used to synchronize the main thread with the worker thread in meta.'
+  - Payload contains the message to be sent, and length its is size.
+image:
+  url: '@talk/shared-array-buffer.webp'
+
+---
+title: Use the same mechanism of `postMessage`
+content: 'https://github.com/mcollina/everysync/blob/main/lib/objects.js'
+code:
+  language: javascript
+  content: |
+    import { serialize, deserialize } from 'node:v8'
+
+    function read(buffer, byteOffset = 0) {
+      const view = new DataView(buffer, byteOffset)
+      const length = view.getUint32(0, true)
+      const object = deserialize(new Uint8Array(buffer, byteOffset + 4, length))
+      return object
+    }
+
+    function write(buffer, object, byteOffset = 0) {
+      const data = serialize(object)
+        
+      if (buffer.byteLength < data.byteLength + 4 + byteOffset) {
+        if (!buffer.growable) {
+          throw new Error('Buffer is not growable')
+        }
+        
+        buffer.grow(data.byteLength + 4 + byteOffset)
+      }
+        
+      const view = new DataView(buffer, byteOffset)
+      view.setUint32(0, data.byteLength, true)
+      new Uint8Array(buffer, byteOffset + 4).set(data)
+    }
+  className:
+    root: talk@code
+
+---
+title: Calling a method to the worker thread
+content: All happens thanks to the `SharedArrayBuffer`.
+code:
+  language: javascript
+  content: |
+    const OFFSET = 64
+    // * 0: writing from worker, reading from main
+    const TO_WORKER = 0
+    // * 1: writing from main, reading from worker
+    const TO_MAIN = 1
+
+    const data = new SharedArrayBuffer(1024, {
+      maxByteLength: 64 * 1024 * 1024,
+    })
+
+    const metaView = new Int32Array(data)
+    write(data, { key: 'echo', args: "42" }, OFFSET)
+    Atomics.store(metaView, TO_MAIN, 1)
+    Atomics.notify(metaView, TO_MAIN, 1)
+
+    const res = Atomics.wait(metaView, TO_WORKER, 0, timeout)
+    Atomics.store(metaView, TO_WORKER, 0)
+    if (res === 'ok') {
+      const obj = read(data, OFFSET)
+      console.log('result', obj)
+    } else {
+      throw new Error(`The response timed out after ${timeout}ms`)
+    }
+  className:
+    root: talk@code
+
+---
+title: Receiving the calls using Atomics.waitAsync
+content: Don’t forget to also use `Atomics.notify`.
+code:
+  language: javascript
+  content: |
+    import { workerData } from 'node:worker_threads'
+    import { setTimeout as sleep } from 'node:timers/promises'
+    const data = workerData.data
+    const metaView = new Int32Array(data)
+    // ...
+
+    const obj = { echo }
+
+    while (true) {
+      const waitAsync = Atomics.waitAsync(metaView, TO_MAIN, 0)
+      const res = await waitAsync.value
+      Atomics.store(metaView, TO_MAIN, 0)
+
+      if (res === 'ok') {
+        const { key, args } = read(data, OFFSET)
+        const result = await obj[key](...args)
+        write(data, result, OFFSET)
+        Atomics.store(metaView, TO_WORKER, 1)
+        Atomics.notify(metaView, TO_WORKER, 1)
+      }
+    }
+  className:
+    root: talk@code
+
+---
+layout: side
+title: Why this is useful?
+content:
+  - '**Pino** uses this technique to support async transports and flush the logs on exit.'
+  - qr: https://getpino.io
+  - <span class="theme-misc@qr__footer">[https://getpino.io](https://getpino.io)</span>
+className:
+  qr: theme-misc@qr--big
+image:
+  url: '@talk/pino.webp'
+
+---
+title: Loader hooks
+content:
+  - |
+    Node.js supports loading hooks via the `node:module` module, which allows to 
+    customize the resolving and the loading of any file or module, including Node.js internals.
+  - |
+    While the `import` or `require` statements are still synchronous, all the 
+    works under the hood happens in an asynchronous way thanks to the use of 
+    an internal separate worker thread, with a mechanism similar to everysync.
+  - |
+    The multithreading architecture is the foundation of features 
+    like `require(esm)` or `-experimental-strip-types`.
+
+---
+layout: image
+title: Are we finally done?
+image:
+  url: '@talk/turtles-escaping.webp'
+decorations:
+  logo: white
+
+---
+title: Introducing Watt, the Node.js application server
+image:
+  url: '@talk/watt.webp'
+
+---
+title: Watt
+content:
+  - Watt (https://platformatic.dev/watt) abstracts away time-consuming tasks like monitoring, logging and tracing all while supporting full stack applications.
+  - It allows you to run multiple Node.js services within the same process with inter-threading communication over HTTP.
+  - Each service runs in its worker thread so they cannot interfere with each other.
+
+---
+title: How do you configure Watt?
+content: An easy to understand configuration file is all you need. Create it with `wattpm init`.
+code:
+  language: json
+  content: |
+    {
+      "$schema": "https://schemas.platformatic.dev/wattpm/2.44.0.json",
+      "server": {
+        "hostname": "127.0.0.1",
+        "port": 3000
+      },
+      "logger": {
+        "level": "error"
+      },
+      "autoload": {
+        "path": "web"
+      },
+      "watch": true
+    }
+
+---
+title: How do you create a service?
+content:
+  - Conventions over configuration. **Ring a bell?**
+  - Create a folder named after the service in the `web` folder then create a `package.json` file with some values like in the snippet below.
+code:
+  language: json
+  content: |
+    {
+      "private": true,
+      "type": "module",
+      "main": "index.js",
+      "dependencies": {
+        "@platformatic/node": "^2.44.0"
+      }
+    }
+
+---
+title: Configure your service
+content:
+  - Create a new watt.json in the service folder.
+  - You can use `wattpm import` to get one very easily. It generates the following file.
+code:
+  language: output
+  content: |
+    shogun@panda:~/example$ wattpm import
+    shogun@panda:~/example$ cat watt.json
+    {
+      "$schema": "https://schemas.platformatic.dev/@platformatic/node/2.44.0.json"
+    }
+
+---
+title: How do you write a service?
+items:
+  entries:
+    - index: 1
+      title: Create a simple Node.js application
+      text: Export a `build` or `create` function which returns a supported HTTP application.
+    - index: 2
+      title: You can omit `listen`.
+      text: Watt will automatically invoke listen for entrypoint only. Other services are not exposed.
+    - index: 3
+      title: Use the mesh network via `fetch`.
+      text: Each service is internally reachable on the `http://[SERVICE].plt.local` domain.
+
+---
+title: Network-less HTTP
+content: The Platformatic mesh network. Our secret sauce.
+image:
+  url: '@talk/mesh.webp'
+  className: theme@default__image--full-width
+
+---
+title: 'Example: a service which invokes another service'
+content:
+  - Like earlier, we all know this snippet is more worth than 1000 words.
+code:
+  language: javascript
+  content: |
+    import fastify from 'fastify'
+
+    export function create() {
+      const app = fastify({})
+
+      app.get('/fast', async () => {
+        return { time: Date.now() }
+      })
+
+      app.get('/slow', async () => {
+        const response = await fetch('http://worker.plt.local/hash')
+        return response.json()
+      })
+
+      return app
+    }
+
+---
+layout: image
+image:
+  url: '@talk/bootcamp.webp'
+
+---
+title: GoFundMe campaign
+content:
+  - We are running a GoFundMe campaign to support the Code Their Future initiative.
+  - qr: https://www.gofundme.com/f/code-their-future-unlocking-opportunities-for-underserved-k
+  - <span class="theme-misc@qr__footer theme-misc@qr__footer--small">[https://www.gofundme.com/f/code-their-future-unlocking-opportunities-for-underserved-k](https://www.gofundme.com/f/code-their-future-unlocking-opportunities-for-underserved-k)</span>
+className:
+  qr: theme-misc@qr--big
+
+---
+layout: quote
+quote:
+  sentence: |
+    Keep your face always toward the sunshine
+    and shadows will fall behind you.
+  author: 'Walt Whitman'
+
+---
+layout: end
+# ---
+

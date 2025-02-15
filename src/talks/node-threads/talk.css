@@ -1,0 +1,16 @@
+/* stylelint-disable-next-line selector-class-pattern */
+.talk@ {
+  &anna {
+    max-width: 5--sp;
+    max-height: 5--sp;
+    margin-bottom: 8rem;
+  }
+
+  &batman {
+    background-color: var(--freya-color-windi-gray-900);
+  }
+
+  &code {
+    font-size: 0.45em;
+  }
+}

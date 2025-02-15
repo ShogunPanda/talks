@@ -1,4 +1,5 @@
 import {
+  Image,
   QRCode,
   cleanCssClasses,
   tokenizeCssClasses,
@@ -40,8 +41,22 @@ export function Text({ text, className }: TextProps): VNode {
 }
 
 export function ComplexContent({ raw, slide }: ComplexContentProps): VNode {
+  const {
+    talk: { id },
+    resolveImage
+  } = useClient()
+
   if (raw.qr) {
     return <QRCode data={raw.qr} className={{ code: cleanCssClasses(slide.className.qr) }} />
+  }
+
+  if (raw.image) {
+    return (
+      <Image
+        src={resolveImage('main', id, raw.image)}
+        className={cleanCssClasses('theme@default__image', 'theme@default__image--with-content', slide.className.image)}
+      />
+    )
   }
 
   return <></>

@@ -234,6 +234,12 @@
       &--no-content {
         max-height: 3.5--sp;
       }
+
+      &--full-width {
+        width: 100%;
+        max-width: 100%;
+        max-height: none;
+      }
     }
 
     &__code {

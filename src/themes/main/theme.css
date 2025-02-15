@@ -390,6 +390,10 @@
       flex-direction: column;
       grid-area: a;
       padding: var(--pi-padding);
+
+      &--reverse {
+        flex-direction: column-reverse;
+      }
     }
 
     &__image {
@@ -406,6 +410,10 @@
       font-family: var(--pi-font-bitter);
       font-size: 33--pt;
       font-weight: 700;
+
+      &--reverse {
+        margin-top: 0.4--sp;
+      }
     }
 
     &__subtitle {
@@ -413,6 +421,10 @@
       margin-top: 0.4--sp;
       margin-bottom: 0;
       text-align: justify;
+
+      &--reverse {
+        margin-top: 0;
+      }
     }
 
     &__callout {
@@ -884,6 +896,10 @@
       display: block;
       font-weight: 700;
       text-align: center;
+
+      &--small {
+        font-size: 0.9em;
+      }
     }
   }
 
