@@ -47,6 +47,10 @@ export async function setupServer(context: BuildContext, theme: Theme, talk: Tal
     slide.decorations.className ??= {}
     slide.className ??= {}
 
+    if (slide.icon) {
+      iconsToLoad.push(slide.icon)
+    }
+
     for (const item of slide.items?.entries ?? []) {
       if (item.code) {
         await ensureRenderedCode(item.code)

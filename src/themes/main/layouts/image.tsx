@@ -15,7 +15,7 @@ export default function ImageLayout({ className, style }: SlideProps): VNode {
     title,
     subtitle,
     image,
-    className: { root: rootClassName, title: titleClassName, subtitle: subtitleClassName },
+    className: { root: rootClassName, contents: contentsClassName, title: titleClassName, subtitle: subtitleClassName },
     decorations: { logo }
   } = slide
 
@@ -32,7 +32,7 @@ export default function ImageLayout({ className, style }: SlideProps): VNode {
       className={cleanCssClasses('theme@image', className, rootClassName)}
       style={{ ...style, backgroundImage: `url(${imageUrl})` }}
     >
-      <main className={cleanCssClasses('theme@image__contents')}>
+      <main className={cleanCssClasses('theme@image__contents', contentsClassName)}>
         {(title || subtitle) && (
           <h1 className={cleanCssClasses('theme@callout theme@image__title', titleClassName)}>
             <Text text={title} />

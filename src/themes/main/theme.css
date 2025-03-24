@@ -43,6 +43,12 @@
     }
   }
 
+  &default {
+    &__image {
+      margin-bottom: 8rem;
+    }
+  }
+
   &icon {
     color: var(--pi-icon-primary-color);
 
@@ -228,6 +234,11 @@
       color: var(--freya-color-black);
     }
 
+    &--bad {
+      background-color: var(--freya-color-windi-red-600);
+      color: var(--freya-color-white);
+    }
+
     &__title {
       margin: 0;
     }
@@ -270,6 +281,10 @@
         &--light {
           color: var(--freya-color-blue);
         }
+
+        &--bad {
+          color: var(--freya-color-white);
+        }
       }
 
       &__author {
@@ -282,6 +297,10 @@
         }
 
         &--light {
+          color: var(--freya-color-black);
+        }
+
+        &--bad {
           color: var(--freya-color-black);
         }
       }
@@ -305,6 +324,10 @@
         &--light {
           --pi-icon-primary-color: var(--freya-color-windi-gray-300);
         }
+
+        &--bad {
+          --pi-icon-primary-color: var(--freya-color-windi-red-500);
+        }
       }
 
       &--secondary {
@@ -319,6 +342,10 @@
 
         &--light {
           --pi-icon-primary-color: var(--freya-color-windi-gray-300);
+        }
+
+        &--bad {
+          --pi-icon-primary-color: var(--freya-color-windi-red-500);
         }
       }
     }
@@ -397,6 +424,15 @@
     }
 
     &__image {
+      overflow: hidden;
+      grid-area: b;
+      width: 5--sp;
+      height: 100%;
+      background-repeat: no-repeat;
+      background-size: cover;
+    }
+
+    &__icon {
       overflow: hidden;
       grid-area: b;
       width: 5--sp;
@@ -871,6 +907,14 @@
 .theme-misc@ {
   &width-auto {
     width: auto;
+  }
+
+  &block {
+    display: block;
+  }
+
+  &align-center {
+    text-align: center;
   }
 
   &mission-completed {

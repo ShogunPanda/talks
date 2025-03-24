@@ -24,11 +24,9 @@ content:
   - <span class="theme@fg-pink">**Whatever goes wrong today, please complain directly to him on Twitter!**</span>
   - <strong class="theme@fg-blue">[@matteocollina](https://twitter.com/@matteocollina)</strong>
 image:
-  url: '@talk/matteo.webp'
+  url: '@common/matteo.webp'
 decorations:
   logo: white
-
-# TODO@PI: Slide su Matteo
 
 ---
 title: "Let's start the right way! 🤦‍♂️"

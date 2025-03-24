@@ -1,0 +1,802 @@
+---
+layout: cover
+# ---
+
+---
+title: How can Platformatic help?
+content:
+  - Platformatic gives you the complete out-of-the-box primitive to deploy, optimize, autoscale, and secure all your Node.js apps. No rewrites, no overhauls. **Just plug and play.**
+  - qr: https://qr.link/uCLwdt
+  - <span class="theme-misc@qr__footer">[https://qr.link/uCLwdt](https://qr.link/uCLwdt)</span>
+className:
+  qr: theme-misc@qr--big
+
+---
+layout: separator
+title: |
+  Don't count your chickens before they hatch.
+image:
+  url: '@talk/dinosaur-egg.webp'
+options:
+  background: fuchsia
+
+---
+layout: hello
+# ---
+
+---
+layout: half
+title: First of all, let’s give credits!
+content:
+  - This talk has originally been authored by Platformatic CTO and friend of mine, the only **Matteo Collina**.
+  - <span class="theme@fg-pink">**Whatever goes wrong today, please complain directly to him on Twitter!**</span>
+  - <strong class="theme@fg-blue">[@matteocollina](https://twitter.com/@matteocollina)</strong>
+image:
+  url: '@common/matteo.webp'
+decorations:
+  logo: white
+
+---
+title: I think we should start by looking at numbers.
+content:
+  - image: '@talk/downloads.webp'
+  - '<span class="theme-misc@block theme-misc@align-center">**30 Billion** downloads per year</span>'
+
+---
+layout: quote
+title: Usually we ready this all over the internet...
+quote:
+  sentence: ZYX will flip the default backend JavaScript runtime from Node.js
+  author: 'Random excited user #1'
+  variant: bad
+
+---
+layout: quote
+title: ... or, actually, something like this.
+quote:
+  sentence: XYZ will destroy Node.js
+  author: 'Random excited user #2'
+  variant: bad
+
+---
+layout: separator
+title: This talk is about a question we are trying to answer…
+image:
+  url: '@common/questions-2.webp'
+options:
+  background: amber
+
+---
+layout: image
+title: Is Node.js dead yet?
+image:
+  url: '@talk/sunset.webp'
+
+---
+layout: image
+title: Period.
+image:
+  url: '@common/no.webp'
+
+---
+layout: separator
+title: ...let me tell you a secret!
+subtitle: To all of you that "aim" to destroy other technologies...
+image:
+  url: '@common/lego-astronaut.webp'
+options:
+  background: sky
+className:
+  contents: theme@separator__contents--reverse
+  title: theme@separator__title--reverse
+  subtitle: theme@separator__subtitle--reverse
+decorations:
+  logo: black
+
+---
+title: A technology born in *1959* is on the RAISE!
+content:
+  - Have you have heard about **COBOL**?
+  - image: '@talk/cobol.webp'
+  - 'Source: https://www.tiobe.com/tiobe-index/'
+
+---
+title: jQuery is used by *94.4%* of the JS-enabled sites
+content:
+  - And v4 was just released!
+  - image: '@talk/jquery.webp'
+  - 'Source: https://w3techs.com/technologies/overview/javascript_library'
+
+---
+layout: separator
+title: What about Node.js?
+image:
+  url: '@common/node.webp'
+options:
+  background: amber
+
+---
+title: Node.js is the most popular technology according to StackOverflow
+content:
+  - image: '@talk/node-popularity.webp'
+  - 'Source: https://survey.stackoverflow.co/2023/#technology-most-popular-technologies'
+
+---
+title: No, bundling npm and Node.js was not a mistake
+content:
+  - A combo that solve software reuse, at scale. No one else did.
+  - image: '@talk/npm.webp'
+  - 'Source: http://www.modulecounts.com/'
+
+---
+title: Module usage also grew
+content:
+  - Downloads of readable-stream (4th most downloaded module on npm)
+  - image: '@talk/modules-downloads.webp'
+  - 'The "usage" of Node.js is growing roughly *+50% year over year*, or doubling every 2 years '
+
+---
+title: Half of Node.js downloads are the headers files
+content:
+  - image: '@talk/node-by-os.webp'
+  - 'Source: https://nodedownloads.nodeland.dev/'
+
+---
+title: What are "headers" downloads?
+content:
+  - |
+    Headers are downloaded whenever an "npm i" needs to compile binary addons.
+    Then they are cached to disk.
+  - image: '@talk/node-headers.webp'
+
+---
+title: Downloads of the Node.js binary, per OS
+content:
+  - We believe Linux is the default for CI. OSS projects often tests on WIndows for CI as well.
+  - image: '@talk/node-by-binary.webp'
+
+---
+layout: separator
+title: 30
+subtitle: million monthly downloads in 2021
+icon: download
+options:
+  background: green
+className:
+  title: talk@download__title
+  subtitle: talk@download__subtitle
+  icon: talk@download__icon
+
+---
+layout: separator
+title: 60
+subtitle: million monthly downloads in 2024
+icon: download
+options:
+  background: green
+className:
+  root: theme@separator--reverse
+  title: talk@download__title
+  subtitle: talk@download__subtitle
+  icon: talk@download__icon
+
+---
+title: Node.js v16, v14, v12 are massively popular, while they all have <span class="talk@danger-banner">known vulnerabilities</span>
+content:
+  - image: '@talk/node-by-version.webp'
+
+---
+layout: separator
+title: If you are not updating Node.js...
+image:
+  url: '@common/danger-strip.webp'
+options:
+  background: amber
+
+---
+layout: separator
+title: ...you are putting yourself at risk!
+image:
+  url: '@common/danger-strip.webp'
+options:
+  background: red
+className:
+  root: theme@separator--reverse
+
+---
+title: Long Term Support (LTS) Schedule
+content:
+  - image: '@talk/lts.webp'
+
+---
+title: |
+  Most teams update their Node.js 
+  version every 2 LTS releases
+content:
+  - image: '@talk/node-by-version-latest.webp'
+
+---
+title: Organization Activity from Nov 2023 to Nov 2024
+content: 'Source: https://next.ossinsight.io/analyze/nodejs?period=past_12_months#overview'
+items:
+  entries:
+    - index: 19,917
+      title: Star Earned
+      text: '\+ 6.61 %'
+      className:
+        contents: theme@fg-green
+    - index: 5,261
+      title: Pull Requests
+      text: '\+ 8.72%'
+      className:
+        contents: theme@fg-green
+    - index: 28,438
+      title: Reviews
+      text: '\- 2.71 %'
+      className:
+        contents: theme@fg-red
+    - index: 4,499
+      title: Issues
+      text: '\- 3.69 %'
+      className:
+        contents: theme@fg-red
+  horizontal: true
+
+---
+title: Commits & Pushes to Node.js Core
+content: 'Source https://ossinsight.io/analyze/nodejs/node'
+image:
+  url: '@talk/node-commits-pushes.webp'
+
+---
+title: The number of pull requests is (mostly) stable
+content: 'Source https://ossinsight.io/analyze/nodejs/node'
+image:
+  url: '@talk/node-prs.webp'
+
+---
+layout: separator
+title: We work hard to keep <span class="theme@fg-amber">you</span> safe!
+image:
+  url: '@common/danger-strip.webp'
+options:
+  background: sky
+
+---
+title: Node.js Security Submissions
+content: Submissions are not turned into vulnerabilities, but they need to be handled by the team
+image:
+  url: '@talk/node-security-submissions.webp'
+
+---
+title: Average time to first response
+content: Submissions are not turned into vulnerabilities, but they need to be handled by the team
+image:
+  url: '@talk/average-response-time.webp'
+
+---
+title: Average time to triage
+content: Submissions are not turned into vulnerabilities, but they need to be handled by the team
+image:
+  url: '@talk/average-triage-time.webp'
+
+---
+title: Node.js was one of the first project sponsored by
+content:
+  - image: '@talk/alpha-omega.webp'
+  - Alpha-Omega is an associated project of the OpenSSF, established in February 2022, funded by Microsoft, Google, and Amazon, and with a *mission to protect society by catalyzing sustainable security improvements* to the most critical open source software projects and ecosystems.
+  - '*The project aims to build a world where critical open source projects are secure and where security vulnerabilities are found and fixed quickly.*'
+className:
+  image: talk@image--half
+
+---
+title: Total funding for Security work
+image:
+  url: '@talk/security-funding.webp'
+
+---
+layout: separator
+title: What did we ship in the last few years?
+image:
+  url: '@common/ship.webp'
+options:
+  background: amber
+
+---
+title: ESM
+code:
+  language: javascript
+  content: |
+    // addTwo.mjs
+    function addTwo(num) {
+        return num + 2
+    }
+
+    export { addTwo }
+
+    // app.mjs
+    import { addTwo } from './addTwo.mjs'
+
+    // Prints: 6
+    console.log(addTwo(4))
+className:
+  root: talk@code
+
+---
+title: Threads
+code:
+  language: javascript
+  content: |
+    import {
+      Worker,
+      isMainThread,
+      setEnvironmentData,
+      getEnvironmentData,
+    } from 'node:worker_threads'
+
+    if (isMainThread) {
+      setEnvironmentData('Hello', 'World!')
+      const worker = new Worker(import.meta.filename)
+    } else {
+      console.log(getEnvironmentData('Hello')) // Prints 'World!'
+    }
+className:
+  root: talk@code
+
+---
+title: Fetch
+code:
+  language: javascript
+  content: |
+    const res = await fetch('https://example.com/data')
+    const json = await res.json()
+    console.log(json)
+className:
+  root: talk@code
+
+---
+title: Web Platform Compatibility
+content:
+  - |
+    - `fetch()` and Response
+    - Web Streams
+    - Web Crypto
+    - `FormData`
+    - `structuredClone()`
+    - `TextEncoder` and `TextDecoder`
+    - `Blob` and `File`
+    - `EventTarget`
+    - Initial `Symbol.dispose`
+  - ... and there's more!
+
+---
+title: Promises
+code:
+  language: javascript
+  content: |
+    import { readFile } from 'node:fs/promises'
+
+    try {
+      const filePath = new URL('./package.json', import.meta.url)
+      const contents = await readFile(filePath, { encoding: 'utf8' })
+      console.log(contents)
+    } catch (err) {
+      console.error(err.message)
+    }
+className:
+  root: talk@code
+
+---
+title: '`node:` only core modules'
+items:
+  entries:
+    - code:
+        language: javascript
+        content: |
+          import assert from 'assert'
+          import test  from 'test'
+    - code:
+        language: javascript
+        content: |
+          import assert from 'node:assert'
+          import test  from 'node:test'
+  horizontal: true
+
+---
+title: 'Watch mode'
+items:
+  entries:
+    - icon: code
+      title: Few simple CLI flags
+      text: '`--watch` command line flag, `--watch-path` customizes watched files'
+    - icon: eye
+      title: Watches imported files and restarts Node.js when they change
+      text: Works with test runner to rerun tests
+    - icon: code-fork
+      title: Limited platform support
+      text: macOS and Windows only
+
+---
+layout: side
+title: AsyncLocalStorage
+content: |
+  Without it, we would not have had 
+  *React Server Components*!
+code:
+  language: javascript
+  content: |
+    import http from 'node:http'
+    import { AsyncLocalStorage } from 'node:async_hooks'
+
+    const asyncLocalStorage = new AsyncLocalStorage()
+
+    function logWithId(msg) {
+      const id = asyncLocalStorage.getStore()
+      console.log(`${id !== undefined ? id : '-'}: `, msg)
+    }
+
+    let idSeq = 0
+    http.createServer((req, res) => {
+      asyncLocalStorage.run(idSeq++, () => {
+        logWithId('start')
+        
+        // Imagine any chain of async operations here
+        setImmediate(() => {
+          logWithId('finish')
+          res.end()
+        })
+      })
+    }).listen(8080)
+
+    http.get('http://localhost:8080')
+    http.get('http://localhost:8080')
+decorations:
+  logo: white
+
+---
+title: WebCrypto
+code:
+  language: javascript
+  content: |
+    import { webcrypto } from 'node:crypto'
+
+    const subtle = webcrypto.subtle
+
+    async function main() {
+      const key = await webcrypto.subtle.generateKey(
+        { name: 'HMAC', hash: 'SHA-256', length: 256 }, 
+        true, 
+        [ 'sign', 'verify' ]
+      )
+
+      const enc = new TextEncoder()
+      const message = enc.encode('I love cupcakes')
+      const sign = await subtle.sign({ name: 'HMAC' }, key, message)
+
+      return Buffer.from(sign).toString('hex')
+    }
+
+    console.log(await main())
+
+---
+title: util.parseArgs()
+code:
+  language: javascript
+  content: |
+    import { parseArgs } from 'node:util'
+
+    const args = ['-f', '--bar', 'b']
+
+    const options = {
+      foo: {
+        type: 'boolean',
+        short: 'f'
+      },
+      bar: {
+        type: 'string'
+      }
+    }
+
+    const { values, positionals } = parseArgs({ args, options })
+
+    console.log(args)
+    // Prints: [Object: null prototype] { foo: true, bar: 'b' } []
+
+---
+title: Single Executable Applications
+items:
+  entries:
+    - icon: box-archive
+      title: Inject application code into Node.js binary.
+      text: Originally developed by Postman Labs
+    - icon: code
+      title: Single CommonJS file is currently supported
+      text: Binaries can be distributed without Node/npm installation.
+    - icon: code-fork
+      title: Node.js project offers a helper module named postject
+      text: Similar tools exist. They should work but have not been tested.
+
+---
+title: Permission System
+items:
+  entries:
+    - icon: heart
+      title: Simple to use CLI flags
+      text: '`--experimental-permissions`, `--allow-fs-read`, `--allow-fs-write`, `--allow-child-process`, and `--allow-worker`.'
+    - icon: code
+      title: '`process.permissions.has` API'
+      text: '`process.permissions.deny()` has been removed but may be added again in the future.'
+
+---
+title: Test Runner
+items:
+  entries:
+    - icon: flask-vial
+      title: Supports subtests, skipping, only, lifecycle hooks
+      text: '`node:test` module, `--test` flag, `test` on npm.'
+    - icon: clone
+      title: Supports function and timer mocking.
+      text: Module mocking soon.
+    - icon: code
+      title: Code coverage via `--experimental-test-coverage`
+      text: Reporters via `--test-reporter` and `--test-reporter-destination`.
+    - icon: heart
+      title: Good reporting defaults
+      text: Defaults to `spec` or `tap` on stdout based on TTY.
+
+---
+title: Test Runner
+code:
+  language: javascript
+  content: |
+    import assert from 'node:assert'
+    import test from 'node:test'
+
+    test('synchronous passing test', (t) => {
+      // This test passes because it does not throw an exception.
+      assert.strictEqual(1, 1)
+    })
+
+    test('asynchronous failing test', async (t) => {
+      // This test fails because the Promise returned by the async
+      // function is rejected.
+      assert.strictEqual(1, 2)
+    })
+className:
+  root: talk@code
+
+---
+title: WebSocket
+content: Thanks *Matthew Aitken* for implementing this!
+code:
+  language: output
+  content: |
+    shogun@panda:~/example$ node
+    Welcome to Node.js v22.12.0.
+    Type ".help" for more information.
+    > WebSocket
+    [class WebSocket extends EventTarget] {
+      CONNECTING: 0,
+      OPEN: 1,
+      CLOSING: 2,
+      CLOSED: 3
+    }
+className:
+  root: talk@code
+
+---
+layout: separator
+title: Are you using the latest Node.js features?
+subtitle: Or are you still stuck in 2015?
+image:
+  url: '@common/clock.webp'
+options:
+  background: pink
+decorations:
+  logo: black
+
+---
+layout: separator
+title: What's coming?
+subtitle: |
+  Let’s look at the two 
+  most exciting things in v22!
+image:
+  url: '@common/road.webp'
+options:
+  background: amber
+
+---
+layout: image
+title: require(esm)
+subtitle: '.mjs is not needed anymore'
+image:
+  url: '@common/fry-money.webp'
+className:
+  contents: talk@image__contents
+
+---
+title: require(esm)
+content:
+  - |
+    Learn more on Joyee’s blog:
+    https://joyeecheung.github.io/blog/2024/03/18/require-esm-in-node-js/
+  - Thanks to *Geoffrey Booth* for remove the need of `.mjs`.
+code:
+  language: javascript
+  content: |
+    'use strict'
+
+    const { answer } = require('./esm.mjs')
+    console.log(answer)
+
+---
+layout: image
+title: 'Typescript'
+image:
+  url: '@common/fry-money.webp'
+className:
+  contents: talk@image__contents
+
+---
+title: Automatic TypeScript support
+content: Thanks *Marco Ippolito* for implementing this!
+items:
+  entries:
+    - code:
+        language: javascript
+        content: |
+          // hello.ts
+          import { 
+            setTimeout as sleep
+          } from 'node:timers/promises'
+
+          function hello(who: string) {
+            console.log(`Hello ${who}!`)
+          }
+
+          await sleep(1000)
+          hello('world')
+    - code:
+        language: output
+        content: |
+          shogun@panda:~/example$ node hello.ts
+          (node:30248) ExperimentalWarning: Type Stripping is
+          an experimental feature and might change at any time
+          (Use `node --trace-warnings ...` to show where 
+          the warning was created)
+          Hello world!
+  horizontal: true
+
+---
+layout: separator
+title: Node.js is not always relaxing...
+image:
+  url: '@talk/mountain.webp'
+options:
+  background: orange
+
+---
+layout: separator
+title: |
+  ...because 
+  we need you!
+image:
+  url: '@talk/start.webp'
+options:
+  background: orange
+className:
+  root: theme@separator--reverse
+
+---
+layout: image
+title: Project Governance
+image:
+  url: '@talk/senate.webp'
+decorations:
+  logo: white
+
+---
+image:
+  url: '@talk/openjs.webp'
+---
+title: Node.js core collaborators maintain the nodejs/node GitHub repository
+content:
+  - '*@nodejs/collaborators* have commit access to the nodejs/node repository and access to the Node.js continuous integration (CI) jobs.'
+  - |
+    Both collaborators and non-collaborators may propose changes to the Node.js source code. 
+    The mechanism to propose such a change is a GitHub pull request (PR).
+  - Collaborators review and merge (<i>land</i>) pull requests.
+
+---
+title: The review process
+content:
+  - |
+    Two collaborators must approve a pull request before the pull request can land. 
+    (<i>One collaborator approval is enough if the pull request has been open for more than 7 days.</i>)
+  - |
+    Approving a pull request indicates that the collaborator accepts responsibility for the change.
+    Approval must be from collaborators who are not authors of the change.
+  - |
+    If a collaborator opposes a proposed change, then the change cannot land.
+    **The exception is if the TSC votes to approve the change despite the opposition.**
+  - |
+    Involving the TSC is usually unnecessary: often, discussions or further changes **result in collaborators removing their opposition**.
+
+---
+title: The Node.js Technical Steering Committee
+content: |
+  The TSC voting members are responsible for all technical development within the Node.js project, including:
+
+  - Setting release dates.
+  - Release quality standards.
+  - Technical direction.
+  - Project governance and process.
+  - GitHub repository hosting.
+  - Conduct guidelines.
+  - Maintaining the list of additional Collaborators.
+  - Development process and any coding standards.
+  - Mediating technical conflicts between Collaborators or Foundation projects.
+
+---
+title: In case of disagreements, the TSC votes
+content:
+  - TSC members can be either regular members or voting members.
+  - |
+    Regular members can attend meetings and participate in TSC discussions, but do not vote.
+    Voting members can do everything regular members can do, and also have the ability to cast votes when consensus is not reached on an issue.
+  - TSC memberships are not time-limited and there is no maximum size of the TSC. The TSC must have at least four voting members.
+  - '**No more than one-fourth of the TSC voting members may be affiliated with the same employer at any time.**'
+
+---
+layout: image
+title: No one can control Node.js
+image:
+  url: '@talk/scream.webp'
+
+---
+layout: separator
+title: |
+  We all have to
+  to <span class="theme@fg-amber">COMPROMISE</span>
+  to achieve our objectives
+image:
+  url: '@talk/peace.webp'
+options:
+  background: sky
+
+---
+layout: separator
+title: |
+  Do you want to have
+  a say  in the 
+  future of Node.js?
+image:
+  url: '@talk/send-pr.webp'
+  className: talk@send-pr
+options:
+  background: amber
+
+---
+layout: separator
+title: |
+  Start contributing!
+image:
+  url: '@talk/start.webp'
+options:
+  background: green
+className:
+  root: theme@separator--reverse
+
+---
+layout: quote
+quote:
+  sentence: |
+    It is not how old you are
+    but how you are old.
+  author: Jules Renard
+
+---
+layout: end
+# ---
+

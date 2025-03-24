@@ -382,3 +382,11 @@ a:focus {
 a:not([class]) {
   font-weight: 700;
 }
+
+ul {
+  padding-left: 3rem;
+
+  & > li {
+    padding-left: 3rem;
+  }
+}

@@ -1,6 +1,7 @@
 import { cleanCssClasses, useClient, useSlide, type SlideProps } from '@perseveranza-pets/freya/client'
 import { type VNode } from 'preact'
 import { Text } from '../../common/components/common.js'
+import { SvgIcon } from '../../common/components/icons.js'
 import { type Slide } from '../../common/models.js'
 import { SlideWrapper } from '../components/common.js'
 
@@ -15,8 +16,15 @@ export default function SeparatorLayout({ className, style }: SlideProps): VNode
     title,
     subtitle,
     image,
+    icon,
     options: { background },
-    className: { root: rootClassName, contents: contentsClassName, title: titleClassName, subtitle: subtitleClassName }
+    className: {
+      root: rootClassName,
+      contents: contentsClassName,
+      title: titleClassName,
+      subtitle: subtitleClassName,
+      icon: iconClassName
+    }
   } = slide
 
   let { foreground } = slide.options
@@ -37,7 +45,7 @@ export default function SeparatorLayout({ className, style }: SlideProps): VNode
       index={index}
       className={cleanCssClasses(
         'theme@separator',
-        !image && 'theme@separator--no-image',
+        !image && !icon && 'theme@separator--no-image',
         background && `theme@bg-${background}`,
         foreground && `theme@fg-${foreground}`,
         className,
@@ -66,6 +74,8 @@ export default function SeparatorLayout({ className, style }: SlideProps): VNode
           style={{ backgroundImage: `url(${imageUrl})` }}
         />
       )}
+
+      {!image && icon && <SvgIcon name={icon} className={cleanCssClasses('theme@separator__icon', iconClassName)} />}
     </SlideWrapper>
   )
 }

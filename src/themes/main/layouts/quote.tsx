@@ -10,11 +10,24 @@ export default function QuoteLayout({ className, style }: SlideProps): VNode {
 
   const {
     title,
-    quote: { sentence, author, primaryIcon, primaryIconClassName, secondaryIcon, secondaryIconClassName, light, icons },
+    quote: {
+      sentence,
+      author,
+      primaryIcon,
+      primaryIconClassName,
+      secondaryIcon,
+      secondaryIconClassName,
+      light,
+      icons,
+      variant: slideVariant
+    },
     className: { root: rootClassName, title: titleClassName }
   } = slide
 
-  const variant = light ? 'light' : 'dark'
+  let variant = slideVariant
+  if (!variant) {
+    variant = light ? 'light' : 'dark'
+  }
 
   if (variant === 'dark') {
     slide.decorations.permalink = 'white'

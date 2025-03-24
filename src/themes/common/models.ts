@@ -24,6 +24,7 @@ export interface SlideClasses {
   subtitle?: string
   contents?: string
   image?: string
+  icon?: string
   qr?: string
   raw?: string
 }
@@ -74,6 +75,7 @@ export interface Quote {
   secondaryIcon?: string | false
   primaryIconClassName?: string
   secondaryIconClassName?: string
+  variant?: string
 }
 
 export interface Decorations {
@@ -99,6 +101,7 @@ export interface Slide extends BaseSlide {
   items?: Items
   grids?: Grid[]
   image?: Image
+  icon?: string
   code?: CodeDefinition
   highlight?: Highlight
   quote: Quote

@@ -1,0 +1,18 @@
+---
+config: common.config
+document:
+  title: 'The alleged "end" of Node.js is much ado about nothing'
+  titleFormatted: |
+    The alleged "end" of Node.js 
+    is much ado about nothing
+  abstract: |
+    Despite the exaggerated claims about its decline, Node.js is thriving. Its continued evolution pushes the boundaries of what the modern web can do. 
+
+    We'll start by debunking myths about Node.js, showcasing its recent enhancements and robust performance in the tech landscape.
+
+    The focus then shifts to Node.js's current role in server-side programming and cloud-native applications, emphasizing the vibrant community contributions that drive its progress. 
+    We'll also explore how integrating modern JavaScript features and the influence of emerging technologies are shaping Node.js's future, not signaling its end.
+
+    Concluding, the talk projects a bright future for Node.js, identifying growth areas and dispelling any misconceptions about its relevance in the evolving world of technology.
+  author: common.author
+  company: common.company
