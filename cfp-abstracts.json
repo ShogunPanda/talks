@@ -1,0 +1,107 @@
+[
+  {
+    "name": "Master Template",
+    "keyword": "cfp§1",
+    "text": "Master Template\n\nMaster template for testing. Never deployed to production."
+  },
+  {
+    "name": "The bees are important: use SDKs wisely",
+    "keyword": "cfp§2",
+    "text": "The bees are important: use SDKs wisely\n\nIt is a well-known fact that if bees go extinct, many things in the world (if not the world itself)would disappear.\n\nThe same goes for third-party APIs (which, with a horrible pun, translates to bees in Italian).Most of the time vendors providea SDK for your language to interact with their API. While thisspeeds up productivity, it slows down performance and makes you dependent on SDK bugs or supplychain vulnerabilities, that are not always addressed at the speed you would expect. Moreover, younever deal with the API directly and this removes the pressure to vendors for a developer-firstdesigned APIs.\n\nIn this talk, I will show how most of the time you don’t need an SDK since you can easily codeeverything you need by yourself using a simple HTTP call."
+  },
+  {
+    "name": "How to breed a good OSS community",
+    "keyword": "cfp§3",
+    "text": "How to breed a good OSS community\n\nYou started creating a new amazing framework, or library, or proof-of-concept. Then you are amazed by your work andwant to enable other to use it. A new Open Source Software (OSS) is just born and you are now responsible for it.\n\nNot too late, new people start using, and contributing to it. The community grows and with it, its maintenanceburden and complexity. If only you knew which good choices to make from the very first day…\n\nFear no more, this talk will give you a pletora of good indications and advices on how to breed a healthy OSScommunity from the very first day."
+  },
+  {
+    "name": "Compiling and bundling JS, the painless way",
+    "keyword": "cfp§4",
+    "text": "Compiling and bundling JS, the painless way\n\nIn the last years, the JavaScript ecosystem has grown exponentially.\n\nWith it, many different compilers and build systems came to life to compete to reach the best possible performances,better stability, and compatibility with the language features.\n\nWhile five years ago, we had a few choices for compiling and bundling JavaScript (for either client or server),today, we have many good alternatives. ESBuild, SWC, Vite, WebPack... what are the differences between those tools?How do I choose the right one for my project?\n\nWhat can we predict about the future of the JavaScript ecosystem?"
+  },
+  {
+    "name": "Horizontal Scaling of a Web3 system to the sky and beyond in AWS",
+    "keyword": "cfp§5",
+    "text": "Horizontal Scaling of a Web3 system to the sky and beyond in AWS\n\n[web3.storage](http://web3.storage) is a system living on top of [Interplanetary File System(IPFS)](https://ipfs.io) to provide non technical people access to a completely decentralized file sharing networkdesigned to preserve and grow humanity's knowledge.\n\nThe massive success of the initiative quickly brought the system to a point were it was not able to handle thegrowth. Uploaded files were only available for downloads after several days due to limited capacity. Adding newprocessing nodes took literally days due to the complex bootstrap procedures mandated by the different networkprotocols involved.\n\nIn this talk I will show how we have been able to migrate to a new fully stateless system by carefully makingassumption and leveraging AWS services. We developed a system that now can perform infinite horizontal scalabilityand it is able to consistently handle millions of uploads per day."
+  },
+  {
+    "name": "Maths or magic? End-to-end encryption explained with art",
+    "keyword": "cfp§6",
+    "text": "Maths or magic? End-to-end encryption explained with art\n\nEvery time we send a message on the most popular messaging platforms, we want to make sure that our communication isprivate and inaccessible to malicious users.\n\nWe also want to ensure that in case of a data breach, the messages will be encrypted so that no one couldpotentially easily decrypt them. But how do we do that?\n\nHow does end-to-end encryption work, and is it really that secure?\n\nIn this interactive talk, we will see how to make our communications secure by implementing one of the most populare2e encryption algorithms... with some help from the public!"
+  },
+  {
+    "name": "Don’t break GraphQL, extend it!",
+    "keyword": "cfp§7",
+    "text": "Don’t break GraphQL, extend it!\n\nGraphQL is powerful technology to retrieve and send complex structures from remote locations with a simple andeffective syntax. One of its perks is avoid under-fetching and over-fetching as the client specifically requests thefields it’s interested in.\n\nBut what happens if we need to enrich or customize the data set and we can’t modify the upstream GraphQL server?Shall we break the spec?\n\nIn this talk I will show you how to use the resources the GraphQL specification already gives us to solve this issuewithout having to break the rules."
+  },
+  {
+    "name": "Node.js HTTP parser, what's going on?",
+    "keyword": "cfp§8",
+    "text": "Node.js HTTP parser, what's going on?\n\nNode.js HTTP relies on llhttp parser, which is a both a semi-obscure piece of code and semi-abandoned project.\n\nAs the parser is a critical part of Node.js, do we have better alternatives for easier maintainability? Let's findout."
+  },
+  {
+    "name": "Love your maintainers",
+    "keyword": "cfp§9",
+    "text": "Love your maintainers\n\nNo developer is an island and no developer is perfect. This means that you cannot create anything without using components written by someone else and these components will have defects or missing features. At some point in our life we all asked for support to someone else.\n\nBut being a maintainer is not an easy task at all. Think about receiving tons of reports with partial or missing information, or being yelled by strangers for not being responsive or fast enough.\n\nFor the health of our industry we must love our maintainers more: in this talk I’ll show how to politely ask for help and how to make sure you provide all the necessary informations."
+  },
+  {
+    "name": "Programming with a martial art principles",
+    "keyword": "cfp§10",
+    "text": "Programming with a martial art principles\n\nIn our daily studying effort, we all read article, blogs, books, watch video or attend conferences to learnsomething new about this bizarre industry we live in.\n\nBut we are not only developers and we have a life far from our keyboards. If we bring our other passions andphilosophies in our coding experience we reach a broad new set of possibilities.\n\nFor instance, I’m a martial art practitioner (Which one? No spoilers!) and I recently started noticing that when Ibring that art principles in my coding activities I get unblocked much faster. In this talk I will show how."
+  },
+  {
+    "name": "Milo, a new HTTP parser for Node.js",
+    "keyword": "cfp§11",
+    "text": "Milo, a new HTTP parser for Node.js\n\nNode.js HTTP parsing currently relies on llhttp, a parser which provides very good performance but has currentlysome challenges for the health of the runtime.\n\nIs it possible to create a modern, maintenable, well documented, secure and performant alternative? Yes it is!\n\nLet me introduce you Milo, a new Rust based HTTP parser which I plan to integrate into Node.js and let me show youhow you can help be a part of its first Rust component."
+  },
+  {
+    "name": "Welcome to the QRverse: let's build a rendering service",
+    "keyword": "cfp§12",
+    "text": "Welcome to the QRverse: let's build a rendering service\n\nDespite being 30 years old, QR codes have only recently started becoming widely used in mainstream applications,thanks to the availability of mobile phones and ease of implementation.\n\nHave you ever wondered how these codes work? How hard would it be to implement a rendering service?\n\nIn this talk, I will show you how Platformatic makes it very easy to create a QR code renderingservice in just a few minutes."
+  },
+  {
+    "name": "The last 5 years of streams in Node.js",
+    "keyword": "cfp§13",
+    "text": "The last 5 years of streams in Node.js\n\nThanks to a community of passionate contributors, Node.js is constantly evolving. Streams have been a core featuresince the beginning but are still very much in active development.\n\nIn this talk I will guide the audience through the changes that have been added in the last five years of Node.jsdevelopment and how they impacted performance. Do you already know how to use them properly?\n\nFinally I’ll introduce readable-stream v4.0.0, a full refactor which brings all these changes to user-land,regardless of the Node.js version installed on the system."
+  },
+  {
+    "name": "The tale of avoiding a time-based DDOS attack in Node.js",
+    "keyword": "cfp§14",
+    "text": "The tale of avoiding a time-based DDOS attack in Node.js\n\nWeb applications are commonly vulnerable to several Distributed Denial of Service attacks, sometimes in unexpectedways. An example is the SlowLoris attack, an exploit that leads to service interruption by simply sending the datato the server as slowest as possible.\n\nIn this talk I will tell the tale of how it took almost 13 years for Node to be completely protected by SlowLorisattack. I will also show that sometimes prioritizing performance can lead to incorrect fixes that can result in afalse sense of protection."
+  },
+  {
+    "name": "From Smart Home to Smart Cats: extending my home automation to my pets",
+    "keyword": "cfp§15",
+    "text": "From Smart Home to Smart Cats: extending my home automation to my pets\n\nWhen going online and searching for new gadgets for our home, we often find Alexa, HomeKit or Google Assistantcompatibility badges. Are these compatibility layers hard to code? What if I want to code mine?\n\nThe truth is that every gadget that is connected to the internet is probably speaking to an HTTP or MQTT API. Andthis means you know how to use it.\n\nIn this talk, I will show you how I easily made my cat’s life way technological."
+  },
+  {
+    "name": "Workshop: The bees are important: use SDKs wisely",
+    "keyword": "cfp§16",
+    "text": "Workshop: The bees are important: use SDKs wisely\n\nIt is a well-known fact that if bees go extinct, many things in the world (if not the world itself)would disappear.\n\nThe same goes for third-party APIs (which, with a horrible pun, translates to bees in Italian).Most of the time vendors providea SDK for your language to interact with their API. While thisspeeds up productivity, it slows down performance and makes you dependent on SDK bugs or supplychain vulnerabilities, that are not always addressed at the speed you would expect. Moreover, younever deal with the API directly and this removes the pressure to vendors for a developer-firstdesigned APIs.\n\nIn this workshop, I will show how most of the time you don’t need an SDK since you can easily codeeverything you need by yourself using a simple HTTP call."
+  },
+  {
+    "name": "Your First Node.js Contribution",
+    "keyword": "cfp§17",
+    "text": "Your First Node.js Contribution\n\nHave you ever wanted to contribute to a foundational open source project like Node.js? Maybe you don’t know where tostart. Maybe you always assumed that was work reserved for “someone else.”\n\nJoin experienced contributors who will guide you through your first (or second or third or fourth) commit to theNode.js core. They will be available to help troubleshoot any development environment issues and also to provideguided tours through specific areas of the Node.js core source code.\n\nContributors of all skill levels and experiences are welcome (not every contribution has to be a code change).\n\nCome and make your first Node.js core contribution!"
+  },
+  {
+    "name": "How to create a PostgreSQL based webhook system",
+    "keyword": "cfp§18",
+    "text": "How to create a PostgreSQL based webhook system\n\nWebhooks are essential in modern API interactions, as they eliminate the need for polling-based architectures and significantly improve latency in distributed workflows by providing near-instantaneous responses to changes, enabling more efficient and real-time data synchronization across systems.\n\nIn this talk, I will demonstrate how to leverage PostgreSQL as a centralized message store for queuing and managing webhook events with transactional integrity. Additionally, I will cover the implementation of a dead-letter queue (DLQ) to gracefully handle failures, cron jobs for managing recurring events, and a leader election mechanism to enforce an exactly-once execution model, ensuring reliable and consistent event processing across distributed systems."
+  },
+  {
+    "name": "Node.js: more threads than you think",
+    "keyword": "cfp§19",
+    "text": "Node.js: more threads than you think\n\nNode.js was announced in 2009 as a single-threaded JavaScript runtime. In 2018, it became multi-threaded, and no one noticed.\n\nWhat can worker_threads do? What are they useful for? What's the best way of communicating between two threads?"
+  },
+  {
+    "name": "The alleged 'end' of Node.js is much ado about nothing",
+    "keyword": "cfp§20",
+    "text": "The alleged 'end' of Node.js is much ado about nothing\n\nDespite the exaggerated claims about its decline, Node.js is thriving. Its continued evolution pushes the boundaries of what the modern web can do. We'll start by debunking myths about Node.js, showcasing its recent enhancements and robust performance in the tech landscape.\n\nThe focus then shifts to Node.js's current role in server-side programming and cloud-native applications, emphasizing the vibrant community contributions that drive its progress. We'll also explore how integrating modern JavaScript features and the influence of emerging technologies are shaping Node.js's future, not signaling its end.\n\nConcluding, the talk projects a bright future for Node.js, identifying growth areas and dispelling any misconceptions about its relevance in the evolving world of technology."
+  },
+  {
+    "name": "Reimagining Kafka for Node.js",
+    "keyword": "cfp§21",
+    "text": "Reimagining Kafka for Node.js\n\nKafka has become a go-to for powering real-time, event-driven apps.\n\nIf you’re building with Node.js, dealing with Kafka hasn’t exactly been smooth sailing: the developer experience is not ideal and native libraries are not supporting all the new Node.js features like multithreading.\n\nSo, we built something new. It’s fast, it’s built with TypeScript in mind, and it cuts through the mess to give you a clean, reliable way to work with Kafka in Node.js.\n\nOh, and it’s 100% open source, as usual.\n\nIn this talk, we’ll share the journey, show what it can do, and help you level up your Kafka game without the usual headaches.\n\n"
+  }
+]

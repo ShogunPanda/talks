@@ -1,0 +1,77 @@
+[
+  {
+    "name": "email",
+    "keyword": "cfp#1",
+    "text": "paolo.insogna@platformatic.dev"
+  },
+  {
+    "name": "name",
+    "keyword": "cfp#2",
+    "text": "Paolo Insogna"
+  },
+  {
+    "name": "city",
+    "keyword": "cfp#3",
+    "text": "Campobasso, Italy"
+  },
+  {
+    "name": "company",
+    "keyword": "cfp#4",
+    "text": "Platformatic"
+  },
+  {
+    "name": "bio",
+    "keyword": "cfp#5",
+    "text": "Node.js TSC Member, Principal Engineer at Platformatic, Polyglot Developer. RPG and LARP addicted and nerd on lot more. Surrounded by lovely chubby cats."
+  },
+  {
+    "name": "role",
+    "keyword": "cfp#6",
+    "text": "Platformatic, Principal Engineer"
+  },
+  {
+    "name": "full-role",
+    "keyword": "cfp#7",
+    "text": "Node.js TSC and Principal Engineer"
+  },
+  {
+    "name": "web",
+    "keyword": "cfp@1",
+    "text": "https://paoloinsogna.dev"
+  },
+  {
+    "name": "talks",
+    "keyword": "cfp@2",
+    "text": "https://talks.paoloinsogna.dev"
+  },
+  {
+    "name": "twitter",
+    "keyword": "cfp@3",
+    "text": "https://twitter.com/p_insogna"
+  },
+  {
+    "name": "github",
+    "keyword": "cfp@4",
+    "text": "https://github.com/ShogunPanda"
+  },
+  {
+    "name": "linkedin",
+    "keyword": "cfp@5",
+    "text": "https://www.linkedin.com/in/pinsogna"
+  },
+  {
+    "name": "videos",
+    "keyword": "cfp@6",
+    "text": "https://youtube.com/playlist?list=PLMsaOKwegaCu0LgeNLTIY4DG3Qd2YLiME"
+  },
+  {
+    "name": "picture",
+    "keyword": "cfp@7",
+    "text": "https://drive.google.com/file/d/1cCDoul5FVYCYEgLPz5Xo1_iuS43CSa5x/view?usp=share_link"
+  },
+  {
+    "name": "combined-links",
+    "keyword": "cfp@8",
+    "text": "https://github.com/ShogunPanda, https://twitter.com/p_insogna, https://www.linkedin.com/in/pinsogna/"
+  }
+]
