@@ -130,7 +130,7 @@ image:
 ---
 title: Why is Caesar Cipher weak?
 content:
-  - Since only few permutations are possible, brute forcing is quite easy (especially if using letter frequency analysis).
+  - Since only a few permutations are possible, brute forcing is quite easy (especially if using letter frequency analysis).
 image:
   url: '@talk/letter-analysis.webp'
 
@@ -141,7 +141,7 @@ items:
   entries:
     - icon: user-check
       title: The algorithm **must** be public
-      text: Public algorithms can be continously analyzed and validated from everyone.
+      text: Public algorithms can be continuously analyzed and validated from everyone.
     - icon: sliders
       title: The security is in the parameters
       text: The parameters must be chosen so that brute forcing is unfeasible.
@@ -192,7 +192,7 @@ items:
       text: It uses asymmetric keys to build a shared key.
     - icon: rotate
       title: It is fast and easy to implement
-      text: Keys can (and should) be rotated in each message to improve security.
+      text: Keys can (and should) be rotated with each message to improve security.
 
 ---
 layout: separator

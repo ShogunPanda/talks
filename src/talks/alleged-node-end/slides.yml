@@ -44,7 +44,7 @@ content:
 
 ---
 layout: quote
-title: Usually we ready this all over the internet...
+title: Usually we read this all over the internet...
 quote:
   sentence: ZYX will flip the default backend JavaScript runtime from Node.js
   author: 'Random excited user #1'
@@ -152,7 +152,7 @@ content:
 ---
 title: Downloads of the Node.js binary, per OS
 content:
-  - We believe Linux is the default for CI. OSS projects often tests on WIndows for CI as well.
+  - We believe Linux is the default for CI. OSS projects often test on Windows for CI as well.
   - image: '@talk/node-by-binary.webp'
 
 ---

@@ -1,0 +1,9 @@
+/* stylelint-disable-next-line selector-class-pattern */
+.talk@ {
+  &image {
+    &__contents {
+      align-items: center;
+      margin-top: 2--sp;
+    }
+  }
+}

@@ -285,12 +285,12 @@ options:
   background: green
 
 ---
-title: The leader election prcoess
+title: The leader election process
 items:
   entries:
     - index: 1
       title: Lock access
-      text: All the peers, potentially at the same time, will try to get an exclusive acces to the lock.
+      text: All the peers, potentially at the same time, will try to get exclusive access to the lock.
     - index: 2
       title: Become the leader
       text: Only one peer receives the lock and becomes the leader, other will be denied.
@@ -639,7 +639,7 @@ code:
       try {
         await db.tx(async db => {
           await db.query(markMessageAsCompletedQuery(message, response))
-          await db.query(message.schedule ? rescheduleMessageQuery(message) ? deletePendingMessageQuery(message.id))
+          await db.query(message.schedule ? rescheduleMessageQuery(message) : deletePendingMessageQuery(message.id))
         })
       } catch (e) {
         /* ... */

@@ -35,7 +35,7 @@ image:
 layout: side
 title: Content Identifier
 content:
-  - A CID uniquely identifies a chunk of data in IPFS and provides informations on how to verify the integrity of the data.
+  - A CID uniquely identifies a chunk of data in IPFS and provides information on how to verify the integrity of the data.
   - It does not contain any information about the location.
 image:
   url: '@talk/cid.webp'
@@ -116,7 +116,7 @@ layout: side
 title: Hi, I'm Elastic IPFS!
 content:
   - The architecture is divided into three independent and stateless subsystems.
-  - New nodes can be added or remove at any time, global replication can be easily achieved.
+  - New nodes can be added or removed at any time, global replication can be easily achieved.
   - <a href="https://github.com/elastic-ipfs/elastic-ipfs" class="talk@link--small">https://github.com/elastic-ipfs/elastic-ipfs</a>
 image:
   url: '@talk/eipfs-architecture-complete.webp'
@@ -202,7 +202,7 @@ items:
       text: The event is recorded on a SQS topic which will later trigger Indexing Lambda executions.
     - index: 2
       title: Indexing Lambda executes
-      text: The Lambda processes the CAR file and copies all the relevant informations in the DynamoDB tables showed earlier.
+      text: The Lambda processes the CAR file and copies all the relevant information in the DynamoDB tables showed earlier.
     - index: 3
       title: Blocks are enqueued for publishing
       text: For each block encountered in the CAR file, the Indexer Lambda enqueues its multihash in a SQS topic which will later trigger Publishing Subsystem execution.
@@ -299,7 +299,7 @@ items:
       text: <code>HTTP PUT</code> requests will signal that new data has been published.
 
 ---
-title: What will the Indexer Node will do?
+title: What will the Indexer Node do?
 content:
   - When ready, the Indexer Node will sync via the HTTP server.
 items:
@@ -366,7 +366,7 @@ code:
 ---
 title: Entries file
 content:
-  - Is is just a list of CIDs made available by the provider.
+  - It is just a list of CIDs made available by the provider.
 code:
   language: json
   highlight: 4, 7, 10

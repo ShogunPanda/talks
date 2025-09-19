@@ -83,7 +83,7 @@ items:
       title: When it was created?
       text: |
         Robert “RSnake” Hansen
-        carved it on June 2009.
+        created it in June 2009.
     - icon: arrows-split-up-and-left
       title: It’s not just HTTP!
       text: |
@@ -130,7 +130,7 @@ items:
   entries:
     - icon: microchip
       title: The operating system manages low-level operations
-      text: Each sockets consumes several kilobytes of RAM.
+      text: Each socket consumes several kilobytes of RAM.
     - icon: file
       title: Each socket is backed by a file descriptor
       text: Each process has a limited number of descriptor available, managed via <code>ulimit</code>.
@@ -244,7 +244,7 @@ items:
       title: Disable http.Server.timeout by default
       text: The default value has been changed to nothing.
     - icon: calendar
-      title: Node.js 13.0.0, October 22th, 2019
+      title: Node.js 13.0.0, October 22nd, 2019
       text: _From now on, attacker can delay transfer indefinitely._
 notes: |
   * Hapi and Fastify implemented a fix.

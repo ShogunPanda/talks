@@ -1,0 +1,14 @@
+---
+config: common.config
+document:
+  title: 'Reimagining Kafka for Node.js'
+  abstract: |
+    Kafka has become a go-to for powering real-time, event-driven apps.
+
+    If you’re building with Node.js, dealing with Kafka hasn’t exactly been smooth sailing: the developer experience is not ideal and native libraries are not supporting all the new Node.js features like multithreading.
+
+    So, we built something new. It’s fast, it’s built with TypeScript in mind, and it cuts through the mess to give you a clean, reliable way to work with Kafka in Node.js. Oh, and it’s 100% open source, as usual.
+
+    In this talk, we’ll share the journey, show what it can do, and help you level up your Kafka game without the usual headaches.
+  author: common.author
+  company: common.company

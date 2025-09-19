@@ -142,7 +142,7 @@ image:
   url: '@talk/scala-js-transpile.webp'
 
 ---
-title: Where we do we (mostly) run?
+title: Where do we (mostly) run?
 content:
   - There are few known runtimes and browsers, way less than in the past.
 grids:

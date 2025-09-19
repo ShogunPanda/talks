@@ -77,7 +77,7 @@ items:
       text: Development started in 2012 and end up being standardized in 2015.
     - icon: history
       title: Baby-steps
-      text: The semantics are thes same, only the TCP connection usage has changed.
+      text: The semantics are the same, only the TCP connection usage has changed.
     - icon: shuffle
       title: Multiplexing and real parallelism
       text: It uses a SPDY derived communication protocol for better multiplexing.
@@ -121,7 +121,7 @@ layout: side
 title: The original parser
 content:
   - '**http_parser** was the original HTTP/1.1 parser of Node.js'
-  - It existed since the early days of Node.js and it was one of its older dependencies.
+  - It existed since the early days of Node.js and it was one of its oldest dependencies.
 image:
   url: '@talk/http_parser.webp'
 
@@ -151,7 +151,7 @@ items:
       text: Over the course of ten years, the codebase became unmaintainable.
     - icon: bug
       title: Vulnerability-prone
-      text: The maintanability problem made it also hard to promptly address bugs and vulnerabilities.
+      text: The maintainability problem made it also hard to promptly address bugs and vulnerabilities.
 
 ---
 layout: side
@@ -299,7 +299,7 @@ items:
       text: Rust is a good candidate that can be used for both developer input and transpilation output.
     - icon: lock
       title: Modern and strict
-      text: Only support latest HTTP/1.1 standard (RFC 9110) and initially do have any leniency logic.
+      text: Only support latest HTTP/1.1 standard (RFC 9110) and initially have no leniency logic.
   horizontal: true
 
 ---

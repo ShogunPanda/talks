@@ -86,7 +86,7 @@ image:
 
 ---
 layout: side
-title: How it works?
+title: How does it work?
 content:
   - llhttp is a state based HTTP parser based on llparse.
   - llparse is capable to generate a very performant C code out of a TypeScript description of the possible states.
@@ -105,7 +105,7 @@ items:
       text: Supporting obsolete versions of HTTP introduces unneeded complexity.
     - icon: handshake
       title: You give them a finger, they take the arm
-      text: Leniency-prone approach opens the door for edge cases and vulnerabilities opportunities.
+      text: A lenient approach opens the door for edge cases and vulnerability opportunities.
 
 ---
 layout: separator

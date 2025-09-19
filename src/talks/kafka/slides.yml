@@ -1,0 +1,479 @@
+---
+layout: cover
+# ---
+
+---
+layout: separator
+title: Let's dive into<br/>the unknown!
+image:
+  url: '@common/dive.webp'
+options:
+  background: blue
+# ---
+
+---
+layout: hello
+# ---
+
+---
+layout: side
+title: Hello Apache Kafka!
+items:
+  entries:
+    - icon: 'key'
+      title: 'A key component of the world'
+      text: 'It is undoubtedly the backbone of modern event-driven systems.'
+    - icon: 'sack-dollar'
+      title: 'Used by the giants'
+      text: 'Powers real-time data processing for companies like Netflix, LinkedIn, and Uber.'
+    - icon: 'bolt'
+      title: 'Impressive performance'
+      text: 'Millions of messages with minimal latency.'
+image:
+  url: '@talk/kafka.webp'
+# ---
+
+---
+title: How does it work?
+items:
+  entries:
+    - icon: 'server'
+      title: 'Brokers'
+      text: 'Kafka servers that store and serve data across a distributed cluster.'
+    - icon: 'list'
+      title: 'Topics'
+      text: 'Named streams of records, like channels for organizing messages.'
+    - icon: 'code-fork'
+      title: 'Partitions'
+      text: 'Topics are split into partitions for parallelism and scalability.'
+  horizontal: true
+# ---
+
+---
+title: How do we use it?
+items:
+  entries:
+    - icon: 'envelope'
+      title: 'Producers'
+      text: 'Applications that write/publish messages to Kafka topics.'
+    - icon: 'inbox'
+      title: 'Consumers'
+      text: 'Applications that read/subscribe to messages from topics.'
+    - icon: 'users'
+      title: 'Consumer Groups'
+      text: 'Consumers are organized into groups for load balancing.'
+    - icon: 'stream'
+      title: 'Partition Assignment'
+      text: 'Each partition is assigned to **only one** consumer within a group.'
+# ---
+
+---
+title: Kafka API Versioning
+items:
+  entries:
+    - icon: 'code-branch'
+      title: 'Dynamic versioning'
+      text: 'Evolution with backward compatibility considerations.'
+    - icon: 'forward'
+      title: 'Independent advancement'
+      text: 'Each API has its own<br/>independent version number.'
+    - icon: 'brain'
+      title: 'Protocol complexity'
+      text: 'Clients must handle multiple API versions and features.'
+  horizontal: true
+# ---
+
+---
+layout: separator
+title: That's a lot to handle ...
+subtitle: ... especially if, like me, <br/>you **have never** used Kafka! 😂
+image:
+  url: '@talk/information-overload.webp'
+options:
+  background: red
+decorations:
+  logo: black
+# ---
+
+---
+layout: separator
+title: ...and it got much worse! 😭
+image:
+  url: '@talk/missing-puzzle.webp'
+options:
+  background: pink
+className:
+  root: theme@separator--reverse
+# ---
+
+---
+title: Where is your documentation?
+items:
+  entries:
+    - icon: 'ban'
+      title: 'No client building support'
+      text: 'Low-level API documentation is scattered and incomplete.'
+    - icon: 'search'
+      title: 'KIP archaeology'
+      text: 'You need to dig through Kafka Improvement Proposals (KIP) to understand APIs.'
+    - icon: 'eye-slash'
+      title: 'Implementation details hidden'
+      text: 'Critical protocol details buried in JIRA tickets and mailing lists.'
+# ---
+
+---
+layout: separator
+title: How did we build a client then?
+image:
+  url: '@common/questions-2.webp'
+options:
+  background: amber
+# ---
+
+---
+title: AI to the Rescue
+items:
+  entries:
+    - icon: 'book'
+      title: 'Documentation synthesis'
+      text: 'AI synthesized scattered information into coherent implementation guides.'
+    - icon: 'check-circle'
+      title: 'Hallucinations were common'
+      text: 'So the information had to be fact-checked. But it was still faster than manual research.'
+    - icon: 'first-aid'
+      title: 'Life Saver'
+      text: 'Without AI assistance, this project would have taken months longer.'
+# ---
+
+---
+layout: separator
+title: What about Node.js?
+image:
+  url: '@common/node.webp'
+options:
+  background: amber
+decorations:
+  logo: white
+# ---
+
+---
+title: There were already some solutions
+items:
+  entries:
+    - title: 'node-rdkafka'
+      text: 'https://github.com/Blizzard/node-rdkafka'
+    - title: 'KafkaJS'
+      text: 'https://kafka.js.org/'
+  horizontal: true
+# ---
+
+---
+layout: side
+title: node-rdkafka
+items:
+  entries:
+    - icon: 'plug'
+      title: 'Native dependency'
+      text: 'Based on native C library (librdkafka).'
+    - icon: 'exclamation-triangle'
+      title: 'Compatibility issues'
+      text: 'No Worker Threads support.'
+    - icon: 'dungeon'
+      title: 'Cumbersome API'
+      text: 'The API is clunky and hard to use.'
+code:
+  language: javascript
+  content: |
+    import RDKafka from 'node-rdkafka'
+
+    const producer = new RDKafka.Producer(
+      { 
+        'client.id': 'id', 
+        'metadata.broker.list': 'localhost:9092', 
+        dr_cb: true 
+      }      
+    )
+
+    producer.on('delivery-report', () => {      
+      producer.disconnect()
+    })
+
+    producer.connect({}, () => {
+      producer.setPollInterval(1)
+
+      producer.produce(
+        'topic', 0,
+        Buffer.from('value'), 'key',
+        -1, null, 
+        [{ a: '123', b: '456' }]
+      )
+    })
+
+
+# ---
+---
+layout: side
+title: KafkaJS
+items:
+  entries:
+    - icon: 'ban'
+      title: 'Unmaintained'
+      text: 'The project has not been actively maintained for the last two years.'
+    - icon: 'hourglass-half'
+      title: 'Latest Kafka features missing'
+      text: 'Incomplete protocol support due to inactivity.'
+    - icon: 'gauge'
+      title: 'Complex and unperformant API'
+      text: 'The API is complex and has performance issues due to unnecessary memory allocation.'
+code:
+  language: javascript
+  content: |
+    import { Kafka } from 'kafkajs'
+
+    const client = new Kafka({
+      clientId: 'id', brokers: ['localhost:9092'] 
+    })
+
+    const consumer = client.consumer({
+      groupId: 'group'
+    })
+
+    await consumer.connect()
+    await consumer.subscribe({ topics: ['topic'] })
+
+    await consumer.run({
+      async eachMessage ({ message}) {
+        console.log('Received message', message)
+        return consumer.disconnect()
+      }
+    })
+
+
+# ---
+---
+layout: separator
+title: |
+  We needed a
+  better solution ...
+image:
+  url: '@talk/deserve.webp'
+options:
+  background: blue
+# ---
+
+---
+layout: separator
+title: |
+  ... so we
+  started fresh!
+image:
+  url: '@common/fresh.webp'
+options:
+  background: green
+# ---
+
+---
+title: Hello *@platformatic/kafka*!
+content:
+  - qr: https://github.com/platformatic/kafka
+  - <span class="theme-misc@qr__footer">[https://github.com/platformatic/kafka](https://github.com/platformatic/kafka)</span>
+className:
+  qr: theme-misc@qr--big
+# ---
+
+---
+title: Design Principles
+items:
+  entries:
+    - icon: 'user-circle'
+      title: 'The developer is the center'
+      text: 'We prioritized developer experience above all.'
+    - icon: 'gauge-high'
+      title: 'Performance matters'
+      text: 'We avoided unnecessary memory allocations and copies.'
+    - icon: 'code'
+      title: 'TypeScript first'
+      text: 'Our first Typescript experiment. Big thanks to **type stripping**.'
+  horizontal: true
+# ---
+
+---
+title: Integrated Serialization and Deserialization
+items:
+  entries:
+    - icon: 'code'
+      title: 'Type-safe'
+      text: 'The package is typed end-to-end. Your IDE will love it.'
+    - icon: 'cogs'
+      title: 'Cached (de)serializers'
+      text: 'This leads to massive V8 optimizations.'
+    - icon: 'feather'
+      title: 'Zero copying overhead'
+      text: 'Avoids unnecessary data copying during (de)serialization process.'
+  horizontal: true
+# ---
+
+---
+title: 'One consuming semantic: Node.js Streams'
+items:
+  entries:
+    - icon: 'stream'
+      title: 'Stream-only architecture'
+      text: 'Built **exclusively** around Node.js streams for optimal performance.'
+    - icon: 'layer-group'
+      title: 'Multiple consumption patterns'
+      text: 'Supports callback, promise-based, and `AsyncIterable` approaches.'
+    - icon: 'cubes'
+      title: 'Natural fit'
+      text: 'Perfect integration with Node.js ecosystem.'
+# ---
+
+---
+title: Benefits of Node.js Streams
+items:
+  entries:
+    - icon: 'memory'
+      title: 'Memory efficiency'
+      text: 'Process large datasets without loading everything into memory.'
+    - icon: 'compress-arrows-alt'
+      title: 'Backpressure handling'
+      text: 'Automatic flow control prevents overwhelming downstream processes.'
+    - icon: 'bug'
+      title: 'Error propagation'
+      text: 'Built-in error handling and graceful failure management.'
+# ---
+
+---
+title: Every medal has two faces!
+items:
+  entries:
+    - icon: 'code-branch'
+      title: 'Dual API on the outside ...'
+      text: 'Supports both callbacks and promises externally for flexibility.'
+    - icon: 'undo'
+      title: '... only callbacks on the inside!'
+      text: 'Not a single promise is used internally.<br/> **Are we in 2015 again? 🤦‍♂️**'
+  horizontal: true
+# ---
+
+---
+layout: image
+title: Show the code!
+image:
+  url: '@common/fry-money.webp'
+className:
+  contents: talk@image__contents
+# ---
+
+---
+title: Producer API
+code:
+  language: javascript
+  content: |
+    import { Producer, ProduceAcks, stringSerializers } from '@platformatic/kafka'
+
+    const producer = new Producer({
+      clientId: 'id',
+      bootstrapBrokers: 'localhost:9092',
+      serializers: stringSerializers
+    })
+
+    await producer.send({
+      messages: [
+        { key: 'key', value: 'value', headers: { a: '123', b: '456' } }], acks: 0 })
+      ],
+      acks: ProduceAcks.NO_RESPONSE
+    })
+
+    console.log('The message has been delivered')
+    await producer.close()
+
+---
+title: Consumer API
+code:
+  language: javascript
+  content: |
+    import { Consumer, stringDeserializers } from '@platformatic/kafka'
+
+    const consumer = new Consumer({
+      clientId: 'id', group: 'group',
+      bootstrapBrokers: 'localhost:9092', serializers: stringSerializers
+    })
+
+    const stream = await consumer.consume({ topics: ['topic'] })
+
+    // Since streams are AsyncIterable, both following approaches are possible
+    stream.on('data', message => {
+      console.log('Received message', message)
+      stream.close(true)
+    })
+
+    // The stream will be implicitly destroyed after exiting the loop
+    for await (const message of stream) {
+      console.log('Received message', message)
+      break
+    }
+    await consumer.close()
+
+---
+layout: separator
+title: What about performance?
+image:
+  url: '@talk/car.webp'
+options:
+  background: amber
+# ---
+
+---
+title: Producer API
+code:
+  language: none
+  content: |
+    ╔═════════════════════╤═════════╤═══════════════╤═══════════╤════════════╗
+    ║ Slower tests        │ Samples │        Result │ Tolerance │ Difference ║
+    ╟─────────────────────┼─────────┼───────────────┼───────────┼────────────╢
+    ║ node-rdkafka        │     100 │  94.28 op/sec │ ± 96.04 % │            ║
+    ║ kafkajs             │     100 │ 382.33 op/sec │ ±  3.33 % │ + 305.51 % ║
+    ╟─────────────────────┼─────────┼───────────────┼───────────┼────────────╢
+    ║ Fastest test        │ Samples │        Result │ Tolerance │ Difference ║
+    ╟─────────────────────┼─────────┼───────────────┼───────────┼────────────╢
+    ║ @platformatic/kafka │     100 │ 484.45 op/sec │ ±  4.01 % │ + 26.71 %  ║
+    ╚═════════════════════╧═════════╧═══════════════╧═══════════╧════════════╝
+
+---
+title: Producer API
+image:
+  url: '@talk/benchmark-producer.webp'
+
+---
+title: Consumer API
+code:
+  language: none
+  content: |
+    ╔════════════════════════╤═════════╤═════════════════╤═══════════╤════════════╗
+    ║ Slower tests           │ Samples │          Result │ Tolerance │ Difference ║
+    ╟────────────────────────┼─────────┼─────────────────┼───────────┼────────────╢
+    ║ node-rdkafka (stream)  │   10000 │  9211.38 op/sec │ ± 10.94 % │            ║
+    ║ kafkajs                │   10000 │  9293.38 op/sec │ ±  1.82 % │ + 0.89 %   ║
+    ║ node-rdkafka (evented) │   10000 │  9301.78 op/sec │ ± 11.90 % │ + 0.09 %   ║
+    ╟────────────────────────┼─────────┼─────────────────┼───────────┼────────────╢
+    ║ Fastest test           │ Samples │          Result │ Tolerance │ Difference ║
+    ╟────────────────────────┼─────────┼─────────────────┼───────────┼────────────╢
+    ║ @platformatic/kafka    │   10000 │ 10270.39 op/sec │ ±  0.83 % │ + 10.41 %  ║
+    ╚════════════════════════╧═════════╧═════════════════╧═══════════╧════════════╝
+
+---
+title: Consumer API
+image:
+  url: '@talk/benchmark-consumer.webp'
+
+---
+layout: quote
+quote:
+  sentence: Paths are made by walking.
+  author: Franz Kafka
+
+---
+layout: end
+# ---
+

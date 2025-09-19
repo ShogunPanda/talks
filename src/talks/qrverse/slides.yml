@@ -166,7 +166,7 @@ options:
   background: amber
 
 ---
-title: Let's building a QR rendering service
+title: Let's build a QR rendering service
 items:
   entries:
     - icon: book

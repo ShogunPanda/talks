@@ -39,7 +39,7 @@ items:
       text: Open Source has proven to be really effective in improving software quality.
 
 ---
-title: How it started?
+title: How did it start?
 items:
   entries:
     - icon: sack-dollar
@@ -189,7 +189,7 @@ layout: half
 title: The world is nice ...
 content:
   - People generally want to help.
-  - The have interest in what you are doing for their own needs.
+  - They have interest in what you are doing for their own needs.
 image:
   url: '@common/people.webp'
 decorations:
@@ -199,7 +199,7 @@ decorations:
 layout: half
 title: ... but don't be afraid to be harsh ...
 content:
-  - Quick and effective intervention about uncomfortable situation are the key.
+  - Quick and effective interventions about uncomfortable situations are the key.
   - Avoiding creating a toxic community is always your *first* priority.
 image:
   url: '@common/police.webp'
@@ -248,9 +248,9 @@ options:
   background: red
 
 ---
-title: Why do we need legal licenses
+title: Why do we need legal licenses?
 content:
-  - Since Open Source Software is used in every sector, it has legally implication and liability. You need to avoid consequences.
+  - Since Open Source Software is used in every sector, it has legal implications and liability. You need to avoid consequences.
   - '*Do not reinvent the wheel, choose an existing license!*'
 
 ---
@@ -262,7 +262,7 @@ items:
       text: With every release, you can pick a new compatible license.
     - icon: history
       title: ... but not retroactively.
-      text: Only new releases use a different licenses. Past is unchangeable.
+      text: Only new releases use different licenses. Past is unchangeable.
     - icon: code-fork
       title: Forking is unavoidable
       text: If people don't like the new license, they can fork the software.
@@ -351,7 +351,7 @@ items:
   horizontal: true
 
 ---
-title: Three reason not to go self-hosted or exotic
+title: Three reasons not to go self-hosted or exotic
 items:
   entries:
     - index: 1
@@ -359,9 +359,9 @@ items:
       text: Ownership cost will increase.
     - index: 2
       title: Self hosting is hidden
-      text: You will be hard to be found.
+      text: You will be difficult to find.
     - index: 3
-      title: GIT is well known
+      title: Git is well known
       text: Do not create entry barriers.
   horizontal: true
 
@@ -394,7 +394,7 @@ items:
       text: You can explicitly ask for the info you care the most.
     - icon: ''
       title: It will help them
-      text: Having a templates speeds up their reporting time.
+      text: Having templates speeds up their reporting time.
 image:
   url: '@talk/template.webp'
 
@@ -405,7 +405,7 @@ items:
   entries:
     - icon: cut
       title: Reduce to the minimum
-      text: You want to rule out all unrelevant details.
+      text: You want to rule out all irrelevant details.
     - icon: lock
       title: Remove sensitive information
       text: Nobody wants to get in trouble.
@@ -424,7 +424,7 @@ image:
   url: '@common/baloons.webp'
 
 ---
-title: ... but don't forget kindess!
+title: ... but don't forget kindness!
 items:
   entries:
     - index: 1
@@ -465,7 +465,7 @@ layout: side
 title: Remember about good first time issues
 content:
   - When people come in your community and want to help, they don't know where to start.
-  - By having *good first time issues* will help them to independently starting being involved.
+  - Having *good first time issues* will help them to independently starting being involved.
 image:
   url: '@talk/first-issues.webp'
 
@@ -497,8 +497,8 @@ items:
 layout: side
 title: Always ask for tests
 content:
-  - While formal TDD is hard, Pull Request *must* contain tests when non trivial.
-  - Even if a PR content is very appealing, you have to *resist the tentation to accept it without tests*.
+  - While formal TDD is hard, Pull Requests *must* contain tests when non trivial.
+  - Even if a PR content is very appealing, you have to *resist the temptation to accept it without tests*.
 image:
   url: '@talk/tests.webp'
 
@@ -511,10 +511,10 @@ items:
       text: Make sure the PR does what it claims, and double check security implications.
     - index: 2
       title: Performance
-      text: Nobody likes slow software, isn't it?
+      text: Nobody likes slow software, do they?
     - index: 3
       title: Quality and clarity
-      text: A poorly (or obscurely) written performant code make more harm than good.
+      text: Poorly (or obscurely) written performant code makes more harm than good.
     - index: 4
       title: Enforce the conventions
       text: Same as above, *don't be afraid to ask for picky changes*.
@@ -523,7 +523,7 @@ items:
 layout: half
 title: Review must be thorough
 content:
-  - Nobody rushes you to merge code. If possible, require for multiple approvals before committing.
+  - No one rushes you to merge code. If possible, require for multiple approvals before committing.
   - Once you give enough time for objection, then you can merge.
 image:
   url: '@talk/review.webp'
@@ -536,7 +536,7 @@ items:
   entries:
     - icon: fire
       title: Available everywhere
-      text: In modern service you have a CI and workflow system.
+      text: In modern services you have a CI and workflow system.
     - icon: heart
       title: It's so easy
       text: Most of these tools are very easy to use.
@@ -570,7 +570,7 @@ code:
 title: Semantic versioning
 content:
   - |
-    A specification for have meaningful software version.
+    A specification for having meaningful software versions.
     Check the [official website](https://semver.org/)!
   - qr: https://semver.org/
 className:
@@ -617,7 +617,7 @@ layout: half
 title: Let's talk about the community
 content:
   - Even if we're developing software, it's always about the people.
-  - A line of of code can be replaced at any time with no effort, you can't do the same with people.
+  - A line of code can be replaced at any time with no effort, you can't do the same with people.
 image:
   url: '@common/community.webp'
 decorations:
@@ -631,7 +631,7 @@ items:
       title: It's better to keep things separate
       text: The management will be simplified.
     - icon: globe
-      title: Public, separate organization are the best
+      title: Public, separate organizations are the best
       text: They give you the visibility and ease of use you need.
 
 ---
@@ -640,7 +640,7 @@ items:
   entries:
     - icon: lock
       title: Keep the accesses to the minimum
-      text: This is a general rule that should be follow as much as possible.
+      text: This is a general rule that should be followed as much as possible.
     - icon: bomb
       title: Make sure people cannot cut you out
       text: It will be very hard to retake control.
@@ -670,7 +670,7 @@ options:
 ---
 title: Conscious and unconscious bias
 content:
-  - We all suffer of these bias, there is simply no escape.
+  - We all suffer from these biases, there is simply no escape.
 items:
   entries:
     - index: 1

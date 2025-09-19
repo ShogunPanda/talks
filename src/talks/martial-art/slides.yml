@@ -50,7 +50,7 @@ quote:
   sentence: |
     A traditional form of fighting or defending
     yourself, practised as a sport or as exercise.
-  author: The Cambrige Dictionary
+  author: The Cambridge Dictionary
   light: true
   icons: false
 
@@ -176,7 +176,7 @@ title: What is that?
 items:
   entries:
     - icon: language
-      title: It has various possible translation
+      title: It has various possible translations
       text: The most commonly used is "Eternal Spring". *Who catches the citation?*
     - icon: dragon
       title: It is part of kung fu
@@ -264,7 +264,7 @@ items:
       text: Sometimes, they become a life philosophy.
     - icon: people-roof
       title: Remember about the personas?
-      text: I unconsciously use what I learned in Wing Tsun everwhere.
+      text: I unconsciously use what I learned in Wing Tsun everywhere.
 
 ---
 layout: separator
@@ -404,7 +404,7 @@ quote:
   sentence: |
     Apply lateral thinking when
     solving others' complex problems.
-  author: 2nd Energy Principle applied to programming
+  author: 4th Energy Principle applied to programming
   primaryIcon: false
   secondaryIcon: code
 decorations:

@@ -41,7 +41,7 @@ items:
       text: Open Source has proven to be really effective in improving software quality.
 
 ---
-title: How it started?
+title: How did it start?
 items:
   entries:
     - icon: sack-dollar
@@ -112,8 +112,8 @@ items:
       title: Respect
       text: They don't owe you anything. They are giving you their *free* time.
     - icon: rocket
-      title: Action have consequences
-      text: Pretending fixes, features or simply attention *will push* people away.
+      title: Actions have consequences
+      text: Demanding fixes, features or simply attention *will push* people away.
 image:
   url: '@common/kindness.webp'
 decorations:
@@ -199,13 +199,13 @@ items:
   entries:
     - icon: face-tired
       title: Avoid flooding
-      text: Even if you don't worry to overcommunicate, you can't just paste tons of output.
+      text: Even if you don't worry to overcommunicate, you shouldn't just paste tons of output.
     - icon: arrows-to-circle
       title: Keep focus
-      text: Reports with lot of superflous information will likely distract the maintainer.
+      text: Reports with lots of superfluous information will likely distract the maintainer.
     - icon: bug
       title: It's for your own good
-      text: The more superflous information you give, the less the chance to see you problem solved.
+      text: The more superfluous information you give, the less the chance to see you problem solved.
 
 ---
 layout: side
@@ -214,7 +214,7 @@ items:
   entries:
     - icon: cut
       title: Reduce to the minimum
-      text: You want to rule out all unrelevant details.
+      text: You want to rule out all irrelevant details.
     - icon: lock
       title: Remove sensitive information
       text: Nobody wants to get in trouble.

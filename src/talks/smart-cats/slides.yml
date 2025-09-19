@@ -30,7 +30,7 @@ items:
       text: "*There's an app for everything™*, isn't it?"
     - icon: puzzle-piece
       title: Just connect the dots
-      text: Internet of Things was just a matter of times.
+      text: Internet of Things was just a matter of time.
 
 ---
 layout: separator
@@ -365,7 +365,7 @@ items:
       text: But we are literally on the border, in the countryside.
     - icon: tree
       title: Wild animals are everywhere
-      text: After `${30+x}` years I had to deal daily with foxes and similar.
+      text: After 30+ years I had to deal with foxes and similar on a daily basis.
 
 ---
 layout: separator

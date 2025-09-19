@@ -679,7 +679,7 @@ items:
       text: Even if peers are lenient with specification break, they might stop at any time. <em>Don’t risk!</em>
     - icon: search
       title: Analyse the environment
-      text: Even if you develop the experience end to end, you will never be able to <em>cannot control everything</em>.
+      text: Even if you develop the experience end to end, you will never be able to <em>control everything</em>.
   horizontal: true
 
 ---

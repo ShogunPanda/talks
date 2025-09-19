@@ -35,7 +35,7 @@ image:
 ---
 title: 'Setup'
 content:
-  - No dependencies in `package.json`, Node.js already got our backs ...
+  - No dependencies in `package.json`, Node.js already has our backs ...
 code:
   language: json
   content: |
@@ -78,7 +78,7 @@ title: 'Task 1: Create a Canonical Request'
 code:
   language: javascript
   content: |
-    // Since the S3 Key might contain an URL escaped key, we have to clean it up
+    // Since the S3 Key might contain a URL escaped key, we have to clean it up
     const url = new URL(rawUrl)
     const path = encodeURIComponent(url.pathname).replaceAll('%2F', '/')
 

@@ -45,7 +45,7 @@ items:
       text: Only single chunks of data are processed instead of loading the full data in memory.
     - icon: code-branch
       title: Expandable
-      text: There are tons of away to implement new stream.
+      text: There are tons of ways to implement new streams.
 
 ---
 layout: separator
@@ -90,7 +90,7 @@ items:
   entries:
     - icon: calendar
       title: Latest series is 4.x.x.
-      text: It was initally released on **June 14th, 2022**, three years after the last one.
+      text: It was initially released on **June 14th, 2022**, three years after the last one.
     - icon: code-fork
       title: Update of the stream module
       text: It mirrors the module in Node.js **18.x.x** which is the current LTS version.
@@ -268,7 +268,7 @@ items:
 ---
 title: Testing technologies
 content:
-  - A complex testing environment to match most desired scenarios across Node.js version, browsers and bundlers.
+  - A complex testing environment to match the most desired scenarios across Node.js version, browsers and bundlers.
 items:
   entries:
     - image: '@talk/tap.webp'

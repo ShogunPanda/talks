@@ -91,10 +91,10 @@ title: Say hello to SDKs
 items:
   entries:
     - icon: bezier-curve
-      title: We don't do everything by ourself
+      title: We don't do everything by ourselves
       text: Our application and servers often talk to third party services.
     - icon: code
-      title: Third party usually give use a SDK
+      title: Third parties usually give us an SDK
       text: The kit makes our life easier by simplifying integration.
     - icon: gift
       title: Lot of goodies
@@ -155,12 +155,12 @@ items:
     - icon: star-half
       title: Quality
       text: |
-        Often vendor automate the generation of the SDK out of API definitions. 
+        Often vendors automate the generation of SDKs out of API definitions. 
         Native language experience is lost.
     - icon: rocket
       title: Performance
       text: |
-        SDK are often underperforming due 
+        SDKs are often underperforming due 
         to the attempt to keep a unique 
         architecture across languages.
   horizontal: true
@@ -182,10 +182,10 @@ items:
       text: It's a pretty simple use case that we all faced sometimes.
     - icon: code-compare
       title: Which one?
-      text: I'm gonna analyze two different version of the AWS JavaScript SDK.
+      text: I'm gonna analyze two different versions of the AWS JavaScript SDK.
     - icon: truck
       title: How?
-      text: I'm gonna show you how many dependency the SDK brings and how it performs.
+      text: I'm gonna show you how many dependencies the SDK brings and how it performs.
 
 ---
 layout: separator
@@ -583,8 +583,8 @@ content:
 items:
   entries:
     - icon: clock
-      title: SDK are not always bad
-      text: Some times making things manually will *cost too much time*.
+      title: SDKs are not always bad
+      text: Sometimes making things manually will *cost too much time*.
     - icon: route
       title: Be flexible
       text: You don't have to remove all SDKs. But you can *optimize some calls*.

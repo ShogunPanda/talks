@@ -115,7 +115,7 @@ title: Make sure to follow commit guidelines
 items:
   entries:
     - qr: https://github.com/nodejs/node/blob/main/doc/contributing/pull-requests.md#commit-message-guidelines
-      title: You can found them [here](https://github.com/nodejs/node/blob/main/doc/contributing/pull-requests.md#commit-message-guidelines).
+      title: You can find them [here](https://github.com/nodejs/node/blob/main/doc/contributing/pull-requests.md#commit-message-guidelines).
     - code:
         language: output
         numbers: false

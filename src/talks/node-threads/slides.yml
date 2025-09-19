@@ -162,7 +162,7 @@ title: Efficient inter-thread RPC
 items:
   entries:
     - icon: 'code'
-      title: The `node:events` API alow is not suitable for the job.
+      title: The `node:events` API alone is not suitable for the job.
       text: It is not designed to work between threads.
     - icon: 'handshake'
       title: Let's add promises!
