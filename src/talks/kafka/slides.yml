@@ -73,7 +73,9 @@ items:
   entries:
     - icon: 'code-branch'
       title: 'Dynamic versioning'
-      text: 'Evolution with backward compatibility considerations.'
+      text: |
+        Evolution with backward 
+        compatibility considerations.
     - icon: 'forward'
       title: 'Independent advancement'
       text: 'Each API has its own<br/>independent version number.'
@@ -119,30 +121,6 @@ items:
     - icon: 'eye-slash'
       title: 'Implementation details hidden'
       text: 'Critical protocol details buried in JIRA tickets and mailing lists.'
-# ---
-
----
-layout: separator
-title: How did we build a client then?
-image:
-  url: '@common/questions-2.webp'
-options:
-  background: amber
-# ---
-
----
-title: AI to the Rescue
-items:
-  entries:
-    - icon: 'book'
-      title: 'Documentation synthesis'
-      text: 'AI synthesized scattered information into coherent implementation guides.'
-    - icon: 'check-circle'
-      title: 'Hallucinations were common'
-      text: 'So the information had to be fact-checked. But it was still faster than manual research.'
-    - icon: 'first-aid'
-      title: 'Life Saver'
-      text: 'Without AI assistance, this project would have taken months longer.'
 # ---
 
 ---
@@ -217,14 +195,14 @@ title: KafkaJS
 items:
   entries:
     - icon: 'ban'
-      title: 'Unmaintained'
-      text: 'The project has not been actively maintained for the last two years.'
+      title: 'Abandoned'
+      text: 'It has not been maintained in the last years.'
     - icon: 'hourglass-half'
       title: 'Latest Kafka features missing'
       text: 'Incomplete protocol support due to inactivity.'
     - icon: 'gauge'
       title: 'Complex and unperformant API'
-      text: 'The API is complex and has performance issues due to unnecessary memory allocation.'
+      text: 'Caused to unnecessary memory allocation.'
 code:
   language: javascript
   content: |
@@ -275,10 +253,35 @@ options:
 ---
 title: Hello *@platformatic/kafka*!
 content:
+  - A modern, easy to use and high-performance Kafka client for Node.js
   - qr: https://github.com/platformatic/kafka
   - <span class="theme-misc@qr__footer">[https://github.com/platformatic/kafka](https://github.com/platformatic/kafka)</span>
 className:
   qr: theme-misc@qr--big
+# ---
+
+---
+layout: separator
+title: How did we build a client with no documentation available?
+image:
+  url: '@common/questions-2.webp'
+options:
+  background: amber
+# ---
+
+---
+title: AI to the Rescue
+items:
+  entries:
+    - icon: 'book'
+      title: 'Documentation synthesis'
+      text: 'AI synthesized scattered information into coherent implementation guides.'
+    - icon: 'check-circle'
+      title: 'Hallucinations were common'
+      text: 'So the information had to be fact-checked. But it was still faster than manual research.'
+    - icon: 'first-aid'
+      title: 'Life Saver'
+      text: 'Without AI assistance, this project would have taken months longer.'
 # ---
 
 ---
@@ -303,10 +306,12 @@ items:
   entries:
     - icon: 'code'
       title: 'Type-safe'
-      text: 'The package is typed end-to-end. Your IDE will love it.'
+      text: |
+        The package is typed end-to-end. 
+        Your IDE will love it.
     - icon: 'cogs'
       title: 'Cached (de)serializers'
-      text: 'This leads to massive V8 optimizations.'
+      text: This leads to massive V8 optimizations.
     - icon: 'feather'
       title: 'Zero copying overhead'
       text: 'Avoids unnecessary data copying during (de)serialization process.'
@@ -349,7 +354,9 @@ items:
   entries:
     - icon: 'code-branch'
       title: 'Dual API on the outside ...'
-      text: 'Supports both callbacks and promises externally for flexibility.'
+      text: |
+        Supports both callbacks and 
+        promises externally for flexibility.
     - icon: 'undo'
       title: '... only callbacks on the inside!'
       text: 'Not a single promise is used internally.<br/> **Are we in 2015 again? 🤦‍♂️**'
@@ -397,7 +404,7 @@ code:
 
     const consumer = new Consumer({
       clientId: 'id', group: 'group',
-      bootstrapBrokers: 'localhost:9092', serializers: stringSerializers
+      bootstrapBrokers: 'localhost:9092', deserializers: stringDeserializers
     })
 
     const stream = await consumer.consume({ topics: ['topic'] })
