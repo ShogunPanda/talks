@@ -24,7 +24,7 @@ title: Let's celebrate GraphQL!
 content:
   - We all know how this technology has made our life easier.
 image:
-  url: '@talk/graphql.webp'
+  url: '@common/graphql.webp'
   className: talk@graphql-logo
 # ---
 

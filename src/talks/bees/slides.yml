@@ -23,7 +23,7 @@ layout: hello
 layout: separator
 title: Our entire existence is on their shoulders!
 image:
-  url: '@talk/bee.webp'
+  url: '@common/bee.webp'
 options:
   background: blue
 # ---
@@ -408,7 +408,7 @@ options:
 layout: separator
 title: Yes, use the APIs directly!
 image:
-  url: '@talk/bee.webp'
+  url: '@common/bee.webp'
 options:
   background: green
 # ---

@@ -8,7 +8,7 @@ title: |
   Phenomenal cosmic powers...
   Itty bitty living space.
 image:
-  url: '@talk/genius.webp'
+  url: '@common/genius.webp'
 options:
   background: fuchsia
 # ---
@@ -99,7 +99,7 @@ options:
 layout: separator
 title: ... sometimes in a weird way!
 image:
-  url: '@talk/grave.webp'
+  url: '@common/grave.webp'
 options:
   background: red
 # ---

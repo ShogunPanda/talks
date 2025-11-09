@@ -317,7 +317,7 @@ items:
     - icon: user
       title: Better transpilation
       text: Try to transpile to a human readable form and then generate static libs and include headers.
-    - image: '@talk/rust-logo.webp'
+    - image: '@common/rust-logo.webp'
       title: Use a higher level language
       text: Rust is a good candidate that can be used for both developer input and transpilation output.
     - icon: lock

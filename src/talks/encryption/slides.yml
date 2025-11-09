@@ -26,7 +26,7 @@ content:
   - <span class="theme@fg-pink">**Whatever goes wrong today, please complain directly to him on Twitter!**</span>
   - <strong class="theme@fg-blue">[@MicheleRivaCode](https://twitter.com/@MicheleRivaCode)</strong>
 image:
-  url: '@talk/michele.webp'
+  url: '@common/michele.webp'
 decorations:
   logo: white
 # ---
@@ -131,7 +131,7 @@ items:
   sequence: true
   gap: false
 image:
-  url: '@talk/hal.webp'
+  url: '@common/hal.webp'
 # ---
 
 ---
@@ -252,7 +252,7 @@ index: 3
 layout: separator
 title: Let's make some m<span class="theme@fg-amber">a</span>th!
 image:
-  url: '@talk/walter-white.webp'
+  url: '@common/walter-white.webp'
 options:
   background: sky
 # ---

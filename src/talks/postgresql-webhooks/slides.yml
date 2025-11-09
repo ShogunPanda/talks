@@ -341,13 +341,13 @@ title: Technical stack
 grids:
   - className: talk@icons-grid
     entries:
-      - image: '@talk/nodejs.webp'
+      - image: '@common/nodejs.webp'
         title: Node.js
         className:
           image: theme-misc@width-auto
-      - image: '@talk/postgresql.webp'
+      - image: '@common/postgresql.webp'
         title: PostgreSQL
-      - image: '@talk/fastify.webp'
+      - image: '@common/fastify.webp'
         title: Fastify
       - image: '@theme/logo-black.webp'
         title: Watt

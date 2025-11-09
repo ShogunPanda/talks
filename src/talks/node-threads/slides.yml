@@ -8,7 +8,7 @@ title: |
   There is a lot 
   in the unknown!
 image:
-  url: '@talk/unknown.webp'
+  url: '@common/unknown.webp'
 options:
   background: fuchsia
 # ---
@@ -44,7 +44,7 @@ title: |
   single threaded ...
 subtitle: '... and it hasn’t been for a while now!'
 image:
-  url: '@talk/postman.webp'
+  url: '@common/postman.webp'
 options:
   background: orange
 # ---
@@ -88,7 +88,7 @@ items:
 layout: separator
 title: Do you see how far we have gone?
 image:
-  url: '@talk/pidgeon.webp'
+  url: '@common/pidgeon.webp'
 options:
   background: orange
 # ---
@@ -166,7 +166,7 @@ code:
 layout: image
 title: How can threads communicate?
 image:
-  url: '@talk/children.webp'
+  url: '@common/children.webp'
 # ---
 
 ---
@@ -210,7 +210,7 @@ code:
 title: Is all that easy?
 layout: separator
 image:
-  url: '@talk/messages-flood.webp'
+  url: '@common/messages-flood.webp'
 decorations:
   logo: white
 options:
@@ -263,7 +263,7 @@ title: |
   Ready for 
   another dive?
 image:
-  url: '@talk/turtle-pool.webp'
+  url: '@common/turtle-pool.webp'
 options:
   background: amber
 # ---
@@ -277,7 +277,7 @@ content:
   - All the messaging and synchronization is managed so you focus on the core logic.
   - https://www.npmjs.com/package/piscina
 image:
-  url: '@talk/piscina.webp'
+  url: '@common/piscina.webp'
 # ---
 
 ---
@@ -300,7 +300,7 @@ items:
 
           const result = await piscina.run({ a: 4, b: 6 })
           console.log(result) // Prints 10
-    - image: '@talk/arrow-right.webp'
+    - image: '@common/arrow-right.webp'
       className:
         root: talk@example__arrow
         image: talk@example__arrow__image
@@ -322,7 +322,7 @@ items:
 layout: separator
 title: Are we done?
 image:
-  url: '@talk/turtles-tired.webp'
+  url: '@common/turtles-tired.webp'
 decorations:
   logo: white
 options:
@@ -336,7 +336,7 @@ title: |
   you can use Worker 
   Threads for?
 image:
-  url: '@talk/batman-superman.webp'
+  url: '@common/batman-superman.webp'
 decorations:
   logo: white
 options:
@@ -430,7 +430,7 @@ code:
 layout: separator
 title: How?
 image:
-  url: '@talk/batcave.webp'
+  url: '@common/batcave.webp'
 options:
   background: black
 decorations:
@@ -556,7 +556,7 @@ content:
 className:
   qr: theme-misc@qr--big
 image:
-  url: '@talk/pino.webp'
+  url: '@common/pino.webp'
 # ---
 
 ---
@@ -578,7 +578,7 @@ content:
 layout: image
 title: Are we finally done?
 image:
-  url: '@talk/turtles-escaping.webp'
+  url: '@common/turtles-escaping.webp'
 decorations:
   logo: white
 # ---

@@ -275,13 +275,13 @@ content:
   - Compared to the previous one it still uses regular expression but it is much smaller thanks to a more modern Javascript environment.
 items:
   entries:
-    - image: '@talk/javascript.webp'
+    - image: '@common/javascript.webp'
       title: ESM
-    - image: '@talk/babel.webp'
+    - image: '@common/babel.webp'
       title: Babel
       className:
         image: theme-misc@width-auto
-    - image: '@talk/prettier.webp'
+    - image: '@common/prettier.webp'
       title: Prettier
   horizontal: true
 # ---
@@ -292,15 +292,15 @@ content:
   - A complex testing environment to match the most desired scenarios across Node.js version, browsers and bundlers.
 items:
   entries:
-    - image: '@talk/tap.webp'
+    - image: '@common/tap.webp'
       title: TAP
       text: Used to test in the Node.js environment.
-    - image: '@talk/tape.webp'
+    - image: '@common/tape.webp'
       title: Tape
       text: Along with custom runner and parser, it is used to test browsers.
       className:
         image: theme-misc@width-auto
-    - image: '@talk/playwright.webp'
+    - image: '@common/playwright.webp'
       title: Playwright
       text: |
         It used to easily test
@@ -331,7 +331,7 @@ content:
   - Obviously I haven't done all this by myself.
 items:
   entries:
-    - image: '@talk/mcollina.webp'
+    - image: '@common/mcollina.webp'
       title: Matteo Collina
       text: https://github.com/mcollina
     - image: '@talk/ronag.webp'

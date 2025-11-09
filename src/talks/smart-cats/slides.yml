@@ -486,7 +486,7 @@ title: What is the fastest way to get a divorce?
 content:
   - Just discovered a new brand.
 image:
-  url: '@talk/shelly.webp'
+  url: '@common/shelly.webp'
 items:
   entries:
     - icon: circle-nodes
@@ -533,13 +533,13 @@ content:
   - Let's talk about the most known vendors.
 items:
   entries:
-    - image: '@talk/homekit.webp'
+    - image: '@common/homekit.webp'
       title: Apple HomeKit
-    - image: '@talk/google-home.webp'
+    - image: '@common/google-home.webp'
       title: Google Home
-    - image: '@talk/alexa.webp'
+    - image: '@common/alexa.webp'
       title: Amazon Alexa
-    - image: '@talk/home-assistant.webp'
+    - image: '@common/home-assistant.webp'
       title: Home Assistant
   horizontal: true
 # ---
@@ -563,13 +563,13 @@ items:
 title: The Perseveranza™ technical stack (1/2)
 items:
   entries:
-    - image: '@talk/nodejs.webp'
+    - image: '@common/nodejs.webp'
       title: Node.js
       className:
         image: theme-misc@width-auto
-    - image: '@talk/redis.webp'
+    - image: '@common/redis.webp'
       title: Redis
-    - image: '@talk/mosquitto.webp'
+    - image: '@common/mosquitto.webp'
       title: Mosquitto
   horizontal: true
 # ---
@@ -578,9 +578,9 @@ items:
 title: The Perseveranza™ technical stack (2/2)
 items:
   entries:
-    - image: '@talk/fastify.webp'
+    - image: '@common/fastify.webp'
       title: Fastify
-    - image: '@talk/homebridge.webp'
+    - image: '@common/homebridge.webp'
       title: HAP (Homebridge)
     - image: '@talk/graphql.webp'
       title: GraphQL

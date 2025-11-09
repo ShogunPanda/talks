@@ -24,7 +24,7 @@ content:
   - <span class="theme@fg-pink">**Whatever goes wrong today, please complain directly to him on Twitter!**</span>
   - <strong class="theme@fg-blue">[@MicheleRivaCode](https://twitter.com/@MicheleRivaCode)</strong>
 image:
-  url: '@talk/michele.webp'
+  url: '@common/michele.webp'
 decorations:
   logo: white
 # ---
@@ -137,10 +137,10 @@ content:
   - We all have a loved language we'd like to see everywhere.
 items:
   entries:
-    - image: '@talk/scala.webp'
+    - image: '@common/scala.webp'
       title: Scala.js
       text: Scala to Javascript
-    - image: '@talk/opal.webp'
+    - image: '@common/opal.webp'
       title: Opal
       text: Ruby to Javascript
   horizontal: true
@@ -158,15 +158,15 @@ content:
   - There are few known runtimes and browsers, way less than in the past.
 grids:
   - entries:
-      - image: '@talk/chrome.webp'
-      - image: '@talk/firefox.webp'
-      - image: '@talk/safari.webp'
-      - image: '@talk/edge.webp'
+      - image: '@common/chrome.webp'
+      - image: '@common/firefox.webp'
+      - image: '@common/safari.webp'
+      - image: '@common/edge.webp'
   - className: talk@icons-grid
     entries:
       - image: '@talk/node.webp'
-      - image: '@talk/deno.webp'
-      - image: '@talk/bun.webp'
+      - image: '@common/deno.webp'
+      - image: '@common/bun.webp'
 notes: |
   Firefox usa SpiderMonkey, le feature vengono implementate più velocemente.
 
@@ -178,17 +178,17 @@ title: There is a transpiler for everything…™
 grids:
   - className: talk@icons-grid
     entries:
-      - image: '@talk/f-sharp.webp'
+      - image: '@common/f-sharp.webp'
         title: F#
-      - image: '@talk/kotlin.webp'
+      - image: '@common/kotlin.webp'
         title: Kotlin
-      - image: '@talk/gleam.webp'
+      - image: '@common/gleam.webp'
         title: Gleam
-      - image: '@talk/reasonml.webp'
+      - image: '@common/reasonml.webp'
         title: ReasonML
-      - image: '@talk/elm.webp'
+      - image: '@common/elm.webp'
         title: ELM
-      - image: '@talk/rescript.webp'
+      - image: '@common/rescript.webp'
         title: ReScript
 notes: |
   * F# -> .NET
@@ -203,7 +203,7 @@ title: … and that's thanks to LLVM!
 content:
   - The project is a collection of modular and reusable compiler and toolchains.
 image:
-  url: '@talk/llvm.webp'
+  url: '@common/llvm.webp'
 notes: |
   LLVM permette già di compilare in JavaScript.
 # ---
@@ -278,7 +278,7 @@ items:
       className:
         root: talk@generation--vertical__root
         image: talk@generation--vertical__image
-    - image: '@talk/arrow-down.webp'
+    - image: '@common/arrow-down.webp'
       className:
         root: talk@generation--vertical__root
         image: talk@generation--vertical__arrow
@@ -299,7 +299,7 @@ items:
       className:
         root: talk@generation--horizontal__root
         image: talk@generation--horizontal__image
-    - image: '@talk/arrow-right.webp'
+    - image: '@common/arrow-right.webp'
       className:
         root: talk@generation--horizontal__root
         image: talk@generation--horizontal__arrow
@@ -318,11 +318,11 @@ title: Each language has its own transpiler
 grids:
   - gap: gap-y-4ch
     entries:
-      - image: '@talk/javascript.webp'
+      - image: '@common/javascript.webp'
         title: Babel
-      - image: '@talk/typescript.webp'
+      - image: '@common/typescript.webp'
         title: TSC
-      - image: '@talk/reasonml.webp'
+      - image: '@common/reasonml.webp'
         title: BuckleScript
       - image: '@talk/clojurescript.webp'
         title: ClojureScript
@@ -344,11 +344,11 @@ title: 'Problem #1: Transpilation time'
 grids:
   - gap: gap-y-4ch
     entries:
-      - image: '@talk/javascript.webp'
+      - image: '@common/javascript.webp'
         title: Slow on large codebases
-      - image: '@talk/typescript.webp'
+      - image: '@common/typescript.webp'
         title: Slow on large codebases
-      - image: '@talk/reasonml.webp'
+      - image: '@common/reasonml.webp'
         title: Really fast
       - image: '@talk/clojurescript.webp'
         title: Average
@@ -363,11 +363,11 @@ title: 'Problem #2: Output optimization'
 grids:
   - gap: gap-y-4ch
     entries:
-      - image: '@talk/javascript.webp'
+      - image: '@common/javascript.webp'
         title: Well optimized
-      - image: '@talk/typescript.webp'
+      - image: '@common/typescript.webp'
         title: Quite optimized
-      - image: '@talk/rescript.webp'
+      - image: '@common/rescript.webp'
         title: Beautifully optimized
       - image: '@talk/clojurescript.webp'
         title: Awful
@@ -385,10 +385,10 @@ content:
   - No intention to discriminate any language.
 items:
   entries:
-    - image: '@talk/javascript.webp'
+    - image: '@common/javascript.webp'
       title: Babel
       text: Quite fast, well optimized
-    - image: '@talk/typescript.webp'
+    - image: '@common/typescript.webp'
       title: TSC
       text: Quite slow, quite optimized
   horizontal: true
@@ -516,13 +516,13 @@ items:
 title: All your popular tools use this flow
 items:
   entries:
-    - image: '@talk/babel.webp'
+    - image: '@common/babel.webp'
       title: Babel
       className:
         image: theme-misc@width-auto
-    - image: '@talk/prettier.webp'
+    - image: '@common/prettier.webp'
       title: Prettier
-    - image: '@talk/eslint.webp'
+    - image: '@common/eslint.webp'
       title: ESLint
   horizontal: true
 # ---
@@ -581,13 +581,13 @@ content:
   - These are the mostly used bundlers, each with pros and cons.
 items:
   entries:
-    - image: '@talk/webpack.webp'
+    - image: '@common/webpack.webp'
       title: Webpack
       text: Hardest<br/>_Slower_
-    - image: '@talk/rollup.webp'
+    - image: '@common/rollup.webp'
       title: Rollup
       text: Easy<br/>_Slow_
-    - image: '@talk/parcel.webp'
+    - image: '@common/parcel.webp'
       title: Parcel
       text: Easiest<br/>_Fast_
   horizontal: true
@@ -597,7 +597,7 @@ items:
 layout: separator
 title: Is webpack still worth it?
 image:
-  url: '@talk/webpack.webp'
+  url: '@common/webpack.webp'
   className: talk@logo
 options:
   background: amber
@@ -610,15 +610,15 @@ title: Are there any better alternatives?
 grids:
   - gap: gap-y-4ch
     entries:
-      - image: '@talk/esbuild.webp'
+      - image: '@common/esbuild.webp'
         title: ESBuild
-      - image: '@talk/swc.webp'
+      - image: '@common/swc.webp'
         title: SWC
         className:
           image: theme-misc@width-auto
-      - image: '@talk/vite.webp'
+      - image: '@common/vite.webp'
         title: Vite
-      - image: '@talk/snowpack.webp'
+      - image: '@common/snowpack.webp'
         title: SnowPack
 # ---
 
@@ -626,7 +626,7 @@ grids:
 layout: separator
 title: ESBuild
 image:
-  url: '@talk/esbuild.webp'
+  url: '@common/esbuild.webp'
   className: talk@logo
 options:
   background: sky
@@ -652,7 +652,7 @@ image:
 layout: separator
 title: SWC
 image:
-  url: '@talk/swc.webp'
+  url: '@common/swc.webp'
   className: talk@logo--auto
 options:
   background: sky
@@ -694,7 +694,7 @@ options:
 layout: separator
 title: Vite
 image:
-  url: '@talk/vite.webp'
+  url: '@common/vite.webp'
   className: talk@logo
 options:
   background: sky
@@ -723,15 +723,15 @@ content:
   - ESBuild and Rollup are used under the hood.
 items:
   entries:
-    - image: '@talk/esbuild.webp'
+    - image: '@common/esbuild.webp'
       className:
         root: talk@vite__esbuild__root
         image: talk@vite__esbuild__image
-    - image: '@talk/vite.webp'
+    - image: '@common/vite.webp'
       className:
         root: talk@vite__vite__root
         image: talk@vite__vite__image
-    - image: '@talk/rollup.webp'
+    - image: '@common/rollup.webp'
       className:
         root: talk@vite__rollup__root
         image: talk@vite__rollup__image
@@ -745,7 +745,7 @@ items:
 layout: separator
 title: Snowpack
 image:
-  url: '@talk/snowpack.webp'
+  url: '@common/snowpack.webp'
   className: talk@logo--auto
 options:
   background: sky
@@ -757,7 +757,7 @@ content:
   - |
     **Skypack** used snowpack to load module in the browsers without a bundler.
 image:
-  url: '@talk/skypack.webp'
+  url: '@common/skypack.webp'
 # ---
 
 ---

@@ -160,7 +160,7 @@ items:
       title: Be cool
       text: I don't want to start another language flame. *Please.* ❤️
 image:
-  url: '@talk/rust-logo.webp'
+  url: '@common/rust-logo.webp'
 # ---
 
 ---
@@ -233,7 +233,7 @@ items:
           });
       className:
         root: talk@example__from
-    - image: '@talk/arrow-right.webp'
+    - image: '@common/arrow-right.webp'
       className:
         root: talk@example__arrow
         image: talk@example__arrow__image

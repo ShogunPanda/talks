@@ -140,7 +140,7 @@ title: How to make it similar?
 content:
   - You can create bounty programs to prioritize collaboration on bug fixing or feature development.
 image:
-  url: '@talk/wanted.webp'
+  url: '@common/wanted.webp'
 # ---
 
 ---
@@ -313,13 +313,13 @@ content:
   - People don't like if you try to take away their beloved Open Source software.
 items:
   entries:
-    - image: '@talk/nodejs-logo.webp'
+    - image: '@common/nodejs-logo.webp'
       title: Node.js
       className:
         image: theme-misc@width-auto
-    - image: '@talk/terraform.webp'
+    - image: '@common/terraform.webp'
       title: Terraform
-    - image: '@talk/rust-logo.webp'
+    - image: '@common/rust-logo.webp'
       title: Rust
   horizontal: true
 # ---
@@ -372,11 +372,11 @@ options:
 title: First of all, choose the hosting
 items:
   entries:
-    - image: '@talk/github.webp'
+    - image: '@common/github.webp'
       title: GitHub
-    - image: '@talk/gitlab.webp'
+    - image: '@common/gitlab.webp'
       title: GitLab
-    - image: '@talk/bitbucket.webp'
+    - image: '@common/bitbucket.webp'
       title: BitBucket
   horizontal: true
 # ---
@@ -571,7 +571,7 @@ content:
   - No one rushes you to merge code. If possible, require for multiple approvals before committing.
   - Once you give enough time for objection, then you can merge.
 image:
-  url: '@talk/review.webp'
+  url: '@common/review.webp'
 decorations:
   logo: black
 # ---

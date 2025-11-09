@@ -220,7 +220,7 @@ items:
 layout: separator
 title: Meet our training dummy
 image:
-  url: '@talk/mokujin.webp'
+  url: '@common/mokujin.webp'
 options:
   background: blue
 # ---
@@ -617,7 +617,7 @@ decorations:
 layout: separator
 title: Bonus principle!
 image:
-  url: '@talk/mokujin.webp'
+  url: '@common/mokujin.webp'
 options:
   background: blue
 # ---

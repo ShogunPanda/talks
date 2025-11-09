@@ -68,7 +68,7 @@ options:
 ---
 layout: image
 image:
-  url: '@talk/slowloris.webp'
+  url: '@common/slowloris.webp'
 notes: |
   Joke about: **"This talk should have been named Taming Slowlorises in Node.js"** and see people reaction.
 decorations:

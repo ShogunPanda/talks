@@ -30,7 +30,7 @@ items:
       title: 'Impressive performance'
       text: 'Millions of messages with minimal latency.'
 image:
-  url: '@talk/kafka.webp'
+  url: '@common/kafka.webp'
 # ---
 
 ---
@@ -90,7 +90,7 @@ layout: separator
 title: That's a lot to handle ...
 subtitle: ... especially if, like me, <br/>you **have never** used Kafka! 😂
 image:
-  url: '@talk/information-overload.webp'
+  url: '@common/information-overload.webp'
 options:
   background: red
 decorations:
@@ -101,7 +101,7 @@ decorations:
 layout: separator
 title: ...and it got much worse! 😭
 image:
-  url: '@talk/missing-puzzle.webp'
+  url: '@common/missing-puzzle.webp'
 options:
   background: pink
 className:
@@ -428,7 +428,7 @@ code:
 layout: separator
 title: What about performance?
 image:
-  url: '@talk/car.webp'
+  url: '@common/car.webp'
 options:
   background: amber
 # ---
