@@ -10,6 +10,7 @@ image:
   url: '@common/skydiving.webp'
 options:
   background: fuchsia
+# ---
 
 ---
 layout: hello
@@ -17,7 +18,7 @@ layout: hello
 
 ---
 layout: half
-title: First of all, let’s give credits!
+title: First of all, let's give credits!
 content:
   - This talk has originally been written by my colleague and friend **Michele Riva**.
   - <span class="theme@fg-pink">**Whatever goes wrong today, please complain directly to him on Twitter!**</span>
@@ -26,6 +27,7 @@ image:
   url: '@talk/michele.webp'
 decorations:
   logo: white
+# ---
 
 ---
 layout: separator
@@ -34,6 +36,7 @@ image:
   url: '@common/complicated.webp'
 options:
   background: blue
+# ---
 
 ---
 layout: separator
@@ -46,6 +49,7 @@ options:
   background: red
 decorations:
   logo: black
+# ---
 
 ---
 layout: quote
@@ -61,13 +65,14 @@ decorations:
   number: 1
   className:
     number: talk@terminology
+# ---
 
 ---
 layout: quote
 title: 'A bit of terminology: Transpiling'
 quote:
   sentence: |
-    To translate a source code into 
+    To translate a source code into
     a different language source code
   author: Michele Riva
   light: true
@@ -76,6 +81,7 @@ decorations:
   number: 2
   className:
     number: talk@terminology
+# ---
 
 ---
 layout: quote
@@ -91,24 +97,26 @@ decorations:
   number: 3
   className:
     number: talk@terminology
+# ---
 
 ---
 layout: separator
 title: Transpilation
 options:
   background: sky
+# ---
 
 ---
 title: Why do we want to transpile our code?
 content:
-  - We all have a loved language we’d like to see everywhere.
+  - We all have a loved language we'd like to see everywhere.
 items:
   entries:
     - icon: rocket
       title: Adopt new language features
       text: |
         Runtimes update slower than the languages.
-        *We don’t want to wait.*
+        *We don't want to wait.*
     - icon: circle-nodes
       title: Write once, run everywhere™
       text: We want to write our scripts in our language despite of the runtime environment.
@@ -121,11 +129,12 @@ notes: |
   2. Draft, first implementations
   3. Candidate, 2 implementations
   4. Finished
+# ---
 
 ---
 title: Who are you missing the most?
 content:
-  - We all have a loved language we’d like to see everywhere.
+  - We all have a loved language we'd like to see everywhere.
 items:
   entries:
     - image: '@talk/scala.webp'
@@ -135,11 +144,13 @@ items:
       title: Opal
       text: Ruby to Javascript
   horizontal: true
+# ---
 
 ---
 title: 'An example: transpilation of Scala.js'
 image:
   url: '@talk/scala-js-transpile.webp'
+# ---
 
 ---
 title: Where do we (mostly) run?
@@ -160,6 +171,7 @@ notes: |
   Firefox usa SpiderMonkey, le feature vengono implementate più velocemente.
 
   La tail-call funge solo su JSC - Menziona che gli env possono essere molto diversi.
+# ---
 
 ---
 title: There is a transpiler for everything…™
@@ -184,15 +196,17 @@ notes: |
   * Gleam -> Sintassi Rust per Erlang
   * OCAML -> ReasonML e ReScript
   * ELM -> Haskell
+# ---
 
 ---
-title: … and that’s thanks to LLVM!
+title: … and that's thanks to LLVM!
 content:
   - The project is a collection of modular and reusable compiler and toolchains.
 image:
   url: '@talk/llvm.webp'
 notes: |
   LLVM permette già di compilare in JavaScript.
+# ---
 
 ---
 title: What are you missing the most?
@@ -218,6 +232,7 @@ items:
   gap: false
 notes: |
   Pipe da Hack - Dialetto PHP di Facebook
+# ---
 
 ---
 title: There is no end to what we can achieve
@@ -241,17 +256,19 @@ items:
   horizontal: true
   spacer: false
   gap: false
+# ---
 
 ---
 layout: separator
 title: |
   Transpiling,
   in depth
-subtitle: Let’s have a deep look on how a transpiler really works.
+subtitle: Let's have a deep look on how a transpiler really works.
 image:
   url: '@common/server.webp'
 options:
   background: sky
+# ---
 
 ---
 title: Generated code is not always readable…
@@ -272,6 +289,7 @@ items:
   className: talk@generation--vertical
   spacer: false
   gap: false
+# ---
 
 ---
 title: …but some transpilers are really good!
@@ -293,6 +311,7 @@ items:
   horizontal: true
   spacer: false
   gap: false
+# ---
 
 ---
 title: Each language has its own transpiler
@@ -307,6 +326,7 @@ grids:
         title: BuckleScript
       - image: '@talk/clojurescript.webp'
         title: ClojureScript
+# ---
 
 ---
 layout: separator
@@ -317,6 +337,7 @@ options:
   background: blue
 decorations:
   logo: black
+# ---
 
 ---
 title: 'Problem #1: Transpilation time'
@@ -335,6 +356,7 @@ decorations:
   number: 1
   className:
     number: talk@problem-number
+# ---
 
 ---
 title: 'Problem #2: Output optimization'
@@ -355,9 +377,10 @@ decorations:
   number: 2
   className:
     number: talk@problem-number
+# ---
 
 ---
-title: Let’s focus on the popular one!
+title: Let's focus on the popular one!
 content:
   - No intention to discriminate any language.
 items:
@@ -369,6 +392,7 @@ items:
       title: TSC
       text: Quite slow, quite optimized
   horizontal: true
+# ---
 
 ---
 title: How does a transpiler work?
@@ -385,6 +409,7 @@ items:
     - index: 3
       title: Code generation (codegen)
       text: The destination language AST is converted to the destination source code.
+# ---
 
 ---
 title: 'Parsing step #1: Tokenization'
@@ -405,6 +430,7 @@ decorations:
   number: 1
   className:
     number: talk@parsing__step
+# ---
 
 ---
 title: 'Parsing step #2: Syntactical Analysis'
@@ -427,6 +453,7 @@ decorations:
   number: 2
   className:
     number: talk@parsing__step
+# ---
 
 ---
 title: 'Parsing step #3: Prepare the AST'
@@ -438,6 +465,7 @@ decorations:
   number: 3
   className:
     number: talk@parsing__step
+# ---
 
 ---
 title: 'Parsing step #4: Build the AST'
@@ -449,6 +477,7 @@ decorations:
   number: 4
   className:
     number: talk@parsing__step
+# ---
 
 ---
 title: Traversing the AST
@@ -456,6 +485,7 @@ content:
   - The transpiler exposes an API to allow developer to manipulate the AST.
 image:
   url: '@talk/traversing-1.webp'
+# ---
 
 ---
 title: Transforming the AST
@@ -463,6 +493,7 @@ content:
   - The traversing API allows to manipulate the AST.
 image:
   url: '@talk/traversing-2.webp'
+# ---
 
 ---
 title: Code generation
@@ -479,6 +510,7 @@ items:
       className:
         image: talk@parsing__image
   horizontal: true
+# ---
 
 ---
 title: All your popular tools use this flow
@@ -493,6 +525,7 @@ items:
     - image: '@talk/eslint.webp'
       title: ESLint
   horizontal: true
+# ---
 
 ---
 title: 'A more complex example: the problem'
@@ -510,17 +543,20 @@ items:
       className:
         image: talk@problem__image
   horizontal: true
+# ---
 
 ---
 title: 'A more complex example: the solution'
 image:
   url: '@talk/jscodeshift-solution.webp'
+# ---
 
 ---
 layout: separator
 title: Bundling
 options:
   background: sky
+# ---
 
 ---
 title: Why do we want to bundle our code?
@@ -537,6 +573,7 @@ items:
   horizontal: true
 notes: |
   Menziona di non fare il bundle lato server.
+# ---
 
 ---
 title: The three horsemen
@@ -554,6 +591,7 @@ items:
       title: Parcel
       text: Easiest<br/>_Fast_
   horizontal: true
+# ---
 
 ---
 layout: separator
@@ -565,6 +603,7 @@ options:
   background: amber
 decorations:
   logo: black
+# ---
 
 ---
 title: Are there any better alternatives?
@@ -581,6 +620,7 @@ grids:
         title: Vite
       - image: '@talk/snowpack.webp'
         title: SnowPack
+# ---
 
 ---
 layout: separator
@@ -590,6 +630,7 @@ image:
   className: talk@logo
 options:
   background: sky
+# ---
 
 ---
 title: How fast ESBuild is?
@@ -597,13 +638,15 @@ content:
   - A lot, especially when comparing with webpack.
 image:
   url: '@talk/esbuild-performances.webp'
+# ---
 
 ---
-title: Ok, it’s fast. What about configuration?
+title: Ok, it's fast. What about configuration?
 content:
   - ESBuild CLI is definitely easy to use.
 image:
   url: '@talk/esbuild-cli.webp'
+# ---
 
 ---
 layout: separator
@@ -613,6 +656,7 @@ image:
   className: talk@logo--auto
 options:
   background: sky
+# ---
 
 ---
 title: How does it compare to ESBuild?
@@ -629,11 +673,13 @@ items:
       className:
         image: talk@parsing__image
   horizontal: true
+# ---
 
 ---
 title: An example of SWC configuration
 image:
   url: '@talk/swc-config.webp'
+# ---
 
 ---
 layout: separator
@@ -642,6 +688,7 @@ image:
   url: '@common/matrioska.webp'
 options:
   background: green
+# ---
 
 ---
 layout: separator
@@ -651,6 +698,7 @@ image:
   className: talk@logo
 options:
   background: sky
+# ---
 
 ---
 title: A little insights into Vite
@@ -660,13 +708,14 @@ items:
       title: Complete developer experience
       text: It provides a webserver with Hot Module Reload support.
     - icon: circle-nodes
-      title: A bundler that doesn’t actually bundle
+      title: A bundler that doesn't actually bundle
       text: It completely leverages ECMAScript Modules.
     - icon: rocket
       title: Still very fast
       text: We will talk about this is in a bit.
 notes: |
   Spiega la differenza tra CJS e ESM.
+# ---
 
 ---
 title: Vite leverages existing tools
@@ -690,6 +739,7 @@ items:
   horizontal: true
   spacer: false
   gap: false
+# ---
 
 ---
 layout: separator
@@ -699,6 +749,7 @@ image:
   className: talk@logo--auto
 options:
   background: sky
+# ---
 
 ---
 title: And now something completely different™
@@ -707,6 +758,7 @@ content:
     **Skypack** used snowpack to load module in the browsers without a bundler.
 image:
   url: '@talk/skypack.webp'
+# ---
 
 ---
 layout: side
@@ -715,6 +767,7 @@ content:
   - New bundlers give <code>O(1)</code> compile time which is great when the number of modules grows.
 image:
   url: '@talk/compile.webp'
+# ---
 
 ---
 title: Take home lessons
@@ -732,6 +785,7 @@ items:
       title: Competition is good
       text: Having multiple transpilers and bundlers competing to be the winner gives the best DX.
   horizontal: true
+# ---
 
 ---
 layout: quote
@@ -740,8 +794,8 @@ quote:
     Working hard and working smart
     can be two different things.
   author: Byron Dorgan
+# ---
 
 ---
 layout: end
 # ---
-

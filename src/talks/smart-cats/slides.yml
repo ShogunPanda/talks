@@ -13,6 +13,7 @@ options:
   background: fuchsia
 decorations:
   logo: black
+# ---
 
 ---
 layout: hello
@@ -31,6 +32,7 @@ items:
     - icon: puzzle-piece
       title: Just connect the dots
       text: Internet of Things was just a matter of time.
+# ---
 
 ---
 layout: separator
@@ -41,6 +43,7 @@ options:
   background: blue
 decorations:
   logo: black
+# ---
 
 ---
 layout: separator
@@ -55,6 +58,7 @@ options:
   background: blue
 decorations:
   logo: total-white
+# ---
 
 ---
 title: There are three types of people
@@ -70,6 +74,7 @@ items:
       title: People who hate cats
       text: '*Please leave, NOW!*'
   sequence: true
+# ---
 
 ---
 layout: separator
@@ -80,6 +85,7 @@ image:
   url: '@talk/mangioni.webp'
 options:
   background: pink
+# ---
 
 ---
 layout: separator
@@ -90,6 +96,7 @@ className:
   root: theme@separator--reverse
 options:
   background: pink
+# ---
 
 ---
 title: A little disclaimer
@@ -104,6 +111,7 @@ items:
       title: No brand knows I'm here
       text: So everything that follows is just my personal opinion and experience.
   horizontal: true
+# ---
 
 ---
 layout: separator
@@ -115,6 +123,7 @@ options:
   background: sky
 className:
   subtitle: theme@separator__callout talk@pet
+# ---
 
 ---
 layout: side
@@ -131,6 +140,7 @@ items:
     - icon: circle-nodes
       title: Comprehensive solution
       text: It can control alarms, sensors, doors, windows and many other devices.
+# ---
 
 ---
 title: 'KSenia Lares 4.0: How do you control it?'
@@ -143,6 +153,7 @@ items:
       title: Documentation is available
       text: Once you know how to obtain the SDK documentation, you are good to go.
   horizontal: true
+# ---
 
 ---
 layout: separator
@@ -158,6 +169,7 @@ decorations:
   logo: black
 className:
   subtitle: theme@separator__callout talk@pet
+# ---
 
 ---
 layout: side
@@ -174,6 +186,7 @@ items:
     - icon: fire
       title: Ferroli BlueHelix as secondary heater
       text: Despite the name, it's connected via sealed Chinese cloud. *I gave up here!*
+# ---
 
 ---
 title: 'Panasonic Aquarea: How do you control it?'
@@ -186,6 +199,7 @@ items:
       title: Use a custom MQTT firmware
       text: Let's thank some nice devs of GitHub!<br/>I modified the LAN interface.
   horizontal: true
+# ---
 
 ---
 layout: separator
@@ -201,6 +215,7 @@ decorations:
   logo: black
 className:
   subtitle: theme@separator__callout talk@pet
+# ---
 
 ---
 layout: side
@@ -217,6 +232,7 @@ items:
     - icon: sack-dollar
       title: This was a blessing
       text: I reduce my power bills by *66%*!
+# ---
 
 ---
 title: 'Fronius Primo: How do you control it?'
@@ -229,6 +245,7 @@ items:
       title: Documentation is available
       text: You can download it from the Fronius website.
   horizontal: true
+# ---
 
 ---
 layout: separator
@@ -245,6 +262,7 @@ decorations:
   logo: black
 className:
   subtitle: theme@separator__callout talk@pet
+# ---
 
 ---
 layout: side
@@ -261,6 +279,7 @@ items:
     - icon: bolt
       title: ENEL is my enemy now
       text: The voltage level in my house is completely unreliable. Somebody protect my devices!
+# ---
 
 ---
 title: 'ABB Terra: How do you control it?'
@@ -277,6 +296,7 @@ items:
         Via a RS485 to (W)LAN adapter,
         I was able to control the device.
   horizontal: true
+# ---
 
 ---
 layout: image
@@ -287,6 +307,7 @@ decorations:
   logo: black
 className:
   title: talk@pet
+# ---
 
 ---
 layout: image
@@ -297,6 +318,7 @@ decorations:
   logo: white
 className:
   title: talk@pet
+# ---
 
 ---
 title: He was *always* hungry
@@ -311,6 +333,7 @@ items:
     - icon: face-rolling-eyes
       title: Persistent staring or vocalizing can kill you
       text: His biological clock was better than an atomic one.
+# ---
 
 ---
 layout: side
@@ -327,6 +350,7 @@ items:
     - icon: mobile
       title: App controlled
       text: But the UX is *questionable*.
+# ---
 
 ---
 title: 'PetKit FreshElement: How do you control it?'
@@ -339,6 +363,7 @@ items:
       title: Let them be fat
       text: The API accuracy varies per device.
   horizontal: true
+# ---
 
 ---
 layout: separator
@@ -352,6 +377,7 @@ decorations:
   logo: black
 className:
   subtitle: theme@separator__callout talk@pet
+# ---
 
 ---
 title: In 2020 we moved
@@ -366,6 +392,7 @@ items:
     - icon: tree
       title: Wild animals are everywhere
       text: After 30+ years I had to deal with foxes and similar on a daily basis.
+# ---
 
 ---
 layout: separator
@@ -377,6 +404,7 @@ options:
   background: sky
 className:
   subtitle: theme@separator__callout talk@pet
+# ---
 
 ---
 layout: side
@@ -393,6 +421,7 @@ items:
     - icon: microchip
       title: Just the good, old RFID.
       text: The technology is more than 50 years old.
+# ---
 
 ---
 title: 'Microchip Pet Door: How do you control it?'
@@ -407,12 +436,13 @@ items:
       title: MQTT on the way
       text: Some other good people on GitHub are working on a custom firmware.
   horizontal: true
+# ---
 
 ---
 layout: separator
 title: Did you really believe it was just about cats?
 subtitle: |
-  Say hello to 
+  Say hello to
   <span class="theme@separator__callout__highlight talk@pet__name"><s>Snappy Shine</s></span>
   <span class="theme@separator__callout__highlight talk@pet__name">Braciolone</span>!
 image:
@@ -421,6 +451,7 @@ options:
   background: amber
 className:
   subtitle: theme@separator__callout talk@pet
+# ---
 
 ---
 layout: separator
@@ -432,6 +463,7 @@ image:
   url: '@talk/bracio-2.webp'
 options:
   background: pink
+# ---
 
 ---
 layout: separator
@@ -446,6 +478,7 @@ decorations:
   logo: total-white
 options:
   background: pink
+# ---
 
 ---
 layout: side
@@ -462,6 +495,7 @@ items:
     - icon: cloud
       title: They support a lot of protocols
       text: MQTT, HTTP, WebSocket, you name it.
+# ---
 
 ---
 layout: separator
@@ -477,6 +511,7 @@ decorations:
   logo: black
 className:
   subtitle: theme@separator__callout talk@pet
+# ---
 
 ---
 layout: separator
@@ -490,6 +525,7 @@ options:
   background: green
 className:
   subtitle: theme@separator__callout talk@pet
+# ---
 
 ---
 title: Home assistants
@@ -506,6 +542,7 @@ items:
     - image: '@talk/home-assistant.webp'
       title: Home Assistant
   horizontal: true
+# ---
 
 ---
 title: What do they have in common?
@@ -520,6 +557,7 @@ items:
     - icon: book
       title: They expose a (semi) public API
       text: '*Anybody can write new devices or new integration.*'
+# ---
 
 ---
 title: The Perseveranza™ technical stack (1/2)
@@ -534,6 +572,7 @@ items:
     - image: '@talk/mosquitto.webp'
       title: Mosquitto
   horizontal: true
+# ---
 
 ---
 title: The Perseveranza™ technical stack (2/2)
@@ -546,6 +585,7 @@ items:
     - image: '@talk/graphql.webp'
       title: GraphQL
   horizontal: true
+# ---
 
 ---
 layout: separator
@@ -557,6 +597,7 @@ options:
   background: pink
 className:
   subtitle: theme@separator__callout talk@pet
+# ---
 
 ---
 title: Where is the code?
@@ -571,6 +612,7 @@ items:
     - icon: face-laugh-squint
       title: You (should) know how to write an API
       text: "*Don't be lazy!*"
+# ---
 
 ---
 layout: separator
@@ -586,6 +628,7 @@ className:
   root: talk@game
   contents: talk@game
   subtitle: talk@game__subtitle
+# ---
 
 ---
 layout: separator
@@ -601,6 +644,7 @@ className:
   root: theme@separator--reverse
   contents: talk@game
   subtitle: talk@game__subtitle
+# ---
 
 ---
 layout: quote
@@ -610,6 +654,7 @@ primaryIcon: home
 quote:
   sentence: Home is where the heart is.
   author: Plinius the Elder
+# ---
 
 ---
 layout: quote
@@ -619,12 +664,14 @@ quote:
     worshipped as gods.
     They have not forgotten this.
   author: Terry Pratchett
+# ---
 
 ---
 layout: end
 title: This was my usual ending slide...
 className:
   title: talk@end--usual
+# ---
 
 ---
 layout: end
@@ -635,3 +682,4 @@ subtitle: We miss you both, a very lot! ❤️
 className:
   title: talk@end--real
   subtitle: talk@end--real__subtitle
+# ---

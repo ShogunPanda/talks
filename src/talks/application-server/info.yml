@@ -1,0 +1,12 @@
+---
+config: common.config
+document:
+  title: Why Node.js needs an application server
+  abstract: |
+    With over 2 billion annual downloads, Node.js is one of the most used web development tools today.
+
+    However, its single-threaded nature poses challenges for scaling in modern, high-demand environments. 
+
+    In this talk, we’ll explore how an application server can optimize Node.js resource management, streamline development, and enable smoother transitions to microservices.
+  author: common.author
+  company: common.company

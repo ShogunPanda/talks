@@ -11,6 +11,7 @@ options:
   background: fuchsia
 decorations:
   logo: black
+# ---
 
 ---
 layout: hello
@@ -23,6 +24,7 @@ image:
   url: '@common/island.webp'
 options:
   background: amber
+# ---
 
 ---
 layout: quote
@@ -32,6 +34,7 @@ quote:
   author: Node.js official documentation
   light: true
   icons: false
+# ---
 
 ---
 title: They are powerful
@@ -46,6 +49,7 @@ items:
     - icon: code-branch
       title: Expandable
       text: There are tons of ways to implement new streams.
+# ---
 
 ---
 layout: separator
@@ -56,6 +60,7 @@ options:
   background: amber
 decorations:
   logo: black
+# ---
 
 ---
 title: Meet readable-stream
@@ -65,6 +70,7 @@ content:
   - <span class="theme-misc@qr__footer">[https://www.npmjs.com/package/readable-stream](https://www.npmjs.com/package/readable-stream)</span>
 className:
   qr: theme-misc@qr--big
+# ---
 
 ---
 title: How is the package built?
@@ -82,6 +88,7 @@ items:
     - index: 4
       title: Add custom modules
       text: Custom and platform-agnostic version of the needed modules are re-inserted.
+# ---
 
 ---
 layout: half
@@ -101,12 +108,14 @@ image:
   url: '@common/server.webp'
 decorations:
   logo: white
+# ---
 
 ---
 layout: separator
 title: Sorry for the long wait!
 options:
   background: blue
+# ---
 
 ---
 layout: separator
@@ -115,6 +124,7 @@ image:
   url: '@common/changes.webp'
 options:
   background: amber
+# ---
 
 ---
 title: Broader status handling
@@ -129,6 +139,7 @@ items:
     - icon: truck
       title: Tracking flushing status
       text: '`stream.Writable.writableFinished`'
+# ---
 
 ---
 title: More predictable event flow
@@ -143,6 +154,7 @@ items:
     - icon: circle-pause
       title: Do not be eager
       text: '`stream.pipeline` will wait for unfinished streams.'
+# ---
 
 ---
 layout: separator
@@ -151,12 +163,14 @@ options:
   background: red
 decorations:
   logo: black
+# ---
 
 ---
 layout: separator
 title: Let's see the exciting parts!
 options:
   background: sky
+# ---
 
 ---
 title: Stream from iterables
@@ -173,6 +187,7 @@ code:
     }
 
     const readable = Readable.from(generate())
+# ---
 
 ---
 title: Duplex stream from anything
@@ -189,6 +204,7 @@ code:
       new Promise((resolve) => setTimeout(resolve('2'), 1500)),
       new Promise((resolve) => setTimeout(resolve('3'), 3000))
     ]);
+# ---
 
 ---
 layout: side
@@ -215,6 +231,7 @@ code:
     await finished(rs.resume())
   className:
     root: theme-misc@code--small
+# ---
 
 ---
 title: Functional style helpers
@@ -231,6 +248,7 @@ items:
     - icon: file-download
       title: Fetching
       text: '`toArray`'
+# ---
 
 ---
 layout: half
@@ -240,6 +258,7 @@ content:
   - '*Promise me you will only use it when absolutely necessary!*'
 image:
   url: '@common/spiderman.webp'
+# ---
 
 ---
 layout: separator
@@ -248,6 +267,7 @@ options:
   background: amber
 decorations:
   logo: black
+# ---
 
 ---
 title: Build toolchain
@@ -264,6 +284,7 @@ items:
     - image: '@talk/prettier.webp'
       title: Prettier
   horizontal: true
+# ---
 
 ---
 title: Testing technologies
@@ -282,9 +303,10 @@ items:
     - image: '@talk/playwright.webp'
       title: Playwright
       text: |
-        It used to easily test 
+        It used to easily test
         in all major browsers.
   horizontal: true
+# ---
 
 ---
 layout: separator
@@ -293,6 +315,7 @@ image:
   url: '@common/100.webp'
 options:
   background: green
+# ---
 
 ---
 title: ... that's all folks!™
@@ -300,6 +323,7 @@ content:
   - There are obviously more changes, but these were the most juicy.
 image:
   url: '@common/thats-all-folks.webp'
+# ---
 
 ---
 title: Remember to thank these guys!
@@ -317,6 +341,7 @@ items:
       title: Benjamin Gruenbaum
       text: https://github.com/benjamingr
   horizontal: true
+# ---
 
 ---
 layout: quote
@@ -325,6 +350,7 @@ quote:
     The man who is swimming against
     the stream knows the strength of it.
   author: Woodrow Wilson
+# ---
 
 ---
 layout: end

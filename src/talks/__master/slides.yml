@@ -15,6 +15,7 @@ layout: quote
 quote:
   sentence: This is a very intelligent sentence
   author: Nice person
+# ---
 
 ---
 layout: quote
@@ -26,6 +27,7 @@ quote:
   primaryIconClassName: talk@quote__primary-icon
   secondaryicon: circle-nodes
   secondaryIconClassName: talk@quote__secondary-icon
+# ---
 
 ---
 layout: quote
@@ -33,12 +35,14 @@ quote:
   sentence: This has no icons
   author: Nice person
   icons: false
+# ---
 
 ---
 title: Default with simple content
 content:
   - Sit enim aliqua in *velit ipsum* voluptate **reprehenderit occaecat** anim irure non.
   - Mollit ea nulla `labore esse quis` ut amet magna sunt culpa sint amet.
+# ---
 
 ---
 title: Default with simple content and image
@@ -50,6 +54,7 @@ image:
 decorations:
   number: 2
   logo: false
+# ---
 
 ---
 title: Default with vertical items
@@ -67,6 +72,7 @@ items:
     - image: '@common/panda.webp'
       title: Aute aute minim sint pariatur sunt magna voluptate aute.
       text: Dolore Lorem aliquip tempor tempor cillum aute qui qui Lorem.
+# ---
 
 ---
 title: Default with horizontal items
@@ -87,6 +93,7 @@ items:
   horizontal: true
 decorations:
   number: 4
+# ---
 
 ---
 title: Default with sequence items 1/3
@@ -96,6 +103,7 @@ items:
     - title: This is the second of three item
     - title: This is the third of three item
   sequence: true
+# ---
 
 ---
 title: Default with sequence items 2/3
@@ -105,6 +113,7 @@ items:
     - title: This is the second of three item
     - title: This is the third of three item
   sequence: true
+# ---
 
 ---
 title: Default with sequence items 3/3
@@ -114,6 +123,7 @@ items:
     - title: This is the second of three item
     - title: This is the third of three item
   sequence: true
+# ---
 
 ---
 title: Default with grid
@@ -132,6 +142,7 @@ grids:
     className: talk@grid
 decorations:
   icon: lightbulb
+# ---
 
 ---
 title: Default with code
@@ -147,6 +158,7 @@ code:
     }
 decorations:
   number: 1
+# ---
 
 ---
 title: Default with code (highlighted)
@@ -163,6 +175,7 @@ code:
   highlight: 2, 4
 decorations:
   icon: lightbulb
+# ---
 
 ---
 layout: code
@@ -195,6 +208,7 @@ code:
     })
 decorations:
   number: 10
+# ---
 
 ---
 layout: code
@@ -228,6 +242,7 @@ code:
     lineHighlighted: talk@line-highlighted
 decorations:
   icon: lightbulb
+# ---
 
 ---
 layout: half
@@ -239,6 +254,7 @@ image:
   url: '@common/panda.webp'
 decorations:
   logo: white
+# ---
 
 ---
 layout: half
@@ -260,6 +276,7 @@ decorations:
   number: 3
 className:
   root: theme@half--reverse
+# ---
 
 ---
 layout: image
@@ -268,6 +285,7 @@ image:
   url: '@common/panda.webp'
 decorations:
   logo: total-white
+# ---
 
 ---
 layout: image
@@ -278,6 +296,7 @@ decorations:
   logo: total-white
 className:
   title: theme@callout--light
+# ---
 
 ---
 layout: image
@@ -287,6 +306,7 @@ image:
   url: '@common/panda.webp'
 decorations:
   logo: total-white
+# ---
 
 ---
 layout: side
@@ -296,6 +316,7 @@ content:
   - Mollit ea nulla labore esse quis ut amet magna sunt culpa sint amet.
 image:
   url: '@common/panda.webp'
+# ---
 
 ---
 layout: side
@@ -315,6 +336,7 @@ image:
   url: '@common/panda.webp'
 decorations:
   number: 3
+# ---
 
 ---
 layout: side
@@ -333,6 +355,7 @@ items:
 highlight:
   text: Deserunt fugiat voluptate adipisicing consectetur nostrud esse cillum. Est veniam est cupidatat reprehenderit esse pariatur sint dolore velit incididunt laboris.
   className: talk@highlight
+# ---
 
 ---
 layout: side
@@ -359,12 +382,14 @@ code:
       "dependencies": {}
     }
   highlight: 2, 4
+# ---
 
 ---
 layout: separator
 title: Irure consectetur officia aliquip nostrud.
 image:
   url: '@common/panda.webp'
+# ---
 
 ---
 layout: separator
@@ -376,6 +401,7 @@ className:
   root: theme@separator--reverse
 decorations:
   logo: black
+# ---
 
 ---
 layout: separator
@@ -387,6 +413,7 @@ options:
   background: blue
 className:
   subtitle: theme@separator__callout
+# ---
 
 ---
 layout: separator
@@ -398,6 +425,7 @@ options:
   background: blue
 className:
   subtitle: theme@separator__callout theme@separator__callout--light
+# ---
 
 ---
 layout: separator
@@ -406,6 +434,7 @@ image:
   url: '@common/panda.webp'
 options:
   background: sky
+# ---
 
 ---
 layout: separator
@@ -414,6 +443,7 @@ image:
   url: '@common/panda.webp'
 options:
   background: pink
+# ---
 
 ---
 layout: separator
@@ -422,6 +452,7 @@ image:
   url: '@common/panda.webp'
 options:
   background: green
+# ---
 
 ---
 layout: separator
@@ -430,6 +461,7 @@ image:
   url: '@common/panda.webp'
 options:
   background: fuchsia
+# ---
 
 ---
 layout: separator
@@ -438,6 +470,7 @@ image:
   url: '@common/panda.webp'
 options:
   background: amber
+# ---
 
 ---
 layout: separator
@@ -446,6 +479,7 @@ image:
   url: '@common/panda.webp'
 options:
   background: red
+# ---
 
 ---
 layout: separator
@@ -454,6 +488,7 @@ image:
   url: '@common/panda.webp'
 options:
   background: gray
+# ---
 
 ---
 layout: separator
@@ -462,6 +497,7 @@ image:
   url: '@common/panda.webp'
 options:
   background: light-blue
+# ---
 
 ---
 layout: separator
@@ -470,3 +506,4 @@ image:
   url: '@common/panda.webp'
 options:
   background: light-gray
+# ---

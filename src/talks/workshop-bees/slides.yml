@@ -3,6 +3,10 @@ layout: cover
 # ---
 
 ---
+layout: hello
+# ---
+
+---
 title: What are we talking about?
 content:
   - Let's start with a brief introduction.
@@ -10,6 +14,7 @@ content:
   - <span class="theme-misc@qr__footer">[https://talks.paoloinsogna.dev/bees](https://talks.paoloinsogna.dev/bees)</span>
 className:
   qr: theme-misc@qr--big
+# ---
 
 ---
 title: The details lie in the documentation
@@ -31,6 +36,11 @@ title: |
   the action!
 image:
   url: '@common/action.webp'
+options:
+  background: sky
+decorations:
+  logo: white
+# ---
 
 ---
 title: 'Setup'
@@ -46,6 +56,8 @@ code:
       "scripts": {},
       "dependencies": {}
     }
+  numbers: true
+# ---
 
 ---
 title: 'The skeleton'
@@ -72,6 +84,7 @@ code:
       // Signature calculation
     }
   numbers: true
+# ---
 
 ---
 title: 'Task 1: Create a Canonical Request'
@@ -95,11 +108,13 @@ code:
       signedHeadersComponents.push(header[0])
     }
 
-    // Finalize the CanonicalRequest creation - Note that there is an empty string before the signedHeaders
+    // Finalize the CanonicalRequest creation
+    // Note that there is an empty string before the signedHeaders
     const signedHeaders = signedHeadersComponents.join(';')
     canonicalRequestComponents.push('', signedHeadersComponents.join(';'), payloadHash as string)
     const canonicalRequest = canonicalRequestComponents.join('\n')
   numbers: true
+# ---
 
 ---
 title: 'Task 2: Create a String to Sign'
@@ -112,6 +127,7 @@ code:
 
     const stringToSign = ['AWS4-HMAC-SHA256', timestamp, scope, sha256(canonicalRequest)].join('\n')
   numbers: true
+# ---
 
 ---
 title: 'Task 3: Calculate Signature'
@@ -128,6 +144,7 @@ code:
 
     return [signatureHeader, `SignedHeaders=${signedHeaders}`, `Signature=${signature}`].join(',')
   numbers: true
+# ---
 
 ---
 title: 'REST API call'
@@ -155,6 +172,7 @@ code:
       return fetch(url, { method: 'PUT', headers, body: contents })
     }
   numbers: true
+# ---
 
 ---
 title: 'Main function'
@@ -170,24 +188,11 @@ code:
       await readFile(process.env.FILE, 'utf-8')
     )
   numbers: true
-
----
-content:
-  - <a class="talk@social talk@social--first" href="https://twitter.com/p_insogna">@p_insogna</a>
-  - <a class="talk@social talk@social--second" href="https://github.com/ShogunPanda">@ShogunPanda</a>
-  - <a class="talk@social talk@social--third" href="https://www.linkedin.com/in/pinsogna">@pinsogna</a>
-options:
-  background: '@theme/socials.webp'
+  className:
+    root: theme-misc@code--large
 # ---
 
 ---
-layout: image
-image:
-  url: '@theme/rate.webp'
+layout: end
 # ---
 
----
-layout: image
-image:
-  url: '@theme/thanks.webp'
-# ---

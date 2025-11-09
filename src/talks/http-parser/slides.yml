@@ -11,6 +11,7 @@ image:
   url: '@common/500.webp'
 options:
   background: fuchsia
+# ---
 
 ---
 layout: hello
@@ -25,6 +26,7 @@ options:
   background: blue
 decorations:
   logo: black
+# ---
 
 ---
 layout: separator
@@ -37,6 +39,7 @@ options:
   background: amber
 decorations:
   logo: black
+# ---
 
 ---
 title: The choice is narrow
@@ -53,6 +56,7 @@ items:
     - index: 3
       title: HTTP/3
       text: Developed on top of QUIC to solve TCP problems.
+# ---
 
 ---
 title: "HTTP/1.1: Can't beat a classic"
@@ -67,6 +71,7 @@ items:
     - icon: timeline
       title: Keep-Alive and FIFO pipelining
       text: A single TCP connection can be reused.
+# ---
 
 ---
 title: "HTTP/2: Don't break too much"
@@ -81,6 +86,7 @@ items:
     - icon: shuffle
       title: Multiplexing and real parallelism
       text: It uses a SPDY derived communication protocol for better multiplexing.
+# ---
 
 ---
 title: HTTP/3
@@ -95,6 +101,7 @@ items:
     - icon: arrows-split-up-and-left
       title: No head of line blocking
       text: Using multiplexing over UDP minimizes problems introduced by lost packets.
+# ---
 
 ---
 title: What about Node.js?
@@ -107,6 +114,7 @@ items:
       title: HTTP/3
       text: Work in progress, *stay tuned!*
   horizontal: true
+# ---
 
 ---
 layout: separator
@@ -115,6 +123,7 @@ image:
   url: '@common/focus.webp'
 options:
   background: sky
+# ---
 
 ---
 layout: side
@@ -124,6 +133,7 @@ content:
   - It existed since the early days of Node.js and it was one of its oldest dependencies.
 image:
   url: '@talk/http_parser.webp'
+# ---
 
 ---
 title: 'http_parser: the goods'
@@ -138,6 +148,7 @@ items:
     - icon: list-check
       title: Well tested
       text: It had a comprehensive and battle tested test suite.
+# ---
 
 ---
 title: 'http_parser: the bads'
@@ -152,6 +163,7 @@ items:
     - icon: bug
       title: Vulnerability-prone
       text: The maintainability problem made it also hard to promptly address bugs and vulnerabilities.
+# ---
 
 ---
 layout: side
@@ -161,6 +173,7 @@ content:
   - Written by Fedor Indutny in 2019, is the default since Node.js 12.
 image:
   url: '@talk/llhttp.webp'
+# ---
 
 ---
 layout: side
@@ -170,6 +183,7 @@ content:
   - llparse is capable to generate a very performant C code out of a TypeScript description of the possible states.
 image:
   url: '@talk/llhttp_states.webp'
+# ---
 
 ---
 layout: separator
@@ -178,6 +192,7 @@ image:
   url: '@common/what.webp'
 options:
   background: amber
+# ---
 
 ---
 layout: separator
@@ -188,6 +203,7 @@ image:
   url: '@common/possible.webp'
 options:
   background: green
+# ---
 
 ---
 layout: side
@@ -220,6 +236,7 @@ code:
     ```
   className:
     root: theme-misc@code--small
+# ---
 
 ---
 layout: separator
@@ -230,6 +247,7 @@ image:
   url: '@common/genius.webp'
 options:
   background: blue
+# ---
 
 ---
 title: "llhttp: what's wrong with it?"
@@ -244,6 +262,7 @@ items:
     - icon: handshake
       title: You give them a finger, they take the arm
       text: Leniency-prone approach opens the door for a lot of edge cases.
+# ---
 
 ---
 layout: separator
@@ -254,6 +273,7 @@ image:
   url: '@common/postit.webp'
 options:
   background: amber
+# ---
 
 ---
 layout: separator
@@ -262,6 +282,7 @@ image:
   url: '@common/solution-1.webp'
 options:
   background: amber
+# ---
 
 ---
 layout: separator
@@ -270,6 +291,7 @@ image:
   url: '@common/fresh.webp'
 options:
   background: green
+# ---
 
 ---
 title: Keep the goods
@@ -286,6 +308,7 @@ items:
         The test suite is invaluable
         to ensure correctness.
   horizontal: true
+# ---
 
 ---
 title: What shall we change?
@@ -301,6 +324,7 @@ items:
       title: Modern and strict
       text: Only support latest HTTP/1.1 standard (RFC 9110) and initially have no leniency logic.
   horizontal: true
+# ---
 
 ---
 layout: separator
@@ -311,6 +335,7 @@ image:
   url: '@common/road.webp'
 options:
   background: gray
+# ---
 
 ---
 layout: quote
@@ -319,8 +344,8 @@ quote:
     If there is no struggle,
     there is no progress.
   author: Frederick Douglass
+# ---
 
 ---
 layout: end
 # ---
-

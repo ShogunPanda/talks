@@ -11,6 +11,7 @@ image:
   url: '@talk/genius.webp'
 options:
   background: fuchsia
+# ---
 
 ---
 layout: hello
@@ -26,6 +27,7 @@ options:
   background: amber
 decorations:
   logo: black
+# ---
 
 ---
 layout: separator
@@ -37,6 +39,7 @@ options:
   background: pink
 decorations:
   logo: white
+# ---
 
 ---
 title: They are everywhere
@@ -49,6 +52,7 @@ items:
       title: Lot of space
       text: Each code can contain up to **7089** numbers, **4296** characters, **2953** bytes or **1817** kanjis.
   horizontal: true
+# ---
 
 ---
 title: History of QR Codes
@@ -63,6 +67,7 @@ items:
     - icon: brain
       title: Far beyond the original use case
       text: QR are currently used in many aspect of our life, from official uses to games.
+# ---
 
 ---
 title: Main characteristics
@@ -78,6 +83,7 @@ items:
       title: Configurable resiliency
       text: Four error thresholds that can recover up to **30%** damaged block.
   horizontal: true
+# ---
 
 ---
 layout: separator
@@ -87,6 +93,7 @@ image:
   url: '@talk/green-pass.webp'
 options:
   background: green
+# ---
 
 ---
 layout: separator
@@ -95,6 +102,7 @@ image:
   url: '@talk/grave.webp'
 options:
   background: red
+# ---
 
 ---
 layout: separator
@@ -104,48 +112,56 @@ image:
   url: '@common/microscope.webp'
 options:
   background: sky
+# ---
 
 ---
 title: Position markers (finders)
 content: They are positioned in three corners to help the scanner determine the boundaries.
 image:
   url: '@talk/qr-position.webp'
+# ---
 
 ---
 title: Alignment markers
 content: They are complementary to the position markers to determine the orientation.
 image:
   url: '@talk/qr-alignment.webp'
+# ---
 
 ---
 title: Timing markers
 content: They are used from the scanner to understand the size.
 image:
   url: '@talk/qr-timing.webp'
+# ---
 
 ---
 title: Version information
 content: They specify which of the many QR version has been chosen.
 image:
   url: '@talk/qr-version.webp'
+# ---
 
 ---
 title: Format information
 content: Similarly, they specify the encoding chosen.
 image:
   url: '@talk/qr-format.webp'
+# ---
 
 ---
 title: Data and Error correction
 content: The rest of the code delivers the data and the error correction (ECC), one next to each other.
 image:
   url: '@talk/qr-data-ecc.webp'
+# ---
 
 ---
 title: Quiet zone
 content: To help the scanner identify a QR code, it is required to pad the code in all directions.
 image:
   url: '@talk/qr-quiet.webp'
+# ---
 
 ---
 layout: side
@@ -155,6 +171,7 @@ content:
   - Each sequence of 8 bits is written in block divided in two columns. When encountering alignments, rows are skipped.
 image:
   url: '@talk/qr-fill.webp'
+# ---
 
 ---
 layout: separator
@@ -164,6 +181,7 @@ image:
   url: '@common/easy.webp'
 options:
   background: amber
+# ---
 
 ---
 title: Let's build a QR rendering service
@@ -178,9 +196,10 @@ items:
     - image: '@theme/logo-black.webp'
       title: Suited for backends
       text: |
-        Let's prove it with the 
+        Let's prove it with the
         best one out there, *Watt*.
   horizontal: true
+# ---
 
 ---
 layout: separator
@@ -191,6 +210,7 @@ decorations:
   logo: white
 options:
   background: sky
+# ---
 
 ---
 title: Create the skeleton
@@ -200,6 +220,7 @@ code:
   content: |
     shogun@panda:~/qr$ pnpx wattpm init
     [12:28:13.861] DONE (63654): Created a watt application in /Volumes/DATI/Users/Shogun/qr.
+# ---
 
 ---
 title: Database service - Create a migration
@@ -212,6 +233,7 @@ code:
       url TEXT NOT NULL,
       count INTEGER DEFAULT 0
     );
+# ---
 
 ---
 title: Database service - Track our clicks
@@ -241,6 +263,7 @@ code:
     }
 
   numbers: true
+# ---
 
 ---
 title: URL service - Shorten a URL
@@ -269,6 +292,7 @@ code:
       }
     )
   numbers: true
+# ---
 
 ---
 title: URL service - Track clicks
@@ -276,7 +300,7 @@ code:
   language: javascript
   content: |
     server.get(
-      "/:id", 
+      "/:id",
       { // ... schema definition ... },
       async function (request, reply) {
         const response = await fetch(
@@ -296,6 +320,7 @@ code:
       }
     )
   numbers: true
+# ---
 
 ---
 title: URL service - Get all stats
@@ -315,6 +340,7 @@ code:
       return urls
     })
   numbers: true
+# ---
 
 ---
 title: Frontend - Add a rendering UI
@@ -329,23 +355,25 @@ code:
     export async function create() {
       const server = fastify({ logger: true })
       await server.register(
-        fastifyStatic, 
+        fastifyStatic,
         { root: fileURLToPath(new URL('./public', import.meta.url)) }
       )
 
       return server
     }
   numbers: true
+# ---
 
 ---
 layout: separator
 title: |
-  Where are 
+  Where are
   the QR codes?
 image:
   url: '@common/dog-1.webp'
 options:
   background: amber
+# ---
 
 ---
 layout: separator
@@ -354,6 +382,7 @@ image:
   url: '@common/dive.webp'
 options:
   background: blue
+# ---
 
 ---
 title: QR service - Some helpers (1/4)
@@ -369,6 +398,7 @@ code:
   numbers: true
 decorations:
   number: 1
+# ---
 
 ---
 title: QR service - Some helpers (2/4)
@@ -396,6 +426,7 @@ code:
   numbers: true
 decorations:
   number: 2
+# ---
 
 ---
 title: QR service - Some helpers (3/4)
@@ -415,6 +446,7 @@ code:
   numbers: true
 decorations:
   number: 3
+# ---
 
 ---
 title: QR service - Some helpers (4/4)
@@ -433,6 +465,7 @@ code:
   numbers: true
 decorations:
   number: 4
+# ---
 
 ---
 title: QR service - Service skeleton
@@ -461,6 +494,7 @@ code:
       }
     })
   numbers: true
+# ---
 
 ---
 title: QR service - Compute modules
@@ -478,6 +512,7 @@ code:
     let svgPath = ""
     let svgPoints = ""
   numbers: true
+# ---
 
 ---
 title: QR service - Draw regular modules
@@ -501,6 +536,7 @@ code:
 
     svgPath += `&lt;path d="${svgPoints}" fill="currentColor" stroke="none" />`
   numbers: true
+# ---
 
 ---
 title: QR service - Draw other elements
@@ -517,6 +553,7 @@ code:
       svgPath += drawAlignment(aligment[0], aligment[1])
     }
   numbers: true
+# ---
 
 ---
 title: QR service - Return the SVG
@@ -525,14 +562,15 @@ code:
   content: |
     res.writeHead(200, { 'x-plt-qr': url, 'content-type': 'image/svg+xml' })
     res.end(`
-      &lt;svg 
-        xmlns="http://www.w3.org/2000/svg" version="1.1" 
+      &lt;svg
+        xmlns="http://www.w3.org/2000/svg" version="1.1"
         width="${dimension}" height="${dimension}" viewBox="0 0 ${dimension} ${dimension}"
       >
         ${svgPath}
       &lt;/svg>
     `)
   numbers: true
+# ---
 
 ---
 title: Check it out!
@@ -542,14 +580,16 @@ content:
   - <span class="theme-misc@qr__footer">[https://github.com/ShogunPanda/plt-qr-rendering](https://github.com/ShogunPanda/plt-qr-rendering)</span>
 className:
   qr: theme-misc@qr--big
+# ---
 
 ---
 layout: quote
 quote:
   sentence: |
-    Sharing is good, and with digital 
+    Sharing is good, and with digital
     technology, sharing is easy.
   author: Richard Stallman
+# ---
 
 ---
 layout: end

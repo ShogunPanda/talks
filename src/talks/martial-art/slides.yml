@@ -9,6 +9,7 @@ image:
   url: '@talk/mortal-kombat.webp'
 options:
   background: fuchsia
+# ---
 
 ---
 layout: hello
@@ -21,6 +22,7 @@ image:
   url: '@talk/programming-1.webp'
 options:
   background: amber
+# ---
 
 ---
 layout: quote
@@ -32,6 +34,7 @@ quote:
   author: The Oxford Dictionary
   light: true
   icons: false
+# ---
 
 ---
 layout: separator
@@ -42,6 +45,7 @@ image:
   url: '@talk/wing-tsun-1.webp'
 options:
   background: amber
+# ---
 
 ---
 layout: quote
@@ -53,6 +57,7 @@ quote:
   author: The Cambridge Dictionary
   light: true
   icons: false
+# ---
 
 ---
 layout: separator
@@ -61,6 +66,7 @@ image:
   url: '@common/oil-drops.webp'
 options:
   background: red
+# ---
 
 ---
 title: It's all about us ...
@@ -75,6 +81,7 @@ items:
     - icon: people-roof
       title: The process is not voluntary
       text: No matter how much you try, all the traits define you.
+# ---
 
 ---
 title: ... and our brain, in particular
@@ -89,12 +96,14 @@ items:
     - icon: bed
       title: ... and that is a good thing
       text: How many times your subconcious solved the problem?
+# ---
 
 ---
 layout: image
 title: Take me, for instance
 image:
   url: '@talk/me-1.webp'
+# ---
 
 ---
 title: I have several passions (1/2)
@@ -114,6 +123,7 @@ items:
         It's easy to be an otaku now.
         Try in 2000's Southern Italy.
   horizontal: true
+# ---
 
 ---
 title: I have several passions (2/2)
@@ -131,6 +141,7 @@ items:
         As most of us, isn't it?
         *How boring am I?*
   horizontal: true
+# ---
 
 ---
 layout: separator
@@ -141,6 +152,7 @@ image:
   url: '@common/larp.webp'
 options:
   background: gray
+# ---
 
 ---
 layout: separator
@@ -149,6 +161,7 @@ image:
   url: '@talk/wing-tsun-2.webp'
 options:
   background: blue
+# ---
 
 ---
 layout: separator
@@ -159,6 +172,7 @@ image:
   url: '@common/award.webp'
 options:
   background: sky
+# ---
 
 ---
 layout: image
@@ -170,6 +184,7 @@ className:
   subtitle: talk@romanization
 decorations:
   logo: white
+# ---
 
 ---
 title: What is that?
@@ -184,6 +199,7 @@ items:
     - icon: hand-fist
       title: Pretty atypical
       text: You won't see any spectacular roundhouse kicks or similar.
+# ---
 
 ---
 title: Where did it come from?
@@ -198,6 +214,7 @@ items:
     - icon: gun
       title: It also includes weapons
       text: Butterfly knives and 3m staff are trained regularly.
+# ---
 
 ---
 layout: separator
@@ -206,6 +223,7 @@ image:
   url: '@talk/mokujin.webp'
 options:
   background: blue
+# ---
 
 ---
 layout: separator
@@ -219,6 +237,7 @@ options:
   background: pink
 decorations:
   logo: white
+# ---
 
 ---
 layout: separator
@@ -229,6 +248,7 @@ options:
   background: blue
 className:
   root: theme@separator--reverse
+# ---
 
 ---
 title: Why did I chose Wing Tsun?
@@ -243,6 +263,7 @@ items:
     - icon: dumbbell
       title: It redefines the concept of strength
       text: You don't really need muscles.
+# ---
 
 ---
 layout: separator
@@ -251,6 +272,7 @@ image:
   url: '@talk/programming-2.webp'
 options:
   background: amber
+# ---
 
 ---
 title: Let's clarify few things
@@ -265,6 +287,7 @@ items:
     - icon: people-roof
       title: Remember about the personas?
       text: I unconsciously use what I learned in Wing Tsun everywhere.
+# ---
 
 ---
 layout: separator
@@ -276,6 +299,7 @@ options:
   background: sky
 className:
   subtitle: talk@separator__subtitle--finally
+# ---
 
 ---
 layout: image
@@ -289,6 +313,7 @@ className:
   subtitle: talk@separator__subtitle
 decorations:
   logo: white
+# ---
 
 ---
 layout: separator
@@ -297,6 +322,7 @@ image:
   url: '@common/energy.webp'
 options:
   background: sky
+# ---
 
 ---
 layout: quote
@@ -311,6 +337,7 @@ decorations:
   number: 1
   className:
     number: talk@principle-icon talk@principle-icon--light
+# ---
 
 ---
 layout: quote
@@ -324,6 +351,7 @@ decorations:
   number: 1
   className:
     number: talk@principle-icon
+# ---
 
 ---
 layout: quote
@@ -338,6 +366,7 @@ decorations:
   number: 2
   className:
     number: talk@principle-icon talk@principle-icon--light
+# ---
 
 ---
 layout: quote
@@ -353,6 +382,7 @@ decorations:
   number: 2
   className:
     number: talk@principle-icon
+# ---
 
 ---
 layout: quote
@@ -367,6 +397,7 @@ decorations:
   number: 3
   className:
     number: talk@principle-icon talk@principle-icon--light
+# ---
 
 ---
 layout: quote
@@ -382,6 +413,7 @@ decorations:
   number: 3
   className:
     number: talk@principle-icon
+# ---
 
 ---
 layout: quote
@@ -396,6 +428,7 @@ decorations:
   number: 4
   className:
     number: talk@principle-icon talk@principle-icon--light
+# ---
 
 ---
 layout: quote
@@ -411,6 +444,7 @@ decorations:
   number: 4
   className:
     number: talk@principle-icon
+# ---
 
 ---
 layout: separator
@@ -419,6 +453,7 @@ image:
   url: '@talk/chisao.webp'
 options:
   background: sky
+# ---
 
 ---
 layout: separator
@@ -427,6 +462,7 @@ image:
   url: '@common/confused.webp'
 options:
   background: amber
+# ---
 
 ---
 title: Chi Sao
@@ -441,6 +477,7 @@ items:
     - icon: user
       title: It stimulates self-perception
       text: You must be careful in how much and where you use your force.
+# ---
 
 ---
 layout: separator
@@ -449,6 +486,7 @@ image:
   url: '@talk/chisao.webp'
 options:
   background: sky
+# ---
 
 ---
 layout: quote
@@ -463,6 +501,7 @@ decorations:
   number: 1
   className:
     number: talk@principle-icon talk@principle-icon--light
+# ---
 
 ---
 layout: quote
@@ -478,6 +517,7 @@ decorations:
   number: 1
   className:
     number: talk@principle-icon
+# ---
 
 ---
 layout: quote
@@ -492,6 +532,7 @@ decorations:
   number: 2
   className:
     number: talk@principle-icon talk@principle-icon--light
+# ---
 
 ---
 layout: quote
@@ -507,6 +548,7 @@ decorations:
   number: 2
   className:
     number: talk@principle-icon
+# ---
 
 ---
 layout: quote
@@ -521,6 +563,7 @@ decorations:
   number: 3
   className:
     number: talk@principle-icon talk@principle-icon--light
+# ---
 
 ---
 layout: quote
@@ -536,6 +579,7 @@ decorations:
   number: 3
   className:
     number: talk@principle-icon
+# ---
 
 ---
 layout: quote
@@ -550,6 +594,7 @@ decorations:
   number: 4
   className:
     number: talk@principle-icon talk@principle-icon--light
+# ---
 
 ---
 layout: quote
@@ -566,6 +611,7 @@ decorations:
   number: 4
   className:
     number: talk@principle-icon
+# ---
 
 ---
 layout: separator
@@ -574,6 +620,7 @@ image:
   url: '@talk/mokujin.webp'
 options:
   background: blue
+# ---
 
 ---
 layout: image
@@ -588,6 +635,7 @@ className:
   subtitle: talk@chum-kiu__subtitle
 decorations:
   logo: white
+# ---
 
 ---
 layout: separator
@@ -599,6 +647,7 @@ options:
   background: pink
 decorations:
   logo: white
+# ---
 
 ---
 title: Take home lessons
@@ -618,6 +667,7 @@ items:
       title: Programming is like fighting
       text: Fighting strategies can improve our approach to programming.
   horizontal: true
+# ---
 
 ---
 layout: quote
@@ -626,6 +676,7 @@ quote:
     Mastering others is strength.
     Mastering yourself is true power.
   author: 'Lao Tzu'
+# ---
 
 ---
 layout: end

@@ -11,6 +11,7 @@ image:
   url: '@common/love-1.webp'
 options:
   background: fuchsia
+# ---
 
 ---
 layout: hello
@@ -22,6 +23,7 @@ content:
   - A protocol designed with the intention to preserve and grow humanity's knowledge by making the web upgradeable, resilient, and more open.
 image:
   url: '@talk/ipfs.webp'
+# ---
 
 ---
 title: web3.storage
@@ -30,6 +32,7 @@ content:
 image:
   url: '@talk/web3-storage.svg'
   className: talk@image-big
+# ---
 
 ---
 layout: side
@@ -39,6 +42,7 @@ content:
   - It does not contain any information about the location.
 image:
   url: '@talk/cid.webp'
+# ---
 
 ---
 title: Content Archives
@@ -51,6 +55,7 @@ code:
     | ---------- Header --------- | | ------------------------ Data ----------------------- |
     |                             | |                                                       |
     | [ varint | DAG-CBOR block ] | | [ varint | CID | block ] [ varint | CID | block ] ... |
+# ---
 
 ---
 layout: separator
@@ -59,6 +64,7 @@ image:
   url: '@common/obstacle.webp'
 options:
   background: amber
+# ---
 
 ---
 title: Previous Challenges
@@ -71,6 +77,7 @@ items:
       title: Hard to scale
       text: New nodes could not be quickly added on-demand due to the long bootstrap phase.
   horizontal: true
+# ---
 
 ---
 layout: separator
@@ -79,6 +86,7 @@ image:
   url: '@common/questions-2.webp'
 options:
   background: amber
+# ---
 
 ---
 layout: quote
@@ -87,6 +95,7 @@ quote:
   sentence: How can we use AWS services to make the service horizontally scalable with no limits?
   light: true
   icons: false
+# ---
 
 ---
 title: Goals
@@ -102,6 +111,7 @@ items:
       title: Cloud based
       text: The entire architecture should leverage any modern cloud services and try to be affordable.
   horizontal: true
+# ---
 
 ---
 layout: separator
@@ -110,6 +120,7 @@ image:
   url: '@common/solution-1.webp'
 options:
   background: green
+# ---
 
 ---
 layout: side
@@ -120,6 +131,7 @@ content:
   - <a href="https://github.com/elastic-ipfs/elastic-ipfs" class="talk@link--small">https://github.com/elastic-ipfs/elastic-ipfs</a>
 image:
   url: '@talk/eipfs-architecture-complete.webp'
+# ---
 
 ---
 title: E-IPFS is democratic and cloud agnostic
@@ -134,6 +146,7 @@ items:
     - icon: users
       title: The DevOps are your limit
       text: Mixed or on-premise approach are also possible, but be gentle with the people responsible to maintain the infrastructure.
+# ---
 
 ---
 title: CARs Table Item
@@ -152,6 +165,7 @@ code:
       roots: Array<string>
       version: number
     }
+# ---
 
 ---
 title: Blocks Tables Item
@@ -165,6 +179,7 @@ code:
       createdAt: Date
       type: 'raw' | 'dag-cbor' | 'dag-json'
     }
+# ---
 
 ---
 title: |
@@ -181,17 +196,20 @@ code:
       length: number
       offset: number
     }
+# ---
 
 ---
 layout: separator
 title: Indexing subsystem
 options:
   background: sky
+# ---
 
 ---
 title: Overview
 image:
   url: '@talk/eipfs-architecture-indexing.webp'
+# ---
 
 ---
 title: Indexing flow
@@ -206,6 +224,7 @@ items:
     - index: 3
       title: Blocks are enqueued for publishing
       text: For each block encountered in the CAR file, the Indexer Lambda enqueues its multihash in a SQS topic which will later trigger Publishing Subsystem execution.
+# ---
 
 ---
 title: Bye, Idempotence!
@@ -218,12 +237,14 @@ items:
       title: Indexing has very low failure rate
       text: Idempotence was removed as indexing rarely failed and this brought big performance gain.
   horizontal: true
+# ---
 
 ---
 layout: separator
 title: Let's talk about DHT
 options:
   background: sky
+# ---
 
 ---
 title: DHT Challenges
@@ -240,6 +261,7 @@ items:
     - icon: handshake-angle
       title: Not self sufficient
       text: In order to advertise content, the E-IPFS systems needs external auxiliary systems.
+# ---
 
 ---
 title: Hydra Nodes
@@ -257,6 +279,7 @@ items:
       title: Where
       text: The Hydra nodes are distributed in the DHT sense, not the geographical one.
   horizontal: true
+# ---
 
 ---
 title: Indexer Nodes
@@ -264,6 +287,7 @@ content:
   - A system which maps CID to content providers via libp2p or HTTP API.
 image:
   url: '@talk/indexer-node.webp'
+# ---
 
 ---
 title: What API shall we use?
@@ -281,6 +305,7 @@ items:
       title: libp2p optimization conflict
       text: Destination host joins multiple streams with the same <code>PeerID</code>.
   horizontal: true
+# ---
 
 ---
 title: How does HTTP ingestion work?
@@ -297,6 +322,7 @@ items:
     - icon: phone
       title: Notify Indexers on <code>/ingest/announce</code> when ready to be queried
       text: <code>HTTP PUT</code> requests will signal that new data has been published.
+# ---
 
 ---
 title: What will the Indexer Node do?
@@ -313,6 +339,7 @@ items:
     - index: 3
       title: Repeat the flow
       text: Stop when reaching an already indexed advertisement or the tail of the chain.
+# ---
 
 ---
 title: Head file
@@ -337,6 +364,7 @@ code:
         }
       }
     }
+# ---
 
 ---
 title: Advertisement file
@@ -362,6 +390,7 @@ code:
       "Provider": "bafzbeibhqavlasjc7dvbiopygwncnrtvjd2xmryk51aib7zyjor6kf3avm",
       "Signature": { "/": { "bytes": "CqsCCAASpg ... y/yqKWQ" } }
     }
+# ---
 
 ---
 title: Entries file
@@ -384,17 +413,20 @@ code:
         }
       ]
     }
+# ---
 
 ---
 layout: separator
 title: Publishing subsystem
 options:
   background: sky
+# ---
 
 ---
 title: Overview
 image:
   url: '@talk/eipfs-architecture-publishing.webp'
+# ---
 
 ---
 title: Concurrency Problem
@@ -411,6 +443,7 @@ items:
     - icon: timeline
       title: The head of the queue must be updated atomically
       text: Concurrency control must be applied to the processors.
+# ---
 
 ---
 layout: separator
@@ -419,6 +452,7 @@ image:
   url: '@common/dont-panic.webp'
 options:
   background: amber
+# ---
 
 ---
 layout: side
@@ -438,17 +472,20 @@ items:
       text: Concurrency is limited to <strong>1</strong>, with <strong>10000</strong> advertisement sent per execution.
 decorations:
   logo: white
+# ---
 
 ---
 layout: separator
 title: Peer subsystem
 options:
   background: sky
+# ---
 
 ---
 title: Overview
 image:
   url: '@talk/eipfs-architecture-peer.webp'
+# ---
 
 ---
 title: Peer subsystem characteristic
@@ -464,6 +501,7 @@ items:
       title: Simplified BitSwap
       text: No external data is fetched, allowing to ignore wantlists and ledgers management.
   horizontal: true
+# ---
 
 ---
 layout: separator
@@ -472,6 +510,7 @@ options:
   background: amber
 decorations:
   logo: black
+# ---
 
 ---
 title: Hit rate went almost to 100%
@@ -479,11 +518,13 @@ content:
   - The graph shows the hit-rate across <em>200TB</em> of data.
 image:
   url: '@talk/hit-rate.webp'
+# ---
 
 ---
 title: The average indexing time has dropped
 image:
   url: '@talk/indexing-time.webp'
+# ---
 
 ---
 title: Give me the numbers!
@@ -498,6 +539,7 @@ items:
     - index: 24B
       title: Blocks to Cars
   horizontal: true
+# ---
 
 ---
 title: Take home lessons
@@ -515,6 +557,7 @@ items:
       title: Democracy is good
       text: Being unable to lock in a single cloud provider led to flexible and lean architecture.
   horizontal: true
+# ---
 
 ---
 layout: quote
@@ -523,8 +566,8 @@ quote:
     Keep your eyes on the stars,
     and your feet on the ground.
   author: Theodore Roosevelt
+# ---
 
 ---
 layout: end
 # ---
-

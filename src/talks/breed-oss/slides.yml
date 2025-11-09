@@ -11,6 +11,7 @@ options:
   background: fuchsia
 decorations:
   logo: black
+# ---
 
 ---
 layout: hello
@@ -23,6 +24,7 @@ image:
   url: '@common/code.webp'
 options:
   background: amber
+# ---
 
 ---
 title: Let's clarify things
@@ -37,6 +39,7 @@ items:
     - icon: bolt
       title: Is it working?
       text: Open Source has proven to be really effective in improving software quality.
+# ---
 
 ---
 title: How did it start?
@@ -51,6 +54,7 @@ items:
     - icon: code-fork
       title: Open Source was branched off the Free Software Movement
       text: OSS software can be used for commercial purposes. *The freedom is retained.*
+# ---
 
 ---
 title: It might not be OpenSource
@@ -61,6 +65,7 @@ content:
   - qr: https://opensource.org
 className:
   qr: theme-misc@qr--big
+# ---
 
 ---
 layout: separator
@@ -69,6 +74,7 @@ image:
   url: '@common/hell.webp'
 options:
   background: red
+# ---
 
 ---
 layout: side
@@ -78,6 +84,7 @@ content:
   - SQLite is [Open Source but not Open Contribution](https://sqlite.org/copyright.html).
 image:
   url: '@talk/sqlite.webp'
+# ---
 
 ---
 title: Why would somebody want to go Open Source?
@@ -92,6 +99,7 @@ items:
     - icon: sack-dollar
       title: Low maintenance cost
       text: You don't need an office, just a version control server.
+# ---
 
 ---
 layout: separator
@@ -102,6 +110,7 @@ options:
   background: blue
 decorations:
   logo: black
+# ---
 
 ---
 layout: separator
@@ -114,6 +123,7 @@ options:
   background: blue
 decorations:
   logo: white
+# ---
 
 ---
 title: It's similar, but it's not!
@@ -122,6 +132,7 @@ content:
     The Open Source development model is similar to Remote Working.
     The huge difference is that people are driven by *passion*, not money.
   - '*You are not their boss!*'
+# ---
 
 ---
 layout: side
@@ -130,6 +141,7 @@ content:
   - You can create bounty programs to prioritize collaboration on bug fixing or feature development.
 image:
   url: '@talk/wanted.webp'
+# ---
 
 ---
 layout: raw
@@ -144,6 +156,7 @@ options:
   background: red
 decorations:
   logo: white
+# ---
 
 ---
 title: Diversity and freedom are a huge treasure
@@ -158,6 +171,7 @@ items:
     - icon: code-fork
       title: Keep the difference
       text: If you make it look like a job, you will lose them.
+# ---
 
 ---
 title: How can you avoid losing control?
@@ -173,6 +187,7 @@ items:
       title: Be open
       text: Other people's path might be useful for yours.
   horizontal: true
+# ---
 
 ---
 layout: separator
@@ -183,6 +198,7 @@ options:
   background: green
 decorations:
   logo: black
+# ---
 
 ---
 layout: half
@@ -194,6 +210,7 @@ image:
   url: '@common/people.webp'
 decorations:
   logo: white
+# ---
 
 ---
 layout: half
@@ -203,6 +220,7 @@ content:
   - Avoiding creating a toxic community is always your *first* priority.
 image:
   url: '@common/police.webp'
+# ---
 
 ---
 layout: half
@@ -214,6 +232,7 @@ image:
   url: '@common/kindness.webp'
 decorations:
   logo: black
+# ---
 
 ---
 layout: separator
@@ -222,6 +241,7 @@ image:
   url: '@common/breeding.webp'
 options:
   background: blue
+# ---
 
 ---
 title: The job NEVER ends
@@ -236,6 +256,7 @@ items:
     - icon: shuffle
       title: Everybody is replaceable
       text: All people are important, but prepare the community to survive if people suddenly disappear.
+# ---
 
 ---
 layout: separator
@@ -246,12 +267,14 @@ image:
   url: '@common/justice.webp'
 options:
   background: red
+# ---
 
 ---
 title: Why do we need legal licenses?
 content:
   - Since Open Source Software is used in every sector, it has legal implications and liability. You need to avoid consequences.
   - '*Do not reinvent the wheel, choose an existing license!*'
+# ---
 
 ---
 title: Remember, it's permanent ...
@@ -267,6 +290,7 @@ items:
       title: Forking is unavoidable
       text: If people don't like the new license, they can fork the software.
   horizontal: true
+# ---
 
 ---
 title: ...but you can still profit from it!
@@ -281,6 +305,7 @@ items:
     - icon: heart
       title: Be around and everywhere
       text: You can profit by offering premium services or a commercial derived product.
+# ---
 
 ---
 title: Don't try to mess the system
@@ -297,6 +322,7 @@ items:
     - image: '@talk/rust-logo.webp'
       title: Rust
   horizontal: true
+# ---
 
 ---
 layout: separator
@@ -309,6 +335,7 @@ options:
   background: green
 decorations:
   logo: black
+# ---
 
 ---
 layout: separator
@@ -319,6 +346,7 @@ options:
   background: amber
 decorations:
   logo: white
+# ---
 
 ---
 layout: image
@@ -327,6 +355,7 @@ image:
   url: '@common/coffee.webp'
 decorations:
   logo: white
+# ---
 
 ---
 layout: separator
@@ -337,6 +366,7 @@ image:
   url: '@common/action.webp'
 options:
   background: sky
+# ---
 
 ---
 title: First of all, choose the hosting
@@ -349,6 +379,7 @@ items:
     - image: '@talk/bitbucket.webp'
       title: BitBucket
   horizontal: true
+# ---
 
 ---
 title: Three reasons not to go self-hosted or exotic
@@ -364,6 +395,7 @@ items:
       title: Git is well known
       text: Do not create entry barriers.
   horizontal: true
+# ---
 
 ---
 layout: separator
@@ -374,6 +406,7 @@ options:
   background: amber
 decorations:
   logo: black
+# ---
 
 ---
 layout: side
@@ -383,6 +416,7 @@ content:
   - The issue system is where you usually take feedback and bug reports from your user base.
 image:
   url: '@talk/issue.webp'
+# ---
 
 ---
 layout: side
@@ -397,6 +431,7 @@ items:
       text: Having templates speeds up their reporting time.
 image:
   url: '@talk/template.webp'
+# ---
 
 ---
 layout: side
@@ -414,6 +449,7 @@ items:
       text: It will facilitate reporters to help triagers.
 image:
   url: '@talk/repro.webp'
+# ---
 
 ---
 layout: half
@@ -422,6 +458,7 @@ content:
   - It is in your rights to close bugs or features without solving them.
 image:
   url: '@common/baloons.webp'
+# ---
 
 ---
 title: ... but don't forget kindness!
@@ -437,6 +474,7 @@ items:
       title: Be reasonable
       text: Be open to change your mind.
   horizontal: true
+# ---
 
 ---
 layout: quote
@@ -445,6 +483,7 @@ quote:
   sentence: A component of a system should behave in a way that most users will expect it to behave, and therefore not astonish or surprise users.
   author: Principle of least surprise
   light: true
+# ---
 
 ---
 title: Label everything
@@ -459,6 +498,7 @@ items:
     - icon: heart
       title: Don't overcommit
       text: Limit the number of labels so that they are still useful.
+# ---
 
 ---
 layout: side
@@ -468,6 +508,7 @@ content:
   - Having *good first time issues* will help them to independently starting being involved.
 image:
   url: '@talk/first-issues.webp'
+# ---
 
 ---
 layout: separator
@@ -478,6 +519,7 @@ image:
   url: '@common/pillars.webp'
 options:
   background: sky
+# ---
 
 ---
 title: Pull Request
@@ -492,6 +534,7 @@ items:
     - icon: globe
       title: The scope will vary
       text: Same as above, *don't be afraid of changes*.
+# ---
 
 ---
 layout: side
@@ -501,6 +544,7 @@ content:
   - Even if a PR content is very appealing, you have to *resist the temptation to accept it without tests*.
 image:
   url: '@talk/tests.webp'
+# ---
 
 ---
 title: The review process
@@ -518,6 +562,7 @@ items:
     - index: 4
       title: Enforce the conventions
       text: Same as above, *don't be afraid to ask for picky changes*.
+# ---
 
 ---
 layout: half
@@ -529,6 +574,7 @@ image:
   url: '@talk/review.webp'
 decorations:
   logo: black
+# ---
 
 ---
 title: CI and workflows
@@ -543,6 +589,7 @@ items:
     - icon: shield
       title: CI is a life saver
       text: Don't merge any PR with a red CI.
+# ---
 
 ---
 title: Conventional commits
@@ -553,6 +600,7 @@ content:
   - qr: https://www.conventionalcommits.org/en/v1.0.0/
 className:
   qr: theme-misc@qr--big
+# ---
 
 ---
 title: Show me some examples
@@ -565,6 +613,7 @@ code:
     shogun@panda:~/repo$ git commit -m "chore!: drop support for Node 6"
     shogun@panda:~/repo$ git commit -m "docs: correct spelling of CHANGELOG"
   numbers: false
+# ---
 
 ---
 title: Semantic versioning
@@ -575,6 +624,7 @@ content:
   - qr: https://semver.org/
 className:
   qr: theme-misc@qr--big
+# ---
 
 ---
 layout: side
@@ -583,6 +633,7 @@ content:
   - By leveraging existing tools and the workflow feature you can release new version with just a click.
 image:
   url: '@talk/workflows.webp'
+# ---
 
 ---
 layout: separator
@@ -593,6 +644,7 @@ options:
   background: amber
 decorations:
   logo: white
+# ---
 
 ---
 layout: image
@@ -601,16 +653,18 @@ image:
   url: '@common/coffee.webp'
 decorations:
   logo: white
+# ---
 
 ---
 layout: separator
 title: |
-  Humans are 
+  Humans are
   social beings
 image:
   url: '@common/people.webp'
 options:
   background: sky
+# ---
 
 ---
 layout: half
@@ -622,6 +676,7 @@ image:
   url: '@common/community.webp'
 decorations:
   logo: black
+# ---
 
 ---
 title: Where do you store the code?
@@ -633,6 +688,7 @@ items:
     - icon: globe
       title: Public, separate organizations are the best
       text: They give you the visibility and ease of use you need.
+# ---
 
 ---
 title: Which accesses do you want to give?
@@ -644,6 +700,7 @@ items:
     - icon: bomb
       title: Make sure people cannot cut you out
       text: It will be very hard to retake control.
+# ---
 
 ---
 title: Remember, you don't really own the code
@@ -658,6 +715,7 @@ items:
     - icon: circle-nodes
       title: ... so don't forget about others!
       text: Contributors should have a say in relevant administrative tasks.
+# ---
 
 ---
 layout: separator
@@ -666,6 +724,7 @@ image:
   url: '@common/diversity.webp'
 options:
   background: sky
+# ---
 
 ---
 title: Conscious and unconscious bias
@@ -680,6 +739,7 @@ items:
       title: Unconscious
       text: More subtle because we don't control them.
   horizontal: true
+# ---
 
 ---
 title: Why do you want D&I?
@@ -695,6 +755,7 @@ items:
       title: New perspectives
       text: ... and different point of views.
   horizontal: true
+# ---
 
 ---
 title: How do you enforce it? (1/2)
@@ -707,6 +768,7 @@ items:
       title: Be receptive
       text: Ask for suggestion from affected people.
   horizontal: true
+# ---
 
 ---
 title: How do you enforce it? (2/2)
@@ -719,6 +781,7 @@ items:
       title: Zero Tolerance
       text: No exception allowed.
   horizontal: true
+# ---
 
 ---
 layout: separator
@@ -729,6 +792,7 @@ options:
   background: blue
 decorations:
   logo: black
+# ---
 
 ---
 title: Last advices
@@ -744,6 +808,7 @@ items:
       title: Be genuine and honest
       text: People will never fail to notice, appreciate and *love you*.
   horizontal: true
+# ---
 
 ---
 layout: separator
@@ -754,6 +819,7 @@ options:
   background: amber
 decorations:
   logo: white
+# ---
 
 ---
 layout: image
@@ -762,6 +828,7 @@ image:
   url: '@common/coffee.webp'
 decorations:
   logo: white
+# ---
 
 ---
 layout: separator
@@ -772,6 +839,7 @@ options:
   background: amber
 decorations:
   logo: white
+# ---
 
 ---
 layout: separator
@@ -782,6 +850,7 @@ options:
   background: amber
 decorations:
   logo: white
+# ---
 
 ---
 layout: quote
@@ -792,8 +861,8 @@ quote:
     by passion. That becomes more true
     the higher the skill level gets.
   author: Eric Raymond
+# ---
 
 ---
 layout: end
 # ---
-

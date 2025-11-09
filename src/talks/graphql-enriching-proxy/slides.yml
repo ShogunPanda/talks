@@ -13,18 +13,20 @@ options:
   background: fuchsia
 decorations:
   logo: black
+# ---
 
 ---
 layout: hello
 # ---
 
 ---
-title: Let’s celebrate GraphQL!
+title: Let's celebrate GraphQL!
 content:
   - We all know how this technology has made our life easier.
 image:
   url: '@talk/graphql.webp'
   className: talk@graphql-logo
+# ---
 
 ---
 title: Why is it good?
@@ -39,6 +41,7 @@ items:
     - icon: circle-nodes
       title: Federation
       text: Multiple schemas can be easily joined.
+# ---
 
 ---
 title: Federation
@@ -52,7 +55,8 @@ items:
       text: Each subgraph is handled by a separate service, possibly remote.
     - icon: thumbs-down
       title: Only works with GraphQL service
-      text: You can’t directly integrate with REST APIs or similar.
+      text: You can't directly integrate with REST APIs or similar.
+# ---
 
 ---
 title: Serialization
@@ -65,19 +69,21 @@ items:
       title: The network stack is your choice
       text: Neither the data format or the transfer protocol are mandated by the spec.
     - icon: star
-      title: Let’s face the honest truth
+      title: Let's face the honest truth
       text: 99% (total arbitrary) of the times we are talking about JSON data exchanged over HTTP.
+# ---
 
 ---
 layout: half
 title: The server knows<br/>it better
 content:
-  - It’s relative easy to attach new data sources to the server.
-  - <em class="theme@fg-blue">How to push additional data to a client that didn’t ask for it?</em>
+  - It's relative easy to attach new data sources to the server.
+  - <em class="theme@fg-blue">How to push additional data to a client that didn't ask for it?</em>
 image:
   url: '@common/server.webp'
 decorations:
   logo: white
+# ---
 
 ---
 layout: separator
@@ -88,13 +94,14 @@ options:
   background: amber
 decorations:
   logo: black
+# ---
 
 ---
 title: 'Happy case: we control everything'
 items:
   entries:
     - index: 1
-      title: Add new data to the server’s schema
+      title: Add new data to the server's schema
       text: You should not break backward compatibility.
     - index: 2
       title: Verify the clients are still working
@@ -102,6 +109,7 @@ items:
     - index: 3
       title: Update the clients
       text: Update queries in the client to use the new data.
+# ---
 
 ---
 layout: separator
@@ -110,6 +118,7 @@ image:
   url: '@common/happiness.webp'
 options:
   background: amber
+# ---
 
 ---
 layout: separator
@@ -118,6 +127,7 @@ image:
   url: '@common/laugh.webp'
 options:
   background: gray
+# ---
 
 ---
 title: The happy case is mostly theoretical
@@ -125,13 +135,14 @@ items:
   entries:
     - icon: globe
       title: You have to be in control of the clients
-      text: You also have to consider users that don’t usually upgrade their applications often.
+      text: You also have to consider users that don't usually upgrade their applications often.
     - icon: tower-observation
       title: Nothing can go out of sight
       text: If even a single component is not updated at the right time, compatibility problems will arise.
     - icon: certificate
       title: Specification will be broken
-      text: Even if the client is able to handle data it didn’t ask for, <em>we are breaking the specification</em>.
+      text: Even if the client is able to handle data it didn't ask for, <em>we are breaking the specification</em>.
+# ---
 
 ---
 layout: raw
@@ -146,6 +157,7 @@ options:
   background: red
 decorations:
   logo: white
+# ---
 
 ---
 layout: separator
@@ -156,6 +168,7 @@ options:
   background: amber
 decorations:
   logo: white
+# ---
 
 ---
 layout: separator
@@ -169,6 +182,7 @@ options:
   background: green
 decorations:
   logo: black
+# ---
 
 ---
 title: Check it out!
@@ -178,6 +192,7 @@ content:
   - <span class="theme-misc@qr__footer">[https://github.com/ShogunPanda/graphql-enrich-proxy](https://github.com/ShogunPanda/graphql-enrich-proxy)</span>
 className:
   qr: theme-misc@qr--big
+# ---
 
 ---
 title: How it works
@@ -199,6 +214,7 @@ items:
       title: Enrich the response
       text: Store the additional data in the extensions field, using the JSONPath selector as the key.
   gap: false
+# ---
 
 ---
 title: Meet GraphQL extensions
@@ -213,6 +229,7 @@ items:
       title: Existing clients will ignore them
       text: Unaware clients will ignore the field and the server is still specification compliant.
   horizontal: true
+# ---
 
 ---
 layout: code
@@ -242,6 +259,7 @@ code:
       // Return to the client
       return { ...response, extensions: { ...response.extensions, ...extensions }}
     })
+# ---
 
 ---
 layout: side
@@ -276,6 +294,7 @@ code:
         }
       }
     }
+# ---
 
 ---
 layout: side
@@ -319,6 +338,7 @@ code:
     root: theme-misc@code--small
 decorations:
   logo: white
+# ---
 
 ---
 title: Cache the queries
@@ -333,6 +353,7 @@ items:
       title: …and the enriched query
       text: Traversing a complex query to ensure types information can be time consuming.
   horizontal: true
+# ---
 
 ---
 layout: separator
@@ -341,11 +362,13 @@ options:
   background: sky
 decorations:
   logo: black
+# ---
 
 ---
 title: Depth first tree traversal
 image:
   url: '@talk/tree.webp'
+# ---
 
 ---
 layout: side
@@ -374,12 +397,14 @@ code:
 
     shogun@panda:~/example$ jq ".countries[1].capital" example.json
     "Roma"
+# ---
 
 ---
 layout: separator
 title: ... and now the show goes on!
 options:
   background: sky
+# ---
 
 ---
 layout: side
@@ -419,6 +444,7 @@ code:
     }
 decorations:
   logo: white
+# ---
 
 ---
 layout: side
@@ -453,6 +479,7 @@ code:
         }
       }
     }
+# ---
 
 ---
 layout: side
@@ -491,6 +518,7 @@ code:
     }
 decorations:
   logo: white
+# ---
 
 ---
 layout: separator
@@ -499,6 +527,7 @@ image:
   url: '@common/sun.webp'
 options:
   background: blue
+# ---
 
 ---
 layout: code
@@ -521,6 +550,7 @@ code:
         }
       }
     }
+# ---
 
 ---
 layout: code
@@ -547,6 +577,7 @@ code:
         }
       }
     }
+# ---
 
 ---
 layout: side
@@ -588,6 +619,7 @@ code:
     }
   className:
     root: theme-misc@code--small
+# ---
 
 ---
 layout: side
@@ -624,6 +656,7 @@ code:
         /* ... */
       }
     }
+# ---
 
 ---
 layout: side
@@ -652,6 +685,7 @@ code:
         }
       }
     }
+# ---
 
 ---
 layout: separator
@@ -664,6 +698,7 @@ decorations:
   icon: champagne-glasses
   className:
     icon: theme-misc@mission-completed
+# ---
 
 ---
 title: Take home lessons
@@ -676,11 +711,12 @@ items:
       text: The specifications are formal and verbose but they <em>might already contain what you need</em>.
     - icon: list-check
       title: Be compliant
-      text: Even if peers are lenient with specification break, they might stop at any time. <em>Don’t risk!</em>
+      text: Even if peers are lenient with specification break, they might stop at any time. <em>Don't risk!</em>
     - icon: search
       title: Analyse the environment
       text: Even if you develop the experience end to end, you will never be able to <em>control everything</em>.
   horizontal: true
+# ---
 
 ---
 layout: quote
@@ -689,8 +725,8 @@ quote:
     You are remembered for
     the rules you break.
   author: Douglas MacArthur
+# ---
 
 ---
 layout: end
 # ---
-

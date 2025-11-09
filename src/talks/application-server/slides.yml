@@ -1,0 +1,493 @@
+# TODO@PI: Move non graph/code images from all talks to common folder
+# TODO@PI: Prepare a demo and uncomment the demo slide
+# TODO@PI: Make QR code black dots color randomically
+
+---
+layout: cover
+# ---
+
+---
+layout: hello
+# ---
+
+---
+layout: separator
+title: Node.js is everywhere
+image:
+  url: '@common/node-mascot.svg'
+options:
+  background: orange
+decorations:
+  logo: white
+# ---
+
+---
+title: The numbers speak for themselves
+items:
+  entries:
+    - icon: download
+      title: 2+ billion downloads annually
+      text: Node.js is one of the most popular web development tools in the world.
+    - icon: server
+      title: Powers millions of applications
+      text: From startups to Fortune 500 companies, Node.js runs critical infrastructure.
+    - icon: rocket
+      title: Fast and efficient
+      text: Built on V8, it delivers excellent performance for I/O-bound applications.
+# ---
+---
+layout: separator
+title: But there's a catch...
+image:
+  url: '@common/danger-strip.webp'
+options:
+  background: red
+decorations:
+  logo: white
+# ---
+
+---
+title: Single-threaded by design
+items:
+  entries:
+    - icon: microchip
+      title: One thread per process
+      text: By default, it runs JavaScript on a single event loop.
+    - icon: scale-balanced
+      title: Non-blocking I/O
+      text: It's the perfect fit for web servers and APIs.
+    - icon: bomb
+      title: Limited for CPU-intensive tasks
+      text: Heavy computation can block the entire application.
+# ---
+
+---
+layout: separator
+title: Is this still true?
+image:
+  url: '@common/questions-2.webp'
+options:
+  background: amber
+decorations:
+  logo: white
+# ---
+
+---
+layout: separator
+title: |
+  Did you hide
+  in a cave?
+image:
+  url: '@common/cave.webp'
+options:
+  background: red
+decorations:
+  logo: white
+className:
+  root: theme@separator--reverse
+# ---
+
+---
+title: Worker Threads have existed since 2018
+items:
+  entries:
+    - icon: calendar
+      title: Introduced in Node.js 10.5.0
+      text: The Worker Threads API was added in June 2018 and has been stable since Node.js 12.
+    - icon: gears
+      title: True parallelism
+      text: Run JavaScript in multiple threads, each with its own V8 instance and event loop.
+    - icon: code
+      title: Not widely adopted
+      text: Way too many applications still don't leverage them, missing out on multi-core performance.
+# ---
+
+---
+layout: separator
+title: |
+  Running Node.js
+  in production
+image:
+  url: '@common/server.webp'
+options:
+  background: orange
+decorations:
+  logo: white
+# ---
+
+---
+title: The three pillars
+items:
+  entries:
+    - icon: heart-pulse
+      title: Monitoring
+      text: Track application health and detect issues before they become critical.
+    - icon: chart-line
+      title: Metrics
+      text: Collect and expose performance data for observability platforms.
+    - icon: shield
+      title: Fault tolerance
+      text: Handle failures gracefully and recover quickly from errors.
+# ---
+
+---
+layout: separator
+title: |
+  How do we
+  monitor health?
+image:
+  url: '@common/health-monitor.webp'
+options:
+  background: amber
+decorations:
+  logo: white
+# ---
+
+---
+title: The Node.js event loop
+image:
+  url: '@talk/event-loop.webp'
+# ---
+
+---
+title: The event loop observation problem
+items:
+  entries:
+    - icon: eye-slash
+      title: The paradox
+      text: |
+        A busy event loop
+        **cannot observe itself**.
+    - icon: ban
+      title: Monitoring gets blocked too
+      text: |
+        If your application is overloaded,
+        the monitoring code is also blocked.
+  horizontal: true
+# ---
+
+---
+title: Backpressure management loses effectiveness
+items:
+  entries:
+    - icon: gauge-high
+      title: Resource waste is "suboptimal"
+      text: |
+        You must set low thresholds
+        to allow monitoring to run.
+    - icon: hourglass
+      title: Ineffective under load
+      text: |
+        If the thread is truly stuck,
+        no monitoring code runs.
+  horizontal: true
+# ---
+
+---
+layout: separator
+title: We need a better architecture!
+image:
+  url: '@common/deserve.webp'
+options:
+  background: sky
+decorations:
+  logo: white
+# ---
+
+---
+title: Introducing Watt
+content:
+  - A Node.js application server, done the right way!
+  - qr: https://www.platformatichq.com/watt
+  - <span class="theme-misc@qr__footer">[https://www.platformatichq.com/watt](https://www.platformatichq.com/watt)</span>
+className:
+  qr: theme-misc@qr--big
+# ---
+
+---
+title: "Here's our _secret sauce_!"
+items:
+  entries:
+    - icon: server
+      title: Move applications to threads
+      text: Each gets its own separate worker thread.
+    - icon: network-wired
+      title: Main thread as coordinator
+      text: The main thread manages workers and routes requests.
+    - icon: heartbeat
+      title: External observation
+      text: The coordinator can monitor worker health from outside.
+# ---
+
+---
+title: How does it work?
+items:
+  entries:
+    - icon: diagram-project
+      title: Main thread (coordinator)
+      text: |
+        Monitors workers
+        and handles their lifecycle.
+    - icon: gears
+      title: Worker threads
+      text: |
+        Run applications, report health status,
+        and support independent restart and scaling.
+  horizontal: true
+# ---
+
+---
+layout: separator
+title: |
+  What about
+  metrics?
+image:
+  url: '@common/metrics.webp'
+options:
+  background: amber
+decorations:
+  logo: black
+# ---
+
+---
+title: Prometheus server on the main thread
+items:
+  entries:
+    - icon: chart-line
+      title: Dedicated metrics server
+      text: Prometheus metrics are exposed from the main thread, not from worker threads.
+    - icon: eye
+      title: Avoid the paradox
+      text: A blocked worker cannot report its own metrics reliably.
+    - icon: shield-halved
+      title: Always available
+      text: The metrics endpoint always responds, regardless of worker state.
+# ---
+
+---
+title: Monitoring architecture
+image:
+  url: '@talk/metrics.webp'
+# ---
+
+---
+title: Kubernetes probes benefit too
+items:
+  entries:
+    - icon: heart-pulse
+      title: Reliable readiness probes
+      text: Report as ready only when workers are actually available.
+    - icon: heartbeat
+      title: Reliable liveness probes
+      text: Always respond to liveness checks, even under heavy load.
+    - icon: circle-check
+      title: True health visibility
+      text: Kubernetes sees the real application health, not just thread responsiveness.
+# ---
+
+---
+layout: separator
+title: Handling failures
+image:
+  url: '@common/firefighter.webp'
+options:
+  background: sky
+decorations:
+  logo: white
+# ---
+
+---
+title: The traditional single-threaded scenario
+items:
+  entries:
+    - icon: hourglass-half
+      title: Degradation goes unnoticed
+      text: Health checks stop responding when the thread is busy, hiding the real problem.
+    - icon: bomb
+      title: Critical failures are catastrophic
+      text: Memory exhaustion, a crash, or an unhandled exception takes down the entire application.
+    - icon: stopwatch
+      title: Long recovery time
+      text: During process restart, there might be downtime or performance loss due to fewer replicas.
+# ---
+
+---
+title: The innovative Watt multi-threaded approach
+items:
+  entries:
+    - icon: skull-crossbones
+      title: Let it fail
+      text: |
+        If a worker thread crashes,
+        restart it immediately.
+    - icon: heart-crack
+      title: Proactive approach
+      text: If health metrics degrade, terminate and restart the worker.
+    - icon: clock
+      title: Replace before restart
+      text: |
+        Start a new thread before
+        stopping unhealthy ones.
+  horizontal: true
+# ---
+
+---
+layout: separator
+title: |
+  Why is this
+  approach better?
+image:
+  url: '@common/dog-1.webp'
+options:
+  background: amber
+decorations:
+  logo: black
+# ---
+
+---
+layout: separator
+title: |
+  Because I'm
+  telling you!
+subtitle: "Don't you just trust me? 😭"
+image:
+  url: '@common/troll-black.svg'
+  className: theme-misc@troll
+options:
+  background: pink
+className:
+  root: theme@separator--reverse
+# ---
+
+---
+title: Seriously, why is this approach better?
+items:
+  entries:
+    - icon: bolt
+      title: Much faster recovery
+      text: Restarting a single thread is orders of magnitude faster than restarting the entire process.
+    - icon: arrows-rotate
+      title: Replace, don't restart
+      text: New workers start before unhealthy ones stop, ensuring zero wait time.
+    - icon: circle-check
+      title: No request loss
+      text: Traffic seamlessly shifts to healthy workers with no dropped connections or failed requests.
+# ---
+
+---
+layout: image
+title: Not convinced yet?
+image:
+  url: '@common/fry-money.webp'
+className:
+  contents: talk@image__contents
+# ---
+
+---
+title: Multiple applications, one process
+items:
+  entries:
+    - icon: cubes
+      title: Run multiple applications
+      text: They all run in the same Node.js process, each isolated in its own worker thread.
+    - icon: sliders
+      title: Independent scaling
+      text: Scale each application independently based on its own load and resource requirements.
+  horizontal: true
+# ---
+
+---
+title: 'Watt in action: the mesh network'
+image:
+  url: '@talk/mesh.webp'
+# ---
+
+---
+title: Intelligent dynamic in-process scaling
+items:
+  entries:
+    - icon: up-right-and-down-left-from-center
+      title: Use all available cores
+      text: Spawn workers to match available CPU cores.
+    - icon: chart-line
+      title: Dynamic worker count
+      text: Scale workers up or down dynamically based on load and performance.
+    - icon: coins
+      title: Better resource utilization
+      text: Get more from your existing infrastructure before scaling horizontally.
+# ---
+
+---
+title: 'Watt in action: multiple workers'
+image:
+  url: '@talk/multiple-workers.webp'
+# ---
+
+---
+title: Dynamic applications
+items:
+  entries:
+    - icon: arrows-rotate
+      title: Hot-swap made easy
+      text: Add or remove applications from a running process with zero downtime.
+    - icon: shuffle
+      title: Movable and flexible
+      text: Redistribute applications for load balancing or resource optimization without interruption.
+  horizontal: true
+# ---
+
+# ---
+# layout: separator
+# title: Demo Time
+# image:
+#   url: '@common/action.webp'
+# options:
+#   background: sky
+# decorations:
+#   logo: white
+# # ---
+
+---
+layout: separator
+title: |
+  Please, just
+  let me go!
+subtitle: I promise I understood everything! 🙏
+image:
+  url: '@common/dog-2.webp'
+options:
+  background: pink
+decorations:
+  logo: black
+className:
+  root: theme@separator--reverse
+# ---
+
+---
+title: Take-home lessons
+items:
+  entries:
+    - icon: eye
+      title: The monitoring paradox
+      text: Self-monitoring on a single thread is fundamentally flawed.
+    - icon: layer-group
+      title: Separation of concerns
+      text: Application logic, coordination, and monitoring should be isolated.
+    - icon: arrows-rotate
+      title: Let it fail
+      text: Fast restarts are better than trying to recover unhealthy processes.
+  horizontal: true
+# ---
+
+---
+layout: quote
+quote:
+  sentence: |
+    Success is often achieved by those
+    who don't know that failure is inevitable.
+  author: Coco Chanel
+# ---
+
+---
+layout: end
+# ---

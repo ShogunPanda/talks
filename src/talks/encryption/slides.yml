@@ -12,6 +12,7 @@ options:
   background: fuchsia
 decorations:
   logo: black
+# ---
 
 ---
 layout: hello
@@ -19,7 +20,7 @@ layout: hello
 
 ---
 layout: half
-title: First of all, let’s give credits!
+title: First of all, let's give credits!
 content:
   - This talk has originally been written by my colleague and friend **Michele Riva**.
   - <span class="theme@fg-pink">**Whatever goes wrong today, please complain directly to him on Twitter!**</span>
@@ -28,6 +29,7 @@ image:
   url: '@talk/michele.webp'
 decorations:
   logo: white
+# ---
 
 ---
 title: Why do we need end-to-end encryption?
@@ -42,6 +44,7 @@ items:
     - icon: ethernet
       title: LAN connectors can be hacked
       text: '*Do you believe in conspiracies?*'
+# ---
 
 ---
 layout: separator
@@ -52,6 +55,7 @@ options:
   background: sky
 decorations:
   logo: black
+# ---
 
 ---
 layout: separator
@@ -60,6 +64,7 @@ image:
   url: '@common/dali.webp'
 options:
   background: red
+# ---
 
 ---
 layout: quote
@@ -69,6 +74,7 @@ quote:
   author: The Oxford Dictionary
   light: true
   icons: false
+# ---
 
 ---
 layout: separator
@@ -77,36 +83,43 @@ image:
   url: '@common/caesar-salad.webp'
 options:
   background: sky
+# ---
 
 ---
 title: How does the Caesar Cipher work?
 image:
   url: '@talk/caesar-cipher-1.webp'
+# ---
 
 ---
 title: How does the Caesar Cipher work?
 image:
   url: '@talk/caesar-cipher-2.webp'
+# ---
 
 ---
 title: How does the Caesar Cipher work?
 image:
   url: '@talk/caesar-cipher-3.webp'
+# ---
 
 ---
 title: How does the Caesar Cipher work?
 image:
   url: '@talk/caesar-cipher-4.webp'
+# ---
 
 ---
 title: How does the Caesar Cipher work?
 image:
   url: '@talk/caesar-cipher-5.webp'
+# ---
 
 ---
 title: How does the Caesar Cipher work?
 image:
   url: '@talk/caesar-cipher-6.webp'
+# ---
 
 ---
 layout: side
@@ -119,6 +132,7 @@ items:
   gap: false
 image:
   url: '@talk/hal.webp'
+# ---
 
 ---
 title: And now, a bit of pain for some of us
@@ -126,6 +140,7 @@ content:
   - How old are you? Do you recognize this?
 image:
   url: '@talk/rot13.webp'
+# ---
 
 ---
 title: Why is Caesar Cipher weak?
@@ -133,6 +148,7 @@ content:
   - Since only a few permutations are possible, brute forcing is quite easy (especially if using letter frequency analysis).
 image:
   url: '@talk/letter-analysis.webp'
+# ---
 
 ---
 layout: half
@@ -147,6 +163,7 @@ items:
       text: The parameters must be chosen so that brute forcing is unfeasible.
 image:
   url: '@common/algorithm.webp'
+# ---
 
 ---
 title: What are our choices today?
@@ -154,6 +171,7 @@ content:
   - The **Advanced Encryption Standard** (AES) is a secure symmetric block algorithm.
 image:
   url: '@talk/aes.webp'
+# ---
 
 ---
 title: Let's make the communication secure
@@ -161,6 +179,7 @@ content:
   - Before starting encrypting the traffic, the peers have to choose a shared key.
   - Shared key handshaking is not and cannot be encrypted.
   - '*Anybody could steal the key.*'
+# ---
 
 ---
 layout: separator
@@ -171,6 +190,7 @@ options:
   background: amber
 decorations:
   logo: white
+# ---
 
 ---
 layout: image
@@ -179,6 +199,7 @@ image:
   url: '@talk/diffie-hellman.webp'
 decorations:
   logo: black
+# ---
 
 ---
 title: The Diffie-Hellman algorithm
@@ -193,6 +214,7 @@ items:
     - icon: rotate
       title: It is fast and easy to implement
       text: Keys can (and should) be rotated with each message to improve security.
+# ---
 
 ---
 layout: separator
@@ -203,24 +225,28 @@ options:
   background: sky
 decorations:
   logo: black
+# ---
 
 ---
 title: Generate the private and public keys
 image:
   url: '@talk/generate.webp'
 index: 1
+# ---
 
 ---
 title: Exchange the public keys
 image:
   url: '@talk/exchange.webp'
 index: 2
+# ---
 
 ---
 title: Generate the shared keys
 image:
   url: '@talk/shared.webp'
 index: 3
+# ---
 
 ---
 layout: separator
@@ -229,31 +255,37 @@ image:
   url: '@talk/walter-white.webp'
 options:
   background: sky
+# ---
 
 ---
 title: How is this possible?
 image:
   url: '@talk/handshake-1.webp'
+# ---
 
 ---
 title: How is this possible?
 image:
   url: '@talk/handshake-2.webp'
+# ---
 
 ---
 title: How is this possible?
 image:
   url: '@talk/handshake-3.webp'
+# ---
 
 ---
 title: How is this possible?
 image:
   url: '@talk/shared-calculation.webp'
+# ---
 
 ---
 title: Let's prove it!
 image:
   url: '@talk/prove.webp'
+# ---
 
 ---
 layout: quote
@@ -263,8 +295,8 @@ quote:
     security today will determine the kind of
     society we live in tomorrow.
   author: Whitfield Diffie
+# ---
 
 ---
 layout: end
 # ---
-

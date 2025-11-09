@@ -13,6 +13,7 @@ options:
   background: fuchsia
 decorations:
   logo: black
+# ---
 
 ---
 layout: hello
@@ -25,6 +26,7 @@ image:
   url: '@common/code.webp'
 options:
   background: amber
+# ---
 
 ---
 title: Let's clarify things
@@ -39,6 +41,7 @@ items:
     - icon: bolt
       title: Is it working?
       text: Open Source has proven to be really effective in improving software quality.
+# ---
 
 ---
 title: How did it start?
@@ -53,6 +56,7 @@ items:
     - icon: code-fork
       title: Open Source was branched off the Free Software Movement
       text: OSS software can be used for commercial purposes. *The freedom is retained.*
+# ---
 
 ---
 title: Why would somebody want to go Open Source?
@@ -67,6 +71,7 @@ items:
     - icon: sack-dollar
       title: Low maintenance cost
       text: You don't need an office, just a version control server.
+# ---
 
 ---
 layout: separator
@@ -77,6 +82,7 @@ options:
   background: blue
 decorations:
   logo: black
+# ---
 
 ---
 layout: separator
@@ -89,6 +95,7 @@ options:
   background: blue
 decorations:
   logo: white
+# ---
 
 ---
 layout: half
@@ -99,6 +106,7 @@ content:
   - '*You are not their boss!*'
 image:
   url: '@common/people.webp'
+# ---
 
 ---
 layout: half
@@ -118,6 +126,7 @@ image:
   url: '@common/kindness.webp'
 decorations:
   logo: black
+# ---
 
 ---
 layout: side
@@ -127,6 +136,7 @@ content:
   - Even a single small act of rudeness can *burn people out*.
 image:
   url: '@talk/burnout.webp'
+# ---
 
 ---
 layout: separator
@@ -137,6 +147,7 @@ image:
   url: '@common/sos.webp'
 options:
   background: amber
+# ---
 
 ---
 title: It all starts with a detailed search
@@ -154,6 +165,7 @@ items:
     - index: 4
       title: Documentation
       text: Known workaround or out of scope problems are usually well documented.
+# ---
 
 ---
 title: Don't worry about overcommunicating
@@ -168,6 +180,7 @@ items:
     - icon: clock
       title: Time is finite
       text: We all have our lives. We don't have time to request missing informations.
+# ---
 
 ---
 title: It is like journalism
@@ -183,6 +196,7 @@ items:
     - index: 3
       title: How
       text: What is the smallest way to reproduce the problem? *This will return*.
+# ---
 
 ---
 layout: separator
@@ -192,6 +206,7 @@ image:
   url: '@common/why.webp'
 options:
   background: red
+# ---
 
 ---
 title: Narrow things down
@@ -206,6 +221,7 @@ items:
     - icon: bug
       title: It's for your own good
       text: The more superfluous information you give, the less the chance to see you problem solved.
+# ---
 
 ---
 layout: side
@@ -223,6 +239,7 @@ items:
       text: It will facilitate the triagers' work.
 image:
   url: '@talk/repro.webp'
+# ---
 
 ---
 title: Follow up
@@ -237,6 +254,7 @@ items:
     - icon: bell
       title: Setup notifications
       text: This is the easiest way to follow the discussion.
+# ---
 
 ---
 title: Contribute to the development
@@ -251,6 +269,7 @@ items:
     - icon: comments
       title: Give feedback
       text: Let the maintainer know if the issue is solved.
+# ---
 
 ---
 layout: separator
@@ -261,6 +280,7 @@ options:
   background: green
 decorations:
   logo: black
+# ---
 
 ---
 layout: quote
@@ -269,6 +289,7 @@ quote:
     No act of kindness, no matter 
     how small, is ever wasted.
   author: Aesop
+# ---
 
 ---
 layout: end

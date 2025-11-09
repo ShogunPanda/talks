@@ -14,6 +14,7 @@ options:
   background: fuchsia
 decorations:
   logo: black
+# ---
 
 ---
 layout: hello
@@ -28,6 +29,7 @@ options:
   background: blue
 decorations:
   logo: black
+# ---
 
 ---
 layout: separator
@@ -38,6 +40,7 @@ image:
   url: '@common/palette.webp'
 options:
   background: amber
+# ---
 
 ---
 title: The choice is narrow
@@ -54,6 +57,7 @@ items:
     - index: 3
       title: HTTP/3
       text: Developed on top of QUIC to solve TCP problems.
+# ---
 
 ---
 title: What about Node.js?
@@ -66,6 +70,7 @@ items:
       title: HTTP/3
       text: Work in progress, *stay tuned!*
   horizontal: true
+# ---
 
 ---
 layout: separator
@@ -74,6 +79,7 @@ image:
   url: '@common/focus.webp'
 options:
   background: sky
+# ---
 
 ---
 layout: side
@@ -83,6 +89,7 @@ content:
   - Written by Fedor Indutny in 2019, is the default since Node.js 12.
 image:
   url: '@talk/llhttp.webp'
+# ---
 
 ---
 layout: side
@@ -92,6 +99,7 @@ content:
   - llparse is capable to generate a very performant C code out of a TypeScript description of the possible states.
 image:
   url: '@talk/llhttp_states.webp'
+# ---
 
 ---
 title: "llhttp: what's wrong with it?"
@@ -106,6 +114,7 @@ items:
     - icon: handshake
       title: You give them a finger, they take the arm
       text: A lenient approach opens the door for edge cases and vulnerability opportunities.
+# ---
 
 ---
 layout: separator
@@ -114,6 +123,7 @@ image:
   url: '@common/solution-1.webp'
 options:
   background: amber
+# ---
 
 ---
 layout: separator
@@ -122,6 +132,7 @@ image:
   url: '@common/fresh.webp'
 options:
   background: green
+# ---
 
 ---
 layout: separator
@@ -132,6 +143,7 @@ options:
   background: pink
 decorations:
   logo: black
+# ---
 
 ---
 layout: side
@@ -149,6 +161,7 @@ items:
       text: I don't want to start another language flame. *Please.* ❤️
 image:
   url: '@talk/rust-logo.webp'
+# ---
 
 ---
 title: Do not throw the goods away
@@ -163,6 +176,7 @@ items:
     - icon: code-branch
       title: Declarative, reinvented
       text: Rust enables to declare states with no code restriction.
+# ---
 
 ---
 layout: separator
@@ -171,6 +185,7 @@ image:
   url: '@common/dog-1.webp'
 options:
   background: amber
+# ---
 
 ---
 layout: separator
@@ -179,6 +194,7 @@ image:
   url: '@common/macro.webp'
 options:
   background: green
+# ---
 
 ---
 title: Rust macro system is insanely powerful
@@ -193,6 +209,7 @@ items:
     - icon: bug
       title: Easily debuggable
       text: Via [*cargo-expand*](https://github.com/dtolnay/cargo-expand), it's easy to see what is the final compiled code.
+# ---
 
 ---
 title: Examples are worth more than 1000 words
@@ -256,6 +273,7 @@ items:
   spacer: false
   gap: false
   defaultclassName: false
+# ---
 
 ---
 layout: separator
@@ -266,6 +284,7 @@ options:
   background: amber
 decorations:
   logo: black
+# ---
 
 ---
 title: Milo has very small memory footprint
@@ -280,6 +299,7 @@ items:
     - icon: heart
       title: Convenience at your service
       text: Milo manages unconsumed data for you, making your life easier.
+# ---
 
 ---
 layout: separator
@@ -288,6 +308,7 @@ image:
   url: '@common/wall.webp'
 options:
   background: red
+# ---
 
 ---
 layout: separator
@@ -298,6 +319,7 @@ image:
   url: '@common/action.webp'
 options:
   background: sky
+# ---
 
 ---
 title: Sample code (Rust)
@@ -331,6 +353,7 @@ code:
     }
   className:
     root: talk@code
+# ---
 
 ---
 title: Output (Rust)
@@ -339,6 +362,7 @@ code:
   content: |
     shogun@panda:~/example$ cargo run
     Pos=38 Body: abc
+# ---
 
 ---
 layout: separator
@@ -351,6 +375,7 @@ options:
   background: red
 decorations:
   logo: black
+# ---
 
 ---
 layout: side
@@ -365,6 +390,7 @@ items:
     - icon: link
       title: Cargo generates a static library
       text: The generated *libmilo.a* file can be statically linked in any C/C++ executable.
+# ---
 
 ---
 title: Sample code (C++)
@@ -399,6 +425,7 @@ code:
     }
   className:
     root: talk@code
+# ---
 
 ---
 title: Output (C++)
@@ -408,6 +435,7 @@ code:
     shogun@panda:~/example$ clang++ -std=c++11 -o example libmilo.a main.cc
     shogun@panda:~/example$ ./example
     Pos=38 Body: abc
+# ---
 
 ---
 layout: separator
@@ -421,6 +449,7 @@ options:
   background: red
 decorations:
   logo: black
+# ---
 
 ---
 layout: side
@@ -435,6 +464,7 @@ items:
     - icon: link
       title: The toolchain makes it easy
       text: '[*wasm-bindgen*](https://github.com/rustwasm/wasm-bindgen) generates a fully working JS module which internally loads a WASM file.'
+# ---
 
 ---
 title: Sample code (Node.js with WebAssembly)
@@ -469,6 +499,7 @@ code:
     milo.dealloc(ptr, message.length)
   className:
     root: talk@code
+# ---
 
 ---
 title: Output (Node.js with WebAssembly)
@@ -477,6 +508,7 @@ code:
   content: |
     shogun@panda:~/example$ node index.mjs
     Pos=38 Body: abc
+# ---
 
 ---
 layout: separator
@@ -489,6 +521,7 @@ decorations:
   icon: champagne-glasses
   className:
     icon: theme-misc@mission-completed
+# ---
 
 ---
 title: Performance in Node (native, preliminary)
@@ -546,6 +579,7 @@ items:
   horizontal: true
   gap: false
   defaultclassName: false
+# ---
 
 ---
 title: What's missing?
@@ -561,6 +595,7 @@ items:
       title: Migrate llhttp test suite
       text: The llhttp test suite (originally from http_parser) is crucial to ensure correctness of the parser.
   horizontal: true
+# ---
 
 ---
 title: A due thanks to ...
@@ -568,6 +603,7 @@ content:
   - Without their trust, support and sponsorship, Milo would have never been possible. **Love you! ❤️**
 image:
   url: '@talk/nearform.svg'
+# ---
 
 ---
 layout: quote
@@ -576,6 +612,7 @@ quote:
     A person who never made a mistake
     never tried anything new.
   author: Albert Einstein
+# ---
 
 ---
 layout: end

@@ -10,6 +10,7 @@ content:
   - <span class="theme-misc@qr__footer">[https://qr.link/uCLwdt](https://qr.link/uCLwdt)</span>
 className:
   qr: theme-misc@qr--big
+# ---
 
 ---
 layout: separator
@@ -19,6 +20,7 @@ image:
   url: '@talk/dinosaur-egg.webp'
 options:
   background: fuchsia
+# ---
 
 ---
 layout: hello
@@ -26,7 +28,7 @@ layout: hello
 
 ---
 layout: half
-title: First of all, let’s give credits!
+title: First of all, let's give credits!
 content:
   - This talk has originally been authored by Platformatic CTO and friend of mine, the only **Matteo Collina**.
   - <span class="theme@fg-pink">**Whatever goes wrong today, please complain directly to him on Twitter!**</span>
@@ -35,12 +37,14 @@ image:
   url: '@common/matteo.webp'
 decorations:
   logo: white
+# ---
 
 ---
 title: I think we should start by looking at numbers.
 content:
   - image: '@talk/downloads.webp'
   - '<span class="theme-misc@block theme-misc@align-center">**30 Billion** downloads per year</span>'
+# ---
 
 ---
 layout: quote
@@ -49,6 +53,7 @@ quote:
   sentence: ZYX will flip the default backend JavaScript runtime from Node.js
   author: 'Random excited user #1'
   variant: bad
+# ---
 
 ---
 layout: quote
@@ -57,6 +62,7 @@ quote:
   sentence: XYZ will destroy Node.js
   author: 'Random excited user #2'
   variant: bad
+# ---
 
 ---
 layout: separator
@@ -65,18 +71,21 @@ image:
   url: '@common/questions-2.webp'
 options:
   background: amber
+# ---
 
 ---
 layout: image
 title: Is Node.js dead yet?
 image:
   url: '@talk/sunset.webp'
+# ---
 
 ---
 layout: image
 title: Period.
 image:
   url: '@common/no.webp'
+# ---
 
 ---
 layout: separator
@@ -92,6 +101,7 @@ className:
   subtitle: theme@separator__subtitle--reverse
 decorations:
   logo: black
+# ---
 
 ---
 title: A technology born in *1959* is on the RAISE!
@@ -99,6 +109,7 @@ content:
   - Have you have heard about **COBOL**?
   - image: '@talk/cobol.webp'
   - 'Source: https://www.tiobe.com/tiobe-index/'
+# ---
 
 ---
 title: jQuery is used by *94.4%* of the JS-enabled sites
@@ -106,6 +117,7 @@ content:
   - And v4 was just released!
   - image: '@talk/jquery.webp'
   - 'Source: https://w3techs.com/technologies/overview/javascript_library'
+# ---
 
 ---
 layout: separator
@@ -114,12 +126,14 @@ image:
   url: '@common/node.webp'
 options:
   background: amber
+# ---
 
 ---
 title: Node.js is the most popular technology according to StackOverflow
 content:
   - image: '@talk/node-popularity.webp'
   - 'Source: https://survey.stackoverflow.co/2023/#technology-most-popular-technologies'
+# ---
 
 ---
 title: No, bundling npm and Node.js was not a mistake
@@ -127,6 +141,7 @@ content:
   - A combo that solve software reuse, at scale. No one else did.
   - image: '@talk/npm.webp'
   - 'Source: http://www.modulecounts.com/'
+# ---
 
 ---
 title: Module usage also grew
@@ -134,12 +149,14 @@ content:
   - Downloads of readable-stream (4th most downloaded module on npm)
   - image: '@talk/modules-downloads.webp'
   - 'The "usage" of Node.js is growing roughly *+50% year over year*, or doubling every 2 years '
+# ---
 
 ---
 title: Half of Node.js downloads are the headers files
 content:
   - image: '@talk/node-by-os.webp'
   - 'Source: https://nodedownloads.nodeland.dev/'
+# ---
 
 ---
 title: What are "headers" downloads?
@@ -148,12 +165,14 @@ content:
     Headers are downloaded whenever an "npm i" needs to compile binary addons.
     Then they are cached to disk.
   - image: '@talk/node-headers.webp'
+# ---
 
 ---
 title: Downloads of the Node.js binary, per OS
 content:
   - We believe Linux is the default for CI. OSS projects often test on Windows for CI as well.
   - image: '@talk/node-by-binary.webp'
+# ---
 
 ---
 layout: separator
@@ -166,6 +185,7 @@ className:
   title: talk@download__title
   subtitle: talk@download__subtitle
   icon: talk@download__icon
+# ---
 
 ---
 layout: separator
@@ -179,11 +199,13 @@ className:
   title: talk@download__title
   subtitle: talk@download__subtitle
   icon: talk@download__icon
+# ---
 
 ---
 title: Node.js v16, v14, v12 are massively popular, while they all have <span class="talk@danger-banner">known vulnerabilities</span>
 content:
   - image: '@talk/node-by-version.webp'
+# ---
 
 ---
 layout: separator
@@ -192,6 +214,7 @@ image:
   url: '@common/danger-strip.webp'
 options:
   background: amber
+# ---
 
 ---
 layout: separator
@@ -202,18 +225,21 @@ options:
   background: red
 className:
   root: theme@separator--reverse
+# ---
 
 ---
 title: Long Term Support (LTS) Schedule
 content:
   - image: '@talk/lts.webp'
+# ---
 
 ---
 title: |
-  Most teams update their Node.js 
+  Most teams update their Node.js
   version every 2 LTS releases
 content:
   - image: '@talk/node-by-version-latest.webp'
+# ---
 
 ---
 title: Organization Activity from Nov 2023 to Nov 2024
@@ -241,18 +267,21 @@ items:
       className:
         contents: theme@fg-red
   horizontal: true
+# ---
 
 ---
 title: Commits & Pushes to Node.js Core
 content: 'Source https://ossinsight.io/analyze/nodejs/node'
 image:
   url: '@talk/node-commits-pushes.webp'
+# ---
 
 ---
 title: The number of pull requests is (mostly) stable
 content: 'Source https://ossinsight.io/analyze/nodejs/node'
 image:
   url: '@talk/node-prs.webp'
+# ---
 
 ---
 layout: separator
@@ -261,24 +290,28 @@ image:
   url: '@common/danger-strip.webp'
 options:
   background: sky
+# ---
 
 ---
 title: Node.js Security Submissions
 content: Submissions are not turned into vulnerabilities, but they need to be handled by the team
 image:
   url: '@talk/node-security-submissions.webp'
+# ---
 
 ---
 title: Average time to first response
 content: Submissions are not turned into vulnerabilities, but they need to be handled by the team
 image:
   url: '@talk/average-response-time.webp'
+# ---
 
 ---
 title: Average time to triage
 content: Submissions are not turned into vulnerabilities, but they need to be handled by the team
 image:
   url: '@talk/average-triage-time.webp'
+# ---
 
 ---
 title: Node.js was one of the first project sponsored by
@@ -288,11 +321,13 @@ content:
   - '*The project aims to build a world where critical open source projects are secure and where security vulnerabilities are found and fixed quickly.*'
 className:
   image: talk@image--half
+# ---
 
 ---
 title: Total funding for Security work
 image:
   url: '@talk/security-funding.webp'
+# ---
 
 ---
 layout: separator
@@ -301,6 +336,7 @@ image:
   url: '@common/ship.webp'
 options:
   background: amber
+# ---
 
 ---
 title: ESM
@@ -321,6 +357,7 @@ code:
     console.log(addTwo(4))
 className:
   root: talk@code
+# ---
 
 ---
 title: Threads
@@ -342,6 +379,7 @@ code:
     }
 className:
   root: talk@code
+# ---
 
 ---
 title: Fetch
@@ -353,6 +391,7 @@ code:
     console.log(json)
 className:
   root: talk@code
+# ---
 
 ---
 title: Web Platform Compatibility
@@ -368,6 +407,7 @@ content:
     - `EventTarget`
     - Initial `Symbol.dispose`
   - ... and there's more!
+# ---
 
 ---
 title: Promises
@@ -385,6 +425,7 @@ code:
     }
 className:
   root: talk@code
+# ---
 
 ---
 title: '`node:` only core modules'
@@ -401,6 +442,7 @@ items:
           import assert from 'node:assert'
           import test  from 'node:test'
   horizontal: true
+# ---
 
 ---
 title: 'Watch mode'
@@ -415,12 +457,13 @@ items:
     - icon: code-fork
       title: Limited platform support
       text: macOS and Windows only
+# ---
 
 ---
 layout: side
 title: AsyncLocalStorage
 content: |
-  Without it, we would not have had 
+  Without it, we would not have had
   *React Server Components*!
 code:
   language: javascript
@@ -439,7 +482,7 @@ code:
     http.createServer((req, res) => {
       asyncLocalStorage.run(idSeq++, () => {
         logWithId('start')
-        
+
         // Imagine any chain of async operations here
         setImmediate(() => {
           logWithId('finish')
@@ -452,6 +495,7 @@ code:
     http.get('http://localhost:8080')
 decorations:
   logo: white
+# ---
 
 ---
 title: WebCrypto
@@ -464,8 +508,8 @@ code:
 
     async function main() {
       const key = await webcrypto.subtle.generateKey(
-        { name: 'HMAC', hash: 'SHA-256', length: 256 }, 
-        true, 
+        { name: 'HMAC', hash: 'SHA-256', length: 256 },
+        true,
         [ 'sign', 'verify' ]
       )
 
@@ -477,6 +521,7 @@ code:
     }
 
     console.log(await main())
+# ---
 
 ---
 title: util.parseArgs()
@@ -501,6 +546,7 @@ code:
 
     console.log(args)
     // Prints: [Object: null prototype] { foo: true, bar: 'b' } []
+# ---
 
 ---
 title: Single Executable Applications
@@ -515,6 +561,7 @@ items:
     - icon: code-fork
       title: Node.js project offers a helper module named postject
       text: Similar tools exist. They should work but have not been tested.
+# ---
 
 ---
 title: Permission System
@@ -526,6 +573,7 @@ items:
     - icon: code
       title: '`process.permissions.has` API'
       text: '`process.permissions.deny()` has been removed but may be added again in the future.'
+# ---
 
 ---
 title: Test Runner
@@ -543,6 +591,7 @@ items:
     - icon: heart
       title: Good reporting defaults
       text: Defaults to `spec` or `tap` on stdout based on TTY.
+# ---
 
 ---
 title: Test Runner
@@ -564,6 +613,7 @@ code:
     })
 className:
   root: talk@code
+# ---
 
 ---
 title: WebSocket
@@ -583,6 +633,7 @@ code:
     }
 className:
   root: talk@code
+# ---
 
 ---
 layout: separator
@@ -594,17 +645,19 @@ options:
   background: pink
 decorations:
   logo: black
+# ---
 
 ---
 layout: separator
 title: What's coming?
 subtitle: |
-  Let’s look at the two 
+  Let's look at the two
   most exciting things in v22!
 image:
   url: '@common/road.webp'
 options:
   background: amber
+# ---
 
 ---
 layout: image
@@ -614,12 +667,13 @@ image:
   url: '@common/fry-money.webp'
 className:
   contents: talk@image__contents
+# ---
 
 ---
 title: require(esm)
 content:
   - |
-    Learn more on Joyee’s blog:
+    Learn more on Joyee's blog:
     https://joyeecheung.github.io/blog/2024/03/18/require-esm-in-node-js/
   - Thanks to *Geoffrey Booth* for remove the need of `.mjs`.
 code:
@@ -629,6 +683,7 @@ code:
 
     const { answer } = require('./esm.mjs')
     console.log(answer)
+# ---
 
 ---
 layout: image
@@ -637,6 +692,7 @@ image:
   url: '@common/fry-money.webp'
 className:
   contents: talk@image__contents
+# ---
 
 ---
 title: Automatic TypeScript support
@@ -647,7 +703,7 @@ items:
         language: javascript
         content: |
           // hello.ts
-          import { 
+          import {
             setTimeout as sleep
           } from 'node:timers/promises'
 
@@ -663,10 +719,11 @@ items:
           shogun@panda:~/example$ node hello.ts
           (node:30248) ExperimentalWarning: Type Stripping is
           an experimental feature and might change at any time
-          (Use `node --trace-warnings ...` to show where 
+          (Use `node --trace-warnings ...` to show where
           the warning was created)
           Hello world!
   horizontal: true
+# ---
 
 ---
 layout: separator
@@ -675,11 +732,12 @@ image:
   url: '@talk/mountain.webp'
 options:
   background: orange
+# ---
 
 ---
 layout: separator
 title: |
-  ...because 
+  ...because
   we need you!
 image:
   url: '@talk/start.webp'
@@ -687,6 +745,7 @@ options:
   background: orange
 className:
   root: theme@separator--reverse
+# ---
 
 ---
 layout: image
@@ -695,24 +754,28 @@ image:
   url: '@talk/senate.webp'
 decorations:
   logo: white
+# ---
 
 ---
 image:
   url: '@talk/openjs.webp'
+# ---
+
 ---
 title: Node.js core collaborators maintain the nodejs/node GitHub repository
 content:
   - '*@nodejs/collaborators* have commit access to the nodejs/node repository and access to the Node.js continuous integration (CI) jobs.'
   - |
-    Both collaborators and non-collaborators may propose changes to the Node.js source code. 
+    Both collaborators and non-collaborators may propose changes to the Node.js source code.
     The mechanism to propose such a change is a GitHub pull request (PR).
   - Collaborators review and merge (<i>land</i>) pull requests.
+# ---
 
 ---
 title: The review process
 content:
   - |
-    Two collaborators must approve a pull request before the pull request can land. 
+    Two collaborators must approve a pull request before the pull request can land.
     (<i>One collaborator approval is enough if the pull request has been open for more than 7 days.</i>)
   - |
     Approving a pull request indicates that the collaborator accepts responsibility for the change.
@@ -722,6 +785,7 @@ content:
     **The exception is if the TSC votes to approve the change despite the opposition.**
   - |
     Involving the TSC is usually unnecessary: often, discussions or further changes **result in collaborators removing their opposition**.
+# ---
 
 ---
 title: The Node.js Technical Steering Committee
@@ -737,6 +801,7 @@ content: |
   - Maintaining the list of additional Collaborators.
   - Development process and any coding standards.
   - Mediating technical conflicts between Collaborators or Foundation projects.
+# ---
 
 ---
 title: In case of disagreements, the TSC votes
@@ -747,12 +812,14 @@ content:
     Voting members can do everything regular members can do, and also have the ability to cast votes when consensus is not reached on an issue.
   - TSC memberships are not time-limited and there is no maximum size of the TSC. The TSC must have at least four voting members.
   - '**No more than one-fourth of the TSC voting members may be affiliated with the same employer at any time.**'
+# ---
 
 ---
 layout: image
 title: No one can control Node.js
 image:
   url: '@talk/scream.webp'
+# ---
 
 ---
 layout: separator
@@ -764,18 +831,20 @@ image:
   url: '@talk/peace.webp'
 options:
   background: sky
+# ---
 
 ---
 layout: separator
 title: |
   Do you want to have
-  a say  in the 
+  a say  in the
   future of Node.js?
 image:
   url: '@talk/send-pr.webp'
   className: talk@send-pr
 options:
   background: amber
+# ---
 
 ---
 layout: separator
@@ -787,6 +856,7 @@ options:
   background: green
 className:
   root: theme@separator--reverse
+# ---
 
 ---
 layout: quote
@@ -795,8 +865,8 @@ quote:
     It is not how old you are
     but how you are old.
   author: Jules Renard
+# ---
 
 ---
 layout: end
 # ---
-

@@ -1,5 +1,5 @@
 config:
-  theme: codemotion-workshop-fest
+  theme: main
   dimensions:
     width: 2000
     height: 1120
@@ -28,4 +28,3 @@ document:
     everything you need by yourself using a simple HTTP call.
   author: common.author
   company: common.company
-  branding: false

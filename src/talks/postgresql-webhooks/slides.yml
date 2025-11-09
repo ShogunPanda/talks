@@ -9,6 +9,7 @@ image:
   url: '@common/cannon.webp'
 options:
   background: fuchsia
+# ---
 
 ---
 layout: hello
@@ -27,6 +28,7 @@ items:
     - icon: bomb
       title: With new powers come new challenges
       text: How many point of failure would you like to have?
+# ---
 
 ---
 title: Time matters, as usual!
@@ -39,6 +41,7 @@ items:
       title: Do it right or you will fail miserably
       text: Not all customers want to deal with things like overbooking, so be careful with your data.
   horizontal: true
+# ---
 
 ---
 layout: separator
@@ -47,6 +50,7 @@ image:
   url: '@common/server.webp'
 options:
   background: amber
+# ---
 
 ---
 title: 'Batch updates via FTP or similar'
@@ -61,6 +65,7 @@ items:
       title: Not realtime and fragile
       text: Data is processed with massive delays. A failure might impact the entire batch.
   horizontal: true
+# ---
 
 ---
 title: Polling (pull)
@@ -75,6 +80,7 @@ items:
     - icon: network-wired
       title: Network intensive
       text: A lot of uncessary requests are made, especially when updates are not frequent.
+# ---
 
 ---
 title: Events based (push)
@@ -89,6 +95,7 @@ items:
     - icon: hexagon-nodes
       title: Delivery state is complex
       text: The system must maintain the list of subscribers and handle delivery failures.
+# ---
 
 ---
 layout: separator
@@ -99,6 +106,7 @@ image:
   url: '@common/alternatives.webp'
 options:
   background: amber
+# ---
 
 ---
 layout: separator
@@ -109,6 +117,7 @@ options:
   background: green
 decorations:
   logo: black
+# ---
 
 ---
 layout: quote
@@ -119,6 +128,7 @@ quote:
   author: Wikipedia
   light: true
   icons: false
+# ---
 
 ---
 layout: separator
@@ -131,6 +141,7 @@ options:
   background: orange
 decorations:
   logo: black
+# ---
 
 ---
 title: General architeture
@@ -145,6 +156,7 @@ items:
     - icon: table
       title: Simple data structure
       text: Few tables in a (No)SQL database are more than enough.
+# ---
 
 ---
 title: Yes, but which kind of queue?
@@ -159,6 +171,7 @@ items:
     - icon: '1'
       title: Exactly once
       text: Each message is guaranteed to be delivered only once.
+# ---
 
 ---
 title: Yes, but which kind of queue?
@@ -179,6 +192,7 @@ items:
     - icon: '1'
       title: Exactly once
       text: Each message is guaranteed to be delivered only once.
+# ---
 
 ---
 layout: separator
@@ -187,6 +201,7 @@ image:
   url: '@common/firefighter.webp'
 options:
   background: amber
+# ---
 
 ---
 title: Dead letter queue (DLQ)
@@ -201,6 +216,7 @@ items:
     - icon: circle-user
       title: Manual intervention
       text: A human operator is required to evaluate the DLQ.
+# ---
 
 ---
 title: Cron jobs
@@ -215,6 +231,7 @@ items:
     - icon: certificate
       title: Standard syntax
       text: The repetition interval syntax is really flexible.
+# ---
 
 ---
 layout: separator
@@ -225,6 +242,7 @@ options:
   background: amber
 decorations:
   logo: black
+# ---
 
 ---
 title: Being equal is hard
@@ -239,6 +257,7 @@ items:
     - icon: handshake-slash
       title: The queue model might be violated
       text: Without coordination, policies like exactly-one might not be guaranteed.
+# ---
 
 ---
 title: Leader based queue system
@@ -253,6 +272,7 @@ items:
     - icon: user-injured
       title: Automatic failover
       text: When the leader resigns or fails, a new leader is automatically selected.
+# ---
 
 ---
 title: A simple selection implementation
@@ -267,6 +287,7 @@ items:
     - icon: person-running
       title: Bully-like algorithm
       text: We are going replace the original concept of "higher ID" with locks.
+# ---
 
 ---
 layout: separator
@@ -275,6 +296,7 @@ image:
   url: '@common/algorithm.webp'
 options:
   background: amber
+# ---
 
 ---
 layout: separator
@@ -283,6 +305,7 @@ image:
   url: '@common/semaphore.webp'
 options:
   background: green
+# ---
 
 ---
 title: The leader election process
@@ -300,6 +323,7 @@ items:
     - index: 4
       title: Leader resigns or fail
       text: When the leader voluntarily resigns or fails, the other peers start a new election.
+# ---
 
 ---
 layout: separator
@@ -310,6 +334,7 @@ image:
   url: '@common/code.webp'
 options:
   background: fuchsia
+# ---
 
 ---
 title: Technical stack
@@ -326,6 +351,7 @@ grids:
         title: Fastify
       - image: '@theme/logo-black.webp'
         title: Watt
+# ---
 
 ---
 title: 'Database schema (1/2)'
@@ -342,6 +368,7 @@ code:
       created_at TIMESTAMPTZ NOT NULL DEFAULT NOW(),
       UNIQUE(name, url, method, max_retries)
     );
+# ---
 
 ---
 title: 'Database schema (2/2)'
@@ -380,6 +407,7 @@ code:
     );
   className:
     root: talk@code
+# ---
 
 ---
 title: Services
@@ -397,6 +425,7 @@ items:
     - icon: bullseye
       title: Target
       text: A sample Fastify application that receives the messages. It implements random failures.
+# ---
 
 ---
 title: 'Processor: Main'
@@ -424,6 +453,7 @@ code:
 
       await db.dispose()
     }
+# ---
 
 ---
 title: 'Processor: Leader election and main loop'
@@ -449,6 +479,7 @@ code:
         }
       })
     }
+# ---
 
 ---
 layout: separator
@@ -459,6 +490,7 @@ options:
   background: orange
 decorations:
   logo: black
+# ---
 
 ---
 title: 'Processor: Query to select the next message'
@@ -482,6 +514,7 @@ code:
         LIMIT 1
       `
     }
+# ---
 
 ---
 title: 'Processor: Select and deliver a message'
@@ -516,6 +549,7 @@ code:
     }
   className:
     root: talk@code
+# ---
 
 ---
 title: 'Processor: Deliver a message'
@@ -551,6 +585,7 @@ code:
     }
   className:
     root: talk@code
+# ---
 
 ---
 layout: separator
@@ -561,6 +596,7 @@ options:
   background: amber
 decorations:
   logo: black
+# ---
 
 ---
 title: 'Notifications based scheduling'
@@ -575,6 +611,7 @@ items:
     - icon: bell
       title: PostgreSQL pub/sub works flawlessly
       text: Take a look at the `LISTEN` and `NOTIFY` commands. But don't forget about cron jobs.
+# ---
 
 ---
 title: 'Processor: Retry and error handling'
@@ -613,6 +650,7 @@ code:
     }
   className:
     root: talk@code
+# ---
 
 ---
 title: 'Processor: Reschedule a successful cron job'
@@ -647,6 +685,7 @@ code:
     }
   className:
     root: talk@code
+# ---
 
 ---
 layout: separator
@@ -655,6 +694,7 @@ image:
   url: '@common/danger-line.webp'
 options:
   background: red
+# ---
 
 ---
 title: 'API: Message creation endpoint'
@@ -688,6 +728,7 @@ code:
     })
   className:
     root: talk@code
+# ---
 
 ---
 layout: separator
@@ -700,6 +741,7 @@ decorations:
   icon: champagne-glasses
   className:
     icon: theme-misc@mission-completed
+# ---
 
 ---
 title: Check it out!
@@ -709,6 +751,7 @@ content:
   - <span class="theme-misc@qr__footer">[https://github.com/ShogunPanda/postgresql-webhooks](https://github.com/ShogunPanda/postgresql-webhooks)</span>
 className:
   qr: theme-misc@qr--big
+# ---
 
 ---
 layout: quote
@@ -717,6 +760,7 @@ quote:
     Progress is man's ability
     to complicate simplicity.
   author: Thor Heyerdahl
+# ---
 
 ---
 layout: end

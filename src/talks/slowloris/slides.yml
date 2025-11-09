@@ -10,6 +10,7 @@ image:
   url: '@common/sloth.webp'
 options:
   background: fuchsia
+# ---
 
 ---
 layout: hello
@@ -25,6 +26,7 @@ image:
   url: '@common/online-banking.webp'
 decorations:
   logo: white
+# ---
 
 ---
 layout: separator
@@ -33,6 +35,7 @@ image:
   url: '@common/hacking.webp'
 options:
   background: red
+# ---
 
 ---
 title: Denial of Service Attack
@@ -49,25 +52,28 @@ items:
       text: _Is that still true?_
 notes: |
   Emphasize the **true** in the last question.
+# ---
 
 ---
 layout: separator
 title: |
-  Fear the 
+  Fear the
   real enemy ...
 image:
   url: '@common/hacking.webp'
 options:
   background: pink
+# ---
 
 ---
 layout: image
 image:
   url: '@talk/slowloris.webp'
 notes: |
-  Joke about: **“This talk should have been named Taming Slowlorises in Node.js”** and see people reaction.
+  Joke about: **"This talk should have been named Taming Slowlorises in Node.js"** and see people reaction.
 decorations:
   logo: white
+# ---
 
 ---
 layout: side
@@ -82,15 +88,16 @@ items:
     - icon: calendar
       title: When it was created?
       text: |
-        Robert “RSnake” Hansen
+        Robert "RSnake" Hansen
         created it in June 2009.
     - icon: arrows-split-up-and-left
-      title: It’s not just HTTP!
+      title: It's not just HTTP!
       text: |
         This attack can be abstracted
         to similar protocols.
 image:
   url: '@talk/slowloris-intro.webp'
+# ---
 
 ---
 layout: side
@@ -101,6 +108,7 @@ image:
   url: '@talk/http-1.webp'
 decorations:
   number: 1
+# ---
 
 ---
 layout: side
@@ -113,6 +121,7 @@ notes: |
   Explicitly mention that this is not strictly true for Keep-Alive connections but also that legit clients disconnects very soon.
 decorations:
   number: 2
+# ---
 
 ---
 layout: side
@@ -123,6 +132,7 @@ image:
   url: '@talk/http-3.webp'
 decorations:
   number: 3
+# ---
 
 ---
 title: Retaining sockets is expensive
@@ -137,6 +147,7 @@ items:
     - icon: globe
       title: The application manages high-level operations
       text: The application representation of the socket adds extra memory overhead.
+# ---
 
 ---
 layout: side
@@ -147,6 +158,7 @@ image:
   url: '@talk/slowloris-1.webp'
 decorations:
   number: 1
+# ---
 
 ---
 layout: side
@@ -157,6 +169,7 @@ image:
   url: '@talk/slowloris-2.webp'
 decorations:
   number: 2
+# ---
 
 ---
 layout: side
@@ -168,6 +181,7 @@ image:
   url: '@talk/slowloris-3.webp'
 decorations:
   number: 3
+# ---
 
 ---
 layout: separator
@@ -175,11 +189,12 @@ title: How do we stop it?
 image:
   url: '@common/wall.webp'
 notes: |
-  Emphasize **“How”** and **“stop it”**?
+  Emphasize **"How"** and **"stop it"**?
 options:
   background: amber
 decorations:
   logo: white
+# ---
 
 ---
 title: Use a reverse proxy
@@ -189,6 +204,7 @@ decorations:
   icon: person-military-pointing
   className:
     icon: talk@reverse-proxy-icon
+# ---
 
 ---
 title: Mitigation strategies
@@ -201,8 +217,9 @@ items:
       text: As the attack is distributed, the attacker can easily switch to another IP.
     - icon: hourglass
       title: Enforce speed or time constraints
-      text: It’s hard to establish a connection which will not cut out slow legit clients.
+      text: It's hard to establish a connection which will not cut out slow legit clients.
   horizontal: true
+# ---
 
 ---
 layout: separator
@@ -213,6 +230,7 @@ options:
   background: amber
 decorations:
   logo: white
+# ---
 
 ---
 title: http.Server.headersTimeout
@@ -231,6 +249,7 @@ decorations:
   number: 10
   className:
     number: talk@ten-years
+# ---
 
 ---
 layout: side
@@ -251,6 +270,7 @@ notes: |
   * Restify, Express and Koa did not.
 decorations:
   logo: white
+# ---
 
 ---
 title: http.Server.requestTimeout
@@ -265,6 +285,7 @@ items:
     - icon: thumbs-down
       title: Disabled by default
       text: Adding a clock for each new request is an expensive operation.
+# ---
 
 ---
 layout: separator
@@ -273,6 +294,7 @@ image:
   url: '@common/completed.webp'
 options:
   background: amber
+# ---
 
 ---
 layout: separator
@@ -281,6 +303,7 @@ image:
   url: '@common/hacking.webp'
 options:
   background: gray
+# ---
 
 ---
 title: The countermeasures were loose
@@ -292,6 +315,7 @@ items:
     - icon: rocket
       title: Performance was prioritized
       text: Whenever a timeout has gone off was checked only after new data was received.
+# ---
 
 ---
 title: How to protect Node.js 16 and below
@@ -307,6 +331,7 @@ items:
     - icon: minimize
       title: Have a lower timeout for the headers
       text: <code>http.Server.headersTimeout</code> should also be set to detect a malicious client earlier.
+# ---
 
 ---
 layout: code
@@ -326,6 +351,7 @@ code:
 
     // The request's headers must be completely received by the server within a minute
     server.headersTimeout = 60000
+# ---
 
 ---
 title: Node.js 18.0.0 is finally safe by default
@@ -355,6 +381,7 @@ items:
   horizontal: true
 notes: |
   Mention that this was possible due to semver major change and thus it will not be backported.
+# ---
 
 ---
 layout: separator
@@ -370,6 +397,7 @@ decorations:
     icon: theme-misc@mission-completed
   icon: champagne-glasses
   logo: black
+# ---
 
 ---
 title: Take home lessons
@@ -388,7 +416,8 @@ items:
       text: During regular activities, always check the existing code for hidden flaws or vulnerabilites.
   horizontal: true
 notes: |
-  **Before** talking about the slides, recap what you talked about: **“Today we have seen how atypical attacks can unexpectedly affect our applications and how it can take a very long time to fix them.”**
+  **Before** talking about the slides, recap what you talked about: **"Today we have seen how atypical attacks can unexpectedly affect our applications and how it can take a very long time to fix them."**
+# ---
 
 ---
 layout: quote
@@ -396,6 +425,7 @@ quote:
   sentence: |
     Never assume the obvious is true.
   author: William Safire
+# ---
 
 ---
 layout: end

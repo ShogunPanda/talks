@@ -9,6 +9,7 @@ image:
   url: '@common/hell.webp'
 options:
   background: pink
+# ---
 
 ---
 layout: image
@@ -16,11 +17,10 @@ image:
   url: '@talk/marco.webp'
 decorations:
   logo: white
+# ---
 
 ---
 layout: hello
-# ---
-
 options:
   author:
     name: Paolo Insogna
@@ -37,6 +37,7 @@ options:
     twitter: p_insogna
     github: ShogunPanda
     linkedin: pinsogna
+# ---
 
 ---
 title: Getting started (1/2)!
@@ -53,6 +54,7 @@ items:
         If you have the GitHub CLI:
         `gh repo clone nodejs/node`
   horizontal: true
+# ---
 
 ---
 title: Getting started (2/2)!
@@ -66,6 +68,7 @@ items:
       text: '<span class="talk@narrow-grid__link">`cd node && open BUILDING.md`</span>'
   horizontal: true
   className: talk@narrow-grid
+# ---
 
 ---
 title: Build Node.js
@@ -75,6 +78,7 @@ code:
   content: |
     shogun@panda:~/example$ ./configure
     shogun@panda:~/example$ make -j 4
+# ---
 
 ---
 title: Choose an issue
@@ -89,6 +93,7 @@ items:
     - qr: https://github.com/nodejs/node/issues
       title: Node.js [public issues list](https://github.com/nodejs/node/issues).
   horizontal: true
+# ---
 
 ---
 title: Build, then run the tests and the linter
@@ -98,6 +103,7 @@ code:
   content: |
     shogun@panda:~/example$ make jstest
     shogun@panda:~/example$ make lint-js-fix
+# ---
 
 ---
 title: Configure GIT before committing
@@ -109,6 +115,7 @@ code:
   content: |
     shogun@panda:~/example$ git config user.name "$NAME"
     shogun@panda:~/example$ git config user.email "$EMAIL"
+# ---
 
 ---
 title: Make sure to follow commit guidelines
@@ -123,6 +130,7 @@ items:
           shogun@panda:~/example$ npm install -g @node-core/utils
           shogun@panda:~/example$ core-validate-commit HEAD
   horizontal: true
+# ---
 
 ---
 layout: end

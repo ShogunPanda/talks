@@ -11,6 +11,7 @@ image:
   url: '@talk/unknown.webp'
 options:
   background: fuchsia
+# ---
 
 ---
 layout: hello
@@ -27,11 +28,13 @@ image:
   url: '@common/matteo.webp'
 decorations:
   logo: white
+# ---
 
 ---
 title: "Let's start the right way! 🤦‍♂️"
 image:
   url: '@talk/chatgpt.webp'
+# ---
 
 ---
 layout: separator
@@ -44,14 +47,16 @@ image:
   url: '@talk/postman.webp'
 options:
   background: orange
+# ---
 
 ---
-title: '2018: “Node.js has threads!”'
+title: '2018: "Node.js has threads!"'
 content:
   - image: '@talk/anna.webp'
   - <span class="theme-misc@qr__footer">[https://www.youtube.com/watch?v=-ssCzHoUI7M](https://www.youtube.com/watch?v=-ssCzHoUI7M)</span>
 className:
   image: talk@anna
+# ---
 
 ---
 title: Worker Thread API
@@ -65,6 +70,7 @@ items:
     - icon: code-fork
       title: Each thread has an independent event loop
       text: This is crucial to off-load CPU intensive tasks out of the main thread.
+# ---
 
 ---
 title: How do threads communicate?
@@ -76,6 +82,7 @@ items:
     - icon: car-tunnel
       title: Additional channels can be created via the `MessageChannel` API.
       text: It returns a pair of message ports, one meant to be sent to the other thread.
+# ---
 
 ---
 layout: separator
@@ -84,12 +91,14 @@ image:
   url: '@talk/pidgeon.webp'
 options:
   background: orange
+# ---
 
 ---
 title: How do threads communicate?
 content: The graph below shows a summary of parent-children thread communication.
 image:
   url: '@talk/worker-threads-communication.webp'
+# ---
 
 ---
 layout: side
@@ -120,6 +129,7 @@ code:
     } else {
       channel.postMessage('ready')
     }
+# ---
 
 ---
 layout: side
@@ -150,12 +160,14 @@ code:
         console.log(`${source} -> ${threadId}:`, value) 
       })
     }
+# ---
 
 ---
 layout: image
 title: How can threads communicate?
 image:
   url: '@talk/children.webp'
+# ---
 
 ---
 title: Efficient inter-thread RPC
@@ -170,6 +182,7 @@ items:
     - icon: 'id-card'
       title: All you need is an unique identifier and `resolve` method.
       text: The ID is sent to the other thread so that can be used later in a shared event handler.
+# ---
 
 ---
 title: 'Example: multithreaded HTTP server'
@@ -191,6 +204,7 @@ code:
 
     worker.postMessage({id: request.reqId })
     const hash = await promise
+# ---
 
 ---
 title: Is all that easy?
@@ -201,6 +215,7 @@ decorations:
   logo: white
 options:
   background: amber
+# ---
 
 ---
 title: Structured Clone
@@ -216,6 +231,7 @@ items:
       title: The object will be cloned according to the Structured Clone Algorithm.
       text: |
         [Check the documentation on MDN!](https://developer.mozilla.org/en-US/docs/Web/API/Web_Workers_API/Structured_clone_algorithm)
+# ---
 
 ---
 title: Transferable (1/2)
@@ -227,6 +243,7 @@ content:
   - |
     These objects are called **transferrable** and thus must be 
     explicitly listed in the second argument of `postMessage`.
+# ---
 
 ---
 title: Transferable (2/2)
@@ -238,6 +255,7 @@ content:
     * `FileHandle`
     * `WebStream` (`ReadableStream` and `WritableStream`)
   - The full list can be found in the [MessagePort documentation](https://nodejs.org/docs/latest/api/worker_threads.html#portpostmessagevalue-transferlist).
+# ---
 
 ---
 layout: separator
@@ -248,6 +266,7 @@ image:
   url: '@talk/turtle-pool.webp'
 options:
   background: amber
+# ---
 
 ---
 title: Piscina
@@ -259,6 +278,7 @@ content:
   - https://www.npmjs.com/package/piscina
 image:
   url: '@talk/piscina.webp'
+# ---
 
 ---
 title: How to use Piscina
@@ -296,6 +316,7 @@ items:
   spacer: false
   gap: false
   defaultclassName: false
+# ---
 
 ---
 layout: separator
@@ -306,6 +327,7 @@ decorations:
   logo: white
 options:
   background: fuchsia
+# ---
 
 ---
 layout: separator
@@ -319,6 +341,7 @@ decorations:
   logo: white
 options:
   background: amber
+# ---
 
 ---
 layout: separator
@@ -337,6 +360,7 @@ className:
   contents: theme@separator__contents--reverse
   title: theme@separator__title--reverse
   subtitle: theme@separator__subtitle--reverse
+# ---
 
 ---
 title: How can a Promise be invoked synchronously?
@@ -350,6 +374,7 @@ code:
       await sleep(1000)
       return value
     }
+# ---
 
 ---
 title: everysync (1/2)
@@ -378,6 +403,7 @@ code:
     worker.terminate()
 className:
   qr: theme-misc@qr--big
+# ---
 
 ---
 title: everysync (2/2)
@@ -398,6 +424,7 @@ code:
 
     // Keep the event loop alive
     setInterval(() => {}, 100000)
+# ---
 
 ---
 layout: separator
@@ -410,6 +437,7 @@ decorations:
   logo: white
 className:
   root: talk@batman
+# ---
 
 ---
 title: '`Atomics.waitAsync` and `SharedArrayBuffer`'
@@ -418,6 +446,7 @@ content:
   - Payload contains the message to be sent, and length its is size.
 image:
   url: '@talk/shared-array-buffer.webp'
+# ---
 
 ---
 title: Use the same mechanism of `postMessage`
@@ -451,6 +480,7 @@ code:
     }
   className:
     root: talk@code
+# ---
 
 ---
 title: Calling a method to the worker thread
@@ -483,6 +513,7 @@ code:
     }
   className:
     root: talk@code
+# ---
 
 ---
 title: Receiving the calls using Atomics.waitAsync
@@ -513,6 +544,7 @@ code:
     }
   className:
     root: talk@code
+# ---
 
 ---
 layout: side
@@ -525,6 +557,7 @@ className:
   qr: theme-misc@qr--big
 image:
   url: '@talk/pino.webp'
+# ---
 
 ---
 title: Loader hooks
@@ -539,6 +572,7 @@ content:
   - |
     The multithreading architecture is the foundation of features 
     like `require(esm)` or `-experimental-strip-types`.
+# ---
 
 ---
 layout: image
@@ -547,11 +581,13 @@ image:
   url: '@talk/turtles-escaping.webp'
 decorations:
   logo: white
+# ---
 
 ---
 title: Introducing Watt, the Node.js application server
 image:
   url: '@talk/watt.webp'
+# ---
 
 ---
 title: Watt
@@ -559,6 +595,7 @@ content:
   - Watt (https://platformatic.dev/watt) abstracts away time-consuming tasks like monitoring, logging and tracing all while supporting full stack applications.
   - It allows you to run multiple Node.js services within the same process with inter-threading communication over HTTP.
   - Each service runs in its worker thread so they cannot interfere with each other.
+# ---
 
 ---
 title: How do you configure Watt?
@@ -580,6 +617,7 @@ code:
       },
       "watch": true
     }
+# ---
 
 ---
 title: How do you create a service?
@@ -597,6 +635,7 @@ code:
         "@platformatic/node": "^2.44.0"
       }
     }
+# ---
 
 ---
 title: Configure your service
@@ -611,6 +650,7 @@ code:
     {
       "$schema": "https://schemas.platformatic.dev/@platformatic/node/2.44.0.json"
     }
+# ---
 
 ---
 title: How do you write a service?
@@ -625,6 +665,7 @@ items:
     - index: 3
       title: Use the mesh network via `fetch`.
       text: Each service is internally reachable on the `http://[SERVICE].plt.local` domain.
+# ---
 
 ---
 title: Network-less HTTP
@@ -632,6 +673,7 @@ content: The Platformatic mesh network. Our secret sauce.
 image:
   url: '@talk/mesh.webp'
   className: theme@default__image--full-width
+# ---
 
 ---
 title: 'Example: a service which invokes another service'
@@ -656,11 +698,13 @@ code:
 
       return app
     }
+# ---
 
 ---
 layout: image
 image:
   url: '@talk/bootcamp.webp'
+# ---
 
 ---
 title: GoFundMe campaign
@@ -670,6 +714,7 @@ content:
   - <span class="theme-misc@qr__footer theme-misc@qr__footer--small">[https://www.gofundme.com/f/code-their-future-unlocking-opportunities-for-underserved-k](https://www.gofundme.com/f/code-their-future-unlocking-opportunities-for-underserved-k)</span>
 className:
   qr: theme-misc@qr--big
+# ---
 
 ---
 layout: quote
@@ -678,6 +723,7 @@ quote:
     Keep your face always toward the sunshine
     and shadows will fall behind you.
   author: 'Walt Whitman'
+# ---
 
 ---
 layout: end
