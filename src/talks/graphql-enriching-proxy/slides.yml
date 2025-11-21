@@ -8,7 +8,7 @@ title: |
   Being kind
   never hurts!
 image:
-  url: '@common/kindness.webp'
+  url: '@common/kindness.png'
 options:
   background: fuchsia
 decorations:
@@ -24,7 +24,7 @@ title: Let's celebrate GraphQL!
 content:
   - We all know how this technology has made our life easier.
 image:
-  url: '@common/graphql.webp'
+  url: '@common/graphql.png'
   className: talk@graphql-logo
 # ---
 
@@ -80,7 +80,7 @@ content:
   - It's relative easy to attach new data sources to the server.
   - <em class="theme@fg-blue">How to push additional data to a client that didn't ask for it?</em>
 image:
-  url: '@common/server.webp'
+  url: '@common/server.png'
 decorations:
   logo: white
 # ---
@@ -89,7 +89,7 @@ decorations:
 layout: separator
 title: How to be proactive?
 image:
-  url: '@common/what-now.webp'
+  url: '@common/what-now.png'
 options:
   background: amber
 decorations:
@@ -115,7 +115,7 @@ items:
 layout: separator
 title: Are we done?
 image:
-  url: '@common/happiness.webp'
+  url: '@common/happiness.png'
 options:
   background: amber
 # ---
@@ -124,7 +124,7 @@ options:
 layout: separator
 title: You already know the answer...
 image:
-  url: '@common/laugh.webp'
+  url: '@common/laugh.png'
 options:
   background: gray
 # ---
@@ -163,7 +163,7 @@ decorations:
 layout: separator
 title: Do we have a choice?
 image:
-  url: '@common/alternatives.webp'
+  url: '@common/alternatives.png'
 options:
   background: amber
 decorations:
@@ -177,7 +177,7 @@ title: |
   an <span class="theme@fg-amber">enriching</span>
   proxy!
 image:
-  url: '@common/san-bernardo.webp'
+  url: '@common/san-bernardo.png'
 options:
   background: green
 decorations:
@@ -259,8 +259,8 @@ code:
       // Return to the client
       return { ...response, extensions: { ...response.extensions, ...extensions }}
     })
-# ---
 
+# ---
 ---
 layout: side
 title: Leveraging types
@@ -294,8 +294,8 @@ code:
         }
       }
     }
-# ---
 
+# ---
 ---
 layout: side
 title: Ensuring type information
@@ -367,7 +367,7 @@ decorations:
 ---
 title: Depth first tree traversal
 image:
-  url: '@talk/tree.webp'
+  url: '@talk/tree.png'
 # ---
 
 ---
@@ -397,8 +397,8 @@ code:
 
     shogun@panda:~/example$ jq ".countries[1].capital" example.json
     "Roma"
-# ---
 
+# ---
 ---
 layout: separator
 title: ... and now the show goes on!
@@ -479,8 +479,8 @@ code:
         }
       }
     }
-# ---
 
+# ---
 ---
 layout: side
 title: Fetch additional data
@@ -524,7 +524,7 @@ decorations:
 layout: separator
 title: Only an example can enlighten us!
 image:
-  url: '@common/sun.webp'
+  url: '@common/sun.png'
 options:
   background: blue
 # ---
@@ -550,8 +550,8 @@ code:
         }
       }
     }
-# ---
 
+# ---
 ---
 layout: code
 title: Query executed from the upstream
@@ -577,8 +577,8 @@ code:
         }
       }
     }
-# ---
 
+# ---
 ---
 layout: side
 title: Upstream response
@@ -656,8 +656,8 @@ code:
         /* ... */
       }
     }
-# ---
 
+# ---
 ---
 layout: side
 title: Proxy response (2/2)
@@ -685,13 +685,13 @@ code:
         }
       }
     }
-# ---
 
+# ---
 ---
 layout: separator
 title: Mission completed!
 image:
-  url: '@common/completed.webp'
+  url: '@common/completed.png'
 options:
   background: green
 decorations:

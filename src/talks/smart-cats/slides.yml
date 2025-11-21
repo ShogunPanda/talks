@@ -8,7 +8,7 @@ title: |
   No automation,
   no party!
 image:
-  url: '@common/smart-home.webp'
+  url: '@common/smart-home.png'
 options:
   background: fuchsia
 decorations:
@@ -38,7 +38,7 @@ items:
 layout: separator
 title: I'm literally surrounded by lovely chubby cats...
 image:
-  url: '@talk/ciurma-1.webp'
+  url: '@talk/ciurma-1.png'
 options:
   background: blue
 decorations:
@@ -51,7 +51,7 @@ title: |
   ...and I deeply
   love them!
 image:
-  url: '@talk/io.webp'
+  url: '@talk/io.png'
 className:
   root: theme@separator--reverse
 options:
@@ -82,7 +82,7 @@ title: |
   I automated
   their lives...
 image:
-  url: '@talk/mangioni.webp'
+  url: '@talk/mangioni.png'
 options:
   background: pink
 # ---
@@ -91,7 +91,7 @@ options:
 layout: separator
 title: ...since my wife kept collecting new cats!
 image:
-  url: '@talk/kuro-loki.webp'
+  url: '@talk/kuro-loki.png'
 className:
   root: theme@separator--reverse
 options:
@@ -118,7 +118,7 @@ layout: separator
 title: Let's start!
 subtitle: Say hello to <span class="theme@separator__callout__highlight talk@pet__name">Bree</span>!
 image:
-  url: '@talk/bree-1.webp'
+  url: '@talk/bree-1.png'
 options:
   background: sky
 className:
@@ -131,7 +131,7 @@ title: The beginning
 content:
   - It started with my home alarm system.
 image:
-  url: '@talk/ksenia.webp'
+  url: '@talk/ksenia.png'
 items:
   entries:
     - icon: lock
@@ -162,7 +162,7 @@ title: |
   no wait, it's cold!
 subtitle: Say hello to <span class="theme@separator__callout__highlight talk@pet__name">Cali</span>!
 image:
-  url: '@talk/cali.webp'
+  url: '@talk/cali.png'
 options:
   background: blue
 decorations:
@@ -177,7 +177,7 @@ title: Let's optimize
 content:
   - Once the house was under control, it was time to take care of climate control.
 image:
-  url: '@talk/aquarea.webp'
+  url: '@talk/aquarea.png'
 items:
   entries:
     - icon: temperature-three-quarters
@@ -208,7 +208,7 @@ title: |
   power plant?
 subtitle: Say hello to <span class="theme@separator__callout__highlight talk@pet__name">Cleo</span>!
 image:
-  url: '@talk/cleo.webp'
+  url: '@talk/cleo.png'
 options:
   background: amber
 decorations:
@@ -223,7 +223,7 @@ title: With the power of the Sun I will win!
 content:
   - After installing solar panels I was able to optimize power consumption.
 image:
-  url: '@talk/fronius.webp'
+  url: '@talk/fronius.png'
 items:
   entries:
     - icon: sun
@@ -255,7 +255,7 @@ title: |
   gas to move!
 subtitle: Say hello to <span class="theme@separator__callout__highlight talk@pet__name">Freya</span>!
 image:
-  url: '@talk/freya-1.webp'
+  url: '@talk/freya-1.png'
 options:
   background: red
 decorations:
@@ -270,7 +270,7 @@ title: What have I told you about the sun?
 content:
   - I switched to electric cars and therefore I installed a wallbox.
 image:
-  url: '@talk/abb.webp'
+  url: '@talk/abb.png'
 items:
   entries:
     - icon: battery-full
@@ -302,7 +302,7 @@ items:
 layout: image
 title: Gimme the cats!
 image:
-  url: '@talk/freya-2.webp'
+  url: '@talk/freya-2.png'
 decorations:
   logo: black
 className:
@@ -313,7 +313,7 @@ className:
 layout: image
 title: It all started with Bree
 image:
-  url: '@talk/bree-2.webp'
+  url: '@talk/bree-2.png'
 decorations:
   logo: white
 className:
@@ -341,7 +341,7 @@ title: Thanks progress
 content:
   - After many years of struggling, I found the perfect solution.
 image:
-  url: '@talk/petkit.webp'
+  url: '@talk/petkit.png'
 items:
   entries:
     - icon: bowl-food
@@ -370,7 +370,7 @@ layout: separator
 title: Why don't you complicate things?
 subtitle: Say hello to <span class="theme@separator__callout__highlight talk@pet__name">Yuna</span>!
 image:
-  url: '@talk/yuna.webp'
+  url: '@talk/yuna.png'
 options:
   background: amber
 decorations:
@@ -399,7 +399,7 @@ layout: separator
 title: Let's protect them!
 subtitle: Say hello to <span class="theme@separator__callout__highlight talk@pet__name">Kuro</span>!
 image:
-  url: '@talk/kuro.webp'
+  url: '@talk/kuro.png'
 options:
   background: sky
 className:
@@ -412,7 +412,7 @@ title: Can't beat a classic
 content:
   - There are some solutions that take advantage of pets' subcutaneous chip.
 image:
-  url: '@talk/petdoor.webp'
+  url: '@talk/petdoor.png'
 items:
   entries:
     - icon: door-open
@@ -446,7 +446,7 @@ subtitle: |
   <span class="theme@separator__callout__highlight talk@pet__name"><s>Snappy Shine</s></span>
   <span class="theme@separator__callout__highlight talk@pet__name">Braciolone</span>!
 image:
-  url: '@talk/bracio-1.webp'
+  url: '@talk/bracio-1.png'
 options:
   background: amber
 className:
@@ -460,7 +460,7 @@ title: |
   automate his
   life (yet)...
 image:
-  url: '@talk/bracio-2.webp'
+  url: '@talk/bracio-2.png'
 options:
   background: pink
 # ---
@@ -470,7 +470,7 @@ layout: separator
 title: ... but I could automate his. Why not?
 subtitle: Say hello to <span class="theme@separator__callout__highlight talk@pet__name">Oscar</span>!
 image:
-  url: '@talk/oscar.webp'
+  url: '@talk/oscar.png'
 className:
   root: theme@separator--reverse
   subtitle: theme@separator__callout talk@pet theme@separator__callout talk@pet--reverse
@@ -486,7 +486,7 @@ title: What is the fastest way to get a divorce?
 content:
   - Just discovered a new brand.
 image:
-  url: '@common/shelly.webp'
+  url: '@common/shelly.png'
 items:
   entries:
     - icon: circle-nodes
@@ -504,7 +504,7 @@ title: |
   with X-Mas!
 subtitle: Why?! Why not!
 image:
-  url: '@talk/albero.webp'
+  url: '@talk/albero.png'
 options:
   background: gray
 decorations:
@@ -520,7 +520,7 @@ title: |
   my house!
 subtitle: Say hello to <span class="theme@separator__callout__highlight talk@pet__name">Loki</span>!
 image:
-  url: '@talk/loki.webp'
+  url: '@talk/loki.png'
 options:
   background: green
 className:
@@ -533,13 +533,13 @@ content:
   - Let's talk about the most known vendors.
 items:
   entries:
-    - image: '@common/homekit.webp'
+    - image: '@common/homekit.png'
       title: Apple HomeKit
-    - image: '@common/google-home.webp'
+    - image: '@common/google-home.png'
       title: Google Home
-    - image: '@common/alexa.webp'
+    - image: '@common/alexa.png'
       title: Amazon Alexa
-    - image: '@common/home-assistant.webp'
+    - image: '@common/home-assistant.png'
       title: Home Assistant
   horizontal: true
 # ---
@@ -563,13 +563,13 @@ items:
 title: The Perseveranza™ technical stack (1/2)
 items:
   entries:
-    - image: '@common/nodejs.webp'
+    - image: '@common/nodejs.png'
       title: Node.js
       className:
         image: theme-misc@width-auto
-    - image: '@common/redis.webp'
+    - image: '@common/redis.png'
       title: Redis
-    - image: '@common/mosquitto.webp'
+    - image: '@common/mosquitto.png'
       title: Mosquitto
   horizontal: true
 # ---
@@ -578,11 +578,11 @@ items:
 title: The Perseveranza™ technical stack (2/2)
 items:
   entries:
-    - image: '@common/fastify.webp'
+    - image: '@common/fastify.png'
       title: Fastify
-    - image: '@common/homebridge.webp'
+    - image: '@common/homebridge.png'
       title: HAP (Homebridge)
-    - image: '@talk/graphql.webp'
+    - image: '@talk/graphql.png'
       title: GraphQL
   horizontal: true
 # ---
@@ -592,7 +592,7 @@ layout: separator
 title: Gimme the details!
 subtitle: Say hello to <span class="theme@separator__callout__highlight talk@pet__name">Mora</span>!
 image:
-  url: '@talk/mora.webp'
+  url: '@talk/mora.png'
 options:
   background: pink
 className:
@@ -619,7 +619,7 @@ layout: separator
 title: What is her name?
 subtitle: Let's play a little game ...
 image:
-  url: '@talk/cleo.webp'
+  url: '@talk/cleo.png'
 options:
   background: amber
 decorations:
@@ -635,7 +635,7 @@ layout: separator
 title: Cleo!
 subtitle: The answer is ...
 image:
-  url: '@talk/cleo.webp'
+  url: '@talk/cleo.png'
 options:
   background: green
 decorations:
@@ -676,7 +676,7 @@ className:
 ---
 layout: end
 image:
-  url: '@talk/bree-freya.webp'
+  url: '@talk/bree-freya.png'
 title: But this talk is special. Thank you!
 subtitle: We miss you both, a very lot! ❤️
 className:

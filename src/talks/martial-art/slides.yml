@@ -6,7 +6,7 @@ layout: cover
 layout: separator
 title: There is no knowledge that is not power!
 image:
-  url: '@talk/mortal-kombat.webp'
+  url: '@talk/mortal-kombat.png'
 options:
   background: fuchsia
 # ---
@@ -19,7 +19,7 @@ layout: hello
 layout: separator
 title: What is <span class="theme@fg-blue">programming</span>?
 image:
-  url: '@talk/programming-1.webp'
+  url: '@talk/programming-1.png'
 options:
   background: amber
 # ---
@@ -42,7 +42,7 @@ title: |
   What is a
   <span class="theme@fg-blue">martial art</span>?
 image:
-  url: '@talk/wing-tsun-1.webp'
+  url: '@talk/wing-tsun-1.png'
 options:
   background: amber
 # ---
@@ -63,7 +63,7 @@ quote:
 layout: separator
 title: But they are completely unrelated!
 image:
-  url: '@common/oil-drops.webp'
+  url: '@common/oil-drops.png'
 options:
   background: red
 # ---
@@ -102,7 +102,7 @@ items:
 layout: image
 title: Take me, for instance
 image:
-  url: '@talk/me-1.webp'
+  url: '@talk/me-1.png'
 # ---
 
 ---
@@ -149,7 +149,7 @@ title: |
   One last
   <s>thing™</s> passion
 image:
-  url: '@common/larp.webp'
+  url: '@common/larp.png'
 options:
   background: gray
 # ---
@@ -158,7 +158,7 @@ options:
 layout: separator
 title: Martial art
 image:
-  url: '@talk/wing-tsun-2.webp'
+  url: '@talk/wing-tsun-2.png'
 options:
   background: blue
 # ---
@@ -169,7 +169,7 @@ title: |
   The wait
   is over ...
 image:
-  url: '@common/award.webp'
+  url: '@common/award.png'
 options:
   background: sky
 # ---
@@ -179,7 +179,7 @@ layout: image
 title: Wing Tsun*
 subtitle: '*Romanization is controversial'
 image:
-  url: '@talk/wing-tsun-3.webp'
+  url: '@talk/wing-tsun-3.png'
 className:
   subtitle: talk@romanization
 decorations:
@@ -220,7 +220,7 @@ items:
 layout: separator
 title: Meet our training dummy
 image:
-  url: '@common/mokujin.webp'
+  url: '@common/mokujin.png'
 options:
   background: blue
 # ---
@@ -243,7 +243,7 @@ decorations:
 layout: separator
 title: Meet our <span class="theme@fg-amber">real</span> training dummy
 image:
-  url: '@talk/wooden-dummy.webp'
+  url: '@talk/wooden-dummy.png'
 options:
   background: blue
 className:
@@ -269,7 +269,7 @@ items:
 layout: separator
 title: What about programming?
 image:
-  url: '@talk/programming-2.webp'
+  url: '@talk/programming-2.png'
 options:
   background: amber
 # ---
@@ -294,7 +294,7 @@ layout: separator
 title: Let's apply the Wing Tsun principles to programming!
 subtitle: ... finally! 😂
 image:
-  url: '@talk/programming-3.webp'
+  url: '@talk/programming-3.png'
 options:
   background: sky
 className:
@@ -308,7 +308,7 @@ title: |
   checked this talk!
 subtitle: Opinions are mine and I'm still learning. Be gentle! 🙏
 image:
-  url: '@common/kid.webp'
+  url: '@common/kid.png'
 className:
   subtitle: talk@separator__subtitle
 decorations:
@@ -319,7 +319,7 @@ decorations:
 layout: separator
 title: Energy Principles
 image:
-  url: '@common/energy.webp'
+  url: '@common/energy.png'
 options:
   background: sky
 # ---
@@ -450,7 +450,7 @@ decorations:
 layout: separator
 title: Chi Sao principles
 image:
-  url: '@talk/chisao.webp'
+  url: '@talk/chisao.png'
 options:
   background: sky
 # ---
@@ -459,7 +459,7 @@ options:
 layout: separator
 title: But what is exactly <span class="theme@fg-blue">Chi Sao</span>?
 image:
-  url: '@common/confused.webp'
+  url: '@common/confused.png'
 options:
   background: amber
 # ---
@@ -483,7 +483,7 @@ items:
 layout: separator
 title: Back to Chi Sao principles!
 image:
-  url: '@talk/chisao.webp'
+  url: '@talk/chisao.png'
 options:
   background: sky
 # ---
@@ -617,7 +617,7 @@ decorations:
 layout: separator
 title: Bonus principle!
 image:
-  url: '@common/mokujin.webp'
+  url: '@common/mokujin.png'
 options:
   background: blue
 # ---
@@ -629,7 +629,7 @@ title: |
   A good Chum Kiu shall be performed
   within the space occupied by a laying cow.
 image:
-  url: '@common/cow.webp'
+  url: '@common/cow.png'
 className:
   title: talk@chum-kiu__title
   subtitle: talk@chum-kiu__subtitle

@@ -8,7 +8,7 @@ title: |
   There is a lot 
   in the unknown!
 image:
-  url: '@common/unknown.webp'
+  url: '@common/unknown.png'
 options:
   background: fuchsia
 # ---
@@ -25,7 +25,7 @@ content:
   - <span class="theme@fg-pink">**Whatever goes wrong today, please complain directly to him on Twitter!**</span>
   - <strong class="theme@fg-blue">[@matteocollina](https://twitter.com/@matteocollina)</strong>
 image:
-  url: '@common/matteo.webp'
+  url: '@common/matteo.png'
 decorations:
   logo: white
 # ---
@@ -33,7 +33,7 @@ decorations:
 ---
 title: "Let's start the right way! 🤦‍♂️"
 image:
-  url: '@talk/chatgpt.webp'
+  url: '@talk/chatgpt.png'
 # ---
 
 ---
@@ -44,7 +44,7 @@ title: |
   single threaded ...
 subtitle: '... and it hasn’t been for a while now!'
 image:
-  url: '@common/postman.webp'
+  url: '@common/postman.png'
 options:
   background: orange
 # ---
@@ -52,7 +52,7 @@ options:
 ---
 title: '2018: "Node.js has threads!"'
 content:
-  - image: '@talk/anna.webp'
+  - image: '@talk/anna.png'
   - <span class="theme-misc@qr__footer">[https://www.youtube.com/watch?v=-ssCzHoUI7M](https://www.youtube.com/watch?v=-ssCzHoUI7M)</span>
 className:
   image: talk@anna
@@ -88,7 +88,7 @@ items:
 layout: separator
 title: Do you see how far we have gone?
 image:
-  url: '@common/pidgeon.webp'
+  url: '@common/pidgeon.png'
 options:
   background: orange
 # ---
@@ -97,7 +97,7 @@ options:
 title: How do threads communicate?
 content: The graph below shows a summary of parent-children thread communication.
 image:
-  url: '@talk/worker-threads-communication.webp'
+  url: '@talk/worker-threads-communication.png'
 # ---
 
 ---
@@ -129,8 +129,8 @@ code:
     } else {
       channel.postMessage('ready')
     }
-# ---
 
+# ---
 ---
 layout: side
 title: postMessageToThread
@@ -160,13 +160,13 @@ code:
         console.log(`${source} -> ${threadId}:`, value) 
       })
     }
-# ---
 
+# ---
 ---
 layout: image
 title: How can threads communicate?
 image:
-  url: '@common/children.webp'
+  url: '@common/children.png'
 # ---
 
 ---
@@ -204,13 +204,13 @@ code:
 
     worker.postMessage({id: request.reqId })
     const hash = await promise
-# ---
 
+# ---
 ---
 title: Is all that easy?
 layout: separator
 image:
-  url: '@common/messages-flood.webp'
+  url: '@common/messages-flood.png'
 decorations:
   logo: white
 options:
@@ -231,8 +231,8 @@ items:
       title: The object will be cloned according to the Structured Clone Algorithm.
       text: |
         [Check the documentation on MDN!](https://developer.mozilla.org/en-US/docs/Web/API/Web_Workers_API/Structured_clone_algorithm)
-# ---
 
+# ---
 ---
 title: Transferable (1/2)
 content:
@@ -243,8 +243,8 @@ content:
   - |
     These objects are called **transferrable** and thus must be 
     explicitly listed in the second argument of `postMessage`.
-# ---
 
+# ---
 ---
 title: Transferable (2/2)
 content:
@@ -263,7 +263,7 @@ title: |
   Ready for 
   another dive?
 image:
-  url: '@common/turtle-pool.webp'
+  url: '@common/turtle-pool.png'
 options:
   background: amber
 # ---
@@ -277,7 +277,7 @@ content:
   - All the messaging and synchronization is managed so you focus on the core logic.
   - https://www.npmjs.com/package/piscina
 image:
-  url: '@common/piscina.webp'
+  url: '@common/piscina.png'
 # ---
 
 ---
@@ -300,7 +300,7 @@ items:
 
           const result = await piscina.run({ a: 4, b: 6 })
           console.log(result) // Prints 10
-    - image: '@common/arrow-right.webp'
+    - image: '@common/arrow-right.png'
       className:
         root: talk@example__arrow
         image: talk@example__arrow__image
@@ -322,7 +322,7 @@ items:
 layout: separator
 title: Are we done?
 image:
-  url: '@common/turtles-tired.webp'
+  url: '@common/turtles-tired.png'
 decorations:
   logo: white
 options:
@@ -336,7 +336,7 @@ title: |
   you can use Worker 
   Threads for?
 image:
-  url: '@common/batman-superman.webp'
+  url: '@common/batman-superman.png'
 decorations:
   logo: white
 options:
@@ -350,7 +350,7 @@ subtitle: |
   it’s what you do that defines you”
 title: “Everything is impossible until somebody does it”
 image:
-  url: '@talk/batman.webp'
+  url: '@talk/batman.png'
 options:
   background: black
 decorations:
@@ -374,8 +374,8 @@ code:
       await sleep(1000)
       return value
     }
-# ---
 
+# ---
 ---
 title: everysync (1/2)
 layout: side
@@ -424,13 +424,13 @@ code:
 
     // Keep the event loop alive
     setInterval(() => {}, 100000)
-# ---
 
+# ---
 ---
 layout: separator
 title: How?
 image:
-  url: '@common/batcave.webp'
+  url: '@common/batcave.png'
 options:
   background: black
 decorations:
@@ -445,7 +445,7 @@ content:
   - '`Atomics.waitAsync` is used to synchronize the main thread with the worker thread in meta.'
   - Payload contains the message to be sent, and length its is size.
 image:
-  url: '@talk/shared-array-buffer.webp'
+  url: '@talk/shared-array-buffer.png'
 # ---
 
 ---
@@ -556,7 +556,7 @@ content:
 className:
   qr: theme-misc@qr--big
 image:
-  url: '@common/pino.webp'
+  url: '@common/pino.png'
 # ---
 
 ---
@@ -572,13 +572,13 @@ content:
   - |
     The multithreading architecture is the foundation of features 
     like `require(esm)` or `-experimental-strip-types`.
-# ---
 
+# ---
 ---
 layout: image
 title: Are we finally done?
 image:
-  url: '@common/turtles-escaping.webp'
+  url: '@common/turtles-escaping.png'
 decorations:
   logo: white
 # ---
@@ -586,7 +586,7 @@ decorations:
 ---
 title: Introducing Watt, the Node.js application server
 image:
-  url: '@talk/watt.webp'
+  url: '@talk/watt.png'
 # ---
 
 ---
@@ -617,8 +617,8 @@ code:
       },
       "watch": true
     }
-# ---
 
+# ---
 ---
 title: How do you create a service?
 content:
@@ -635,8 +635,8 @@ code:
         "@platformatic/node": "^2.44.0"
       }
     }
-# ---
 
+# ---
 ---
 title: Configure your service
 content:
@@ -650,8 +650,8 @@ code:
     {
       "$schema": "https://schemas.platformatic.dev/@platformatic/node/2.44.0.json"
     }
-# ---
 
+# ---
 ---
 title: How do you write a service?
 items:
@@ -671,7 +671,7 @@ items:
 title: Network-less HTTP
 content: The Platformatic mesh network. Our secret sauce.
 image:
-  url: '@talk/mesh.webp'
+  url: '@talk/mesh.png'
   className: theme@default__image--full-width
 # ---
 
@@ -698,12 +698,12 @@ code:
 
       return app
     }
-# ---
 
+# ---
 ---
 layout: image
 image:
-  url: '@talk/bootcamp.webp'
+  url: '@talk/bootcamp.png'
 # ---
 
 ---

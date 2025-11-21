@@ -9,7 +9,7 @@ title: |
   (sometimes) 
   pays off!
 image:
-  url: '@common/ski.webp'
+  url: '@common/ski.png'
 options:
   background: fuchsia
 decorations:
@@ -24,7 +24,7 @@ layout: hello
 layout: separator
 title: We all love HTTP!
 image:
-  url: '@common/love-2.webp'
+  url: '@common/love-2.png'
 options:
   background: blue
 decorations:
@@ -37,7 +37,7 @@ title: |
   Which HTTP
   are you?
 image:
-  url: '@common/palette.webp'
+  url: '@common/palette.png'
 options:
   background: amber
 # ---
@@ -76,7 +76,7 @@ items:
 layout: separator
 title: Let's focus!
 image:
-  url: '@common/focus.webp'
+  url: '@common/focus.png'
 options:
   background: sky
 # ---
@@ -88,7 +88,7 @@ content:
   - '**llhttp** is the current HTTP parser.'
   - Written by Fedor Indutny in 2019, is the default since Node.js 12.
 image:
-  url: '@talk/llhttp.webp'
+  url: '@talk/llhttp.png'
 # ---
 
 ---
@@ -98,7 +98,7 @@ content:
   - llhttp is a state based HTTP parser based on llparse.
   - llparse is capable to generate a very performant C code out of a TypeScript description of the possible states.
 image:
-  url: '@talk/llhttp_states.webp'
+  url: '@talk/llhttp_states.png'
 # ---
 
 ---
@@ -120,7 +120,7 @@ items:
 layout: separator
 title: Do we have the solution?
 image:
-  url: '@common/solution-1.webp'
+  url: '@common/solution-1.png'
 options:
   background: amber
 # ---
@@ -129,7 +129,7 @@ options:
 layout: separator
 title: Yes, start fresh!
 image:
-  url: '@common/fresh.webp'
+  url: '@common/fresh.png'
 options:
   background: green
 # ---
@@ -138,7 +138,7 @@ options:
 layout: separator
 title: Say hello to <span class="theme@fg-black">Milo</span>!
 image:
-  url: '@talk/milo.webp'
+  url: '@talk/milo.png'
 options:
   background: pink
 decorations:
@@ -160,7 +160,7 @@ items:
       title: Be cool
       text: I don't want to start another language flame. *Please.* ❤️
 image:
-  url: '@common/rust-logo.webp'
+  url: '@common/rust-logo.png'
 # ---
 
 ---
@@ -182,7 +182,7 @@ items:
 layout: separator
 title: How is that possible?
 image:
-  url: '@common/dog-1.webp'
+  url: '@common/dog-1.png'
 options:
   background: amber
 # ---
@@ -191,7 +191,7 @@ options:
 layout: separator
 title: It's all in the macros!
 image:
-  url: '@common/macro.webp'
+  url: '@common/macro.png'
 options:
   background: green
 # ---
@@ -233,7 +233,7 @@ items:
           });
       className:
         root: talk@example__from
-    - image: '@common/arrow-right.webp'
+    - image: '@common/arrow-right.png'
       className:
         root: talk@example__arrow
         image: talk@example__arrow__image
@@ -279,7 +279,7 @@ items:
 layout: separator
 title: What about resources?
 image:
-  url: '@common/piggy-bank.webp'
+  url: '@common/piggy-bank.png'
 options:
   background: amber
 decorations:
@@ -305,7 +305,7 @@ items:
 layout: separator
 title: Strict, period!
 image:
-  url: '@common/wall.webp'
+  url: '@common/wall.png'
 options:
   background: red
 # ---
@@ -316,7 +316,7 @@ title: |
   Let's get to
   the action!
 image:
-  url: '@common/action.webp'
+  url: '@common/action.png'
 options:
   background: sky
 # ---
@@ -362,15 +362,15 @@ code:
   content: |
     shogun@panda:~/example$ cargo run
     Pos=38 Body: abc
-# ---
 
+# ---
 ---
 layout: separator
 title: |
   But Node.js
   uses C++!
 image:
-  url: '@common/incompatible.webp'
+  url: '@common/incompatible.png'
 options:
   background: red
 decorations:
@@ -381,7 +381,7 @@ decorations:
 layout: side
 title: The C++ workflow
 image:
-  url: '@talk/cbindgen.webp'
+  url: '@talk/cbindgen.png'
 items:
   entries:
     - icon: code
@@ -435,8 +435,8 @@ code:
     shogun@panda:~/example$ clang++ -std=c++11 -o example libmilo.a main.cc
     shogun@panda:~/example$ ./example
     Pos=38 Body: abc
-# ---
 
+# ---
 ---
 layout: separator
 title: |
@@ -444,7 +444,7 @@ title: |
   to support
   SmartOS!
 image:
-  url: '@common/incompatible.webp'
+  url: '@common/incompatible.png'
 options:
   background: red
 decorations:
@@ -455,7 +455,7 @@ decorations:
 layout: side
 title: WASM will save us!
 image:
-  url: '@talk/wasm-bindgen.webp'
+  url: '@talk/wasm-bindgen.png'
 items:
   entries:
     - icon: code
@@ -508,13 +508,13 @@ code:
   content: |
     shogun@panda:~/example$ node index.mjs
     Pos=38 Body: abc
-# ---
 
+# ---
 ---
 layout: separator
 title: And that's Milo!
 image:
-  url: '@common/completed.webp'
+  url: '@common/completed.png'
 options:
   background: green
 decorations:

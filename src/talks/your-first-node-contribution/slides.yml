@@ -6,7 +6,7 @@ layout: cover
 layout: separator
 title: All hope abandon ye who enter here!
 image:
-  url: '@common/hell.webp'
+  url: '@common/hell.png'
 options:
   background: pink
 # ---
@@ -14,7 +14,7 @@ options:
 ---
 layout: image
 image:
-  url: '@talk/marco.webp'
+  url: '@talk/marco.png'
 decorations:
   logo: white
 # ---
@@ -78,8 +78,8 @@ code:
   content: |
     shogun@panda:~/example$ ./configure
     shogun@panda:~/example$ make -j 4
-# ---
 
+# ---
 ---
 title: Choose an issue
 content:
@@ -103,8 +103,8 @@ code:
   content: |
     shogun@panda:~/example$ make jstest
     shogun@panda:~/example$ make lint-js-fix
-# ---
 
+# ---
 ---
 title: Configure GIT before committing
 content:
@@ -115,8 +115,8 @@ code:
   content: |
     shogun@panda:~/example$ git config user.name "$NAME"
     shogun@panda:~/example$ git config user.email "$EMAIL"
-# ---
 
+# ---
 ---
 title: Make sure to follow commit guidelines
 items:

@@ -8,7 +8,7 @@ title: |
   All you need to succeed
   is love!
 image:
-  url: '@common/love-1.webp'
+  url: '@common/love-1.png'
 options:
   background: fuchsia
 # ---
@@ -22,7 +22,7 @@ title: IPFS (InterPlanetary FileSystem)
 content:
   - A protocol designed with the intention to preserve and grow humanity's knowledge by making the web upgradeable, resilient, and more open.
 image:
-  url: '@talk/ipfs.webp'
+  url: '@talk/ipfs.png'
 # ---
 
 ---
@@ -41,7 +41,7 @@ content:
   - A CID uniquely identifies a chunk of data in IPFS and provides information on how to verify the integrity of the data.
   - It does not contain any information about the location.
 image:
-  url: '@talk/cid.webp'
+  url: '@talk/cid.png'
 # ---
 
 ---
@@ -55,13 +55,13 @@ code:
     | ---------- Header --------- | | ------------------------ Data ----------------------- |
     |                             | |                                                       |
     | [ varint | DAG-CBOR block ] | | [ varint | CID | block ] [ varint | CID | block ] ... |
-# ---
 
+# ---
 ---
 layout: separator
 title: What was wrong?
 image:
-  url: '@common/obstacle.webp'
+  url: '@common/obstacle.png'
 options:
   background: amber
 # ---
@@ -83,7 +83,7 @@ items:
 layout: separator
 title: What was the problem?
 image:
-  url: '@common/questions-2.webp'
+  url: '@common/questions-2.png'
 options:
   background: amber
 # ---
@@ -117,7 +117,7 @@ items:
 layout: separator
 title: The solution
 image:
-  url: '@common/solution-1.webp'
+  url: '@common/solution-1.png'
 options:
   background: green
 # ---
@@ -130,7 +130,7 @@ content:
   - New nodes can be added or removed at any time, global replication can be easily achieved.
   - <a href="https://github.com/elastic-ipfs/elastic-ipfs" class="talk@link--small">https://github.com/elastic-ipfs/elastic-ipfs</a>
 image:
-  url: '@talk/eipfs-architecture-complete.webp'
+  url: '@talk/eipfs-architecture-complete.png'
 # ---
 
 ---
@@ -165,8 +165,8 @@ code:
       roots: Array<string>
       version: number
     }
-# ---
 
+# ---
 ---
 title: Blocks Tables Item
 content:
@@ -179,8 +179,8 @@ code:
       createdAt: Date
       type: 'raw' | 'dag-cbor' | 'dag-json'
     }
-# ---
 
+# ---
 ---
 title: |
   Blocks Position Item
@@ -196,8 +196,8 @@ code:
       length: number
       offset: number
     }
-# ---
 
+# ---
 ---
 layout: separator
 title: Indexing subsystem
@@ -208,7 +208,7 @@ options:
 ---
 title: Overview
 image:
-  url: '@talk/eipfs-architecture-indexing.webp'
+  url: '@talk/eipfs-architecture-indexing.png'
 # ---
 
 ---
@@ -286,7 +286,7 @@ title: Indexer Nodes
 content:
   - A system which maps CID to content providers via libp2p or HTTP API.
 image:
-  url: '@talk/indexer-node.webp'
+  url: '@talk/indexer-node.png'
 # ---
 
 ---
@@ -364,8 +364,8 @@ code:
         }
       }
     }
-# ---
 
+# ---
 ---
 title: Advertisement file
 content:
@@ -390,8 +390,8 @@ code:
       "Provider": "bafzbeibhqavlasjc7dvbiopygwncnrtvjd2xmryk51aib7zyjor6kf3avm",
       "Signature": { "/": { "bytes": "CqsCCAASpg ... y/yqKWQ" } }
     }
-# ---
 
+# ---
 ---
 title: Entries file
 content:
@@ -413,8 +413,8 @@ code:
         }
       ]
     }
-# ---
 
+# ---
 ---
 layout: separator
 title: Publishing subsystem
@@ -425,7 +425,7 @@ options:
 ---
 title: Overview
 image:
-  url: '@talk/eipfs-architecture-publishing.webp'
+  url: '@talk/eipfs-architecture-publishing.png'
 # ---
 
 ---
@@ -449,7 +449,7 @@ items:
 layout: separator
 title: What now?
 image:
-  url: '@common/dont-panic.webp'
+  url: '@common/dont-panic.png'
 options:
   background: amber
 # ---
@@ -484,7 +484,7 @@ options:
 ---
 title: Overview
 image:
-  url: '@talk/eipfs-architecture-peer.webp'
+  url: '@talk/eipfs-architecture-peer.png'
 # ---
 
 ---
@@ -517,13 +517,13 @@ title: Hit rate went almost to 100%
 content:
   - The graph shows the hit-rate across <em>200TB</em> of data.
 image:
-  url: '@talk/hit-rate.webp'
+  url: '@talk/hit-rate.png'
 # ---
 
 ---
 title: The average indexing time has dropped
 image:
-  url: '@talk/indexing-time.webp'
+  url: '@talk/indexing-time.png'
 # ---
 
 ---

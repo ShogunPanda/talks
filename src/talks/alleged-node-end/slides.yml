@@ -17,7 +17,7 @@ layout: separator
 title: |
   Don't count your chickens before they hatch.
 image:
-  url: '@common/dinosaur-egg.webp'
+  url: '@common/dinosaur-egg.png'
 options:
   background: fuchsia
 # ---
@@ -34,7 +34,7 @@ content:
   - <span class="theme@fg-pink">**Whatever goes wrong today, please complain directly to him on Twitter!**</span>
   - <strong class="theme@fg-blue">[@matteocollina](https://twitter.com/@matteocollina)</strong>
 image:
-  url: '@common/matteo.webp'
+  url: '@common/matteo.png'
 decorations:
   logo: white
 # ---
@@ -42,7 +42,7 @@ decorations:
 ---
 title: I think we should start by looking at numbers.
 content:
-  - image: '@talk/downloads.webp'
+  - image: '@talk/downloads.png'
   - '<span class="theme-misc@block theme-misc@align-center">**30 Billion** downloads per year</span>'
 # ---
 
@@ -68,7 +68,7 @@ quote:
 layout: separator
 title: This talk is about a question we are trying to answer…
 image:
-  url: '@common/questions-2.webp'
+  url: '@common/questions-2.png'
 options:
   background: amber
 # ---
@@ -77,14 +77,14 @@ options:
 layout: image
 title: Is Node.js dead yet?
 image:
-  url: '@common/sunset.webp'
+  url: '@common/sunset.png'
 # ---
 
 ---
 layout: image
 title: Period.
 image:
-  url: '@common/no.webp'
+  url: '@common/no.png'
 # ---
 
 ---
@@ -92,7 +92,7 @@ layout: separator
 title: ...let me tell you a secret!
 subtitle: To all of you that "aim" to destroy other technologies...
 image:
-  url: '@common/lego-astronaut.webp'
+  url: '@common/lego-astronaut.png'
 options:
   background: sky
 className:
@@ -107,7 +107,7 @@ decorations:
 title: A technology born in *1959* is on the RAISE!
 content:
   - Have you have heard about **COBOL**?
-  - image: '@talk/cobol.webp'
+  - image: '@talk/cobol.png'
   - 'Source: https://www.tiobe.com/tiobe-index/'
 # ---
 
@@ -115,7 +115,7 @@ content:
 title: jQuery is used by *94.4%* of the JS-enabled sites
 content:
   - And v4 was just released!
-  - image: '@talk/jquery.webp'
+  - image: '@talk/jquery.png'
   - 'Source: https://w3techs.com/technologies/overview/javascript_library'
 # ---
 
@@ -123,7 +123,7 @@ content:
 layout: separator
 title: What about Node.js?
 image:
-  url: '@common/node.webp'
+  url: '@common/node.png'
 options:
   background: amber
 # ---
@@ -131,7 +131,7 @@ options:
 ---
 title: Node.js is the most popular technology according to StackOverflow
 content:
-  - image: '@talk/node-popularity.webp'
+  - image: '@talk/node-popularity.png'
   - 'Source: https://survey.stackoverflow.co/2023/#technology-most-popular-technologies'
 # ---
 
@@ -139,7 +139,7 @@ content:
 title: No, bundling npm and Node.js was not a mistake
 content:
   - A combo that solve software reuse, at scale. No one else did.
-  - image: '@talk/npm.webp'
+  - image: '@talk/npm.png'
   - 'Source: http://www.modulecounts.com/'
 # ---
 
@@ -147,14 +147,14 @@ content:
 title: Module usage also grew
 content:
   - Downloads of readable-stream (4th most downloaded module on npm)
-  - image: '@talk/modules-downloads.webp'
+  - image: '@talk/modules-downloads.png'
   - 'The "usage" of Node.js is growing roughly *+50% year over year*, or doubling every 2 years '
 # ---
 
 ---
 title: Half of Node.js downloads are the headers files
 content:
-  - image: '@talk/node-by-os.webp'
+  - image: '@talk/node-by-os.png'
   - 'Source: https://nodedownloads.nodeland.dev/'
 # ---
 
@@ -164,14 +164,14 @@ content:
   - |
     Headers are downloaded whenever an "npm i" needs to compile binary addons.
     Then they are cached to disk.
-  - image: '@talk/node-headers.webp'
+  - image: '@talk/node-headers.png'
 # ---
 
 ---
 title: Downloads of the Node.js binary, per OS
 content:
   - We believe Linux is the default for CI. OSS projects often test on Windows for CI as well.
-  - image: '@talk/node-by-binary.webp'
+  - image: '@talk/node-by-binary.png'
 # ---
 
 ---
@@ -204,14 +204,14 @@ className:
 ---
 title: Node.js v16, v14, v12 are massively popular, while they all have <span class="talk@danger-banner">known vulnerabilities</span>
 content:
-  - image: '@talk/node-by-version.webp'
+  - image: '@talk/node-by-version.png'
 # ---
 
 ---
 layout: separator
 title: If you are not updating Node.js...
 image:
-  url: '@common/danger-strip.webp'
+  url: '@common/danger-strip.png'
 options:
   background: amber
 # ---
@@ -220,7 +220,7 @@ options:
 layout: separator
 title: ...you are putting yourself at risk!
 image:
-  url: '@common/danger-strip.webp'
+  url: '@common/danger-strip.png'
 options:
   background: red
 className:
@@ -230,7 +230,7 @@ className:
 ---
 title: Long Term Support (LTS) Schedule
 content:
-  - image: '@talk/lts.webp'
+  - image: '@talk/lts.png'
 # ---
 
 ---
@@ -238,7 +238,7 @@ title: |
   Most teams update their Node.js
   version every 2 LTS releases
 content:
-  - image: '@talk/node-by-version-latest.webp'
+  - image: '@talk/node-by-version-latest.png'
 # ---
 
 ---
@@ -273,21 +273,21 @@ items:
 title: Commits & Pushes to Node.js Core
 content: 'Source https://ossinsight.io/analyze/nodejs/node'
 image:
-  url: '@talk/node-commits-pushes.webp'
+  url: '@talk/node-commits-pushes.png'
 # ---
 
 ---
 title: The number of pull requests is (mostly) stable
 content: 'Source https://ossinsight.io/analyze/nodejs/node'
 image:
-  url: '@talk/node-prs.webp'
+  url: '@talk/node-prs.png'
 # ---
 
 ---
 layout: separator
 title: We work hard to keep <span class="theme@fg-amber">you</span> safe!
 image:
-  url: '@common/danger-strip.webp'
+  url: '@common/danger-strip.png'
 options:
   background: sky
 # ---
@@ -296,27 +296,27 @@ options:
 title: Node.js Security Submissions
 content: Submissions are not turned into vulnerabilities, but they need to be handled by the team
 image:
-  url: '@talk/node-security-submissions.webp'
+  url: '@talk/node-security-submissions.png'
 # ---
 
 ---
 title: Average time to first response
 content: Submissions are not turned into vulnerabilities, but they need to be handled by the team
 image:
-  url: '@talk/average-response-time.webp'
+  url: '@talk/average-response-time.png'
 # ---
 
 ---
 title: Average time to triage
 content: Submissions are not turned into vulnerabilities, but they need to be handled by the team
 image:
-  url: '@talk/average-triage-time.webp'
+  url: '@talk/average-triage-time.png'
 # ---
 
 ---
 title: Node.js was one of the first project sponsored by
 content:
-  - image: '@talk/alpha-omega.webp'
+  - image: '@talk/alpha-omega.png'
   - Alpha-Omega is an associated project of the OpenSSF, established in February 2022, funded by Microsoft, Google, and Amazon, and with a *mission to protect society by catalyzing sustainable security improvements* to the most critical open source software projects and ecosystems.
   - '*The project aims to build a world where critical open source projects are secure and where security vulnerabilities are found and fixed quickly.*'
 className:
@@ -326,14 +326,14 @@ className:
 ---
 title: Total funding for Security work
 image:
-  url: '@talk/security-funding.webp'
+  url: '@talk/security-funding.png'
 # ---
 
 ---
 layout: separator
 title: What did we ship in the last few years?
 image:
-  url: '@common/ship.webp'
+  url: '@common/ship.png'
 options:
   background: amber
 # ---
@@ -521,8 +521,8 @@ code:
     }
 
     console.log(await main())
-# ---
 
+# ---
 ---
 title: util.parseArgs()
 code:
@@ -546,8 +546,8 @@ code:
 
     console.log(args)
     // Prints: [Object: null prototype] { foo: true, bar: 'b' } []
-# ---
 
+# ---
 ---
 title: Single Executable Applications
 items:
@@ -640,7 +640,7 @@ layout: separator
 title: Are you using the latest Node.js features?
 subtitle: Or are you still stuck in 2015?
 image:
-  url: '@common/clock.webp'
+  url: '@common/clock.png'
 options:
   background: pink
 decorations:
@@ -654,7 +654,7 @@ subtitle: |
   Let's look at the two
   most exciting things in v22!
 image:
-  url: '@common/road.webp'
+  url: '@common/road.png'
 options:
   background: amber
 # ---
@@ -664,7 +664,7 @@ layout: image
 title: require(esm)
 subtitle: '.mjs is not needed anymore'
 image:
-  url: '@common/fry-money.webp'
+  url: '@common/fry-money.png'
 className:
   contents: talk@image__contents
 # ---
@@ -683,13 +683,13 @@ code:
 
     const { answer } = require('./esm.mjs')
     console.log(answer)
-# ---
 
+# ---
 ---
 layout: image
 title: 'Typescript'
 image:
-  url: '@common/fry-money.webp'
+  url: '@common/fry-money.png'
 className:
   contents: talk@image__contents
 # ---
@@ -729,7 +729,7 @@ items:
 layout: separator
 title: Node.js is not always relaxing...
 image:
-  url: '@common/mountain.webp'
+  url: '@common/mountain.png'
 options:
   background: orange
 # ---
@@ -740,7 +740,7 @@ title: |
   ...because
   we need you!
 image:
-  url: '@common/start.webp'
+  url: '@common/start.png'
 options:
   background: orange
 className:
@@ -751,14 +751,14 @@ className:
 layout: image
 title: Project Governance
 image:
-  url: '@common/senate.webp'
+  url: '@common/senate.png'
 decorations:
   logo: white
 # ---
 
 ---
 image:
-  url: '@talk/openjs.webp'
+  url: '@talk/openjs.png'
 # ---
 
 ---
@@ -785,8 +785,8 @@ content:
     **The exception is if the TSC votes to approve the change despite the opposition.**
   - |
     Involving the TSC is usually unnecessary: often, discussions or further changes **result in collaborators removing their opposition**.
-# ---
 
+# ---
 ---
 title: The Node.js Technical Steering Committee
 content: |
@@ -801,8 +801,8 @@ content: |
   - Maintaining the list of additional Collaborators.
   - Development process and any coding standards.
   - Mediating technical conflicts between Collaborators or Foundation projects.
-# ---
 
+# ---
 ---
 title: In case of disagreements, the TSC votes
 content:
@@ -818,7 +818,7 @@ content:
 layout: image
 title: No one can control Node.js
 image:
-  url: '@common/scream.webp'
+  url: '@common/scream.png'
 # ---
 
 ---
@@ -828,7 +828,7 @@ title: |
   to <span class="theme@fg-amber">COMPROMISE</span>
   to achieve our objectives
 image:
-  url: '@common/peace.webp'
+  url: '@common/peace.png'
 options:
   background: sky
 # ---
@@ -840,7 +840,7 @@ title: |
   a say  in the
   future of Node.js?
 image:
-  url: '@talk/send-pr.webp'
+  url: '@talk/send-pr.png'
   className: talk@send-pr
 options:
   background: amber
@@ -851,7 +851,7 @@ layout: separator
 title: |
   Start contributing!
 image:
-  url: '@common/start.webp'
+  url: '@common/start.png'
 options:
   background: green
 className:

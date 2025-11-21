@@ -7,7 +7,7 @@ layout: separator
 title: |
   Sometimes, your worst enemy is slowness!
 image:
-  url: '@common/sloth.webp'
+  url: '@common/sloth.png'
 options:
   background: fuchsia
 # ---
@@ -23,7 +23,7 @@ content:
   - Web applications play a very important part of our lives.
   - _They must not go down!_
 image:
-  url: '@common/online-banking.webp'
+  url: '@common/online-banking.png'
 decorations:
   logo: white
 # ---
@@ -32,7 +32,7 @@ decorations:
 layout: separator
 title: We are all vulnerable!
 image:
-  url: '@common/hacking.webp'
+  url: '@common/hacking.png'
 options:
   background: red
 # ---
@@ -52,15 +52,15 @@ items:
       text: _Is that still true?_
 notes: |
   Emphasize the **true** in the last question.
-# ---
 
+# ---
 ---
 layout: separator
 title: |
   Fear the
   real enemy ...
 image:
-  url: '@common/hacking.webp'
+  url: '@common/hacking.png'
 options:
   background: pink
 # ---
@@ -68,7 +68,7 @@ options:
 ---
 layout: image
 image:
-  url: '@common/slowloris.webp'
+  url: '@common/slowloris.png'
 notes: |
   Joke about: **"This talk should have been named Taming Slowlorises in Node.js"** and see people reaction.
 decorations:
@@ -96,7 +96,7 @@ items:
         This attack can be abstracted
         to similar protocols.
 image:
-  url: '@talk/slowloris-intro.webp'
+  url: '@talk/slowloris-intro.png'
 # ---
 
 ---
@@ -105,7 +105,7 @@ title: Normal HTTP server activity
 content:
   - Each socket on the server consumes some amount of RAM and other system resources.
 image:
-  url: '@talk/http-1.webp'
+  url: '@talk/http-1.png'
 decorations:
   number: 1
 # ---
@@ -116,7 +116,7 @@ title: Normal HTTP server activity
 content:
   - Clients usually disconnect after receiving the response.
 image:
-  url: '@talk/http-2.webp'
+  url: '@talk/http-2.png'
 notes: |
   Explicitly mention that this is not strictly true for Keep-Alive connections but also that legit clients disconnects very soon.
 decorations:
@@ -129,7 +129,7 @@ title: Normal HTTP server activity
 content:
   - The amount of resources consumed by the server are relatively stable.
 image:
-  url: '@talk/http-3.webp'
+  url: '@talk/http-3.png'
 decorations:
   number: 3
 # ---
@@ -155,7 +155,7 @@ title: The Slowloris attack
 content:
   - Each client never finishes a request and stays connected for the longest time possible.
 image:
-  url: '@talk/slowloris-1.webp'
+  url: '@talk/slowloris-1.png'
 decorations:
   number: 1
 # ---
@@ -166,7 +166,7 @@ title: The Slowloris attack
 content:
   - As more clients connect, server resources usage constantly increases over time.
 image:
-  url: '@talk/slowloris-2.webp'
+  url: '@talk/slowloris-2.png'
 decorations:
   number: 2
 # ---
@@ -178,7 +178,7 @@ content:
   - At some point server has no more free resources and cannot accept any new client.
   - _The service is interrupted!_
 image:
-  url: '@talk/slowloris-3.webp'
+  url: '@talk/slowloris-3.png'
 decorations:
   number: 3
 # ---
@@ -187,7 +187,7 @@ decorations:
 layout: separator
 title: How do we stop it?
 image:
-  url: '@common/wall.webp'
+  url: '@common/wall.png'
 notes: |
   Emphasize **"How"** and **"stop it"**?
 options:
@@ -225,7 +225,7 @@ items:
 layout: separator
 title: What about Node.js?
 image:
-  url: '@common/node.webp'
+  url: '@common/node.png'
 options:
   background: amber
 decorations:
@@ -291,7 +291,7 @@ items:
 layout: separator
 title: Are we safe now?
 image:
-  url: '@common/completed.webp'
+  url: '@common/completed.png'
 options:
   background: amber
 # ---
@@ -300,7 +300,7 @@ options:
 layout: separator
 title: Yes, almost!
 image:
-  url: '@common/hacking.webp'
+  url: '@common/hacking.png'
 options:
   background: gray
 # ---
@@ -351,8 +351,8 @@ code:
 
     // The request's headers must be completely received by the server within a minute
     server.headersTimeout = 60000
-# ---
 
+# ---
 ---
 title: Node.js 18.0.0 is finally safe by default
 content:
@@ -381,13 +381,13 @@ items:
   horizontal: true
 notes: |
   Mention that this was possible due to semver major change and thus it will not be backported.
-# ---
 
+# ---
 ---
 layout: separator
 title: We made it!
 image:
-  url: '@common/turtle.webp'
+  url: '@common/turtle.png'
 notes: |
   Do a nice victory gesture and shout!
 options:
@@ -417,8 +417,8 @@ items:
   horizontal: true
 notes: |
   **Before** talking about the slides, recap what you talked about: **"Today we have seen how atypical attacks can unexpectedly affect our applications and how it can take a very long time to fix them."**
-# ---
 
+# ---
 ---
 layout: quote
 quote:

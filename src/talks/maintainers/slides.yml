@@ -8,7 +8,7 @@ title: |
   The secret is
   in the manners!
 image:
-  url: '@common/lollipops.webp'
+  url: '@common/lollipops.png'
 options:
   background: fuchsia
 decorations:
@@ -23,7 +23,7 @@ layout: hello
 layout: separator
 title: What do you <s>expect</s> pretend from Open Source?
 image:
-  url: '@common/code.webp'
+  url: '@common/code.png'
 options:
   background: amber
 # ---
@@ -77,7 +77,7 @@ items:
 layout: separator
 title: Wait a sec...
 image:
-  url: '@common/thinker.webp'
+  url: '@common/thinker.png'
 options:
   background: blue
 decorations:
@@ -88,7 +88,7 @@ decorations:
 layout: separator
 title: Ring a bell?
 image:
-  url: '@common/bell.webp'
+  url: '@common/bell.png'
 className:
   root: theme@separator--reverse
 options:
@@ -105,7 +105,7 @@ content:
   - The huge difference is that people are driven by *passion*, not money.
   - '*You are not their boss!*'
 image:
-  url: '@common/people.webp'
+  url: '@common/people.png'
 # ---
 
 ---
@@ -123,7 +123,7 @@ items:
       title: Actions have consequences
       text: Demanding fixes, features or simply attention *will push* people away.
 image:
-  url: '@common/kindness.webp'
+  url: '@common/kindness.png'
 decorations:
   logo: black
 # ---
@@ -135,7 +135,7 @@ content:
   - Needless to say, people have *sentiments* and a life in the real world.
   - Even a single small act of rudeness can *burn people out*.
 image:
-  url: '@talk/burnout.webp'
+  url: '@talk/burnout.png'
 # ---
 
 ---
@@ -144,7 +144,7 @@ title: |
   How do you 
   ask for help?
 image:
-  url: '@common/sos.webp'
+  url: '@common/sos.png'
 options:
   background: amber
 # ---
@@ -203,7 +203,7 @@ layout: separator
 title: Dude, you forgot the <span class="theme@fg-black">Why</span>!
 subtitle: No, I have not ...
 image:
-  url: '@common/why.webp'
+  url: '@common/why.png'
 options:
   background: red
 # ---
@@ -238,7 +238,7 @@ items:
       title: Provide a public repository
       text: It will facilitate the triagers' work.
 image:
-  url: '@talk/repro.webp'
+  url: '@talk/repro.png'
 # ---
 
 ---
@@ -275,7 +275,7 @@ items:
 layout: separator
 title: And don't forget to <span class="theme@fg-black">thank them</span>!
 image:
-  url: '@common/thanks.webp'
+  url: '@common/thanks.png'
 options:
   background: green
 decorations:

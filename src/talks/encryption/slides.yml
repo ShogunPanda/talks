@@ -7,7 +7,7 @@ layout: separator
 title: |
   Encrypting is like painting!
 image:
-  url: '@common/painting.webp'
+  url: '@common/painting.png'
 options:
   background: fuchsia
 decorations:
@@ -26,7 +26,7 @@ content:
   - <span class="theme@fg-pink">**Whatever goes wrong today, please complain directly to him on Twitter!**</span>
   - <strong class="theme@fg-blue">[@MicheleRivaCode](https://twitter.com/@MicheleRivaCode)</strong>
 image:
-  url: '@common/michele.webp'
+  url: '@common/michele.png'
 decorations:
   logo: white
 # ---
@@ -50,7 +50,7 @@ items:
 layout: separator
 title: Let's send a message ...
 image:
-  url: '@common/pidgeons.webp'
+  url: '@common/pidgeons.png'
 options:
   background: sky
 decorations:
@@ -61,7 +61,7 @@ decorations:
 layout: separator
 title: That was not an encrypted channel!
 image:
-  url: '@common/dali.webp'
+  url: '@common/dali.png'
 options:
   background: red
 # ---
@@ -80,7 +80,7 @@ quote:
 layout: separator
 title: An example:<br/> The Caesar Cipher
 image:
-  url: '@common/caesar-salad.webp'
+  url: '@common/caesar-salad.png'
 options:
   background: sky
 # ---
@@ -88,37 +88,37 @@ options:
 ---
 title: How does the Caesar Cipher work?
 image:
-  url: '@talk/caesar-cipher-1.webp'
+  url: '@talk/caesar-cipher-1.png'
 # ---
 
 ---
 title: How does the Caesar Cipher work?
 image:
-  url: '@talk/caesar-cipher-2.webp'
+  url: '@talk/caesar-cipher-2.png'
 # ---
 
 ---
 title: How does the Caesar Cipher work?
 image:
-  url: '@talk/caesar-cipher-3.webp'
+  url: '@talk/caesar-cipher-3.png'
 # ---
 
 ---
 title: How does the Caesar Cipher work?
 image:
-  url: '@talk/caesar-cipher-4.webp'
+  url: '@talk/caesar-cipher-4.png'
 # ---
 
 ---
 title: How does the Caesar Cipher work?
 image:
-  url: '@talk/caesar-cipher-5.webp'
+  url: '@talk/caesar-cipher-5.png'
 # ---
 
 ---
 title: How does the Caesar Cipher work?
 image:
-  url: '@talk/caesar-cipher-6.webp'
+  url: '@talk/caesar-cipher-6.png'
 # ---
 
 ---
@@ -131,7 +131,7 @@ items:
   sequence: true
   gap: false
 image:
-  url: '@common/hal.webp'
+  url: '@common/hal.png'
 # ---
 
 ---
@@ -139,7 +139,7 @@ title: And now, a bit of pain for some of us
 content:
   - How old are you? Do you recognize this?
 image:
-  url: '@talk/rot13.webp'
+  url: '@talk/rot13.png'
 # ---
 
 ---
@@ -147,7 +147,7 @@ title: Why is Caesar Cipher weak?
 content:
   - Since only a few permutations are possible, brute forcing is quite easy (especially if using letter frequency analysis).
 image:
-  url: '@talk/letter-analysis.webp'
+  url: '@talk/letter-analysis.png'
 # ---
 
 ---
@@ -162,7 +162,7 @@ items:
       title: The security is in the parameters
       text: The parameters must be chosen so that brute forcing is unfeasible.
 image:
-  url: '@common/algorithm.webp'
+  url: '@common/algorithm.png'
 # ---
 
 ---
@@ -170,7 +170,7 @@ title: What are our choices today?
 content:
   - The **Advanced Encryption Standard** (AES) is a secure symmetric block algorithm.
 image:
-  url: '@talk/aes.webp'
+  url: '@talk/aes.png'
 # ---
 
 ---
@@ -185,7 +185,7 @@ content:
 layout: separator
 title: Do we have a solution?
 image:
-  url: '@common/solution-1.webp'
+  url: '@common/solution-1.png'
 options:
   background: amber
 decorations:
@@ -196,7 +196,7 @@ decorations:
 layout: image
 title: Of course!
 image:
-  url: '@talk/diffie-hellman.webp'
+  url: '@talk/diffie-hellman.png'
 decorations:
   logo: black
 # ---
@@ -220,7 +220,7 @@ items:
 layout: separator
 title: It's time to paint!
 image:
-  url: '@common/baby-hand.webp'
+  url: '@common/baby-hand.png'
 options:
   background: sky
 decorations:
@@ -230,21 +230,21 @@ decorations:
 ---
 title: Generate the private and public keys
 image:
-  url: '@talk/generate.webp'
+  url: '@talk/generate.png'
 index: 1
 # ---
 
 ---
 title: Exchange the public keys
 image:
-  url: '@talk/exchange.webp'
+  url: '@talk/exchange.png'
 index: 2
 # ---
 
 ---
 title: Generate the shared keys
 image:
-  url: '@talk/shared.webp'
+  url: '@talk/shared.png'
 index: 3
 # ---
 
@@ -252,7 +252,7 @@ index: 3
 layout: separator
 title: Let's make some m<span class="theme@fg-amber">a</span>th!
 image:
-  url: '@common/walter-white.webp'
+  url: '@common/walter-white.png'
 options:
   background: sky
 # ---
@@ -260,31 +260,31 @@ options:
 ---
 title: How is this possible?
 image:
-  url: '@talk/handshake-1.webp'
+  url: '@talk/handshake-1.png'
 # ---
 
 ---
 title: How is this possible?
 image:
-  url: '@talk/handshake-2.webp'
+  url: '@talk/handshake-2.png'
 # ---
 
 ---
 title: How is this possible?
 image:
-  url: '@talk/handshake-3.webp'
+  url: '@talk/handshake-3.png'
 # ---
 
 ---
 title: How is this possible?
 image:
-  url: '@talk/shared-calculation.webp'
+  url: '@talk/shared-calculation.png'
 # ---
 
 ---
 title: Let's prove it!
 image:
-  url: '@talk/prove.webp'
+  url: '@talk/prove.png'
 # ---
 
 ---

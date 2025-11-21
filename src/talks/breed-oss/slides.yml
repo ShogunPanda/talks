@@ -6,7 +6,7 @@ layout: cover
 layout: separator
 title: Don't ask if you can't handle the answers!
 image:
-  url: '@common/dog-2.webp'
+  url: '@common/dog-2.png'
 options:
   background: fuchsia
 decorations:
@@ -21,7 +21,7 @@ layout: hello
 layout: separator
 title: Do you want to mess with Open Source?
 image:
-  url: '@common/code.webp'
+  url: '@common/code.png'
 options:
   background: amber
 # ---
@@ -71,7 +71,7 @@ className:
 layout: separator
 title: Beware!
 image:
-  url: '@common/hell.webp'
+  url: '@common/hell.png'
 options:
   background: red
 # ---
@@ -83,7 +83,7 @@ content:
   - Even if a software has a OSS license, it might not strictly be OSS.
   - SQLite is [Open Source but not Open Contribution](https://sqlite.org/copyright.html).
 image:
-  url: '@talk/sqlite.webp'
+  url: '@talk/sqlite.png'
 # ---
 
 ---
@@ -105,7 +105,7 @@ items:
 layout: separator
 title: Wait a sec...
 image:
-  url: '@common/thinker.webp'
+  url: '@common/thinker.png'
 options:
   background: blue
 decorations:
@@ -116,7 +116,7 @@ decorations:
 layout: separator
 title: Ring a bell?
 image:
-  url: '@common/bell.webp'
+  url: '@common/bell.png'
 className:
   root: theme@separator--reverse
 options:
@@ -140,7 +140,7 @@ title: How to make it similar?
 content:
   - You can create bounty programs to prioritize collaboration on bug fixing or feature development.
 image:
-  url: '@common/wanted.webp'
+  url: '@common/wanted.png'
 # ---
 
 ---
@@ -193,7 +193,7 @@ items:
 layout: separator
 title: Trust the community!
 image:
-  url: '@common/community.webp'
+  url: '@common/community.png'
 options:
   background: green
 decorations:
@@ -207,7 +207,7 @@ content:
   - People generally want to help.
   - They have interest in what you are doing for their own needs.
 image:
-  url: '@common/people.webp'
+  url: '@common/people.png'
 decorations:
   logo: white
 # ---
@@ -219,7 +219,7 @@ content:
   - Quick and effective interventions about uncomfortable situations are the key.
   - Avoiding creating a toxic community is always your *first* priority.
 image:
-  url: '@common/police.webp'
+  url: '@common/police.png'
 # ---
 
 ---
@@ -229,7 +229,7 @@ content:
   - You will get people of all knowledges and expertises. Be patient, especially with newcomers.
   - "Basically, it's like *parenting*: endless patience, close to no recognition."
 image:
-  url: '@common/kindness.webp'
+  url: '@common/kindness.png'
 decorations:
   logo: black
 # ---
@@ -238,7 +238,7 @@ decorations:
 layout: separator
 title: But here we're talking about breeding...
 image:
-  url: '@common/breeding.webp'
+  url: '@common/breeding.png'
 options:
   background: blue
 # ---
@@ -264,7 +264,7 @@ title: |
   Nobody wants
   to be sued!
 image:
-  url: '@common/justice.webp'
+  url: '@common/justice.png'
 options:
   background: red
 # ---
@@ -313,13 +313,13 @@ content:
   - People don't like if you try to take away their beloved Open Source software.
 items:
   entries:
-    - image: '@common/nodejs-logo.webp'
+    - image: '@common/nodejs-logo.png'
       title: Node.js
       className:
         image: theme-misc@width-auto
-    - image: '@common/terraform.webp'
+    - image: '@common/terraform.png'
       title: Terraform
-    - image: '@common/rust-logo.webp'
+    - image: '@common/rust-logo.png'
       title: Rust
   horizontal: true
 # ---
@@ -330,7 +330,7 @@ title: |
   Being kind
   never hurts!
 image:
-  url: '@common/kindness.webp'
+  url: '@common/kindness.png'
 options:
   background: green
 decorations:
@@ -341,7 +341,7 @@ decorations:
 layout: separator
 title: Questions?
 image:
-  url: '@common/questions-2.webp'
+  url: '@common/questions-2.png'
 options:
   background: amber
 decorations:
@@ -352,7 +352,7 @@ decorations:
 layout: image
 title: Coffee Break
 image:
-  url: '@common/coffee.webp'
+  url: '@common/coffee.png'
 decorations:
   logo: white
 # ---
@@ -363,7 +363,7 @@ title: |
   Let's get to
   the action!
 image:
-  url: '@common/action.webp'
+  url: '@common/action.png'
 options:
   background: sky
 # ---
@@ -372,11 +372,11 @@ options:
 title: First of all, choose the hosting
 items:
   entries:
-    - image: '@common/github.webp'
+    - image: '@common/github.png'
       title: GitHub
-    - image: '@common/gitlab.webp'
+    - image: '@common/gitlab.png'
       title: GitLab
-    - image: '@common/bitbucket.webp'
+    - image: '@common/bitbucket.png'
       title: BitBucket
   horizontal: true
 # ---
@@ -401,7 +401,7 @@ items:
 layout: separator
 title: How do we get started?
 image:
-  url: '@common/do-it.webp'
+  url: '@common/do-it.png'
 options:
   background: amber
 decorations:
@@ -415,7 +415,7 @@ content:
   - The core idea to attract people is to show you care.
   - The issue system is where you usually take feedback and bug reports from your user base.
 image:
-  url: '@talk/issue.webp'
+  url: '@talk/issue.png'
 # ---
 
 ---
@@ -430,7 +430,7 @@ items:
       title: It will help them
       text: Having templates speeds up their reporting time.
 image:
-  url: '@talk/template.webp'
+  url: '@talk/template.png'
 # ---
 
 ---
@@ -448,7 +448,7 @@ items:
       title: Ask for a public repository
       text: It will facilitate reporters to help triagers.
 image:
-  url: '@talk/repro.webp'
+  url: '@talk/repro.png'
 # ---
 
 ---
@@ -457,7 +457,7 @@ title: You don't owe anybody anything ...
 content:
   - It is in your rights to close bugs or features without solving them.
 image:
-  url: '@common/baloons.webp'
+  url: '@common/baloons.png'
 # ---
 
 ---
@@ -507,7 +507,7 @@ content:
   - When people come in your community and want to help, they don't know where to start.
   - Having *good first time issues* will help them to independently starting being involved.
 image:
-  url: '@talk/first-issues.webp'
+  url: '@talk/first-issues.png'
 # ---
 
 ---
@@ -516,7 +516,7 @@ title: |
   The next
   big pillar
 image:
-  url: '@common/pillars.webp'
+  url: '@common/pillars.png'
 options:
   background: sky
 # ---
@@ -543,7 +543,7 @@ content:
   - While formal TDD is hard, Pull Requests *must* contain tests when non trivial.
   - Even if a PR content is very appealing, you have to *resist the temptation to accept it without tests*.
 image:
-  url: '@talk/tests.webp'
+  url: '@talk/tests.png'
 # ---
 
 ---
@@ -571,7 +571,7 @@ content:
   - No one rushes you to merge code. If possible, require for multiple approvals before committing.
   - Once you give enough time for objection, then you can merge.
 image:
-  url: '@common/review.webp'
+  url: '@common/review.png'
 decorations:
   logo: black
 # ---
@@ -632,14 +632,14 @@ title: (Semi) Automated releasing
 content:
   - By leveraging existing tools and the workflow feature you can release new version with just a click.
 image:
-  url: '@talk/workflows.webp'
+  url: '@talk/workflows.png'
 # ---
 
 ---
 layout: separator
 title: Questions?
 image:
-  url: '@common/questions-2.webp'
+  url: '@common/questions-2.png'
 options:
   background: amber
 decorations:
@@ -650,7 +650,7 @@ decorations:
 layout: image
 title: Coffee Break
 image:
-  url: '@common/coffee.webp'
+  url: '@common/coffee.png'
 decorations:
   logo: white
 # ---
@@ -661,7 +661,7 @@ title: |
   Humans are
   social beings
 image:
-  url: '@common/people.webp'
+  url: '@common/people.png'
 options:
   background: sky
 # ---
@@ -673,7 +673,7 @@ content:
   - Even if we're developing software, it's always about the people.
   - A line of code can be replaced at any time with no effort, you can't do the same with people.
 image:
-  url: '@common/community.webp'
+  url: '@common/community.png'
 decorations:
   logo: black
 # ---
@@ -721,7 +721,7 @@ items:
 layout: separator
 title: Diversity and Inclusion
 image:
-  url: '@common/diversity.webp'
+  url: '@common/diversity.png'
 options:
   background: sky
 # ---
@@ -787,7 +787,7 @@ items:
 layout: separator
 title: Everybody is responsible for moderation!
 image:
-  url: '@common/police.webp'
+  url: '@common/police.png'
 options:
   background: blue
 decorations:
@@ -814,7 +814,7 @@ items:
 layout: separator
 title: Questions?
 image:
-  url: '@common/questions-2.webp'
+  url: '@common/questions-2.png'
 options:
   background: amber
 decorations:
@@ -825,7 +825,7 @@ decorations:
 layout: image
 title: Coffee Break
 image:
-  url: '@common/coffee.webp'
+  url: '@common/coffee.png'
 decorations:
   logo: white
 # ---
@@ -834,7 +834,7 @@ decorations:
 layout: separator
 title: What about Node.js?
 image:
-  url: '@common/node.webp'
+  url: '@common/node.png'
 options:
   background: amber
 decorations:
@@ -845,7 +845,7 @@ decorations:
 layout: separator
 title: Questions?
 image:
-  url: '@common/questions-2.webp'
+  url: '@common/questions-2.png'
 options:
   background: amber
 decorations:

@@ -8,7 +8,7 @@ title: |
   Nothing
   beats a classic!
 image:
-  url: '@common/500.webp'
+  url: '@common/500.png'
 options:
   background: fuchsia
 # ---
@@ -21,7 +21,7 @@ layout: hello
 layout: separator
 title: We all love HTTP!
 image:
-  url: '@common/love-2.webp'
+  url: '@common/love-2.png'
 options:
   background: blue
 decorations:
@@ -34,7 +34,7 @@ title: |
   Which HTTP
   are you?
 image:
-  url: '@common/palette.webp'
+  url: '@common/palette.png'
 options:
   background: amber
 decorations:
@@ -120,7 +120,7 @@ items:
 layout: separator
 title: Let's focus!
 image:
-  url: '@common/focus.webp'
+  url: '@common/focus.png'
 options:
   background: sky
 # ---
@@ -132,7 +132,7 @@ content:
   - '**http_parser** was the original HTTP/1.1 parser of Node.js'
   - It existed since the early days of Node.js and it was one of its oldest dependencies.
 image:
-  url: '@talk/http_parser.webp'
+  url: '@talk/http_parser.png'
 # ---
 
 ---
@@ -172,7 +172,7 @@ content:
   - '**llhttp** is the current HTTP parser.'
   - Written by Fedor Indutny in 2019, is the default since Node.js 12.
 image:
-  url: '@talk/llhttp.webp'
+  url: '@talk/llhttp.png'
 # ---
 
 ---
@@ -182,14 +182,14 @@ content:
   - llhttp is a state based HTTP parser based on llparse.
   - llparse is capable to generate a very performant C code out of a TypeScript description of the possible states.
 image:
-  url: '@talk/llhttp_states.webp'
+  url: '@talk/llhttp_states.png'
 # ---
 
 ---
 layout: separator
 title: Wait, what?!
 image:
-  url: '@common/what.webp'
+  url: '@common/what.png'
 options:
   background: amber
 # ---
@@ -200,7 +200,7 @@ title: |
   Yes, you
   got it right!
 image:
-  url: '@common/possible.webp'
+  url: '@common/possible.png'
 options:
   background: green
 # ---
@@ -244,7 +244,7 @@ title: |
   That's a genius
   in action!
 image:
-  url: '@common/genius.webp'
+  url: '@common/genius.png'
 options:
   background: blue
 # ---
@@ -270,7 +270,7 @@ title: |
   Where are
   the docs?
 image:
-  url: '@common/postit.webp'
+  url: '@common/postit.png'
 options:
   background: amber
 # ---
@@ -279,7 +279,7 @@ options:
 layout: separator
 title: Do we have the solution?
 image:
-  url: '@common/solution-1.webp'
+  url: '@common/solution-1.png'
 options:
   background: amber
 # ---
@@ -288,7 +288,7 @@ options:
 layout: separator
 title: Yes, start fresh!
 image:
-  url: '@common/fresh.webp'
+  url: '@common/fresh.png'
 options:
   background: green
 # ---
@@ -317,7 +317,7 @@ items:
     - icon: user
       title: Better transpilation
       text: Try to transpile to a human readable form and then generate static libs and include headers.
-    - image: '@common/rust-logo.webp'
+    - image: '@common/rust-logo.png'
       title: Use a higher level language
       text: Rust is a good candidate that can be used for both developer input and transpilation output.
     - icon: lock
@@ -332,7 +332,7 @@ title: |
   Work in progress,
   stay tuned!
 image:
-  url: '@common/road.webp'
+  url: '@common/road.png'
 options:
   background: gray
 # ---

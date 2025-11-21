@@ -6,7 +6,7 @@ layout: cover
 layout: separator
 title: Let's dive into<br/>the unknown!
 image:
-  url: '@common/dive.webp'
+  url: '@common/dive.png'
 options:
   background: blue
 # ---
@@ -30,7 +30,7 @@ items:
       title: 'Impressive performance'
       text: 'Millions of messages with minimal latency.'
 image:
-  url: '@common/kafka.webp'
+  url: '@common/kafka.png'
 # ---
 
 ---
@@ -90,7 +90,7 @@ layout: separator
 title: That's a lot to handle ...
 subtitle: ... especially if, like me, <br/>you **have never** used Kafka! 😂
 image:
-  url: '@common/information-overload.webp'
+  url: '@common/information-overload.png'
 options:
   background: red
 decorations:
@@ -101,7 +101,7 @@ decorations:
 layout: separator
 title: ...and it got much worse! 😭
 image:
-  url: '@common/missing-puzzle.webp'
+  url: '@common/missing-puzzle.png'
 options:
   background: pink
 className:
@@ -127,7 +127,7 @@ items:
 layout: separator
 title: What about Node.js?
 image:
-  url: '@common/node.webp'
+  url: '@common/node.png'
 options:
   background: amber
 decorations:
@@ -187,6 +187,7 @@ code:
       )
     })
 
+
 # ---
 
 ---
@@ -226,6 +227,7 @@ code:
       }
     })
 
+
 # ---
 
 ---
@@ -234,7 +236,7 @@ title: |
   We needed a
   better solution ...
 image:
-  url: '@common/deserve.webp'
+  url: '@common/deserve.png'
 options:
   background: blue
 # ---
@@ -245,7 +247,7 @@ title: |
   ... so we
   started fresh!
 image:
-  url: '@common/fresh.webp'
+  url: '@common/fresh.png'
 options:
   background: green
 # ---
@@ -264,7 +266,7 @@ className:
 layout: separator
 title: How did we build a client with no documentation available?
 image:
-  url: '@common/questions-2.webp'
+  url: '@common/questions-2.png'
 options:
   background: amber
 # ---
@@ -367,7 +369,7 @@ items:
 layout: image
 title: Show the code!
 image:
-  url: '@common/fry-money.webp'
+  url: '@common/fry-money.png'
 className:
   contents: talk@image__contents
 # ---
@@ -394,8 +396,8 @@ code:
 
     console.log('The message has been delivered')
     await producer.close()
-# ---
 
+# ---
 ---
 title: Consumer API
 code:
@@ -422,13 +424,13 @@ code:
       break
     }
     await consumer.close()
-# ---
 
+# ---
 ---
 layout: separator
 title: What about performance?
 image:
-  url: '@common/car.webp'
+  url: '@common/car.png'
 options:
   background: amber
 # ---
@@ -450,12 +452,12 @@ code:
     ╟───────────────────────────────────────────────┼─────────┼─────────────────┼───────────┼──────────────────────────╢
     ║ @platformatic/kafka                           │  100000 │ 95039.18 op/sec │ ±  0.71 % │ + 53.59 %                ║
     ╚═══════════════════════════════════════════════╧═════════╧═════════════════╧═══════════╧══════════════════════════╝
-# ---
 
+# ---
 ---
 title: Producer API
 image:
-  url: '@talk/benchmark-producer.webp'
+  url: '@talk/benchmark-producer.png'
 # ---
 
 ---
@@ -477,12 +479,12 @@ code:
     ╟──────────────────────────────────────────┼─────────┼──────────────────┼───────────┼──────────────────────────╢
     ║ @platformatic/kafka                      │  100015 │ 152567.14 op/sec │ ±  1.48 % │ + 12.22 %                ║
     ╚══════════════════════════════════════════╧═════════╧══════════════════╧═══════════╧══════════════════════════╝
-# ---
 
+# ---
 ---
 title: Consumer API
 image:
-  url: '@talk/benchmark-consumer.webp'
+  url: '@talk/benchmark-consumer.png'
 # ---
 
 ---

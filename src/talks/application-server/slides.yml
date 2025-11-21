@@ -38,7 +38,7 @@ items:
 layout: separator
 title: But there's a catch...
 image:
-  url: '@common/danger-strip.webp'
+  url: '@common/danger-strip.png'
 options:
   background: red
 decorations:
@@ -64,7 +64,7 @@ items:
 layout: separator
 title: Is this still true?
 image:
-  url: '@common/questions-2.webp'
+  url: '@common/questions-2.png'
 options:
   background: amber
 decorations:
@@ -77,7 +77,7 @@ title: |
   Did you hide
   in a cave?
 image:
-  url: '@common/cave.webp'
+  url: '@common/cave.png'
 options:
   background: red
 decorations:
@@ -107,7 +107,7 @@ title: |
   Running Node.js
   in production
 image:
-  url: '@common/server.webp'
+  url: '@common/server.png'
 options:
   background: orange
 decorations:
@@ -135,7 +135,7 @@ title: |
   How do we
   monitor health?
 image:
-  url: '@common/health-monitor.webp'
+  url: '@common/health-monitor.png'
 options:
   background: amber
 decorations:
@@ -145,7 +145,7 @@ decorations:
 ---
 title: The Node.js event loop
 image:
-  url: '@talk/event-loop.webp'
+  url: '@talk/event-loop.png'
 # ---
 
 ---
@@ -186,7 +186,7 @@ items:
 layout: separator
 title: We need a better architecture!
 image:
-  url: '@common/deserve.webp'
+  url: '@common/deserve.png'
 options:
   background: sky
 decorations:
@@ -241,7 +241,7 @@ title: |
   What about
   metrics?
 image:
-  url: '@common/metrics.webp'
+  url: '@common/metrics.png'
 options:
   background: amber
 decorations:
@@ -266,7 +266,7 @@ items:
 ---
 title: Monitoring architecture
 image:
-  url: '@talk/metrics.webp'
+  url: '@talk/metrics.png'
 # ---
 
 ---
@@ -288,7 +288,7 @@ items:
 layout: separator
 title: Handling failures
 image:
-  url: '@common/firefighter.webp'
+  url: '@common/firefighter.png'
 options:
   background: sky
 decorations:
@@ -336,7 +336,7 @@ title: |
   Why is this
   approach better?
 image:
-  url: '@common/dog-1.webp'
+  url: '@common/dog-1.png'
 options:
   background: amber
 decorations:
@@ -377,7 +377,7 @@ items:
 layout: image
 title: Not convinced yet?
 image:
-  url: '@common/fry-money.webp'
+  url: '@common/fry-money.png'
 className:
   contents: talk@image__contents
 # ---
@@ -398,7 +398,7 @@ items:
 ---
 title: 'Watt in action: the mesh network'
 image:
-  url: '@talk/mesh.webp'
+  url: '@talk/mesh.png'
 # ---
 
 ---
@@ -419,7 +419,7 @@ items:
 ---
 title: 'Watt in action: multiple workers'
 image:
-  url: '@talk/multiple-workers.webp'
+  url: '@talk/multiple-workers.png'
 # ---
 
 ---
@@ -439,7 +439,7 @@ items:
 # layout: separator
 # title: Demo Time
 # image:
-#   url: '@common/action.webp'
+#   url: '@common/action.png'
 # options:
 #   background: sky
 # decorations:
@@ -453,7 +453,7 @@ title: |
   let me go!
 subtitle: I promise I understood everything! 🙏
 image:
-  url: '@common/dog-2.webp'
+  url: '@common/dog-2.png'
 options:
   background: pink
 decorations:

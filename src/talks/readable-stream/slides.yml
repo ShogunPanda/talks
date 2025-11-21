@@ -6,7 +6,7 @@ layout: cover
 layout: separator
 title: Panta rei!
 image:
-  url: '@common/lava.webp'
+  url: '@common/lava.png'
 options:
   background: fuchsia
 decorations:
@@ -21,7 +21,7 @@ layout: hello
 layout: separator
 title: What are streams anyway?
 image:
-  url: '@common/island.webp'
+  url: '@common/island.png'
 options:
   background: amber
 # ---
@@ -55,7 +55,7 @@ items:
 layout: separator
 title: Can I use them in the browser?
 image:
-  url: '@common/laptop.webp'
+  url: '@common/laptop.png'
 options:
   background: amber
 decorations:
@@ -105,7 +105,7 @@ items:
       title: Long overdue
       text: Series 3.x.x shipped the module present in Node.js **10.x.x** (2018).
 image:
-  url: '@common/server.webp'
+  url: '@common/server.png'
 decorations:
   logo: white
 # ---
@@ -121,7 +121,7 @@ options:
 layout: separator
 title: What has changed in streams<br/> since then?
 image:
-  url: '@common/changes.webp'
+  url: '@common/changes.png'
 options:
   background: amber
 # ---
@@ -187,8 +187,8 @@ code:
     }
 
     const readable = Readable.from(generate())
-# ---
 
+# ---
 ---
 title: Duplex stream from anything
 content:
@@ -204,8 +204,8 @@ code:
       new Promise((resolve) => setTimeout(resolve('2'), 1500)),
       new Promise((resolve) => setTimeout(resolve('3'), 3000))
     ]);
-# ---
 
+# ---
 ---
 layout: side
 title: Promises API
@@ -257,7 +257,7 @@ content:
   - The `toArray` method **reads the entire stream into memory**, which is exactly what streams are meant to avoid.
   - '*Promise me you will only use it when absolutely necessary!*'
 image:
-  url: '@common/spiderman.webp'
+  url: '@common/spiderman.png'
 # ---
 
 ---
@@ -275,13 +275,13 @@ content:
   - Compared to the previous one it still uses regular expression but it is much smaller thanks to a more modern Javascript environment.
 items:
   entries:
-    - image: '@common/javascript.webp'
+    - image: '@common/javascript.png'
       title: ESM
-    - image: '@common/babel.webp'
+    - image: '@common/babel.png'
       title: Babel
       className:
         image: theme-misc@width-auto
-    - image: '@common/prettier.webp'
+    - image: '@common/prettier.png'
       title: Prettier
   horizontal: true
 # ---
@@ -292,15 +292,15 @@ content:
   - A complex testing environment to match the most desired scenarios across Node.js version, browsers and bundlers.
 items:
   entries:
-    - image: '@common/tap.webp'
+    - image: '@common/tap.png'
       title: TAP
       text: Used to test in the Node.js environment.
-    - image: '@common/tape.webp'
+    - image: '@common/tape.png'
       title: Tape
       text: Along with custom runner and parser, it is used to test browsers.
       className:
         image: theme-misc@width-auto
-    - image: '@common/playwright.webp'
+    - image: '@common/playwright.png'
       title: Playwright
       text: |
         It used to easily test
@@ -312,7 +312,7 @@ items:
 layout: separator
 title: We test 100 configurations in the CI!
 image:
-  url: '@common/100.webp'
+  url: '@common/100.png'
 options:
   background: green
 # ---
@@ -322,7 +322,7 @@ title: ... that's all folks!™
 content:
   - There are obviously more changes, but these were the most juicy.
 image:
-  url: '@common/thats-all-folks.webp'
+  url: '@common/thats-all-folks.png'
 # ---
 
 ---
@@ -331,13 +331,13 @@ content:
   - Obviously I haven't done all this by myself.
 items:
   entries:
-    - image: '@common/mcollina.webp'
+    - image: '@common/mcollina.png'
       title: Matteo Collina
       text: https://github.com/mcollina
-    - image: '@talk/ronag.webp'
+    - image: '@talk/ronag.png'
       title: Robert Nagy
       text: https://github.com/ronag
-    - image: '@talk/benjamingr.webp'
+    - image: '@talk/benjamingr.png'
       title: Benjamin Gruenbaum
       text: https://github.com/benjamingr
   horizontal: true

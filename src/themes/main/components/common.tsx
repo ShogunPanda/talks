@@ -62,7 +62,7 @@ export function Decorations({ defaultLogoColor }: DecorationProps): VNode {
       )}
       {logo !== false && branding !== false && (
         <Image
-          src={resolveImage(theme, id, `@theme/logo-${logo ?? defaultLogoColor}.webp`)}
+          src={resolveImage(theme, id, `@theme/logo-${logo ?? defaultLogoColor}.png`)}
           className={cleanCssClasses('theme@logo')}
         />
       )}

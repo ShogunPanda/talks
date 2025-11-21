@@ -8,7 +8,7 @@ title: |
   Mothers are
   always right!
 image:
-  url: '@common/lollipops.webp'
+  url: '@common/lollipops.png'
 options:
   background: fuchsia
 decorations:
@@ -23,7 +23,7 @@ layout: hello
 layout: separator
 title: Our entire existence is on their shoulders!
 image:
-  url: '@common/bee.webp'
+  url: '@common/bee.png'
 options:
   background: blue
 # ---
@@ -47,7 +47,7 @@ items:
 layout: separator
 title: Aren't we here for dev stuff?
 image:
-  url: '@common/dog-1.webp'
+  url: '@common/dog-1.png'
 options:
   background: amber
 # ---
@@ -86,7 +86,7 @@ title: |
   translate <span class="theme@fg-black">bees</span>
   in Italian!
 image:
-  url: '@theme/location.webp'
+  url: '@theme/location.png'
 className:
   root: theme@separator--reverse
 options:
@@ -129,7 +129,7 @@ items:
 layout: separator
 title: Are there just pros?
 image:
-  url: '@common/happiness.webp'
+  url: '@common/happiness.png'
 options:
   background: amber
 # ---
@@ -138,7 +138,7 @@ options:
 layout: separator
 title: You already know the answer...
 image:
-  url: '@common/laugh.webp'
+  url: '@common/laugh.png'
 options:
   background: gray
 # ---
@@ -182,7 +182,7 @@ items:
 layout: separator
 title: Only an example can enlighten us!
 image:
-  url: '@common/sun.webp'
+  url: '@common/sun.png'
 options:
   background: blue
 # ---
@@ -206,7 +206,7 @@ items:
 layout: separator
 title: Let's go!
 image:
-  url: '@common/start.webp'
+  url: '@common/start.png'
 decorations:
   logo: white
 options:
@@ -229,8 +229,8 @@ code:
         "aws-sdk": "^2.1508.0"
       }
     }
-# ---
 
+# ---
 ---
 title: 'AWS SDK v2: Dependencies in reality'
 content:
@@ -240,8 +240,8 @@ code:
   content: |
     shogun@panda:~/example$ pnpm list --depth=2 | wc -l
     28
-# ---
 
+# ---
 ---
 title: 'AWS SDK v2: The code'
 code:
@@ -281,19 +281,19 @@ code:
     Executed in   13.76 secs    fish           external
       usr time    1.40 secs   84.00 micros    1.40 secs
       sys time    0.13 secs  732.00 micros    0.13 secs
-# ---
 
+# ---
 ---
 title: "AWS SDK v2: What's happening under the hood?"
 image:
-  url: '@talk/flame-sdk-v2.webp'
+  url: '@talk/flame-sdk-v2.png'
 # ---
 
 ---
 layout: separator
 title: Let's get modern!
 image:
-  url: '@common/modern.webp'
+  url: '@common/modern.png'
 options:
   background: sky
 decorations:
@@ -317,8 +317,8 @@ code:
         "@aws-sdk/credential-providers": "^3.462.0"
       }
     }
-# ---
 
+# ---
 ---
 title: 'AWS SDK v3: Dependencies in reality'
 content:
@@ -328,8 +328,8 @@ code:
   content: |
     shogun@panda:~/example$ pnpm list --depth=2 | wc -l
     524
-# ---
 
+# ---
 ---
 title: 'AWS SDK v3: The code'
 code:
@@ -370,12 +370,12 @@ code:
     Executed in    8.22 secs      fish           external
       usr time  723.14 millis    0.08 millis  723.06 millis
       sys time   80.60 millis    1.17 millis   79.44 millis
-# ---
 
+# ---
 ---
 title: "AWS SDK v3: What's happening under the hood?"
 image:
-  url: '@talk/flame-sdk-v3.webp'
+  url: '@talk/flame-sdk-v3.png'
 # ---
 
 ---
@@ -390,7 +390,7 @@ items:
       title: Not really a monolith
       text: How many point of failures can you afford?
 image:
-  url: '@common/iceberg.webp'
+  url: '@common/iceberg.png'
 decorations:
   logo: white
 # ---
@@ -399,7 +399,7 @@ decorations:
 layout: separator
 title: Do we have the solution?
 image:
-  url: '@common/solution-1.webp'
+  url: '@common/solution-1.png'
 options:
   background: amber
 # ---
@@ -408,7 +408,7 @@ options:
 layout: separator
 title: Yes, use the APIs directly!
 image:
-  url: '@common/bee.webp'
+  url: '@common/bee.png'
 options:
   background: green
 # ---
@@ -432,7 +432,7 @@ title: |
   Let's get to
   the action!
 image:
-  url: '@common/action.webp'
+  url: '@common/action.png'
 options:
   background: sky
 # ---
@@ -451,8 +451,8 @@ code:
       "scripts": {},
       "dependencies": {}
     }
-# ---
 
+# ---
 ---
 title: 'No SDK: Signing the call'
 code:
@@ -597,19 +597,19 @@ code:
     Executed in    6.64 secs      fish           external
       usr time  353.39 millis   54.00 micros  353.34 millis
       sys time   42.81 millis  513.00 micros   42.30 millis
-# ---
 
+# ---
 ---
 title: "No SDK: What's happening under the hood?"
 image:
-  url: '@talk/flame-direct.webp'
+  url: '@talk/flame-direct.png'
 # ---
 
 ---
 layout: separator
 title: Mission completed!
 image:
-  url: '@common/completed.webp'
+  url: '@common/completed.png'
 options:
   background: green
 decorations:

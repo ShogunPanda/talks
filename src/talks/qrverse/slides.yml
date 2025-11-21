@@ -8,7 +8,7 @@ title: |
   Phenomenal cosmic powers...
   Itty bitty living space.
 image:
-  url: '@common/genius.webp'
+  url: '@common/genius.png'
 options:
   background: fuchsia
 # ---
@@ -22,7 +22,7 @@ layout: separator
 title: |
   Have you ever heard of QR codes?
 image:
-  url: '@talk/qr-intro.webp'
+  url: '@talk/qr-intro.png'
 options:
   background: amber
 decorations:
@@ -90,7 +90,7 @@ layout: separator
 title: |
   QR Codes make our life way easier ...
 image:
-  url: '@talk/green-pass.webp'
+  url: '@talk/green-pass.png'
 options:
   background: green
 # ---
@@ -99,7 +99,7 @@ options:
 layout: separator
 title: ... sometimes in a weird way!
 image:
-  url: '@common/grave.webp'
+  url: '@common/grave.png'
 options:
   background: red
 # ---
@@ -109,7 +109,7 @@ layout: separator
 title: |
   If we look closely...
 image:
-  url: '@common/microscope.webp'
+  url: '@common/microscope.png'
 options:
   background: sky
 # ---
@@ -118,49 +118,49 @@ options:
 title: Position markers (finders)
 content: They are positioned in three corners to help the scanner determine the boundaries.
 image:
-  url: '@talk/qr-position.webp'
+  url: '@talk/qr-position.png'
 # ---
 
 ---
 title: Alignment markers
 content: They are complementary to the position markers to determine the orientation.
 image:
-  url: '@talk/qr-alignment.webp'
+  url: '@talk/qr-alignment.png'
 # ---
 
 ---
 title: Timing markers
 content: They are used from the scanner to understand the size.
 image:
-  url: '@talk/qr-timing.webp'
+  url: '@talk/qr-timing.png'
 # ---
 
 ---
 title: Version information
 content: They specify which of the many QR version has been chosen.
 image:
-  url: '@talk/qr-version.webp'
+  url: '@talk/qr-version.png'
 # ---
 
 ---
 title: Format information
 content: Similarly, they specify the encoding chosen.
 image:
-  url: '@talk/qr-format.webp'
+  url: '@talk/qr-format.png'
 # ---
 
 ---
 title: Data and Error correction
 content: The rest of the code delivers the data and the error correction (ECC), one next to each other.
 image:
-  url: '@talk/qr-data-ecc.webp'
+  url: '@talk/qr-data-ecc.png'
 # ---
 
 ---
 title: Quiet zone
 content: To help the scanner identify a QR code, it is required to pad the code in all directions.
 image:
-  url: '@talk/qr-quiet.webp'
+  url: '@talk/qr-quiet.png'
 # ---
 
 ---
@@ -170,7 +170,7 @@ content:
   - The data and ECC sections in a code are filled from the bottom right to the top left.
   - Each sequence of 8 bits is written in block divided in two columns. When encountering alignments, rows are skipped.
 image:
-  url: '@talk/qr-fill.webp'
+  url: '@talk/qr-fill.png'
 # ---
 
 ---
@@ -178,7 +178,7 @@ layout: separator
 title: |
   Can we get to the practice please?
 image:
-  url: '@common/easy.webp'
+  url: '@common/easy.png'
 options:
   background: amber
 # ---
@@ -193,7 +193,7 @@ items:
     - icon: code
       title: (Almost) no libraries needed
       text: Once you know which color each cell is, you're good to go.
-    - image: '@theme/logo-black.webp'
+    - image: '@theme/logo-black.png'
       title: Suited for backends
       text: |
         Let's prove it with the
@@ -205,7 +205,7 @@ items:
 layout: separator
 title: Let's go!
 image:
-  url: '@common/start.webp'
+  url: '@common/start.png'
 decorations:
   logo: white
 options:
@@ -220,8 +220,8 @@ code:
   content: |
     shogun@panda:~/qr$ pnpx wattpm init
     [12:28:13.861] DONE (63654): Created a watt application in /Volumes/DATI/Users/Shogun/qr.
-# ---
 
+# ---
 ---
 title: Database service - Create a migration
 content: All the data schema is managed via migrations.
@@ -233,8 +233,8 @@ code:
       url TEXT NOT NULL,
       count INTEGER DEFAULT 0
     );
-# ---
 
+# ---
 ---
 title: Database service - Track our clicks
 code:
@@ -370,7 +370,7 @@ title: |
   Where are
   the QR codes?
 image:
-  url: '@common/dog-1.webp'
+  url: '@common/dog-1.png'
 options:
   background: amber
 # ---
@@ -379,7 +379,7 @@ options:
 layout: separator
 title: Let's dive in!
 image:
-  url: '@common/dive.webp'
+  url: '@common/dive.png'
 options:
   background: blue
 # ---
