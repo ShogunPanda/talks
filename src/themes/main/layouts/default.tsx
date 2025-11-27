@@ -1,9 +1,9 @@
 import { Code, Image, cleanCssClasses, useClient, useSlide, type SlideProps } from '@perseveranza-pets/freya/client'
 import { type VNode } from 'preact'
-import { ComplexContent, Text } from '../../common/components/common.js'
-import { Grids, Items } from '../../common/components/item.js'
-import { type Slide } from '../../common/models.js'
-import { SlideWrapper } from '../components/common.js'
+import { ComplexContent, Text } from '../../common/components/common.tsx'
+import { Grids, Items } from '../../common/components/item.tsx'
+import { type Slide } from '../../common/models.ts'
+import { SlideWrapper } from '../components/common.tsx'
 
 export default function DefaultLayout({ className, style }: SlideProps): VNode {
   const {

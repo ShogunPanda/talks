@@ -1,164 +1,152 @@
 /* stylelint-disable-next-line selector-class-pattern */
-.talk@ {
-  &terminology {
-    left: 6--sp;
-  }
+.talk\@terminology {
+  left: 6--sp;
+}
 
-  &icons-grid {
-    grid-template-columns: 1fr 1fr 1fr;
-    gap: 2ch;
-  }
+.talk\@icons-grid {
+  grid-template-columns: 1fr 1fr 1fr;
+  gap: 2ch;
+}
 
-  &transform {
-    justify-content: center;
+.talk\@transform {
+  justify-content: center;
+}
 
-    &__root {
-      flex: initial;
-    }
+.talk\@transform__root {
+  flex: initial;
+}
 
-    &__image {
-      width: auto;
-      height: auto;
-      max-width: 8--sp;
-      max-height: 3--sp;
-      margin-bottom: 0;
-    }
+.talk\@transform__image {
+  width: auto;
+  height: auto;
+  max-width: 8--sp;
+  max-height: 3--sp;
+  margin-bottom: 0;
+}
 
-    &__arrow {
-      width: 1.5--sp;
-      height: auto;
-      margin: 0 1ch;
-    }
-  }
+.talk\@transform__arrow {
+  width: 1.5--sp;
+  height: auto;
+  margin: 0 1ch;
+}
 
-  &generation {
-    &--vertical {
-      align-items: center;
+.talk\@generation--vertical {
+  align-items: center;
+}
 
-      &__root {
-        flex: initial;
-      }
+.talk\@generation--vertical__root {
+  flex: initial;
+}
 
-      &__image {
-        width: 3.5--sp;
-        height: auto;
-        margin-bottom: 0;
-      }
+.talk\@generation--vertical__image {
+  width: 3.5--sp;
+  height: auto;
+  margin-bottom: 0;
+}
 
-      &__arrow {
-        width: auto;
-        height: 0.5--sp;
-        min-width: auto;
-        min-height: auto;
-        margin: 1ch 0;
-      }
-    }
+.talk\@generation--vertical__arrow {
+  width: auto;
+  height: 0.5--sp;
+  min-width: auto;
+  min-height: auto;
+  margin: 1ch 0;
+}
 
-    &--horizontal {
-      justify-content: center;
+.talk\@generation--horizontal {
+  justify-content: center;
+}
 
-      &__root {
-        flex: initial;
-      }
+.talk\@generation--horizontal__root {
+  flex: initial;
+}
 
-      &__image {
-        width: auto;
-        height: 2--sp;
-        margin-bottom: 0;
-      }
+.talk\@generation--horizontal__image {
+  width: auto;
+  height: 2--sp;
+  margin-bottom: 0;
+}
 
-      &__arrow {
-        width: auto;
-        height: 0.5--sp;
-        min-width: auto;
-        min-height: auto;
-        margin: 0 1ch;
-      }
-    }
-  }
+.talk\@generation--horizontal__arrow {
+  width: auto;
+  height: 0.5--sp;
+  min-width: auto;
+  min-height: auto;
+  margin: 0 1ch;
+}
 
-  &problem-number {
-    left: 4--sp;
-  }
+.talk\@problem-number {
+  left: 4--sp;
+}
 
-  &parsing {
-    &__image {
-      width: 3--sp;
-      height: auto;
-      max-width: none;
-      max-height: none;
-    }
+.talk\@parsing__image {
+  width: 3--sp;
+  height: auto;
+  max-width: none;
+  max-height: none;
+}
 
-    &__step {
-      left: 0.1--sp;
-    }
-  }
+.talk\@parsing__step {
+  left: 0.1--sp;
+}
 
-  &problem__image {
-    width: auto;
-    height: 2--sp;
-    max-width: none;
-    max-height: none;
-  }
+.talk\@problem__image {
+  width: auto;
+  height: 2--sp;
+  max-width: none;
+  max-height: none;
+}
 
-  &logo {
-    background-position: center;
-    background-size: 3--sp 3--sp;
+.talk\@logo {
+  background-position: center;
+  background-size: 3--sp 3--sp;
+}
 
-    &--auto {
-      background-position: center;
-      background-size: 3--sp auto;
-    }
-  }
+.talk\@logo--auto {
+  background-position: center;
+  background-size: 3--sp auto;
+}
 
-  &vite {
-    position: relative;
-    flex: initial;
-    height: 2--sp;
-    margin-top: 4ch;
+.talk\@vite {
+  position: relative;
+  flex: initial;
+  height: 2--sp;
+  margin-top: 4ch;
+}
 
-    &__esbuild {
-      &__root {
-        position: absolute;
-        z-index: 1;
-        top: 0.5--sp;
-        left: 50%;
-        margin-left: -1--sp;
-      }
+.talk\@vite__esbuild__root {
+  position: absolute;
+  z-index: 1;
+  top: 0.5--sp;
+  left: 50%;
+  margin-left: -1--sp;
+}
 
-      &__image {
-        width: 1--sp;
-        height: 1--sp;
-        margin-bottom: 0;
-      }
-    }
+.talk\@vite__esbuild__image {
+  width: 1--sp;
+  height: 1--sp;
+  margin-bottom: 0;
+}
 
-    &__vite {
-      &__root {
-        z-index: 2;
-      }
+.talk\@vite__vite__root {
+  z-index: 2;
+}
 
-      &__image {
-        position: relative;
-        width: 2--sp;
-        height: 2--sp;
-        margin-bottom: 0;
-      }
-    }
+.talk\@vite__vite__image {
+  position: relative;
+  width: 2--sp;
+  height: 2--sp;
+  margin-bottom: 0;
+}
 
-    &__rollup {
-      &__root {
-        position: absolute;
-        z-index: 1;
-        top: 0.5--sp;
-        left: 50%;
-      }
+.talk\@vite__rollup__root {
+  position: absolute;
+  z-index: 1;
+  top: 0.5--sp;
+  left: 50%;
+}
 
-      &__image {
-        width: 1--sp;
-        height: 1--sp;
-        margin-bottom: 0;
-      }
-    }
-  }
+.talk\@vite__rollup__image {
+  width: 1--sp;
+  height: 1--sp;
+  margin-bottom: 0;
 }

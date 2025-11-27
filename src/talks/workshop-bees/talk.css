@@ -1,44 +1,42 @@
 /* stylelint-disable-next-line selector-class-pattern */
-.talk@ {
-  &title {
-    display: inline-block;
-    margin-top: 10rem;
-    font-size: 40--pt;
-    font-weight: bold;
-    line-height: 1.5em;
-  }
+.talk\@title {
+  display: inline-block;
+  margin-top: 10rem;
+  font-size: 40--pt;
+  font-weight: bold;
+  line-height: 1.5em;
+}
 
-  &author {
-    display: inline-block;
-    font-size: 20--pt;
+.talk\@author {
+  display: inline-block;
+  font-size: 20--pt;
+}
 
-    &__name {
-      font-weight: bold;
-    }
-  }
+.talk\@author__name {
+  font-weight: bold;
+}
 
-  &social {
-    position: absolute;
-    top: 64rem;
-    font-weight: bold;
+.talk\@social {
+  position: absolute;
+  top: 64rem;
+  font-weight: bold;
+}
 
-    &--first {
-      left: 26rem;
-    }
+.talk\@social--first {
+  left: 26rem;
+}
 
-    &--second {
-      left: 86.5rem;
-    }
+.talk\@social--second {
+  left: 86.5rem;
+}
 
-    &--third {
-      left: 145rem;
-    }
+.talk\@social--third {
+  left: 145rem;
+}
 
-    &,
-    &:active,
-    &:focus,
-    &:hover {
-      color: var(--freya-color-white);
-    }
-  }
+.talk\@social,
+.talk\@social:active,
+.talk\@social:focus,
+.talk\@social:hover {
+  color: var(--freya-color-white);
 }

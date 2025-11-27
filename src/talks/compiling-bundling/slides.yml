@@ -130,6 +130,7 @@ notes: |
   3. Candidate, 2 implementations
   4. Finished
 
+
 # ---
 ---
 title: Who are you missing the most?
@@ -172,6 +173,7 @@ notes: |
 
   La tail-call funge solo su JSC - Menziona che gli env possono essere molto diversi.
 
+
 # ---
 ---
 title: There is a transpiler for everything…™
@@ -197,6 +199,7 @@ notes: |
   * OCAML -> ReasonML e ReScript
   * ELM -> Haskell
 
+
 # ---
 ---
 title: … and that's thanks to LLVM!
@@ -206,6 +209,7 @@ image:
   url: '@common/llvm.png'
 notes: |
   LLVM permette già di compilare in JavaScript.
+
 
 # ---
 ---
@@ -232,6 +236,7 @@ items:
   gap: false
 notes: |
   Pipe da Hack - Dialetto PHP di Facebook
+
 
 # ---
 ---
@@ -574,6 +579,7 @@ items:
 notes: |
   Menziona di non fare il bundle lato server.
 
+
 # ---
 ---
 title: The three horsemen
@@ -715,6 +721,7 @@ items:
       text: We will talk about this is in a bit.
 notes: |
   Spiega la differenza tra CJS e ESM.
+
 
 # ---
 ---

@@ -363,6 +363,7 @@ code:
     shogun@panda:~/example$ cargo run
     Pos=38 Body: abc
 
+
 # ---
 ---
 layout: separator
@@ -436,6 +437,7 @@ code:
     shogun@panda:~/example$ ./example
     Pos=38 Body: abc
 
+
 # ---
 ---
 layout: separator
@@ -508,6 +510,7 @@ code:
   content: |
     shogun@panda:~/example$ node index.mjs
     Pos=38 Body: abc
+
 
 # ---
 ---

@@ -1,14 +1,12 @@
 /* stylelint-disable-next-line selector-class-pattern */
-.talk@ {
-  &reverse-proxy-icon {
-    left: 3.5--sp;
-  }
+.talk\@reverse-proxy-icon {
+  left: 3.5--sp;
+}
 
-  &ten-years {
-    bottom: -1--sp;
-    left: auto;
-    right: -0.3--sp;
-    color: rgb(252, 165, 165);
-    font-size: 300--pt;
-  }
+.talk\@ten-years {
+  bottom: -1--sp;
+  left: auto;
+  right: -0.3--sp;
+  color: rgb(252, 165, 165);
+  font-size: 300--pt;
 }

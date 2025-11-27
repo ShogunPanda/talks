@@ -53,6 +53,7 @@ items:
 notes: |
   Emphasize the **true** in the last question.
 
+
 # ---
 ---
 layout: separator
@@ -352,6 +353,7 @@ code:
     // The request's headers must be completely received by the server within a minute
     server.headersTimeout = 60000
 
+
 # ---
 ---
 title: Node.js 18.0.0 is finally safe by default
@@ -381,6 +383,7 @@ items:
   horizontal: true
 notes: |
   Mention that this was possible due to semver major change and thus it will not be backported.
+
 
 # ---
 ---
@@ -417,6 +420,7 @@ items:
   horizontal: true
 notes: |
   **Before** talking about the slides, recap what you talked about: **"Today we have seen how atypical attacks can unexpectedly affect our applications and how it can take a very long time to fix them."**
+
 
 # ---
 ---

@@ -9,7 +9,9 @@
       "Bash(for file in fastify nodejs postgresql)",
       "Bash(for file in genius grave)",
       "Bash(for file in babel javascript mcollina playwright prettier tap tape)",
-      "Bash(for file in alexa fastify google-home home-assistant homebridge homekit mosquitto nodejs redis shelly)"
+      "Bash(for file in alexa fastify google-home home-assistant homebridge homekit mosquitto nodejs redis shelly)",
+      "Bash(test:*)",
+      "Bash(mkdir:*)"
     ],
     "deny": [],
     "ask": []

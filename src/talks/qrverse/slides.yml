@@ -221,6 +221,7 @@ code:
     shogun@panda:~/qr$ pnpx wattpm init
     [12:28:13.861] DONE (63654): Created a watt application in /Volumes/DATI/Users/Shogun/qr.
 
+
 # ---
 ---
 title: Database service - Create a migration
@@ -233,6 +234,7 @@ code:
       url TEXT NOT NULL,
       count INTEGER DEFAULT 0
     );
+
 
 # ---
 ---

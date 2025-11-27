@@ -1,51 +1,5 @@
 /* stylelint-disable-next-line selector-class-pattern */
-.talk@ {
-  &download {
-    &__title {
-      font-size: 100--pt;
-      text-align: center;
-    }
-
-    &__subtitle {
-      font-size: 18--pt;
-      text-align: center;
-    }
-
-    &__icon {
-      height: 45%;
-      fill: var(--freya-color-windi-green-700);
-    }
-  }
-
-  &danger-banner {
-    padding: 1rem 2rem;
-    border-radius: 1rem;
-    background-color: var(--freya-color-windi-red-500);
-    color: var(--freya-color-white);
-    text-transform: uppercase;
-  }
-
-  &image--half {
-    max-width: 50%;
-  }
-
-  &code {
-    font-size: 1.5em;
-  }
-
-  &image {
-    &__contents {
-      align-items: center;
-      margin-top: 2--sp;
-    }
-  }
-
-  &send-pr {
-    background-color: var(--freya-color-black);
-    background-position: center;
-    background-size: contain;
-  }
-
+.talk\@ {
   /* &send-pr {
     max-height: 2.8--sp;
     padding: 0.2--sp;
@@ -62,4 +16,46 @@
     font-weight: bold;
     text-align: center;
   } */
+}
+
+.talk\@download__title {
+  font-size: 100--pt;
+  text-align: center;
+}
+
+.talk\@download__subtitle {
+  font-size: 18--pt;
+  text-align: center;
+}
+
+.talk\@download__icon {
+  height: 45%;
+  fill: var(--freya-color-windi-green-700);
+}
+
+.talk\@danger-banner {
+  padding: 1rem 2rem;
+  border-radius: 1rem;
+  background-color: var(--freya-color-windi-red-500);
+  color: var(--freya-color-white);
+  text-transform: uppercase;
+}
+
+.talk\@image--half {
+  max-width: 50%;
+}
+
+.talk\@code {
+  font-size: 1.5em;
+}
+
+.talk\@image__contents {
+  align-items: center;
+  margin-top: 2--sp;
+}
+
+.talk\@send-pr {
+  background-color: var(--freya-color-black);
+  background-position: center;
+  background-size: contain;
 }

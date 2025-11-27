@@ -130,6 +130,7 @@ code:
       channel.postMessage('ready')
     }
 
+
 # ---
 ---
 layout: side
@@ -160,6 +161,7 @@ code:
         console.log(`${source} -> ${threadId}:`, value) 
       })
     }
+
 
 # ---
 ---
@@ -205,6 +207,7 @@ code:
     worker.postMessage({id: request.reqId })
     const hash = await promise
 
+
 # ---
 ---
 title: Is all that easy?
@@ -232,6 +235,7 @@ items:
       text: |
         [Check the documentation on MDN!](https://developer.mozilla.org/en-US/docs/Web/API/Web_Workers_API/Structured_clone_algorithm)
 
+
 # ---
 ---
 title: Transferable (1/2)
@@ -243,6 +247,7 @@ content:
   - |
     These objects are called **transferrable** and thus must be 
     explicitly listed in the second argument of `postMessage`.
+
 
 # ---
 ---
@@ -375,6 +380,7 @@ code:
       return value
     }
 
+
 # ---
 ---
 title: everysync (1/2)
@@ -424,6 +430,7 @@ code:
 
     // Keep the event loop alive
     setInterval(() => {}, 100000)
+
 
 # ---
 ---
@@ -573,6 +580,7 @@ content:
     The multithreading architecture is the foundation of features 
     like `require(esm)` or `-experimental-strip-types`.
 
+
 # ---
 ---
 layout: image
@@ -618,6 +626,7 @@ code:
       "watch": true
     }
 
+
 # ---
 ---
 title: How do you create a service?
@@ -636,6 +645,7 @@ code:
       }
     }
 
+
 # ---
 ---
 title: Configure your service
@@ -650,6 +660,7 @@ code:
     {
       "$schema": "https://schemas.platformatic.dev/@platformatic/node/2.44.0.json"
     }
+
 
 # ---
 ---
@@ -698,6 +709,7 @@ code:
 
       return app
     }
+
 
 # ---
 ---

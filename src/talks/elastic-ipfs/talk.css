@@ -1,11 +1,9 @@
 /* stylelint-disable-next-line selector-class-pattern */
-.talk@ {
-  &image-big {
-    width: 5--sp;
-  }
+.talk\@image-big {
+  width: 5--sp;
+}
 
-  &link--small {
-    font-size: 0.8em;
-    font-weight: 700;
-  }
+.talk\@link--small {
+  font-size: 0.8em;
+  font-weight: 700;
 }

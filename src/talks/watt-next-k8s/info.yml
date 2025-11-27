@@ -1,0 +1,14 @@
+# TODO@PI: Once presented in London, rename this
+---
+config: common.config
+document:
+  title: 'Node.js: More threads than you think'
+  titleFormatted: |
+    Node.js: More threads 
+    than you think
+  abstract: |
+    Node.js was announced in 2009 as a single-threaded JavaScript runtime. In 2018, it became multi-threaded, and no one noticed.
+
+    What can worker_threads do? What are they useful for? What's the best way of communicating between two threads?
+  author: common.author
+  company: common.company

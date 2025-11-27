@@ -1,3 +1,5 @@
+/* stylelint-disable scss/at-rule-no-unknown */
+
 @import '@freya/colors/basic.css';
 @import '@freya/colors/windi/300.css';
 @import '@freya/colors/windi/500.css';
@@ -10,23 +12,19 @@
 }
 
 @layer colors {
-  /* stylelint-disable-next-line selector-class-pattern */
-  .theme@ {
-    @apply color(white, freya-color-white);
-    @apply color(black, freya-color-black);
+  @color white freya-color-white;
+  @color black freya-color-black;
 
-    @apply color(sky, freya-color-windi-sky-600); /* Section separator */
-    @apply color(blue, freya-color-windi-blue-600); /* Generic separator */
-    @apply color(orange, freya-color-windi-blue-600); /* Generic separator */
-    @apply color(orange, freya-color-windi-orange-600); /* Generic separator - Better to avoid NF confusion */
-    @apply color(pink, freya-color-windi-pink-600); /* Humour */
-    @apply color(green, freya-color-windi-green-600); /* Good practice or action */
-    @apply color(fuchsia, freya-color-windi-fuchsia-600); /* Intro */
-    @apply color(amber, freya-color-windi-amber-300); /* Question */
-    @apply color(red, freya-color-windi-red-600); /* Bad practice or danger */
-    @apply color(gray, freya-color-windi-gray-600); /* Secondary separator */
+  @color sky freya-color-windi-sky-600; /* Section separator */
+  @color blue freya-color-windi-blue-600; /* Generic separator */
+  @color orange freya-color-windi-orange-600; /* Generic separator - Better to avoid NF confusion */
+  @color pink freya-color-windi-pink-600; /* Humour */
+  @color green freya-color-windi-green-600; /* Good practice or action */
+  @color fuchsia freya-color-windi-fuchsia-600; /* Intro */
+  @color amber freya-color-windi-amber-300; /* Question */
+  @color red freya-color-windi-red-600; /* Bad practice or danger */
+  @color gray freya-color-windi-gray-600; /* Secondary separator */
 
-    @apply color(light-blue, freya-color-windi-blue-500);
-    @apply color(light-gray, freya-color-windi-gray-300);
-  }
+  @color light-blue freya-color-windi-blue-500;
+  @color light-gray freya-color-windi-gray-300;
 }

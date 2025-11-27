@@ -20,13 +20,12 @@
   "scripts": {
     "dev": "freya development",
     "build": "freya build",
-    "postbuild": "concurrently npm:lint npm:lint:css npm:typecheck",
+    "postbuild1": "npm run lint && npm run lint:css && tsc -p . --noEmit",
     "server": "freya server",
     "pdf": "freya pdf",
     "format": "prettier -w src",
     "lint": "eslint --cache",
     "lint:css": "stylelint --cache src/**/*.css",
-    "typecheck": "tsc -p . --noEmit",
     "deploy": "freya deploy",
     "postdeploy": "node --import tsx src/scripts/postdeploy.ts && cd dist/deploy && netlify deploy --site $NETLIFY_SITE_ID --dir site --prod",
     "verify": "node --import tsx src/scripts/verify.ts",
@@ -35,19 +34,21 @@
     "generate-cfp": "node --import tsx src/scripts/generate-cfp.ts"
   },
   "dependencies": {
-    "@fortawesome/free-brands-svg-icons": "^6.7.2",
-    "@fortawesome/free-solid-svg-icons": "^6.7.2",
-    "@perseveranza-pets/freya": "^0.74.2"
+    "@fortawesome/free-brands-svg-icons": "^7.1.0",
+    "@fortawesome/free-solid-svg-icons": "^7.1.0",
+    "@perseveranza-pets/freya": "^0.75.0"
   },
   "devDependencies": {
-    "@cowtech/eslint-config": "^10.2.0",
-    "@cowtech/stylelint-config": "^1.0.1",
-    "@types/node": "^22.10.5",
-    "concurrently": "^9.1.2",
-    "eslint": "^9.18.0",
-    "prettier": "^3.4.2",
-    "stylelint": "^16.12.0",
-    "tsx": "^4.19.2",
-    "typescript": "^5.7.3"
+    "@cowtech-private/foundation": "^4.2.0",
+    "@cowtech/eslint-config": "^11.0.0",
+    "@cowtech/stylelint-config": "^2.0.1",
+    "@types/node": "^24.10.1",
+    "commander": "^14.0.2",
+    "eslint": "^9.39.1",
+    "playwright": "^1.57.0",
+    "prettier": "^3.6.2",
+    "stylelint": "^16.26.0",
+    "tsx": "^4.20.6",
+    "typescript": "^5.9.3"
   }
 }

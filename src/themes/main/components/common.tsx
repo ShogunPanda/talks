@@ -1,8 +1,8 @@
 import { Image, Progress, QRCode, cleanCssClasses, useClient, useSlide } from '@perseveranza-pets/freya/client'
 import { type ComponentChildren, type JSX, type VNode } from 'preact'
-import { Text } from '../../common/components/common.js'
-import { SvgIcon } from '../../common/components/icons.js'
-import { type Slide } from '../../common/models.js'
+import { Text } from '../../common/components/common.tsx'
+import { SvgIcon } from '../../common/components/icons.tsx'
+import { type Slide } from '../../common/models.ts'
 
 interface SlideWrapperProps {
   slide: Slide

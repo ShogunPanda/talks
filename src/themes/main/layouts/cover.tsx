@@ -8,10 +8,10 @@ import {
   type SlideProps
 } from '@perseveranza-pets/freya/client'
 import { Fragment, type VNode } from 'preact'
-import { Text } from '../../common/components/common.js'
-import { SvgIcon } from '../../common/components/icons.js'
-import { type Slide } from '../../common/models.js'
-import { SlideWrapper } from '../components/common.js'
+import { Text } from '../../common/components/common.tsx'
+import { SvgIcon } from '../../common/components/icons.tsx'
+import { type Slide } from '../../common/models.ts'
+import { SlideWrapper } from '../components/common.tsx'
 
 export default function CoverLayout({ className, style }: SlideProps): VNode {
   const {

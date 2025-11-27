@@ -369,6 +369,7 @@ code:
       UNIQUE(name, url, method, max_retries)
     );
 
+
 # ---
 ---
 title: 'Database schema (2/2)'
@@ -454,6 +455,7 @@ code:
       await db.dispose()
     }
 
+
 # ---
 ---
 title: 'Processor: Leader election and main loop'
@@ -479,6 +481,7 @@ code:
         }
       })
     }
+
 
 # ---
 ---
@@ -514,6 +517,7 @@ code:
         LIMIT 1
       `
     }
+
 
 # ---
 ---

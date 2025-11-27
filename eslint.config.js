@@ -8,8 +8,5 @@ export default [
         projectService: true
       }
     }
-  },
-  {
-    ignores: ['.freya/*']
   }
 ]

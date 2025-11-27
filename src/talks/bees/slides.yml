@@ -230,6 +230,7 @@ code:
       }
     }
 
+
 # ---
 ---
 title: 'AWS SDK v2: Dependencies in reality'
@@ -240,6 +241,7 @@ code:
   content: |
     shogun@panda:~/example$ pnpm list --depth=2 | wc -l
     28
+
 
 # ---
 ---
@@ -282,6 +284,7 @@ code:
       usr time    1.40 secs   84.00 micros    1.40 secs
       sys time    0.13 secs  732.00 micros    0.13 secs
 
+
 # ---
 ---
 title: "AWS SDK v2: What's happening under the hood?"
@@ -318,6 +321,7 @@ code:
       }
     }
 
+
 # ---
 ---
 title: 'AWS SDK v3: Dependencies in reality'
@@ -328,6 +332,7 @@ code:
   content: |
     shogun@panda:~/example$ pnpm list --depth=2 | wc -l
     524
+
 
 # ---
 ---
@@ -370,6 +375,7 @@ code:
     Executed in    8.22 secs      fish           external
       usr time  723.14 millis    0.08 millis  723.06 millis
       sys time   80.60 millis    1.17 millis   79.44 millis
+
 
 # ---
 ---
@@ -451,6 +457,7 @@ code:
       "scripts": {},
       "dependencies": {}
     }
+
 
 # ---
 ---
@@ -597,6 +604,7 @@ code:
     Executed in    6.64 secs      fish           external
       usr time  353.39 millis   54.00 micros  353.34 millis
       sys time   42.81 millis  513.00 micros   42.30 millis
+
 
 # ---
 ---

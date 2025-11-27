@@ -1,0 +1,468 @@
+---
+layout: cover
+# ---
+
+---
+layout: separator
+title: |
+  There is a lot
+  in the unknown!
+image:
+  url: '@common/unknown.png'
+options:
+  background: fuchsia
+# ---
+
+---
+layout: hello
+# ---
+
+---
+layout: separator
+title: |
+  Node.js is
+  (no longer)
+  single threaded ...
+subtitle: "... and it hasn't been for a while now!"
+image:
+  url: '@common/postman.png'
+options:
+  background: red
+# ---
+
+---
+title: '2018: "Node.js has threads!"'
+content:
+  - image: '@talk/anna.png'
+  - <span class="theme-misc@qr__footer">[https://www.youtube.com/watch?v=-ssCzHoUI7M](https://www.youtube.com/watch?v=-ssCzHoUI7M)</span>
+className:
+  image: talk@anna
+# ---
+
+---
+title: Worker Thread API
+content:
+  - This is supported from Node.js 10.5.0 (June 2018).
+items:
+  entries:
+    - icon: code
+      title: 'Create workers via `worker_threads` module'
+      text: 'https://nodejs.org/dist/latest-v22.x/docs/api/worker_threads.html'
+    - icon: code-fork
+      title: Each thread has an independent event loop
+      text: This is crucial to offload CPU-intensive tasks out of the main thread.
+# ---
+
+---
+layout: separator
+title: Why do we care?
+image:
+  url: '@common/why.png'
+options:
+  background: fuchsia
+# ---
+
+---
+layout: separator
+title: |
+  How do you scale
+  Node.js in production?
+image:
+  url: '@common/server.png'
+decorations:
+  logo: white
+options:
+  background: amber
+# ---
+
+---
+title: A familiar story at scale
+items:
+  entries:
+    - index: 1
+      title: Traffic spikes create uneven load
+      text: Some pods are at 100% CPU while others are at 30%. Error rate climbs to 8%.
+    - index: 2
+      title: Over-provisioning costs money
+      text: You add 50% more pods to handle spikes. Cloud bill grows but the problem is not solved.
+    - index: 3
+      title: This is a revenue problem
+      text: 'Latency across API calls leads to abandoned carts and churned customers.'
+# ---
+
+---
+title: 'The Cluster Module: How It Works (1/2)'
+content: Introduced in Node.js 0.6 (2011) to scale across multiple CPU cores.
+items:
+  entries:
+    - icon: diagram-project
+      title: Master process coordination
+      text: It distributes connections with a round-robin policy.
+    - icon: network-wired
+      title: IPC adds ~30% overhead
+      text: Every connection is transferred to workers via Unix domain sockets.
+    - icon: toolbox
+      title: PM2 makes it easier
+      text: |
+        Built on top of the cluster module.
+        It inherits the same overhead.
+  horizontal: true
+# ---
+
+---
+title: 'The Cluster Module: How It Works (2/2)'
+image:
+  url: '@talk/cluster.png'
+# ---
+
+---
+title: The Early Rejection Problem
+items:
+  entries:
+    - icon: arrow-right-to-bracket
+      title: Requests enter the event loop queue
+      text: After TCP accept, the request waits for its turn to be processed.
+    - icon: circle-xmark
+      title: Cannot reject until processing begins
+      text: Once in the queue, requests consume resources, which affects everyone during overload.
+    - icon: server
+      title: Ideal servers reject early with 503
+      text: Load balancers can then route traffic elsewhere. In Node.js this is difficult.
+# ---
+
+---
+title: Why Next.js Makes This Worse
+items:
+  entries:
+    - icon: file-code
+      title: Request context required first
+      text: SSR needs headers, cookies, and query params before making decisions.
+    - icon: route
+      title: Dynamic route matching happens after accept
+      text: Next.js middleware runs after request acceptance. Cannot reject before knowing what to do.
+    - icon: database
+      title: Data fetching dependencies
+      text: Server components require the request to be in-flight.
+# ---
+
+---
+title: The Compounding Effect
+content: These problems multiply when combined with traditional scaling approaches.
+items:
+  entries:
+    - icon: network-wired
+      title: With cluster/PM2
+      text: Every request pays the ~30% IPC overhead, even when not overloaded.
+    - icon: cubes
+      title: With single-CPU pods
+      text: Isolated queues compound load imbalances. No work sharing.
+    - icon: layer-group
+      title: Latency compounds across API calls
+      text: Three sequential calls at 180ms each = 540ms wait. Churned customers in SaaS.
+# ---
+
+---
+layout: separator
+title: |
+  We solved this.
+image:
+  url: '@common/fresh.png'
+options:
+  background: green
+# ---
+
+---
+title: The Technical Foundation - SO_REUSEPORT
+items:
+  entries:
+    - icon: hashtag
+      title: Kernel-level hash-based distribution
+      text: Calculates a hash from source IP, port, destination IP, and port to select a worker.
+    - icon: handshake
+      title: Connection affinity and even distribution
+      text: The same client always reaches the same worker. Zero coordination needed.
+    - icon: bolt
+      title: One flag enables it all
+      text: 'Set `reusePort: true` on the HTTP server and the kernel handles the rest.'
+    - icon: calendar
+      title: Available since Linux kernel 3.9 (April 2013)
+      text: It fundamentally changes how connections are distributed.
+# ---
+
+---
+title: Introducing Watt, the Node.js application server
+image:
+  url: '@talk/mesh.png'
+# ---
+
+---
+title: What is Watt?
+items:
+  entries:
+    - icon: bolt
+      title: Leverages SO_REUSEPORT
+      text: Workers accept connections directly. No more IPC overhead.
+    - icon: diagram-project
+      title: Multi-service architecture
+      text: Run multiple Node.js services with inter-thread communication.
+    - icon: gears
+      title: Production-ready
+      text: Built-in monitoring, logging, tracing, and health checks.
+  horizontal: true
+# ---
+
+---
+title: 'Watt: Architecture'
+image:
+  url: '@talk/watt.png'
+# ---
+
+---
+title: 'Process Orchestration'
+items:
+  entries:
+    - icon: rotate
+      title: Automatic restart of crashed processes
+      text: Worker failures are detected and restarted automatically without manual intervention.
+    - icon: hand-paper
+      title: Graceful shutdown handling
+      text: Coordinated shutdown ensures requests complete before workers terminate.
+    - icon: chart-line
+      title: Health monitoring and metrics
+      text: Built-in monitoring tracks worker health and performance metrics in real-time.
+# ---
+
+---
+title: 'Watt: Automatic Health Restarts'
+items:
+  entries:
+    - icon: heart-pulse
+      title: Event loop failure detection
+      text: Monitors event loop health. Detects unresponsive workers.
+    - icon: memory
+      title: Heap exhaustion handling
+      text: Detects memory issues before they crash the entire pod.
+    - icon: shield-halved
+      title: Zero downtime restart
+      text: Failed workers are replaced in-place. Others are unaffected.
+  horizontal: true
+# ---
+
+---
+title: 'Watt: Shared HTTP Cache'
+items:
+  entries:
+    - icon: layer-group
+      title: Cross-worker cache sharing
+      text: All workers access the same cache. No duplicate cache entries across processes.
+    - icon: bolt
+      title: Reduces redundant requests
+      text: Cached responses are reused across all workers, minimizing backend load.
+    - icon: gauge-high
+      title: Improves response times
+      text: Cache hits serve responses instantly without processing overhead.
+# ---
+
+---
+layout: separator
+title: |
+  Deploying Watt
+  in Kubernetes
+image:
+  url: '@common/turtle-pool.png'
+options:
+  background: sky
+# ---
+
+---
+title: Two-Layer Architecture
+items:
+  entries:
+    - icon: cloud
+      title: 'Layer 1: Kubernetes Service'
+      text: Distributes new TCP connections across pods using a round-robin or configured algorithm.
+    - icon: server
+      title: 'Layer 2: SO_REUSEPORT within each pod'
+      text: The kernel distributes connections across workers in a pod via hash-based selection.
+    - icon: chart-simple
+      title: Better statistical multiplexing than isolated single-CPU pods
+      text: The approach provides better load distribution and resource utilization.
+# ---
+
+---
+title: Independent Event Loops
+items:
+  entries:
+    - icon: code-fork
+      title: Independent processing
+      text: A worker can handle slow requests without affecting others.
+    - icon: circle-nodes
+      title: Less variance
+      text: Request processing time variance is isolated to individual workers.
+    - icon: gauge-high
+      title: Better utilization
+      text: No single request can block the entire pod anymore.
+  horizontal: true
+# ---
+
+---
+title: Resource Sharing Within Pods
+items:
+  entries:
+    - icon: file-lines
+      title: Kernel page cache
+      text: File system operations benefit from shared page cache. Less disk I/O across workers.
+    - icon: memory
+      title: Memory for binary code
+      text: Application code is loaded once in memory. Lower memory footprint per worker.
+    - icon: network-wired
+      title: Single network namespace
+      text: Lower context switching overhead. Network operations share the same kernel structures.
+# ---
+
+---
+layout: separator
+title: What about performance?
+image:
+  url: '@common/car.png'
+options:
+  background: amber
+# ---
+
+---
+title: 'Benchmark: Summary'
+items:
+  entries:
+    - icon: window-maximize
+      title: Next.js Application
+      text: Real Next.js application on AWS EKS. Sustained load of 1,000 req/s for 120 seconds.
+    - icon: cloud
+      title: 'AWS EKS Cluster'
+      text: '3 nodes: m5.2xlarge instances (8 vCPUs, 32GB RAM each)'
+    - icon: vial
+      title: 'Load Testing with k6'
+      text: 'c7gn.large instance, constant-arrival-rate executor, 1,000 pre-allocated VUs'
+# ---
+
+---
+title: 'Benchmark: Configurations'
+items:
+  entries:
+    - icon: cube
+      title: 'Single-CPU pods (Traditional horizontal scaling)'
+      text: '6 replicas x 1000m CPU = 6 total CPUs'
+    - icon: server
+      title: 'PM2 multi-worker pods (Cluster module approach)'
+      text: '3 replicas x 2000m CPU with 2 PM2 workers = 6 total CPUs'
+    - icon: bolt
+      title: 'Watt multi-worker pods (SO_REUSEPORT approach)'
+      text: '3 replicas x 2000m CPU with 2 Watt workers = 6 total CPUs'
+# ---
+
+---
+title: 'Benchmark: Results'
+content: Watt dramatically outperforms both traditional approaches.
+image:
+  url: '@talk/benchmarks.png'
+
+# ---
+---
+title: Latency Performance
+items:
+  entries:
+    - icon: gauge
+      title: '93.6% faster median latency compared to PM2'
+      text: 'From nearly 200ms to sub-15ms response times.'
+    - icon: chart-line
+      title: '81.3% faster P95 latency compared to PM2'
+      text: Consistent performance even at higher percentiles.
+    - icon: trophy
+      title: '92.5% faster than single-CPU pods'
+      text: 'Best of both worlds: scaling and performance.'
+# ---
+
+---
+title: Throughput and Reliability
+items:
+  entries:
+    - icon: arrow-up
+      title: '9.6% more throughput than PM2'
+      text: Same CPU resources, much better utilization.
+    - icon: check-circle
+      title: '99.8% success rate'
+      text: Near-perfect reliability under sustained load.
+  horizontal: true
+# ---
+
+---
+layout: separator
+title: How is that possible?
+image:
+  url: '@common/dog-1.png'
+options:
+  background: amber
+# ---
+
+---
+title: Why PM2 Underperforms
+items:
+  entries:
+    - icon: network-wired
+      title: Master process acts as internal load balancer via IPC
+      text: Every request transfers via Unix domain sockets.
+    - icon: percent
+      title: 'About 30% overhead on every request'
+      text: This overhead applies universally, even when the server is not overloaded.
+# ---
+
+---
+title: Why Single-CPU Pods Underperform
+items:
+  entries:
+    - icon: list-ol
+      title: Isolated queues compound imbalances
+      text: Each pod operates independently. Round-robin creates uneven distribution.
+    - icon: ban
+      title: No work sharing between pods
+      text: One pod drowns at 100% CPU while another idles at 30%. Cannot rebalance.
+# ---
+
+---
+title: "Watt's Advantages"
+items:
+  entries:
+    - icon: bolt
+      title: Zero-overhead kernel distribution
+      text: SO_REUSEPORT eliminates IPC coordination. Workers accept connections directly.
+    - icon: arrows-split-up-and-left
+      title: Shared accept queue with statistical multiplexing
+      text: Workers within each pod share work naturally. Better distribution than isolated pods.
+    - icon: shield-halved
+      title: '99.8% reliability under load'
+      text: Architecture handles burst traffic effectively. Near-perfect success rate at higher loads.
+# ---
+
+---
+title: Getting Started with Watt in Kubernetes
+content:
+  - |
+    Ready to achieve these performance gains in your own applications?
+    Follow these steps to deploy Next.js in Kubernetes with Watt.
+  - qr: https://docs.platformatic.dev/docs/guides/deployment/nextjs-in-k8s
+  - <span class="theme-misc@qr__footer">[https://docs.platformatic.dev/docs/guides/deployment/nextjs-in-k8s](https://docs.platformatic.dev/docs/guides/deployment/nextjs-in-k8s)</span>
+className:
+  qr: theme-misc@qr--big
+# ---
+
+---
+layout: quote
+quote:
+  sentence: |
+    You are always a student, never a master.
+    You have to keep moving forward.
+  author: Conrad Hall
+# ---
+
+---
+layout: end
+# ---

@@ -1,10 +1,8 @@
 /* stylelint-disable-next-line selector-class-pattern */
-.talk@ {
-  &graphql-logo {
-    position: absolute;
-    bottom: -1.5--sp;
-    left: 2.5--sp;
-    width: 5--sp;
-    max-height: none;
-  }
+.talk\@graphql-logo {
+  position: absolute;
+  bottom: -1.5--sp;
+  left: 2.5--sp;
+  width: 5--sp;
+  max-height: none;
 }

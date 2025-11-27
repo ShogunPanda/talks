@@ -260,6 +260,7 @@ code:
       return { ...response, extensions: { ...response.extensions, ...extensions }}
     })
 
+
 # ---
 ---
 layout: side
@@ -294,6 +295,7 @@ code:
         }
       }
     }
+
 
 # ---
 ---
@@ -398,6 +400,7 @@ code:
     shogun@panda:~/example$ jq ".countries[1].capital" example.json
     "Roma"
 
+
 # ---
 ---
 layout: separator
@@ -480,6 +483,7 @@ code:
       }
     }
 
+
 # ---
 ---
 layout: side
@@ -551,6 +555,7 @@ code:
       }
     }
 
+
 # ---
 ---
 layout: code
@@ -577,6 +582,7 @@ code:
         }
       }
     }
+
 
 # ---
 ---
@@ -657,6 +663,7 @@ code:
       }
     }
 
+
 # ---
 ---
 layout: side
@@ -685,6 +692,7 @@ code:
         }
       }
     }
+
 
 # ---
 ---

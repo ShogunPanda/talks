@@ -56,6 +56,7 @@ code:
     |                             | |                                                       |
     | [ varint | DAG-CBOR block ] | | [ varint | CID | block ] [ varint | CID | block ] ... |
 
+
 # ---
 ---
 layout: separator
@@ -166,6 +167,7 @@ code:
       version: number
     }
 
+
 # ---
 ---
 title: Blocks Tables Item
@@ -179,6 +181,7 @@ code:
       createdAt: Date
       type: 'raw' | 'dag-cbor' | 'dag-json'
     }
+
 
 # ---
 ---
@@ -196,6 +199,7 @@ code:
       length: number
       offset: number
     }
+
 
 # ---
 ---
@@ -365,6 +369,7 @@ code:
       }
     }
 
+
 # ---
 ---
 title: Advertisement file
@@ -391,6 +396,7 @@ code:
       "Signature": { "/": { "bytes": "CqsCCAASpg ... y/yqKWQ" } }
     }
 
+
 # ---
 ---
 title: Entries file
@@ -413,6 +419,7 @@ code:
         }
       ]
     }
+
 
 # ---
 ---

@@ -522,6 +522,7 @@ code:
 
     console.log(await main())
 
+
 # ---
 ---
 title: util.parseArgs()
@@ -546,6 +547,7 @@ code:
 
     console.log(args)
     // Prints: [Object: null prototype] { foo: true, bar: 'b' } []
+
 
 # ---
 ---
@@ -684,6 +686,7 @@ code:
     const { answer } = require('./esm.mjs')
     console.log(answer)
 
+
 # ---
 ---
 layout: image
@@ -786,6 +789,7 @@ content:
   - |
     Involving the TSC is usually unnecessary: often, discussions or further changes **result in collaborators removing their opposition**.
 
+
 # ---
 ---
 title: The Node.js Technical Steering Committee
@@ -801,6 +805,7 @@ content: |
   - Maintaining the list of additional Collaborators.
   - Development process and any coding standards.
   - Mediating technical conflicts between Collaborators or Foundation projects.
+
 
 # ---
 ---

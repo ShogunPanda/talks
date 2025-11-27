@@ -1,0 +1,27 @@
+/* stylelint-disable-next-line selector-class-pattern */
+.talk\@quote__primary-icon {
+  --pi-icon-primary-color: red;
+}
+
+.talk\@quote__secondary-icon {
+  --pi-icon-primary-color: green;
+}
+
+.talk\@grid {
+  grid-template-columns: 1fr 1fr 1fr;
+  gap: 1ch;
+}
+
+.talk\@line-not-highlighted {
+  --dante-bg: red;
+  opacity: 1;
+}
+
+.talk\@line-highlighted {
+  --dante-bg: green;
+}
+
+.talk\@highlight {
+  background-color: var(--pi-color-purple);
+  color: var(--pi-color-white);
+}
