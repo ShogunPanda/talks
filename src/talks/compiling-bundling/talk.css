@@ -1,4 +1,3 @@
-/* stylelint-disable-next-line selector-class-pattern */
 .talk\@terminology {
   left: 6--sp;
 }
@@ -10,86 +9,90 @@
 
 .talk\@transform {
   justify-content: center;
+
+  & .root {
+    flex: initial;
+  }
+
+  & .image {
+    width: auto;
+    height: auto;
+    max-width: 8--sp;
+    max-height: 3--sp;
+    margin-bottom: 0;
+  }
+
+  & .arrow {
+    width: 1.5--sp;
+    height: auto;
+    margin: 0 1ch;
+  }
 }
 
-.talk\@transform__root {
-  flex: initial;
-}
+.talk\@generation {
+  &.vertical {
+    align-items: center;
 
-.talk\@transform__image {
-  width: auto;
-  height: auto;
-  max-width: 8--sp;
-  max-height: 3--sp;
-  margin-bottom: 0;
-}
+    & .root {
+      flex: initial;
+    }
 
-.talk\@transform__arrow {
-  width: 1.5--sp;
-  height: auto;
-  margin: 0 1ch;
-}
+    & .image {
+      width: 3.5--sp;
+      height: auto;
+      margin-bottom: 0;
+    }
 
-.talk\@generation--vertical {
-  align-items: center;
-}
+    & .arrow {
+      width: auto;
+      height: 0.5--sp;
+      min-width: auto;
+      min-height: auto;
+      margin: 1ch 0;
+    }
+  }
 
-.talk\@generation--vertical__root {
-  flex: initial;
-}
+  &.horizontal {
+    justify-content: center;
 
-.talk\@generation--vertical__image {
-  width: 3.5--sp;
-  height: auto;
-  margin-bottom: 0;
-}
+    & .root {
+      flex: initial;
+    }
 
-.talk\@generation--vertical__arrow {
-  width: auto;
-  height: 0.5--sp;
-  min-width: auto;
-  min-height: auto;
-  margin: 1ch 0;
-}
+    & .image {
+      width: auto;
+      height: 2--sp;
+      margin-bottom: 0;
+    }
 
-.talk\@generation--horizontal {
-  justify-content: center;
-}
-
-.talk\@generation--horizontal__root {
-  flex: initial;
-}
-
-.talk\@generation--horizontal__image {
-  width: auto;
-  height: 2--sp;
-  margin-bottom: 0;
-}
-
-.talk\@generation--horizontal__arrow {
-  width: auto;
-  height: 0.5--sp;
-  min-width: auto;
-  min-height: auto;
-  margin: 0 1ch;
+    & .arrow {
+      width: auto;
+      height: 0.5--sp;
+      min-width: auto;
+      min-height: auto;
+      margin: 0 1ch;
+    }
+  }
 }
 
 .talk\@problem-number {
   left: 4--sp;
 }
 
-.talk\@parsing__image {
-  width: 3--sp;
-  height: auto;
-  max-width: none;
-  max-height: none;
+.talk\@parsing {
+  &.image {
+    width: 3--sp;
+    height: auto;
+    max-width: none;
+    max-height: none;
+  }
+
+  &.step {
+    left: 0.1--sp;
+  }
 }
 
-.talk\@parsing__step {
-  left: 0.1--sp;
-}
-
-.talk\@problem__image {
+.talk\@problem.image {
   width: auto;
   height: 2--sp;
   max-width: none;
@@ -99,11 +102,11 @@
 .talk\@logo {
   background-position: center;
   background-size: 3--sp 3--sp;
-}
 
-.talk\@logo--auto {
-  background-position: center;
-  background-size: 3--sp auto;
+  &.auto {
+    background-position: center;
+    background-size: 3--sp auto;
+  }
 }
 
 .talk\@vite {
@@ -111,42 +114,48 @@
   flex: initial;
   height: 2--sp;
   margin-top: 4ch;
-}
 
-.talk\@vite__esbuild__root {
-  position: absolute;
-  z-index: 1;
-  top: 0.5--sp;
-  left: 50%;
-  margin-left: -1--sp;
-}
+  & .esbuild {
+    &.root {
+      position: absolute;
+      z-index: 1;
+      top: 0.5--sp;
+      left: 50%;
+      margin-left: -1--sp;
+    }
 
-.talk\@vite__esbuild__image {
-  width: 1--sp;
-  height: 1--sp;
-  margin-bottom: 0;
-}
+    &.image {
+      width: 1--sp;
+      height: 1--sp;
+      margin-bottom: 0;
+    }
+  }
 
-.talk\@vite__vite__root {
-  z-index: 2;
-}
+  & .vite {
+    &.root {
+      z-index: 2;
+    }
 
-.talk\@vite__vite__image {
-  position: relative;
-  width: 2--sp;
-  height: 2--sp;
-  margin-bottom: 0;
-}
+    &.image {
+      position: relative;
+      width: 2--sp;
+      height: 2--sp;
+      margin-bottom: 0;
+    }
+  }
 
-.talk\@vite__rollup__root {
-  position: absolute;
-  z-index: 1;
-  top: 0.5--sp;
-  left: 50%;
-}
+  & .rollup {
+    &.root {
+      position: absolute;
+      z-index: 1;
+      top: 0.5--sp;
+      left: 50%;
+    }
 
-.talk\@vite__rollup__image {
-  width: 1--sp;
-  height: 1--sp;
-  margin-bottom: 0;
+    &.image {
+      width: 1--sp;
+      height: 1--sp;
+      margin-bottom: 0;
+    }
+  }
 }

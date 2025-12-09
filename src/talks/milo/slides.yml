@@ -232,11 +232,11 @@ items:
             }
           });
       className:
-        root: talk@example__from
+        root: talk@example from
     - image: '@common/arrow-right.png'
       className:
-        root: talk@example__arrow
-        image: talk@example__arrow__image
+        root: talk@example arrow
+        image: talk@example arrow image
     - code:
         language: rust
         content: |
@@ -267,7 +267,7 @@ items:
               }
           }
       className:
-        root: talk@example__to
+        root: talk@example to
   className: talk@example
   horizontal: true
   spacer: false
@@ -523,7 +523,7 @@ options:
 decorations:
   icon: champagne-glasses
   className:
-    icon: theme-misc@mission-completed
+    icon: theme@mission-completed
 # ---
 
 ---
@@ -553,7 +553,7 @@ items:
 
           317k requests in 11.02s, 26.6 MB read
       className:
-        root: talk@performance__result
+        root: talk@performance result
     - code:
         language: none
         content: |
@@ -577,7 +577,7 @@ items:
 
           338k requests in 11.02s, 28.4 MB read
       className:
-        root: talk@performance__result
+        root: talk@performance result
   className: talk@performance
   horizontal: true
   gap: false

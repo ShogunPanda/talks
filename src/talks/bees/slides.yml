@@ -72,7 +72,7 @@ layout: separator
 title: Are you <br/>trolling us?
 image:
   url: '@common/troll-black.svg'
-  className: theme-misc@troll
+  className: troll
 options:
   background: amber
 decorations:
@@ -88,7 +88,7 @@ title: |
 image:
   url: '@theme/location.png'
 className:
-  root: theme@separator--reverse
+  root: reverse
 options:
   background: pink
 # ---
@@ -623,7 +623,7 @@ options:
 decorations:
   icon: champagne-glasses
   className:
-    icon: theme-misc@mission-completed
+    icon: theme@mission-completed
 # ---
 
 ---

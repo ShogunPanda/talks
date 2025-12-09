@@ -43,40 +43,24 @@ export function Item(props: ItemProps): VNode {
   }
 
   return (
-    <section className={cleanCssClasses('theme@item', horizontal && 'theme@item--horizontal', rootClassName)}>
+    <section className={cleanCssClasses('theme@item', horizontal && 'horizontal', rootClassName)}>
       {index && (
-        <h5
-          className={cleanCssClasses(
-            'theme@item__index',
-            horizontal && 'theme@item__index--horizontal',
-            indexClassName
-          )}
-        >
+        <h5 className={cleanCssClasses('index', horizontal && 'horizontal', indexClassName)}>
           <Text text={index} />
         </h5>
       )}
       {imageUrl && (
-        <Image
-          src={imageUrl}
-          className={cleanCssClasses(
-            'theme@item__image',
-            horizontal && 'theme@item__image--horizontal',
-            imageClassName
-          )}
-        />
+        <Image src={imageUrl} className={cleanCssClasses('image', horizontal && 'horizontal', imageClassName)} />
       )}
       {!imageUrl && icon && (
-        <SvgIcon
-          name={icon}
-          className={cleanCssClasses('theme@item__icon', horizontal && 'theme@item__icon--horizontal', iconClassName)}
-        />
+        <SvgIcon name={icon} className={cleanCssClasses('icon', horizontal && 'horizontal', iconClassName)} />
       )}
       {!imageUrl && !icon && qr && (
         <QRCode
           label=""
           data={qr}
           className={{
-            code: cleanCssClasses('theme@item__qr', horizontal && 'theme@item__qr--horizontal', qrClassName)
+            code: cleanCssClasses('qr', horizontal && 'horizontal', qrClassName)
           }}
         />
       )}
@@ -84,26 +68,18 @@ export function Item(props: ItemProps): VNode {
       {!imageUrl && !icon && !qr && code && <Code {...code} />}
 
       {!code && (title || text || children) && (
-        <div
-          className={cleanCssClasses('theme@item__text', horizontal && 'theme@item__text--horizontal', textClassName)}
-        >
+        <div className={cleanCssClasses('text', horizontal && 'horizontal', textClassName)}>
           {title && (
-            <h4
-              className={cleanCssClasses(
-                'theme@item__title',
-                horizontal && 'theme@item__title--horizontal',
-                titleClassName
-              )}
-            >
+            <h4 className={cleanCssClasses('title', horizontal && 'horizontal', titleClassName)}>
               <Text text={title} />
             </h4>
           )}
           {text && (
-            <p className={cleanCssClasses('theme@item__contents', contentsClassName)}>
+            <p className={cleanCssClasses('contents', contentsClassName)}>
               <Text text={text} />
             </p>
           )}
-          {!text && <p className={cleanCssClasses('theme@item__contents', contentsClassName)}>{children}</p>}
+          {!text && <p className={cleanCssClasses('contents', contentsClassName)}>{children}</p>}
         </div>
       )}
     </section>
@@ -117,9 +93,7 @@ export function Items({
   const [step, setStep] = useState<number>(0)
 
   const gapClass = gap === false ? 'no-gap' : 'with-gap'
-  const dispositionClasses = horizontal
-    ? `theme@items--horizontal theme@items--horizontal--${gapClass}`
-    : `theme@items--vertical theme@items--vertical--${gapClass}`
+  const dispositionClasses = horizontal ? `horizontal ${gapClass}` : `vertical ${gapClass}`
 
   const validEntries = useMemo(() => entries.filter(Boolean), [entries])
   const visibleEntries = useMemo(() => {
@@ -182,7 +156,7 @@ export function Items({
       {visibleEntries.map((item: ItemDefinition, index: number) => {
         return (
           <Fragment key={`item:${index}`}>
-            {spacer !== false && horizontal && index > 0 && <div className={cleanCssClasses('theme@item__spacer')} />}
+            {spacer !== false && horizontal && index > 0 && <div className={cleanCssClasses('spacer')} />}
             <Item horizontal={horizontal} {...item} />
           </Fragment>
         )
@@ -197,11 +171,11 @@ export function Grids({ grids }: GridsProps): VNode {
   }
 
   return (
-    <div className={cleanCssClasses('theme@items--grid__wrapper')}>
+    <div className={cleanCssClasses('wrapper')}>
       {grids.map((grid: Grid, index: number) => {
         return (
           <Fragment key={`item:${index}`}>
-            {index > 0 && <div className={cleanCssClasses('theme@item__spacer')} />}
+            {index > 0 && <div className={cleanCssClasses('spacer')} />}
             <Items
               items={{
                 entries: grid.entries,
@@ -209,12 +183,7 @@ export function Grids({ grids }: GridsProps): VNode {
                 spacer: false,
                 defaultClasses: false,
                 sequence: grid.sequence,
-                className: cleanCssClasses(
-                  'theme@items--grid',
-                  'theme@items--grid--default-template',
-                  'theme@items--grid--default-gap',
-                  grid.className
-                )
+                className: cleanCssClasses('theme@items', 'grid', 'default-template', 'default-gap', grid.className)
               }}
             />
           </Fragment>

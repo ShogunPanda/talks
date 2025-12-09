@@ -35,8 +35,8 @@ export function SvgIcon({ name: icon, className }: SvgIconProps): VNode {
     }
 
     const pathProperties = [
-      { className: cleanCssClasses('theme@icon__path--primary') },
-      { className: cleanCssClasses('theme@icon__path--secondary') }
+      { className: cleanCssClasses('path', 'primary') },
+      { className: cleanCssClasses('path', 'secondary') }
     ]
 
     const id = generateSVGId(assets.svgsDefinitions.length)

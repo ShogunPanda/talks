@@ -62,10 +62,10 @@ items:
   entries:
     - icon: file-download
       title: Clone it.
-      text: '<span class="talk@narrow-grid__link">`git clone git@github.com:$YOURNAME/node.git`</span>'
+      text: '<span class="talk@narrow-grid link">`git clone git@github.com:$YOURNAME/node.git`</span>'
     - qr: https://github.com/nodejs/node/blob/main/BUILDING.md
       title: Read the [BUILDING.MD](https://github.com/nodejs/node/blob/main/BUILDING.md) file.
-      text: '<span class="talk@narrow-grid__link">`cd node && open BUILDING.md`</span>'
+      text: '<span class="talk@narrow-grid link">`cd node && open BUILDING.md`</span>'
   horizontal: true
   className: talk@narrow-grid
 # ---

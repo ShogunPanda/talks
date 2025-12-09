@@ -67,9 +67,9 @@ title: Meet readable-stream
 content:
   - It is a NPM package which mirrors the Node.js stream module and additionally adapts it to use in the browsers and/or bundlers.
   - qr: https://www.npmjs.com/package/readable-stream
-  - <span class="theme-misc@qr__footer">[https://www.npmjs.com/package/readable-stream](https://www.npmjs.com/package/readable-stream)</span>
+  - <span class="theme@qr footer">[https://www.npmjs.com/package/readable-stream](https://www.npmjs.com/package/readable-stream)</span>
 className:
-  qr: theme-misc@qr--big
+  qr: theme@qr big
 # ---
 
 ---
@@ -232,7 +232,7 @@ code:
     const rs = createReadStream('archive.tar')
     await finished(rs.resume())
   className:
-    root: theme-misc@code--small
+    root: theme@code small
 # ---
 
 ---
@@ -282,7 +282,7 @@ items:
     - image: '@common/babel.png'
       title: Babel
       className:
-        image: theme-misc@width-auto
+        image: width-auto
     - image: '@common/prettier.png'
       title: Prettier
   horizontal: true
@@ -301,7 +301,7 @@ items:
       title: Tape
       text: Along with custom runner and parser, it is used to test browsers.
       className:
-        image: theme-misc@width-auto
+        image: width-auto
     - image: '@common/playwright.png'
       title: Playwright
       text: |

@@ -397,7 +397,7 @@ options:
   background: green
 decorations:
   className:
-    icon: theme-misc@mission-completed
+    icon: theme@mission-completed
   icon: champagne-glasses
   logo: black
 # ---

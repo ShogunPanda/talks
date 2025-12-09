@@ -148,11 +148,11 @@ items:
 layout: raw
 content:
   - |
-    <h1 class="theme@fg-black theme-misc@bad__text">BAD!</h1>
-    <h1 class="theme@fg-white theme-misc@bad__text">DON'T!</h1>
+    <h1 class="theme@fg-black text">BAD!</h1>
+    <h1 class="theme@fg-white text">DON'T!</h1>
 className:
-  raw: theme-misc@bad
-  root: theme-misc@bad__root
+  raw: theme@bad
+  root: root
 options:
   background: red
 decorations:
@@ -189,9 +189,9 @@ title: Check it out!
 content:
   - We can reuse parsing and serialization from the reference GraphQL Javascript implementation.
   - qr: https://github.com/ShogunPanda/graphql-enrich-proxy
-  - <span class="theme-misc@qr__footer">[https://github.com/ShogunPanda/graphql-enrich-proxy](https://github.com/ShogunPanda/graphql-enrich-proxy)</span>
+  - <span class="theme@qr footer">[https://github.com/ShogunPanda/graphql-enrich-proxy](https://github.com/ShogunPanda/graphql-enrich-proxy)</span>
 className:
-  qr: theme-misc@qr--big
+  qr: theme@qr big
 # ---
 
 ---
@@ -337,7 +337,7 @@ code:
       return [updatedDocument, injectedFieldId]
     }
   className:
-    root: theme-misc@code--small
+    root: theme@code small
 decorations:
   logo: white
 # ---
@@ -624,7 +624,7 @@ code:
       }
     }
   className:
-    root: theme-misc@code--small
+    root: theme@code small
 # ---
 
 ---
@@ -705,7 +705,7 @@ options:
 decorations:
   icon: champagne-glasses
   className:
-    icon: theme-misc@mission-completed
+    icon: theme@mission-completed
 # ---
 
 ---

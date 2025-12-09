@@ -34,7 +34,7 @@ export default function HalfLayout({ className, style }: SlideProps): VNode {
       style={style}
       defaultLogoColor="black"
     >
-      <div className={cleanCssClasses('theme@half__contents')}>
+      <div className={cleanCssClasses('contents')}>
         {title && (
           <h1 className={cleanCssClasses(titleClassName)}>
             <Text text={title} />
@@ -49,7 +49,7 @@ export default function HalfLayout({ className, style }: SlideProps): VNode {
           }
 
           return (
-            <h4 key={key} className={cleanCssClasses('theme@half__subtitle', subtitleClassName)}>
+            <h4 key={key} className={cleanCssClasses('subtitle', subtitleClassName)}>
               <Text text={c} />
             </h4>
           )
@@ -58,9 +58,7 @@ export default function HalfLayout({ className, style }: SlideProps): VNode {
         {items && <Items items={items} />}
       </div>
 
-      {image && (
-        <div className={cleanCssClasses('theme@half__image')} style={{ backgroundImage: `url(${imageUrl})` }} />
-      )}
+      {image && <div className={cleanCssClasses('image')} style={{ backgroundImage: `url(${imageUrl})` }} />}
     </SlideWrapper>
   )
 }

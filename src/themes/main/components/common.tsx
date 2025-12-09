@@ -52,11 +52,11 @@ export function Decorations({ defaultLogoColor }: DecorationProps): VNode {
           className={{
             root: cleanCssClasses(
               'theme@permalink',
-              typeof permalink === 'string' && `theme@permalink--${permalink}`,
+              typeof permalink === 'string' && `${permalink}`,
               permalinkClassName
             ),
-            code: cleanCssClasses('theme@permalink__code'),
-            image: cleanCssClasses('theme@permalink__image')
+            code: cleanCssClasses('code'),
+            image: cleanCssClasses('image')
           }}
         />
       )}

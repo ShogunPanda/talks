@@ -1,26 +1,29 @@
-/* stylelint-disable-next-line selector-class-pattern */
-.talk\@pet__name {
-  color: var(--freya-color-windi-amber-300);
+.talk\@pet {
+  &.name {
+    color: var(--freya-color-windi-amber-300);
+  }
 }
 
 .talk\@game {
   flex-direction: column-reverse;
+
+  & .subtitle {
+    margin-bottom: 1ch;
+    font-weight: 700;
+  }
 }
 
-.talk\@game__subtitle {
-  margin-bottom: 1ch;
-  font-weight: 700;
-}
+.talk\@end {
+  &.usual {
+    font-size: 25--pt;
+  }
 
-.talk\@end--usual {
-  font-size: 25--pt;
-}
+  &.real {
+    font-size: 35--pt;
 
-.talk\@end--real {
-  font-size: 35--pt;
-}
-
-.talk\@end--real__subtitle {
-  color: var(--freya-color-windi-amber-300);
-  font-size: 25--pt;
+    & .subtitle {
+      color: var(--freya-color-windi-amber-300);
+      font-size: 25--pt;
+    }
+  }
 }

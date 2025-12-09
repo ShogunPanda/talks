@@ -53,7 +53,7 @@ options:
 title: '2018: "Node.js has threads!"'
 content:
   - image: '@talk/anna.png'
-  - <span class="theme-misc@qr__footer">[https://www.youtube.com/watch?v=-ssCzHoUI7M](https://www.youtube.com/watch?v=-ssCzHoUI7M)</span>
+  - <span class="theme@qr footer">[https://www.youtube.com/watch?v=-ssCzHoUI7M](https://www.youtube.com/watch?v=-ssCzHoUI7M)</span>
 className:
   image: talk@anna
 # ---
@@ -307,8 +307,8 @@ items:
           console.log(result) // Prints 10
     - image: '@common/arrow-right.png'
       className:
-        root: talk@example__arrow
-        image: talk@example__arrow__image
+        root: talk@example arrow
+        image: talk@example arrow image
     - code:
         language: javascript
         content: |
@@ -362,9 +362,9 @@ decorations:
   logo: white
 className:
   root: talk@batman
-  contents: theme@separator__contents--reverse
-  title: theme@separator__title--reverse
-  subtitle: theme@separator__subtitle--reverse
+  contents: reverse
+  title: reverse
+  subtitle: reverse
 # ---
 
 ---
@@ -388,7 +388,7 @@ layout: side
 content:
   - A tiny utility to expose an asynchronous API via a worker thread… synchronously!
   - qr: https://github.com/mcollina/everysync
-  - <span class="theme-misc@qr__footer">[https://github.com/mcollina/everysync](https://github.com/mcollina/everysync)
+  - <span class="theme@qr footer">[https://github.com/mcollina/everysync](https://github.com/mcollina/everysync)
 code:
   language: javascript
   content: |
@@ -408,7 +408,7 @@ code:
     assert.strictEqual(api.echo(42), 42)
     worker.terminate()
 className:
-  qr: theme-misc@qr--big
+  qr: theme@qr big
 # ---
 
 ---
@@ -559,9 +559,9 @@ title: Why this is useful?
 content:
   - '**Pino** uses this technique to support async transports and flush the logs on exit.'
   - qr: https://getpino.io
-  - <span class="theme-misc@qr__footer">[https://getpino.io](https://getpino.io)</span>
+  - <span class="theme@qr footer">[https://getpino.io](https://getpino.io)</span>
 className:
-  qr: theme-misc@qr--big
+  qr: theme@qr big
 image:
   url: '@common/pino.png'
 # ---
@@ -683,7 +683,7 @@ title: Network-less HTTP
 content: The Platformatic mesh network. Our secret sauce.
 image:
   url: '@talk/mesh.png'
-  className: theme@default__image--full-width
+  className: theme@default image full-width
 # ---
 
 ---
@@ -723,9 +723,9 @@ title: GoFundMe campaign
 content:
   - We are running a GoFundMe campaign to support the Code Their Future initiative.
   - qr: https://www.gofundme.com/f/code-their-future-unlocking-opportunities-for-underserved-k
-  - <span class="theme-misc@qr__footer theme-misc@qr__footer--small">[https://www.gofundme.com/f/code-their-future-unlocking-opportunities-for-underserved-k](https://www.gofundme.com/f/code-their-future-unlocking-opportunities-for-underserved-k)</span>
+  - <span class="theme@qr footer theme@qr footer small">[https://www.gofundme.com/f/code-their-future-unlocking-opportunities-for-underserved-k](https://www.gofundme.com/f/code-their-future-unlocking-opportunities-for-underserved-k)</span>
 className:
-  qr: theme-misc@qr--big
+  qr: theme@qr big
 # ---
 
 ---

@@ -90,7 +90,7 @@ title: Ring a bell?
 image:
   url: '@common/bell.png'
 className:
-  root: theme@separator--reverse
+  root: reverse
 options:
   background: blue
 decorations:

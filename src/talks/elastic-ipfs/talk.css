@@ -1,9 +1,8 @@
-/* stylelint-disable-next-line selector-class-pattern */
 .talk\@image-big {
   width: 5--sp;
 }
 
-.talk\@link--small {
+.talk\@link {
   font-size: 0.8em;
   font-weight: 700;
 }

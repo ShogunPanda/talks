@@ -232,7 +232,7 @@ title: |
   could not resist!
 image:
   url: '@common/troll-white.svg'
-  className: theme-misc@troll
+  className: troll
 options:
   background: pink
 decorations:
@@ -247,7 +247,7 @@ image:
 options:
   background: blue
 className:
-  root: theme@separator--reverse
+  root: reverse
 # ---
 
 ---
@@ -298,7 +298,7 @@ image:
 options:
   background: sky
 className:
-  subtitle: talk@separator__subtitle--finally
+  subtitle: talk@separator finally
 # ---
 
 ---
@@ -310,7 +310,7 @@ subtitle: Opinions are mine and I'm still learning. Be gentle! 🙏
 image:
   url: '@common/kid.png'
 className:
-  subtitle: talk@separator__subtitle
+  subtitle: talk@separator subtitle
 decorations:
   logo: white
 # ---
@@ -336,7 +336,7 @@ quote:
 decorations:
   number: 1
   className:
-    number: talk@principle-icon talk@principle-icon--light
+    number: talk@principle-icon light
 # ---
 
 ---
@@ -365,7 +365,7 @@ quote:
 decorations:
   number: 2
   className:
-    number: talk@principle-icon talk@principle-icon--light
+    number: talk@principle-icon light
 # ---
 
 ---
@@ -396,7 +396,7 @@ quote:
 decorations:
   number: 3
   className:
-    number: talk@principle-icon talk@principle-icon--light
+    number: talk@principle-icon light
 # ---
 
 ---
@@ -427,7 +427,7 @@ quote:
 decorations:
   number: 4
   className:
-    number: talk@principle-icon talk@principle-icon--light
+    number: talk@principle-icon light
 # ---
 
 ---
@@ -500,7 +500,7 @@ quote:
 decorations:
   number: 1
   className:
-    number: talk@principle-icon talk@principle-icon--light
+    number: talk@principle-icon light
 # ---
 
 ---
@@ -531,7 +531,7 @@ quote:
 decorations:
   number: 2
   className:
-    number: talk@principle-icon talk@principle-icon--light
+    number: talk@principle-icon light
 # ---
 
 ---
@@ -562,7 +562,7 @@ quote:
 decorations:
   number: 3
   className:
-    number: talk@principle-icon talk@principle-icon--light
+    number: talk@principle-icon light
 # ---
 
 ---
@@ -593,7 +593,7 @@ quote:
 decorations:
   number: 4
   className:
-    number: talk@principle-icon talk@principle-icon--light
+    number: talk@principle-icon light
 # ---
 
 ---
@@ -631,8 +631,8 @@ title: |
 image:
   url: '@common/cow.png'
 className:
-  title: talk@chum-kiu__title
-  subtitle: talk@chum-kiu__subtitle
+  title: talk@chum-kiu title
+  subtitle: talk@chum-kiu subtitle
 decorations:
   logo: white
 # ---
@@ -642,7 +642,7 @@ layout: separator
 title: Sorry, could not resist (again)!
 image:
   url: '@common/troll-white.svg'
-  className: theme-misc@troll
+  className: troll
 options:
   background: pink
 decorations:

@@ -1,10 +1,6 @@
 {
   "extends": "@cowtech/typescript-config",
-  "compilerOptions": {
-    "outDir": "./dist",
-    "rootDir": "./src",
-    "declaration": true
-  },
+  "compilerOptions": { "outDir": "./dist", "rootDir": "./src", "jsx": "react-jsx", "jsxImportSource": "preact" },
   "include": ["src/**/*.ts", "src/**/*.tsx"],
   "exclude": ["node_modules", "dist"]
 }

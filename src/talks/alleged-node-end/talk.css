@@ -1,36 +1,18 @@
-/* stylelint-disable-next-line selector-class-pattern */
-.talk\@ {
-  /* &send-pr {
-    max-height: 2.8--sp;
-    padding: 0.2--sp;
-    border-radius: 1rem;
-    background-color: var(--freya-color-black);
+.talk\@download {
+  &.title {
+    font-size: 100--pt;
+    text-align: center;
   }
 
-  &contribute {
-    display: block;
-    margin-top: 0.2--sp;
-    color: var(--freya-color-blue);
-    font-family: var(--pi-font-bitter);
-    font-size: 0.7--sp;
-    font-weight: bold;
+  &.subtitle {
+    font-size: 18--pt;
     text-align: center;
-  } */
-}
+  }
 
-.talk\@download__title {
-  font-size: 100--pt;
-  text-align: center;
-}
-
-.talk\@download__subtitle {
-  font-size: 18--pt;
-  text-align: center;
-}
-
-.talk\@download__icon {
-  height: 45%;
-  fill: var(--freya-color-windi-green-700);
+  &.icon {
+    height: 45%;
+    fill: var(--freya-color-windi-green-700);
+  }
 }
 
 .talk\@danger-banner {
@@ -41,7 +23,7 @@
   text-transform: uppercase;
 }
 
-.talk\@image--half {
+.talk\@image.half {
   max-width: 50%;
 }
 
@@ -49,7 +31,7 @@
   font-size: 1.5em;
 }
 
-.talk\@image__contents {
+.talk\@image.contents {
   align-items: center;
   margin-top: 2--sp;
 }

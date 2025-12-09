@@ -83,7 +83,7 @@ options:
 decorations:
   logo: white
 className:
-  root: theme@separator--reverse
+  root: reverse
 # ---
 
 ---
@@ -198,9 +198,9 @@ title: Introducing Watt
 content:
   - A Node.js application server, done the right way!
   - qr: https://www.platformatichq.com/watt
-  - <span class="theme-misc@qr__footer">[https://www.platformatichq.com/watt](https://www.platformatichq.com/watt)</span>
+  - <span class="theme@qr footer">[https://www.platformatichq.com/watt](https://www.platformatichq.com/watt)</span>
 className:
-  qr: theme-misc@qr--big
+  qr: theme@qr big
 # ---
 
 ---
@@ -351,11 +351,11 @@ title: |
 subtitle: "Don't you just trust me? 😭"
 image:
   url: '@common/troll-black.svg'
-  className: theme-misc@troll
+  className: troll
 options:
   background: pink
 className:
-  root: theme@separator--reverse
+  root: reverse
 # ---
 
 ---
@@ -379,7 +379,7 @@ title: Not convinced yet?
 image:
   url: '@common/fry-money.png'
 className:
-  contents: talk@image__contents
+  contents: talk@image contents
 # ---
 
 ---
@@ -459,7 +459,7 @@ options:
 decorations:
   logo: black
 className:
-  root: theme@separator--reverse
+  root: reverse
 # ---
 
 ---

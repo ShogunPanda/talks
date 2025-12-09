@@ -37,24 +37,19 @@ export default function QuoteLayout({ className, style }: SlideProps): VNode {
     <SlideWrapper
       slide={slide}
       index={index}
-      className={cleanCssClasses('theme@quote', `theme@quote--${variant}`, className, rootClassName)}
+      className={cleanCssClasses('theme@quote', `${variant}`, className, rootClassName)}
       defaultLogoColor={light ? 'black' : 'white'}
       style={style}
     >
-      {/* <Image src={backgroundImage} className={cleanCssClasses('theme@quote__background')} /> */}
-      <div className={cleanCssClasses('theme@quote__contents')}>
-        <h1 className={cleanCssClasses('theme@quote__title', titleClassName)}>
+      {/* <Image src={backgroundImage} className={cleanCssClasses('background')} /> */}
+      <div className={cleanCssClasses('contents')}>
+        <h1 className={cleanCssClasses('title', titleClassName)}>
           <Text text={title ?? 'One last thing™'} />
         </h1>
 
-        <h1 className={cleanCssClasses('theme@quote__quote')}>
-          <Text
-            className={cleanCssClasses('theme@quote__quote__sentence', `theme@quote__quote__sentence--${variant}`)}
-            text={`&ldquo;${sentence?.trim()}&rdquo;`}
-          />
-          <strong className={cleanCssClasses('theme@quote__quote__author', `theme@quote__quote__author--${variant}`)}>
-            {author}
-          </strong>
+        <h1 className={cleanCssClasses('quote')}>
+          <Text className={cleanCssClasses('sentence', `${variant}`)} text={`&ldquo;${sentence?.trim()}&rdquo;`} />
+          <strong className={cleanCssClasses('author', `${variant}`)}>{author}</strong>
         </h1>
       </div>
 
@@ -63,23 +58,13 @@ export default function QuoteLayout({ className, style }: SlideProps): VNode {
           {primaryIcon !== false && (
             <SvgIcon
               name={primaryIcon ?? 'lightbulb'}
-              className={cleanCssClasses(
-                'theme@quote__icon',
-                'theme@quote__icon--primary',
-                `theme@quote__icon--primary--${variant}`,
-                primaryIconClassName
-              )}
+              className={cleanCssClasses('icon', 'primary', `${variant}`, primaryIconClassName)}
             />
           )}
           {secondaryIcon !== false && (
             <SvgIcon
               name={secondaryIcon ?? 'puzzle-piece'}
-              className={cleanCssClasses(
-                'theme@quote__icon',
-                'theme@quote__icon--secondary',
-                `theme@quote__icon--secondary--${variant}`,
-                secondaryIconClassName
-              )}
+              className={cleanCssClasses('icon', 'secondary', `${variant}`, secondaryIconClassName)}
             />
           )}
         </>

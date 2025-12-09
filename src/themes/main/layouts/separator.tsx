@@ -45,7 +45,7 @@ export default function SeparatorLayout({ className, style }: SlideProps): VNode
       index={index}
       className={cleanCssClasses(
         'theme@separator',
-        !image && !icon && 'theme@separator--no-image',
+        !image && !icon && 'no-image',
         background && `theme@bg-${background}`,
         foreground && `theme@fg-${foreground}`,
         className,
@@ -54,28 +54,25 @@ export default function SeparatorLayout({ className, style }: SlideProps): VNode
       style={style}
       defaultLogoColor="white"
     >
-      <div className={cleanCssClasses('theme@separator__contents', contentsClassName)}>
+      <div className={cleanCssClasses('contents', contentsClassName)}>
         {title && (
-          <h1 className={cleanCssClasses('theme@separator__title', titleClassName)}>
+          <h1 className={cleanCssClasses('title', titleClassName)}>
             <Text text={title} />
           </h1>
         )}
 
         {subtitle && (
-          <h4 className={cleanCssClasses('theme@separator__subtitle', subtitleClassName)}>
+          <h4 className={cleanCssClasses('subtitle', subtitleClassName)}>
             <Text text={subtitle} />
           </h4>
         )}
       </div>
 
       {image && (
-        <div
-          className={cleanCssClasses('theme@separator__image', image.className)}
-          style={{ backgroundImage: `url(${imageUrl})` }}
-        />
+        <div className={cleanCssClasses('image', image.className)} style={{ backgroundImage: `url(${imageUrl})` }} />
       )}
 
-      {!image && icon && <SvgIcon name={icon} className={cleanCssClasses('theme@separator__icon', iconClassName)} />}
+      {!image && icon && <SvgIcon name={icon} className={cleanCssClasses('icon', iconClassName)} />}
     </SlideWrapper>
   )
 }

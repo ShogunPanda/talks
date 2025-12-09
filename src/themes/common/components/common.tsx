@@ -54,7 +54,7 @@ export function ComplexContent({ raw, slide }: ComplexContentProps): VNode {
     return (
       <Image
         src={resolveImage('main', id, raw.image)}
-        className={cleanCssClasses('theme@default__image', 'theme@default__image--with-content', slide.className.image)}
+        className={cleanCssClasses('theme@default', 'image', 'with-content', slide.className.image)}
       />
     )
   }

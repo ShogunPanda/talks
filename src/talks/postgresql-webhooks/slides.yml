@@ -182,13 +182,13 @@ items:
       text: The queue might not deliver all messages.
       className:
         root: talk@disabled
-        icon: talk@disabled__icon
+        icon: talk@disabled icon
     - icon: clone
       title: At least once
       text: The queue guarantees that all messages are delivered, but there might be repetitions.
       className:
         root: talk@disabled
-        icon: talk@disabled__icon
+        icon: talk@disabled icon
     - icon: '1'
       title: Exactly once
       text: Each message is guaranteed to be delivered only once.
@@ -344,7 +344,7 @@ grids:
       - image: '@common/nodejs.png'
         title: Node.js
         className:
-          image: theme-misc@width-auto
+          image: width-auto
       - image: '@common/postgresql.png'
         title: PostgreSQL
       - image: '@common/fastify.png'
@@ -744,7 +744,7 @@ options:
 decorations:
   icon: champagne-glasses
   className:
-    icon: theme-misc@mission-completed
+    icon: theme@mission-completed
 # ---
 
 ---
@@ -752,9 +752,9 @@ title: Check it out!
 content:
   - All the code is on GitHub!
   - qr: https://github.com/ShogunPanda/postgresql-webhooks
-  - <span class="theme-misc@qr__footer">[https://github.com/ShogunPanda/postgresql-webhooks](https://github.com/ShogunPanda/postgresql-webhooks)</span>
+  - <span class="theme@qr footer">[https://github.com/ShogunPanda/postgresql-webhooks](https://github.com/ShogunPanda/postgresql-webhooks)</span>
 className:
-  qr: theme-misc@qr--big
+  qr: theme@qr big
 # ---
 
 ---

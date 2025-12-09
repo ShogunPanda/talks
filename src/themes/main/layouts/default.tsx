@@ -25,7 +25,12 @@ export default function DefaultLayout({ className, style }: SlideProps): VNode {
   const imageUrl = resolveImage('main', id, image?.url)
 
   return (
-    <SlideWrapper slide={slide} index={index} className={cleanCssClasses(className, rootClassName)} style={style}>
+    <SlideWrapper
+      slide={slide}
+      index={index}
+      className={cleanCssClasses('theme@default', className, rootClassName)}
+      style={style}
+    >
       {title && (
         <h1 className={cleanCssClasses(titleClassName)}>
           <Text text={title} />
@@ -40,21 +45,17 @@ export default function DefaultLayout({ className, style }: SlideProps): VNode {
         }
 
         return (
-          <h4 key={key} className={cleanCssClasses('theme@default__subtitle', subtitleClassName)}>
+          <h4 key={key} className={cleanCssClasses('subtitle', subtitleClassName)}>
             <Text text={c} />
           </h4>
         )
       })}
 
       {image && (
-        <div className={cleanCssClasses('theme@default__image-wrapper')}>
+        <div className={cleanCssClasses('image-wrapper')}>
           <Image
             src={imageUrl}
-            className={cleanCssClasses(
-              'theme@default__image',
-              `theme@default__image--${content?.length ? 'with' : 'no'}-content`,
-              image.className
-            )}
+            className={cleanCssClasses('image', `${content?.length ? 'with' : 'no'}-content`, image.className)}
           />
         </div>
       )}
@@ -63,7 +64,7 @@ export default function DefaultLayout({ className, style }: SlideProps): VNode {
       {!image && !items && grids && <Grids grids={grids} />}
 
       {!image && !items && !grids && code && (
-        <div className={cleanCssClasses('theme@default__code')}>
+        <div className={cleanCssClasses('code')}>
           <Code {...code} />
         </div>
       )}

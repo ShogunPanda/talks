@@ -53,7 +53,7 @@ title: |
 image:
   url: '@talk/io.png'
 className:
-  root: theme@separator--reverse
+  root: reverse
 options:
   background: blue
 decorations:
@@ -93,7 +93,7 @@ title: ...since my wife kept collecting new cats!
 image:
   url: '@talk/kuro-loki.png'
 className:
-  root: theme@separator--reverse
+  root: reverse
 options:
   background: pink
 # ---
@@ -116,13 +116,13 @@ items:
 ---
 layout: separator
 title: Let's start!
-subtitle: Say hello to <span class="theme@separator__callout__highlight talk@pet__name">Bree</span>!
+subtitle: Say hello to <span class="talk@pet name">Bree</span>!
 image:
   url: '@talk/bree-1.png'
 options:
   background: sky
 className:
-  subtitle: theme@separator__callout talk@pet
+  subtitle: theme@separator callout talk@pet
 # ---
 
 ---
@@ -160,7 +160,7 @@ layout: separator
 title: |
   It's hot...
   no wait, it's cold!
-subtitle: Say hello to <span class="theme@separator__callout__highlight talk@pet__name">Cali</span>!
+subtitle: Say hello to <span class="talk@pet name">Cali</span>!
 image:
   url: '@talk/cali.png'
 options:
@@ -168,7 +168,7 @@ options:
 decorations:
   logo: black
 className:
-  subtitle: theme@separator__callout talk@pet
+  subtitle: theme@separator callout talk@pet
 # ---
 
 ---
@@ -206,7 +206,7 @@ layout: separator
 title: |
   Shall I buy a
   power plant?
-subtitle: Say hello to <span class="theme@separator__callout__highlight talk@pet__name">Cleo</span>!
+subtitle: Say hello to <span class="talk@pet name">Cleo</span>!
 image:
   url: '@talk/cleo.png'
 options:
@@ -214,7 +214,7 @@ options:
 decorations:
   logo: black
 className:
-  subtitle: theme@separator__callout talk@pet
+  subtitle: theme@separator callout talk@pet
 # ---
 
 ---
@@ -253,7 +253,7 @@ title: |
   Don't brag,
   you still use
   gas to move!
-subtitle: Say hello to <span class="theme@separator__callout__highlight talk@pet__name">Freya</span>!
+subtitle: Say hello to <span class="talk@pet name">Freya</span>!
 image:
   url: '@talk/freya-1.png'
 options:
@@ -261,7 +261,7 @@ options:
 decorations:
   logo: black
 className:
-  subtitle: theme@separator__callout talk@pet
+  subtitle: theme@separator callout talk@pet
 # ---
 
 ---
@@ -368,7 +368,7 @@ items:
 ---
 layout: separator
 title: Why don't you complicate things?
-subtitle: Say hello to <span class="theme@separator__callout__highlight talk@pet__name">Yuna</span>!
+subtitle: Say hello to <span class="talk@pet name">Yuna</span>!
 image:
   url: '@talk/yuna.png'
 options:
@@ -376,7 +376,7 @@ options:
 decorations:
   logo: black
 className:
-  subtitle: theme@separator__callout talk@pet
+  subtitle: theme@separator callout talk@pet
 # ---
 
 ---
@@ -397,13 +397,13 @@ items:
 ---
 layout: separator
 title: Let's protect them!
-subtitle: Say hello to <span class="theme@separator__callout__highlight talk@pet__name">Kuro</span>!
+subtitle: Say hello to <span class="talk@pet name">Kuro</span>!
 image:
   url: '@talk/kuro.png'
 options:
   background: sky
 className:
-  subtitle: theme@separator__callout talk@pet
+  subtitle: theme@separator callout talk@pet
 # ---
 
 ---
@@ -443,14 +443,14 @@ layout: separator
 title: Did you really believe it was just about cats?
 subtitle: |
   Say hello to
-  <span class="theme@separator__callout__highlight talk@pet__name"><s>Snappy Shine</s></span>
-  <span class="theme@separator__callout__highlight talk@pet__name">Braciolone</span>!
+  <span class="talk@pet name"><s>Snappy Shine</s></span>
+  <span class="talk@pet name">Braciolone</span>!
 image:
   url: '@talk/bracio-1.png'
 options:
   background: amber
 className:
-  subtitle: theme@separator__callout talk@pet
+  subtitle: theme@separator callout talk@pet
 # ---
 
 ---
@@ -468,12 +468,12 @@ options:
 ---
 layout: separator
 title: ... but I could automate his. Why not?
-subtitle: Say hello to <span class="theme@separator__callout__highlight talk@pet__name">Oscar</span>!
+subtitle: Say hello to <span class="talk@pet name">Oscar</span>!
 image:
   url: '@talk/oscar.png'
 className:
-  root: theme@separator--reverse
-  subtitle: theme@separator__callout talk@pet theme@separator__callout talk@pet--reverse
+  root: reverse
+  subtitle: theme@separator callout talk@pet theme@separator callout reverse
 decorations:
   logo: total-white
 options:
@@ -510,7 +510,7 @@ options:
 decorations:
   logo: black
 className:
-  subtitle: theme@separator__callout talk@pet
+  subtitle: theme@separator callout talk@pet
 # ---
 
 ---
@@ -518,13 +518,13 @@ layout: separator
 title: |
   And that's
   my house!
-subtitle: Say hello to <span class="theme@separator__callout__highlight talk@pet__name">Loki</span>!
+subtitle: Say hello to <span class="talk@pet name">Loki</span>!
 image:
   url: '@talk/loki.png'
 options:
   background: green
 className:
-  subtitle: theme@separator__callout talk@pet
+  subtitle: theme@separator callout talk@pet
 # ---
 
 ---
@@ -566,7 +566,7 @@ items:
     - image: '@common/nodejs.png'
       title: Node.js
       className:
-        image: theme-misc@width-auto
+        image: width-auto
     - image: '@common/redis.png'
       title: Redis
     - image: '@common/mosquitto.png'
@@ -590,13 +590,13 @@ items:
 ---
 layout: separator
 title: Gimme the details!
-subtitle: Say hello to <span class="theme@separator__callout__highlight talk@pet__name">Mora</span>!
+subtitle: Say hello to <span class="talk@pet name">Mora</span>!
 image:
   url: '@talk/mora.png'
 options:
   background: pink
 className:
-  subtitle: theme@separator__callout talk@pet
+  subtitle: theme@separator callout talk@pet
 # ---
 
 ---
@@ -627,7 +627,7 @@ decorations:
 className:
   root: talk@game
   contents: talk@game
-  subtitle: talk@game__subtitle
+  subtitle: talk@game subtitle
 # ---
 
 ---
@@ -641,9 +641,9 @@ options:
 decorations:
   logo: black
 className:
-  root: theme@separator--reverse
+  root: reverse
   contents: talk@game
-  subtitle: talk@game__subtitle
+  subtitle: talk@game subtitle
 # ---
 
 ---
@@ -670,7 +670,7 @@ quote:
 layout: end
 title: This was my usual ending slide...
 className:
-  title: talk@end--usual
+  title: talk@end usual
 # ---
 
 ---
@@ -680,6 +680,6 @@ image:
 title: But this talk is special. Thank you!
 subtitle: We miss you both, a very lot! ❤️
 className:
-  title: talk@end--real
-  subtitle: talk@end--real__subtitle
+  title: talk@end real
+  subtitle: talk@end real subtitle
 # ---

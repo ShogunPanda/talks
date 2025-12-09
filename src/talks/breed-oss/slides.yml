@@ -64,7 +64,7 @@ content:
     The [Open Source Initiative](https://opensource.org) maintains a list of such licenses.
   - qr: https://opensource.org
 className:
-  qr: theme-misc@qr--big
+  qr: theme@qr big
 # ---
 
 ---
@@ -118,7 +118,7 @@ title: Ring a bell?
 image:
   url: '@common/bell.png'
 className:
-  root: theme@separator--reverse
+  root: reverse
 options:
   background: blue
 decorations:
@@ -147,11 +147,11 @@ image:
 layout: raw
 content:
   - |
-    <h1 class="theme@fg-black theme-misc@bad__text">BAD!</h1>
-    <h1 class="theme@fg-white theme-misc@bad__text">DON'T!</h1>
+    <h1 class="theme@fg-black text">BAD!</h1>
+    <h1 class="theme@fg-white text">DON'T!</h1>
 className:
-  raw: theme-misc@bad
-  root: theme-misc@bad__root
+  raw: theme@bad
+  root: root
 options:
   background: red
 decorations:
@@ -316,7 +316,7 @@ items:
     - image: '@common/nodejs-logo.png'
       title: Node.js
       className:
-        image: theme-misc@width-auto
+        image: width-auto
     - image: '@common/terraform.png'
       title: Terraform
     - image: '@common/rust-logo.png'
@@ -599,7 +599,7 @@ content:
     Check the [official website](https://www.conventionalcommits.org/en/v1.0.0/)!
   - qr: https://www.conventionalcommits.org/en/v1.0.0/
 className:
-  qr: theme-misc@qr--big
+  qr: theme@qr big
 # ---
 
 ---
@@ -623,7 +623,7 @@ content:
     Check the [official website](https://semver.org/)!
   - qr: https://semver.org/
 className:
-  qr: theme-misc@qr--big
+  qr: theme@qr big
 # ---
 
 ---

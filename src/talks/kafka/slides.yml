@@ -105,7 +105,7 @@ image:
 options:
   background: pink
 className:
-  root: theme@separator--reverse
+  root: reverse
 # ---
 
 ---
@@ -257,9 +257,9 @@ title: Hello *@platformatic/kafka*!
 content:
   - A modern, easy to use and high-performance Kafka client for Node.js
   - qr: https://github.com/platformatic/kafka
-  - <span class="theme-misc@qr__footer">[https://github.com/platformatic/kafka](https://github.com/platformatic/kafka)</span>
+  - <span class="theme@qr footer">[https://github.com/platformatic/kafka](https://github.com/platformatic/kafka)</span>
 className:
-  qr: theme-misc@qr--big
+  qr: theme@qr big
 # ---
 
 ---
@@ -371,7 +371,7 @@ title: Show the code!
 image:
   url: '@common/fry-money.png'
 className:
-  contents: talk@image__contents
+  contents: talk@image contents
 # ---
 
 ---

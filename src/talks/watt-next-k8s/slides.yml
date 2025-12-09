@@ -34,7 +34,7 @@ options:
 title: '2018: "Node.js has threads!"'
 content:
   - image: '@talk/anna.png'
-  - <span class="theme-misc@qr__footer">[https://www.youtube.com/watch?v=-ssCzHoUI7M](https://www.youtube.com/watch?v=-ssCzHoUI7M)</span>
+  - <span class="theme@qr footer">[https://www.youtube.com/watch?v=-ssCzHoUI7M](https://www.youtube.com/watch?v=-ssCzHoUI7M)</span>
 className:
   image: talk@anna
 # ---
@@ -365,6 +365,7 @@ content: Watt dramatically outperforms both traditional approaches.
 image:
   url: '@talk/benchmarks.png'
 
+
 # ---
 ---
 title: Latency Performance
@@ -449,9 +450,9 @@ content:
     Ready to achieve these performance gains in your own applications?
     Follow these steps to deploy Next.js in Kubernetes with Watt.
   - qr: https://docs.platformatic.dev/docs/guides/deployment/nextjs-in-k8s
-  - <span class="theme-misc@qr__footer">[https://docs.platformatic.dev/docs/guides/deployment/nextjs-in-k8s](https://docs.platformatic.dev/docs/guides/deployment/nextjs-in-k8s)</span>
+  - <span class="theme@qr footer">[https://docs.platformatic.dev/docs/guides/deployment/nextjs-in-k8s](https://docs.platformatic.dev/docs/guides/deployment/nextjs-in-k8s)</span>
 className:
-  qr: theme-misc@qr--big
+  qr: theme@qr big
 # ---
 
 ---

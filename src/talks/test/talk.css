@@ -1,10 +1,11 @@
-/* stylelint-disable-next-line selector-class-pattern */
-.talk\@quote__primary-icon {
-  --pi-icon-primary-color: red;
-}
+.talk\@quote {
+  & .primary-icon {
+    --pi-icon-primary-color: red;
+  }
 
-.talk\@quote__secondary-icon {
-  --pi-icon-primary-color: green;
+  & .secondary-icon {
+    --pi-icon-primary-color: green;
+  }
 }
 
 .talk\@grid {

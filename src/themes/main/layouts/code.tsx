@@ -21,7 +21,7 @@ export default function CodeLayout({ className, style }: SlideProps): VNode {
         </h1>
       )}
 
-      <div className={cleanCssClasses('theme@code__wrapper')}>
+      <div className={cleanCssClasses('wrapper')}>
         <Code {...code!} />
       </div>
     </SlideWrapper>

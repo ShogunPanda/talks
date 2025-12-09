@@ -36,28 +36,20 @@ export default function EndLayout({ className, style }: SlideProps): VNode {
       className={cleanCssClasses('theme@end', className, rootClassName)}
       style={{ ...style, backgroundImage: `url(${pandaImageUrl})` }}
     >
-      <main className={cleanCssClasses('theme@end__contents')}>
-        <h1 className={cleanCssClasses('theme@callout theme@end__title', titleClassName)}>
+      <main className={cleanCssClasses('contents')}>
+        <h1 className={cleanCssClasses('theme@callout title', titleClassName)}>
           {title ?? 'Thank you!'}
-          {subtitle && <Text className={cleanCssClasses('theme@end__subtitle', subtitleClassName)} text={subtitle} />}
+          {subtitle && <Text className={cleanCssClasses('subtitle', subtitleClassName)} text={subtitle} />}
         </h1>
       </main>
 
-      <footer className={cleanCssClasses('theme@end__footer')}>
+      <footer className={cleanCssClasses('footer')}>
         {authors?.map((author: Record<string, string>) => (
           <Fragment key={author.name}>
-            <strong
-              className={cleanCssClasses(
-                'theme@end__social',
-                'theme@end__social--highlight',
-                'theme@end__social__author'
-              )}
-            >
-              {author.name}
-            </strong>
+            <strong className={cleanCssClasses('social', 'highlight', 'author', 'multiple')}>{author.name}</strong>
 
             <a
-              className={cleanCssClasses('theme@end__social', 'theme@end__social__twitter')}
+              className={cleanCssClasses('social', 'twitter', 'multiple')}
               href={`https://twitter.com/${author.twitter}`}
             >
               @{author.twitter}
@@ -66,49 +58,24 @@ export default function EndLayout({ className, style }: SlideProps): VNode {
         ))}
         {!authors && (
           <>
-            <strong
-              className={cleanCssClasses(
-                'theme@end__social',
-                'theme@end__social--highlight',
-                'theme@end__social__author'
-              )}
-            >
-              {author.name}
-            </strong>
+            <strong className={cleanCssClasses('social', 'highlight', 'author')}>{author.name}</strong>
 
-            <a
-              className={cleanCssClasses('theme@end__social', 'theme@end__social__twitter')}
-              href={`https://twitter.com/${author.twitter}`}
-            >
+            <a className={cleanCssClasses('social', 'twitter')} href={`https://twitter.com/${author.twitter}`}>
               @{author.twitter}
             </a>
 
-            <span
-              className={cleanCssClasses(
-                'theme@end__social',
-                'theme@end__social--highlight',
-                'theme@end__social__description'
-              )}
-            >
-              {author.description}
-            </span>
+            <span className={cleanCssClasses('social', 'highlight', 'description')}>{author.description}</span>
 
-            <a
-              className={cleanCssClasses('theme@end__social', 'theme@end__social__email')}
-              href={`mailto:${author.email}`}
-            >
+            <a className={cleanCssClasses('social', 'email')} href={`mailto:${author.email}`}>
               {author.email}
             </a>
           </>
         )}
 
-        <aside className={cleanCssClasses('theme@end__logo--wrapper')}>
-          <a href="https://platformatic.dev" className={cleanCssClasses('theme@end__logo')}>
-            <Image
-              src={resolveImage(theme, id, '@theme/logo-white.png')}
-              className={cleanCssClasses('theme@end__logo__image')}
-            />
-            <span className={cleanCssClasses('theme@end__logo__text')}>Platformatic</span>
+        <aside className={cleanCssClasses('wrapper')}>
+          <a href="https://platformatic.dev" className={cleanCssClasses('logo')}>
+            <Image src={resolveImage(theme, id, '@theme/logo-white.png')} className={cleanCssClasses('image')} />
+            <span className={cleanCssClasses('text')}>Platformatic</span>
           </a>
         </aside>
       </footer>

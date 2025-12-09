@@ -7,9 +7,9 @@ title: How can Platformatic help?
 content:
   - Platformatic gives you the complete out-of-the-box primitive to deploy, optimize, autoscale, and secure all your Node.js apps. No rewrites, no overhauls. **Just plug and play.**
   - qr: https://qr.link/uCLwdt
-  - <span class="theme-misc@qr__footer">[https://qr.link/uCLwdt](https://qr.link/uCLwdt)</span>
+  - <span class="theme@qr footer">[https://qr.link/uCLwdt](https://qr.link/uCLwdt)</span>
 className:
-  qr: theme-misc@qr--big
+  qr: theme@qr big
 # ---
 
 ---
@@ -43,7 +43,7 @@ decorations:
 title: I think we should start by looking at numbers.
 content:
   - image: '@talk/downloads.png'
-  - '<span class="theme-misc@block theme-misc@align-center">**30 Billion** downloads per year</span>'
+  - '<span class="theme@block theme@align-center">**30 Billion** downloads per year</span>'
 # ---
 
 ---
@@ -96,9 +96,9 @@ image:
 options:
   background: sky
 className:
-  contents: theme@separator__contents--reverse
-  title: theme@separator__title--reverse
-  subtitle: theme@separator__subtitle--reverse
+  contents: reverse
+  title: reverse
+  subtitle: reverse
 decorations:
   logo: black
 # ---
@@ -182,9 +182,9 @@ icon: download
 options:
   background: green
 className:
-  title: talk@download__title
-  subtitle: talk@download__subtitle
-  icon: talk@download__icon
+  title: talk@download title
+  subtitle: talk@download subtitle
+  icon: talk@download icon
 # ---
 
 ---
@@ -195,10 +195,10 @@ icon: download
 options:
   background: green
 className:
-  root: theme@separator--reverse
-  title: talk@download__title
-  subtitle: talk@download__subtitle
-  icon: talk@download__icon
+  root: reverse
+  title: talk@download title
+  subtitle: talk@download subtitle
+  icon: talk@download icon
 # ---
 
 ---
@@ -224,7 +224,7 @@ image:
 options:
   background: red
 className:
-  root: theme@separator--reverse
+  root: reverse
 # ---
 
 ---
@@ -320,7 +320,7 @@ content:
   - Alpha-Omega is an associated project of the OpenSSF, established in February 2022, funded by Microsoft, Google, and Amazon, and with a *mission to protect society by catalyzing sustainable security improvements* to the most critical open source software projects and ecosystems.
   - '*The project aims to build a world where critical open source projects are secure and where security vulnerabilities are found and fixed quickly.*'
 className:
-  image: talk@image--half
+  image: talk@image half
 # ---
 
 ---
@@ -668,7 +668,7 @@ subtitle: '.mjs is not needed anymore'
 image:
   url: '@common/fry-money.png'
 className:
-  contents: talk@image__contents
+  contents: talk@image contents
 # ---
 
 ---
@@ -694,7 +694,7 @@ title: 'Typescript'
 image:
   url: '@common/fry-money.png'
 className:
-  contents: talk@image__contents
+  contents: talk@image contents
 # ---
 
 ---
@@ -747,7 +747,7 @@ image:
 options:
   background: orange
 className:
-  root: theme@separator--reverse
+  root: reverse
 # ---
 
 ---
@@ -860,7 +860,7 @@ image:
 options:
   background: green
 className:
-  root: theme@separator--reverse
+  root: reverse
 # ---
 
 ---

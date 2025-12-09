@@ -1,37 +1,41 @@
-/* stylelint-disable-next-line selector-class-pattern */
 .talk\@romanization {
   color: var(--freya-color-windi-amber-300);
   font-size: 0.3em;
 }
 
-.talk\@separator__subtitle {
-  color: var(--freya-color-windi-amber-300);
-  font-family: var(--pi-font-bitter);
-  font-size: 0.4em;
-  font-weight: 700;
-}
+.talk\@separator {
+  &.subtitle {
+    color: var(--freya-color-windi-amber-300);
+    font-family: var(--pi-font-bitter);
+    font-size: 0.4em;
+    font-weight: 700;
+  }
 
-.talk\@separator__subtitle--finally {
-  font-family: var(--pi-font-bitter);
-  font-size: 1em;
-  font-weight: 700;
+  &.finally {
+    color: var(--freya-color-white);
+    font-family: var(--pi-font-bitter);
+    font-size: 1em;
+    font-weight: 700;
+  }
 }
 
 .talk\@principle-icon {
   left: auto;
   right: 2--sp;
-  color: var(--freya-color-windi-blue-500);
+  color: var(--freya-color-windi-orange-700);
+
+  &.light {
+    color: var(--freya-color-windi-gray-300);
+  }
 }
 
-.talk\@principle-icon--light {
-  color: var(--freya-color-windi-gray-300);
-}
+.talk\@chum-kiu {
+  &.title {
+    font-size: 1.5em;
+  }
 
-.talk\@chum-kiu__title {
-  font-size: 1.5em;
-}
-
-.talk\@chum-kiu__subtitle {
-  color: var(--freya-color-windi-amber-300);
-  font-size: 0.7em;
+  &.subtitle {
+    color: var(--freya-color-windi-amber-300);
+    font-size: 0.7em;
+  }
 }

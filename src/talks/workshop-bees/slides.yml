@@ -11,9 +11,9 @@ title: What are we talking about?
 content:
   - Let's start with a brief introduction.
   - qr: https://talks.paoloinsogna.dev/bees
-  - <span class="theme-misc@qr__footer">[https://talks.paoloinsogna.dev/bees](https://talks.paoloinsogna.dev/bees)</span>
+  - <span class="theme@qr footer">[https://talks.paoloinsogna.dev/bees](https://talks.paoloinsogna.dev/bees)</span>
 className:
-  qr: theme-misc@qr--big
+  qr: theme@qr big
 # ---
 
 ---
@@ -189,7 +189,7 @@ code:
     )
   numbers: true
   className:
-    root: theme-misc@code--large
+    root: theme@code large
 # ---
 
 ---

@@ -34,7 +34,7 @@ layout: separator
 title: Yes, of course!
 image:
   url: '@common/troll-white.svg'
-  className: theme-misc@troll
+  className: troll
 options:
   background: pink
 decorations:
@@ -579,9 +579,9 @@ title: Check it out!
 content:
   - All the code shown today is online on GitHub.
   - qr: https://github.com/ShogunPanda/plt-qr-rendering
-  - <span class="theme-misc@qr__footer">[https://github.com/ShogunPanda/plt-qr-rendering](https://github.com/ShogunPanda/plt-qr-rendering)</span>
+  - <span class="theme@qr footer">[https://github.com/ShogunPanda/plt-qr-rendering](https://github.com/ShogunPanda/plt-qr-rendering)</span>
 className:
-  qr: theme-misc@qr--big
+  qr: theme@qr big
 # ---
 
 ---

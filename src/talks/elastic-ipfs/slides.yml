@@ -129,7 +129,7 @@ title: Hi, I'm Elastic IPFS!
 content:
   - The architecture is divided into three independent and stateless subsystems.
   - New nodes can be added or removed at any time, global replication can be easily achieved.
-  - <a href="https://github.com/elastic-ipfs/elastic-ipfs" class="talk@link--small">https://github.com/elastic-ipfs/elastic-ipfs</a>
+  - <a href="https://github.com/elastic-ipfs/elastic-ipfs" class="talk@link">https://github.com/elastic-ipfs/elastic-ipfs</a>
 image:
   url: '@talk/eipfs-architecture-complete.png'
 # ---

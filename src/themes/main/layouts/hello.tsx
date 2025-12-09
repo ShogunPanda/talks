@@ -31,32 +31,32 @@ export default function HelloLayout({ className, style }: SlideProps): VNode {
       style={style}
       defaultLogoColor="white"
     >
-      <h1 className={cleanCssClasses('theme@hello__title')}>
-        Hello, I'm <span className={cleanCssClasses('theme@hello__title__name')}>{name}</span>!
+      <h1 className={cleanCssClasses('title')}>
+        Hello, I'm <span className={cleanCssClasses('name')}>{name}</span>!
       </h1>
 
-      <aside className={cleanCssClasses('theme@hello__location-wrapper')}>
-        <Image src={locationImage} className={cleanCssClasses('theme@hello__location')} />
+      <aside className={cleanCssClasses('location-wrapper')}>
+        <Image src={locationImage} className={cleanCssClasses('location')} />
       </aside>
 
-      <main className={cleanCssClasses('theme@hello__contents')}>
-        <section className={cleanCssClasses('theme@hello__description')}>
-          <Image src={avatarImage} className={cleanCssClasses('theme@hello__logo')} />
+      <main className={cleanCssClasses('contents')}>
+        <section className={cleanCssClasses('description')}>
+          <Image src={avatarImage} className={cleanCssClasses('logo')} />
 
           <Item
             className={{
-              root: cleanCssClasses('theme@hello__roles-wrapper', 'theme@hello__roles__item'),
-              text: cleanCssClasses('theme@hello__roles__text')
+              root: cleanCssClasses('roles-wrapper', 'item'),
+              text: cleanCssClasses('text')
             }}
           >
-            <strong className={cleanCssClasses('theme@hello__roles')}>
+            <strong className={cleanCssClasses('roles')}>
               {author.roles.map(({ what, where, url }: Record<string, string>, index: number) => {
                 return (
                   <Fragment key={`role:${index}`}>
-                    <a href={url} className={cleanCssClasses('theme@hello__role__company')}>
+                    <a href={url} className={cleanCssClasses('role company')}>
                       {where}
                     </a>
-                    <span className={cleanCssClasses('theme@hello__role__description')}>{what}</span>
+                    <span className={cleanCssClasses('role description')}>{what}</span>
                     <br />
                   </Fragment>
                 )
@@ -68,13 +68,13 @@ export default function HelloLayout({ className, style }: SlideProps): VNode {
         <Item
           qr={author.website}
           className={{
-            root: cleanCssClasses('theme@hello__social', 'theme@hello__social__website'),
-            qr: cleanCssClasses('theme@hello__social__qr'),
-            contents: cleanCssClasses('theme@hello__social__text')
+            root: cleanCssClasses('social', 'website'),
+            qr: cleanCssClasses('qr'),
+            contents: cleanCssClasses('text')
           }}
           horizontal={true}
         >
-          <a href={author.website} className={cleanCssClasses('theme@hello__social__link')}>
+          <a href={author.website} className={cleanCssClasses('link')}>
             <Text text={author.website.replace('https://', '')} />
           </a>
         </Item>
@@ -82,13 +82,13 @@ export default function HelloLayout({ className, style }: SlideProps): VNode {
         <Item
           icon="github"
           className={{
-            root: cleanCssClasses('theme@hello__social', 'theme@hello__social__github'),
-            icon: cleanCssClasses('theme@hello__social__icon'),
-            contents: cleanCssClasses('theme@hello__social__text')
+            root: cleanCssClasses('social', 'github'),
+            icon: cleanCssClasses('icon'),
+            contents: cleanCssClasses('text')
           }}
           horizontal={true}
         >
-          <a href={`https://github.com/${author.github}`} className={cleanCssClasses('theme@hello__social__link')}>
+          <a href={`https://github.com/${author.github}`} className={cleanCssClasses('link')}>
             <Text text={author.github} />
           </a>
         </Item>
@@ -96,13 +96,13 @@ export default function HelloLayout({ className, style }: SlideProps): VNode {
         <Item
           icon="twitter"
           className={{
-            root: cleanCssClasses('theme@hello__social', 'theme@hello__social__twitter'),
-            icon: cleanCssClasses('theme@hello__social__icon'),
-            contents: cleanCssClasses('theme@hello__social__text')
+            root: cleanCssClasses('social', 'twitter'),
+            icon: cleanCssClasses('icon'),
+            contents: cleanCssClasses('text')
           }}
           horizontal={true}
         >
-          <a href={`https://twitter.com/${author.twitter}`} className={cleanCssClasses('theme@hello__social__link')}>
+          <a href={`https://twitter.com/${author.twitter}`} className={cleanCssClasses('link')}>
             <Text text={author.twitter} />
           </a>
         </Item>
@@ -110,16 +110,13 @@ export default function HelloLayout({ className, style }: SlideProps): VNode {
         <Item
           icon="linkedin"
           className={{
-            root: cleanCssClasses('theme@hello__social', 'theme@hello__social__linkedin'),
-            icon: cleanCssClasses('theme@hello__social__icon'),
-            contents: cleanCssClasses('theme@hello__social__text')
+            root: cleanCssClasses('social', 'linkedin'),
+            icon: cleanCssClasses('icon'),
+            contents: cleanCssClasses('text')
           }}
           horizontal={true}
         >
-          <a
-            href={`https://linkedin.com/in/${author.linkedin}`}
-            className={cleanCssClasses('theme@hello__social__link')}
-          >
+          <a href={`https://linkedin.com/in/${author.linkedin}`} className={cleanCssClasses('link')}>
             <Text text={author.linkedin} />
           </a>
         </Item>

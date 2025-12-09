@@ -44,7 +44,7 @@ title: …but it<br/> should not!
 image:
   url: '@common/easy.png'
 className:
-  root: theme@separator--reverse
+  root: reverse
 options:
   background: red
 decorations:
@@ -220,16 +220,16 @@ items:
   entries:
     - image: '@talk/babel-pipe-from.png'
       className:
-        root: talk@transform__root
-        image: talk@transform__image
+        root: talk@transform root
+        image: talk@transform image
     - image: '@talk/babel-transform.png'
       className:
-        root: talk@transform__root
-        image: talk@transform__arrow
+        root: talk@transform root
+        image: talk@transform arrow
     - image: '@talk/babel-pipe-to.png'
       className:
-        root: talk@transform__root
-        image: talk@transform__image
+        root: talk@transform root
+        image: talk@transform image
   className: talk@transform
   horizontal: true
   spacer: false
@@ -247,16 +247,16 @@ items:
   entries:
     - image: '@talk/babel-ts-from.png'
       className:
-        root: talk@transform__root
-        image: talk@transform__image
+        root: talk@transform root
+        image: talk@transform image
     - image: '@talk/babel-transform.png'
       className:
-        root: talk@transform__root
-        image: talk@transform__arrow
+        root: talk@transform root
+        image: talk@transform arrow
     - image: '@talk/babel-ts-to.png'
       className:
-        root: talk@transform__root
-        image: talk@transform__image
+        root: talk@transform root
+        image: talk@transform image
   className: talk@transform
   horizontal: true
   spacer: false
@@ -281,17 +281,17 @@ items:
   entries:
     - image: '@talk/clojurescript-from.png'
       className:
-        root: talk@generation--vertical__root
-        image: talk@generation--vertical__image
+        root: talk@generation vertical root
+        image: talk@generation vertical image
     - image: '@common/arrow-down.png'
       className:
-        root: talk@generation--vertical__root
-        image: talk@generation--vertical__arrow
+        root: talk@generation vertical root
+        image: talk@generation vertical arrow
     - image: '@talk/clojurescript-to.png'
       className:
-        root: talk@generation--vertical__root
-        image: talk@generation--vertical__image
-  className: talk@generation--vertical
+        root: talk@generation vertical root
+        image: talk@generation vertical image
+  className: talk@generation vertical
   spacer: false
   gap: false
 # ---
@@ -302,17 +302,17 @@ items:
   entries:
     - image: '@talk/reasonml-from.png'
       className:
-        root: talk@generation--horizontal__root
-        image: talk@generation--horizontal__image
+        root: talk@generation horizontal root
+        image: talk@generation horizontal image
     - image: '@common/arrow-right.png'
       className:
-        root: talk@generation--horizontal__root
-        image: talk@generation--horizontal__arrow
+        root: talk@generation horizontal root
+        image: talk@generation horizontal arrow
     - image: '@talk/reasonml-to.png'
       className:
-        root: talk@generation--horizontal__root
-        image: talk@generation--horizontal__image
-  className: talk@generation--horizontal
+        root: talk@generation horizontal root
+        image: talk@generation horizontal image
+  className: talk@generation horizontal
   horizontal: true
   spacer: false
   gap: false
@@ -425,16 +425,16 @@ items:
     - image: '@talk/parsing-1-1.png'
       title: Input
       className:
-        image: talk@parsing__image
+        image: talk@parsing image
     - image: '@talk/parsing-1-2.png'
       title: Output
       className:
-        image: talk@parsing__image
+        image: talk@parsing image
   horizontal: true
 decorations:
   number: 1
   className:
-    number: talk@parsing__step
+    number: talk@parsing step
 # ---
 
 ---
@@ -447,17 +447,17 @@ items:
       title: Input
       text: (user code)
       className:
-        image: talk@parsing__image
+        image: talk@parsing image
     - image: '@talk/parsing-2-2.png'
       title: Parse Tree
       text: (a.k.a. Concrete Syntax Tree)
       className:
-        image: talk@parsing__image
+        image: talk@parsing image
   horizontal: true
 decorations:
   number: 2
   className:
-    number: talk@parsing__step
+    number: talk@parsing step
 # ---
 
 ---
@@ -469,7 +469,7 @@ image:
 decorations:
   number: 3
   className:
-    number: talk@parsing__step
+    number: talk@parsing step
 # ---
 
 ---
@@ -481,7 +481,7 @@ image:
 decorations:
   number: 4
   className:
-    number: talk@parsing__step
+    number: talk@parsing step
 # ---
 
 ---
@@ -509,11 +509,11 @@ items:
     - image: '@talk/codegen-input.png'
       title: Input
       className:
-        image: talk@parsing__image
+        image: talk@parsing image
     - image: '@talk/codegen-output.png'
       title: Output
       className:
-        image: talk@parsing__image
+        image: talk@parsing image
   horizontal: true
 # ---
 
@@ -524,7 +524,7 @@ items:
     - image: '@common/babel.png'
       title: Babel
       className:
-        image: theme-misc@width-auto
+        image: width-auto
     - image: '@common/prettier.png'
       title: Prettier
     - image: '@common/eslint.png'
@@ -542,11 +542,11 @@ items:
     - image: '@talk/jscodeshift-from.png'
       title: Input
       className:
-        image: talk@problem__image
+        image: talk@problem image
     - image: '@talk/jscodeshift-to.png'
       title: Desired output
       className:
-        image: talk@problem__image
+        image: talk@problem image
   horizontal: true
 # ---
 
@@ -621,7 +621,7 @@ grids:
       - image: '@common/swc.png'
         title: SWC
         className:
-          image: theme-misc@width-auto
+          image: width-auto
       - image: '@common/vite.png'
         title: Vite
       - image: '@common/snowpack.png'
@@ -659,7 +659,7 @@ layout: separator
 title: SWC
 image:
   url: '@common/swc.png'
-  className: talk@logo--auto
+  className: talk@logo auto
 options:
   background: sky
 # ---
@@ -673,11 +673,11 @@ items:
     - image: '@talk/esbuild-vs-swc-es2019.png'
       title: ES2019
       className:
-        image: talk@parsing__image
+        image: talk@parsing image
     - image: '@talk/esbuild-vs-swc-es2020.png'
       title: ES2020
       className:
-        image: talk@parsing__image
+        image: talk@parsing image
   horizontal: true
 # ---
 
@@ -732,16 +732,16 @@ items:
   entries:
     - image: '@common/esbuild.png'
       className:
-        root: talk@vite__esbuild__root
-        image: talk@vite__esbuild__image
+        root: esbuild root
+        image: esbuild image
     - image: '@common/vite.png'
       className:
-        root: talk@vite__vite__root
-        image: talk@vite__vite__image
+        root: vite root
+        image: vite image
     - image: '@common/rollup.png'
       className:
-        root: talk@vite__rollup__root
-        image: talk@vite__rollup__image
+        root: rollup root
+        image: rollup image
   className: talk@vite
   horizontal: true
   spacer: false
@@ -753,7 +753,7 @@ layout: separator
 title: Snowpack
 image:
   url: '@common/snowpack.png'
-  className: talk@logo--auto
+  className: talk@logo auto
 options:
   background: sky
 # ---

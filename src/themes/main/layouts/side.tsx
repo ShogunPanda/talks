@@ -28,10 +28,10 @@ export default function SideLayout({ className, style }: SlideProps): VNode {
     <SlideWrapper
       slide={slide}
       index={index}
-      className={cleanCssClasses('theme@side', highlight && 'theme@side--with-highlight', className, rootClassName)}
+      className={cleanCssClasses('theme@side', highlight && 'with-highlight', className, rootClassName)}
       style={style}
     >
-      <div className={cleanCssClasses('theme@side__primary')}>
+      <div className={cleanCssClasses('primary')}>
         {title && (
           <h1>
             <Text text={title} />
@@ -46,7 +46,7 @@ export default function SideLayout({ className, style }: SlideProps): VNode {
           }
 
           return (
-            <h4 key={key} className={cleanCssClasses('theme@side__subtitle')}>
+            <h4 key={key} className={cleanCssClasses('subtitle')}>
               <Text text={c} />
             </h4>
           )
@@ -55,16 +55,10 @@ export default function SideLayout({ className, style }: SlideProps): VNode {
         {items && <Items items={items} />}
       </div>
 
-      <div
-        className={cleanCssClasses(
-          'theme@side__secondary',
-          highlight && 'theme@side__secondary--with-highlight',
-          highlight?.className
-        )}
-      >
-        {image && <Image src={imageUrl} className={cleanCssClasses('theme@side__image', image.className)} />}
+      <div className={cleanCssClasses('secondary', highlight && 'with-highlight', highlight?.className)}>
+        {image && <Image src={imageUrl} className={cleanCssClasses('image', image.className)} />}
         {!image && highlight && (
-          <h4 className={cleanCssClasses('theme@side__highlight')}>
+          <h4 className={cleanCssClasses('highlight')}>
             <Text text={highlight.text} />
           </h4>
         )}
