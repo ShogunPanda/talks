@@ -1,14 +1,15 @@
-# TODO@PI: Once presented in London, rename this
 ---
 config: common.config
 document:
-  title: 'Node.js: More threads than you think'
+  title: 'Achieving 93% Faster Next.js in (your) Kubernetes with Watt'
   titleFormatted: |
-    Node.js: More threads 
-    than you think
+    Achieving 93% Faster Next.js 
+    in (your) Kubernetes with Watt
   abstract: |
-    Node.js was announced in 2009 as a single-threaded JavaScript runtime. In 2018, it became multi-threaded, and no one noticed.
+    Here's something most Node.js developers don't realize: PM2's cluster module silently imposes a ~30% performance tax through hidden IPC coordination overhead. Every request pays this cost for master-worker communication, and most teams accept it as the price of scaling Node.js applications.
 
-    What can worker_threads do? What are they useful for? What's the best way of communicating between two threads?
+    With Watt, we eliminated this overhead using SO_REUSEPORT, achieving 93% faster median latency by letting the Linux kernel handle load distribution directly—no master processes, no IPC, zero coordination cost.
+
+    In this talk, we'll walk through our production benchmarks on AWS EKS and show how Watt delivers not just raw performance, but also multithreaded SSR, distributed caching, full observability with Prometheus, and seamless horizontal scaling—all while dramatically reducing your infrastructure costs.
   author: common.author
   company: common.company

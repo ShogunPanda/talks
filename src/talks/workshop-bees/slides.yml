@@ -29,6 +29,7 @@ items:
   horizontal: true
 # ---
 
+# ---
 ---
 layout: separator
 title: |
@@ -52,7 +53,8 @@ code:
     {
       "name": "direct",
       "version": "1.0.0",
-      "main": "index.mjs",
+      "main": "index.js",
+      "type": "module",
       "scripts": {},
       "dependencies": {}
     }
@@ -87,109 +89,63 @@ code:
 # ---
 
 ---
+layout: separator
 title: 'Task 1: Create a Canonical Request'
-code:
-  language: javascript
-  content: |
-    // Since the S3 Key might contain a URL escaped key, we have to clean it up
-    const url = new URL(rawUrl)
-    const path = encodeURIComponent(url.pathname).replaceAll('%2F', '/')
-
-    // Prepare the components. Since we don't have a querystring, we insert an empty string.
-    const canonicalRequestComponents = [method, path, ""]
-
-    // Sort headers
-    const sortedHeaders = Object.entries(headers).sort((a, b) => a[0].localeCompare(b[0]))
-    const signedHeadersComponents = []
-
-    // Insert each header in CanonicalRequest as key-value and in the SignedHeaders list.
-    for (const header of sortedHeaders) {
-      canonicalRequestComponents.push(`${header[0]}:${header[1]}`)
-      signedHeadersComponents.push(header[0])
-    }
-
-    // Finalize the CanonicalRequest creation
-    // Note that there is an empty string before the signedHeaders
-    const signedHeaders = signedHeadersComponents.join(';')
-    canonicalRequestComponents.push('', signedHeadersComponents.join(';'), payloadHash as string)
-    const canonicalRequest = canonicalRequestComponents.join('\n')
-  numbers: true
+subtitle: Enjoy! 😈
+image:
+  url: '@common/code.png'
+options:
+  background: red
 # ---
 
 ---
+layout: separator
 title: 'Task 2: Create a String to Sign'
-code:
-  language: javascript
-  content: |
-    const timestamp = headers['x-amz-date']
-    const date = timestamp.slice(0, 8)
-    const scope = `${date}/${region}/s3/aws4_request`
-
-    const stringToSign = ['AWS4-HMAC-SHA256', timestamp, scope, sha256(canonicalRequest)].join('\n')
-  numbers: true
+subtitle: Enjoy! 😂
+image:
+  url: '@common/algorithm.png'
+options:
+  background: green
 # ---
 
 ---
+layout: separator
 title: 'Task 3: Calculate Signature'
-code:
-  language: javascript
-  content: |
-    const dateKey = hmacSha256(`AWS4${accessKey}`, date)
-    const dateRegionKey = hmacSha256(dateKey, region)
-    const dateRegionServiceKey = hmacSha256(dateRegionKey, 's3')
-
-    const signatureHeader = `AWS4-HMAC-SHA256 Credential=${keyId}/${date}/${region}/s3/aws4_request`
-    const signingKey = hmacSha256(dateRegionServiceKey, 'aws4_request')
-    const signature = hmacSha256(signingKey, stringToSign).toString('hex')
-
-    return [signatureHeader, `SignedHeaders=${signedHeaders}`, `Signature=${signature}`].join(',')
-  numbers: true
+subtitle: Enjoy! 😶
+image:
+  url: '@common/hacking.png'
+options:
+  background: amber
 # ---
 
 ---
-title: 'REST API call'
-code:
-  language: javascript
-  content: |
-    function uploadFile(keyId, accessKey, region, bucket, key, contents) {
-      const host = `${bucket}.s3.${region}.amazonaws.com`
-      const payloadHash = 'UNSIGNED-PAYLOAD'
-      const headers = {
-        'x-amz-content-sha256': payloadHash,
-        'x-amz-date': new Date()
-          .toISOString()
-          .replace(/\.\d{0,3}/, '')
-          .replaceAll(/[:-]/g, ''),
-        host
-      }
-
-      const url = `https://${host}/${key}`
-      headers.authorization = signS3Upload(
-        keyId, accessKey, region,
-        'PUT', url, headers, payloadHash
-      )
-
-      return fetch(url, { method: 'PUT', headers, body: contents })
-    }
-  numbers: true
+layout: separator
+title: 'Task 4: REST API call'
+subtitle: Enjoy! 😎
+image:
+  url: '@common/server.png'
+options:
+  background: orange
 # ---
 
 ---
-title: 'Main function'
-code:
-  language: javascript
-  content: |
-    await uploadFile(
-      process.env.AWS_ACCESS_KEY_ID,
-      process.env.AWS_SECRET_ACCESS_KEY,
-      process.env.AWS_DEFAULT_REGION,
-      process.env.BUCKET,
-      process.env.KEY,
-      await readFile(process.env.FILE, 'utf-8')
-    )
-  numbers: true
-  className:
-    root: theme@code large
+layout: separator
+title: 'Task 5: Main function'
+subtitle: Enjoy! 🍺
+image:
+  url: '@common/completed.png'
+options:
+  background: blue
+# ---
+
+---
+title: Take home
+content:
+  - 'You can find all the code on GitHub:'
+  - qr: https://github.com/ShogunPanda/workshops-bees
+  - <span class="theme@qr footer">[https://github.com/ShogunPanda/workshops-bees](https://github.com/ShogunPanda/workshops-bees)</span>
+className:
+  qr: theme@qr big
 # ---
 
 ---
