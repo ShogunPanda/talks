@@ -104,7 +104,7 @@ When referencing icons, use **Font Awesome** (free tier only):
 ### Allowed Operations
 
 - **Read**: You may read any file in this repository
-- **Write**: You may **only** write and modify `slides.yml` files
+- **Write**: You may **only** write and modify `slides.yml` and `info.yml` files
 - **Restrictions**: No other write operations are permitted
 
 ### Common Tasks
@@ -131,3 +131,17 @@ Freya is the underlying slide generation system:
 3. **Layouts**: Verify layout availability in the theme before use
 4. **Content**: Use Markdown formatting within content fields
 5. **Separation**: Keep presentation logic in layouts, content in YAML
+
+## Image Generation For Slides
+
+- Generate images externally, preferably with ChatGPT standalone image generation.
+- Keep generated images as supporting visuals, not as slide content replacements.
+- Prefer 6-10 key images per talk, not one image per slide.
+- Use a consistent visual language across the whole talk.
+- Export images as PNG, landscape 16:9, with enough negative space for slide titles.
+- Avoid copyrighted Doom assets, logos, screenshots, monsters, and UI. Use "retro shooter inspired", "terminal game", or "pixel-art demon-like shapes" instead.
+- For separator slides, prefer strong simple compositions with one clear visual metaphor.
+- For technical slides, prefer diagram-like illustrations over decorative art.
+- Keep images readable at presentation distance: high contrast, simple shapes, no tiny text.
+- Store generated images under the talk assets folder and reference them from `slides.yml`.
+- Do not add image generation tooling to the repository.

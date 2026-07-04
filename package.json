@@ -36,12 +36,17 @@
   "dependencies": {
     "@fortawesome/free-brands-svg-icons": "^7.1.0",
     "@fortawesome/free-solid-svg-icons": "^7.1.0",
-    "@perseveranza-pets/freya": "^0.75.0"
+    "@perseveranza-pets/freya": "^0.76.0",
+    "@perseveranza-pets/dante": "^0.62.2",
+    "preact": "link:../../../Public/freya/node_modules/preact",
+    "preact-render-to-string": "link:../../../Public/freya/node_modules/preact-render-to-string",
+    "http-errors-enhanced": "link:../../../Public/dante/node_modules/http-errors-enhanced"
   },
   "devDependencies": {
-    "@cowtech-private/foundation": "^4.2.0",
+    "@perseveranza/terreno": "^7.0.1",
     "@cowtech/eslint-config": "^11.0.0",
-    "@cowtech/stylelint-config": "^2.0.1",
+    "@cowtech/stylelint-config": "^2.0.5",
+    "@cowtech/typescript-config": "^0.2.5",
     "@types/node": "^24.10.1",
     "commander": "^14.0.2",
     "eslint": "^9.39.1",

@@ -1,0 +1,9 @@
+allowBuilds:
+  esbuild: true
+  unrs-resolver: true
+overrides:
+  '@perseveranza-pets/freya': link:../../../Public/freya
+  '@perseveranza-pets/dante': link:../../../Public/dante
+  preact: link:../../../Public/freya/node_modules/preact
+  preact-render-to-string: link:../../../Public/freya/node_modules/preact-render-to-string
+  http-errors-enhanced: link:../../../Public/dante/http-errors-enhanced

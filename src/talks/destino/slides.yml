@@ -1,0 +1,635 @@
+---
+layout: cover
+# ---
+
+---
+layout: separator
+title: STFU!
+image:
+  url: '@talk/stfu.png'
+options:
+  background: red
+# ---
+
+---
+layout: hello
+# ---
+
+---
+layout: separator
+title: |
+  This started
+  as a joke...
+image:
+  url: '@talk/joke.png'
+options:
+  background: pink
+# ---
+
+---
+layout: separator
+title: |
+  ... and now we have
+  Doom in the terminal!
+image:
+  url: '@talk/screenshot.png'
+options:
+  background: blue
+className:
+  root: reverse
+# ---
+
+---
+title: The joke was simple
+items:
+  entries:
+    - index: 1
+      title: Doom can run everywhere.
+      text: Like a pregnancy test.
+    - index: 2
+      title: Node.js can now run native code.
+      text: Surprisingly, this was missing.
+    - index: 3
+      title: Why not run Doom in a terminal?
+      text: I mean, why not?
+# ---
+
+---
+layout: separator
+title: |
+  The <span class="theme@fg-black">terminal</span>
+  is the <span class="theme@fg-black">new</span> UI.
+subtitle: Thanks to AI. 🤷
+image:
+  url: '@talk/opentui.png'
+options:
+  background: orange
+# ---
+
+---
+title: OpenTUI
+content:
+  - A native terminal UI core written in Zig with TypeScript bindings. It powers OpenCode.
+  - qr: https://github.com/anomalyco/opentui
+  - <span class="theme@qr footer">[https://github.com/anomalyco/opentui](https://github.com/anomalyco/opentui)</span>
+className:
+  qr: theme@qr big
+# ---
+
+---
+title: They really push the terminal hard
+items:
+  entries:
+    - icon: layer-group
+      title: Terminal cells as pixels
+      text: It treats the terminal as a real rendering surface.
+    - icon: gauge-high
+      title: Refresh rates matter
+      text: Dynamic interfaces need redraws that feel immediate.
+    - icon: code
+      title: OpenCode proves the edge
+      text: Complex tools can live where terminals usually break.
+# ---
+
+---
+layout: separator
+title: |
+  But this is not
+  only about Doom.
+image:
+  url: '@talk/bradipi.png'
+options:
+  background: blue
+# ---
+
+---
+title: What is FFI?
+items:
+  entries:
+    - icon: handshake
+      title: Foreign Function Interface
+      text: A bridge that lets code call functions from another runtime.
+    - icon: code
+      title: C as the common ground
+      text: Most native libraries expose symbols using the C calling convention.
+    - icon: language
+      title: Languages can talk
+      text: If both sides understand the ABI, JavaScript can call native code.
+# ---
+
+---
+layout: separator
+title: |
+  Before FFI,
+  we had choices.
+image:
+  url: '@talk/choice.png'
+options:
+  background: amber
+# ---
+
+---
+title: The "choice"
+items:
+  entries:
+    - icon: puzzle-piece
+      title: Native addons
+      text: |
+        Powerful, but abstractions like NaN 
+        used to break with Worker Threads.
+    - icon: code
+      title: Not direct enough
+      text: |
+        You still had to write a lot
+        of glue code around the library.
+  horizontal: true
+# ---
+
+---
+layout: separator
+title: |
+  Say hello
+  to `node:ffi`.
+image:
+  url: '@talk/hello-ffi.png'
+options:
+  background: green
+# ---
+
+---
+title: '`node:ffi` changes the shape.'
+content: Load a shared library, describe the ABI, and call native symbols directly from JavaScript.
+code:
+  language: javascript
+  content: |
+    import { dlopen } from 'node:ffi'
+
+    const { functions } = dlopen(libPath, {
+      tick: { arguments: [], return: 'void' },
+      send_key: { arguments: ['uint8', 'int32'], return: 'void' },
+      get_framebuffer: { arguments: [], return: 'pointer' }
+    })
+
+
+# ---
+
+---
+title: The boundary is explicit
+items:
+  entries:
+    - icon: signature
+      title: Symbols are named
+      text: JavaScript points at the native entry points directly.
+    - icon: ruler-combined
+      title: Types are declared
+      text: Arguments and return values become part of the call site.
+    - icon: eye
+      title: Risk is visible
+      text: The dangerous part is not hidden inside generated glue.
+# ---
+
+---
+layout: separator
+title: FFI is <span class="theme@fg-black">very</span> powerful.
+
+image:
+  url: '@talk/ffi-power.png'
+options:
+  background: red
+decorations:
+  logo: white
+# ---
+
+---
+layout: separator
+title: What can go wrong?
+image:
+  url: '@talk/coder.png'
+options:
+  background: amber
+decorations:
+  logo: white
+className:
+  root: reverse
+# ---
+
+---
+title: Pretty much everything
+content: And this is because *you* are in full control.
+items:
+  entries:
+    - icon: ruler-horizontal
+      title: Signature mismatch
+      text: One wrong type can shift registers, stack slots, and return values.
+    - icon: link-slash
+      title: Unsafe memory access
+      text: A bad pointer can read freed memory or overwrite valid data.
+  horizontal: true
+# ---
+
+---
+layout: separator
+title: |
+  OK, but what
+  about Doom?
+image:
+  url: '@talk/sad.png'
+options:
+  background: amber
+# ---
+
+---
+layout: separator
+title: Say hi to <span class="theme@fg-black">Destino</span>.
+image:
+  url: '@talk/destino.png'
+options:
+  background: green
+# ---
+
+---
+title: The Destino stack
+items:
+  entries:
+    - index: 1
+      title: Node.js (https://github.com/nodejs/node)
+      text: The best JavaScript runtime. *Ever.* 😈
+    - index: 1
+      title: doomgeneric (https://github.com/ozkl/doomgeneric)
+      text: The native Doom engine provides the game core.
+    - index: 2
+      title: OpenTUI (https://github.com/anomalyco/opentui)
+      text: The terminal renderer turns frames into cells.
+    - index: 3
+      title: SDL_mixer (https://github.com/libsdl-org/SDL_mixer)
+      text: The native audio path keeps sound outside JavaScript.
+# ---
+
+---
+title: How doomgeneric works
+items:
+  entries:
+    - icon: microchip
+      title: Doom stays portable
+      text: The engine calls a tiny platform layer for video, input, timing, and shutdown.
+    - icon: plug
+      title: The platform fills the gaps
+      text: Destino implements that layer as a native library that JavaScript can drive.
+  horizontal: true
+# ---
+
+---
+title: Everyone owns a piece
+items:
+  entries:
+    - icon: rotate
+      title: Node.js owns the loop
+      text: JavaScript coordinates ticks, input, and cleanup.
+    - icon: gear
+      title: Doom owns the engine
+      text: The game logic remains native and purpose-built.
+    - icon: volume-high
+      title: SDL owns the audio
+      text: Sound stays where low-latency mixing already works.
+  horizontal: true
+# ---
+
+---
+layout: separator
+title: |
+  Keep the native
+  surface tiny.
+image:
+  url: '@talk/attack.png'
+options:
+  background: sky
+# ---
+
+---
+title: The C platform layer
+items:
+  entries:
+    - icon: power-off
+      title: Initialize and cleanup
+      text: Start Doom with assets and release native resources.
+    - icon: forward-step
+      title: Advance one tick
+      text: Let JavaScript drive the engine at Doom speed.
+    - icon: image
+      title: Expose frame state
+      text: Return the framebuffer and signal frame readiness.
+# ---
+
+---
+title: The 35 Hz loop
+code:
+  language: javascript
+  content: |
+    runtime.timer = setInterval(() => {
+      if (runtime.shuttingDown) {
+        return
+      }
+
+      runtime.engine.tick()
+
+      if (runtime.engine.quitRequested()) {
+        boundShutdown()
+        return
+      }
+
+      if (!runtime.engine.frameReady()) {
+        return
+      }
+
+      runtime.renderer.render()
+
+      if (!runtime.audioReleased) {
+        runtime.audioReleased = true
+        runtime.engine.releaseAudio()
+      }
+
+      runtime.engine.clearFrameReady()
+    }, 1000 / 35)
+  className:
+    root: theme@code small
+# ---
+
+---
+layout: separator
+title: |
+  Now render Doom
+  in a terminal.
+image:
+  url: '@talk/title.png'
+options:
+  background: orange
+decorations:
+  logo: white
+# ---
+
+---
+title: Framebuffer to terminal
+items:
+  entries:
+    - icon: palette
+      title: Doom outputs BGRA
+      text: The engine exposes pixels through native memory.
+    - icon: database
+      title: Node.js sees a Buffer
+      text: The renderer borrows the native memory safely.
+    - icon: expand
+      title: OpenTUI draws cells
+      text: Pixels are scaled into terminal-friendly output.
+# ---
+
+---
+title: Terminals are weird
+items:
+  entries:
+    - icon: square
+      title: Cells are not pixels
+      text: Geometry affects aspect ratio and perceived detail.
+    - icon: scroll
+      title: Output has history
+      text: Alternate screen and cursor cleanup matter a lot.
+    - icon: cat
+      title: Kitty can help
+      text: Graphics protocol support gives another render path.
+# ---
+
+---
+layout: separator
+title: |
+  Input is the
+  awkward part.
+image:
+  url: '@talk/input.png'
+options:
+  background: red
+decorations:
+  logo: white
+# ---
+
+---
+title: Every game needs input
+items:
+  entries:
+    - icon: arrow-down
+      title: Key press
+      text: Movement starts when the key goes down.
+    - icon: repeat
+      title: Key repeat
+      text: Holding a key must keep the action alive.
+    - icon: arrow-up
+      title: Key release
+      text: Movement stops when the key comes back up.
+  horizontal: true
+# ---
+
+---
+title: Why the Kitty keyboard protocol?
+items:
+  entries:
+    - icon: keyboard
+      title: Terminals speak text
+      text: Classic input streams are great for characters, not game controls.
+    - icon: gamepad
+      title: Doom needs state
+      text: Controls depend on press, repeat, and release events being distinct.
+    - icon: cat
+      title: Kitty reports it
+      text: The protocol exposes richer key events across modern terminals.
+  horizontal: true
+# ---
+
+---
+layout: side
+title: Audio stays native
+items:
+  entries:
+    - icon: volume-high
+      title: SDL2_mixer does the work
+      text: doomgeneric keeps sound on the native side.
+    - icon: ban
+      title: JavaScript does not mix
+      text: Node is not involved at all.
+    - icon: scale-balanced
+      title: Responsibilities stay clean
+      text: SDL_mixer owns the audio path entirely.
+# ---
+
+---
+layout: separator
+title: |
+  How did we package
+  this monster?
+image:
+  url: '@talk/packaging.png'
+options:
+  background: amber
+# ---
+
+---
+title: Node.js SEA works, with a catch
+items:
+  entries:
+    - icon: file-zipper
+      title: Bundle the app
+      text: |
+        JavaScript, assets, and metadata
+        can ship together.
+    - icon: folder-open
+      title: Libraries need paths
+      text: |
+        Native loaders can only
+        open paths from the filesystem.
+  horizontal: true
+# ---
+
+---
+layout: separator
+title: |
+  How would you
+  solve that?
+image:
+  url: '@talk/solving.png'
+options:
+  background: amber
+# ---
+
+---
+layout: separator
+title: |
+  Don't forget
+  about <span class="theme@fg-black">K.I.S.S.</span>ing!
+image:
+  url: '@talk/kissing.png'
+options:
+  background: green
+# ---
+
+---
+title: Assets are temporarily extracted
+content: The simplest ideas are often the ones that work best.
+items:
+  entries:
+    - index: 1
+      title: Extract on startup
+      text: Embedded files are written to a temporary directory.
+    - index: 2
+      title: Recreate paths
+      text: Native libraries and assets keep the layout they expect.
+    - index: 3
+      title: Clean on shutdown
+      text: The temporary directory disappears when the process exits.
+# ---
+
+---
+layout: separator
+title: |
+  Then comes
+  performance.
+image:
+  url: '@talk/performance.png'
+options:
+  background: sky
+# ---
+
+---
+title: Destino is not the hottest case
+items:
+  entries:
+    - icon: stopwatch
+      title: Doom runs at 35 Hz
+      text: The main loop is steady, but not extreme.
+    - icon: arrows-left-right
+      title: The boundary still matters
+      text: Rendering, input, and polling all cross it.
+    - icon: fire
+      title: Real apps can be hotter
+      text: Enterprise libraries may sit on critical paths.
+# ---
+
+---
+layout: separator
+title: |
+  (Very) Fast FFI is
+  now in Node.js.
+image:
+  url: '@talk/flash.png'
+subtitle: Starting in Node.js 26.4.0
+options:
+  background: green
+className:
+  root: reverse
+# ---
+
+---
+title: What was added?
+content: Check it out at https://github.com/nodejs/node/pull/63068.
+items:
+  entries:
+    - icon: bolt
+      title: V8 Fast API path
+      text: Eligible calls avoid the generic callback route.
+    - icon: bridge
+      title: Native trampolines
+      text: Generated code adapts V8 calls to the target ABI.
+    - icon: shield-halved
+      title: Safe fallback
+      text: Unsupported signatures continue through existing paths.
+# ---
+
+---
+title: Why trampolines?
+items:
+  entries:
+    - icon: bolt
+      title: V8 Fast API skips the slow callback
+      text: V8 can call a known, typed native function directly.
+    - icon: code
+      title: FFI symbols are discovered at runtime
+      text: The target signature is not a handwritten C++ binding.
+    - icon: shuffle
+      title: Trampolines adapt the call
+      text: They move arguments from V8's call shape into the target C ABI.
+# ---
+
+---
+layout: raw
+content:
+  - |
+    <h1 class="theme@fg-black text">DEMO</h1>
+    <h1 class="theme@fg-white text">TIME</h1>
+className:
+  raw: theme@bad
+  root: root
+options:
+  background: orange
+decorations:
+  logo: white
+# ---
+
+---
+title: Check it out!
+content:
+  - As usual, everything we build at Platformatic is available on GitHub.
+  - qr: https://github.com/platformatic/destino
+  - <span class="theme@qr footer">[https://github.com/platformatic/destino](https://github.com/platformatic/destino)</span>
+className:
+  qr: theme@qr big
+# ---
+
+---
+layout: quote
+quote:
+  sentence: |
+    The only way of discovering the limits of the
+    possible is to venture a little way past
+    them into the impossible.
+  author: Arthur C. Clarke
+# ---
+
+---
+layout: end
+# ---

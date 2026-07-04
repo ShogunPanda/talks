@@ -108,5 +108,15 @@
     "name": "Achieving 93% Faster Next.js in (your) Kubernetes with Watt",
     "keyword": "cfp§22",
     "text": "Here's something most Node.js developers don't realize: PM2's cluster module silently imposes a ~30% performance tax through hidden IPC coordination overhead. Every request pays this cost for master-worker communication, and most teams accept it as the price of scaling Node.js applications.\n\nWith Watt, we eliminated this overhead using SO_REUSEPORT, achieving 93% faster median latency by letting the Linux kernel handle load distribution directly—no master processes, no IPC, zero coordination cost.\n\nIn this talk, we'll walk through our production benchmarks on AWS EKS and show how Watt delivers not just raw performance, but also multithreaded SSR, distributed caching, full observability with Prometheus, and seamless horizontal scaling—all while dramatically reducing your infrastructure costs."
+  },
+  {
+    "name": "Project Destino: Doom in the terminal with Node.js and OpenTUI",
+    "keyword": "cfp§23",
+    "text": "In this talk, I’ll take you through the strange and surprisingly fun journey behind Project Destino: a proof of concept to run Doom entirely inside the terminal using Node.js. What started as a joke — “what if we ran Doom in the terminal with Node.js?” — slowly turned into a real experiment in terminal graphics, native interoperability, and runtime performance.\n\nI’ll show how I combined doomgeneric, OpenTUI, node:ffi, and SDL_mixer to build a fully interactive terminal-based Doom experience, with Node.js acting as the coordinator between rendering, input handling, audio, and the native game engine itself."
+  },
+  {
+    "name": "Bridge the gap: how FFI came to life in Node.js",
+    "keyword": "cfp§24",
+    "text": "In this talk, I’ll take you through the journey that led to the creation of node:ffi — an effort that started as an ambitious idea and slowly evolved into a real piece of the Node.js platform. Along the way, I had the chance to explore different approaches to native interoperability, compare ideas with other collaborators in the ecosystem, and learn from a lot of smart and creative solutions that helped shape the direction of the project.\n\nI’ll walk through the technical challenges behind building an FFI layer for Node.js, from ABI compatibility to deep integration with V8, and show how recent advances like Fast API calls finally made high-performance native bindings practical without relying on traditional C++ addons."
   }
 ]

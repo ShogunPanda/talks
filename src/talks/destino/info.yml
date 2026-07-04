@@ -1,0 +1,14 @@
+---
+config: common.config
+document:
+  title: 'Project Destino: Doom In The Terminal with Node.js and OpenTUI'
+  titleFormatted: |
+    Project Destino:
+    Doom In The Terminal
+    with Node.js and OpenTUI
+  abstract: |
+    In this talk, I’ll take you through the strange and surprisingly fun journey behind Project Destino: a proof of concept to run Doom entirely inside the terminal using Node.js. What started as a joke — “what if we ran Doom in the terminal with Node.js?” — slowly turned into a real experiment in terminal graphics, native interoperability, and runtime performance.
+
+    I’ll show how I combined doomgeneric, OpenTUI, node:ffi, and SDL_mixer to build a fully interactive terminal-based Doom experience, with Node.js acting as the coordinator between rendering, input handling, audio, and the native game engine itself.
+  author: common.author
+  company: common.company
