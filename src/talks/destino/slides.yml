@@ -254,13 +254,13 @@ items:
     - index: 1
       title: Node.js (https://github.com/nodejs/node)
       text: The best JavaScript runtime. *Ever.* 😈
-    - index: 1
+    - index: 2
       title: doomgeneric (https://github.com/ozkl/doomgeneric)
       text: The native Doom engine provides the game core.
-    - index: 2
+    - index: 3
       title: OpenTUI (https://github.com/anomalyco/opentui)
       text: The terminal renderer turns frames into cells.
-    - index: 3
+    - index: 4
       title: SDL_mixer (https://github.com/libsdl-org/SDL_mixer)
       text: The native audio path keeps sound outside JavaScript.
 # ---
