@@ -36,7 +36,7 @@
   "dependencies": {
     "@fortawesome/free-brands-svg-icons": "^7.1.0",
     "@fortawesome/free-solid-svg-icons": "^7.1.0",
-    "@perseveranza-pets/freya": "^0.76.0",
+    "@perseveranza-pets/freya": "^0.77.0",
     "@perseveranza-pets/dante": "^0.62.2",
     "preact": "link:../../../Public/freya/node_modules/preact",
     "preact-render-to-string": "link:../../../Public/freya/node_modules/preact-render-to-string",

@@ -1,0 +1,17 @@
+---
+config: common.config
+document:
+  title: 'Fighting the imposter: from nowhere in Molise to Node.js contributor'
+  titleFormatted: |
+    Fighting the imposter:
+    from nowhere in Molise
+    to Node.js contributor
+  abstract: |
+    We all hear that voice behind our shoulders that says “You’re not worth it. Somebody else should be here.”
+
+    The Imposter Syndrome is well known in the IT industry and at the same time is not well known in Italy and especially in its southern part. While it has not a name there, the symptoms and the effects are still there, even outside the industry.
+
+    I will tell you my story. I will show how from Molise, the smallest region in Italy to the Silicon Valley and back I was able to fight that voice and show the world what I’m capable of, to the point to become an international speaker and a Node.js core member and active participant in the Node.js Working Groups backed by OpenJS Foundation.
+
+    I haven’t defeated the voice yet, but now I know how to deal with it and I want you to deal with it as well.
+  author: common.author

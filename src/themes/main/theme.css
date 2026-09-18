@@ -504,6 +504,46 @@
   }
 }
 
+.theme\@hero {
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: 100%;
+  padding: 0;
+  text-align: center;
+
+  & .title,
+  & .subtitle {
+    margin: 0;
+    padding: 0;
+    font-size: 150--pt;
+    font-weight: 700;
+    line-height: 1;
+    text-transform: uppercase;
+  }
+
+  & .subtitle {
+    margin-top: 0.4--sp;
+  }
+
+  & .small {
+    & .title,
+    & .subtitle {
+      font-size: 80--pt;
+    }
+  }
+
+  & .tiny {
+    & .title,
+    & .subtitle {
+      font-size: 60--pt;
+    }
+  }
+}
+
 /* Special slides */
 .theme\@cover {
   background-color: var(--plt-blue);
@@ -960,28 +1000,4 @@
 
 .theme\@code.small {
   font-size: 0.5em;
-}
-
-.theme\@bad {
-  display: flex;
-  flex-direction: column;
-  flex: 1;
-  align-items: center;
-  justify-content: center;
-  width: 100%;
-  height: 100%;
-  text-align: center;
-
-  .root:has(&) {
-    align-items: center;
-    justify-content: center;
-    padding: 0;
-  }
-
-  .text {
-    margin: 0;
-    padding: 0;
-    font-size: 150--pt;
-    line-height: 1;
-  }
 }

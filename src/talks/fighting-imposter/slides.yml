@@ -1,0 +1,519 @@
+---
+layout: cover
+# ---
+
+---
+layout: separator
+title: |
+  "Somebody else
+  should be here."
+options:
+  background: fuchsia
+image:
+  url: '@talk/somebody-else.png'
+# ---
+
+---
+layout: hello
+# ---
+
+---
+layout: separator
+title: |
+  That voice 
+  is always here.
+image:
+  url: '@talk/voice.png'
+options:
+  background: blue
+# ---
+
+---
+layout: separator
+title: |
+  "What if they
+  find out?"
+image:
+  url: '@talk/find-out.png'
+options:
+  background: red
+# ---
+
+---
+layout: separator
+title: '"It was just <span class="theme@fg-amber">luck</span>."'
+image:
+  url: '@talk/luck.png'
+options:
+  background: gray
+# ---
+
+---
+layout: separator
+title: |
+  What does that
+  voice stop you
+  from <span class="theme@fg-red">doing</span>?
+image:
+  url: '@talk/voice.png'
+options:
+  background: amber
+# ---
+
+---
+layout: image
+title: Let me tell you <span class="theme@fg-amber">MY</span> story.
+image:
+  url: '@talk/story.png'
+options:
+  background: sky
+# ---
+
+---
+layout: separator
+title: |
+  From nowhere
+  in Molise.
+subtitle: Born in 1984 in Campobasso
+image:
+  url: '@talk/campobasso.png'
+options:
+  background: pink
+decorations:
+  logo: black
+# ---
+
+---
+layout: separator
+title: |
+  Computer 
+  Engineering
+subtitle: Tor Vergata, Rome · 2006
+image:
+  url: '@talk/tor-vergata.png'
+options:
+  background: green
+decorations:
+  logo: black
+# ---
+
+---
+layout: separator
+title: |
+  And then,
+  back home.
+subtitle: 2009
+image:
+  url: '@talk/campobasso.png'
+options:
+  background: pink
+decorations:
+  logo: black
+# ---
+
+---
+layout: image
+title: |
+  Someone believed I could do <span class="theme@fg-black">more</span>.
+image:
+  url: '@talk/wife.png'
+className:
+  title: theme@bg-green
+decorations:
+  logo: white
+# ---
+
+---
+layout: separator
+title: |
+  Viralheat,
+  H-1B visa
+image:
+  url: '@talk/foster-city.png'
+subtitle: Foster City, CA, USA · 2012
+options:
+  background: orange
+decorations:
+  logo: black
+# ---
+
+---
+layout: image
+title: What did I find there?
+image:
+  url: '@talk/findings.png'
+className:
+  title: theme@bg-amber theme@fg-black
+decorations:
+  logo: white
+# ---
+
+---
+layout: separator
+title: |
+  Back in Italy,
+  working remotely.
+subtitle: 2016
+image:
+  url: '@talk/campobasso.png'
+options:
+  background: pink
+decorations:
+  logo: black
+# ---
+
+---
+layout: separator
+title: |
+  <span class="theme@fg-black">Senior Developer</span>,
+  NearForm
+subtitle: 2018
+image:
+  url: '@talk/nearform.png'
+options:
+  background: blue
+# ---
+
+---
+layout: separator
+title: |
+  My first <span class="theme@fg-black">Node.js</span> 
+  contribution
+subtitle: 2020
+image:
+  url: '@talk/first-pr.png'
+options:
+  background: fuchsia
+decorations:
+  logo: black
+# ---
+
+---
+layout: separator
+title: |
+  Node.js
+  <span class="theme@fg-black">collaborator</span>
+subtitle: 2022
+image:
+  url: '@talk/collaborator.png'
+options:
+  background: green
+decorations:
+  logo: black
+# ---
+
+---
+layout: image
+title: Then I stepped onto a stage.
+subtitle: Almost <strong>60</strong> speaking appearances since 2022.
+image:
+  url: '@talk/nodeconf.png'
+decorations:
+  logo: black
+className:
+  title: theme@bg-orange
+# ---
+
+---
+layout: separator
+title: 'Node.js <span class="theme@fg-black">TSC</span>'
+subtitle: 2024
+image:
+  url: '@talk/tsc.png'
+options:
+  background: red
+decorations:
+  logo: black
+# ---
+
+---
+layout: separator
+title: |
+  <span class="theme@fg-black">Principal Engineer</span>,
+  Platformatic
+subtitle: 2024
+image:
+  url: '@talk/platformatic.png'
+options:
+  background: green
+decorations:
+  logo: black
+# ---
+
+---
+layout: image
+title: And yet, that voice is still <span class="theme@fg-amber">here</span>.
+image:
+  url: '@talk/still-there.png'
+className:
+  title: theme@bg-gray
+# ---
+
+---
+layout: separator
+title: |
+  So, what is
+  that voice?
+image:
+  url: '@talk/lamp.png'
+options:
+  background: amber
+# ---
+
+---
+layout: quote
+title: Imposter syndrome
+quote:
+  sentence: |
+    A psychological phenomenon in which 
+    individuals struggle to internalize their 
+    achievements and fear being exposed as frauds, 
+    despite evidence of their competence.
+  author: Adapted from Clance & Imes (1978) and Bravata et al. (2020)
+  variant: dark
+# ---
+
+---
+layout: separator
+title: |
+  <span class="theme@fg-black">Success is luck.</span>
+  Failure is me.
+image:
+  url: '@talk/failure.png'
+options:
+  background: red
+# ---
+
+---
+layout: separator
+title: |
+  I just need
+  <span class="theme@fg-amber">one more</span>
+  achievement.
+image:
+  url: '@talk/achievements.png'
+options:
+  background: gray
+# ---
+
+---
+layout: hero
+title: Have you ever
+subtitle: '<span class="theme@fg-red">heard</span> these?'
+options:
+  background: amber
+className:
+  contents: small
+  subtitle: theme@fg-black
+# ---
+
+---
+layout: separator
+title: |
+  Who do you
+  think you are?
+image:
+  url: '@talk/expose.png'
+options:
+  background: light-gray
+# ---
+
+---
+layout: separator
+title: |
+  Be <span class="theme@fg-amber">happy</span> with
+  what you have.
+image:
+  url: '@talk/pizza.png'
+options:
+  background: black
+  foreground: white
+# ---
+
+---
+layout: separator
+title: Why take the <span class="theme@fg-red">risk</span>?
+image:
+  url: '@talk/risk.png'
+options:
+  background: gray
+# ---
+
+---
+layout: separator
+title: |
+  Stay <span class="theme@fg-black">out</span> of
+  the spotlight.
+image:
+  url: '@talk/spotlight.png'
+options:
+  background: red
+# ---
+
+---
+layout: image
+title: Be <span class="theme@fg-black">grateful</span> for the crumbs.
+image:
+  url: '@talk/crumbs.png'
+className:
+  title: theme@bg-red
+decorations:
+  logo: white
+# ---
+
+---
+layout: separator
+title: |
+  You start
+  believing <span class="theme@fg-blue">them</span>...
+image:
+  url: '@talk/give-up.png'
+options:
+  background: light-gray
+# ---
+
+---
+layout: separator
+title: |
+  ...and lose <span class="theme@fg-amber">yourself</span>.
+image:
+  url: '@talk/lost.png'
+options:
+  background: gray
+className:
+  contents: reverse
+# ---
+
+---
+layout: hero
+title: It's time to
+subtitle: 'kick them out!'
+options:
+  background: green
+className:
+  contents: small
+# ---
+
+---
+layout: hero
+title: |
+  There is no
+  official playbook.
+subtitle: These are my coping strategies.
+options:
+  background: pink
+className:
+  contents: tiny
+# ---
+
+---
+layout: separator
+title: |
+  I am who
+  I <span class="theme@fg-black">fought</span>
+  to become.
+subtitle: <s>Who do you think you are?</s>
+image:
+  url: '@talk/mirror.png'
+className:
+  contents: reverse
+  title: reverse
+options:
+  background: green
+# ---
+
+---
+layout: separator
+title: |
+  Wanting more
+  is <span class="theme@fg-black">healthy</span>
+  if it harms no one.
+subtitle: <s>Be happy with what you have.</s>
+image:
+  url: '@talk/pie.png'
+className:
+  contents: reverse
+  title: reverse
+options:
+  background: orange
+# ---
+
+---
+layout: separator
+title: |
+  Don’t <span class="theme@fg-black">mistake</span>
+  uncertainty
+  for danger.
+subtitle: <s>Why take the risk?</s>
+image:
+  url: '@talk/path.png'
+className:
+  contents: reverse
+  title: reverse
+options:
+  background: pink
+# ---
+
+---
+layout: separator
+title: |
+  Be there to
+  <span class="theme@fg-black">share</span> knowledge,
+  not to brag.
+subtitle: <s>Stay out of the spotlight.</s>
+image:
+  url: '@talk/learn.png'
+className:
+  contents: reverse
+  title: reverse
+options:
+  background: green
+# ---
+
+---
+layout: separator
+title: |
+  Know what
+  you <span class="theme@fg-amber">earned</span>.
+  It’s not a gift.
+subtitle: <s>Be grateful for the crumbs.</s>
+image:
+  url: '@talk/earn.png'
+className:
+  contents: reverse
+  title: reverse
+options:
+  background: sky
+# ---
+
+---
+layout: image
+title: |
+  SCREW IT! Don’t <span class="theme@fg-amber">overthink</span> it!
+image:
+  url: '@talk/screw.png'
+options:
+  background: green
+# ---
+
+---
+layout: quote
+quote:
+  sentence: |
+    Dude, sucking at something is the first step
+    towards being sorta good at something.
+  author: Jake the Dog — Adventure Time
+# ---
+
+---
+layout: separator
+title: Who's <span class="theme@fg-red">next</span>?
+image:
+  url: '@talk/next.png'
+options:
+  background: amber
+# ---
+
+---
+layout: end
+# ---

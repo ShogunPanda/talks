@@ -596,14 +596,9 @@ items:
 # ---
 
 ---
-layout: raw
-content:
-  - |
-    <h1 class="theme@fg-black text">DEMO</h1>
-    <h1 class="theme@fg-white text">TIME</h1>
-className:
-  raw: theme@bad
-  root: root
+layout: hero
+title: 'DEMO'
+subtitle: 'TIME'
 options:
   background: orange
 decorations:

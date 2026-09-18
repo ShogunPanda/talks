@@ -144,14 +144,9 @@ image:
 # ---
 
 ---
-layout: raw
-content:
-  - |
-    <h1 class="theme@fg-black text">BAD!</h1>
-    <h1 class="theme@fg-white text">DON'T!</h1>
-className:
-  raw: theme@bad
-  root: root
+layout: hero
+title: 'BAD!'
+subtitle: "DON'T!"
 options:
   background: red
 decorations:
