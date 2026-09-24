@@ -1,0 +1,281 @@
+# Project Destino: Doom In The Terminal with Node.js and OpenTUI
+
+## Impostazione
+
+Guida in italiano alla versione sorgente corrente: **48 slide**, nello stesso ordine di `slides.yml`. I titoli sono riportati con spazi normalizzati e senza markup di impaginazione.
+
+**Messaggio centrale:** Un esperimento ludico rende concreti FFI, rendering nel terminale e coordinamento fra JavaScript e librerie native specializzate.
+
+**Contesto e crediti:** Project Destino combina Node.js, doomgeneric, OpenTUI e SDL_mixer. La battuta iniziale diventa un caso tecnico su ABI, loop a 35 Hz, input e packaging SEA. Il racconto del progetto non autorizza a inventare episodi o screenshot del gioco.
+
+## Struttura e ritmo
+
+- **Slide 1–9 — Dalla battuta al terminale:** Mostrare perché l'esperimento vale la pena.
+- **Slide 10–19 — Il confine nativo:** Spiegare ABI, API e responsabilità della memoria.
+- **Slide 20–34 — Il gioco funziona:** Separare engine, loop, rendering, input e audio.
+- **Slide 35–39 — Distribuzione:** Spiegare come SEA e librerie native convivono.
+- **Slide 40–48 — Performance e demo:** Collegare fast path, dimostrazione e riuso.
+
+Evento e durata non sono definiti nei metadati del talk. Assegnare i tempi dopo aver concordato lo slot; i separatori sono passaggi brevi, mentre demo, esercizi e domande richiedono tempo dedicato. Le misure o le roadmap citate restano legate alle versioni mostrate.
+
+## Traccia slide per slide
+
+### 1. Project Destino: Doom In The Terminal with Node.js and OpenTUI
+- **Scopo:** Presentare titolo e promessa del percorso.
+- **Traccia:** Un esperimento ludico rende concreti FFI, rendering nel terminale e coordinamento fra JavaScript e librerie native specializzate.
+- **Transizione:** Passare alla slide 2, «STFU!».
+
+### 2. STFU!
+- **Scopo:** Mostrare perché l'esperimento vale la pena, attraverso «STFU!».
+- **Traccia:** Usare la provocazione iniziale nel tono già scelto dal relatore, poi contestualizzarla.
+- **Transizione:** Passare alla slide 3, «Hello».
+
+### 3. Hello
+- **Scopo:** Presentare il relatore.
+- **Traccia:** Presentare Paolo Insogna e il ruolo pertinente al tema, usando i dati del tema condiviso senza aggiungere episodi personali.
+- **Transizione:** Passare alla slide 4, «This started as a joke...».
+
+### 4. This started as a joke...
+- **Scopo:** Segnare un passaggio nella sezione «Dalla battuta al terminale».
+- **Traccia:** Usare «This started as a joke...» come domanda o pausa visiva prima del prossimo passaggio. Mostrare perché l'esperimento vale la pena.
+- **Transizione:** Passare alla slide 5, «... and now we have Doom in the terminal!».
+
+### 5. ... and now we have Doom in the terminal!
+- **Scopo:** Segnare un passaggio nella sezione «Dalla battuta al terminale».
+- **Traccia:** Usare «... and now we have Doom in the terminal!» come domanda o pausa visiva prima del prossimo passaggio. Mostrare perché l'esperimento vale la pena.
+- **Transizione:** Passare alla slide 6, «The joke was simple».
+
+### 6. The joke was simple
+- **Scopo:** Mostrare perché l'esperimento vale la pena, attraverso «The joke was simple».
+- **Traccia:** Collegare la tradizione dei porting improbabili alle nuove possibilità native di Node.js.
+- **Transizione:** Passare alla slide 7, «The terminal is the new UI.».
+
+### 7. The terminal is the new UI.
+- **Scopo:** Segnare un passaggio nella sezione «Dalla battuta al terminale».
+- **Traccia:** Usare «The terminal is the new UI.» come domanda o pausa visiva prima del prossimo passaggio. Mostrare perché l'esperimento vale la pena. Sottotitolo da richiamare: «Thanks to AI. 🤷».
+- **Transizione:** Passare alla slide 8, «OpenTUI».
+
+### 8. OpenTUI
+- **Scopo:** Mostrare perché l'esperimento vale la pena, attraverso «OpenTUI».
+- **Traccia:** Presentare OpenTUI e la relazione con OpenCode; il QR apre il progetto.
+- **Transizione:** Passare alla slide 9, «They really push the terminal hard».
+
+### 9. They really push the terminal hard
+- **Scopo:** Mostrare perché l'esperimento vale la pena, attraverso «They really push the terminal hard».
+- **Traccia:** Le celle diventano una superficie dinamica: geometria e refresh fanno parte del problema.
+- **Transizione:** Passare alla slide 10, «But this is not only about Doom.», aprendo la sezione «Il confine nativo».
+
+### 10. But this is not only about Doom.
+- **Scopo:** Segnare un passaggio nella sezione «Il confine nativo».
+- **Traccia:** Usare «But this is not only about Doom.» come domanda o pausa visiva prima del prossimo passaggio. Spiegare ABI, API e responsabilità della memoria.
+- **Transizione:** Passare alla slide 11, «What is FFI?».
+
+### 11. What is FFI?
+- **Scopo:** Spiegare ABI, API e responsabilità della memoria, attraverso «What is FFI?».
+- **Traccia:** Definire FFI come chiamata a funzioni native tramite un contratto binario comune.
+- **Transizione:** Passare alla slide 12, «Before FFI, we had choices.».
+
+### 12. Before FFI, we had choices.
+- **Scopo:** Segnare un passaggio nella sezione «Il confine nativo».
+- **Traccia:** Usare «Before FFI, we had choices.» come domanda o pausa visiva prima del prossimo passaggio. Spiegare ABI, API e responsabilità della memoria.
+- **Transizione:** Passare alla slide 13, «The "choice"».
+
+### 13. The "choice"
+- **Scopo:** Spiegare ABI, API e responsabilità della memoria, attraverso «The "choice"».
+- **Traccia:** Distinguere addon, wrapper e i limiti storici di alcune astrazioni; non estenderli a ogni addon Node-API.
+- **Transizione:** Passare alla slide 14, «Say hello to `node:ffi`.».
+
+### 14. Say hello to `node:ffi`.
+- **Scopo:** Segnare un passaggio nella sezione «Il confine nativo».
+- **Traccia:** Usare «Say hello to `node:ffi`.» come domanda o pausa visiva prima del prossimo passaggio. Spiegare ABI, API e responsabilità della memoria.
+- **Transizione:** Passare alla slide 15, «`node:ffi` changes the shape.».
+
+### 15. `node:ffi` changes the shape.
+- **Scopo:** Spiegare ABI, API e responsabilità della memoria, attraverso «`node:ffi` changes the shape.».
+- **Traccia:** Seguire caricamento della libreria, firma e invocazione dell'esempio.
+- **Transizione:** Passare alla slide 16, «The boundary is explicit».
+
+### 16. The boundary is explicit
+- **Scopo:** Spiegare ABI, API e responsabilità della memoria, attraverso «The boundary is explicit».
+- **Traccia:** Rendere espliciti simboli, tipi e lifetime invece di nasconderli nel glue code.
+- **Transizione:** Passare alla slide 17, «FFI is very powerful.».
+
+### 17. FFI is very powerful.
+- **Scopo:** Segnare un passaggio nella sezione «Il confine nativo».
+- **Traccia:** Usare «FFI is very powerful.» come domanda o pausa visiva prima del prossimo passaggio. Spiegare ABI, API e responsabilità della memoria.
+- **Transizione:** Passare alla slide 18, «What can go wrong?».
+
+### 18. What can go wrong?
+- **Scopo:** Segnare un passaggio nella sezione «Il confine nativo».
+- **Traccia:** Usare «What can go wrong?» come domanda o pausa visiva prima del prossimo passaggio. Spiegare ABI, API e responsabilità della memoria.
+- **Transizione:** Passare alla slide 19, «Pretty much everything».
+
+### 19. Pretty much everything
+- **Scopo:** Spiegare ABI, API e responsabilità della memoria, attraverso «Pretty much everything».
+- **Traccia:** Spiegare perché una firma sbagliata o memoria scaduta può compromettere il processo.
+- **Transizione:** Passare alla slide 20, «OK, but what about Doom?», aprendo la sezione «Il gioco funziona».
+
+### 20. OK, but what about Doom?
+- **Scopo:** Segnare un passaggio nella sezione «Il gioco funziona».
+- **Traccia:** Usare «OK, but what about Doom?» come domanda o pausa visiva prima del prossimo passaggio. Separare engine, loop, rendering, input e audio.
+- **Transizione:** Passare alla slide 21, «Say hi to Destino.».
+
+### 21. Say hi to Destino.
+- **Scopo:** Segnare un passaggio nella sezione «Il gioco funziona».
+- **Traccia:** Usare «Say hi to Destino.» come domanda o pausa visiva prima del prossimo passaggio. Separare engine, loop, rendering, input e audio.
+- **Transizione:** Passare alla slide 22, «The Destino stack».
+
+### 22. The Destino stack
+- **Scopo:** Separare engine, loop, rendering, input e audio, attraverso «The Destino stack».
+- **Traccia:** Assegnare un ruolo a Node.js, doomgeneric, OpenTUI e SDL_mixer.
+- **Transizione:** Passare alla slide 23, «How doomgeneric works».
+
+### 23. How doomgeneric works
+- **Scopo:** Separare engine, loop, rendering, input e audio, attraverso «How doomgeneric works».
+- **Traccia:** La piccola interfaccia di piattaforma permette di riusare l'engine.
+- **Transizione:** Passare alla slide 24, «Everyone owns a piece».
+
+### 24. Everyone owns a piece
+- **Scopo:** Separare engine, loop, rendering, input e audio, attraverso «Everyone owns a piece».
+- **Traccia:** JavaScript coordina; logica di gioco e audio restano nelle librerie native.
+- **Transizione:** Passare alla slide 25, «Keep the native surface tiny.».
+
+### 25. Keep the native surface tiny.
+- **Scopo:** Segnare un passaggio nella sezione «Il gioco funziona».
+- **Traccia:** Usare «Keep the native surface tiny.» come domanda o pausa visiva prima del prossimo passaggio. Separare engine, loop, rendering, input e audio.
+- **Transizione:** Passare alla slide 26, «The C platform layer».
+
+### 26. The C platform layer
+- **Scopo:** Separare engine, loop, rendering, input e audio, attraverso «The C platform layer».
+- **Traccia:** Ridurre l'interfaccia nativa a inizializzazione, tick, frame e cleanup.
+- **Transizione:** Passare alla slide 27, «The 35 Hz loop».
+
+### 27. The 35 Hz loop
+- **Scopo:** Separare engine, loop, rendering, input e audio, attraverso «The 35 Hz loop».
+- **Traccia:** Seguire il ciclo a 35 Hz e distinguere avanzamento del gioco e rendering.
+- **Transizione:** Passare alla slide 28, «Now render Doom in a terminal.».
+
+### 28. Now render Doom in a terminal.
+- **Scopo:** Segnare un passaggio nella sezione «Il gioco funziona».
+- **Traccia:** Usare «Now render Doom in a terminal.» come domanda o pausa visiva prima del prossimo passaggio. Separare engine, loop, rendering, input e audio.
+- **Transizione:** Passare alla slide 29, «Framebuffer to terminal».
+
+### 29. Framebuffer to terminal
+- **Scopo:** Separare engine, loop, rendering, input e audio, attraverso «Framebuffer to terminal».
+- **Traccia:** Seguire BGRA → Buffer → celle; la vista sulla memoria dipende dal lifetime del frame nativo.
+- **Transizione:** Passare alla slide 30, «Terminals are weird».
+
+### 30. Terminals are weird
+- **Scopo:** Separare engine, loop, rendering, input e audio, attraverso «Terminals are weird».
+- **Traccia:** Mostrare effetti del rapporto delle celle, alternate screen e ripristino del cursore.
+- **Transizione:** Passare alla slide 31, «Input is the awkward part.».
+
+### 31. Input is the awkward part.
+- **Scopo:** Segnare un passaggio nella sezione «Il gioco funziona».
+- **Traccia:** Usare «Input is the awkward part.» come domanda o pausa visiva prima del prossimo passaggio. Separare engine, loop, rendering, input e audio.
+- **Transizione:** Passare alla slide 32, «Every game needs input».
+
+### 32. Every game needs input
+- **Scopo:** Separare engine, loop, rendering, input e audio, attraverso «Every game needs input».
+- **Traccia:** Distinguere pressione, ripetizione e rilascio dei tasti.
+- **Transizione:** Passare alla slide 33, «Why the Kitty keyboard protocol?».
+
+### 33. Why the Kitty keyboard protocol?
+- **Scopo:** Separare engine, loop, rendering, input e audio, attraverso «Why the Kitty keyboard protocol?».
+- **Traccia:** Il protocollo tastiera Kitty fornisce eventi più ricchi del semplice flusso di caratteri.
+- **Transizione:** Passare alla slide 34, «Audio stays native».
+
+### 34. Audio stays native
+- **Scopo:** Separare engine, loop, rendering, input e audio, attraverso «Audio stays native».
+- **Traccia:** Spiegare che SDL_mixer gestisce il percorso audio senza mixing JavaScript.
+- **Transizione:** Passare alla slide 35, «How did we package this monster?», aprendo la sezione «Distribuzione».
+
+### 35. How did we package this monster?
+- **Scopo:** Segnare un passaggio nella sezione «Distribuzione».
+- **Traccia:** Usare «How did we package this monster?» come domanda o pausa visiva prima del prossimo passaggio. Spiegare come SEA e librerie native convivono.
+- **Transizione:** Passare alla slide 36, «Node.js SEA works, with a catch».
+
+### 36. Node.js SEA works, with a catch
+- **Scopo:** Spiegare come SEA e librerie native convivono, attraverso «Node.js SEA works, with a catch».
+- **Traccia:** SEA incorpora risorse, ma il loader nativo richiede percorsi sul filesystem.
+- **Transizione:** Passare alla slide 37, «How would you solve that?».
+
+### 37. How would you solve that?
+- **Scopo:** Segnare un passaggio nella sezione «Distribuzione».
+- **Traccia:** Usare «How would you solve that?» come domanda o pausa visiva prima del prossimo passaggio. Spiegare come SEA e librerie native convivono.
+- **Transizione:** Passare alla slide 38, «Don't forget about K.I.S.S.ing!».
+
+### 38. Don't forget about K.I.S.S.ing!
+- **Scopo:** Segnare un passaggio nella sezione «Distribuzione».
+- **Traccia:** Usare «Don't forget about K.I.S.S.ing!» come domanda o pausa visiva prima del prossimo passaggio. Spiegare come SEA e librerie native convivono.
+- **Transizione:** Passare alla slide 39, «Assets are temporarily extracted».
+
+### 39. Assets are temporarily extracted
+- **Scopo:** Spiegare come SEA e librerie native convivono, attraverso «Assets are temporarily extracted».
+- **Traccia:** Estrarre risorse all'avvio, mantenere i percorsi attesi e gestire la pulizia nel ciclo di vita.
+- **Transizione:** Passare alla slide 40, «Then comes performance.», aprendo la sezione «Performance e demo».
+
+### 40. Then comes performance.
+- **Scopo:** Segnare un passaggio nella sezione «Performance e demo».
+- **Traccia:** Usare «Then comes performance.» come domanda o pausa visiva prima del prossimo passaggio. Collegare fast path, dimostrazione e riuso.
+- **Transizione:** Passare alla slide 41, «Destino is not the hottest case».
+
+### 41. Destino is not the hottest case
+- **Scopo:** Collegare fast path, dimostrazione e riuso, attraverso «Destino is not the hottest case».
+- **Traccia:** 35 Hz non è il caso più intenso per FFI: distinguere costo del confine e lavoro utile.
+- **Transizione:** Passare alla slide 42, «(Very) Fast FFI is now in Node.js.».
+
+### 42. (Very) Fast FFI is now in Node.js.
+- **Scopo:** Segnare un passaggio nella sezione «Performance e demo».
+- **Traccia:** Usare «(Very) Fast FFI is now in Node.js.» come domanda o pausa visiva prima del prossimo passaggio. Collegare fast path, dimostrazione e riuso. Sottotitolo da richiamare: «Starting in Node.js 26.4.0».
+- **Transizione:** Passare alla slide 43, «What was added?».
+
+### 43. What was added?
+- **Scopo:** Collegare fast path, dimostrazione e riuso, attraverso «What was added?».
+- **Traccia:** Presentare Fast API, trampolini e fallback come percorsi compatibili sotto la stessa API.
+- **Transizione:** Passare alla slide 44, «Why trampolines?».
+
+### 44. Why trampolines?
+- **Scopo:** Collegare fast path, dimostrazione e riuso, attraverso «Why trampolines?».
+- **Traccia:** Il trampolino adatta la forma V8 alla ABI del simbolo trovato a runtime.
+- **Transizione:** Passare alla slide 45, «DEMO».
+
+### 45. DEMO
+- **Scopo:** Collegare fast path, dimostrazione e riuso, attraverso «DEMO».
+- **Traccia:** Eseguire la demo preparata; verificare prima terminale, librerie, audio e asset legittimamente disponibili. Tenere una registrazione reale come alternativa. Sottotitolo da richiamare: «TIME».
+- **Transizione:** Passare alla slide 46, «Check it out!».
+
+### 46. Check it out!
+- **Scopo:** Collegare fast path, dimostrazione e riuso, attraverso «Check it out!».
+- **Traccia:** Lasciare il repository del progetto per provare e contribuire.
+- **Transizione:** Passare alla slide 47, «The only way of discovering the limits of the possible is to venture a little way past them into the impossible.».
+
+### 47. The only way of discovering the limits of the possible is to venture a little way past them into the impossible.
+- **Scopo:** Fissare il messaggio con la citazione scelta nel deck.
+- **Traccia:** Leggere «The only way of discovering the limits of the possible is to venture a little way past them into the impossible.», attribuita nella slide a Arthur C. Clarke. Collegarla al tema: Un esperimento ludico rende concreti FFI, rendering nel terminale e coordinamento fra JavaScript e librerie native specializzate.
+- **Transizione:** Passare alla slide 48, «End».
+
+### 48. End
+- **Scopo:** Concludere e lasciare i contatti.
+- **Traccia:** Ringraziare il pubblico e raccogliere domande sul percorso appena concluso.
+- **Transizione:** Domande e confronto con il pubblico.
+
+## Fonti e materiale di supporto
+
+Le fonti seguenti sono i collegamenti presenti nelle slide, raccolti per approfondire; questa guida non implica una nuova verifica esterna di ogni fonte. Grafici, screenshot e risultati restano quelli del deck. Le attribuzioni delle citazioni sono quelle già indicate nelle slide; documentare la fonte primaria prima di usarle come riferimento storico.
+
+- <https://github.com/anomalyco/opentui>
+- <https://github.com/anomalyco/opentui](https://github.com/anomalyco/opentui>
+- <https://github.com/nodejs/node>
+- <https://github.com/ozkl/doomgeneric>
+- <https://github.com/libsdl-org/SDL_mixer>
+- <https://github.com/nodejs/node/pull/63068>
+- <https://github.com/platformatic/destino>
+- <https://github.com/platformatic/destino](https://github.com/platformatic/destino>
+
+## Preparazione e dettagli da confermare
+
+- Concordare evento, durata e spazio per domande o attività pratiche.
+- Per eventuali demo, preparare le versioni del codice e dei servizi corrispondenti al deck; questi esempi non sono stati eseguiti durante la redazione della guida.
+- Integrare episodi personali soltanto quando forniti dal relatore.
+- Usare `context.md` per le proposte visive e l'inventario dei riferimenti alle immagini.

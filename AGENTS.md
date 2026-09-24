@@ -113,8 +113,13 @@ When referencing icons, use **Font Awesome** (free tier only):
 ### Allowed Operations
 
 - **Read**: You may read any file in this repository
-- **Write**: You may **only** write and modify `slides.yml`, `info.yml`, and talk-level `summary.md` and `context.md` files
-- **Restrictions**: No other write operations are permitted
+
+**Write**: You may write and modify:
+  - `slides.yml` and `info.yml` files.
+  - Talk-level `summary.md` and `context.md` files.
+  - JSON files in the repository root, including `cfp-abstracts.json` and `cfp-generic.json`.
+  - AGENTS.md (this file)
+- **Restrictions**: No other write operations are permitted, unless explicitly allowed by the user in a message.
 
 ### Common Tasks
 
@@ -139,7 +144,7 @@ When referencing icons, use **Font Awesome** (free tier only):
 - Write it in Italian as a self-contained brief that the user can upload to the ChatGPT app to generate cover and supporting images, without access to this repository or prior conversations.
 - Include the exact title and abstract, the central message, relevant confirmed background, the narrative structure, tone, visual direction, and image-generation constraints.
 - Provide a small set of image briefs tied to slide titles and numbers. Distinguish agreed visual choices from proposed concepts, and do not invent biographical details or substitute generated scenes for documentary photographs.
-- Follow the image-generation guidelines below, including PNG, landscape 16:9, visual consistency, readability, and negative space. Keep slide text out of generated images.
+- Follow the image-generation guidelines below, including the default or explicitly requested size (1000×1120 or 2000×1120), PNG at approximately 150 DPI, visual consistency, readability, and negative space. Keep slide text out of generated images.
 - Keep the context synchronized with changes to the talk's story, slide references, and visual direction.
 - Keep `context.md` outside `assets/`. Like `summary.md`, it is source material and is not copied by Freya's current build/deploy pipeline.
 
@@ -166,7 +171,9 @@ Freya is the underlying slide generation system:
 - Keep generated images as supporting visuals, not as slide content replacements.
 - Prefer 6-10 key images per talk, not one image per slide.
 - Use a consistent visual language across the whole talk.
-- Export images as PNG, landscape 16:9, with enough negative space for slide titles.
+- Default to a small image at 1000×1120 pixels when the user does not specify a size. "Medium" also means 1000×1120 pixels; use 2000×1120 pixels only when the user requests a large or fullscreen image. Preserve these dimensions rather than assuming a 16:9 aspect ratio.
+- Export images as PNG at approximately 150 DPI, with enough negative space for slide titles.
+- When normalizing existing talk PNGs, group them by intended slide format: portrait or side-panel images become 1000×1120, and wide/fullscreen images become 2000×1120. Resize proportionally to cover the target and crop from the center; never stretch. Move the source PNGs into `assets/__originals/` under the same filenames, preserving any existing originals there, and keep the resized PNGs in `assets/` under their original filenames. Verify dimensions and approximately 150 DPI after conversion.
 - Avoid copyrighted Doom assets, logos, screenshots, monsters, and UI. Use "retro shooter inspired", "terminal game", or "pixel-art demon-like shapes" instead.
 - For separator slides, prefer strong simple compositions with one clear visual metaphor.
 - For technical slides, prefer diagram-like illustrations over decorative art.

@@ -109,7 +109,8 @@ Palette vivace: verde nel primo `hero`, rosa nel disclaimer, verde/arancione/ros
 - Contrasto visibile fra fase tre cupa e fase quattro vivace.
 - Composizioni semplici, leggibili a distanza, con una sola metafora dominante.
 - Coerenza fra le immagini; preferire 6–10 immagini chiave, non una per ogni slide.
-- PNG orizzontali 16:9, con spazio negativo per il titolo aggiunto successivamente.
+- Se l'utente non specifica un formato, genera un'immagine **piccola: 1000×1120 px**. Anche “media” significa **1000×1120 px**; usa **2000×1120 px** solo quando l'utente richiede un'immagine “grande” o “fullscreen”. Non imporre un rapporto 16:9: rispetta queste dimensioni.
+- Esporta sempre in **PNG**, a circa **150 DPI**, con spazio negativo per il titolo aggiunto successivamente.
 - Nessun titolo, parola, citazione, etichetta, codice leggibile o interfaccia testuale incorporati nell'immagine.
 
 ### Proposta stilistica da confermare sulla prima immagine
@@ -124,7 +125,7 @@ Evitare di mescolare fotografia sintetica, cartoon e pittura fra immagini della 
 
 - Per la copertina: lasciare indicativamente il 40% sinistro poco dettagliato per il lungo titolo; soggetto principale a destra, ben lontano dai bordi. La posizione finale dipenderà dall'integrazione nella slide.
 - Per immagini affiancate nei `separator`: soggetto compatto vicino al centro, margini generosi e nessun elemento essenziale agli estremi. L'immagine può subire un ritaglio nel pannello laterale.
-- Per le slide `image`: una scena larga con un'area tranquilla in cui il titolo possa restare leggibile.
+- Per le slide `image`: una scena adatta al formato richiesto, con un'area tranquilla in cui il titolo possa restare leggibile.
 - Non includere cornici, mockup di schermi, impaginazione da poster o marchi generati. Il sistema di presentazione gestisce titoli, contatti e attribuzioni.
 - Se una scena deve rappresentare un luogo esatto, usare fotografie fornite dall'utente come riferimento; senza riferimenti dichiararla una rappresentazione simbolica.
 
@@ -181,7 +182,7 @@ I numeri indicano le slide correnti. Sono concetti opzionali per le immagini man
 - **Significato:** radici locali, partecipazione internazionale e dubbio che accompagna il cammino.
 - **Atmosfera:** intima e intrigante, blu profondo con un accento fuchsia e un'apertura luminosa sky.
 - **Composizione:** figura e percorso a destra, area sinistra calma e ampia. Nessuna mappa geografica inventata, nessun logo Node.js.
-- **Richiesta pronta:** “Genera la copertina seguendo il brief A e la direzione stilistica proposta. PNG 16:9, senza testo, titolo da aggiungere a sinistra. La persona procede; l'ombra rimane, senza essere distrutta.”
+- **Richiesta pronta:** “Genera la copertina seguendo il brief A e la direzione stilistica proposta. Se non specifico il formato, usa quello piccolo (1000×1120 px); usa quello grande/fullscreen (2000×1120 px) solo se lo chiedo. PNG a circa 150 DPI, senza testo, titolo da aggiungere a sinistra. La persona procede; l'ombra rimane, senza essere distrutta.”
 
 ### B. Il posto che sembra appartenere a un altro — slide 2 o 5
 
