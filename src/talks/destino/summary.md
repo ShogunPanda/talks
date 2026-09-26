@@ -2,11 +2,11 @@
 
 ## Impostazione
 
-Guida in italiano alla versione sorgente corrente: **48 slide**, nello stesso ordine di `slides.yml`. I titoli sono riportati con spazi normalizzati e senza markup di impaginazione.
+Guida in italiano alla versione sorgente corrente: **49 slide**, nello stesso ordine di `slides.yml`. I titoli sono riportati con spazi normalizzati e senza markup di impaginazione.
 
 **Messaggio centrale:** Un esperimento ludico rende concreti FFI, rendering nel terminale e coordinamento fra JavaScript e librerie native specializzate.
 
-**Contesto e crediti:** Project Destino combina Node.js, doomgeneric, OpenTUI e SDL_mixer. La battuta iniziale diventa un caso tecnico su ABI, loop a 35 Hz, input e packaging SEA. Il racconto del progetto non autorizza a inventare episodi o screenshot del gioco.
+**Contesto e crediti:** Project Destino combina Node.js, doomgeneric, OpenTUI e SDL3. Node carica tre librerie native attraverso node:ffi: motore Doom, OpenTUI e SDL3. OpenTUI gestisce Kitty Graphics; il backend C produce framebuffer e PCM, mentre Node coordina gioco, parsing della tastiera e invio dell'audio. La musica usa TinyMidiLoader e TinySoundFont. Il packaging SEA usa il VFS di Node e asset passati in memoria. Questi ruoli sono stati verificati nel codice della riscrittura. Il racconto del progetto non autorizza a inventare episodi o screenshot del gioco.
 
 ## Struttura e ritmo
 
@@ -14,7 +14,7 @@ Guida in italiano alla versione sorgente corrente: **48 slide**, nello stesso or
 - **Slide 10–19 — Il confine nativo:** Spiegare ABI, API e responsabilità della memoria.
 - **Slide 20–34 — Il gioco funziona:** Separare engine, loop, rendering, input e audio.
 - **Slide 35–39 — Distribuzione:** Spiegare come SEA e librerie native convivono.
-- **Slide 40–48 — Performance e demo:** Collegare fast path, dimostrazione e riuso.
+- **Slide 40–49 — Performance e demo:** Collegare fast path, dimostrazione e riuso.
 
 Evento e durata non sono definiti nei metadati del talk. Assegnare i tempi dopo aver concordato lo slot; i separatori sono passaggi brevi, mentre demo, esercizi e domande richiedono tempo dedicato. Le misure o le roadmap citate restano legate alle versioni mostrate.
 
@@ -62,7 +62,7 @@ Evento e durata non sono definiti nei metadati del talk. Assegnare i tempi dopo 
 
 ### 9. They really push the terminal hard
 - **Scopo:** Mostrare perché l'esperimento vale la pena, attraverso «They really push the terminal hard».
-- **Traccia:** Le celle diventano una superficie dinamica: geometria e refresh fanno parte del problema.
+- **Traccia:** Le UI da terminale combinano testo e grafica attraverso protocolli dedicati. Geometria e refresh fanno parte del problema; OpenTUI resta il componente che gestisce Kitty Graphics in Destino.
 - **Transizione:** Passare alla slide 10, «But this is not only about Doom.», aprendo la sezione «Il confine nativo».
 
 ### 10. But this is not only about Doom.
@@ -92,7 +92,7 @@ Evento e durata non sono definiti nei metadati del talk. Assegnare i tempi dopo 
 
 ### 15. `node:ffi` changes the shape.
 - **Scopo:** Spiegare ABI, API e responsabilità della memoria, attraverso «`node:ffi` changes the shape.».
-- **Traccia:** Seguire caricamento della libreria, firma e invocazione dell'esempio.
+- **Traccia:** Seguire caricamento della libreria e dichiarazione delle firme. Il simbolo nativo reale è doomgeneric_Tick; arguments e return descrivono il contratto ABI.
 - **Transizione:** Passare alla slide 16, «The boundary is explicit».
 
 ### 16. The boundary is explicit
@@ -127,7 +127,7 @@ Evento e durata non sono definiti nei metadati del talk. Assegnare i tempi dopo 
 
 ### 22. The Destino stack
 - **Scopo:** Separare engine, loop, rendering, input e audio, attraverso «The Destino stack».
-- **Traccia:** Assegnare un ruolo a Node.js, doomgeneric, OpenTUI e SDL_mixer.
+- **Traccia:** Tre librerie native, un coordinatore JavaScript: engine.js carica Doom, video.js carica OpenTUI, audio.js carica SDL3, tutti tramite node:ffi. OpenTUI presenta immagini tramite Kitty Graphics; il protocollo tastiera Kitty fornisce eventi di rilascio; SDL3 riproduce PCM. Anticipare soltanto il ruolo dell'input, approfondito nelle slide 32–33.
 - **Transizione:** Passare alla slide 23, «How doomgeneric works».
 
 ### 23. How doomgeneric works
@@ -137,22 +137,22 @@ Evento e durata non sono definiti nei metadati del talk. Assegnare i tempi dopo 
 
 ### 24. Everyone owns a piece
 - **Scopo:** Separare engine, loop, rendering, input e audio, attraverso «Everyone owns a piece».
-- **Traccia:** JavaScript coordina; logica di gioco e audio restano nelle librerie native.
-- **Transizione:** Passare alla slide 25, «Keep the native surface tiny.».
+- **Traccia:** Node coordina tick, caricamento, video e consegna audio. TerminalParser interpreta gli eventi tastiera in JavaScript e li mappa ai comandi Doom. Il codice nativo produce pixel e miscela campioni; OpenTUI e SDL3 gestiscono l'output. SDL3 non è il mixer del gioco.
+- **Transizione:** Passare alla slide 25, «Keep the native boundary explicit.».
 
-### 25. Keep the native surface tiny.
+### 25. Keep the native boundary explicit.
 - **Scopo:** Segnare un passaggio nella sezione «Il gioco funziona».
-- **Traccia:** Usare «Keep the native surface tiny.» come domanda o pausa visiva prima del prossimo passaggio. Separare engine, loop, rendering, input e audio.
+- **Traccia:** Il codice nativo ora comprende anche audio e file in memoria: il valore è un confine esplicito, non una promessa di pochissime righe C. Separare engine, loop, rendering, input e audio.
 - **Transizione:** Passare alla slide 26, «The C platform layer».
 
 ### 26. The C platform layer
 - **Scopo:** Separare engine, loop, rendering, input e audio, attraverso «The C platform layer».
-- **Traccia:** Ridurre l'interfaccia nativa a inizializzazione, tick, frame e cleanup.
+- **Traccia:** Raggruppare il contratto in inizializzazione degli asset e cleanup, tick/input, e accesso a framebuffer e blocchi PCM. Distinguere il contratto esposto dai dettagli interni del backend.
 - **Transizione:** Passare alla slide 27, «The 35 Hz loop».
 
 ### 27. The 35 Hz loop
 - **Scopo:** Separare engine, loop, rendering, input e audio, attraverso «The 35 Hz loop».
-- **Traccia:** Seguire il ciclo a 35 Hz e distinguere avanzamento del gioco e rendering.
+- **Traccia:** Seguire setInterval a 1000 / 35 ms: avanzamento del gioco, produzione e invio PCM, presentazione attraverso OpenTUI e richiesta di uscita. Il renderer viene chiamato a ogni tick anche senza un nuovo frame segnalato dal motore. Lo snippet è un estratto semplificato: omette gestione errori, conservazione del timer e dettagli del cleanup. Non esiste più lo sblocco audio dopo il primo frame.
 - **Transizione:** Passare alla slide 28, «Now render Doom in a terminal.».
 
 ### 28. Now render Doom in a terminal.
@@ -162,12 +162,12 @@ Evento e durata non sono definiti nei metadati del talk. Assegnare i tempi dopo 
 
 ### 29. Framebuffer to terminal
 - **Scopo:** Separare engine, loop, rendering, input e audio, attraverso «Framebuffer to terminal».
-- **Traccia:** Seguire BGRA → Buffer → celle; la vista sulla memoria dipende dal lifetime del frame nativo.
+- **Traccia:** Seguire framebuffer BGRA → Buffer preso in prestito → conversione RGBA in JavaScript → FFI verso OpenTUI → Kitty Graphics. La vista iniziale dipende dal lifetime della memoria nativa; la conversione scrive in un buffer separato, quindi la pipeline completa non è zero-copy. OpenTUI genera l'output nativo, che VideoOutput recupera, copia e scrive su stdout. Renderer e output feed condividono lo stesso handle della libreria; i thread nativi di rendering sono disabilitati.
 - **Transizione:** Passare alla slide 30, «Terminals are weird».
 
 ### 30. Terminals are weird
 - **Scopo:** Separare engine, loop, rendering, input e audio, attraverso «Terminals are weird».
-- **Traccia:** Mostrare effetti del rapporto delle celle, alternate screen e ripristino del cursore.
+- **Traccia:** Spiegare geometria delle celle, resize e cambi di font. OpenTUI avvia la negoziazione Kitty Graphics; Destino inoltra le risposte al renderer e verifica supporto grafico e dimensioni in pixel. Mancata conferma entro 1,5 secondi causa DESTINO_VIDEO: non esiste fallback sixel o a caratteri. Il workaround CMUX modifica il placement delle immagini nell'output, senza riscrivere i payload grafici.
 - **Transizione:** Passare alla slide 31, «Input is the awkward part.».
 
 ### 31. Input is the awkward part.
@@ -182,12 +182,12 @@ Evento e durata non sono definiti nei metadati del talk. Assegnare i tempi dopo 
 
 ### 33. Why the Kitty keyboard protocol?
 - **Scopo:** Separare engine, loop, rendering, input e audio, attraverso «Why the Kitty keyboard protocol?».
-- **Traccia:** Il protocollo tastiera Kitty fornisce eventi più ricchi del semplice flusso di caratteri.
-- **Transizione:** Passare alla slide 34, «Audio stays native».
+- **Traccia:** Il protocollo tastiera Kitty è distinto da Kitty Graphics. TerminalParser in input.js richiede e verifica i flag per disambiguazione, press/repeat/release e codifica di tutti i tasti; attende la conferma entro 1,5 secondi, senza fallback ASCII/xterm legacy. OpenTUI configura gli stessi flag durante il setup, ma parsing e mappatura dei comandi restano in JavaScript.
+- **Transizione:** Passare alla slide 34, «Native mixing. JavaScript orchestration.».
 
-### 34. Audio stays native
+### 34. Native mixing. JavaScript orchestration.
 - **Scopo:** Separare engine, loop, rendering, input e audio, attraverso «Audio stays native».
-- **Traccia:** Spiegare che SDL_mixer gestisce il percorso audio senza mixing JavaScript.
+- **Traccia:** MUS/MIDI viene convertito e schedulato con il convertitore DoomGeneric e TinyMidiLoader; TinySoundFont sintetizza la musica, il backend C miscela gli effetti. Node preleva 1.260 frame stereo per tick a 44,1 kHz e li accoda a SDL3, limitando il backlog. JavaScript gestisce il flusso senza sintetizzare ogni campione e senza callback JS sul thread audio SDL.
 - **Transizione:** Passare alla slide 35, «How did we package this monster?», aprendo la sezione «Distribuzione».
 
 ### 35. How did we package this monster?
@@ -197,22 +197,22 @@ Evento e durata non sono definiti nei metadati del talk. Assegnare i tempi dopo 
 
 ### 36. Node.js SEA works, with a catch
 - **Scopo:** Spiegare come SEA e librerie native convivono, attraverso «Node.js SEA works, with a catch».
-- **Traccia:** SEA incorpora risorse, ma il loader nativo richiede percorsi sul filesystem.
+- **Traccia:** SEA incorpora le tre librerie native (Doom, OpenTUI e SDL3) e gli asset, esponendoli tramite useVfs. Il problema da risolvere è che fopen del codice C non attraversa automaticamente il filesystem virtuale di Node. Node può materializzare internamente le librerie native: non promettere l'assenza assoluta di file temporanei.
 - **Transizione:** Passare alla slide 37, «How would you solve that?».
 
 ### 37. How would you solve that?
 - **Scopo:** Segnare un passaggio nella sezione «Distribuzione».
-- **Traccia:** Usare «How would you solve that?» come domanda o pausa visiva prima del prossimo passaggio. Spiegare come SEA e librerie native convivono.
+- **Traccia:** Chiedere come far leggere gli asset a un motore C che usa stdio quando i dati sono nel VFS di Node. Lasciare una breve pausa prima della soluzione attraverso buffer e adattamento dell'I/O nativo.
 - **Transizione:** Passare alla slide 38, «Don't forget about K.I.S.S.ing!».
 
 ### 38. Don't forget about K.I.S.S.ing!
 - **Scopo:** Segnare un passaggio nella sezione «Distribuzione».
-- **Traccia:** Usare «Don't forget about K.I.S.S.ing!» come domanda o pausa visiva prima del prossimo passaggio. Spiegare come SEA e librerie native convivono.
-- **Transizione:** Passare alla slide 39, «Assets are temporarily extracted».
+- **Traccia:** Il principio è passare dati già letti da Node attraverso FFI, evitando l'estrazione manuale di tutti gli asset. L'adattatore stdio nativo resta lavoro reale: non presentare il VFS Node come una soluzione automatica all'I/O C.
+- **Transizione:** Passare alla slide 39, «Assets in memory. Saves on disk.».
 
-### 39. Assets are temporarily extracted
-- **Scopo:** Spiegare come SEA e librerie native convivono, attraverso «Assets are temporarily extracted».
-- **Traccia:** Estrarre risorse all'avvio, mantenere i percorsi attesi e gestire la pulizia nel ciclo di vita.
+### 39. Assets in memory. Saves on disk.
+- **Scopo:** Spiegare come SEA e librerie native convivono, attraverso «Assets in memory. Saves on disk.».
+- **Traccia:** Node legge WAD e SF2 e passa buffer al nativo. In SEA l'adattatore offre file in memoria al motore, mentre i salvataggi persistono in saves/<nome-WAD> nella directory corrente, inclusi quelli temporanei e di recupero. Configurazione interna di Doom, demo e screenshot restano in memoria; la modalità sorgente mantiene il normale filesystem. Un destino.json assente nel SEA usa default in memoria.
 - **Transizione:** Passare alla slide 40, «Then comes performance.», aprendo la sezione «Performance e demo».
 
 ### 40. Then comes performance.
@@ -222,7 +222,7 @@ Evento e durata non sono definiti nei metadati del talk. Assegnare i tempi dopo 
 
 ### 41. Destino is not the hottest case
 - **Scopo:** Collegare fast path, dimostrazione e riuso, attraverso «Destino is not the hottest case».
-- **Traccia:** 35 Hz non è il caso più intenso per FFI: distinguere costo del confine e lavoro utile.
+- **Traccia:** Distinguere frequenza dei campioni e frequenza delle chiamate: 44.100 frame audio al secondo sono prelevati in 35 blocchi da 1.260 frame, non con una chiamata per campione. Questo non è il conteggio totale delle chiamate FFI del runtime. Il batching limita gli attraversamenti; distinguere costo del confine e lavoro utile senza inventare benchmark.
 - **Transizione:** Passare alla slide 42, «(Very) Fast FFI is now in Node.js.».
 
 ### 42. (Very) Fast FFI is now in Node.js.
@@ -242,40 +242,47 @@ Evento e durata non sono definiti nei metadati del talk. Assegnare i tempi dopo 
 
 ### 45. DEMO
 - **Scopo:** Collegare fast path, dimostrazione e riuso, attraverso «DEMO».
-- **Traccia:** Eseguire la demo preparata; verificare prima terminale, librerie, audio e asset legittimamente disponibili. Tenere una registrazione reale come alternativa. Sottotitolo da richiamare: «TIME».
+- **Traccia:** Eseguire la demo con Node.js 26.10.0+, OpenTUI/Kitty Graphics, SDL3 e asset disponibili. Mostrare audio e rendering; se utile mostrare resize, barra di stato e persistenza dei salvataggi. Tenere una registrazione reale come alternativa. Sottotitolo da richiamare: «TIME».
 - **Transizione:** Passare alla slide 46, «Check it out!».
 
 ### 46. Check it out!
 - **Scopo:** Collegare fast path, dimostrazione e riuso, attraverso «Check it out!».
 - **Traccia:** Lasciare il repository del progetto per provare e contribuire.
-- **Transizione:** Passare alla slide 47, «The only way of discovering the limits of the possible is to venture a little way past them into the impossible.».
+- **Transizione:** Passare alla slide 47, «WHAT'S NEXT?».
 
-### 47. The only way of discovering the limits of the possible is to venture a little way past them into the impossible.
+### 47. WHAT'S NEXT?
+- **Scopo:** Aprire la conclusione e invitare a riutilizzare quanto mostrato.
+- **Traccia:** Collegare FFI, responsabilità esplicite e coordinamento JavaScript ad altri esperimenti con librerie native. Non annunciare funzionalità o roadmap non confermate.
+- **Transizione:** Passare alla slide 48, la citazione di Arthur C. Clarke.
+
+### 48. The only way of discovering the limits of the possible is to venture a little way past them into the impossible.
 - **Scopo:** Fissare il messaggio con la citazione scelta nel deck.
 - **Traccia:** Leggere «The only way of discovering the limits of the possible is to venture a little way past them into the impossible.», attribuita nella slide a Arthur C. Clarke. Collegarla al tema: Un esperimento ludico rende concreti FFI, rendering nel terminale e coordinamento fra JavaScript e librerie native specializzate.
-- **Transizione:** Passare alla slide 48, «End».
+- **Transizione:** Passare alla slide 49, «End».
 
-### 48. End
+### 49. End
 - **Scopo:** Concludere e lasciare i contatti.
 - **Traccia:** Ringraziare il pubblico e raccogliere domande sul percorso appena concluso.
 - **Transizione:** Domande e confronto con il pubblico.
 
 ## Fonti e materiale di supporto
 
-Le fonti seguenti sono i collegamenti presenti nelle slide, raccolti per approfondire; questa guida non implica una nuova verifica esterna di ogni fonte. Grafici, screenshot e risultati restano quelli del deck. Le attribuzioni delle citazioni sono quelle già indicate nelle slide; documentare la fonte primaria prima di usarle come riferimento storico.
+Le fonti seguenti includono i collegamenti presenti nelle slide e i riferimenti ai componenti discussi, raccolti per approfondire; questa guida non implica una nuova verifica esterna di ogni fonte. Grafici, screenshot e risultati restano quelli del deck. Le attribuzioni delle citazioni sono quelle già indicate nelle slide; documentare la fonte primaria prima di usarle come riferimento storico.
 
 - <https://github.com/anomalyco/opentui>
-- <https://github.com/anomalyco/opentui](https://github.com/anomalyco/opentui>
 - <https://github.com/nodejs/node>
 - <https://github.com/ozkl/doomgeneric>
-- <https://github.com/libsdl-org/SDL_mixer>
+- <https://github.com/libsdl-org/SDL>
+- <https://github.com/schellingb/TinySoundFont>
+- <https://sw.kovidgoyal.net/kitty/graphics-protocol/>
+- <https://sw.kovidgoyal.net/kitty/keyboard-protocol/>
 - <https://github.com/nodejs/node/pull/63068>
 - <https://github.com/platformatic/destino>
-- <https://github.com/platformatic/destino](https://github.com/platformatic/destino>
 
 ## Preparazione e dettagli da confermare
 
 - Concordare evento, durata e spazio per domande o attività pratiche.
 - Per eventuali demo, preparare le versioni del codice e dei servizi corrispondenti al deck; questi esempi non sono stati eseguiti durante la redazione della guida.
+- Snippet, ownership dei buffer, scheduling del rendering e gestione input sono stati confrontati con il codice della riscrittura; la verifica è statica e non sostituisce la prova della demo.
 - Integrare episodi personali soltanto quando forniti dal relatore.
 - Usare `context.md` per le proposte visive e l'inventario dei riferimenti alle immagini.

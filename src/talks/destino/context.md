@@ -12,25 +12,25 @@ Project Destino: Doom In The Terminal with Node.js and OpenTUI
 
 In this talk, I’ll take you through the strange and surprisingly fun journey behind Project Destino: a proof of concept to run Doom entirely inside the terminal using Node.js. What started as a joke — “what if we ran Doom in the terminal with Node.js?” — slowly turned into a real experiment in terminal graphics, native interoperability, and runtime performance.
 
-I’ll show how I combined doomgeneric, OpenTUI, node:ffi, and SDL_mixer to build a fully interactive terminal-based Doom experience, with Node.js acting as the coordinator between rendering, input handling, audio, and the native game engine itself.
+I’ll show how I combined doomgeneric, OpenTUI, node:ffi, and SDL3 to build a fully interactive terminal-based Doom experience. OpenTUI presents frames through Kitty Graphics, native code produces pixels and audio samples, and Node.js coordinates the game loop, input, rendering, and audio delivery. Along the way, we’ll explore explicit memory ownership and packaging native assets with Node.js SEA.
 
 ## Messaggio e background confermato
 
 Un esperimento ludico rende concreti FFI, rendering nel terminale e coordinamento fra JavaScript e librerie native specializzate.
 
-Project Destino combina Node.js, doomgeneric, OpenTUI e SDL_mixer. La battuta iniziale diventa un caso tecnico su ABI, loop a 35 Hz, input e packaging SEA. Il racconto del progetto non autorizza a inventare episodi o screenshot del gioco.
+Project Destino combina Node.js, doomgeneric, OpenTUI e SDL3. Il codice della riscrittura conferma tre librerie native caricate tramite node:ffi: Doom, OpenTUI e SDL3. OpenTUI gestisce Kitty Graphics: non rappresentarlo come un componente rimosso né disegnare un percorso video che lo scavalchi. Il codice nativo produce framebuffer BGRA e PCM; JavaScript legge il framebuffer tramite una vista Buffer, lo converte in RGBA e lo passa a OpenTUI. L'output grafico nativo viene recuperato da JavaScript e scritto sul terminale. Il parser tastiera di Destino resta in JavaScript e verifica il supporto press/repeat/release; anche supporto grafico e geometria in pixel vengono verificati, senza fallback. TinyMidiLoader e TinySoundFont gestiscono scheduling MIDI e sintesi musicale, mentre Node coordina gioco e invio dei blocchi audio a SDL3. Il packaging SEA usa il VFS Node, passa WAD e SF2 in memoria e mantiene persistenti i salvataggi. Il caricamento delle librerie può comportare materializzazione interna da parte di Node. La battuta iniziale diventa un caso tecnico su ABI, loop a 35 Hz, input e packaging. Il racconto del progetto non autorizza a inventare episodi o screenshot del gioco.
 
 Relatore o facilitatori indicati nei metadati: Paolo Insogna. Il tema condiviso presenta Paolo Insogna come membro del Node.js TSC e Principal Engineer; questo dato non va usato per retrodatare ruoli nei racconti storici. Non inventare incontri, risultati o dettagli biografici.
 
 ## Struttura narrativa
 
-La versione corrente contiene **48 slide**.
+La versione corrente contiene **49 slide**. Nessuna nuova slide tecnica è stata aggiunta in questa revisione; il conteggio include «WHAT'S NEXT?» alla posizione 47, prima della citazione e della chiusura.
 
 - **Slide 1–9 — Dalla battuta al terminale:** Mostrare perché l'esperimento vale la pena.
 - **Slide 10–19 — Il confine nativo:** Spiegare ABI, API e responsabilità della memoria.
 - **Slide 20–34 — Il gioco funziona:** Separare engine, loop, rendering, input e audio.
 - **Slide 35–39 — Distribuzione:** Spiegare come SEA e librerie native convivono.
-- **Slide 40–48 — Performance e demo:** Collegare fast path, dimostrazione e riuso.
+- **Slide 40–49 — Performance e demo:** Collegare fast path, dimostrazione e riuso.
 
 ## Tono e direzione visiva
 
@@ -67,7 +67,7 @@ Questi sono riferimenti sorgente, non immagini da rigenerare automaticamente. `@
 | 18 | What can go wrong? | `@talk/coder.png` |
 | 20 | OK, but what about Doom? | `@talk/sad.png` |
 | 21 | Say hi to Destino. | `@talk/destino.png` |
-| 25 | Keep the native surface tiny. | `@talk/attack.png` |
+| 25 | Keep the native boundary explicit. | `@talk/attack.png` |
 | 28 | Now render Doom in a terminal. | `@talk/title.png` |
 | 31 | Input is the awkward part. | `@talk/input.png` |
 | 35 | How did we package this monster? | `@talk/packaging.png` |
@@ -98,15 +98,15 @@ Le proposte seguenti sono varianti facoltative associate a slide e titoli reali,
 
 **Uso:** Soggetto compatto nel pannello laterale, margini generosi; evitare dettagli indispensabili ai bordi.
 
-### D. Slide 25 — Keep the native surface tiny.
+### D. Slide 25 — Keep the native boundary explicit.
 
-**Concetto proposto:** Un connettore piccolo mette in moto un sistema complesso.
+**Concetto proposto:** Un connettore ben definito collega due sistemi complessi. Il punto è il contratto esplicito, non una promessa di poco codice nativo.
 
 **Uso:** Soggetto compatto nel pannello laterale, margini generosi; evitare dettagli indispensabili ai bordi.
 
 ### E. Slide 35 — How did we package this monster?
 
-**Concetto proposto:** Una scatola trasportabile contiene componenti ordinati che possono essere estratti.
+**Concetto proposto:** Una scatola trasportabile contiene componenti ordinati accessibili attraverso un'interfaccia. Evitare la metafora dello svuotamento su disco: gli asset del gioco passano in memoria, mentre i salvataggi hanno uno spazio persistente separato.
 
 **Uso:** Soggetto compatto nel pannello laterale, margini generosi; evitare dettagli indispensabili ai bordi.
 

@@ -81,8 +81,8 @@ title: They really push the terminal hard
 items:
   entries:
     - icon: layer-group
-      title: Terminal cells as pixels
-      text: It treats the terminal as a real rendering surface.
+      title: More than text
+      text: Terminal interfaces can combine text and graphics through dedicated protocols.
     - icon: gauge-high
       title: Refresh rates matter
       text: Dynamic interfaces need redraws that feel immediate.
@@ -165,7 +165,7 @@ code:
     import { dlopen } from 'node:ffi'
 
     const { functions } = dlopen(libPath, {
-      tick: { arguments: [], return: 'void' },
+      doomgeneric_Tick: { arguments: [], return: 'void' },
       send_key: { arguments: ['uint8', 'int32'], return: 'void' },
       get_framebuffer: { arguments: [], return: 'pointer' }
     })
@@ -249,20 +249,18 @@ options:
 
 ---
 title: The Destino stack
+subtitle: Three native libraries. One JavaScript coordinator.
 items:
   entries:
     - index: 1
       title: Node.js (https://github.com/nodejs/node)
-      text: The best JavaScript runtime. *Ever.* 😈
+      text: The best JavaScript runtime. *Ever.* 😈 It coordinates native calls through `node:ffi`.
     - index: 2
       title: doomgeneric (https://github.com/ozkl/doomgeneric)
-      text: The native Doom engine provides the game core.
+      text: The game core and native adapters produce frames and audio samples.
     - index: 3
-      title: OpenTUI (https://github.com/anomalyco/opentui)
-      text: The terminal renderer turns frames into cells.
-    - index: 4
-      title: SDL_mixer (https://github.com/libsdl-org/SDL_mixer)
-      text: The native audio path keeps sound outside JavaScript.
+      title: OpenTUI + Kitty protocols + SDL3
+      text: Kitty Graphics presents frames; Kitty keyboard reports key releases; SDL3 plays audio.
 # ---
 
 ---
@@ -283,14 +281,20 @@ title: Everyone owns a piece
 items:
   entries:
     - icon: rotate
-      title: Node.js owns the loop
-      text: JavaScript coordinates ticks, input, and cleanup.
+      title: |
+        Node.js owns the 
+        loop and the loading
+      text: It parses input and coordinates ticks, video, audio, and cleanup.
     - icon: gear
-      title: Doom owns the engine
-      text: The game logic remains native and purpose-built.
+      title: |
+        Native code owns 
+        the game and audio mixing
+      text: The engine and audio backend produce pixels and PCM samples.
     - icon: volume-high
-      title: SDL owns the audio
-      text: Sound stays where low-latency mixing already works.
+      title: |
+        OpenTUI and SDL3
+        handle output
+      text: OpenTUI presents frames through Kitty Graphics; SDL3 plays PCM.
   horizontal: true
 # ---
 
@@ -298,7 +302,7 @@ items:
 layout: separator
 title: |
   Keep the native
-  surface tiny.
+  boundary explicit.
 image:
   url: '@talk/attack'
 options:
@@ -313,42 +317,28 @@ items:
       title: Initialize and cleanup
       text: Start Doom with assets and release native resources.
     - icon: forward-step
-      title: Advance one tick
-      text: Let JavaScript drive the engine at Doom speed.
+      title: Advance ticks and deliver input
+      text: Let JavaScript drive the engine and forward key transitions.
     - icon: image
-      title: Expose frame state
-      text: Return the framebuffer and signal frame readiness.
+      title: Expose pixels and PCM
+      text: Give JavaScript a framebuffer and blocks of mixed audio.
 # ---
 
 ---
 title: The 35 Hz loop
+subtitle: Simplified orchestration; the renderer presents through OpenTUI.
 code:
   language: javascript
   content: |
-    runtime.timer = setInterval(() => {
-      if (runtime.shuttingDown) {
-        return
+    // Simplified: error handling and cleanup omitted.
+    setInterval(() => {
+      engine.tick()
+      audio.write(engine.renderAudio())
+      renderer.render()
+
+      if (engine.quitRequested()) {
+        shutdown()
       }
-
-      runtime.engine.tick()
-
-      if (runtime.engine.quitRequested()) {
-        boundShutdown()
-        return
-      }
-
-      if (!runtime.engine.frameReady()) {
-        return
-      }
-
-      runtime.renderer.render()
-
-      if (!runtime.audioReleased) {
-        runtime.audioReleased = true
-        runtime.engine.releaseAudio()
-      }
-
-      runtime.engine.clearFrameReady()
     }, 1000 / 35)
   className:
     root: theme@code small
@@ -372,14 +362,14 @@ title: Framebuffer to terminal
 items:
   entries:
     - icon: palette
-      title: Doom outputs BGRA
-      text: The engine exposes pixels through native memory.
+      title: Doom exposes BGRA
+      text: Native pixels are exposed through a borrowed Buffer.
     - icon: database
-      title: Node.js sees a Buffer
-      text: The renderer borrows the native memory safely.
+      title: JavaScript prepares RGBA
+      text: Channels are converted before passing the frame to OpenTUI through FFI.
     - icon: expand
-      title: OpenTUI draws cells
-      text: Pixels are scaled into terminal-friendly output.
+      title: OpenTUI speaks Kitty Graphics
+      text: Native rendering produces the terminal output.
 # ---
 
 ---
@@ -390,11 +380,11 @@ items:
       title: Cells are not pixels
       text: Geometry affects aspect ratio and perceived detail.
     - icon: scroll
-      title: Output has history
-      text: Alternate screen and cursor cleanup matter a lot.
+      title: Layout can change
+      text: Resizing and font changes affect how the frame fits.
     - icon: cat
-      title: Kitty can help
-      text: Graphics protocol support gives another render path.
+      title: Negotiate, don't assume
+      text: Require Kitty Graphics and query pixel geometry, with no fallback.
 # ---
 
 ---
@@ -438,24 +428,23 @@ items:
       text: Controls depend on press, repeat, and release events being distinct.
     - icon: cat
       title: Kitty reports it
-      text: The protocol exposes richer key events across modern terminals.
+      text: Destino verifies press/repeat/release support.
   horizontal: true
 # ---
 
 ---
-layout: side
-title: Audio stays native
+title: Native mixing. JavaScript orchestration.
 items:
   entries:
     - icon: volume-high
-      title: SDL2_mixer does the work
-      text: doomgeneric keeps sound on the native side.
-    - icon: ban
-      title: JavaScript does not mix
-      text: Node is not involved at all.
+      title: Native code produces PCM
+      text: TinyMidiLoader and TinySoundFont drive music; the C backend mixes effects.
+    - icon: arrows-left-right
+      title: Samples cross FFI in blocks
+      text: Each tick produces 1,260 stereo frames at 44.1 kHz.
     - icon: scale-balanced
-      title: Responsibilities stay clean
-      text: SDL_mixer owns the audio path entirely.
+      title: Node feeds SDL3
+      text: JavaScript queues the PCM and limits backlog without mixing individual samples.
 # ---
 
 ---
@@ -474,15 +463,15 @@ title: Node.js SEA works, with a catch
 items:
   entries:
     - icon: file-zipper
-      title: Bundle the app
+      title: SEA provides a virtual filesystem
       text: |
-        JavaScript, assets, and metadata
-        can ship together.
+        JavaScript, libraries, and assets
+        ship together with `useVfs`.
     - icon: folder-open
-      title: Libraries need paths
+      title: Native I/O is a different boundary
       text: |
-        Native loaders can only
-        open paths from the filesystem.
+        C calls to `fopen()` do not automatically
+        use Node's virtual filesystem.
   horizontal: true
 # ---
 
@@ -509,19 +498,18 @@ options:
 # ---
 
 ---
-title: Assets are temporarily extracted
-content: The simplest ideas are often the ones that work best.
+title: Assets in memory. Saves on disk.
 items:
   entries:
     - index: 1
-      title: Extract on startup
-      text: Embedded files are written to a temporary directory.
+      title: Pass assets through FFI
+      text: Node reads WAD and SF2 assets and passes their bytes to native code.
     - index: 2
-      title: Recreate paths
-      text: Native libraries and assets keep the layout they expect.
+      title: Adapt native file access
+      text: The engine uses memory-backed files in SEA mode.
     - index: 3
-      title: Clean on shutdown
-      text: The temporary directory disappears when the process exits.
+      title: Persist the saves
+      text: Save files live on disk; other engine writes stay in process memory.
 # ---
 
 ---
@@ -543,8 +531,8 @@ items:
       title: Doom runs at 35 Hz
       text: The main loop is steady, but not extreme.
     - icon: arrows-left-right
-      title: The boundary still matters
-      text: Rendering, input, and polling all cross it.
+      title: Batch work across the boundary
+      text: 44,100 audio frames per second become 35 PCM blocks, not 44,100 FFI calls.
     - icon: fire
       title: Real apps can be hotter
       text: Enterprise libraries may sit on critical paths.
@@ -618,11 +606,11 @@ className:
 ---
 layout: hero
 title: "WHAT'S"
-subtitle: 'NEXT?'
+subtitle: '<span class="theme@fg-fuchsia">NEXT?</span>'
 options:
   background: amber
 decorations:
-  logo: white
+  logo: black
 # ---
 
 ---

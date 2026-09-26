@@ -121,14 +121,6 @@ items:
       title: Write once, run everywhere™
       text: We want to write our scripts in our language despite of the runtime environment.
   horizontal: true
-notes: |
-  Spiega il processo del TC39:
-
-  0. Informal
-  1. Formal
-  2. Draft, first implementations
-  3. Candidate, 2 implementations
-  4. Finished
 
 
 # ---
@@ -168,10 +160,6 @@ grids:
       - image: '@talk/node'
       - image: '@common/deno'
       - image: '@common/bun'
-notes: |
-  Firefox usa SpiderMonkey, le feature vengono implementate più velocemente.
-
-  La tail-call funge solo su JSC - Menziona che gli env possono essere molto diversi.
 
 
 # ---
@@ -192,12 +180,6 @@ grids:
         title: ELM
       - image: '@common/rescript'
         title: ReScript
-notes: |
-  * F# -> .NET
-  * Kotlin -> Java
-  * Gleam -> Sintassi Rust per Erlang
-  * OCAML -> ReasonML e ReScript
-  * ELM -> Haskell
 
 
 # ---
@@ -207,8 +189,6 @@ content:
   - The project is a collection of modular and reusable compiler and toolchains.
 image:
   url: '@common/llvm'
-notes: |
-  LLVM permette già di compilare in JavaScript.
 
 
 # ---
@@ -234,8 +214,6 @@ items:
   horizontal: true
   spacer: false
   gap: false
-notes: |
-  Pipe da Hack - Dialetto PHP di Facebook
 
 
 # ---
@@ -576,8 +554,6 @@ items:
       title: To serve a single JavaScript file
       text: Serving only a single file reduces the overhead and improves the user experience.
   horizontal: true
-notes: |
-  Menziona di non fare il bundle lato server.
 
 
 # ---
@@ -719,8 +695,6 @@ items:
     - icon: rocket
       title: Still very fast
       text: We will talk about this is in a bit.
-notes: |
-  Spiega la differenza tra CJS e ESM.
 
 
 # ---

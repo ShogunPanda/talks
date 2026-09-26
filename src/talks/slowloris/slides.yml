@@ -50,8 +50,6 @@ items:
     - icon: sack-dollar
       title: In DDoS the attacker usually uses a lot of resources
       text: _Is that still true?_
-notes: |
-  Emphasize the **true** in the last question.
 
 
 # ---
@@ -70,8 +68,6 @@ options:
 layout: image
 image:
   url: '@common/slowloris'
-notes: |
-  Joke about: **"This talk should have been named Taming Slowlorises in Node.js"** and see people reaction.
 decorations:
   logo: white
 # ---
@@ -118,8 +114,6 @@ content:
   - Clients usually disconnect after receiving the response.
 image:
   url: '@talk/http-2'
-notes: |
-  Explicitly mention that this is not strictly true for Keep-Alive connections but also that legit clients disconnects very soon.
 decorations:
   number: 2
 # ---
@@ -189,8 +183,6 @@ layout: separator
 title: How do we stop it?
 image:
   url: '@common/wall'
-notes: |
-  Emphasize **"How"** and **"stop it"**?
 options:
   background: amber
 decorations:
@@ -266,9 +258,6 @@ items:
     - icon: calendar
       title: Node.js 13.0.0, October 22nd, 2019
       text: _From now on, attacker can delay transfer indefinitely._
-notes: |
-  * Hapi and Fastify implemented a fix.
-  * Restify, Express and Koa did not.
 decorations:
   logo: white
 # ---
@@ -381,8 +370,6 @@ items:
         <br/>_The default Node.js configuration
         now protects against SlowLoris._
   horizontal: true
-notes: |
-  Mention that this was possible due to semver major change and thus it will not be backported.
 
 
 # ---
@@ -391,8 +378,6 @@ layout: separator
 title: We made it!
 image:
   url: '@common/turtle'
-notes: |
-  Do a nice victory gesture and shout!
 options:
   background: green
 decorations:
@@ -418,8 +403,6 @@ items:
       title: Validate regularly
       text: During regular activities, always check the existing code for hidden flaws or vulnerabilites.
   horizontal: true
-notes: |
-  **Before** talking about the slides, recap what you talked about: **"Today we have seen how atypical attacks can unexpectedly affect our applications and how it can take a very long time to fix them."**
 
 
 # ---
