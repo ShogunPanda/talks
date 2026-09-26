@@ -8,7 +8,7 @@ title: |
   Phenomenal cosmic powers...
   Itty bitty living space.
 image:
-  url: '@common/genius.png'
+  url: '@common/genius'
 options:
   background: fuchsia
 # ---
@@ -22,7 +22,7 @@ layout: separator
 title: |
   Have you ever heard of QR codes?
 image:
-  url: '@talk/qr-intro.png'
+  url: '@talk/qr-intro'
 options:
   background: amber
 decorations:
@@ -33,7 +33,7 @@ decorations:
 layout: separator
 title: Yes, of course!
 image:
-  url: '@common/troll-white.svg'
+  url: '@common/troll-white'
   className: troll
 options:
   background: pink
@@ -90,7 +90,7 @@ layout: separator
 title: |
   QR Codes make our life way easier ...
 image:
-  url: '@talk/green-pass.png'
+  url: '@talk/green-pass'
 options:
   background: green
 # ---
@@ -99,7 +99,7 @@ options:
 layout: separator
 title: ... sometimes in a weird way!
 image:
-  url: '@common/grave.png'
+  url: '@common/grave'
 options:
   background: red
 # ---
@@ -109,7 +109,7 @@ layout: separator
 title: |
   If we look closely...
 image:
-  url: '@common/microscope.png'
+  url: '@common/microscope'
 options:
   background: sky
 # ---
@@ -118,49 +118,49 @@ options:
 title: Position markers (finders)
 content: They are positioned in three corners to help the scanner determine the boundaries.
 image:
-  url: '@talk/qr-position.png'
+  url: '@talk/qr-position'
 # ---
 
 ---
 title: Alignment markers
 content: They are complementary to the position markers to determine the orientation.
 image:
-  url: '@talk/qr-alignment.png'
+  url: '@talk/qr-alignment'
 # ---
 
 ---
 title: Timing markers
 content: They are used from the scanner to understand the size.
 image:
-  url: '@talk/qr-timing.png'
+  url: '@talk/qr-timing'
 # ---
 
 ---
 title: Version information
 content: They specify which of the many QR version has been chosen.
 image:
-  url: '@talk/qr-version.png'
+  url: '@talk/qr-version'
 # ---
 
 ---
 title: Format information
 content: Similarly, they specify the encoding chosen.
 image:
-  url: '@talk/qr-format.png'
+  url: '@talk/qr-format'
 # ---
 
 ---
 title: Data and Error correction
 content: The rest of the code delivers the data and the error correction (ECC), one next to each other.
 image:
-  url: '@talk/qr-data-ecc.png'
+  url: '@talk/qr-data-ecc'
 # ---
 
 ---
 title: Quiet zone
 content: To help the scanner identify a QR code, it is required to pad the code in all directions.
 image:
-  url: '@talk/qr-quiet.png'
+  url: '@talk/qr-quiet'
 # ---
 
 ---
@@ -170,7 +170,7 @@ content:
   - The data and ECC sections in a code are filled from the bottom right to the top left.
   - Each sequence of 8 bits is written in block divided in two columns. When encountering alignments, rows are skipped.
 image:
-  url: '@talk/qr-fill.png'
+  url: '@talk/qr-fill'
 # ---
 
 ---
@@ -178,7 +178,7 @@ layout: separator
 title: |
   Can we get to the practice please?
 image:
-  url: '@common/easy.png'
+  url: '@common/easy'
 options:
   background: amber
 # ---
@@ -193,7 +193,7 @@ items:
     - icon: code
       title: (Almost) no libraries needed
       text: Once you know which color each cell is, you're good to go.
-    - image: '@theme/logo-black.png'
+    - image: '@theme/logo-black'
       title: Suited for backends
       text: |
         Let's prove it with the
@@ -205,7 +205,7 @@ items:
 layout: separator
 title: Let's go!
 image:
-  url: '@common/start.png'
+  url: '@common/start'
 decorations:
   logo: white
 options:
@@ -372,7 +372,7 @@ title: |
   Where are
   the QR codes?
 image:
-  url: '@common/dog-1.png'
+  url: '@common/dog-1'
 options:
   background: amber
 # ---
@@ -381,7 +381,7 @@ options:
 layout: separator
 title: Let's dive in!
 image:
-  url: '@common/dive.png'
+  url: '@common/dive'
 options:
   background: blue
 # ---

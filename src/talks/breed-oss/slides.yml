@@ -6,7 +6,7 @@ layout: cover
 layout: separator
 title: Don't ask if you can't handle the answers!
 image:
-  url: '@common/dog-2.png'
+  url: '@common/dog-2'
 options:
   background: fuchsia
 decorations:
@@ -21,7 +21,7 @@ layout: hello
 layout: separator
 title: Do you want to mess with Open Source?
 image:
-  url: '@common/code.png'
+  url: '@common/code'
 options:
   background: amber
 # ---
@@ -71,7 +71,7 @@ className:
 layout: separator
 title: Beware!
 image:
-  url: '@common/hell.png'
+  url: '@common/hell'
 options:
   background: red
 # ---
@@ -83,7 +83,7 @@ content:
   - Even if a software has a OSS license, it might not strictly be OSS.
   - SQLite is [Open Source but not Open Contribution](https://sqlite.org/copyright.html).
 image:
-  url: '@talk/sqlite.png'
+  url: '@talk/sqlite'
 # ---
 
 ---
@@ -105,7 +105,7 @@ items:
 layout: separator
 title: Wait a sec...
 image:
-  url: '@common/thinker.png'
+  url: '@common/thinker'
 options:
   background: blue
 decorations:
@@ -116,7 +116,7 @@ decorations:
 layout: separator
 title: Ring a bell?
 image:
-  url: '@common/bell.png'
+  url: '@common/bell'
 className:
   root: reverse
 options:
@@ -140,7 +140,7 @@ title: How to make it similar?
 content:
   - You can create bounty programs to prioritize collaboration on bug fixing or feature development.
 image:
-  url: '@common/wanted.png'
+  url: '@common/wanted'
 # ---
 
 ---
@@ -188,7 +188,7 @@ items:
 layout: separator
 title: Trust the community!
 image:
-  url: '@common/community.png'
+  url: '@common/community'
 options:
   background: green
 decorations:
@@ -202,7 +202,7 @@ content:
   - People generally want to help.
   - They have interest in what you are doing for their own needs.
 image:
-  url: '@common/people.png'
+  url: '@common/people'
 decorations:
   logo: white
 # ---
@@ -214,7 +214,7 @@ content:
   - Quick and effective interventions about uncomfortable situations are the key.
   - Avoiding creating a toxic community is always your *first* priority.
 image:
-  url: '@common/police.png'
+  url: '@common/police'
 # ---
 
 ---
@@ -224,7 +224,7 @@ content:
   - You will get people of all knowledges and expertises. Be patient, especially with newcomers.
   - "Basically, it's like *parenting*: endless patience, close to no recognition."
 image:
-  url: '@common/kindness.png'
+  url: '@common/kindness'
 decorations:
   logo: black
 # ---
@@ -233,7 +233,7 @@ decorations:
 layout: separator
 title: But here we're talking about breeding...
 image:
-  url: '@common/breeding.png'
+  url: '@common/breeding'
 options:
   background: blue
 # ---
@@ -259,7 +259,7 @@ title: |
   Nobody wants
   to be sued!
 image:
-  url: '@common/justice.png'
+  url: '@common/justice'
 options:
   background: red
 # ---
@@ -308,13 +308,13 @@ content:
   - People don't like if you try to take away their beloved Open Source software.
 items:
   entries:
-    - image: '@common/nodejs-logo.png'
+    - image: '@common/nodejs-logo'
       title: Node.js
       className:
         image: width-auto
-    - image: '@common/terraform.png'
+    - image: '@common/terraform'
       title: Terraform
-    - image: '@common/rust-logo.png'
+    - image: '@common/rust-logo'
       title: Rust
   horizontal: true
 # ---
@@ -325,7 +325,7 @@ title: |
   Being kind
   never hurts!
 image:
-  url: '@common/kindness.png'
+  url: '@common/kindness'
 options:
   background: green
 decorations:
@@ -336,7 +336,7 @@ decorations:
 layout: separator
 title: Questions?
 image:
-  url: '@common/questions-2.png'
+  url: '@common/questions-2'
 options:
   background: amber
 decorations:
@@ -347,7 +347,7 @@ decorations:
 layout: image
 title: Coffee Break
 image:
-  url: '@common/coffee.png'
+  url: '@common/coffee'
 decorations:
   logo: white
 # ---
@@ -358,7 +358,7 @@ title: |
   Let's get to
   the action!
 image:
-  url: '@common/action.png'
+  url: '@common/action'
 options:
   background: sky
 # ---
@@ -367,11 +367,11 @@ options:
 title: First of all, choose the hosting
 items:
   entries:
-    - image: '@common/github.png'
+    - image: '@common/github'
       title: GitHub
-    - image: '@common/gitlab.png'
+    - image: '@common/gitlab'
       title: GitLab
-    - image: '@common/bitbucket.png'
+    - image: '@common/bitbucket'
       title: BitBucket
   horizontal: true
 # ---
@@ -396,7 +396,7 @@ items:
 layout: separator
 title: How do we get started?
 image:
-  url: '@common/do-it.png'
+  url: '@common/do-it'
 options:
   background: amber
 decorations:
@@ -410,7 +410,7 @@ content:
   - The core idea to attract people is to show you care.
   - The issue system is where you usually take feedback and bug reports from your user base.
 image:
-  url: '@talk/issue.png'
+  url: '@talk/issue'
 # ---
 
 ---
@@ -425,7 +425,7 @@ items:
       title: It will help them
       text: Having templates speeds up their reporting time.
 image:
-  url: '@talk/template.png'
+  url: '@talk/template'
 # ---
 
 ---
@@ -443,7 +443,7 @@ items:
       title: Ask for a public repository
       text: It will facilitate reporters to help triagers.
 image:
-  url: '@talk/repro.png'
+  url: '@talk/repro'
 # ---
 
 ---
@@ -452,7 +452,7 @@ title: You don't owe anybody anything ...
 content:
   - It is in your rights to close bugs or features without solving them.
 image:
-  url: '@common/baloons.png'
+  url: '@common/baloons'
 # ---
 
 ---
@@ -502,7 +502,7 @@ content:
   - When people come in your community and want to help, they don't know where to start.
   - Having *good first time issues* will help them to independently starting being involved.
 image:
-  url: '@talk/first-issues.png'
+  url: '@talk/first-issues'
 # ---
 
 ---
@@ -511,7 +511,7 @@ title: |
   The next
   big pillar
 image:
-  url: '@common/pillars.png'
+  url: '@common/pillars'
 options:
   background: sky
 # ---
@@ -538,7 +538,7 @@ content:
   - While formal TDD is hard, Pull Requests *must* contain tests when non trivial.
   - Even if a PR content is very appealing, you have to *resist the temptation to accept it without tests*.
 image:
-  url: '@talk/tests.png'
+  url: '@talk/tests'
 # ---
 
 ---
@@ -566,7 +566,7 @@ content:
   - No one rushes you to merge code. If possible, require for multiple approvals before committing.
   - Once you give enough time for objection, then you can merge.
 image:
-  url: '@common/review.png'
+  url: '@common/review'
 decorations:
   logo: black
 # ---
@@ -627,14 +627,14 @@ title: (Semi) Automated releasing
 content:
   - By leveraging existing tools and the workflow feature you can release new version with just a click.
 image:
-  url: '@talk/workflows.png'
+  url: '@talk/workflows'
 # ---
 
 ---
 layout: separator
 title: Questions?
 image:
-  url: '@common/questions-2.png'
+  url: '@common/questions-2'
 options:
   background: amber
 decorations:
@@ -645,7 +645,7 @@ decorations:
 layout: image
 title: Coffee Break
 image:
-  url: '@common/coffee.png'
+  url: '@common/coffee'
 decorations:
   logo: white
 # ---
@@ -656,7 +656,7 @@ title: |
   Humans are
   social beings
 image:
-  url: '@common/people.png'
+  url: '@common/people'
 options:
   background: sky
 # ---
@@ -668,7 +668,7 @@ content:
   - Even if we're developing software, it's always about the people.
   - A line of code can be replaced at any time with no effort, you can't do the same with people.
 image:
-  url: '@common/community.png'
+  url: '@common/community'
 decorations:
   logo: black
 # ---
@@ -716,7 +716,7 @@ items:
 layout: separator
 title: Diversity and Inclusion
 image:
-  url: '@common/diversity.png'
+  url: '@common/diversity'
 options:
   background: sky
 # ---
@@ -782,7 +782,7 @@ items:
 layout: separator
 title: Everybody is responsible for moderation!
 image:
-  url: '@common/police.png'
+  url: '@common/police'
 options:
   background: blue
 decorations:
@@ -809,7 +809,7 @@ items:
 layout: separator
 title: Questions?
 image:
-  url: '@common/questions-2.png'
+  url: '@common/questions-2'
 options:
   background: amber
 decorations:
@@ -820,7 +820,7 @@ decorations:
 layout: image
 title: Coffee Break
 image:
-  url: '@common/coffee.png'
+  url: '@common/coffee'
 decorations:
   logo: white
 # ---
@@ -829,7 +829,7 @@ decorations:
 layout: separator
 title: What about Node.js?
 image:
-  url: '@common/node.png'
+  url: '@common/node'
 options:
   background: amber
 decorations:
@@ -840,7 +840,7 @@ decorations:
 layout: separator
 title: Questions?
 image:
-  url: '@common/questions-2.png'
+  url: '@common/questions-2'
 options:
   background: amber
 decorations:

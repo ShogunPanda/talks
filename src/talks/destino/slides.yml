@@ -6,7 +6,7 @@ layout: cover
 layout: separator
 title: STFU!
 image:
-  url: '@talk/stfu.png'
+  url: '@talk/stfu'
 options:
   background: red
 # ---
@@ -21,7 +21,7 @@ title: |
   This started
   as a joke...
 image:
-  url: '@talk/joke.png'
+  url: '@talk/joke'
 options:
   background: pink
 # ---
@@ -32,7 +32,7 @@ title: |
   ... and now we have
   Doom in the terminal!
 image:
-  url: '@talk/screenshot.png'
+  url: '@talk/screenshot'
 options:
   background: blue
 className:
@@ -61,7 +61,7 @@ title: |
   is the <span class="theme@fg-black">new</span> UI.
 subtitle: Thanks to AI. 🤷
 image:
-  url: '@talk/opentui.png'
+  url: '@talk/opentui'
 options:
   background: orange
 # ---
@@ -97,7 +97,7 @@ title: |
   But this is not
   only about Doom.
 image:
-  url: '@talk/bradipi.png'
+  url: '@talk/bradipi'
 options:
   background: blue
 # ---
@@ -123,7 +123,7 @@ title: |
   Before FFI,
   we had choices.
 image:
-  url: '@talk/choice.png'
+  url: '@talk/choice'
 options:
   background: amber
 # ---
@@ -151,7 +151,7 @@ title: |
   Say hello
   to `node:ffi`.
 image:
-  url: '@talk/hello-ffi.png'
+  url: '@talk/hello-ffi'
 options:
   background: green
 # ---
@@ -193,7 +193,7 @@ layout: separator
 title: FFI is <span class="theme@fg-black">very</span> powerful.
 
 image:
-  url: '@talk/ffi-power.png'
+  url: '@talk/ffi-power'
 options:
   background: red
 decorations:
@@ -204,7 +204,7 @@ decorations:
 layout: separator
 title: What can go wrong?
 image:
-  url: '@talk/coder.png'
+  url: '@talk/coder'
 options:
   background: amber
 decorations:
@@ -233,7 +233,7 @@ title: |
   OK, but what
   about Doom?
 image:
-  url: '@talk/sad.png'
+  url: '@talk/sad'
 options:
   background: amber
 # ---
@@ -242,7 +242,7 @@ options:
 layout: separator
 title: Say hi to <span class="theme@fg-black">Destino</span>.
 image:
-  url: '@talk/destino.png'
+  url: '@talk/destino'
 options:
   background: green
 # ---
@@ -300,7 +300,7 @@ title: |
   Keep the native
   surface tiny.
 image:
-  url: '@talk/attack.png'
+  url: '@talk/attack'
 options:
   background: sky
 # ---
@@ -360,7 +360,7 @@ title: |
   Now render Doom
   in a terminal.
 image:
-  url: '@talk/title.png'
+  url: '@talk/title'
 options:
   background: orange
 decorations:
@@ -403,7 +403,7 @@ title: |
   Input is the
   awkward part.
 image:
-  url: '@talk/input.png'
+  url: '@talk/input'
 options:
   background: red
 decorations:
@@ -464,7 +464,7 @@ title: |
   How did we package
   this monster?
 image:
-  url: '@talk/packaging.png'
+  url: '@talk/packaging'
 options:
   background: amber
 # ---
@@ -492,7 +492,7 @@ title: |
   How would you
   solve that?
 image:
-  url: '@talk/solving.png'
+  url: '@talk/solving'
 options:
   background: amber
 # ---
@@ -503,7 +503,7 @@ title: |
   Don't forget
   about <span class="theme@fg-black">K.I.S.S.</span>ing!
 image:
-  url: '@talk/kissing.png'
+  url: '@talk/kissing'
 options:
   background: green
 # ---
@@ -530,7 +530,7 @@ title: |
   Then comes
   performance.
 image:
-  url: '@talk/performance.png'
+  url: '@talk/performance'
 options:
   background: sky
 # ---
@@ -556,7 +556,7 @@ title: |
   (Very) Fast FFI is
   now in Node.js.
 image:
-  url: '@talk/flash.png'
+  url: '@talk/flash'
 subtitle: Starting in Node.js 26.4.0
 options:
   background: green
@@ -613,6 +613,16 @@ content:
   - <span class="theme@qr footer">[https://github.com/platformatic/destino](https://github.com/platformatic/destino)</span>
 className:
   qr: theme@qr big
+# ---
+
+---
+layout: hero
+title: "WHAT'S"
+subtitle: 'NEXT?'
+options:
+  background: amber
+decorations:
+  logo: white
 # ---
 
 ---

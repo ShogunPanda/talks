@@ -13,7 +13,7 @@ layout: hello
 layout: separator
 title: Node.js is everywhere
 image:
-  url: '@common/node-mascot.svg'
+  url: '@common/node-mascot'
 options:
   background: orange
 decorations:
@@ -38,7 +38,7 @@ items:
 layout: separator
 title: But there's a catch...
 image:
-  url: '@common/danger-strip.png'
+  url: '@common/danger-strip'
 options:
   background: red
 decorations:
@@ -64,7 +64,7 @@ items:
 layout: separator
 title: Is this still true?
 image:
-  url: '@common/questions-2.png'
+  url: '@common/questions-2'
 options:
   background: amber
 decorations:
@@ -77,7 +77,7 @@ title: |
   Did you hide
   in a cave?
 image:
-  url: '@common/cave.png'
+  url: '@common/cave'
 options:
   background: red
 decorations:
@@ -107,7 +107,7 @@ title: |
   Running Node.js
   in production
 image:
-  url: '@common/server.png'
+  url: '@common/server'
 options:
   background: orange
 decorations:
@@ -135,7 +135,7 @@ title: |
   How do we
   monitor health?
 image:
-  url: '@common/health-monitor.png'
+  url: '@common/health-monitor'
 options:
   background: amber
 decorations:
@@ -145,7 +145,7 @@ decorations:
 ---
 title: The Node.js event loop
 image:
-  url: '@talk/event-loop.png'
+  url: '@talk/event-loop'
 # ---
 
 ---
@@ -186,7 +186,7 @@ items:
 layout: separator
 title: We need a better architecture!
 image:
-  url: '@common/deserve.png'
+  url: '@common/deserve'
 options:
   background: sky
 decorations:
@@ -241,7 +241,7 @@ title: |
   What about
   metrics?
 image:
-  url: '@common/metrics.png'
+  url: '@common/metrics'
 options:
   background: amber
 decorations:
@@ -266,7 +266,7 @@ items:
 ---
 title: Monitoring architecture
 image:
-  url: '@talk/metrics.png'
+  url: '@talk/metrics'
 # ---
 
 ---
@@ -288,7 +288,7 @@ items:
 layout: separator
 title: Handling failures
 image:
-  url: '@common/firefighter.png'
+  url: '@common/firefighter'
 options:
   background: sky
 decorations:
@@ -336,7 +336,7 @@ title: |
   Why is this
   approach better?
 image:
-  url: '@common/dog-1.png'
+  url: '@common/dog-1'
 options:
   background: amber
 decorations:
@@ -350,7 +350,7 @@ title: |
   telling you!
 subtitle: "Don't you just trust me? 😭"
 image:
-  url: '@common/troll-black.svg'
+  url: '@common/troll-black'
   className: troll
 options:
   background: pink
@@ -377,7 +377,7 @@ items:
 layout: image
 title: Not convinced yet?
 image:
-  url: '@common/fry-money.png'
+  url: '@common/fry-money'
 className:
   contents: talk@image contents
 # ---
@@ -398,7 +398,7 @@ items:
 ---
 title: 'Watt in action: the mesh network'
 image:
-  url: '@talk/mesh.png'
+  url: '@talk/mesh'
 # ---
 
 ---
@@ -419,7 +419,7 @@ items:
 ---
 title: 'Watt in action: multiple workers'
 image:
-  url: '@talk/multiple-workers.png'
+  url: '@talk/multiple-workers'
 # ---
 
 ---
@@ -439,7 +439,7 @@ items:
 # layout: separator
 # title: Demo Time
 # image:
-#   url: '@common/action.png'
+#   url: '@common/action'
 # options:
 #   background: sky
 # decorations:
@@ -453,7 +453,7 @@ title: |
   let me go!
 subtitle: I promise I understood everything! 🙏
 image:
-  url: '@common/dog-2.png'
+  url: '@common/dog-2'
 options:
   background: pink
 decorations:

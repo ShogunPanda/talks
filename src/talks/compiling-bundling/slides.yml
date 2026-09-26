@@ -7,7 +7,7 @@ layout: separator
 title: |
   Fight your fears!
 image:
-  url: '@common/skydiving.png'
+  url: '@common/skydiving'
 options:
   background: fuchsia
 # ---
@@ -24,7 +24,7 @@ content:
   - <span class="theme@fg-pink">**Whatever goes wrong today, please complain directly to him on Twitter!**</span>
   - <strong class="theme@fg-blue">[@MicheleRivaCode](https://twitter.com/@MicheleRivaCode)</strong>
 image:
-  url: '@common/michele.png'
+  url: '@common/michele'
 decorations:
   logo: white
 # ---
@@ -33,7 +33,7 @@ decorations:
 layout: separator
 title: Compiling and bundling JavaScript is often a pain ...
 image:
-  url: '@common/complicated.png'
+  url: '@common/complicated'
 options:
   background: blue
 # ---
@@ -42,7 +42,7 @@ options:
 layout: separator
 title: …but it<br/> should not!
 image:
-  url: '@common/easy.png'
+  url: '@common/easy'
 className:
   root: reverse
 options:
@@ -138,10 +138,10 @@ content:
   - We all have a loved language we'd like to see everywhere.
 items:
   entries:
-    - image: '@common/scala.png'
+    - image: '@common/scala'
       title: Scala.js
       text: Scala to Javascript
-    - image: '@common/opal.png'
+    - image: '@common/opal'
       title: Opal
       text: Ruby to Javascript
   horizontal: true
@@ -150,7 +150,7 @@ items:
 ---
 title: 'An example: transpilation of Scala.js'
 image:
-  url: '@talk/scala-js-transpile.png'
+  url: '@talk/scala-js-transpile'
 # ---
 
 ---
@@ -159,15 +159,15 @@ content:
   - There are few known runtimes and browsers, way less than in the past.
 grids:
   - entries:
-      - image: '@common/chrome.png'
-      - image: '@common/firefox.png'
-      - image: '@common/safari.png'
-      - image: '@common/edge.png'
+      - image: '@common/chrome'
+      - image: '@common/firefox'
+      - image: '@common/safari'
+      - image: '@common/edge'
   - className: talk@icons-grid
     entries:
-      - image: '@talk/node.png'
-      - image: '@common/deno.png'
-      - image: '@common/bun.png'
+      - image: '@talk/node'
+      - image: '@common/deno'
+      - image: '@common/bun'
 notes: |
   Firefox usa SpiderMonkey, le feature vengono implementate più velocemente.
 
@@ -180,17 +180,17 @@ title: There is a transpiler for everything…™
 grids:
   - className: talk@icons-grid
     entries:
-      - image: '@common/f-sharp.png'
+      - image: '@common/f-sharp'
         title: F#
-      - image: '@common/kotlin.png'
+      - image: '@common/kotlin'
         title: Kotlin
-      - image: '@common/gleam.png'
+      - image: '@common/gleam'
         title: Gleam
-      - image: '@common/reasonml.png'
+      - image: '@common/reasonml'
         title: ReasonML
-      - image: '@common/elm.png'
+      - image: '@common/elm'
         title: ELM
-      - image: '@common/rescript.png'
+      - image: '@common/rescript'
         title: ReScript
 notes: |
   * F# -> .NET
@@ -206,7 +206,7 @@ title: … and that's thanks to LLVM!
 content:
   - The project is a collection of modular and reusable compiler and toolchains.
 image:
-  url: '@common/llvm.png'
+  url: '@common/llvm'
 notes: |
   LLVM permette già di compilare in JavaScript.
 
@@ -218,15 +218,15 @@ content:
   - We all want to adopt new language features even before they are finalised.
 items:
   entries:
-    - image: '@talk/babel-pipe-from.png'
+    - image: '@talk/babel-pipe-from'
       className:
         root: talk@transform root
         image: talk@transform image
-    - image: '@talk/babel-transform.png'
+    - image: '@talk/babel-transform'
       className:
         root: talk@transform root
         image: talk@transform arrow
-    - image: '@talk/babel-pipe-to.png'
+    - image: '@talk/babel-pipe-to'
       className:
         root: talk@transform root
         image: talk@transform image
@@ -245,15 +245,15 @@ content:
   - We can even transpile features that likely will never get into the language.
 items:
   entries:
-    - image: '@talk/babel-ts-from.png'
+    - image: '@talk/babel-ts-from'
       className:
         root: talk@transform root
         image: talk@transform image
-    - image: '@talk/babel-transform.png'
+    - image: '@talk/babel-transform'
       className:
         root: talk@transform root
         image: talk@transform arrow
-    - image: '@talk/babel-ts-to.png'
+    - image: '@talk/babel-ts-to'
       className:
         root: talk@transform root
         image: talk@transform image
@@ -270,7 +270,7 @@ title: |
   in depth
 subtitle: Let's have a deep look on how a transpiler really works.
 image:
-  url: '@common/server.png'
+  url: '@common/server'
 options:
   background: sky
 # ---
@@ -279,15 +279,15 @@ options:
 title: Generated code is not always readable…
 items:
   entries:
-    - image: '@talk/clojurescript-from.png'
+    - image: '@talk/clojurescript-from'
       className:
         root: talk@generation vertical root
         image: talk@generation vertical image
-    - image: '@common/arrow-down.png'
+    - image: '@common/arrow-down'
       className:
         root: talk@generation vertical root
         image: talk@generation vertical arrow
-    - image: '@talk/clojurescript-to.png'
+    - image: '@talk/clojurescript-to'
       className:
         root: talk@generation vertical root
         image: talk@generation vertical image
@@ -300,15 +300,15 @@ items:
 title: …but some transpilers are really good!
 items:
   entries:
-    - image: '@talk/reasonml-from.png'
+    - image: '@talk/reasonml-from'
       className:
         root: talk@generation horizontal root
         image: talk@generation horizontal image
-    - image: '@common/arrow-right.png'
+    - image: '@common/arrow-right'
       className:
         root: talk@generation horizontal root
         image: talk@generation horizontal arrow
-    - image: '@talk/reasonml-to.png'
+    - image: '@talk/reasonml-to'
       className:
         root: talk@generation horizontal root
         image: talk@generation horizontal image
@@ -323,13 +323,13 @@ title: Each language has its own transpiler
 grids:
   - gap: gap-y-4ch
     entries:
-      - image: '@common/javascript.png'
+      - image: '@common/javascript'
         title: Babel
-      - image: '@common/typescript.png'
+      - image: '@common/typescript'
         title: TSC
-      - image: '@common/reasonml.png'
+      - image: '@common/reasonml'
         title: BuckleScript
-      - image: '@talk/clojurescript.png'
+      - image: '@talk/clojurescript'
         title: ClojureScript
 # ---
 
@@ -337,7 +337,7 @@ grids:
 layout: separator
 title: No transpiler is perfect!
 image:
-  url: '@common/incomplete.png'
+  url: '@common/incomplete'
 options:
   background: blue
 decorations:
@@ -349,13 +349,13 @@ title: 'Problem #1: Transpilation time'
 grids:
   - gap: gap-y-4ch
     entries:
-      - image: '@common/javascript.png'
+      - image: '@common/javascript'
         title: Slow on large codebases
-      - image: '@common/typescript.png'
+      - image: '@common/typescript'
         title: Slow on large codebases
-      - image: '@common/reasonml.png'
+      - image: '@common/reasonml'
         title: Really fast
-      - image: '@talk/clojurescript.png'
+      - image: '@talk/clojurescript'
         title: Average
 decorations:
   number: 1
@@ -368,13 +368,13 @@ title: 'Problem #2: Output optimization'
 grids:
   - gap: gap-y-4ch
     entries:
-      - image: '@common/javascript.png'
+      - image: '@common/javascript'
         title: Well optimized
-      - image: '@common/typescript.png'
+      - image: '@common/typescript'
         title: Quite optimized
-      - image: '@common/rescript.png'
+      - image: '@common/rescript'
         title: Beautifully optimized
-      - image: '@talk/clojurescript.png'
+      - image: '@talk/clojurescript'
         title: Awful
 options:
   horizontal: true
@@ -390,10 +390,10 @@ content:
   - No intention to discriminate any language.
 items:
   entries:
-    - image: '@common/javascript.png'
+    - image: '@common/javascript'
       title: Babel
       text: Quite fast, well optimized
-    - image: '@common/typescript.png'
+    - image: '@common/typescript'
       title: TSC
       text: Quite slow, quite optimized
   horizontal: true
@@ -422,11 +422,11 @@ content:
   - The input is divided into tokens.
 items:
   entries:
-    - image: '@talk/parsing-1-1.png'
+    - image: '@talk/parsing-1-1'
       title: Input
       className:
         image: talk@parsing image
-    - image: '@talk/parsing-1-2.png'
+    - image: '@talk/parsing-1-2'
       title: Output
       className:
         image: talk@parsing image
@@ -443,12 +443,12 @@ content:
   - The tokens are parsed and analysed.
 items:
   entries:
-    - image: '@talk/parsing-2-1.png'
+    - image: '@talk/parsing-2-1'
       title: Input
       text: (user code)
       className:
         image: talk@parsing image
-    - image: '@talk/parsing-2-2.png'
+    - image: '@talk/parsing-2-2'
       title: Parse Tree
       text: (a.k.a. Concrete Syntax Tree)
       className:
@@ -465,7 +465,7 @@ title: 'Parsing step #3: Prepare the AST'
 content:
   - The Parse Tree is converted into the Abstract syntax tree.
 image:
-  url: '@talk/ast.png'
+  url: '@talk/ast'
 decorations:
   number: 3
   className:
@@ -477,7 +477,7 @@ title: 'Parsing step #4: Build the AST'
 content:
   - The Abstract Syntax Tree is built and returned to the developer.
 image:
-  url: '@talk/ast-js.png'
+  url: '@talk/ast-js'
 decorations:
   number: 4
   className:
@@ -489,7 +489,7 @@ title: Traversing the AST
 content:
   - The transpiler exposes an API to allow developer to manipulate the AST.
 image:
-  url: '@talk/traversing-1.png'
+  url: '@talk/traversing-1'
 # ---
 
 ---
@@ -497,7 +497,7 @@ title: Transforming the AST
 content:
   - The traversing API allows to manipulate the AST.
 image:
-  url: '@talk/traversing-2.png'
+  url: '@talk/traversing-2'
 # ---
 
 ---
@@ -506,11 +506,11 @@ content:
   - The modified AST is used to generate the final transpiled code.
 items:
   entries:
-    - image: '@talk/codegen-input.png'
+    - image: '@talk/codegen-input'
       title: Input
       className:
         image: talk@parsing image
-    - image: '@talk/codegen-output.png'
+    - image: '@talk/codegen-output'
       title: Output
       className:
         image: talk@parsing image
@@ -521,13 +521,13 @@ items:
 title: All your popular tools use this flow
 items:
   entries:
-    - image: '@common/babel.png'
+    - image: '@common/babel'
       title: Babel
       className:
         image: width-auto
-    - image: '@common/prettier.png'
+    - image: '@common/prettier'
       title: Prettier
-    - image: '@common/eslint.png'
+    - image: '@common/eslint'
       title: ESLint
   horizontal: true
 # ---
@@ -539,11 +539,11 @@ content:
     **jscodeshift** can be used to easily migrate codebases.
 items:
   entries:
-    - image: '@talk/jscodeshift-from.png'
+    - image: '@talk/jscodeshift-from'
       title: Input
       className:
         image: talk@problem image
-    - image: '@talk/jscodeshift-to.png'
+    - image: '@talk/jscodeshift-to'
       title: Desired output
       className:
         image: talk@problem image
@@ -553,7 +553,7 @@ items:
 ---
 title: 'A more complex example: the solution'
 image:
-  url: '@talk/jscodeshift-solution.png'
+  url: '@talk/jscodeshift-solution'
 # ---
 
 ---
@@ -587,13 +587,13 @@ content:
   - These are the mostly used bundlers, each with pros and cons.
 items:
   entries:
-    - image: '@common/webpack.png'
+    - image: '@common/webpack'
       title: Webpack
       text: Hardest<br/>_Slower_
-    - image: '@common/rollup.png'
+    - image: '@common/rollup'
       title: Rollup
       text: Easy<br/>_Slow_
-    - image: '@common/parcel.png'
+    - image: '@common/parcel'
       title: Parcel
       text: Easiest<br/>_Fast_
   horizontal: true
@@ -603,7 +603,7 @@ items:
 layout: separator
 title: Is webpack still worth it?
 image:
-  url: '@common/webpack.png'
+  url: '@common/webpack'
   className: talk@logo
 options:
   background: amber
@@ -616,15 +616,15 @@ title: Are there any better alternatives?
 grids:
   - gap: gap-y-4ch
     entries:
-      - image: '@common/esbuild.png'
+      - image: '@common/esbuild'
         title: ESBuild
-      - image: '@common/swc.png'
+      - image: '@common/swc'
         title: SWC
         className:
           image: width-auto
-      - image: '@common/vite.png'
+      - image: '@common/vite'
         title: Vite
-      - image: '@common/snowpack.png'
+      - image: '@common/snowpack'
         title: SnowPack
 # ---
 
@@ -632,7 +632,7 @@ grids:
 layout: separator
 title: ESBuild
 image:
-  url: '@common/esbuild.png'
+  url: '@common/esbuild'
   className: talk@logo
 options:
   background: sky
@@ -643,7 +643,7 @@ title: How fast ESBuild is?
 content:
   - A lot, especially when comparing with webpack.
 image:
-  url: '@talk/esbuild-performances.png'
+  url: '@talk/esbuild-performances'
 # ---
 
 ---
@@ -651,14 +651,14 @@ title: Ok, it's fast. What about configuration?
 content:
   - ESBuild CLI is definitely easy to use.
 image:
-  url: '@talk/esbuild-cli.png'
+  url: '@talk/esbuild-cli'
 # ---
 
 ---
 layout: separator
 title: SWC
 image:
-  url: '@common/swc.png'
+  url: '@common/swc'
   className: talk@logo auto
 options:
   background: sky
@@ -670,11 +670,11 @@ content:
   - SWC is sometimes faster than ESBuild.
 items:
   entries:
-    - image: '@talk/esbuild-vs-swc-es2019.png'
+    - image: '@talk/esbuild-vs-swc-es2019'
       title: ES2019
       className:
         image: talk@parsing image
-    - image: '@talk/esbuild-vs-swc-es2020.png'
+    - image: '@talk/esbuild-vs-swc-es2020'
       title: ES2020
       className:
         image: talk@parsing image
@@ -684,14 +684,14 @@ items:
 ---
 title: An example of SWC configuration
 image:
-  url: '@talk/swc-config.png'
+  url: '@talk/swc-config'
 # ---
 
 ---
 layout: separator
 title: SWC can run in a browser thanks to WASM
 image:
-  url: '@common/matrioska.png'
+  url: '@common/matrioska'
 options:
   background: green
 # ---
@@ -700,7 +700,7 @@ options:
 layout: separator
 title: Vite
 image:
-  url: '@common/vite.png'
+  url: '@common/vite'
   className: talk@logo
 options:
   background: sky
@@ -730,15 +730,15 @@ content:
   - ESBuild and Rollup are used under the hood.
 items:
   entries:
-    - image: '@common/esbuild.png'
+    - image: '@common/esbuild'
       className:
         root: esbuild root
         image: esbuild image
-    - image: '@common/vite.png'
+    - image: '@common/vite'
       className:
         root: vite root
         image: vite image
-    - image: '@common/rollup.png'
+    - image: '@common/rollup'
       className:
         root: rollup root
         image: rollup image
@@ -752,7 +752,7 @@ items:
 layout: separator
 title: Snowpack
 image:
-  url: '@common/snowpack.png'
+  url: '@common/snowpack'
   className: talk@logo auto
 options:
   background: sky
@@ -764,7 +764,7 @@ content:
   - |
     **Skypack** used snowpack to load module in the browsers without a bundler.
 image:
-  url: '@common/skypack.png'
+  url: '@common/skypack'
 # ---
 
 ---
@@ -773,7 +773,7 @@ title: The greatest gain<br/>in new bundlers
 content:
   - New bundlers give <code>O(1)</code> compile time which is great when the number of modules grows.
 image:
-  url: '@talk/compile.png'
+  url: '@talk/compile'
 # ---
 
 ---

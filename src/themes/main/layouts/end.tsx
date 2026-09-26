@@ -27,7 +27,7 @@ export default function EndLayout({ className, style }: SlideProps): VNode {
     className: { root: rootClassName, title: titleClassName, subtitle: subtitleClassName }
   } = slide
 
-  const pandaImageUrl = resolveImage('main', id, image?.url ?? '@common/panda.png')
+  const pandaImageUrl = resolveImage('main', id, image?.url ?? '@common/panda')
 
   return (
     <SlideWrapper
@@ -74,7 +74,7 @@ export default function EndLayout({ className, style }: SlideProps): VNode {
 
         <aside className={cleanCssClasses('wrapper')}>
           <a href="https://platformatic.dev" className={cleanCssClasses('logo')}>
-            <Image src={resolveImage(theme, id, '@theme/logo-white.png')} className={cleanCssClasses('image')} />
+            <Image src={resolveImage(theme, id, '@theme/logo-white')} className={cleanCssClasses('image')} />
             <span className={cleanCssClasses('text')}>Platformatic</span>
           </a>
         </aside>

@@ -8,7 +8,7 @@ title: |
   There is a lot 
   in the unknown!
 image:
-  url: '@common/unknown.png'
+  url: '@common/unknown'
 options:
   background: fuchsia
 # ---
@@ -25,7 +25,7 @@ content:
   - <span class="theme@fg-pink">**Whatever goes wrong today, please complain directly to him on Twitter!**</span>
   - <strong class="theme@fg-blue">[@matteocollina](https://twitter.com/@matteocollina)</strong>
 image:
-  url: '@common/matteo.png'
+  url: '@common/matteo'
 decorations:
   logo: white
 # ---
@@ -33,7 +33,7 @@ decorations:
 ---
 title: "Let's start the right way! 🤦‍♂️"
 image:
-  url: '@talk/chatgpt.png'
+  url: '@talk/chatgpt'
 # ---
 
 ---
@@ -44,7 +44,7 @@ title: |
   single threaded ...
 subtitle: '... and it hasn’t been for a while now!'
 image:
-  url: '@common/postman.png'
+  url: '@common/postman'
 options:
   background: orange
 # ---
@@ -52,7 +52,7 @@ options:
 ---
 title: '2018: "Node.js has threads!"'
 content:
-  - image: '@talk/anna.png'
+  - image: '@talk/anna'
   - <span class="theme@qr footer">[https://www.youtube.com/watch?v=-ssCzHoUI7M](https://www.youtube.com/watch?v=-ssCzHoUI7M)</span>
 className:
   image: talk@anna
@@ -88,7 +88,7 @@ items:
 layout: separator
 title: Do you see how far we have gone?
 image:
-  url: '@common/pidgeon.png'
+  url: '@common/pidgeon'
 options:
   background: orange
 # ---
@@ -97,7 +97,7 @@ options:
 title: How do threads communicate?
 content: The graph below shows a summary of parent-children thread communication.
 image:
-  url: '@talk/worker-threads-communication.png'
+  url: '@talk/worker-threads-communication'
 # ---
 
 ---
@@ -168,7 +168,7 @@ code:
 layout: image
 title: How can threads communicate?
 image:
-  url: '@common/children.png'
+  url: '@common/children'
 # ---
 
 ---
@@ -213,7 +213,7 @@ code:
 title: Is all that easy?
 layout: separator
 image:
-  url: '@common/messages-flood.png'
+  url: '@common/messages-flood'
 decorations:
   logo: white
 options:
@@ -268,7 +268,7 @@ title: |
   Ready for 
   another dive?
 image:
-  url: '@common/turtle-pool.png'
+  url: '@common/turtle-pool'
 options:
   background: amber
 # ---
@@ -282,7 +282,7 @@ content:
   - All the messaging and synchronization is managed so you focus on the core logic.
   - https://www.npmjs.com/package/piscina
 image:
-  url: '@common/piscina.png'
+  url: '@common/piscina'
 # ---
 
 ---
@@ -305,7 +305,7 @@ items:
 
           const result = await piscina.run({ a: 4, b: 6 })
           console.log(result) // Prints 10
-    - image: '@common/arrow-right.png'
+    - image: '@common/arrow-right'
       className:
         root: talk@example arrow
         image: talk@example arrow image
@@ -327,7 +327,7 @@ items:
 layout: separator
 title: Are we done?
 image:
-  url: '@common/turtles-tired.png'
+  url: '@common/turtles-tired'
 decorations:
   logo: white
 options:
@@ -341,7 +341,7 @@ title: |
   you can use Worker 
   Threads for?
 image:
-  url: '@common/batman-superman.png'
+  url: '@common/batman-superman'
 decorations:
   logo: white
 options:
@@ -355,7 +355,7 @@ subtitle: |
   it’s what you do that defines you”
 title: “Everything is impossible until somebody does it”
 image:
-  url: '@talk/batman.png'
+  url: '@talk/batman'
 options:
   background: black
 decorations:
@@ -437,7 +437,7 @@ code:
 layout: separator
 title: How?
 image:
-  url: '@common/batcave.png'
+  url: '@common/batcave'
 options:
   background: black
 decorations:
@@ -452,7 +452,7 @@ content:
   - '`Atomics.waitAsync` is used to synchronize the main thread with the worker thread in meta.'
   - Payload contains the message to be sent, and length its is size.
 image:
-  url: '@talk/shared-array-buffer.png'
+  url: '@talk/shared-array-buffer'
 # ---
 
 ---
@@ -563,7 +563,7 @@ content:
 className:
   qr: theme@qr big
 image:
-  url: '@common/pino.png'
+  url: '@common/pino'
 # ---
 
 ---
@@ -586,7 +586,7 @@ content:
 layout: image
 title: Are we finally done?
 image:
-  url: '@common/turtles-escaping.png'
+  url: '@common/turtles-escaping'
 decorations:
   logo: white
 # ---
@@ -594,7 +594,7 @@ decorations:
 ---
 title: Introducing Watt, the Node.js application server
 image:
-  url: '@talk/watt.png'
+  url: '@talk/watt'
 # ---
 
 ---
@@ -682,7 +682,7 @@ items:
 title: Network-less HTTP
 content: The Platformatic mesh network. Our secret sauce.
 image:
-  url: '@talk/mesh.png'
+  url: '@talk/mesh'
   className: theme@default image full-width
 # ---
 
@@ -715,7 +715,7 @@ code:
 ---
 layout: image
 image:
-  url: '@talk/bootcamp.png'
+  url: '@talk/bootcamp'
 # ---
 
 ---
@@ -740,4 +740,3 @@ quote:
 ---
 layout: end
 # ---
-

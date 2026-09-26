@@ -8,7 +8,7 @@ title: |
   There is a lot
   in the unknown!
 image:
-  url: '@common/unknown.png'
+  url: '@common/unknown'
 options:
   background: fuchsia
 # ---
@@ -25,7 +25,7 @@ title: |
   single threaded ...
 subtitle: "... and it hasn't been for a while now!"
 image:
-  url: '@common/postman.png'
+  url: '@common/postman'
 options:
   background: red
 # ---
@@ -33,7 +33,7 @@ options:
 ---
 title: '2018: "Node.js has threads!"'
 content:
-  - image: '@talk/anna.png'
+  - image: '@talk/anna'
   - <span class="theme@qr footer">[https://www.youtube.com/watch?v=-ssCzHoUI7M](https://www.youtube.com/watch?v=-ssCzHoUI7M)</span>
 className:
   image: talk@anna
@@ -57,7 +57,7 @@ items:
 layout: separator
 title: Why do we care?
 image:
-  url: '@common/why.png'
+  url: '@common/why'
 options:
   background: fuchsia
 # ---
@@ -68,7 +68,7 @@ title: |
   How do you scale
   Node.js in production?
 image:
-  url: '@common/server.png'
+  url: '@common/server'
 decorations:
   logo: white
 options:
@@ -112,7 +112,7 @@ items:
 ---
 title: 'The Cluster Module: How It Works (2/2)'
 image:
-  url: '@talk/cluster.png'
+  url: '@talk/cluster'
 # ---
 
 ---
@@ -166,7 +166,7 @@ layout: separator
 title: |
   We solved this.
 image:
-  url: '@common/fresh.png'
+  url: '@common/fresh'
 options:
   background: green
 # ---
@@ -192,7 +192,7 @@ items:
 ---
 title: Introducing Watt, the Node.js application server
 image:
-  url: '@talk/mesh.png'
+  url: '@talk/mesh'
 # ---
 
 ---
@@ -214,7 +214,7 @@ items:
 ---
 title: 'Watt: Architecture'
 image:
-  url: '@talk/watt.png'
+  url: '@talk/watt'
 # ---
 
 ---
@@ -269,7 +269,7 @@ title: |
   Deploying Watt
   in Kubernetes
 image:
-  url: '@common/turtle-pool.png'
+  url: '@common/turtle-pool'
 options:
   background: sky
 # ---
@@ -324,7 +324,7 @@ items:
 layout: separator
 title: What about performance?
 image:
-  url: '@common/car.png'
+  url: '@common/car'
 options:
   background: amber
 # ---
@@ -363,7 +363,7 @@ items:
 title: 'Benchmark: Results'
 content: Watt dramatically outperforms both traditional approaches.
 image:
-  url: '@talk/benchmarks.png'
+  url: '@talk/benchmarks'
 
 
 # ---
@@ -399,7 +399,7 @@ items:
 layout: separator
 title: How is that possible?
 image:
-  url: '@common/dog-1.png'
+  url: '@common/dog-1'
 options:
   background: amber
 # ---

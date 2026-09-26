@@ -34,7 +34,7 @@ export default function CoverLayout({ className, style }: SlideProps): VNode {
 
   let logo = (
     <a href="https://platformatic.dev" className={cleanCssClasses('logo')}>
-      <Image src={resolveImage(theme, id, '@theme/logo-white.png')} className={cleanCssClasses('image')} />
+      <Image src={resolveImage(theme, id, '@theme/logo-white')} className={cleanCssClasses('image')} />
       <span className={cleanCssClasses('text')}>Platformatic</span>
     </a>
   )
@@ -42,7 +42,7 @@ export default function CoverLayout({ className, style }: SlideProps): VNode {
   if (branding === false) {
     logo = (
       <a href={author.website} className={cleanCssClasses('logo no-branding')}>
-        <Image src={resolveImage(theme, id, '@common/cowtech.png')} className={cleanCssClasses('image')} />
+        <Image src={resolveImage(theme, id, '@common/cowtech')} className={cleanCssClasses('image')} />
       </a>
     )
   }

@@ -8,7 +8,7 @@ title: |
   Being kind
   never hurts!
 image:
-  url: '@common/kindness.png'
+  url: '@common/kindness'
 options:
   background: fuchsia
 decorations:
@@ -24,7 +24,7 @@ title: Let's celebrate GraphQL!
 content:
   - We all know how this technology has made our life easier.
 image:
-  url: '@common/graphql.png'
+  url: '@common/graphql'
   className: talk@graphql-logo
 # ---
 
@@ -80,7 +80,7 @@ content:
   - It's relative easy to attach new data sources to the server.
   - <em class="theme@fg-blue">How to push additional data to a client that didn't ask for it?</em>
 image:
-  url: '@common/server.png'
+  url: '@common/server'
 decorations:
   logo: white
 # ---
@@ -89,7 +89,7 @@ decorations:
 layout: separator
 title: How to be proactive?
 image:
-  url: '@common/what-now.png'
+  url: '@common/what-now'
 options:
   background: amber
 decorations:
@@ -115,7 +115,7 @@ items:
 layout: separator
 title: Are we done?
 image:
-  url: '@common/happiness.png'
+  url: '@common/happiness'
 options:
   background: amber
 # ---
@@ -124,7 +124,7 @@ options:
 layout: separator
 title: You already know the answer...
 image:
-  url: '@common/laugh.png'
+  url: '@common/laugh'
 options:
   background: gray
 # ---
@@ -158,7 +158,7 @@ decorations:
 layout: separator
 title: Do we have a choice?
 image:
-  url: '@common/alternatives.png'
+  url: '@common/alternatives'
 options:
   background: amber
 decorations:
@@ -172,7 +172,7 @@ title: |
   an <span class="theme@fg-amber">enriching</span>
   proxy!
 image:
-  url: '@common/san-bernardo.png'
+  url: '@common/san-bernardo'
 options:
   background: green
 decorations:
@@ -364,7 +364,7 @@ decorations:
 ---
 title: Depth first tree traversal
 image:
-  url: '@talk/tree.png'
+  url: '@talk/tree'
 # ---
 
 ---
@@ -523,7 +523,7 @@ decorations:
 layout: separator
 title: Only an example can enlighten us!
 image:
-  url: '@common/sun.png'
+  url: '@common/sun'
 options:
   background: blue
 # ---
@@ -694,7 +694,7 @@ code:
 layout: separator
 title: Mission completed!
 image:
-  url: '@common/completed.png'
+  url: '@common/completed'
 options:
   background: green
 decorations:

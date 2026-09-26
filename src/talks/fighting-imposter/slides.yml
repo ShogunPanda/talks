@@ -10,7 +10,7 @@ title: |
 options:
   background: fuchsia
 image:
-  url: '@talk/somebody-else.png'
+  url: '@talk/somebody-else'
 # ---
 
 ---
@@ -23,7 +23,7 @@ title: |
   That voice 
   is always here.
 image:
-  url: '@talk/voice.png'
+  url: '@talk/voice'
 options:
   background: blue
 # ---
@@ -34,7 +34,7 @@ title: |
   "What if they
   find out?"
 image:
-  url: '@talk/find-out.png'
+  url: '@talk/find-out'
 options:
   background: red
 # ---
@@ -43,7 +43,7 @@ options:
 layout: separator
 title: '"It was just <span class="theme@fg-amber">luck</span>."'
 image:
-  url: '@talk/luck.png'
+  url: '@talk/luck'
 options:
   background: gray
 # ---
@@ -55,7 +55,7 @@ title: |
   voice stop you
   from <span class="theme@fg-red">doing</span>?
 image:
-  url: '@talk/voice.png'
+  url: '@talk/voice'
 options:
   background: amber
 # ---
@@ -64,7 +64,7 @@ options:
 layout: image
 title: Let me tell you <span class="theme@fg-amber">MY</span> story.
 image:
-  url: '@talk/story.png'
+  url: '@talk/story'
 options:
   background: sky
 # ---
@@ -76,7 +76,7 @@ title: |
   in Molise.
 subtitle: Born in 1984 in Campobasso
 image:
-  url: '@talk/campobasso.png'
+  url: '@talk/campobasso'
 options:
   background: pink
 decorations:
@@ -90,7 +90,7 @@ title: |
   Engineering
 subtitle: Tor Vergata, Rome · 2006
 image:
-  url: '@talk/tor-vergata.png'
+  url: '@talk/tor-vergata'
 options:
   background: green
 decorations:
@@ -104,7 +104,7 @@ title: |
   back home.
 subtitle: 2009
 image:
-  url: '@talk/campobasso.png'
+  url: '@talk/campobasso'
 options:
   background: pink
 decorations:
@@ -116,7 +116,7 @@ layout: image
 title: |
   Someone believed I could do <span class="theme@fg-black">more</span>.
 image:
-  url: '@talk/wife.png'
+  url: '@talk/wife'
 className:
   title: theme@bg-green
 decorations:
@@ -129,7 +129,7 @@ title: |
   Viralheat,
   H-1B visa
 image:
-  url: '@talk/foster-city.png'
+  url: '@talk/foster-city'
 subtitle: Foster City, CA, USA · 2012
 options:
   background: orange
@@ -141,7 +141,7 @@ decorations:
 layout: image
 title: What did I find there?
 image:
-  url: '@talk/findings.png'
+  url: '@talk/findings'
 className:
   title: theme@bg-amber theme@fg-black
 decorations:
@@ -155,7 +155,7 @@ title: |
   working remotely.
 subtitle: 2016
 image:
-  url: '@talk/campobasso.png'
+  url: '@talk/campobasso'
 options:
   background: pink
 decorations:
@@ -169,7 +169,7 @@ title: |
   NearForm
 subtitle: 2018
 image:
-  url: '@talk/nearform.png'
+  url: '@talk/nearform'
 options:
   background: blue
 # ---
@@ -181,7 +181,7 @@ title: |
   contribution
 subtitle: 2020
 image:
-  url: '@talk/first-pr.png'
+  url: '@talk/first-pr'
 options:
   background: fuchsia
 decorations:
@@ -195,7 +195,7 @@ title: |
   <span class="theme@fg-black">collaborator</span>
 subtitle: 2022
 image:
-  url: '@talk/collaborator.png'
+  url: '@talk/collaborator'
 options:
   background: green
 decorations:
@@ -207,7 +207,7 @@ layout: image
 title: Then I stepped onto a stage.
 subtitle: Almost <strong>60</strong> speaking appearances since 2022.
 image:
-  url: '@talk/nodeconf.png'
+  url: '@talk/nodeconf'
 decorations:
   logo: black
 className:
@@ -219,7 +219,7 @@ layout: separator
 title: 'Node.js <span class="theme@fg-black">TSC</span>'
 subtitle: 2024
 image:
-  url: '@talk/tsc.png'
+  url: '@talk/tsc'
 options:
   background: red
 decorations:
@@ -233,7 +233,7 @@ title: |
   Platformatic
 subtitle: 2024
 image:
-  url: '@talk/platformatic.png'
+  url: '@talk/platformatic'
 options:
   background: green
 decorations:
@@ -244,7 +244,7 @@ decorations:
 layout: image
 title: And yet, that voice is still <span class="theme@fg-amber">here</span>.
 image:
-  url: '@talk/still-there.png'
+  url: '@talk/still-there'
 className:
   title: theme@bg-gray
 # ---
@@ -255,7 +255,7 @@ title: |
   So, what is
   that voice?
 image:
-  url: '@talk/lamp.png'
+  url: '@talk/lamp'
 options:
   background: amber
 # ---
@@ -279,7 +279,7 @@ title: |
   <span class="theme@fg-black">Success is luck.</span>
   Failure is me.
 image:
-  url: '@talk/failure.png'
+  url: '@talk/failure'
 options:
   background: red
 # ---
@@ -291,7 +291,7 @@ title: |
   <span class="theme@fg-amber">one more</span>
   achievement.
 image:
-  url: '@talk/achievements.png'
+  url: '@talk/achievements'
 options:
   background: gray
 # ---
@@ -313,7 +313,7 @@ title: |
   Who do you
   think you are?
 image:
-  url: '@talk/expose.png'
+  url: '@talk/expose'
 options:
   background: light-gray
 # ---
@@ -324,7 +324,7 @@ title: |
   Be <span class="theme@fg-amber">happy</span> with
   what you have.
 image:
-  url: '@talk/pizza.png'
+  url: '@talk/pizza'
 options:
   background: black
   foreground: white
@@ -334,7 +334,7 @@ options:
 layout: separator
 title: Why take the <span class="theme@fg-red">risk</span>?
 image:
-  url: '@talk/risk.png'
+  url: '@talk/risk'
 options:
   background: gray
 # ---
@@ -345,7 +345,7 @@ title: |
   Stay <span class="theme@fg-black">out</span> of
   the spotlight.
 image:
-  url: '@talk/spotlight.png'
+  url: '@talk/spotlight'
 options:
   background: red
 # ---
@@ -354,7 +354,7 @@ options:
 layout: image
 title: Be <span class="theme@fg-black">grateful</span> for the crumbs.
 image:
-  url: '@talk/crumbs.png'
+  url: '@talk/crumbs'
 className:
   title: theme@bg-red
 decorations:
@@ -367,7 +367,7 @@ title: |
   You start
   believing <span class="theme@fg-blue">them</span>...
 image:
-  url: '@talk/give-up.png'
+  url: '@talk/give-up'
 options:
   background: light-gray
 # ---
@@ -377,7 +377,7 @@ layout: separator
 title: |
   ...and lose <span class="theme@fg-amber">yourself</span>.
 image:
-  url: '@talk/lost.png'
+  url: '@talk/lost'
 options:
   background: gray
 className:
@@ -414,7 +414,7 @@ title: |
   to become.
 subtitle: <s>Who do you think you are?</s>
 image:
-  url: '@talk/mirror.png'
+  url: '@talk/mirror'
 className:
   contents: reverse
   title: reverse
@@ -430,7 +430,7 @@ title: |
   if it harms no one.
 subtitle: <s>Be happy with what you have.</s>
 image:
-  url: '@talk/pie.png'
+  url: '@talk/pie'
 className:
   contents: reverse
   title: reverse
@@ -446,7 +446,7 @@ title: |
   for danger.
 subtitle: <s>Why take the risk?</s>
 image:
-  url: '@talk/path.png'
+  url: '@talk/path'
 className:
   contents: reverse
   title: reverse
@@ -462,7 +462,7 @@ title: |
   not to brag.
 subtitle: <s>Stay out of the spotlight.</s>
 image:
-  url: '@talk/learn.png'
+  url: '@talk/learn'
 className:
   contents: reverse
   title: reverse
@@ -478,7 +478,7 @@ title: |
   It’s not a gift.
 subtitle: <s>Be grateful for the crumbs.</s>
 image:
-  url: '@talk/earn.png'
+  url: '@talk/earn'
 className:
   contents: reverse
   title: reverse
@@ -491,7 +491,7 @@ layout: image
 title: |
   SCREW IT! Don’t <span class="theme@fg-amber">overthink</span> it!
 image:
-  url: '@talk/screw.png'
+  url: '@talk/screw'
 options:
   background: green
 # ---
@@ -509,7 +509,7 @@ quote:
 layout: separator
 title: Who's <span class="theme@fg-red">next</span>?
 image:
-  url: '@talk/next.png'
+  url: '@talk/next'
 options:
   background: amber
 # ---

@@ -6,7 +6,7 @@ layout: cover
 layout: separator
 title: Let's dive into<br/>the unknown!
 image:
-  url: '@common/dive.png'
+  url: '@common/dive'
 options:
   background: blue
 # ---
@@ -30,7 +30,7 @@ items:
       title: 'Impressive performance'
       text: 'Millions of messages with minimal latency.'
 image:
-  url: '@common/kafka.png'
+  url: '@common/kafka'
 # ---
 
 ---
@@ -90,7 +90,7 @@ layout: separator
 title: That's a lot to handle ...
 subtitle: ... especially if, like me, <br/>you **have never** used Kafka! 😂
 image:
-  url: '@common/information-overload.png'
+  url: '@common/information-overload'
 options:
   background: red
 decorations:
@@ -101,7 +101,7 @@ decorations:
 layout: separator
 title: ...and it got much worse! 😭
 image:
-  url: '@common/missing-puzzle.png'
+  url: '@common/missing-puzzle'
 options:
   background: pink
 className:
@@ -127,7 +127,7 @@ items:
 layout: separator
 title: What about Node.js?
 image:
-  url: '@common/node.png'
+  url: '@common/node'
 options:
   background: amber
 decorations:
@@ -236,7 +236,7 @@ title: |
   We needed a
   better solution ...
 image:
-  url: '@common/deserve.png'
+  url: '@common/deserve'
 options:
   background: blue
 # ---
@@ -247,7 +247,7 @@ title: |
   ... so we
   started fresh!
 image:
-  url: '@common/fresh.png'
+  url: '@common/fresh'
 options:
   background: green
 # ---
@@ -266,7 +266,7 @@ className:
 layout: separator
 title: How did we build a client with no documentation available?
 image:
-  url: '@common/questions-2.png'
+  url: '@common/questions-2'
 options:
   background: amber
 # ---
@@ -369,7 +369,7 @@ items:
 layout: image
 title: Show the code!
 image:
-  url: '@common/fry-money.png'
+  url: '@common/fry-money'
 className:
   contents: talk@image contents
 # ---
@@ -433,7 +433,7 @@ code:
 layout: separator
 title: What about performance?
 image:
-  url: '@common/car.png'
+  url: '@common/car'
 options:
   background: amber
 # ---
@@ -461,7 +461,7 @@ code:
 ---
 title: Producer API
 image:
-  url: '@talk/benchmark-producer.png'
+  url: '@talk/benchmark-producer'
 # ---
 
 ---
@@ -489,7 +489,7 @@ code:
 ---
 title: Consumer API
 image:
-  url: '@talk/benchmark-consumer.png'
+  url: '@talk/benchmark-consumer'
 # ---
 
 ---

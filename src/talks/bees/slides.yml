@@ -8,7 +8,7 @@ title: |
   Mothers are
   always right!
 image:
-  url: '@common/lollipops.png'
+  url: '@common/lollipops'
 options:
   background: fuchsia
 decorations:
@@ -23,7 +23,7 @@ layout: hello
 layout: separator
 title: Our entire existence is on their shoulders!
 image:
-  url: '@common/bee.png'
+  url: '@common/bee'
 options:
   background: blue
 # ---
@@ -47,7 +47,7 @@ items:
 layout: separator
 title: Aren't we here for dev stuff?
 image:
-  url: '@common/dog-1.png'
+  url: '@common/dog-1'
 options:
   background: amber
 # ---
@@ -71,7 +71,7 @@ items:
 layout: separator
 title: Are you <br/>trolling us?
 image:
-  url: '@common/troll-black.svg'
+  url: '@common/troll-black'
   className: troll
 options:
   background: amber
@@ -86,7 +86,7 @@ title: |
   translate <span class="theme@fg-black">bees</span>
   in Italian!
 image:
-  url: '@theme/location.png'
+  url: '@theme/location'
 className:
   root: reverse
 options:
@@ -129,7 +129,7 @@ items:
 layout: separator
 title: Are there just pros?
 image:
-  url: '@common/happiness.png'
+  url: '@common/happiness'
 options:
   background: amber
 # ---
@@ -138,7 +138,7 @@ options:
 layout: separator
 title: You already know the answer...
 image:
-  url: '@common/laugh.png'
+  url: '@common/laugh'
 options:
   background: gray
 # ---
@@ -182,7 +182,7 @@ items:
 layout: separator
 title: Only an example can enlighten us!
 image:
-  url: '@common/sun.png'
+  url: '@common/sun'
 options:
   background: blue
 # ---
@@ -206,7 +206,7 @@ items:
 layout: separator
 title: Let's go!
 image:
-  url: '@common/start.png'
+  url: '@common/start'
 decorations:
   logo: white
 options:
@@ -289,14 +289,14 @@ code:
 ---
 title: "AWS SDK v2: What's happening under the hood?"
 image:
-  url: '@talk/flame-sdk-v2.png'
+  url: '@talk/flame-sdk-v2'
 # ---
 
 ---
 layout: separator
 title: Let's get modern!
 image:
-  url: '@common/modern.png'
+  url: '@common/modern'
 options:
   background: sky
 decorations:
@@ -381,7 +381,7 @@ code:
 ---
 title: "AWS SDK v3: What's happening under the hood?"
 image:
-  url: '@talk/flame-sdk-v3.png'
+  url: '@talk/flame-sdk-v3'
 # ---
 
 ---
@@ -396,7 +396,7 @@ items:
       title: Not really a monolith
       text: How many point of failures can you afford?
 image:
-  url: '@common/iceberg.png'
+  url: '@common/iceberg'
 decorations:
   logo: white
 # ---
@@ -405,7 +405,7 @@ decorations:
 layout: separator
 title: Do we have the solution?
 image:
-  url: '@common/solution-1.png'
+  url: '@common/solution-1'
 options:
   background: amber
 # ---
@@ -414,7 +414,7 @@ options:
 layout: separator
 title: Yes, use the APIs directly!
 image:
-  url: '@common/bee.png'
+  url: '@common/bee'
 options:
   background: green
 # ---
@@ -438,7 +438,7 @@ title: |
   Let's get to
   the action!
 image:
-  url: '@common/action.png'
+  url: '@common/action'
 options:
   background: sky
 # ---
@@ -610,14 +610,14 @@ code:
 ---
 title: "No SDK: What's happening under the hood?"
 image:
-  url: '@talk/flame-direct.png'
+  url: '@talk/flame-direct'
 # ---
 
 ---
 layout: separator
 title: Mission completed!
 image:
-  url: '@common/completed.png'
+  url: '@common/completed'
 options:
   background: green
 decorations:

@@ -6,7 +6,7 @@ layout: cover
 layout: separator
 title: All hope abandon ye who enter here!
 image:
-  url: '@common/hell.png'
+  url: '@common/hell'
 options:
   background: pink
 # ---
@@ -14,7 +14,7 @@ options:
 ---
 layout: image
 image:
-  url: '@talk/marco.png'
+  url: '@talk/marco'
 decorations:
   logo: white
 # ---
@@ -138,4 +138,3 @@ items:
 ---
 layout: end
 # ---
-

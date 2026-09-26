@@ -17,7 +17,7 @@ layout: separator
 title: |
   Don't count your chickens before they hatch.
 image:
-  url: '@common/dinosaur-egg.png'
+  url: '@common/dinosaur-egg'
 options:
   background: fuchsia
 # ---
@@ -34,7 +34,7 @@ content:
   - <span class="theme@fg-pink">**Whatever goes wrong today, please complain directly to him on Twitter!**</span>
   - <strong class="theme@fg-blue">[@matteocollina](https://twitter.com/@matteocollina)</strong>
 image:
-  url: '@common/matteo.png'
+  url: '@common/matteo'
 decorations:
   logo: white
 # ---
@@ -42,7 +42,7 @@ decorations:
 ---
 title: I think we should start by looking at numbers.
 content:
-  - image: '@talk/downloads.png'
+  - image: '@talk/downloads'
   - '<span class="theme@block theme@align-center">**30 Billion** downloads per year</span>'
 # ---
 
@@ -68,7 +68,7 @@ quote:
 layout: separator
 title: This talk is about a question we are trying to answer…
 image:
-  url: '@common/questions-2.png'
+  url: '@common/questions-2'
 options:
   background: amber
 # ---
@@ -77,14 +77,14 @@ options:
 layout: image
 title: Is Node.js dead yet?
 image:
-  url: '@common/sunset.png'
+  url: '@common/sunset'
 # ---
 
 ---
 layout: image
 title: Period.
 image:
-  url: '@common/no.png'
+  url: '@common/no'
 # ---
 
 ---
@@ -92,7 +92,7 @@ layout: separator
 title: ...let me tell you a secret!
 subtitle: To all of you that "aim" to destroy other technologies...
 image:
-  url: '@common/lego-astronaut.png'
+  url: '@common/lego-astronaut'
 options:
   background: sky
 className:
@@ -107,7 +107,7 @@ decorations:
 title: A technology born in *1959* is on the RAISE!
 content:
   - Have you have heard about **COBOL**?
-  - image: '@talk/cobol.png'
+  - image: '@talk/cobol'
   - 'Source: https://www.tiobe.com/tiobe-index/'
 # ---
 
@@ -115,7 +115,7 @@ content:
 title: jQuery is used by *94.4%* of the JS-enabled sites
 content:
   - And v4 was just released!
-  - image: '@talk/jquery.png'
+  - image: '@talk/jquery'
   - 'Source: https://w3techs.com/technologies/overview/javascript_library'
 # ---
 
@@ -123,7 +123,7 @@ content:
 layout: separator
 title: What about Node.js?
 image:
-  url: '@common/node.png'
+  url: '@common/node'
 options:
   background: amber
 # ---
@@ -131,7 +131,7 @@ options:
 ---
 title: Node.js is the most popular technology according to StackOverflow
 content:
-  - image: '@talk/node-popularity.png'
+  - image: '@talk/node-popularity'
   - 'Source: https://survey.stackoverflow.co/2023/#technology-most-popular-technologies'
 # ---
 
@@ -139,7 +139,7 @@ content:
 title: No, bundling npm and Node.js was not a mistake
 content:
   - A combo that solve software reuse, at scale. No one else did.
-  - image: '@talk/npm.png'
+  - image: '@talk/npm'
   - 'Source: http://www.modulecounts.com/'
 # ---
 
@@ -147,14 +147,14 @@ content:
 title: Module usage also grew
 content:
   - Downloads of readable-stream (4th most downloaded module on npm)
-  - image: '@talk/modules-downloads.png'
+  - image: '@talk/modules-downloads'
   - 'The "usage" of Node.js is growing roughly *+50% year over year*, or doubling every 2 years '
 # ---
 
 ---
 title: Half of Node.js downloads are the headers files
 content:
-  - image: '@talk/node-by-os.png'
+  - image: '@talk/node-by-os'
   - 'Source: https://nodedownloads.nodeland.dev/'
 # ---
 
@@ -164,14 +164,14 @@ content:
   - |
     Headers are downloaded whenever an "npm i" needs to compile binary addons.
     Then they are cached to disk.
-  - image: '@talk/node-headers.png'
+  - image: '@talk/node-headers'
 # ---
 
 ---
 title: Downloads of the Node.js binary, per OS
 content:
   - We believe Linux is the default for CI. OSS projects often test on Windows for CI as well.
-  - image: '@talk/node-by-binary.png'
+  - image: '@talk/node-by-binary'
 # ---
 
 ---
@@ -204,14 +204,14 @@ className:
 ---
 title: Node.js v16, v14, v12 are massively popular, while they all have <span class="talk@danger-banner">known vulnerabilities</span>
 content:
-  - image: '@talk/node-by-version.png'
+  - image: '@talk/node-by-version'
 # ---
 
 ---
 layout: separator
 title: If you are not updating Node.js...
 image:
-  url: '@common/danger-strip.png'
+  url: '@common/danger-strip'
 options:
   background: amber
 # ---
@@ -220,7 +220,7 @@ options:
 layout: separator
 title: ...you are putting yourself at risk!
 image:
-  url: '@common/danger-strip.png'
+  url: '@common/danger-strip'
 options:
   background: red
 className:
@@ -230,7 +230,7 @@ className:
 ---
 title: Long Term Support (LTS) Schedule
 content:
-  - image: '@talk/lts.png'
+  - image: '@talk/lts'
 # ---
 
 ---
@@ -238,7 +238,7 @@ title: |
   Most teams update their Node.js
   version every 2 LTS releases
 content:
-  - image: '@talk/node-by-version-latest.png'
+  - image: '@talk/node-by-version-latest'
 # ---
 
 ---
@@ -273,21 +273,21 @@ items:
 title: Commits & Pushes to Node.js Core
 content: 'Source https://ossinsight.io/analyze/nodejs/node'
 image:
-  url: '@talk/node-commits-pushes.png'
+  url: '@talk/node-commits-pushes'
 # ---
 
 ---
 title: The number of pull requests is (mostly) stable
 content: 'Source https://ossinsight.io/analyze/nodejs/node'
 image:
-  url: '@talk/node-prs.png'
+  url: '@talk/node-prs'
 # ---
 
 ---
 layout: separator
 title: We work hard to keep <span class="theme@fg-amber">you</span> safe!
 image:
-  url: '@common/danger-strip.png'
+  url: '@common/danger-strip'
 options:
   background: sky
 # ---
@@ -296,27 +296,27 @@ options:
 title: Node.js Security Submissions
 content: Submissions are not turned into vulnerabilities, but they need to be handled by the team
 image:
-  url: '@talk/node-security-submissions.png'
+  url: '@talk/node-security-submissions'
 # ---
 
 ---
 title: Average time to first response
 content: Submissions are not turned into vulnerabilities, but they need to be handled by the team
 image:
-  url: '@talk/average-response-time.png'
+  url: '@talk/average-response-time'
 # ---
 
 ---
 title: Average time to triage
 content: Submissions are not turned into vulnerabilities, but they need to be handled by the team
 image:
-  url: '@talk/average-triage-time.png'
+  url: '@talk/average-triage-time'
 # ---
 
 ---
 title: Node.js was one of the first project sponsored by
 content:
-  - image: '@talk/alpha-omega.png'
+  - image: '@talk/alpha-omega'
   - Alpha-Omega is an associated project of the OpenSSF, established in February 2022, funded by Microsoft, Google, and Amazon, and with a *mission to protect society by catalyzing sustainable security improvements* to the most critical open source software projects and ecosystems.
   - '*The project aims to build a world where critical open source projects are secure and where security vulnerabilities are found and fixed quickly.*'
 className:
@@ -326,14 +326,14 @@ className:
 ---
 title: Total funding for Security work
 image:
-  url: '@talk/security-funding.png'
+  url: '@talk/security-funding'
 # ---
 
 ---
 layout: separator
 title: What did we ship in the last few years?
 image:
-  url: '@common/ship.png'
+  url: '@common/ship'
 options:
   background: amber
 # ---
@@ -642,7 +642,7 @@ layout: separator
 title: Are you using the latest Node.js features?
 subtitle: Or are you still stuck in 2015?
 image:
-  url: '@common/clock.png'
+  url: '@common/clock'
 options:
   background: pink
 decorations:
@@ -656,7 +656,7 @@ subtitle: |
   Let's look at the two
   most exciting things in v22!
 image:
-  url: '@common/road.png'
+  url: '@common/road'
 options:
   background: amber
 # ---
@@ -666,7 +666,7 @@ layout: image
 title: require(esm)
 subtitle: '.mjs is not needed anymore'
 image:
-  url: '@common/fry-money.png'
+  url: '@common/fry-money'
 className:
   contents: talk@image contents
 # ---
@@ -692,7 +692,7 @@ code:
 layout: image
 title: 'Typescript'
 image:
-  url: '@common/fry-money.png'
+  url: '@common/fry-money'
 className:
   contents: talk@image contents
 # ---
@@ -732,7 +732,7 @@ items:
 layout: separator
 title: Node.js is not always relaxing...
 image:
-  url: '@common/mountain.png'
+  url: '@common/mountain'
 options:
   background: orange
 # ---
@@ -743,7 +743,7 @@ title: |
   ...because
   we need you!
 image:
-  url: '@common/start.png'
+  url: '@common/start'
 options:
   background: orange
 className:
@@ -754,14 +754,14 @@ className:
 layout: image
 title: Project Governance
 image:
-  url: '@common/senate.png'
+  url: '@common/senate'
 decorations:
   logo: white
 # ---
 
 ---
 image:
-  url: '@talk/openjs.png'
+  url: '@talk/openjs'
 # ---
 
 ---
@@ -823,7 +823,7 @@ content:
 layout: image
 title: No one can control Node.js
 image:
-  url: '@common/scream.png'
+  url: '@common/scream'
 # ---
 
 ---
@@ -833,7 +833,7 @@ title: |
   to <span class="theme@fg-amber">COMPROMISE</span>
   to achieve our objectives
 image:
-  url: '@common/peace.png'
+  url: '@common/peace'
 options:
   background: sky
 # ---
@@ -845,7 +845,7 @@ title: |
   a say  in the
   future of Node.js?
 image:
-  url: '@talk/send-pr.png'
+  url: '@talk/send-pr'
   className: talk@send-pr
 options:
   background: amber
@@ -856,7 +856,7 @@ layout: separator
 title: |
   Start contributing!
 image:
-  url: '@common/start.png'
+  url: '@common/start'
 options:
   background: green
 className:

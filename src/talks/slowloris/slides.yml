@@ -7,7 +7,7 @@ layout: separator
 title: |
   Sometimes, your worst enemy is slowness!
 image:
-  url: '@common/sloth.png'
+  url: '@common/sloth'
 options:
   background: fuchsia
 # ---
@@ -23,7 +23,7 @@ content:
   - Web applications play a very important part of our lives.
   - _They must not go down!_
 image:
-  url: '@common/online-banking.png'
+  url: '@common/online-banking'
 decorations:
   logo: white
 # ---
@@ -32,7 +32,7 @@ decorations:
 layout: separator
 title: We are all vulnerable!
 image:
-  url: '@common/hacking.png'
+  url: '@common/hacking'
 options:
   background: red
 # ---
@@ -61,7 +61,7 @@ title: |
   Fear the
   real enemy ...
 image:
-  url: '@common/hacking.png'
+  url: '@common/hacking'
 options:
   background: pink
 # ---
@@ -69,7 +69,7 @@ options:
 ---
 layout: image
 image:
-  url: '@common/slowloris.png'
+  url: '@common/slowloris'
 notes: |
   Joke about: **"This talk should have been named Taming Slowlorises in Node.js"** and see people reaction.
 decorations:
@@ -97,7 +97,7 @@ items:
         This attack can be abstracted
         to similar protocols.
 image:
-  url: '@talk/slowloris-intro.png'
+  url: '@talk/slowloris-intro'
 # ---
 
 ---
@@ -106,7 +106,7 @@ title: Normal HTTP server activity
 content:
   - Each socket on the server consumes some amount of RAM and other system resources.
 image:
-  url: '@talk/http-1.png'
+  url: '@talk/http-1'
 decorations:
   number: 1
 # ---
@@ -117,7 +117,7 @@ title: Normal HTTP server activity
 content:
   - Clients usually disconnect after receiving the response.
 image:
-  url: '@talk/http-2.png'
+  url: '@talk/http-2'
 notes: |
   Explicitly mention that this is not strictly true for Keep-Alive connections but also that legit clients disconnects very soon.
 decorations:
@@ -130,7 +130,7 @@ title: Normal HTTP server activity
 content:
   - The amount of resources consumed by the server are relatively stable.
 image:
-  url: '@talk/http-3.png'
+  url: '@talk/http-3'
 decorations:
   number: 3
 # ---
@@ -156,7 +156,7 @@ title: The Slowloris attack
 content:
   - Each client never finishes a request and stays connected for the longest time possible.
 image:
-  url: '@talk/slowloris-1.png'
+  url: '@talk/slowloris-1'
 decorations:
   number: 1
 # ---
@@ -167,7 +167,7 @@ title: The Slowloris attack
 content:
   - As more clients connect, server resources usage constantly increases over time.
 image:
-  url: '@talk/slowloris-2.png'
+  url: '@talk/slowloris-2'
 decorations:
   number: 2
 # ---
@@ -179,7 +179,7 @@ content:
   - At some point server has no more free resources and cannot accept any new client.
   - _The service is interrupted!_
 image:
-  url: '@talk/slowloris-3.png'
+  url: '@talk/slowloris-3'
 decorations:
   number: 3
 # ---
@@ -188,7 +188,7 @@ decorations:
 layout: separator
 title: How do we stop it?
 image:
-  url: '@common/wall.png'
+  url: '@common/wall'
 notes: |
   Emphasize **"How"** and **"stop it"**?
 options:
@@ -226,7 +226,7 @@ items:
 layout: separator
 title: What about Node.js?
 image:
-  url: '@common/node.png'
+  url: '@common/node'
 options:
   background: amber
 decorations:
@@ -292,7 +292,7 @@ items:
 layout: separator
 title: Are we safe now?
 image:
-  url: '@common/completed.png'
+  url: '@common/completed'
 options:
   background: amber
 # ---
@@ -301,7 +301,7 @@ options:
 layout: separator
 title: Yes, almost!
 image:
-  url: '@common/hacking.png'
+  url: '@common/hacking'
 options:
   background: gray
 # ---
@@ -390,7 +390,7 @@ notes: |
 layout: separator
 title: We made it!
 image:
-  url: '@common/turtle.png'
+  url: '@common/turtle'
 notes: |
   Do a nice victory gesture and shout!
 options:
@@ -434,4 +434,3 @@ quote:
 ---
 layout: end
 # ---
-

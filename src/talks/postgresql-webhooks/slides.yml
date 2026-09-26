@@ -6,7 +6,7 @@ layout: cover
 layout: separator
 title: Don't shoot a fly with a cannon!
 image:
-  url: '@common/cannon.png'
+  url: '@common/cannon'
 options:
   background: fuchsia
 # ---
@@ -47,7 +47,7 @@ items:
 layout: separator
 title: How do we keep updated?
 image:
-  url: '@common/server.png'
+  url: '@common/server'
 options:
   background: amber
 # ---
@@ -103,7 +103,7 @@ title: |
   Which one
   shall we choose?
 image:
-  url: '@common/alternatives.png'
+  url: '@common/alternatives'
 options:
   background: amber
 # ---
@@ -112,7 +112,7 @@ options:
 layout: separator
 title: Say hello to <span class="theme@fg-black">Webhooks</span>!
 image:
-  url: '@common/hook.png'
+  url: '@common/hook'
 options:
   background: green
 decorations:
@@ -136,7 +136,7 @@ title: |
   Let's implement
   a real one!
 image:
-  url: '@common/action.png'
+  url: '@common/action'
 options:
   background: orange
 decorations:
@@ -198,7 +198,7 @@ items:
 layout: separator
 title: What about failures?
 image:
-  url: '@common/firefighter.png'
+  url: '@common/firefighter'
 options:
   background: amber
 # ---
@@ -237,7 +237,7 @@ items:
 layout: separator
 title: What about race conditions?
 image:
-  url: '@common/horses-race.png'
+  url: '@common/horses-race'
 options:
   background: amber
 decorations:
@@ -293,7 +293,7 @@ items:
 layout: separator
 title: How do you easily get such a lock implementation?
 image:
-  url: '@common/algorithm.png'
+  url: '@common/algorithm'
 options:
   background: amber
 # ---
@@ -302,7 +302,7 @@ options:
 layout: separator
 title: PostgreSQL <span class="theme@fg-black">Advisory Locks</span>
 image:
-  url: '@common/semaphore.png'
+  url: '@common/semaphore'
 options:
   background: green
 # ---
@@ -331,7 +331,7 @@ title: |
   Stop talking please.
   Show me the <span class="theme@fg-black">code</span>!
 image:
-  url: '@common/code.png'
+  url: '@common/code'
 options:
   background: fuchsia
 # ---
@@ -341,15 +341,15 @@ title: Technical stack
 grids:
   - className: talk@icons-grid
     entries:
-      - image: '@common/nodejs.png'
+      - image: '@common/nodejs'
         title: Node.js
         className:
           image: width-auto
-      - image: '@common/postgresql.png'
+      - image: '@common/postgresql'
         title: PostgreSQL
-      - image: '@common/fastify.png'
+      - image: '@common/fastify'
         title: Fastify
-      - image: '@theme/logo-black.png'
+      - image: '@theme/logo-black'
         title: Watt
 # ---
 
@@ -488,7 +488,7 @@ code:
 layout: separator
 title: And now, let's deliver some messages!
 image:
-  url: '@common/letter.png'
+  url: '@common/letter'
 options:
   background: orange
 decorations:
@@ -595,7 +595,7 @@ code:
 layout: separator
 title: Why all those delays?
 image:
-  url: '@common/confused.png'
+  url: '@common/confused'
 options:
   background: amber
 decorations:
@@ -695,7 +695,7 @@ code:
 layout: separator
 title: Remember, successful message <span class="theme@fg-black">cannot</span> be retried!
 image:
-  url: '@common/danger-line.png'
+  url: '@common/danger-line'
 options:
   background: red
 # ---
@@ -738,7 +738,7 @@ code:
 layout: separator
 title: Mission completed!
 image:
-  url: '@common/completed.png'
+  url: '@common/completed'
 options:
   background: green
 decorations:
@@ -769,4 +769,3 @@ quote:
 ---
 layout: end
 # ---
-

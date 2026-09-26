@@ -36,7 +36,7 @@ title: |
   Let's get to
   the action!
 image:
-  url: '@common/action.png'
+  url: '@common/action'
 options:
   background: sky
 decorations:
@@ -93,7 +93,7 @@ layout: separator
 title: 'Task 1: Create a Canonical Request'
 subtitle: Enjoy! 😈
 image:
-  url: '@common/code.png'
+  url: '@common/code'
 options:
   background: red
 # ---
@@ -103,7 +103,7 @@ layout: separator
 title: 'Task 2: Create a String to Sign'
 subtitle: Enjoy! 😂
 image:
-  url: '@common/algorithm.png'
+  url: '@common/algorithm'
 options:
   background: green
 # ---
@@ -113,7 +113,7 @@ layout: separator
 title: 'Task 3: Calculate Signature'
 subtitle: Enjoy! 😶
 image:
-  url: '@common/hacking.png'
+  url: '@common/hacking'
 options:
   background: amber
 # ---
@@ -123,7 +123,7 @@ layout: separator
 title: 'Task 4: REST API call'
 subtitle: Enjoy! 😎
 image:
-  url: '@common/server.png'
+  url: '@common/server'
 options:
   background: orange
 # ---
@@ -133,7 +133,7 @@ layout: separator
 title: 'Task 5: Main function'
 subtitle: Enjoy! 🍺
 image:
-  url: '@common/completed.png'
+  url: '@common/completed'
 options:
   background: blue
 # ---
@@ -151,4 +151,3 @@ className:
 ---
 layout: end
 # ---
-

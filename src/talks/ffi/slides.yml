@@ -8,7 +8,7 @@ title: |
   Not everything
   needs a rewrite.
 image:
-  url: '@talk/component.png'
+  url: '@talk/component'
 options:
   background: fuchsia
 decorations:
@@ -25,7 +25,7 @@ title: |
   Your next dependency
   might not be in JavaScript.
 image:
-  url: '@talk/connect.png'
+  url: '@talk/connect'
 options:
   background: blue
 decorations:
@@ -82,7 +82,7 @@ items:
 title: What can we build?
 layout: separator
 image:
-  url: '@talk/coffee.png'
+  url: '@talk/coffee'
 options:
   background: amber
 # ---
@@ -118,7 +118,7 @@ title: |
   Couldn't we just
   npm install it?
 image:
-  url: '@talk/confusion.png'
+  url: '@talk/confusion'
 options:
   background: red
 # ---
@@ -160,7 +160,7 @@ title: |
   Let's get to
   the action!
 image:
-  url: '@talk/action.png'
+  url: '@talk/action'
 options:
   background: sky
 # ---
@@ -209,7 +209,7 @@ code:
 layout: image
 title: A small API. A long journey.
 image:
-  url: '@talk/sequence.png'
+  url: '@talk/sequence'
 decorations:
   logo: white
 # ---
@@ -296,7 +296,7 @@ layout: image
 title: Welcome, `node:ffi`.
 subtitle: Introduced as experimental in Node.js 26.1.0.
 image:
-  url: '@talk/welcome.png'
+  url: '@talk/welcome'
 # ---
 
 ---
@@ -304,7 +304,7 @@ layout: separator
 title: |
   How do I use it?
 image:
-  url: '@talk/cow.png'
+  url: '@talk/cow'
 options:
   background: amber
 # ---
@@ -328,7 +328,7 @@ items:
 layout: separator
 title: With great power comes great responsibility™
 image:
-  url: '@talk/spider-panda.png'
+  url: '@talk/spider-panda'
 options:
   background: red
 # ---
@@ -399,7 +399,7 @@ title: |
   It works.
   But how fast?
 image:
-  url: '@talk/run.png'
+  url: '@talk/run'
 options:
   background: amber
 # ---
@@ -457,7 +457,7 @@ title: |
   argument.
 subtitle: The JavaScript receiver.
 image:
-  url: '@talk/photo.png'
+  url: '@talk/photo'
 options:
   background: pink
 # ---
@@ -495,7 +495,7 @@ layout: separator
 title: |
   So, what happened?
 image:
-  url: '@talk/dog.png'
+  url: '@talk/dog'
 options:
   background: orange
 # ---
@@ -552,7 +552,7 @@ title: |
   Fallback is
   part of the design.
 image:
-  url: '@talk/slide.png'
+  url: '@talk/slide'
 options:
   background: green
 decorations:
@@ -592,7 +592,7 @@ code:
 layout: image
 title: What will you connect next?
 image:
-  url: '@talk/next.png'
+  url: '@talk/next'
 decorations:
   logo: white
 # ---

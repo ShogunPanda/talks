@@ -8,7 +8,7 @@ title: |
   No automation,
   no party!
 image:
-  url: '@common/smart-home.png'
+  url: '@common/smart-home'
 options:
   background: fuchsia
 decorations:
@@ -38,7 +38,7 @@ items:
 layout: separator
 title: I'm literally surrounded by lovely chubby cats...
 image:
-  url: '@talk/ciurma-1.png'
+  url: '@talk/ciurma-1'
 options:
   background: blue
 decorations:
@@ -51,7 +51,7 @@ title: |
   ...and I deeply
   love them!
 image:
-  url: '@talk/io.png'
+  url: '@talk/io'
 className:
   root: reverse
 options:
@@ -82,7 +82,7 @@ title: |
   I automated
   their lives...
 image:
-  url: '@talk/mangioni.png'
+  url: '@talk/mangioni'
 options:
   background: pink
 # ---
@@ -91,7 +91,7 @@ options:
 layout: separator
 title: ...since my wife kept collecting new cats!
 image:
-  url: '@talk/kuro-loki.png'
+  url: '@talk/kuro-loki'
 className:
   root: reverse
 options:
@@ -118,7 +118,7 @@ layout: separator
 title: Let's start!
 subtitle: Say hello to <span class="talk@pet name">Bree</span>!
 image:
-  url: '@talk/bree-1.png'
+  url: '@talk/bree-1'
 options:
   background: sky
 className:
@@ -131,7 +131,7 @@ title: The beginning
 content:
   - It started with my home alarm system.
 image:
-  url: '@talk/ksenia.png'
+  url: '@talk/ksenia'
 items:
   entries:
     - icon: lock
@@ -162,7 +162,7 @@ title: |
   no wait, it's cold!
 subtitle: Say hello to <span class="talk@pet name">Cali</span>!
 image:
-  url: '@talk/cali.png'
+  url: '@talk/cali'
 options:
   background: blue
 decorations:
@@ -177,7 +177,7 @@ title: Let's optimize
 content:
   - Once the house was under control, it was time to take care of climate control.
 image:
-  url: '@talk/aquarea.png'
+  url: '@talk/aquarea'
 items:
   entries:
     - icon: temperature-three-quarters
@@ -208,7 +208,7 @@ title: |
   power plant?
 subtitle: Say hello to <span class="talk@pet name">Cleo</span>!
 image:
-  url: '@talk/cleo.png'
+  url: '@talk/cleo'
 options:
   background: amber
 decorations:
@@ -223,7 +223,7 @@ title: With the power of the Sun I will win!
 content:
   - After installing solar panels I was able to optimize power consumption.
 image:
-  url: '@talk/fronius.png'
+  url: '@talk/fronius'
 items:
   entries:
     - icon: sun
@@ -255,7 +255,7 @@ title: |
   gas to move!
 subtitle: Say hello to <span class="talk@pet name">Freya</span>!
 image:
-  url: '@talk/freya-1.png'
+  url: '@talk/freya-1'
 options:
   background: red
 decorations:
@@ -270,7 +270,7 @@ title: What have I told you about the sun?
 content:
   - I switched to electric cars and therefore I installed a wallbox.
 image:
-  url: '@talk/abb.png'
+  url: '@talk/abb'
 items:
   entries:
     - icon: battery-full
@@ -302,7 +302,7 @@ items:
 layout: image
 title: Gimme the cats!
 image:
-  url: '@talk/freya-2.png'
+  url: '@talk/freya-2'
 decorations:
   logo: black
 className:
@@ -313,7 +313,7 @@ className:
 layout: image
 title: It all started with Bree
 image:
-  url: '@talk/bree-2.png'
+  url: '@talk/bree-2'
 decorations:
   logo: white
 className:
@@ -341,7 +341,7 @@ title: Thanks progress
 content:
   - After many years of struggling, I found the perfect solution.
 image:
-  url: '@talk/petkit.png'
+  url: '@talk/petkit'
 items:
   entries:
     - icon: bowl-food
@@ -370,7 +370,7 @@ layout: separator
 title: Why don't you complicate things?
 subtitle: Say hello to <span class="talk@pet name">Yuna</span>!
 image:
-  url: '@talk/yuna.png'
+  url: '@talk/yuna'
 options:
   background: amber
 decorations:
@@ -399,7 +399,7 @@ layout: separator
 title: Let's protect them!
 subtitle: Say hello to <span class="talk@pet name">Kuro</span>!
 image:
-  url: '@talk/kuro.png'
+  url: '@talk/kuro'
 options:
   background: sky
 className:
@@ -412,7 +412,7 @@ title: Can't beat a classic
 content:
   - There are some solutions that take advantage of pets' subcutaneous chip.
 image:
-  url: '@talk/petdoor.png'
+  url: '@talk/petdoor'
 items:
   entries:
     - icon: door-open
@@ -446,7 +446,7 @@ subtitle: |
   <span class="talk@pet name"><s>Snappy Shine</s></span>
   <span class="talk@pet name">Braciolone</span>!
 image:
-  url: '@talk/bracio-1.png'
+  url: '@talk/bracio-1'
 options:
   background: amber
 className:
@@ -460,7 +460,7 @@ title: |
   automate his
   life (yet)...
 image:
-  url: '@talk/bracio-2.png'
+  url: '@talk/bracio-2'
 options:
   background: pink
 # ---
@@ -470,7 +470,7 @@ layout: separator
 title: ... but I could automate his. Why not?
 subtitle: Say hello to <span class="talk@pet name">Oscar</span>!
 image:
-  url: '@talk/oscar.png'
+  url: '@talk/oscar'
 className:
   root: reverse
   subtitle: theme@separator callout talk@pet theme@separator callout reverse
@@ -486,7 +486,7 @@ title: What is the fastest way to get a divorce?
 content:
   - Just discovered a new brand.
 image:
-  url: '@common/shelly.png'
+  url: '@common/shelly'
 items:
   entries:
     - icon: circle-nodes
@@ -504,7 +504,7 @@ title: |
   with X-Mas!
 subtitle: Why?! Why not!
 image:
-  url: '@talk/albero.png'
+  url: '@talk/albero'
 options:
   background: gray
 decorations:
@@ -520,7 +520,7 @@ title: |
   my house!
 subtitle: Say hello to <span class="talk@pet name">Loki</span>!
 image:
-  url: '@talk/loki.png'
+  url: '@talk/loki'
 options:
   background: green
 className:
@@ -533,13 +533,13 @@ content:
   - Let's talk about the most known vendors.
 items:
   entries:
-    - image: '@common/homekit.png'
+    - image: '@common/homekit'
       title: Apple HomeKit
-    - image: '@common/google-home.png'
+    - image: '@common/google-home'
       title: Google Home
-    - image: '@common/alexa.png'
+    - image: '@common/alexa'
       title: Amazon Alexa
-    - image: '@common/home-assistant.png'
+    - image: '@common/home-assistant'
       title: Home Assistant
   horizontal: true
 # ---
@@ -563,13 +563,13 @@ items:
 title: The Perseveranza™ technical stack (1/2)
 items:
   entries:
-    - image: '@common/nodejs.png'
+    - image: '@common/nodejs'
       title: Node.js
       className:
         image: width-auto
-    - image: '@common/redis.png'
+    - image: '@common/redis'
       title: Redis
-    - image: '@common/mosquitto.png'
+    - image: '@common/mosquitto'
       title: Mosquitto
   horizontal: true
 # ---
@@ -578,11 +578,11 @@ items:
 title: The Perseveranza™ technical stack (2/2)
 items:
   entries:
-    - image: '@common/fastify.png'
+    - image: '@common/fastify'
       title: Fastify
-    - image: '@common/homebridge.png'
+    - image: '@common/homebridge'
       title: HAP (Homebridge)
-    - image: '@talk/graphql.png'
+    - image: '@talk/graphql'
       title: GraphQL
   horizontal: true
 # ---
@@ -592,7 +592,7 @@ layout: separator
 title: Gimme the details!
 subtitle: Say hello to <span class="talk@pet name">Mora</span>!
 image:
-  url: '@talk/mora.png'
+  url: '@talk/mora'
 options:
   background: pink
 className:
@@ -619,7 +619,7 @@ layout: separator
 title: What is her name?
 subtitle: Let's play a little game ...
 image:
-  url: '@talk/cleo.png'
+  url: '@talk/cleo'
 options:
   background: amber
 decorations:
@@ -635,7 +635,7 @@ layout: separator
 title: Cleo!
 subtitle: The answer is ...
 image:
-  url: '@talk/cleo.png'
+  url: '@talk/cleo'
 options:
   background: green
 decorations:
@@ -676,7 +676,7 @@ className:
 ---
 layout: end
 image:
-  url: '@talk/bree-freya.png'
+  url: '@talk/bree-freya'
 title: But this talk is special. Thank you!
 subtitle: We miss you both, a very lot! ❤️
 className:

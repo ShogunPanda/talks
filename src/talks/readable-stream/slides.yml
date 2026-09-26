@@ -6,7 +6,7 @@ layout: cover
 layout: separator
 title: Panta rei!
 image:
-  url: '@common/lava.png'
+  url: '@common/lava'
 options:
   background: fuchsia
 decorations:
@@ -21,7 +21,7 @@ layout: hello
 layout: separator
 title: What are streams anyway?
 image:
-  url: '@common/island.png'
+  url: '@common/island'
 options:
   background: amber
 # ---
@@ -55,7 +55,7 @@ items:
 layout: separator
 title: Can I use them in the browser?
 image:
-  url: '@common/laptop.png'
+  url: '@common/laptop'
 options:
   background: amber
 decorations:
@@ -105,7 +105,7 @@ items:
       title: Long overdue
       text: Series 3.x.x shipped the module present in Node.js **10.x.x** (2018).
 image:
-  url: '@common/server.png'
+  url: '@common/server'
 decorations:
   logo: white
 # ---
@@ -121,7 +121,7 @@ options:
 layout: separator
 title: What has changed in streams<br/> since then?
 image:
-  url: '@common/changes.png'
+  url: '@common/changes'
 options:
   background: amber
 # ---
@@ -259,7 +259,7 @@ content:
   - The `toArray` method **reads the entire stream into memory**, which is exactly what streams are meant to avoid.
   - '*Promise me you will only use it when absolutely necessary!*'
 image:
-  url: '@common/spiderman.png'
+  url: '@common/spiderman'
 # ---
 
 ---
@@ -277,13 +277,13 @@ content:
   - Compared to the previous one it still uses regular expression but it is much smaller thanks to a more modern Javascript environment.
 items:
   entries:
-    - image: '@common/javascript.png'
+    - image: '@common/javascript'
       title: ESM
-    - image: '@common/babel.png'
+    - image: '@common/babel'
       title: Babel
       className:
         image: width-auto
-    - image: '@common/prettier.png'
+    - image: '@common/prettier'
       title: Prettier
   horizontal: true
 # ---
@@ -294,15 +294,15 @@ content:
   - A complex testing environment to match the most desired scenarios across Node.js version, browsers and bundlers.
 items:
   entries:
-    - image: '@common/tap.png'
+    - image: '@common/tap'
       title: TAP
       text: Used to test in the Node.js environment.
-    - image: '@common/tape.png'
+    - image: '@common/tape'
       title: Tape
       text: Along with custom runner and parser, it is used to test browsers.
       className:
         image: width-auto
-    - image: '@common/playwright.png'
+    - image: '@common/playwright'
       title: Playwright
       text: |
         It used to easily test
@@ -314,7 +314,7 @@ items:
 layout: separator
 title: We test 100 configurations in the CI!
 image:
-  url: '@common/100.png'
+  url: '@common/100'
 options:
   background: green
 # ---
@@ -324,7 +324,7 @@ title: ... that's all folks!™
 content:
   - There are obviously more changes, but these were the most juicy.
 image:
-  url: '@common/thats-all-folks.png'
+  url: '@common/thats-all-folks'
 # ---
 
 ---
@@ -333,13 +333,13 @@ content:
   - Obviously I haven't done all this by myself.
 items:
   entries:
-    - image: '@common/mcollina.png'
+    - image: '@common/mcollina'
       title: Matteo Collina
       text: https://github.com/mcollina
-    - image: '@talk/ronag.png'
+    - image: '@talk/ronag'
       title: Robert Nagy
       text: https://github.com/ronag
-    - image: '@talk/benjamingr.png'
+    - image: '@talk/benjamingr'
       title: Benjamin Gruenbaum
       text: https://github.com/benjamingr
   horizontal: true
@@ -357,4 +357,3 @@ quote:
 ---
 layout: end
 # ---
-
