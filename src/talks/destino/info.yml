@@ -10,5 +10,6 @@ document:
     In this talk, I’ll take you through the strange and surprisingly fun journey behind Project Destino: a proof of concept to run Doom entirely inside the terminal using Node.js. What started as a joke — “what if we ran Doom in the terminal with Node.js?” — slowly turned into a real experiment in terminal graphics, native interoperability, and runtime performance.
 
     I’ll show how I combined doomgeneric, OpenTUI, node:ffi, and SDL3 to build a fully interactive terminal-based Doom experience. OpenTUI presents frames through Kitty Graphics, native code produces pixels and audio samples, and Node.js coordinates the game loop, input, rendering, and audio delivery. Along the way, we’ll explore explicit memory ownership and packaging native assets with Node.js SEA.
+  createdAt: '2026-07-04'
   author: common.author
   company: common.company

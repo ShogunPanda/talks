@@ -12,6 +12,7 @@ document:
 
     In this talk I will show you how to use the resources the GraphQL specification already gives us to solve this issue
     without having to break the rules.
+  createdAt: '2022-07-19'
   author: common.author
   company: common.company
   branding: false

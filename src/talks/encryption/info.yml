@@ -16,6 +16,7 @@ document:
 
     In this interactive talk, we will see how to make our communications secure by implementing one of the most popular
     e2e encryption algorithms... with some help from the public!
+  createdAt: '2023-01-27'
   author: common.author
   company: common.company
   branding: false

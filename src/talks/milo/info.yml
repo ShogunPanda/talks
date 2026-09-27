@@ -10,6 +10,7 @@ document:
 
     Let me introduce you Milo, a new Rust based HTTP parser which I plan to integrate into Node.js and let me show you
     how you can help be a part of its first Rust component.
+  createdAt: '2023-09-17'
   author: common.author
   company: common.company
   branding: false

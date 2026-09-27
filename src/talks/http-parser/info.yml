@@ -7,6 +7,7 @@ document:
 
     As the parser is a critical part of Node.js, do we have better alternatives for easier maintainability? Let's find
     out.
+  createdAt: '2023-05-03'
   author: common.author
   company: common.company
   archived: true

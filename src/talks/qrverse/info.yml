@@ -13,5 +13,6 @@ document:
 
     In this talk, I will show you how Platformatic makes it very easy to create a QR code rendering 
     service in just a few minutes.
+  createdAt: '2024-06-11'
   author: common.author
   company: common.company

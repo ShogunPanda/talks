@@ -11,6 +11,7 @@ document:
 
     Finally I’ll introduce readable-stream v4.0.0, a full refactor which brings all these changes to user-land,
     regardless of the Node.js version installed on the system.
+  createdAt: '2023-03-13'
   author: common.author
   company: common.company
   archived: true

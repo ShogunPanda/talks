@@ -6,13 +6,13 @@ Presentazione in inglese, guida in italiano. Nessuna nota incorporata nelle slid
 
 Messaggio centrale: FFI permette di riutilizzare librerie native da JavaScript attraverso un contratto binario esplicito. Portarlo in core richiede un'API comprensibile, una gestione rigorosa dei confini e ottimizzazioni che preservino il comportamento del percorso generico.
 
-La versione finale contiene **46 slide**: cover, apertura provocatoria, hello, alternanza fra contenuti e separatori illustrati, quote, end. Tutti gli 11 separatori usano immagini del talk e nessuno ha icone. Le slide 17, 23 e 44 usano il layout `image` fullscreen. Colori dei separatori: fuchsia per l'apertura (2), blue per la dipendenza nativa (4), amber per casi d'uso, API e performance (8, 24, 31), red per npm e responsabilità (11, 26), sky per l'esempio (14), pink per il receiver (35), orange per l'esito degli esperimenti (38), green per il fallback (42). Logo nero nelle slide 2, 4 e 42; bianco nelle 17 e 44. `context.md` contiene l'inventario definitivo delle 14 immagini e proposte facoltative per varianti future.
+La versione NodeConf contiene **52 slide**: esempi concreti e una spiegazione essenziale delle ottimizzazioni. `add_i32(20, 22)` collega API, costo della chiamata, shared buffer e un breve pseudocodice dell'adattatore (45). La parte sui trampolini si limita al loro ruolo di adattatori, alla preparazione una tantum e al riuso nelle chiamate ottimizzate. Gli esempi usano il rendering nativo di Freya. Tutti gli 11 separatori usano immagini del talk e nessuno ha icone. Le slide 17, 23 e 50 usano il layout `image` fullscreen. Colori dei separatori: fuchsia apertura (2), blue dipendenza (4), amber casi d'uso/API/performance (8, 24, 35), red npm/responsabilità (11, 26), sky esempio (14), pink receiver (40), orange esito (43), green fallback (48). Logo nero nelle slide 2, 4 e 48; bianco nelle 17 e 50. Alle 14 illustrazioni si aggiunge un diagramma Excalidraw nella slide 41, con sorgente modificabile in `diagrams/adapter.excalidraw` e PNG in `assets/ffi-adapter.png`.
 
 Crediti concordati: Bryan English per l'esplorazione originale, le prime ottimizzazioni e l'idea dei trampolini; Colin Ihrig per il rilancio e la PR #62072. Paolo ha confermato di avere realizzato l'implementazione finale della #62072, chiedendo di lasciare a Colin il credito nel racconto. La #63068 è presentata come implementazione di Paolo con Bryan coautore. Citare anche il contributo di Anna Henningsen nelle alternative sul receiver V8 e quello di tianxiadys nel 2025.
 
-Riferimento temporale della ricerca: 23 settembre 2026. L'abstract e le slide descrivono il landing già avvenuto. Il modulo è sperimentale, introdotto in Node.js 26.1.0. La documentazione corrente indica l'abilitazione di default nelle build con supporto FFI, disattivabile con `--no-experimental-ffi`; con Permission Model serve `--allow-ffi`. Per versioni precedenti può essere necessario `--experimental-ffi`.
+Riferimento temporale: ricerca storica del 23 settembre 2026; API, guida degli internals ed emitter AArch64 ricontrollati il 27 settembre 2026. L'abstract e le slide descrivono il landing già avvenuto. Il modulo è sperimentale, introdotto in Node.js 26.1.0. La documentazione corrente indica l'abilitazione di default nelle build con supporto FFI, disattivabile con `--no-experimental-ffi`; con Permission Model serve `--allow-ffi`. Per versioni precedenti può essere necessario `--experimental-ffi`.
 
-Durata proposta, da adattare allo slot: circa 35 minuti più domande. Slide 1–16: 9 minuti; 17–23: 5 minuti; 24–30: 5 minuti; 31–42: 9 minuti; 43–46: 7 minuti, inclusi eventuali approfondimenti orali sulle misure. I separatori sono brevi passaggi di ritmo, non nuove sezioni da approfondire. Evento e durata effettiva non sono ancora stati indicati.
+Durata proposta, da adattare allo slot NodeConf: circa 35 minuti più domande. Slide 1–16: 8 minuti; 17–23: 4 minuti; 24–34: 9 minuti; 35–48: 10 minuti; 49–52: 4 minuti. La parte sui trampolini deve rimanere al minimo indispensabile: spiegare perché serve un adattatore, quando viene preparato e come viene riutilizzato. Lo pseudocodice della slide 45 richiede soltanto una breve lettura. I separatori sono brevi passaggi di ritmo. La durata effettiva non è ancora confermata. Le due slide Platformatic su Booking.com e Supabase attendono contenuti e dati da Luca: non sono incluse nel conteggio.
 
 ## Traccia slide per slide
 
@@ -93,7 +93,7 @@ Durata proposta, da adattare allo slot: circa 35 minuti più domande. Slide 1–
 
 ### 16. Load. Describe. Call.
 - **Scopo:** mostrare l'API essenziale e il cleanup.
-- **Traccia:** `suffix` fornisce l'estensione, non compila né rende portabile il binario. `dlopen` restituisce `lib` e `functions`. Il file `mylib` è una libreria di esempio da compilare prima, non un asset incluso. `try/finally` chiude la libreria; `using` è un'altra possibilità documentata. L'esempio non è stato eseguito contro una libreria compilata in questa sessione.
+- **Traccia:** `suffix` fornisce l'estensione, non compila né rende portabile il binario. `dlopen` restituisce `lib` e `functions`. Il file `mylib` è una libreria di esempio da compilare prima, non un asset incluso. `try/finally` chiude la libreria; gli esempi successivi usano `using`. Il codice C mostrato è stato estratto e compilato come libreria condivisa temporanea; questa chiamata, buffer, callback e BigInt sono stati eseguiti con Node.js 26.10.0 su macOS, ottenendo i risultati indicati.
 - **Transizione:** questa semplicità esterna ha richiesto anni di lavoro.
 
 ### 17. A small API. A long journey.
@@ -138,7 +138,7 @@ Durata proposta, da adattare allo slot: circa 35 minuti più domande. Slide 1–
 
 ### 25. Types are part of the call
 - **Scopo:** spiegare la corrispondenza fra valori JS e tipi nativi.
-- **Traccia:** interi piccoli e float usano `number`, argomenti int64/uint64 usano `bigint` nella API verificata. La proposta #66197 per accettare safe integer numerici è ancora aperta alla data della ricerca. Non confondere questa regola con le conversioni dei setter di memoria. Le firme non vengono dedotte dagli header e `bool` è un alias numerico uint8, non un boolean JavaScript.
+- **Traccia:** mostrare `identity_u64` e il valore `9_007_199_254_740_993n`: un `number` perderebbe precisione prima ancora di attraversare il confine. Lo snippet prosegue con una libreria `lib` già aperta; il simbolo C ha corpo `return value;`. Interi piccoli e float usano `number`, argomenti int64/uint64 usano `bigint` nella API verificata. Non confondere questa regola con i setter di memoria. Le firme non vengono dedotte dagli header e `bool` è un alias numerico uint8, non un boolean JavaScript.
 - **Transizione:** prima dei puntatori, ricordare che il controllo su memoria e firme comporta responsabilità.
 
 ### 26. With great power comes great responsibility™
@@ -149,109 +149,139 @@ Durata proposta, da adattare allo slot: circa 35 minuti più domande. Slide 1–
 ### 27. A pointer is not an ownership model
 - **Scopo:** distinguere indirizzo, memoria e durata.
 - **Traccia:** le stringhe diventano UTF-8 NUL-terminated temporaneo; il backing store dei buffer deve restare valido durante la chiamata. `toBuffer(ptr, length)` copia; `toBuffer(ptr, length, false)` crea una vista. `getRawPointer` non mantiene magicamente viva o immobile la memoria. #62818 documenta il rispetto della protezione delle pagine; #62857 corregge gli accessi agli ArrayBuffer.
-- **Transizione:** da questi vincoli discende l'ordine di cleanup.
+- **Transizione:** rendere concreto il prestito di memoria con una funzione C che legge un buffer.
 
-### 28. Cleanup has an order
+### 28. Borrow bytes, not ownership
+- **Scopo:** rendere visibili i limiti dell'accesso nativo alla memoria.
+- **Traccia:** `sum_bytes` riceve un indirizzo e una lunghezza, legge esattamente quell'intervallo e non conserva il puntatore. La lunghezza è `uint32_t`, non `size_t`: la firma non dipende dalla larghezza di `size_t`. L'accumulatore unsigned ha wrap definito modulo 2^32. Nessuna validazione FFI può dimostrare che una lunghezza arbitraria corrisponda alla memoria realmente disponibile.
+- **Transizione:** prestare a questa funzione lo storage di un Buffer JavaScript.
+
+### 29. A Buffer crosses the boundary
+- **Scopo:** mostrare una chiamata completa con dati binari e cleanup.
+- **Traccia:** `[10, 20, 12]` produce 42. Il payload non viene copiato e la proprietà rimane JavaScript. Lo storage deve rimanere vivo e stabile durante la chiamata, anche se codice rientrante fosse coinvolto. `using handle` chiude la libreria a fine scope; non autorizza C a conservare il puntatore. Non chiamare l'intera operazione «senza conversioni»: il bridge deve comunque ottenere il puntatore e preparare la chiamata.
+- **Transizione:** rendere esplicito l'ordine generale del cleanup.
+
+### 30. Cleanup has an order
 - **Scopo:** spiegare la durata della libreria e delle risorse associate.
 - **Traccia:** fermare attività e callback, usare il deallocatore previsto dalla libreria, chiudere il handle. La chiusura rende invalide le funzioni risolte, ma non revoca puntatori già consegnati a codice nativo. GC e `Symbol.dispose` non possono conoscere tutti gli usi esterni. #63024 e #64860 mostrano problemi reali di lifetime.
 - **Transizione:** le callback rendono il contratto bidirezionale.
 
-### 29. Callbacks cross the other way
+### 31. Callbacks cross the other way
 - **Scopo:** spiegare la direzione C → JavaScript.
 - **Traccia:** `registerCallback` crea un puntatore usando una closure libffi. Invocazione sul thread creatore, nessun throw, nessuna Promise e ritorno compatibile. Non chiudere la libreria o deregistrare la callback mentre è attiva. Una funzione con tipo `function` non usa il fast path attuale; le closure callback restano distinte dai trampolini downcall.
-- **Transizione:** attraversare il confine non cambia automaticamente il modello di concorrenza.
+- **Transizione:** vedere una libreria che invoca una callback esattamente una volta.
 
-### 30. Native does not mean asynchronous
+### 32. C calls JavaScript, then returns
+- **Scopo:** rendere esplicito il contratto nativo della callback.
+- **Traccia:** `apply_once` chiama il puntatore sul thread corrente e restituisce il risultato. Non avvia thread e non conserva l'indirizzo. Sono proprietà di questa funzione C, non garanzie che FFI impone automaticamente a ogni libreria.
+- **Transizione:** registrare una funzione JavaScript con la stessa firma.
+
+### 33. Register. Call. Unregister.
+- **Scopo:** mostrare creazione, utilizzo e rilascio di una callback reale.
+- **Traccia:** la callback identità restituisce 42 senza throw, Promise o rischio di overflow della moltiplicazione. Il parametro C è dichiarato `function`, quindi questa downcall non usa il Fast API path. La callback usa comunque una closure libffi. Nel `finally`, `apply_once` è già terminata e non conserva il puntatore: è il momento corretto per deregistrarlo. A fine scope `using` chiude la libreria.
+- **Transizione:** chiamata nativa e callback restano sincrone sul thread corrente.
+
+### 34. Native does not mean asynchronous
 - **Scopo:** correggere un'aspettativa comune.
 - **Traccia:** una chiamata sincrona blocca il thread che la esegue. Un worker può isolare lavoro adatto, ma libreria, stato globale e callback devono rispettare le regole native. `getCurrentEventLoop`, #64323, restituisce il `uv_loop_t` dell'environment corrente; disponibile da 26.6.0 secondo la documentazione. Non è un sostituto di una API asincrona.
 - **Transizione:** anche una chiamata breve ha un costo.
 
-### 31. It works. But how fast?
+### 35. It works. But how fast?
 - **Scopo:** aprire la parte di performance.
 - **Traccia:** il separatore è amber, una domanda sul costo della chiamata; spostare il focus dalla durata del lavoro nativo al costo di attraversamento.
 - **Transizione:** scomporre il percorso generico.
 
-### 32. Every crossing has a cost
+### 36. Every crossing has a cost
 - **Scopo:** spiegare dove nasce l'overhead.
-- **Traccia:** i tre passaggi sono disposti in orizzontale: callback V8, validazione/conversione C++, preparazione degli argomenti, invocazione libffi e conversione del risultato. Su una funzione banale il lavoro utile è una piccola parte del totale.
+- **Traccia:** seguire proprio `add_i32(20, 22)`: callback V8, validazione/conversione C++, preparazione degli argomenti, invocazione libffi e conversione di 42 in un numero JavaScript. Il codice C fa una sola somma: qui interessa il costo del tragitto, non accelerare l'addizione.
 - **Transizione:** Bryan interviene sul passaggio degli argomenti.
 
-### 33. Bryan's first optimization
+### 37. Bryan's first optimization
 - **Scopo:** attribuire a Bryan lo shared-buffer path.
 - **Traccia:** #62918 usa un ArrayBuffer per funzione con slot accessibili da JS e dal codice nativo. Riduce conversioni attraverso V8, ma continua a usare libffi. “Shared” qui non significa memoria fra worker. La proposta originale copriva firme numeriche e puntatori; la documentazione corrente descrive un percorso più ampio con fallback per valori pointer-like che richiedono conversione.
-- **Transizione:** V8 può eliminare un altro livello di passaggio.
+- **Transizione:** mostrare gli offset reali degli slot per i due argomenti.
 
-### 34. V8 already knows a faster route
+### 38. Pack once per call, reuse the storage
+- **Scopo:** spiegare concretamente il lavoro rimosso dallo shared buffer.
+- **Traccia:** pseudocodice degli internals, non API pubblica né snippet eseguibile da solo. Un ArrayBuffer per funzione: slot da 8 byte, risultato a offset 0, argomenti a 8 e 16. Ogni chiamata valida e scrive gli int32, poi entra in C++ senza argomenti JS. Il nativo copia gli argomenti prima di chiamare libffi, così la rientranza non sovrascrive gli argomenti della chiamata esterna. Si riutilizza lo storage, non si evita il packing a ogni chiamata. Lo stesso `add_i32` può illustrare questo percorso quando Fast API non è disponibile; non è un selettore pubblico.
+- **Transizione:** per eliminare anche libffi dal percorso caldo scalare serve un ingresso diverso.
+
+### 39. V8 already knows a faster route
 - **Scopo:** introdurre Fast API senza attribuirle capacità magiche.
 - **Traccia:** il codice JS ottimizzato può entrare direttamente in una funzione nativa tipizzata. I metadati dei tipi possono essere costruiti a runtime; il problema non è necessariamente generarli a compile time. Il simbolo FFI deve però rispettare la forma richiesta da V8.
 - **Transizione:** c'è un argomento in più.
 
-### 35. One unexpected argument.
+### 40. One unexpected argument.
 - **Scopo:** creare un momento di scoperta.
 - **Traccia:** il separatore rosa marca la sorpresa: il receiver JavaScript occupa il primo argomento nativo del fast callback. Un simbolo C ordinario non se lo aspetta. Nella discussione un tentativo senza receiver sembrava funzionare ma non percorreva davvero la fast call.
 - **Transizione:** adattare la chiamata con un piccolo trampolino.
 
-### 36. A tiny trampoline bridges the gap
-- **Scopo:** spiegare l'idea dei trampolini e dare credito a Bryan.
-- **Traccia:** #63140 esplora stubs per funzione che rimuovono il receiver. Per due argomenti interi AArch64, x0 contiene il receiver e x1/x2 gli argomenti: il target vuole gli argomenti in x0/x1. È una rappresentazione didattica della mappatura, non l'intero emitter: vanno considerati chiamata, ritorno, lifetime e regole ABI.
-- **Transizione:** esistevano più modi per ottenere l'adattamento.
+### 41. A tiny adapter bridges the gap
+- **Scopo:** spiegare soltanto perché serve un trampolino.
+- **Traccia:** «V8 passa anche informazioni che la funzione C non si aspetta, come il receiver JavaScript. Un piccolo adattatore generato, chiamato trampolino, collega i due contratti di chiamata». Indicare i tre blocchi del diagramma: V8 Fast API, adattatore, funzione nativa. Attribuire a Bryan l'idea e gli esperimenti della #63140. Questo è il livello di dettaglio previsto per il palco.
+- **Transizione:** per ottenere questo adattamento sono state esplorate più soluzioni.
 
-### 37. We explored more than one route
+### 42. We explored more than one route
 - **Scopo:** raccontare i compromessi reali della review.
 - **Traccia:** nei due elementi orizzontali: generare wrapper con un compilatore (Cranelift, MIR e altre opzioni) oppure modificare V8 per omettere il receiver. Anna suggerisce di intervenire sul contratto V8; Bryan prova questa strada nella #63140. Il landing usa emitter mirati, non Cranelift/MIR o la patch no-receiver. La #63140 è stata parzialmente incorporata e superata dalla #63068.
 - **Transizione:** dopo le esplorazioni, chiedere che cosa è stato integrato.
 
-### 38. So, what happened?
+### 43. So, what happened?
 - **Scopo:** creare una pausa narrativa fra le alternative considerate e la scelta integrata.
 - **Traccia:** separatore arancione con `@talk/dog.png`: lasciare un momento di suspense, senza ripercorrere le opzioni.
 - **Transizione:** annunciare il landing della Fast FFI.
 
-### 39. We brought it home!
+### 44. We brought it home!
 - **Scopo:** presentare il contributo di Paolo e Bryan nella soluzione integrata.
-- **Traccia:** #63068 integrata il 16 giugno 2026 (“June 16th, 2026” nella slide), con Bryan coautore. Supporto iniziale AArch64 e x86-64 SysV. Metadati, codice eseguibile e wrapper devono avere lifetime coerenti. Il probe di memoria verifica la transizione a eseguibile senza eseguire il codice di prova; se il percorso non è disponibile, si mantiene il fallback.
-- **Transizione:** non esiste una sola ABI universale.
+- **Traccia:** «La #63068 è stata integrata il 16 giugno 2026, con Bryan coautore. Le chiamate idonee possono usare Fast API, mantenendo la stessa API pubblica». Fermarsi al risultato del lavoro e ai crediti.
+- **Transizione:** rendere concreto l'adattatore con la somma già vista.
 
-### 40. One boundary, many ABIs
-- **Scopo:** mostrare il costo della portabilità.
-- **Traccia:** #63941, integrata il 18 giugno, estende il supporto. Non equiparare presenza di un emitter e disponibilità della libffi bundled: s390x può richiedere `--shared-ffi`. Limiti per registri interi e FP, return stretti e argomenti buffer variano per ABI. Non promettere il fast path per tutte le firme su tutte le piattaforme.
-- **Transizione:** riassumere come i percorsi convivono.
+### 45. The adapter, in pseudocode
+- **Scopo:** mostrare il ruolo dell'adattatore in poche righe.
+- **Traccia:** «Salviamo il punto di ritorno, controlliamo che la libreria sia aperta, togliamo il receiver dalla disposizione degli argomenti, chiamiamo la funzione e torniamo a V8». Il pseudocodice ARM64 mostra l'intero flusso dell'adattatore per `add_i32`: x0 contiene il receiver, w1/w2 i due int32; i mov li portano nelle posizioni native. Con 20 e 22 il risultato è 42 in w0. wN indica i 32 bit bassi di xN. `CHECK_LIBRARY_OPEN` e `LOAD_ADDRESS` sono pseudo-istruzioni, non istruzioni ARM64 reali: riassumono il controllo con ramo d'errore e il caricamento dell'indirizzo tramite movz/movk. Il ramo d'errore ripristina il frame e ritorna senza chiamare il target. È una rappresentazione del flusso completo, non un disassemblato letterale né codice da assemblare.
+- **Transizione:** questo adattatore viene preparato una volta e riutilizzato.
 
-### 41. Three paths, one contract
-- **Scopo:** consolidare l'architettura finale.
-- **Traccia:** i tre percorsi sono mostrati in orizzontale. Selezione alla creazione della funzione: Fast API, poi shared buffer, poi generico. Separare questa selezione dal dispatch di una singola chiamata: codice non ottimizzato o deottimizzato usa l'entry convenzionale; nello shared-buffer path alcuni valori pointer-like passano al generico. Nessun selettore pubblico per scegliere il percorso. Il generico supporta tutte le firme accettate dal modulo, non qualsiasi firma C immaginabile.
+### 46. Prepared once. Reused on every fast call.
+- **Scopo:** far ricordare che la preparazione non si ripete a ogni chiamata.
+- **Traccia:** «Quando crea una funzione idonea, Node prepara un adattatore per la sua firma e la piattaforma corrente. Le chiamate ottimizzate lo riutilizzano. Non generiamo codice a ogni chiamata: le differenze fra piattaforme sono gestite dall'implementazione».
+- **Transizione:** l'adattatore è uno dei tre modi con cui Node può attraversare il confine.
+
+### 47. Three paths, one contract
+- **Scopo:** riassumere i percorsi con una frase ciascuno.
+- **Traccia:** generico: conversioni in C++ e chiamata tramite libffi. Shared buffer: preparazione degli argomenti in JavaScript, ancora con libffi. Fast API: il codice JavaScript ottimizzato passa attraverso l'adattatore generato. Chiudere con «Node selects the path. Your API stays the same». La scelta è interna a Node; usare la stessa API non significa che ogni chiamata percorra il fast path.
 - **Transizione:** il fallback è una scelta architetturale positiva.
 
-### 42. Fallback is part of the design.
+### 48. Fallback is part of the design.
 - **Scopo:** far ricordare il contratto di correttezza.
-- **Traccia:** `slide.png` accompagna il separatore verde con logo nero. Firma non idonea all'ottimizzazione non significa firma invalida per FFI. Mantenere validazione ed errori coerenti anche quando V8 cambia tier. Le correzioni successive su range, buffer, reentrancy e librerie chiuse dimostrano il lavoro necessario per preservare questa equivalenza.
+- **Traccia:** `slide.png` accompagna il separatore verde con logo nero. «Se l'ottimizzazione non è applicabile, una chiamata supportata continua a funzionare attraverso un altro percorso». Il messaggio è che il fallback fa parte del progetto.
 - **Transizione:** vedere in quali casi il fast path cambia davvero le misure.
 
-### 43. How fast is Fast FFI?
-- **Scopo:** mostrare l'estratto della tabella dei benchmark finali collegata nella slide, distinguendo il vantaggio sulle chiamate brevi dai casi in cui il lavoro nativo domina o il fast path non è applicabile.
-- **Traccia:** non leggere tutte le 18 righe. Evidenziare `identity-i32` (+2601.42%) e `add-64` (+3278.01%) per il costo di attraversamento; `sum-8-i32` (−0.63%, senza asterischi nella colonna confidence) come caso senza miglioramento significativo; `sum-buffer` da 64 a 16384 byte (+496.73% → +7.98%) per mostrare che il beneficio relativo diminuisce quando cresce il lavoro nativo. `many-args` (+4963.37%) è nella tabella: non dedurre l'idoneità al fast path dal nome del test senza verificarne la firma e il percorso effettivo. L'output riporta `n=10000000` per la maggior parte dei test e `n=1000000` per `sum-buffer`.
+### 49. How fast is Fast FFI?
+- **Scopo:** chiudere la spiegazione con tre risultati leggibili e una conseguenza per ciascuno.
+- **Traccia:** `identity-i32` (+2601.42%, circa 27.01× il throughput della baseline) rende evidente il costo del confine; `sum-8-i32` (−0.63%, senza asterischi nella colonna confidence originale) non mostra un miglioramento significativo; `sum-buffer` da 64 a 16384 byte (+496.73% → +7.98%) mostra il calo del beneficio relativo quando cresce il lavoro nativo. La slide collega la tabella originale completa, senza riprodurne le 18 righe. I primi due test hanno `n=10000000`; `sum-buffer` ha `n=1000000`. Il messaggio è che il beneficio dipende dalla chiamata: questi dati storici non sono un nuovo trace dei percorsi della build corrente.
 - **Fonte:** https://github.com/nodejs/node/pull/63068#issuecomment-4691945167
-- **Limite del dato:** queste percentuali sono miglioramenti riportati dal confronto storico della PR, non accelerazioni universali o riduzioni equivalenti della latenza. Il +3278.01% indica circa 33.78× il throughput della baseline del confronto, non 3278×. La tabella mostra confidenza e intervalli di accuratezza: per `add-64`, la colonna (***) riporta ±45.32%; per `sum-8-i32`, ±1.11%. La slide non identifica hardware, commit e parametri completi della baseline: non attribuirle la macchina o i numeri di un commento precedente né presentarla come confronto riproducibile con una release specifica. Distinguere warm-up, conversioni, lavoro nativo e percorso effettivamente percorso. Non confondere `ffi-napi` con Node-API: la #63140 registra e corregge esplicitamente questo equivoco.
+- **Limite del dato:** percentuali del confronto storico della PR, non accelerazioni universali o riduzioni equivalenti della latenza. Il +2601.42% indica circa 27.01× il throughput, non 2601×. La tabella originale collegata include confidenza e intervalli di accuratezza: per `identity-i32`, la colonna (***) riporta ±22.03%; per `sum-8-i32`, ±1.11%. La slide non identifica hardware, commit e parametri completi della baseline: non attribuirle la macchina o i numeri di un commento precedente né presentarla come confronto riproducibile con una release specifica. Distinguere warm-up, conversioni, lavoro nativo e percorso effettivo. Non confondere `ffi-napi` con Node-API: la #63140 registra e corregge esplicitamente questo equivoco.
 - **Transizione:** dopo i numeri, tornare alla domanda iniziale: che cosa potremmo collegare?
 
-### 44. What will you connect next?
+### 50. What will you connect next?
 - **Scopo:** invito finale all'uso consapevole.
 - **Traccia:** slide fullscreen con `next.png` e logo bianco: il robot offre un attrezzo a chi guarda. Pensare a una libreria già disponibile che oggi richiede troppo glue code; iniziare da una superficie C piccola e documentata.
 - **Transizione:** lasciare la domanda aperta e passare all'invito a inventare il futuro.
 
-### 45. The best way to predict the future is to invent it.
+### 51. The best way to predict the future is to invent it.
 - **Scopo:** chiudere con un invito a costruire nuove possibilità, dopo la domanda al pubblico.
 - **Traccia:** citazione di Alan Kay, pioniere del personal computing e di Smalltalk. Collegare l'idea di inventare il futuro al riuso creativo delle librerie native attraverso `node:ffi`, senza attribuirgli un commento specifico sul progetto.
 - **Fonte:** https://quoteinvestigator.com/2012/09/27/invent-the-future/
 - **Transizione:** ringraziamento e domande.
 
-### 46. End
+### 52. End
 - **Scopo:** usare la chiusura standard con contatti del tema.
 - **Traccia:** ringraziare e aprire le domande su API, internals e compromessi.
 - **Transizione:** Q&A.
 
 ## Fonti principali
 
-- [API corrente di node:ffi](https://github.com/nodejs/node/blob/main/doc/api/ffi.md), consultata il 23 settembre 2026: firme, tipi, callback, cleanup, percorsi e disponibilità.
+- [API corrente di node:ffi](https://github.com/nodejs/node/blob/main/doc/api/ffi.md), ricontrollata il 27 settembre 2026: firme, tipi, callback, cleanup, percorsi e disponibilità.
 - [FFI Fast API internals](https://github.com/nodejs/node/blob/main/doc/contributing/ffi-fast-api-internals.md): implementazione e limiti ABI.
 - [#46905 — Bryan, esplorazione originale](https://github.com/nodejs/node/pull/46905).
 - [#57761 — tianxiadys, iterazione del 2025](https://github.com/nodejs/node/pull/57761).
@@ -271,7 +301,8 @@ Durata proposta, da adattare allo slot: circa 35 minuti più domande. Slide 1–
 
 ## Dettagli ancora da fornire
 
-- Evento, durata effettiva ed eventuale versione Node.js richiesta dalla conferenza.
+- Durata effettiva dello slot NodeConf ed eventuale versione Node.js richiesta dalla conferenza.
+- Materiale di Luca per le due slide Platformatic, incluse affermazioni e misure autorizzate su Booking.com e Supabase.
 - Eventuali episodi personali del lavoro di review: aggiungerli soltanto quando forniti da Paolo.
 - Se si desidera un confronto riproducibile nuovo: commit esatti, hardware, warm-up, comandi e risultati contro release e pacchetti scelti. I numeri attuali sono fonti storiche, non misure eseguite per questa presentazione.
-- Le 14 immagini sono già presenti e collegate: 11 PNG 1000×1120 e 3 PNG 2000×1120, a circa 150 DPI. Gli originali sono conservati in `assets/__originals/`. Crop centrato, tranne `coffee.png`, spostato a metà fra centro e bordo destro (x=192 sul resize 1256×1120). Le proposte in `context.md` sono soltanto eventuali varianti, non immagini ancora da produrre.
+- Le 14 illustrazioni originali sono presenti e collegate: 11 PNG 1000×1120 e 3 PNG 2000×1120, a circa 150 DPI. Gli originali sono conservati in `assets/__originals/`. Crop centrato, tranne `coffee.png`, spostato a metà fra centro e bordo destro (x=192 sul resize 1256×1120). Le proposte in `context.md` sono soltanto eventuali varianti. Il diagramma dell'adattatore è esportato dall'interfaccia Excalidraw a scala 2×, con sfondo trasparente e senza ritaglio del contenuto; il sorgente è in `diagrams/adapter.excalidraw`.

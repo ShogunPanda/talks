@@ -16,6 +16,7 @@ document:
     How do I choose the right one for my project?
 
     What can we predict about the future of the JavaScript ecosystem?
+  createdAt: '2022-09-27'
   author: common.author
   company: common.company
   archived: true

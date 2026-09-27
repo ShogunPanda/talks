@@ -8,5 +8,6 @@ document:
     However, its single-threaded nature poses challenges for scaling in modern, high-demand environments. 
 
     In this talk, we’ll explore how an application server can optimize Node.js resource management, streamline development, and enable smoother transitions to microservices.
+  createdAt: '2025-11-09'
   author: common.author
   company: common.company

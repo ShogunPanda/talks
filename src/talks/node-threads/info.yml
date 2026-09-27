@@ -9,5 +9,6 @@ document:
     Node.js was announced in 2009 as a single-threaded JavaScript runtime. In 2018, it became multi-threaded, and no one noticed.
 
     What can worker_threads do? What are they useful for? What's the best way of communicating between two threads?
+  createdAt: '2025-02-15'
   author: common.author
   company: common.company

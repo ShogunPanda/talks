@@ -13,6 +13,7 @@ document:
     In this talk I will tell the tale of how it took almost 13 years for Node to be completely protected by SlowLoris
     attack. I will also show that sometimes prioritizing performance can lead to incorrect fixes that can result in a
     false sense of protection.
+  createdAt: '2022-06-07'
   author: common.author
   company: common.company
   branding: false

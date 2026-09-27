@@ -18,6 +18,7 @@ document:
     In this talk I will show how we have been able to migrate to a new fully stateless system by carefully making
     assumption and leveraging AWS services. We developed a system that now can perform infinite horizontal scalability
     and it is able to consistently handle millions of uploads per day.
+  createdAt: '2022-07-11'
   author: common.author
   company: common.company
   archived: true

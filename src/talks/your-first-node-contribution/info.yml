@@ -13,6 +13,7 @@ document:
     Contributors of all skill levels and experiences are welcome (not every contribution has to be a code change). 
 
     Come and make your first Node.js core contribution!
+  createdAt: '2023-11-18'
   author: common.author
   authors:
     - name: Paolo Insogna

@@ -311,17 +311,22 @@ options:
 
 ---
 title: Types are part of the call
-items:
-  entries:
-    - icon: ruler-horizontal
-      title: Use the declared width
-      text: int8, uint32, float64... JavaScript numbers still need a native representation.
-    - icon: calculator
-      title: Use BigInt for 64-bit integer arguments
-      text: Native int64 and uint64 values must not lose precision on the way in.
-    - icon: code
-      title: Match the actual declaration
-      text: A wrong signature can corrupt a call. Type names do not inspect C headers.
+code:
+  language: javascript
+  content: |
+    // C: uint64_t identity_u64(uint64_t value);
+    const identity = lib.getFunction('identity_u64', {
+      arguments: ['uint64'], return: 'uint64'
+    })
+
+    // SAFETY: The declaration matches the exported symbol.
+    const value = identity(9_007_199_254_740_993n)
+    console.log(value) // 9007199254740993n
+
+    // number would lose precision before reaching C.
+    // FFI signatures describe the ABI; they do not read headers.
+
+
 # ---
 
 ---
@@ -346,6 +351,51 @@ items:
     - icon: clock
       title: Lifetime is your contract
       text: Keep memory alive and stable for as long as either side can access it.
+# ---
+
+---
+title: Borrow bytes, not ownership
+code:
+  language: c
+  content: |
+    #include &lt;stdint.h&gt;
+
+    uint32_t sum_bytes(const uint8_t *bytes, uint32_t length) {
+      uint32_t total = 0;
+      for (uint32_t i = 0; i < length; i++) {
+        // SAFETY: The caller provides at least length readable bytes.
+        total += bytes[i];
+      }
+      return total;
+    }
+
+    // Synchronous: the pointer is never retained.
+    // Unsigned addition wraps modulo 2^32.
+
+
+# ---
+
+---
+title: A Buffer crosses the boundary
+code:
+  language: javascript
+  content: |
+    import { dlopen, suffix } from 'node:ffi'
+
+    using handle = dlopen(`./mylib.${suffix}`, {
+      sum_bytes: {
+        arguments: ['buffer', 'uint32'], return: 'uint32'
+      }
+    })
+    const bytes = Buffer.from([10, 20, 12])
+
+    // SAFETY: Live, stable storage; C reads only bytes.length bytes.
+    console.log(handle.functions.sum_bytes(bytes, bytes.length)) // 42
+
+    // No copy of the payload; no transfer of ownership.
+    // C must not keep this pointer after returning.
+
+
 # ---
 
 ---
@@ -379,6 +429,49 @@ items:
 # ---
 
 ---
+title: C calls JavaScript, then returns
+code:
+  language: c
+  content: |
+    #include &lt;stdint.h&gt;
+
+    typedef int32_t (*transform_fn)(int32_t);
+
+    int32_t apply_once(int32_t value, transform_fn transform) {
+      // SAFETY: A live callback is invoked on its creating thread.
+      return transform(value);
+    }
+
+    // The callback runs synchronously, exactly once.
+    // The library never retains its address.
+
+
+# ---
+
+---
+title: Register. Call. Unregister.
+code:
+  language: javascript
+  content: |
+    import { dlopen, suffix } from 'node:ffi'
+    using handle = dlopen(`./mylib.${suffix}`, {
+      apply_once: { arguments: ['int32', 'function'], return: 'int32' }
+    })
+    const callback = handle.lib.registerCallback(
+      { arguments: ['int32'], return: 'int32' }, value => value
+    )
+    try {
+      // SAFETY: Same-thread, synchronous callback; no throw or Promise.
+      console.log(handle.functions.apply_once(42, callback)) // 42
+    } finally {
+      // SAFETY: apply_once has returned and never retains the callback.
+      handle.lib.unregisterCallback(callback)
+    }
+
+
+# ---
+
+---
 title: Native does not mean asynchronous
 items:
   entries:
@@ -406,18 +499,23 @@ options:
 
 ---
 title: Every crossing has a cost
-items:
-  entries:
-    - index: 1
-      title: Enter the native callback
-      text: It receives JavaScript values through V8's callback API.
-    - index: 2
-      title: Convert and marshal
-      text: Validate values and prepare native arguments for libffi.
-    - index: 3
-      title: Call and convert back
-      text: Invoke the symbol, then expose its result to JavaScript.
-  horizontal: true
+code:
+  language: output
+  content: |
+    functions.add_i32(20, 22)
+              |
+              v
+    V8 conventional callback     JavaScript values
+              |
+    C++ validation + conversion  native int32 arguments
+              |
+    libffi                      registers / stack for the ABI
+              |
+    add_i32                     one addition
+              |
+    result conversion           JavaScript number: 42
+
+
 # ---
 
 ---
@@ -433,6 +531,28 @@ items:
     - icon: bolt
       title: Less crossing overhead
       text: libffi still performs the native call. This is not a SharedArrayBuffer between workers.
+# ---
+
+---
+title: Pack once per call, reuse the storage
+code:
+  language: javascript
+  content: |
+    // Shared-buffer path: simplified internals, not a public API.
+    // One ArrayBuffer per function; each slot is 8 bytes.
+    const slots = new DataView(new ArrayBuffer(3 * 8))
+
+    // On each call, after validating both int32 arguments:
+    slots.setInt32(8, 20, true)   // Argument 0, slot 1.
+    slots.setInt32(16, 22, true)  // Argument 1, slot 2.
+
+    // C++ snapshots the arguments, then libffi invokes add_i32.
+    invokeNativeWithoutJSArguments()
+
+    const result = slots.getInt32(0, true) // Return slot: 42.
+    // Less V8 argument conversion; libffi is still on the path.
+
+
 # ---
 
 ---
@@ -463,18 +583,9 @@ options:
 # ---
 
 ---
-title: A tiny trampoline bridges the gap
-items:
-  entries:
-    - icon: user
-      title: Bryan's trampoline idea and experiments
-      text: '[PR #63140](https://github.com/nodejs/node/pull/63140) explored per-function stubs that remove V8’s receiver argument.'
-    - icon: shuffle
-      title: Adapt the registers
-      text: 'AArch64 example: receiver in x0, user arguments in x1 and x2 → arguments in x0 and x1.'
-    - icon: arrow-right
-      title: Enter the native symbol
-      text: Small generated machine-code adapters connect Fast API calls to the target ABI.
+title: A tiny adapter bridges the gap
+image:
+  url: '@talk/ffi-adapter.png'
 # ---
 
 ---
@@ -506,28 +617,46 @@ items:
   entries:
     - icon: code-merge
       title: '[PR #63068](https://github.com/nodejs/node/pull/63068) — June 16th, 2026'
-      text: My Fast FFI implementation, co-authored with Bryan, landed for AArch64 and x86-64 SysV.
-    - icon: filter
-      title: Check eligibility before generating code
-      text: Validate signature shape, register pressure, and executable-memory support.
+      text: My Fast FFI implementation, co-authored with Bryan, landed in Node.js.
     - icon: link
       title: One public API
-      text: Optimized calls retain the same value validation and error contract as the generic path.
+      text: Eligible calls can use Fast API. Applications keep the same public API.
+  horizontal: true
 # ---
 
 ---
-title: One boundary, many ABIs
+title: The adapter, in pseudocode
+code:
+  language: output
+  content: |
+    // ARM64 pseudocode: CHECK_LIBRARY_OPEN and LOAD_ADDRESS are symbolic.
+    adapter:
+        stp x29, x30, [sp, #-16]!  // Save frame and return address.
+        CHECK_LIBRARY_OPEN        // If closed: raise JS error, restore, return.
+
+        // Entry: x0 = receiver, w1 = a, w2 = b.
+        mov x0, x1                // First native argument: a.
+        mov x1, x2                // Second native argument: b.
+
+        LOAD_ADDRESS x16, add_i32  // Resolved native function address.
+        // SAFETY: Open library; matching native signature.
+        blr x16                   // Call add_i32; result in w0.
+
+        ldp x29, x30, [sp], #16    // Restore frame and return address.
+        ret                       // Back to V8 with the result.
+# ---
+
+---
+title: Prepared once. Reused on every fast call.
 items:
   entries:
-    - icon: globe
-      title: '[PR #63941](https://github.com/nodejs/node/pull/63941) extends the fast path'
-      text: Windows x64/ARM64, PPC64LE, RISC-V 64, LoongArch64, and s390x where FFI is available.
-    - icon: ruler-combined
-      title: Each ABI has its own limits
-      text: Registers, narrow returns, and buffer-shaped arguments need platform-specific handling.
-    - icon: arrow-turn-down
-      title: Signatures ineligible for the fast path still work
-      text: 32-bit targets and PPC64BE use other paths; bundled libffi support is a separate question.
+    - icon: gear
+      title: Prepare the adapter
+      text: When creating an eligible function, Node.js generates an adapter for the platform.
+    - icon: rotate
+      title: Reuse it
+      text: Optimized calls reuse that adapter. Code generation does not happen on every call.
+  horizontal: true
 # ---
 
 ---
@@ -535,15 +664,14 @@ title: Three paths, one contract
 items:
   entries:
     - index: 1
-      title: Fast API
-      text: Eligible signatures get a trampoline, plus a conventional entry point for unoptimized calls.
+      title: Generic
+      text: Convert arguments in C++ and call through libffi.
     - index: 2
       title: Shared buffer
-      text: Pack arguments into slots, then call through libffi. Some pointer values take the generic route.
+      text: Prepare arguments in JavaScript and still call through libffi.
     - index: 3
-      title: Generic
-      text: Convert values in C++ and call through libffi. Covers every supported signature.
-  horizontal: true
+      title: Fast API
+      text: Optimized JavaScript calls through a generated adapter.
 # ---
 
 ---
@@ -561,31 +689,17 @@ decorations:
 
 ---
 title: How fast is Fast FFI?
-content: 'An excerpt from [the final benchmarks in PR #63068](https://github.com/nodejs/node/pull/63068#issuecomment-4691945167).'
-code:
-  language: output
-  content: |
-    name                                                confidence improvement accuracy (*)     (**)    (***)
-    ffi/add-64.js n=10000000                                   ***   3278.01 %      ±25.33%  ±34.14%  ±45.32%
-    ffi/buffer-first-byte-direct.js n=10000000                 ***    933.43 %       ±3.06%   ±4.13%   ±5.48%
-    ffi/buffer-first-byte.js n=10000000                        ***    869.76 %       ±5.69%   ±7.66%  ±10.14%
-    ffi/buffer-sum-direct.js n=10000000                        ***    855.34 %      ±19.51%  ±26.29%  ±34.89%
-    ffi/buffer-sum.js n=10000000                               ***    860.10 %      ±16.46%  ±22.18%  ±29.43%
-    ffi/getpid.js n=10000000                                   ***   1407.47 %       ±7.45%   ±9.92%  ±12.94%
-    ffi/identity-i32.js n=10000000                             ***   2601.42 %      ±12.32%  ±16.60%  ±22.03%
-    ffi/many-args.js n=10000000                                ***   4963.37 %      ±37.10%  ±50.00%  ±66.38%
-    ffi/noop-void.js n=10000000                                ***    894.44 %      ±27.90%  ±37.60%  ±49.91%
-    ffi/pointer-bigint.js n=10000000                           ***   1176.11 %       ±5.30%   ±7.13%   ±9.45%
-    ffi/pointer-buffer-direct.js n=10000000                    ***    958.23 %      ±43.64%  ±58.80%  ±78.04%
-    ffi/string-equals-hello-buffer-direct.js n=10000000        ***    737.46 %       ±2.24%   ±3.00%   ±3.96%
-    ffi/string-first-char-buffer-direct.js n=10000000          ***    953.08 %      ±13.21%  ±17.79%  ±23.60%
-    ffi/sum-3-i32.js n=10000000                                ***   3861.01 %      ±35.38%  ±47.68%  ±63.30%
-    ffi/sum-8-i32.js n=10000000                                        -0.63 %       ±0.64%   ±0.85%   ±1.11%    
-    ffi/sum-buffer.js n=1000000 size=1024                      ***    113.83 %       ±2.97%   ±3.95%   ±5.14%
-    ffi/sum-buffer.js n=1000000 size=16384                     ***      7.98 %       ±0.77%   ±1.03%   ±1.34%
-    ffi/sum-buffer.js n=1000000 size=64                        ***    496.73 %       ±7.52%  ±10.11%  ±13.37%
-  className:
-    root: theme@code small
+items:
+  entries:
+    - icon: bolt
+      title: 'Tiny native work: +2601.42%'
+      text: '`identity-i32`: about 27× baseline throughput. Removing crossing overhead matters.'
+    - icon: equals
+      title: 'Eight int32 arguments: −0.63%'
+      text: '`sum-8-i32`: no statistically significant improvement in this comparison.'
+    - icon: database
+      title: 'More native work: +496.73% → +7.98%'
+      text: '`sum-buffer`, 64 → 16384 bytes. Historical [PR #63068 results](https://github.com/nodejs/node/pull/63068#issuecomment-4691945167), not universal speedups.'
 # ---
 
 ---

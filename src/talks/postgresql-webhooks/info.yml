@@ -16,5 +16,6 @@ document:
     Additionally, I will cover the implementation of a dead-letter queue (DLQ) to gracefully handle failures, 
     cron jobs for managing recurring events, and a leader election mechanism to enforce an exactly-once
     execution model, ensuring reliable and consistent event processing across distributed systems.
+  createdAt: '2025-01-24'
   author: common.author
   company: common.company

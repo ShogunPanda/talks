@@ -2,7 +2,7 @@
 
 ## A cosa serve questo documento
 
-Questo brief è autosufficiente: può essere caricato nell'app ChatGPT per generare immagini di supporto alla presentazione senza accesso al repository o alle conversazioni precedenti. La versione finale usa già 14 immagini: le nuove generazioni sono varianti richieste dall'utente, non asset mancanti. Per mantenere lo stile, l'utente può caricare le immagini esistenti. Non generare intere slide, testo, codice o grafici con misure inventate.
+Questo brief è autosufficiente: può essere caricato nell'app ChatGPT per generare immagini di supporto alla presentazione senza accesso al repository o alle conversazioni precedenti. La versione NodeConf usa già 14 illustrazioni e un diagramma Excalidraw dell'adattatore. Le nuove generazioni sono varianti richieste dall'utente, non asset mancanti. Per mantenere lo stile, l'utente può caricare le immagini esistenti. Non generare intere slide, testo, codice o grafici con misure inventate. Codice e diagrammi tecnici sono contenuti esatti: non sostituirli con immagini generative.
 
 ## Titolo esatto
 
@@ -22,7 +22,7 @@ FFI significa Foreign Function Interface: permette a JavaScript di chiamare funz
 
 Il talk è di Paolo Insogna, membro del Node.js Technical Steering Committee e Principal Engineer in Platformatic. Bryan English ha realizzato l'esplorazione originale del 2023, i primi passi di ottimizzazione e gli esperimenti sui trampolini. tianxiadys ha proposto un'iterazione nel 2025. Colin Ihrig ha rilanciato l'iniziativa nel 2026: nel racconto gli viene attribuita la PR di introduzione del modulo. Paolo ha lavorato all'implementazione integrata e al fast path, con Bryan coautore della PR Fast FFI. Anna Henningsen ha contribuito alla discussione sul receiver V8 e sulle alternative.
 
-Il modulo è stato integrato in core il 14 aprile 2026 e introdotto in Node.js 26.1.0. Fast FFI è stato integrato il 16 giugno, poi esteso ad altre piattaforme. Il riferimento temporale della presentazione è il 23 settembre 2026; il modulo resta sperimentale. L'abstract e il racconto descrivono il lavoro già integrato.
+Il modulo è stato integrato in core il 14 aprile 2026 e introdotto in Node.js 26.1.0. Fast FFI è stato integrato il 16 giugno, poi esteso ad altre piattaforme. La ricerca storica è del 23 settembre 2026; API e internals sono stati ricontrollati il 27 settembre 2026. Il modulo resta sperimentale. L'abstract e il racconto descrivono il lavoro già integrato.
 
 Esistono soluzioni userland presentate nelle slide come node-ffi-napi, Koffi e node-ffi-rs, con link e QR. Il talk confronta limiti specifici e obiettivi, senza rappresentare tutti questi progetti come falliti. Le ragioni per il core sono distribuzione del bridge, integrazione con il runtime e manutenzione della portabilità. La libreria nativa e i vincoli di memoria rimangono anche quando il bridge è incluso nel runtime.
 
@@ -30,23 +30,25 @@ Destino è un esempio reale: Node.js coordina doomgeneric, OpenTUI e SDL_mixer p
 
 ## Struttura narrativa
 
-La presentazione contiene 46 slide:
+La presentazione contiene 52 slide, con esempi concreti per NodeConf e una spiegazione volutamente essenziale dei trampolini:
 
 1. Slide 1–16: cover, provocazione “Not everything needs a rewrite.”, presentazione personale, che cos'è FFI, ABI, utilità, separatore sui casi d'uso (8), esempi e invito all'immaginazione (9), Destino con QR (10), userland, motivazione per il core e nuovo separatore “Let's get to the action!” (14), prima funzione C e chiamata JavaScript.
 2. Slide 17–23: dalla slide fullscreen “A small API. A long journey.” (17), al lavoro di Bryan, al passaggio del 2025, al rilancio di Colin e all'API integrata. Anche “Welcome, `node:ffi`.” (23) è fullscreen e il sottotitolo ricorda esplicitamente l'introduzione sperimentale in Node.js 26.1.0.
-3. Slide 24–30: domanda “How do I use it?” (24), tipi, separatore rosso sulla responsabilità (26), memoria, cleanup, callback e relazione con l'event loop.
-4. Slide 31–42: costo delle chiamate, shared buffer, V8 Fast API, sorpresa del receiver (35), trampolini, alternative esplorate, domanda “So, what happened?” (38), landing, ABI e fallback.
-5. Slide 43–46: estratto della tabella dei benchmark finali della PR #63068 (43), invito al pubblico con immagine fullscreen (44), citazione di Alan Kay “The best way to predict the future is to invent it.” (45) e chiusura (46). La guida del relatore aiuta a interpretare i risultati storici e i loro limiti; i riferimenti tecnici sono raccolti lì, senza una slide risorse.
+3. Slide 24–34: domanda “How do I use it?” (24), esempio BigInt (25), responsabilità (26), memoria (27), esempio C/JS con buffer (28–29), cleanup (30), callback con esempio C/JS (31–33) ed event loop (34).
+4. Slide 35–48: costo delle chiamate, shared buffer con slot da 8 byte (38), V8 Fast API, sorpresa del receiver (40), diagramma essenziale V8 → adattatore → funzione nativa (41), alternative (42), domanda “So, what happened?” (43), landing (44), pseudocodice ARM64 del flusso completo dell'adattatore per `add_i32`, con controllo e caricamento dell'indirizzo simbolici (45), preparazione e riuso (46), tre percorsi riassunti in una frase ciascuno (47) e fallback (48).
+5. Slide 49–52: tre risultati leggibili dei benchmark storici della PR #63068 (49), invito al pubblico fullscreen (50), citazione di Alan Kay (51) e chiusura (52). La guida spiega fonti e limiti delle misure. Le due slide Platformatic su Booking.com e Supabase attendono i contenuti di Luca: nessuna affermazione commerciale o immagine documentaria viene inventata.
+
+Il filo conduttore tecnico è `add_i32(20, 22)`: gli stessi argomenti possono attraversare percorsi diversi e produrre sempre 42. Lo shared buffer prepara gli argomenti in JavaScript, mantenendo libffi. Fast API usa un piccolo adattatore generato per collegare il contratto di chiamata V8 a quello della funzione nativa. Node prepara l'adattatore quando crea una funzione idonea; le chiamate ottimizzate lo riutilizzano. La sola slide 45 mostra il flusso completo in pseudocodice ARM64: salvataggio, controllo della libreria, spostamento dei due argomenti, chiamata e ritorno. Controllo e caricamento dell'indirizzo restano simbolici. Questa è la profondità concordata: niente opcode, gestione della memoria eseguibile o confronto fra ABI. Node gestisce il percorso e i fallback preservano il comportamento pubblico.
 
 ## Tono e direzione visiva
 
-**Scelte finali:** apertura provocatoria, ironia leggera, 11 separatori illustrati senza icone e contenuti tecnici leggibili. Cover, hello, quote e end usano i layout esistenti. I separatori scandiscono domanda d'uso (24), responsabilità della memoria (26) ed esito dell'esplorazione (38). Le immagini accompagnano i contenuti, non li sostituiscono. Logo nero nelle slide 2, 4 e 42; bianco nelle 17 e 44: il logo viene gestito dalla slide, non deve essere aggiunto alle nuove immagini.
+**Scelte finali:** apertura provocatoria, ironia leggera, 11 separatori illustrati senza icone e contenuti tecnici leggibili. Cover, hello, quote e end usano i layout esistenti. I separatori scandiscono domanda d'uso (24), responsabilità della memoria (26) ed esito dell'esplorazione (43). Le illustrazioni accompagnano i contenuti; gli snippet sono resi da Freya e il diagramma da Excalidraw. Logo nero nelle slide 2, 4 e 48; bianco nelle 17 e 50: il logo viene gestito dalla slide, non deve essere aggiunto alle nuove immagini.
 
 **Stile effettivo dei riferimenti:** illustrazioni tridimensionali, materiali meccanici, luce calda e tono giocoso. Ricorrono un modulo/adattatore rosso luminoso, componenti nativi e ambienti da officina; diverse immagini includono un panda in tuta gialla. `component.png` collega un modulo verde a una grande macchina tramite l'adattatore. `sequence.png` mostra una lunga serie di prototipi; `welcome.png` il piccolo robot in una culla; `next.png` lo stesso linguaggio meccanico con un robot che offre un attrezzo. Sono metafore, non fotografie del lavoro su Node.js. Per varianti, riprendere i riferimenti caricati dall'utente senza inventare identità dei personaggi o retroscena biografici.
 
 **Significato da conservare:** il collegamento suggerisce compatibilità, non una barriera di sicurezza o un sandbox. Nessuna gerarchia di “linguaggio buono/cattivo”. Il lavoro già esistente viene collegato e riutilizzato.
 
-Palette dei pannelli testuali dei separatori: fuchsia apertura (2), blue dipendenza (4), amber casi d'uso/API/performance (8, 24, 31), red npm/responsabilità (11, 26), sky esempio (14), pink receiver (35), orange esito (38), green fallback (42). Le immagini hanno una propria palette: non colorare automaticamente tutta l'illustrazione come il pannello. Le slide fullscreen 17, 23 e 44 non hanno uno sfondo separatore esplicitamente impostato.
+Palette dei pannelli testuali dei separatori: fuchsia apertura (2), blue dipendenza (4), amber casi d'uso/API/performance (8, 24, 35), red npm/responsabilità (11, 26), sky esempio (14), pink receiver (40), orange esito (43), green fallback (48). Le immagini hanno una propria palette: non colorare automaticamente tutta l'illustrazione come il pannello. Le slide fullscreen 17, 23 e 50 non hanno uno sfondo separatore esplicitamente impostato.
 
 ## Vincoli di generazione
 
@@ -61,11 +63,11 @@ Palette dei pannelli testuali dei separatori: fuchsia apertura (2), blue dipende
 - Le illustrazioni tecniche devono sembrare schemi leggibili, senza suggerire collegamenti o misure non reali.
 - Non generare ritratti di Bryan, Colin, Paolo o altri contributori, scene di incontri mai documentati o false fotografie.
 - Se si evoca il gioco nel terminale, usare soltanto motivi “retro shooter inspired” astratti. Niente asset, mostri, loghi, screenshot o interfaccia di Doom.
-- Non rappresentare numeri di benchmark: la slide 43 mostra già come testo un estratto della tabella dei benchmark finali della PR #63068.
+- Non rappresentare numeri di benchmark: la slide 49 presenta già tre risultati storici verificati della PR #63068.
 
 ## Inventario finale delle immagini
 
-Tutti gli asset elencati sono PNG a circa 150 DPI e sono già collegati nelle slide. Le immagini piccole sono 1000×1120 px, quelle fullscreen 2000×1120 px.
+Le 14 illustrazioni elencate sono PNG a circa 150 DPI e sono già collegate nelle slide. Le immagini piccole sono 1000×1120 px, quelle fullscreen 2000×1120 px. Il diagramma dell'adattatore è descritto separatamente sotto.
 
 | Slide | Titolo | Layout | Asset | Dimensioni |
 | --- | --- | --- | --- | --- |
@@ -78,11 +80,11 @@ Tutti gli asset elencati sono PNG a circa 150 DPI e sono già collegati nelle sl
 | 23 | Welcome, `node:ffi`. | image | `welcome.png` | 2000×1120 |
 | 24 | How do I use it? | separator | `cow.png` | 1000×1120 |
 | 26 | With great power comes great responsibility™ | separator | `spider-panda.png` | 1000×1120 |
-| 31 | It works. But how fast? | separator | `run.png` | 1000×1120 |
-| 35 | One unexpected argument. | separator | `photo.png` | 1000×1120 |
-| 38 | So, what happened? | separator | `dog.png` | 1000×1120 |
-| 42 | Fallback is part of the design. | separator | `slide.png` | 1000×1120 |
-| 44 | What will you connect next? | image | `next.png` | 2000×1120 |
+| 35 | It works. But how fast? | separator | `run.png` | 1000×1120 |
+| 40 | One unexpected argument. | separator | `photo.png` | 1000×1120 |
+| 43 | So, what happened? | separator | `dog.png` | 1000×1120 |
+| 48 | Fallback is part of the design. | separator | `slide.png` | 1000×1120 |
+| 50 | What will you connect next? | image | `next.png` | 2000×1120 |
 
 Gli originali sono conservati nella sottocartella `assets/__originals/`. La normalizzazione usa resize proporzionale e crop centrato. Eccezione concordata: per `coffee.png` il crop parte da x=192 sul resize 1256×1120, cioè 64 px a destra rispetto al crop centrato, per conservare più della macchina del caffè.
 
@@ -110,17 +112,27 @@ Una scatola aperta contiene un adattatore robusto e diversi connettori. La metaf
 
 Una serie di prototipi evolve sullo stesso banco fino a un adattatore compatto, richiamando `sequence.png`. Nessuna data o scritta. Se richiesta come sostituzione fullscreen, usare il formato grande 2000×1120; il default per una richiesta senza formato resta piccolo. Non introdurre una scala temporale inventata.
 
-### F. Costo — slide 31, “It works. But how fast?”
+### F. Costo — slide 35, “It works. But how fast?”
 
 Piccoli blocchi attraversano un passaggio con poche stazioni di trasformazione visibili; il lavoro finale è un oggetto minuscolo. Comunicare che il viaggio può costare più dell'operazione finale. Fondo amber/scuro, stile diagrammatico, niente tachimetri con numeri.
 
-### G. Receiver — slide 35, “One unexpected argument.”
+### G. Receiver — slide 40, “One unexpected argument.”
 
 Una fila di tre elementi incontra un alloggiamento per due; il primo elemento ha una forma distinta e un piccolo adattatore riallinea i due successivi. Deve evocare il receiver rimosso dalla disposizione degli argomenti, non un dato eliminato per errore. Fondo pink, elementi grandi, nessuna lettera.
 
-### H. Fallback — slide 42, “Fallback is part of the design.”
+### H. Fallback — slide 48, “Fallback is part of the design.”
 
 Due percorsi affiancati, uno diretto e stretto e uno più ampio, raggiungono la stessa destinazione. Un bivio ben costruito seleziona il percorso adatto alla forma dei blocchi. Nessun vicolo cieco, incidente o percorso “sbagliato”. Fondo verde, geometrie ordinate e molto spazio negativo.
+
+## Diagramma tecnico concordato
+
+Un diagramma Excalidraw modificabile con tre blocchi: “V8 Fast API” → “Generated adapter” → “Native function”. Testo inglese, font Virgil, sfondo trasparente nell'esportazione PNG, contorni scuri e riempimenti pastello: blu per V8, arancio per l'adattatore, verde per la funzione nativa. Blocchi uguali e allineati, frecce rettilinee, etichette centrate e nessun ritaglio. La frase sotto spiega che V8 e la funzione nativa si aspettano forme di chiamata diverse e che l'adattatore le collega. È uno schema concordato, non un brief per generazione AI.
+
+| Slide | Titolo | Sorgente modificabile | PNG collegato |
+| --- | --- | --- | --- |
+| 41 | A tiny adapter bridges the gap | `diagrams/adapter.excalidraw` | `assets/ffi-adapter.png` |
+
+Esportazione tramite il comando PNG dell'interfaccia Excalidraw, scala 2×, con l'opzione Background disattivata per mantenere lo sfondo trasparente, preservando proporzioni e margini; nessun generatore o renderer aggiunto al repository. Il diagramma mostra il ruolo dell'adattatore nel percorso Fast API. Il pseudocodice ARM64 nella slide 45 illustra l'intero flusso, mantenendo simbolici `CHECK_LIBRARY_OPEN` e `LOAD_ADDRESS`: non è un disassemblato letterale. Preparazione e riuso sono spiegati con due punti nella slide 46; i tre percorsi sono riassunti in testo nella slide 47.
 
 ## Consegna e uso
 

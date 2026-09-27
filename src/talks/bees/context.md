@@ -14,7 +14,7 @@ It is a well-known fact that if bees go extinct, many things in the world (if no
 would disappear.
 
 The same goes for third-party APIs (which, with a horrible pun, translates to bees in Italian).
-Most of the time vendors providea SDK for your language to interact with their API. While this
+Most of the time vendors provide a SDK for your language to interact with their API. While this
 speeds up productivity, it slows down performance and makes you dependent on SDK bugs or supply
 chain vulnerabilities, that are not always addressed at the speed you would expect. Moreover, you
 never deal with the API directly and this removes the pressure to vendors for a developer-first
@@ -63,25 +63,25 @@ La versione corrente contiene **47 slide**.
 
 Questi sono riferimenti sorgente, non immagini da rigenerare automaticamente. `@talk/` indica un asset specifico del talk, `@common/` un asset condiviso. Caricare gli originali per usarli come riferimento.
 
-| Slide | Titolo | Riferimento immagine |
-| --- | --- | --- |
-| 2 | Mothers are always right! | `@common/lollipops.png` |
-| 4 | Our entire existence is on their shoulders! | `@common/bee.png` |
-| 6 | Aren't we here for dev stuff? | `@common/dog-1.png` |
-| 8 | Are you trolling us? | `@common/troll-black.svg` |
-| 12 | Are there just pros? | `@common/happiness.png` |
-| 13 | You already know the answer... | `@common/laugh.png` |
-| 16 | Only an example can enlighten us! | `@common/sun.png` |
-| 18 | Let's go! | `@common/start.png` |
-| 23 | AWS SDK v2: What's happening under the hood? | `@talk/flame-sdk-v2.png` |
-| 24 | Let's get modern! | `@common/modern.png` |
-| 29 | AWS SDK v3: What's happening under the hood? | `@talk/flame-sdk-v3.png` |
-| 30 | Quod Erat Demonstrandum | `@common/iceberg.png` |
-| 31 | Do we have the solution? | `@common/solution-1.png` |
-| 32 | Yes, use the APIs directly! | `@common/bee.png` |
-| 34 | Let's get to the action! | `@common/action.png` |
-| 43 | No SDK: What's happening under the hood? | `@talk/flame-direct.png` |
-| 44 | Mission completed! | `@common/completed.png` |
+| Slide | Titolo                                       | Riferimento immagine      |
+| ----- | -------------------------------------------- | ------------------------- |
+| 2     | Mothers are always right!                    | `@common/lollipops.png`   |
+| 4     | Our entire existence is on their shoulders!  | `@common/bee.png`         |
+| 6     | Aren't we here for dev stuff?                | `@common/dog-1.png`       |
+| 8     | Are you trolling us?                         | `@common/troll-black.svg` |
+| 12    | Are there just pros?                         | `@common/happiness.png`   |
+| 13    | You already know the answer...               | `@common/laugh.png`       |
+| 16    | Only an example can enlighten us!            | `@common/sun.png`         |
+| 18    | Let's go!                                    | `@common/start.png`       |
+| 23    | AWS SDK v2: What's happening under the hood? | `@talk/flame-sdk-v2.png`  |
+| 24    | Let's get modern!                            | `@common/modern.png`      |
+| 29    | AWS SDK v3: What's happening under the hood? | `@talk/flame-sdk-v3.png`  |
+| 30    | Quod Erat Demonstrandum                      | `@common/iceberg.png`     |
+| 31    | Do we have the solution?                     | `@common/solution-1.png`  |
+| 32    | Yes, use the APIs directly!                  | `@common/bee.png`         |
+| 34    | Let's get to the action!                     | `@common/action.png`      |
+| 43    | No SDK: What's happening under the hood?     | `@talk/flame-direct.png`  |
+| 44    | Mission completed!                           | `@common/completed.png`   |
 
 ## Brief proposti
 

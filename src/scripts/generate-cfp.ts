@@ -1,8 +1,9 @@
+#!/usr/bin/env node
+import { writeFile } from 'node:fs/promises'
+import { resolve } from 'node:path'
 import { type BuildContext } from '@perseveranza-pets/dante'
 import { filterWhitelistedTalks, getAllTalks, getTalk, setWhitelistedTalks } from '@perseveranza-pets/freya'
 import { program, type Command } from 'commander'
-import { writeFile } from 'node:fs/promises'
-import { resolve } from 'node:path'
 
 interface Options {
   only: string
@@ -10,15 +11,18 @@ interface Options {
 }
 
 async function generateCFP(talks: Set<string>, output: string): Promise<void> {
+  const loadedTalks = await Promise.all([...talks].filter(id => id !== 'master').map(id => getTalk(id)))
+  const sortedTalks = loadedTalks
+    .filter(talk => !talk.document.hidden && !talk.document.archived)
+    // ISO date strings sort chronologically; undated talks come last.
+    .sort((a, b) => (b.document.createdAt ?? '').localeCompare(a.document.createdAt ?? ''))
   const json = []
 
   let i = 0
-  for (const id of talks) {
-    const talk = await getTalk(id)
-
+  for (const talk of sortedTalks) {
     json.push({
       name: talk.document.title,
-      keyword: `cfp§${++i}`,
+      keyword: `cfpa#${++i}`,
       text:
         talk.document.title +
         '\n\n' +
@@ -36,7 +40,7 @@ async function generateCFP(talks: Set<string>, output: string): Promise<void> {
 program
   .name('generate-cfp')
   .option('-o, --only <string>', 'A comma separated list of talks to build.', '')
-  .option('-O, --output', 'If to compare local and remote version', '../cfp-abstracts.json')
+  .option('-O, --output', 'If to compare local and remote version', './snippets/abstracts.json')
   .addHelpCommand(false)
   .showSuggestionAfterError(true)
   .allowUnknownOption(false)

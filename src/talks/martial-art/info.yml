@@ -11,6 +11,7 @@ document:
 
     For instance, I’m a martial art practitioner (Which one? No spoilers!) and I recently started noticing that when I
     bring that art principles in my coding activities I get unblocked much faster. In this talk I will show how.
+  createdAt: '2024-02-21'
   author: common.author
   company: common.company
   branding: false

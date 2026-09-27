@@ -14,7 +14,7 @@ It is a well-known fact that if bees go extinct, many things in the world (if no
 would disappear.
 
 The same goes for third-party APIs (which, with a horrible pun, translates to bees in Italian).
-Most of the time vendors providea SDK for your language to interact with their API. While this
+Most of the time vendors provide a SDK for your language to interact with their API. While this
 speeds up productivity, it slows down performance and makes you dependent on SDK bugs or supply
 chain vulnerabilities, that are not always addressed at the speed you would expect. Moreover, you
 never deal with the API directly and this removes the pressure to vendors for a developer-first
@@ -62,14 +62,14 @@ La versione corrente contiene **14 slide**.
 
 Questi sono riferimenti sorgente, non immagini da rigenerare automaticamente. `@talk/` indica un asset specifico del talk, `@common/` un asset condiviso. Caricare gli originali per usarli come riferimento.
 
-| Slide | Titolo | Riferimento immagine |
-| --- | --- | --- |
-| 5 | Let's get to the action! | `@common/action.png` |
-| 8 | Task 1: Create a Canonical Request | `@common/code.png` |
-| 9 | Task 2: Create a String to Sign | `@common/algorithm.png` |
-| 10 | Task 3: Calculate Signature | `@common/hacking.png` |
-| 11 | Task 4: REST API call | `@common/server.png` |
-| 12 | Task 5: Main function | `@common/completed.png` |
+| Slide | Titolo                             | Riferimento immagine    |
+| ----- | ---------------------------------- | ----------------------- |
+| 5     | Let's get to the action!           | `@common/action.png`    |
+| 8     | Task 1: Create a Canonical Request | `@common/code.png`      |
+| 9     | Task 2: Create a String to Sign    | `@common/algorithm.png` |
+| 10    | Task 3: Calculate Signature        | `@common/hacking.png`   |
+| 11    | Task 4: REST API call              | `@common/server.png`    |
+| 12    | Task 5: Main function              | `@common/completed.png` |
 
 ## Brief proposti
 

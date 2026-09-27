@@ -13,6 +13,7 @@ document:
     this means you know how to use it.
 
     In this talk, I will show you how I easily made my cat’s life way technological.
+  createdAt: '2023-11-23'
   author: common.author
   company: common.company
   branding: false

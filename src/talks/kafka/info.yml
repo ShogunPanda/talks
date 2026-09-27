@@ -10,5 +10,6 @@ document:
     So, we built something new. It’s fast, it’s built with TypeScript in mind, and it cuts through the mess to give you a clean, reliable way to work with Kafka in Node.js. Oh, and it’s 100% open source, as usual.
 
     In this talk, we’ll share the journey, show what it can do, and help you level up your Kafka game without the usual headaches.
+  createdAt: '2025-09-19'
   author: common.author
   company: common.company
