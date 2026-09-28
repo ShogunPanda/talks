@@ -1,0 +1,14 @@
+{
+  "type": "excalidraw", "version": 2, "source": "https://excalidraw.com",
+  "appState": { "viewBackgroundColor": "#ffffff", "exportBackground": false }, "files": {},
+  "elements": [
+    {"type":"rectangle","id":"v8","x":40,"y":40,"width":280,"height":130,"backgroundColor":"#a5d8ff","fillStyle":"solid","roundness":{"type":3}},
+    {"type":"text","id":"v8-label","x":50,"y":65,"width":260,"height":80,"text":"V8 Fast API\n(receiver, a, b)","fontSize":30,"fontFamily":1,"lineHeight":1.25,"textAlign":"center"},
+    {"type":"arrow","id":"v8-gap","x":320,"y":105,"width":80,"height":0,"points":[[0,0],[80,0]],"endArrowhead":"arrow","strokeColor":"#e03131"},
+    {"type":"rectangle","id":"gap","x":400,"y":40,"width":280,"height":130,"backgroundColor":"#ffc9c9","fillStyle":"solid","strokeStyle":"dashed","strokeColor":"#e03131","roundness":{"type":3}},
+    {"type":"text","id":"gap-label","x":410,"y":52.5,"width":260,"height":105,"text":"No compile-time\nadapter\navailable","fontSize":28,"fontFamily":1,"lineHeight":1.25,"textAlign":"center","strokeColor":"#c92a2a"},
+    {"type":"arrow","id":"gap-native","x":680,"y":105,"width":80,"height":0,"points":[[0,0],[80,0]],"endArrowhead":"arrow","strokeStyle":"dashed","strokeColor":"#e03131"},
+    {"type":"rectangle","id":"native","x":760,"y":40,"width":280,"height":130,"backgroundColor":"#b2f2bb","fillStyle":"solid","roundness":{"type":3}},
+    {"type":"text","id":"native-label","x":770,"y":65,"width":260,"height":80,"text":"Native add_i32\n(a, b)","fontSize":30,"fontFamily":1,"lineHeight":1.25,"textAlign":"center"}
+  ]
+}

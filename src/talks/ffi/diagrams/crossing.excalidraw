@@ -1,0 +1,24 @@
+{
+  "type": "excalidraw", "version": 2, "source": "https://excalidraw.com",
+  "appState": { "viewBackgroundColor": "#ffffff", "exportBackground": false }, "files": {},
+  "elements": [
+    {"type":"rectangle","id":"js","x":40,"y":40,"width":280,"height":130,"backgroundColor":"#a5d8ff","fillStyle":"solid","roundness":{"type":3}},
+    {"type":"text","id":"js-label","x":50,"y":65,"width":260,"height":80,"text":"JavaScript\nadd_i32(20, 22)","fontSize":30,"fontFamily":1,"lineHeight":1.25,"textAlign":"center"},
+    {"type":"arrow","id":"js-v8","x":320,"y":105,"width":80,"height":0,"points":[[0,0],[80,0]],"endArrowhead":"arrow"},
+    {"type":"rectangle","id":"v8","x":400,"y":40,"width":280,"height":130,"backgroundColor":"#a5d8ff","fillStyle":"solid","roundness":{"type":3}},
+    {"type":"text","id":"v8-label","x":410,"y":65,"width":260,"height":80,"text":"V8 conventional\ncallback","fontSize":30,"fontFamily":1,"lineHeight":1.25,"textAlign":"center"},
+    {"type":"arrow","id":"v8-cpp","x":680,"y":105,"width":80,"height":0,"points":[[0,0],[80,0]],"endArrowhead":"arrow"},
+    {"type":"rectangle","id":"cpp","x":760,"y":40,"width":280,"height":130,"backgroundColor":"#ffd8a8","fillStyle":"solid","roundness":{"type":3}},
+    {"type":"text","id":"cpp-label","x":770,"y":65,"width":260,"height":80,"text":"C++ validation\n+ conversion","fontSize":30,"fontFamily":1,"lineHeight":1.25,"textAlign":"center"},
+    {"type":"arrow","id":"cpp-ffi","x":900,"y":170,"width":0,"height":80,"points":[[0,0],[0,80]],"endArrowhead":"arrow"},
+    {"type":"rectangle","id":"ffi","x":760,"y":250,"width":280,"height":130,"backgroundColor":"#ffd8a8","fillStyle":"solid","roundness":{"type":3}},
+    {"type":"text","id":"ffi-label","x":770,"y":275,"width":260,"height":80,"text":"libffi\nregisters + stack","fontSize":30,"fontFamily":1,"lineHeight":1.25,"textAlign":"center"},
+    {"type":"arrow","id":"ffi-c","x":760,"y":315,"width":80,"height":0,"points":[[0,0],[-80,0]],"endArrowhead":"arrow"},
+    {"type":"rectangle","id":"c","x":400,"y":250,"width":280,"height":130,"backgroundColor":"#b2f2bb","fillStyle":"solid","roundness":{"type":3}},
+    {"type":"text","id":"c-label","x":410,"y":275,"width":260,"height":80,"text":"Native add_i32\none addition","fontSize":30,"fontFamily":1,"lineHeight":1.25,"textAlign":"center"},
+    {"type":"arrow","id":"c-result","x":400,"y":315,"width":80,"height":0,"points":[[0,0],[-80,0]],"endArrowhead":"arrow"},
+    {"type":"rectangle","id":"result","x":40,"y":250,"width":280,"height":130,"backgroundColor":"#a5d8ff","fillStyle":"solid","roundness":{"type":3}},
+    {"type":"text","id":"result-label","x":50,"y":275,"width":260,"height":80,"text":"Convert result\nJS number: 42","fontSize":30,"fontFamily":1,"lineHeight":1.25,"textAlign":"center"},
+    {"type":"text","id":"explanation","x":40,"y":425,"width":1000,"height":40,"text":"For a tiny native function, the crossing can dominate the work.","fontSize":28,"fontFamily":1,"lineHeight":1.25,"textAlign":"center"}
+  ]
+}

@@ -6,13 +6,12 @@
   "files": {},
   "elements": [
     {"type":"rectangle","id":"v8","x":40,"y":40,"width":280,"height":130,"backgroundColor":"#a5d8ff","fillStyle":"solid","roundness":{"type":3}},
-    {"type":"text","id":"v8-label","x":50,"y":85,"width":260,"height":40,"text":"V8 Fast API","fontSize":32,"fontFamily":1,"lineHeight":1.25,"textAlign":"center"},
-    {"type":"arrow","id":"v8-adapter","x":320,"y":105,"width":80,"height":0,"points":[[0,0],[80,0]],"endArrowhead":"arrow"},
-    {"type":"rectangle","id":"adapter","x":400,"y":40,"width":280,"height":130,"backgroundColor":"#ffd8a8","fillStyle":"solid","roundness":{"type":3}},
-    {"type":"text","id":"adapter-label","x":410,"y":65,"width":260,"height":80,"text":"Generated\nadapter","fontSize":32,"fontFamily":1,"lineHeight":1.25,"textAlign":"center"},
-    {"type":"arrow","id":"adapter-native","x":680,"y":105,"width":80,"height":0,"points":[[0,0],[80,0]],"endArrowhead":"arrow"},
-    {"type":"rectangle","id":"native","x":760,"y":40,"width":280,"height":130,"backgroundColor":"#b2f2bb","fillStyle":"solid","roundness":{"type":3}},
-    {"type":"text","id":"native-label","x":770,"y":65,"width":260,"height":80,"text":"Native\nfunction","fontSize":32,"fontFamily":1,"lineHeight":1.25,"textAlign":"center"},
-    {"type":"text","id":"explanation","x":40,"y":225,"width":1000,"height":75,"text":"V8 and the native function expect different call shapes.\nA small generated adapter connects them.","fontSize":30,"fontFamily":1,"lineHeight":1.25,"textAlign":"center"}
+    {"type":"text","id":"v8-label","x":50,"y":65,"width":260,"height":80,"text":"V8 Fast API\n(receiver, a, b)","fontSize":30,"fontFamily":1,"lineHeight":1.25,"textAlign":"center"},
+    {"type":"arrow","id":"v8-adapter","x":180,"y":170,"width":0,"height":60,"points":[[0,0],[0,60]],"endArrowhead":"arrow"},
+    {"type":"rectangle","id":"adapter","x":40,"y":230,"width":280,"height":130,"backgroundColor":"#ffd8a8","fillStyle":"solid","roundness":{"type":3}},
+    {"type":"text","id":"adapter-label","x":50,"y":255,"width":260,"height":80,"text":"Generated\nadapter","fontSize":30,"fontFamily":1,"lineHeight":1.25,"textAlign":"center"},
+    {"type":"arrow","id":"adapter-native","x":180,"y":360,"width":0,"height":60,"points":[[0,0],[0,60]],"endArrowhead":"arrow"},
+    {"type":"rectangle","id":"native","x":40,"y":420,"width":280,"height":130,"backgroundColor":"#b2f2bb","fillStyle":"solid","roundness":{"type":3}},
+    {"type":"text","id":"native-label","x":50,"y":445,"width":260,"height":80,"text":"Native add_i32\n(a, b)","fontSize":30,"fontFamily":1,"lineHeight":1.25,"textAlign":"center"}
   ]
 }

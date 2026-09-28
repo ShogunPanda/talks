@@ -64,7 +64,7 @@ export default function DefaultLayout({ className, style }: SlideProps): VNode {
       {!image && !items && grids && <Grids grids={grids} />}
 
       {!image && !items && !grids && code && (
-        <div className={cleanCssClasses('code')}>
+        <div data-pptx="code" className={cleanCssClasses('code')}>
           <Code {...code} />
         </div>
       )}

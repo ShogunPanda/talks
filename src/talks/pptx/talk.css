@@ -1,0 +1,11 @@
+/* Reuse the original rules so the fixtures track the real talks. */
+@import '@./talks/alleged-node-end/talk.css';
+@import '@./talks/compiling-bundling/talk.css';
+@import '@./talks/postgresql-webhooks/talk.css';
+@import '@./talks/slowloris/talk.css';
+@import '@./talks/test/talk.css';
+
+/* Scope the code size independently of the imported talks' shared class. */
+.talk\@pptx-code {
+  font-size: 0.6em;
+}

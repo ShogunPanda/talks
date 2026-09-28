@@ -1,0 +1,17 @@
+{
+  "type": "excalidraw", "version": 2, "source": "https://excalidraw.com",
+  "appState": { "viewBackgroundColor": "#ffffff", "exportBackground": false }, "files": {},
+  "elements": [
+    {"type":"rectangle","id":"js","x":40,"y":40,"width":280,"height":110,"backgroundColor":"#a5d8ff","fillStyle":"solid","roundness":{"type":3}},
+    {"type":"text","id":"js-label","x":50,"y":60,"width":260,"height":70,"text":"JS validates\n+ packs a, b","fontSize":28,"fontFamily":1,"lineHeight":1.25,"textAlign":"center"},
+    {"type":"arrow","id":"js-buffer","x":180,"y":150,"width":0,"height":50,"points":[[0,0],[0,50]],"endArrowhead":"arrow"},
+    {"type":"rectangle","id":"buffer","x":40,"y":200,"width":280,"height":110,"backgroundColor":"#ffd8a8","fillStyle":"solid","roundness":{"type":3}},
+    {"type":"text","id":"buffer-label","x":50,"y":220,"width":260,"height":70,"text":"ArrayBuffer\nslots","fontSize":28,"fontFamily":1,"lineHeight":1.25,"textAlign":"center"},
+    {"type":"arrow","id":"buffer-cpp","x":180,"y":310,"width":0,"height":50,"points":[[0,0],[0,50]],"endArrowhead":"arrow"},
+    {"type":"rectangle","id":"cpp","x":40,"y":360,"width":280,"height":110,"backgroundColor":"#ffd8a8","fillStyle":"solid","roundness":{"type":3}},
+    {"type":"text","id":"cpp-label","x":50,"y":380,"width":260,"height":70,"text":"C++ reads\npacked slots","fontSize":28,"fontFamily":1,"lineHeight":1.25,"textAlign":"center"},
+    {"type":"arrow","id":"cpp-ffi","x":180,"y":470,"width":0,"height":50,"points":[[0,0],[0,50]],"endArrowhead":"arrow"},
+    {"type":"rectangle","id":"ffi","x":40,"y":520,"width":280,"height":110,"backgroundColor":"#b2f2bb","fillStyle":"solid","roundness":{"type":3}},
+    {"type":"text","id":"ffi-label","x":50,"y":540,"width":260,"height":70,"text":"libffi calls\nadd_i32","fontSize":28,"fontFamily":1,"lineHeight":1.25,"textAlign":"center"}
+  ]
+}

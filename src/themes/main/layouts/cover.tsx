@@ -11,7 +11,7 @@ import { Fragment, type VNode } from 'preact'
 import { Text } from '../../common/components/common.tsx'
 import { SvgIcon } from '../../common/components/icons.tsx'
 import { type Slide } from '../../common/models.ts'
-import { SlideWrapper } from '../components/common.tsx'
+import { Loading, SlideWrapper } from '../components/common.tsx'
 
 export default function CoverLayout({ className, style }: SlideProps): VNode {
   const {
@@ -21,7 +21,9 @@ export default function CoverLayout({ className, style }: SlideProps): VNode {
       document: { author, authors, title, titleFormatted, branding }
     },
     theme: { id: theme, urls },
-    resolveImage
+    resolveImage,
+    loaded,
+    loadingProgress
   } = useClient()
   const { slide, index } = useSlide<Slide>()
 
@@ -54,6 +56,7 @@ export default function CoverLayout({ className, style }: SlideProps): VNode {
       className={cleanCssClasses('theme@cover', className, rootClassName)}
       style={style}
     >
+      {!loaded && <Loading progress={loadingProgress} />}
       <Svg src="@theme/corner.svg" className={cleanCssClasses('corner')} />
 
       <div className={cleanCssClasses('contents')}>

@@ -69,7 +69,11 @@ export default function SeparatorLayout({ className, style }: SlideProps): VNode
       </div>
 
       {image && (
-        <div className={cleanCssClasses('image', image.className)} style={{ backgroundImage: `url(${imageUrl})` }} />
+        <div
+          data-pptx="image"
+          className={cleanCssClasses('image', image.className)}
+          style={{ backgroundImage: `url(${imageUrl})` }}
+        />
       )}
 
       {!image && icon && <SvgIcon name={icon} className={cleanCssClasses('icon', iconClassName)} />}

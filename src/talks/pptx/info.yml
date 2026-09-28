@@ -1,0 +1,9 @@
+---
+config: common.config
+document:
+  title: 'PPTX — Visual regression cases'
+  titleFormatted: 'PPTX — Visual regression cases<br/>COVER-01'
+  abstract: 'A visual reference for editable PPTX export: typography, inline decorations, code, image cropping, SVG, QR codes, transparency and overlapping layouts, using the existing Freya main theme.'
+  author: common.author
+  branding: true
+  hidden: true

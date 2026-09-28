@@ -15,6 +15,11 @@ interface SlideWrapperProps {
 
 type DecorationProps = Pick<SlideWrapperProps, 'defaultLogoColor'>
 
+interface LoadingProps {
+  progress: number
+  style?: JSX.CSSProperties
+}
+
 export function Decorations({ defaultLogoColor }: DecorationProps): VNode {
   const {
     isProduction,
@@ -71,6 +76,8 @@ export function Decorations({ defaultLogoColor }: DecorationProps): VNode {
 }
 
 export function SlideWrapper({ slide, index, style, className, defaultLogoColor, children }: SlideWrapperProps): VNode {
+  const { isExporting } = useClient()
+
   const { foreground, background, decorations } = slide.options
 
   // These two should be moved to the SlideWrapper component
@@ -85,10 +92,32 @@ export function SlideWrapper({ slide, index, style, className, defaultLogoColor,
   slide.decorations.permalink = false
 
   return (
-    <article className={cleanCssClasses('freya@slide', foregroundClass, backgroundClass, className)} style={style}>
+    <article
+      data-pptx="group"
+      className={cleanCssClasses('freya@slide', foregroundClass, backgroundClass, className)}
+      style={style}
+    >
       {children}
-      <Progress current={index} />
+      {!isExporting && <Progress current={index} />}
       {decorations !== false && <Decorations defaultLogoColor={defaultLogoColor} />}
     </article>
+  )
+}
+
+export function Loading({ progress, style }: LoadingProps): VNode {
+  return (
+    <section className={cleanCssClasses('theme@loading-wrapper')} style={style}>
+      {typeof progress === 'number' && (
+        <div className={cleanCssClasses('theme@loading')}>
+          Loading resources ({progress.toFixed(0)} %) ...
+          <div className={cleanCssClasses('progress-wrapper', '')}>
+            <div
+              className={cleanCssClasses('progress', '')}
+              style={{ '--pi-theme-loading-progress': progress.toFixed(2) }}
+            />
+          </div>
+        </div>
+      )}
+    </section>
   )
 }

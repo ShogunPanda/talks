@@ -1,0 +1,454 @@
+---
+layout: cover
+title: COVER-01 — Original cover
+notes: |
+  COVER-01. Origine: layout main/cover, usato dai talk esistenti.
+  Controllare corner SVG, logo, titolo centrato, QR con icone sovrapposte,
+  sfondo arrotondato dei QR e link. Le etichette sono quelle native del tema;
+  il link PDF non implica che questo talk abbia già un PDF pubblicato.
+# ---
+
+---
+layout: hello
+title: HELLO-01 — Original author layout
+notes: |
+  HELLO-01. Origine: layout main/hello e common.author.
+  Il layout genera il proprio titolo: l'identificativo resta nelle note.
+  Controllare griglia, foto location, ruoli inline, font misti, QR e link social.
+# ---
+
+---
+layout: default
+title: TEXT-01 — Rich text is still text
+items:
+  entries:
+    - index: '1'
+      title: '**Bold**, *theme emphasis*, <s>deleted</s>'
+      text: 'Normal text, `inline code`, <span class="theme@fg-amber">amber</span>, and [a link](https://nodejs.org).'
+    - index: '2'
+      title: 'Explicit break<br/>and a second line'
+      text: 'Accents: à è ì ò ù — quotes: “Freya” — symbols: ≤ ≥ → — emoji: 🐈 🤦‍♂️.'
+    - index: '3'
+      title: 'H<sub>2</sub>O and x<sup>2</sup>'
+      text: 'Keep baseline changes, punctuation, spaces and **mixed *nested emphasis*** editable.'
+notes: |
+  TEXT-01. Origine: span colorati di smart-cats e destino, barrato di smart-cats,
+  br ed emoji di kafka. Sup/sub aggiunti come controllo della baseline.
+  Em nel tema è blu e grassetto, non corsivo. Verificare font fallback degli emoji,
+  link, accenti, barrato e ritorni a capo, senza appiattire il testo.
+# ---
+
+---
+layout: default
+title: 'TEXT-02 — Fix <span class="talk@danger-banner">known vulnerabilities</span>'
+items:
+  entries:
+    - icon: shield-halved
+      title: Inline decoration
+      text: 'The red background, rounded corners and padding belong to a span inside the title.'
+notes: |
+  TEXT-02. Origine: alleged-node-end, titolo sulle vulnerabilità delle versioni Node.js.
+  Classe originale talk@danger-banner. Controllare uppercase, padding, sfondo,
+  angoli e allineamento della baseline rispetto al testo esterno al banner.
+# ---
+
+---
+layout: default
+title: 'TEXT-03 — <span class="talk@danger-banner">known vulnerabilities across older versions and unsupported applications</span>'
+items:
+  entries:
+    - title: A deliberately wrapping inline banner
+      text: 'The decorated span should wrap naturally. Its fragments are the test, not an overflow to hide.'
+notes: |
+  TEXT-03. Stress case derivato da TEXT-02, con lo stesso font e lo stesso layout.
+  L'andata a capo del banner è intenzionale. Controllare i rettangoli dei frammenti,
+  padding, sfondo e distanza tra righe. Nessuna riduzione artificiale del titolo.
+# ---
+
+---
+layout: side
+title: TEXT-04 — Justified text
+items:
+  entries:
+    - title: Short paragraph
+      text: 'Compare this normal paragraph with the justified panel on the right.'
+    - title: Lists and indentation
+      text: '<ul><li>First item</li><li>Second item with <strong>bold words</strong></li></ul>'
+highlight:
+  text: 'A justified paragraph must preserve its text, its emphasis and its spacing. Browser and PowerPoint line breaking can disagree even when the font and the bounding rectangle match. This deliberately longer paragraph makes those differences visible without changing the theme layout.'
+notes: |
+  TEXT-04. Origine: layout main/side con highlight e reset delle liste del tema.
+  Confrontare giustificazione, ultima riga, interlinea, margini e rientri dei bullet.
+# ---
+
+---
+layout: quote
+title: TEXT-05 — Bitter italic
+quote:
+  sentence: 'Editable text should preserve **weight**, colour and the rhythm of a quotation.'
+  author: 'PPTX visual fixture'
+  light: true
+notes: |
+  TEXT-05. Origine: layout main/quote, variante light del talk test.
+  Controllare Bitter corsivo, virgolette tipografiche, autore e decorazioni SVG.
+  Il tema dichiara font normali: confrontare anche il corsivo sintetizzato.
+# ---
+
+---
+layout: hero
+title: TEXT-06
+subtitle: 'Mixed case'
+options:
+  background: amber
+className:
+  contents: tiny
+notes: |
+  TEXT-06. Origine: layout main/hero, variante tiny già prevista dal tema.
+  Entrambi i testi devono essere maiuscoli per effetto CSS, con line-height 1.
+  Verificare conversione delle unità custom e centratura del blocco complessivo.
+# ---
+
+---
+layout: code
+title: CODE-01 — Tokens, spaces and blank lines
+code:
+  language: javascript
+  numbers: true
+  content: |
+    import { readFile } from 'node:fs/promises'
+
+    const options = { enabled: true, retries: 3 }
+    const message = 'Spaces   inside   a   string'
+
+    async function load (path) {
+      if (options.enabled) {
+        return JSON.parse(await readFile(path, 'utf8'))
+      }
+      return null
+    }
+notes: |
+  CODE-01. Origine: layout main/code e numerazione del talk test.
+  Controllare token, spazi consecutivi, rientri, righe vuote e allineamento dei numeri
+  a una e due cifre. Questo è il riferimento senza evidenziazioni.
+# ---
+
+---
+layout: code
+title: CODE-02 — Highlight and dimming
+code:
+  language: javascript
+  numbers: true
+  highlight: '3, 7, 8'
+  content: |
+    import { readFile } from 'node:fs/promises'
+
+    const options = { enabled: true, retries: 3 }
+    const message = 'Spaces   inside   a   string'
+
+    async function load (path) {
+      if (options.enabled) {
+        return JSON.parse(await readFile(path, 'utf8'))
+      }
+      return null
+    }
+notes: |
+  CODE-02. Stesso codice di CODE-01 con righe 3, 7 e 8 evidenziate.
+  Controllare opacity 0.5 delle altre righe, incluso sfondo e numerazione.
+# ---
+
+---
+layout: code
+title: CODE-03 — Per-line backgrounds
+code:
+  language: javascript
+  numbers: true
+  highlight: '2, 4'
+  className:
+    root: talk@pptx-code
+    lineNotHighlighted: talk@line-not-highlighted
+    lineHighlighted: talk@line-highlighted
+  content: |
+    const before = 'red background'
+    const after = 'green background'
+
+    const longLine = 'This deliberately long line checks token spacing, the line number gutter and clipping near the right edge.'
+    console.log({ before, after, longLine })
+notes: |
+  CODE-03. Origine: classi talk@line-not-highlighted e talk@line-highlighted del talk test.
+  Rosso e verde sono intenzionali. Controllare continuità dello sfondo sotto gli span,
+  numerazione e comportamento della riga lunga al bordo del blocco.
+# ---
+
+---
+layout: image
+title: IMAGE-01 — Cover
+subtitle: Native image layout and callout
+image:
+  url: '@common/panda'
+className:
+  title: theme@callout light
+notes: |
+  IMAGE-01. Origine: layout main/image del talk test.
+  Controllare background-size cover, ritaglio, proporzioni e callout in primo piano.
+# ---
+
+---
+layout: image
+title: IMAGE-02 — Contain
+image:
+  url: '@common/panda'
+className:
+  root: talk@send-pr
+  title: theme@callout light
+notes: |
+  IMAGE-02. Stesso asset di IMAGE-01. Origine CSS: alleged-node-end, talk@send-pr.
+  L'immagine deve essere centrata, interamente visibile e su sfondo nero.
+# ---
+
+---
+layout: image
+title: IMAGE-03 — Explicit size
+image:
+  url: '@common/arrow-right'
+className:
+  root: talk@logo
+  title: theme@callout
+notes: |
+  IMAGE-03. Origine: compiling-bundling, talk@logo, background-size 3--sp 3--sp.
+  La deformazione dell'asset non quadrato è intenzionale e va conservata.
+# ---
+
+---
+layout: image
+title: IMAGE-04 — Automatic height
+image:
+  url: '@common/arrow-right'
+className:
+  root: talk@logo auto
+  title: theme@callout
+notes: |
+  IMAGE-04. Origine: compiling-bundling, talk@logo.auto, background-size 3--sp auto.
+  Confrontare con IMAGE-03: stessa larghezza ma proporzioni originali preservate.
+# ---
+
+---
+layout: half
+title: IMAGE-05<br/>Reversed half
+image:
+  url: '@common/panda'
+items:
+  entries:
+    - icon: chevron-left
+      title: Image on the left
+      text: Grid areas reverse the visual order.
+    - icon: chevron-right
+      title: Text on the right
+      text: Preserve the cover crop and the full-height image panel.
+className:
+  root: reverse
+notes: |
+  IMAGE-05. Origine: layout main/half reversed del talk test.
+  Controllare ordine visivo diverso dal DOM, ritaglio e dimensione dell'area immagine.
+# ---
+
+---
+layout: separator
+title: IMAGE-06<br/>Viewport sizing
+subtitle: A vector background with min() sizing
+image:
+  url: '@common/troll-black.svg'
+  className: troll
+options:
+  background: amber
+notes: |
+  IMAGE-06. Origine: variante troll del layout main/separator.
+  Controllare background-size calc(min(85vh, 5--sp)), centratura e SVG come background.
+# ---
+
+---
+layout: default
+title: STACK-01 — Vite, esbuild and Rollup
+items:
+  horizontal: true
+  spacer: false
+  className: talk@vite
+  entries:
+    - image: '@common/esbuild'
+      className:
+        root: esbuild root
+        image: esbuild image
+    - image: '@common/vite'
+      className:
+        root: vite root
+        image: vite image
+    - image: '@common/rollup'
+      className:
+        root: rollup root
+        image: rollup image
+notes: |
+  STACK-01. Origine: composizione talk@vite di compiling-bundling.
+  Vite deve stare davanti ai due loghi laterali. Controllare z-index,
+  posizionamento assoluto, trasparenza degli asset e ordine di pittura.
+# ---
+
+---
+layout: default
+title: STACK-02 — Outside the slide
+items:
+  entries:
+    - title: Oversized background number
+      text: 'The number intentionally crosses the bottom and right edges.'
+    - title: Foreground text
+      text: 'Keep this text above the decoration and keep the slide boundary clipped.'
+decorations:
+  number: '10'
+  className:
+    number: talk@ten-years
+notes: |
+  STACK-02. Origine: slowloris, talk@ten-years applicato al numero decorativo.
+  Controllare offset negativi, font 300--pt, clipping al bordo e z-index -1.
+# ---
+
+---
+layout: quote
+title: SVG-01 — Shared paths and rotation
+quote:
+  sentence: 'One SVG definition, two differently styled instances.'
+  author: 'PPTX visual fixture'
+  primaryIcon: lightbulb
+  secondaryIcon: lightbulb
+  primaryIconClassName: primary-icon
+  secondaryIconClassName: secondary-icon
+className:
+  root: talk@quote
+notes: |
+  SVG-01. Origine: colori del talk test e icone del layout quote.
+  La stessa definizione SVG è referenziata da due use; primaria rossa, secondaria
+  verde e ruotata di 180 gradi. Controllare colori per istanza e clipping.
+# ---
+
+---
+layout: default
+title: QR-01 — SVG, QR and raster
+items:
+  horizontal: true
+  entries:
+    - icon: puzzle-piece
+      title: Shared SVG
+      text: Inherited currentColor
+    - qr: https://talks.paoloinsogna.dev/pptx
+      title: QR code
+      text: Keep the modules sharp
+    - image: '@common/node'
+      title: Raster asset
+      text: Keep transparency and aspect ratio
+notes: |
+  QR-01. Origine: item orizzontali del talk test.
+  Controllare dimensioni relative, separatori verticali e qualità del QR.
+  I QR con logo sono già coperti da COVER-01 e dai permalink del tema.
+# ---
+
+---
+layout: default
+title: ALPHA-01 — Nested opacity
+items:
+  horizontal: true
+  entries:
+    - icon: database
+      title: Fully visible
+      text: Reference icon and text
+    - icon: database
+      title: Nested opacity
+      text: Parent 0.2 and icon 0.2
+      className:
+        root: talk@disabled
+    - icon: database
+      title: Icon opacity only
+      text: Parent remains fully visible
+      className:
+        icon: talk@disabled
+notes: |
+  ALPHA-01. Origine: postgresql-webhooks, talk@disabled.
+  Al centro il gruppo ha opacity 0.2 e l'icona un ulteriore 0.2.
+  A destra solo l'icona ha opacity 0.2. Confrontare anche colore grigio e testo.
+# ---
+
+---
+layout: default
+title: GRID-01 — Unequal content
+grids:
+  - className: talk@icons-grid
+    entries:
+      - image: '@common/javascript'
+        title: JS
+      - icon: code
+        title: A deliberately longer title<br/>with an explicit second line
+        text: 'Short text with **bold**, *emphasis* and `code`.'
+      - qr: https://nodejs.org
+        title: QR
+notes: |
+  GRID-01. Origine: griglie del talk test e talk@icons-grid di compiling-bundling.
+  Controllare tre colonne, gap in ch, altezze diverse e centratura degli elementi.
+# ---
+
+---
+layout: separator
+title: LAYOUT-01<br/>Reversed order
+subtitle: Subtitle above title
+image:
+  url: '@common/panda'
+options:
+  background: blue
+className:
+  root: reverse
+  contents: reverse
+  title: reverse
+  subtitle: reverse
+notes: |
+  LAYOUT-01. Origine: varianti reverse del layout main/separator.
+  Il pannello immagine passa a sinistra e il sottotitolo precede il titolo.
+  Controllare grid-template-areas, column-reverse e margini delle varianti native.
+# ---
+
+---
+layout: side
+title: 'MIX-01 — <span class="talk@danger-banner">editable</span>'
+items:
+  entries:
+    - icon: database
+      title: Faded group
+      text: 'Nested opacity with **bold text**.'
+      className:
+        root: talk@disabled
+    - title: 'Inline `code` and <s>deleted</s> text'
+      text: 'Keep [this link](https://nodejs.org) and this<br/>explicit line break.'
+code:
+  language: javascript
+  numbers: true
+  highlight: '2, 4'
+  className:
+    root: talk@pptx-code
+  content: |
+    const input = 'Freya'
+    const output = { editable: true }
+
+    console.log(input, output)
+decorations:
+  number: '42'
+notes: |
+  MIX-01. Combinazione nel layout main/side: banner alleged-node-end,
+  opacità postgresql-webhooks, codice del tema e numero decorativo dietro il testo.
+  Controllare insieme ordine di pittura, testo formattato, clipping e contrasto.
+# ---
+
+---
+layout: end
+title: MIX-02 — Original footer
+subtitle: '<span class="theme@fg-amber">Background, callout, links and branding</span>'
+image:
+  url: '@common/panda'
+notes: |
+  MIX-02. Origine: layout main/end.
+  Controllare background cover, callout, footer Grid, nowrap dei contatti,
+  bordo sinistro del logo, link e pesi tipografici. Feedback tramite ID e screenshot.
+# ---

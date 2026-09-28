@@ -9,8 +9,9 @@ export default function CodeLayout({ className, style }: SlideProps): VNode {
 
   const {
     title,
+    subtitle,
     code,
-    className: { root: rootClassName, title: titleClassName }
+    className: { root: rootClassName, title: titleClassName, subtitle: subtitleClassName }
   } = slide
 
   return (
@@ -19,6 +20,12 @@ export default function CodeLayout({ className, style }: SlideProps): VNode {
         <h1 className={cleanCssClasses(titleClassName)}>
           <Text text={title} />
         </h1>
+      )}
+
+      {subtitle && (
+        <h4 className={cleanCssClasses(subtitleClassName)}>
+          <Text text={subtitle} />
+        </h4>
       )}
 
       <div className={cleanCssClasses('wrapper')}>

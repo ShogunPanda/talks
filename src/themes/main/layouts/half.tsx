@@ -58,7 +58,9 @@ export default function HalfLayout({ className, style }: SlideProps): VNode {
         {items && <Items items={items} />}
       </div>
 
-      {image && <div className={cleanCssClasses('image')} style={{ backgroundImage: `url(${imageUrl})` }} />}
+      {image && (
+        <div data-pptx="image" className={cleanCssClasses('image')} style={{ backgroundImage: `url(${imageUrl})` }} />
+      )}
     </SlideWrapper>
   )
 }

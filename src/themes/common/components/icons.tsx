@@ -58,7 +58,7 @@ export function SvgIcon({ name: icon, className }: SvgIconProps): VNode {
   const [id, viewBox] = assets.svgs[key]
 
   return (
-    <svg className={cleanCssClasses('freya@svg', 'theme@icon', className)} viewBox={viewBox}>
+    <svg data-pptx="svg" className={cleanCssClasses('freya@svg', 'theme@icon', className)} viewBox={viewBox}>
       <use xlinkHref={`#${id}`} />
     </svg>
   )

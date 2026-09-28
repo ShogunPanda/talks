@@ -176,8 +176,6 @@ code:
       return a + b;
     }
 
-    // Our example uses 20 and 22, within the int32 range.
-
 
 # ---
 
@@ -188,19 +186,15 @@ code:
   content: |
     import { dlopen, suffix } from 'node:ffi'
 
-    const { lib, functions } = dlopen(`./mylib.${suffix}`, {
+    using handle = dlopen(`./mylib.${suffix}`, {
       add_i32: {
         arguments: ['int32', 'int32'],
         return: 'int32'
       }
     })
 
-    try {
-      // SAFETY: The signature matches the exported C function.
-      console.log(functions.add_i32(20, 22)) // 42
-    } finally {
-      lib.close()
-    }
+    // SAFETY: The signature matches the exported C function.
+    console.log(handle.functions.add_i32(20, 22)) // 42
 
 
 # ---
@@ -316,15 +310,15 @@ code:
   content: |
     // C: uint64_t identity_u64(uint64_t value);
     const identity = lib.getFunction('identity_u64', {
-      arguments: ['uint64'], return: 'uint64'
+      arguments: ['uint64'],
+      return: 'uint64'
     })
 
     // SAFETY: The declaration matches the exported symbol.
     const value = identity(9_007_199_254_740_993n)
     console.log(value) // 9007199254740993n
 
-    // number would lose precision before reaching C.
-    // FFI signatures describe the ABI; they do not read headers.
+    // A number would already have lost precision.
 
 
 # ---
@@ -363,14 +357,11 @@ code:
     uint32_t sum_bytes(const uint8_t *bytes, uint32_t length) {
       uint32_t total = 0;
       for (uint32_t i = 0; i < length; i++) {
-        // SAFETY: The caller provides at least length readable bytes.
+        // SAFETY: The caller provides length readable bytes.
         total += bytes[i];
       }
       return total;
     }
-
-    // Synchronous: the pointer is never retained.
-    // Unsigned addition wraps modulo 2^32.
 
 
 # ---
@@ -384,16 +375,15 @@ code:
 
     using handle = dlopen(`./mylib.${suffix}`, {
       sum_bytes: {
-        arguments: ['buffer', 'uint32'], return: 'uint32'
+        arguments: ['buffer', 'uint32'],
+        return: 'uint32'
       }
     })
     const bytes = Buffer.from([10, 20, 12])
 
-    // SAFETY: Live, stable storage; C reads only bytes.length bytes.
-    console.log(handle.functions.sum_bytes(bytes, bytes.length)) // 42
-
-    // No copy of the payload; no transfer of ownership.
-    // C must not keep this pointer after returning.
+    // SAFETY: Live storage; C reads bytes.length bytes, retaining none.
+    const total = handle.functions.sum_bytes(bytes, bytes.length)
+    console.log(total) // 42
 
 
 # ---
@@ -442,9 +432,6 @@ code:
       return transform(value);
     }
 
-    // The callback runs synchronously, exactly once.
-    // The library never retains its address.
-
 
 # ---
 
@@ -454,17 +441,22 @@ code:
   language: javascript
   content: |
     import { dlopen, suffix } from 'node:ffi'
+
     using handle = dlopen(`./mylib.${suffix}`, {
-      apply_once: { arguments: ['int32', 'function'], return: 'int32' }
+      apply_once: {
+        arguments: ['int32', 'function'],
+        return: 'int32'
+      }
     })
     const callback = handle.lib.registerCallback(
       { arguments: ['int32'], return: 'int32' }, value => value
     )
+
     try {
-      // SAFETY: Same-thread, synchronous callback; no throw or Promise.
+      // SAFETY: Synchronous, same-thread; no throw or Promise.
       console.log(handle.functions.apply_once(42, callback)) // 42
     } finally {
-      // SAFETY: apply_once has returned and never retains the callback.
+      // SAFETY: C has returned without retaining the callback.
       handle.lib.unregisterCallback(callback)
     }
 
@@ -499,38 +491,21 @@ options:
 
 ---
 title: Every crossing has a cost
-code:
-  language: output
-  content: |
-    functions.add_i32(20, 22)
-              |
-              v
-    V8 conventional callback     JavaScript values
-              |
-    C++ validation + conversion  native int32 arguments
-              |
-    libffi                      registers / stack for the ABI
-              |
-    add_i32                     one addition
-              |
-    result conversion           JavaScript number: 42
-
-
+image:
+  url: '@talk/ffi-crossing.png'
 # ---
 
 ---
-title: Bryan's first optimization
-items:
-  entries:
-    - icon: user
-      title: 'Shared-buffer path — [PR #62918](https://github.com/nodejs/node/pull/62918)'
-      text: Bryan moved argument packing into JavaScript using a per-function ArrayBuffer.
-    - icon: memory
-      title: Share storage across the boundary
-      text: Native code reads packed slots instead of converting each V8 argument.
-    - icon: bolt
-      title: Less crossing overhead
-      text: libffi still performs the native call. This is not a SharedArrayBuffer between workers.
+layout: side
+title: First optimizations
+content:
+  - '[PR #62918](https://github.com/nodejs/node/pull/62918) by [Bryan English](https://github.com/bengl)'
+  - Less overhead, Still using libffi.
+  - |
+    One ArrayBuffer per function, 
+    reused by JS and C++.
+image:
+  url: '@talk/ffi-shared-buffer.png'
 # ---
 
 ---
@@ -538,36 +513,28 @@ title: Pack once per call, reuse the storage
 code:
   language: javascript
   content: |
-    // Shared-buffer path: simplified internals, not a public API.
-    // One ArrayBuffer per function; each slot is 8 bytes.
+    // Simplified internals: one reusable buffer per function.
     const slots = new DataView(new ArrayBuffer(3 * 8))
 
-    // On each call, after validating both int32 arguments:
-    slots.setInt32(8, 20, true)   // Argument 0, slot 1.
-    slots.setInt32(16, 22, true)  // Argument 1, slot 2.
+    // Each call validates and packs the arguments.
+    slots.setInt32(8, 20, true)
+    slots.setInt32(16, 22, true)
 
-    // C++ snapshots the arguments, then libffi invokes add_i32.
+    // C++ snapshots the slots; libffi calls add_i32.
     invokeNativeWithoutJSArguments()
 
-    const result = slots.getInt32(0, true) // Return slot: 42.
-    // Less V8 argument conversion; libffi is still on the path.
+    const result = slots.getInt32(0, true) // 42
 
 
 # ---
 
 ---
 title: V8 already knows a faster route
-items:
-  entries:
-    - icon: bolt
-      title: Fast API calls
-      text: Optimized JavaScript can call a typed native entry point directly.
-    - icon: signature
-      title: FFI signatures arrive at runtime
-      text: The loaded symbol is not a handwritten binding compiled into Node.js.
-    - icon: puzzle-piece
-      title: The shapes must match
-      text: V8's native entry point and the library's C function have different contracts.
+content:
+  - Fast API can call a typed native entry point directly.
+  - But this C function does not expect V8's receiver.
+image:
+  url: '@talk/ffi-mismatch.png'
 # ---
 
 ---
@@ -583,7 +550,16 @@ options:
 # ---
 
 ---
-title: A tiny adapter bridges the gap
+title: |
+  A tiny adapter 
+  bridges the gap
+layout: side
+content:
+  - 'The adapter repositions a and b, omitting the receiver. The result is still 42.'
+  - 'Prepared once: allocate RW → emit code → flush instruction cache → protect RX.'
+  - |
+    RW = read/write; RX = read/execute. 
+    Fast calls reuse the RX code.
 image:
   url: '@talk/ffi-adapter.png'
 # ---
@@ -617,33 +593,37 @@ items:
   entries:
     - icon: code-merge
       title: '[PR #63068](https://github.com/nodejs/node/pull/63068) — June 16th, 2026'
-      text: My Fast FFI implementation, co-authored with Bryan, landed in Node.js.
+      text: |
+        My Fast FFI implementation, co-authored 
+        with Bryan, landed in Node.js.
     - icon: link
       title: One public API
-      text: Eligible calls can use Fast API. Applications keep the same public API.
+      text: |
+        Eligible calls can use Fast API. 
+        No visible changes visible outside.
   horizontal: true
 # ---
 
 ---
 title: The adapter, in pseudocode
 code:
-  language: output
+  language: asm
   content: |
-    // ARM64 pseudocode: CHECK_LIBRARY_OPEN and LOAD_ADDRESS are symbolic.
-    adapter:
-        stp x29, x30, [sp, #-16]!  // Save frame and return address.
-        CHECK_LIBRARY_OPEN        // If closed: raise JS error, restore, return.
+    ; ARM64 pseudocode; uppercase operations are symbolic.
+    ; x0 = receiver, w1 = a, w2 = b. wN = low 32 bits of xN.
+    ; sp = stack pointer; x29 = frame pointer; x30 = return address.
 
-        // Entry: x0 = receiver, w1 = a, w2 = b.
-        mov x0, x1                // First native argument: a.
-        mov x1, x2                // Second native argument: b.
+    stp x29, x30, [sp, #-16]! ; sp -= 16; save x29 and x30.
+    CHECK_LIBRARY_OPEN      ; If closed: JS error, restore, return.
+    mov x0, x1              ; Move a over the receiver.
+    mov x1, x2              ; Move b into C's second argument.
+    LOAD_ADDRESS x16, add_i32 ; Load the resolved target address.
+    ; SAFETY: Open library; matching native signature.
+    blr x16                 ; Call target; set x30; result in w0.
+    ldp x29, x30, [sp], #16  ; Restore x29/x30; sp += 16.
+    ret                     ; Return to V8 via x30; keep w0.
 
-        LOAD_ADDRESS x16, add_i32  // Resolved native function address.
-        // SAFETY: Open library; matching native signature.
-        blr x16                   // Call add_i32; result in w0.
 
-        ldp x29, x30, [sp], #16    // Restore frame and return address.
-        ret                       // Back to V8 with the result.
 # ---
 
 ---
@@ -689,17 +669,42 @@ decorations:
 
 ---
 title: How fast is Fast FFI?
-items:
-  entries:
-    - icon: bolt
-      title: 'Tiny native work: +2601.42%'
-      text: '`identity-i32`: about 27× baseline throughput. Removing crossing overhead matters.'
-    - icon: equals
-      title: 'Eight int32 arguments: −0.63%'
-      text: '`sum-8-i32`: no statistically significant improvement in this comparison.'
-    - icon: database
-      title: 'More native work: +496.73% → +7.98%'
-      text: '`sum-buffer`, 64 → 16384 bytes. Historical [PR #63068 results](https://github.com/nodejs/node/pull/63068#issuecomment-4691945167), not universal speedups.'
+content: 'Benchmarks run on a Apple M2 Max · Median ns/call, lower is better · 15 runs'
+code:
+  language: none
+  content: |
+    +----------------------+---------+---------+---------+---------+---------+
+    | Benchmark            |  ffi-rs |   Koffi | Generic |  Shared | Fast API|
+    +----------------------+---------+---------+---------+---------+---------+
+    | identity-i32         | 1638.61 |   22.08 |   78.12 |   53.76 |    2.13 |
+    | add-i32              | 2020.85 |   26.65 |   87.73 |   70.25 |    2.21 |
+    | sum-8-i32 *          | 4178.95 |   51.51 |  122.69 |  124.65 |  124.73 |
+    | sum-buffer: 64 B     | 2060.27 |   43.42 |  107.78 |   83.78 |   14.04 |
+    | sum-buffer: 1 KiB    | 2094.26 |   97.19 |  161.94 |  138.32 |   68.80 |
+    | sum-buffer: 16 KiB   | 2986.33 |  964.40 | 1037.58 | 1006.89 |  931.89 |
+    +----------------------+---------+---------+---------+---------+---------+
+
+
+# ---
+
+---
+title: Let's focus on Node.js Fast API vs Koffi
+content: 'Node.js is always faster on optimizable calls.'
+code:
+  language: none
+  content: |
+    +----------------------+--------------------------+
+    | Benchmark            | Throughput vs Koffi      |
+    +----------------------+--------------------------+
+    | identity-i32         |                 +937.09% |
+    | add-i32              |                +1105.01% |
+    | sum-8-i32 *          |                  -58.70% |
+    | sum-buffer: 64 B     |                 +209.20% |
+    | sum-buffer: 1 KiB    |                  +41.25% |
+    | sum-buffer: 16 KiB   |                   +3.49% |
+    +----------------------+--------------------------+
+
+
 # ---
 
 ---

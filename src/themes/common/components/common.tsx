@@ -36,7 +36,11 @@ export function Text({ text, className }: TextProps): VNode {
   )
 
   return (
-    <span className={className ? cleanCssClasses(className) : undefined} dangerouslySetInnerHTML={{ __html: text }} />
+    <span
+      data-pptx="text"
+      className={className ? cleanCssClasses(className) : undefined}
+      dangerouslySetInnerHTML={{ __html: text }}
+    />
   )
 }
 
