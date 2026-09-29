@@ -34,7 +34,9 @@ export interface Item {
   icon?: string
   image?: string
   title?: string
+  titleUrl?: string
   text?: string
+  textUrl?: string
   qr?: string
   code?: CodeDefinition
   className?: ItemClasses

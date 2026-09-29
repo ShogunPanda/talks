@@ -21,7 +21,7 @@ interface GridsProps {
 export function Item(props: ItemProps): VNode {
   const { talk, resolveImage } = useClient()
 
-  const { horizontal, index, icon, image, title, text, qr, code, className, children } = props
+  const { horizontal, index, icon, image, title, titleUrl, text, textUrl, qr, code, className, children } = props
 
   const {
     root: rootClassName,
@@ -71,12 +71,12 @@ export function Item(props: ItemProps): VNode {
         <div className={cleanCssClasses('text', horizontal && 'horizontal', textClassName)}>
           {title && (
             <h4 className={cleanCssClasses('title', horizontal && 'horizontal', titleClassName)}>
-              <Text text={title} />
+              <Text text={title} url={titleUrl} />
             </h4>
           )}
           {text && (
             <p className={cleanCssClasses('contents', contentsClassName)}>
-              <Text text={text} />
+              <Text text={text} url={textUrl} />
             </p>
           )}
           {!text && <p className={cleanCssClasses('contents', contentsClassName)}>{children}</p>}

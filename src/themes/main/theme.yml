@@ -1,5 +1,19 @@
 ---
 style: style.css
+platformatic:
+  title: Platformatic is used by
+  grids:
+    - entries:
+        # - image: '@theme/customer-booking'
+        #   text: 'Article'
+        - image: '@theme/customer-supabase'
+          text: 'Case Study'
+          textUrl: 'https://platformatichq.com/case-studies/supabase'
+        # - image: '@theme/customer-opencode'
+        #   text: 'Article'
+        - image: '@theme/customer-spendesk'
+          text: 'Case Study'
+          textUrl: 'https://platformatichq.com/case-studies/spendesk'
 urls:
   development: 'https://home.cowtech.it:4200'
   production: 'https://talks.paoloinsogna.dev'

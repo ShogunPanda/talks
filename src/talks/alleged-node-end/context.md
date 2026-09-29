@@ -23,19 +23,21 @@ Concluding, the talk projects a bright future for Node.js, identifying growth ar
 
 La vitalità di Node.js si valuta con adozione, manutenzione, sicurezza e partecipazione, non con gli annunci di un presunto successore.
 
-Talk originariamente di Matteo Collina, esplicitamente accreditato nella slide 5; Paolo lo presenta. Grafici, percentuali, roadmap e nomi delle API fotografano versioni e periodi diversi indicati nelle slide: non considerarli automaticamente dati attuali.
+Talk originariamente di Matteo Collina, esplicitamente accreditato nella slide 6; Paolo lo presenta. Grafici, percentuali, roadmap e nomi delle API fotografano versioni e periodi diversi indicati nelle slide: non considerarli automaticamente dati attuali.
 
 Relatore o facilitatori indicati nei metadati: Paolo Insogna. Il tema condiviso presenta Paolo Insogna come membro del Node.js TSC e Principal Engineer; questo dato non va usato per retrodatare ruoli nei racconti storici. Non inventare incontri, risultati o dettagli biografici.
 
 ## Struttura narrativa
 
-La versione corrente contiene **73 slide**.
+La slide 5, subito dopo `hello`, è “Platformatic is used by”: titolo, loghi di Supabase e Spendesk e link ai case study provengono dal tema condiviso (`src/themes/main/theme.yml`). Riutilizzare i loghi originali, senza generarli o aggiungere affermazioni commerciali.
 
-- **Slide 1–5 — Apertura e crediti:** Presentare la domanda e riconoscere l'autore originale.
-- **Slide 6–28 — Adozione e aggiornamenti:** Distinguere popolarità, download e uso di versioni supportate.
-- **Slide 29–37 — Manutenzione e sicurezza:** Rendere visibile il lavoro della comunità.
-- **Slide 38–59 — Evoluzione del runtime:** Mostrare funzionalità concrete e la loro disponibilità temporale.
-- **Slide 60–73 — Governance e partecipazione:** Invitare a contribuire attraverso processi collettivi.
+La versione corrente contiene **74 slide**.
+
+- **Slide 1–6 — Apertura e crediti:** Presentare la domanda e riconoscere l'autore originale.
+- **Slide 7–29 — Adozione e aggiornamenti:** Distinguere popolarità, download e uso di versioni supportate.
+- **Slide 30–38 — Manutenzione e sicurezza:** Rendere visibile il lavoro della comunità.
+- **Slide 39–60 — Evoluzione del runtime:** Mostrare funzionalità concrete e la loro disponibilità temporale.
+- **Slide 61–74 — Governance e partecipazione:** Invitare a contribuire attraverso processi collettivi.
 
 ## Tono e direzione visiva
 
@@ -62,47 +64,47 @@ Questi sono riferimenti sorgente, non immagini da rigenerare automaticamente. `@
 | Slide | Titolo | Riferimento immagine |
 | --- | --- | --- |
 | 3 | Don't count your chickens before they hatch. | `@common/dinosaur-egg.png` |
-| 5 | First of all, let's give credits! | `@common/matteo.png` |
-| 6 | I think we should start by looking at numbers. | `@talk/downloads.png` |
-| 9 | This talk is about a question we are trying to answer… | `@common/questions-2.png` |
-| 10 | Is Node.js dead yet? | `@common/sunset.png` |
-| 11 | Period. | `@common/no.png` |
-| 12 | ...let me tell you a secret! | `@common/lego-astronaut.png` |
-| 13 | A technology born in *1959* is on the RAISE! | `@talk/cobol.png` |
-| 14 | jQuery is used by *94.4%* of the JS-enabled sites | `@talk/jquery.png` |
-| 15 | What about Node.js? | `@common/node.png` |
-| 16 | Node.js is the most popular technology according to StackOverflow | `@talk/node-popularity.png` |
-| 17 | No, bundling npm and Node.js was not a mistake | `@talk/npm.png` |
-| 18 | Module usage also grew | `@talk/modules-downloads.png` |
-| 19 | Half of Node.js downloads are the headers files | `@talk/node-by-os.png` |
-| 20 | What are "headers" downloads? | `@talk/node-headers.png` |
-| 21 | Downloads of the Node.js binary, per OS | `@talk/node-by-binary.png` |
-| 24 | Node.js v16, v14, v12 are massively popular, while they all have known vulnerabilities | `@talk/node-by-version.png` |
-| 25 | If you are not updating Node.js... | `@common/danger-strip.png` |
-| 26 | ...you are putting yourself at risk! | `@common/danger-strip.png` |
-| 27 | Long Term Support (LTS) Schedule | `@talk/lts.png` |
-| 28 | Most teams update their Node.js version every 2 LTS releases | `@talk/node-by-version-latest.png` |
-| 30 | Commits & Pushes to Node.js Core | `@talk/node-commits-pushes.png` |
-| 31 | The number of pull requests is (mostly) stable | `@talk/node-prs.png` |
-| 32 | We work hard to keep you safe! | `@common/danger-strip.png` |
-| 33 | Node.js Security Submissions | `@talk/node-security-submissions.png` |
-| 34 | Average time to first response | `@talk/average-response-time.png` |
-| 35 | Average time to triage | `@talk/average-triage-time.png` |
-| 36 | Node.js was one of the first project sponsored by | `@talk/alpha-omega.png` |
-| 37 | Total funding for Security work | `@talk/security-funding.png` |
-| 38 | What did we ship in the last few years? | `@common/ship.png` |
-| 54 | Are you using the latest Node.js features? | `@common/clock.png` |
-| 55 | What's coming? | `@common/road.png` |
-| 56 | require(esm) | `@common/fry-money.png` |
-| 58 | Typescript | `@common/fry-money.png` |
-| 60 | Node.js is not always relaxing... | `@common/mountain.png` |
-| 61 | ...because we need you! | `@common/start.png` |
-| 62 | Project Governance | `@common/senate.png` |
-| 63 | Immagine — openjs.png | `@talk/openjs.png` |
-| 68 | No one can control Node.js | `@common/scream.png` |
-| 69 | We all have to to COMPROMISE to achieve our objectives | `@common/peace.png` |
-| 70 | Do you want to have a say in the future of Node.js? | `@talk/send-pr.png` |
-| 71 | Start contributing! | `@common/start.png` |
+| 6 | First of all, let's give credits! | `@common/matteo.png` |
+| 7 | I think we should start by looking at numbers. | `@talk/downloads.png` |
+| 10 | This talk is about a question we are trying to answer… | `@common/questions-2.png` |
+| 11 | Is Node.js dead yet? | `@common/sunset.png` |
+| 12 | Period. | `@common/no.png` |
+| 13 | ...let me tell you a secret! | `@common/lego-astronaut.png` |
+| 14 | A technology born in *1959* is on the RAISE! | `@talk/cobol.png` |
+| 15 | jQuery is used by *94.4%* of the JS-enabled sites | `@talk/jquery.png` |
+| 16 | What about Node.js? | `@common/node.png` |
+| 17 | Node.js is the most popular technology according to StackOverflow | `@talk/node-popularity.png` |
+| 18 | No, bundling npm and Node.js was not a mistake | `@talk/npm.png` |
+| 19 | Module usage also grew | `@talk/modules-downloads.png` |
+| 20 | Half of Node.js downloads are the headers files | `@talk/node-by-os.png` |
+| 21 | What are "headers" downloads? | `@talk/node-headers.png` |
+| 22 | Downloads of the Node.js binary, per OS | `@talk/node-by-binary.png` |
+| 25 | Node.js v16, v14, v12 are massively popular, while they all have known vulnerabilities | `@talk/node-by-version.png` |
+| 26 | If you are not updating Node.js... | `@common/danger-strip.png` |
+| 27 | ...you are putting yourself at risk! | `@common/danger-strip.png` |
+| 28 | Long Term Support (LTS) Schedule | `@talk/lts.png` |
+| 29 | Most teams update their Node.js version every 2 LTS releases | `@talk/node-by-version-latest.png` |
+| 31 | Commits & Pushes to Node.js Core | `@talk/node-commits-pushes.png` |
+| 32 | The number of pull requests is (mostly) stable | `@talk/node-prs.png` |
+| 33 | We work hard to keep you safe! | `@common/danger-strip.png` |
+| 34 | Node.js Security Submissions | `@talk/node-security-submissions.png` |
+| 35 | Average time to first response | `@talk/average-response-time.png` |
+| 36 | Average time to triage | `@talk/average-triage-time.png` |
+| 37 | Node.js was one of the first project sponsored by | `@talk/alpha-omega.png` |
+| 38 | Total funding for Security work | `@talk/security-funding.png` |
+| 39 | What did we ship in the last few years? | `@common/ship.png` |
+| 55 | Are you using the latest Node.js features? | `@common/clock.png` |
+| 56 | What's coming? | `@common/road.png` |
+| 57 | require(esm) | `@common/fry-money.png` |
+| 59 | Typescript | `@common/fry-money.png` |
+| 61 | Node.js is not always relaxing... | `@common/mountain.png` |
+| 62 | ...because we need you! | `@common/start.png` |
+| 63 | Project Governance | `@common/senate.png` |
+| 64 | Immagine — openjs.png | `@talk/openjs.png` |
+| 69 | No one can control Node.js | `@common/scream.png` |
+| 70 | We all have to to COMPROMISE to achieve our objectives | `@common/peace.png` |
+| 71 | Do you want to have a say in the future of Node.js? | `@talk/send-pr.png` |
+| 72 | Start contributing! | `@common/start.png` |
 
 ## Brief proposti
 
@@ -114,31 +116,31 @@ Le proposte seguenti sono varianti facoltative associate a slide e titoli reali,
 
 **Uso:** Soggetto compatto nel pannello laterale, margini generosi; evitare dettagli indispensabili ai bordi.
 
-### B. Slide 10 — Is Node.js dead yet?
+### B. Slide 11 — Is Node.js dead yet?
 
 **Concetto proposto:** Un sole basso su una città ancora attiva: evocare il presunto tramonto, non la morte del progetto.
 
 **Uso:** Composizione adatta al formato richiesto, con spazio negativo dove verrà sovrapposto il titolo.
 
-### C. Slide 32 — We work hard to keep you safe!
+### C. Slide 33 — We work hard to keep you safe!
 
 **Concetto proposto:** Una rete di persone mantiene una struttura comune, con pochi punti luminosi di controllo.
 
 **Uso:** Soggetto compatto nel pannello laterale, margini generosi; evitare dettagli indispensabili ai bordi.
 
-### D. Slide 38 — What did we ship in the last few years?
+### D. Slide 39 — What did we ship in the last few years?
 
 **Concetto proposto:** Una cassetta di strumenti che si arricchisce gradualmente di oggetti compatibili.
 
 **Uso:** Soggetto compatto nel pannello laterale, margini generosi; evitare dettagli indispensabili ai bordi.
 
-### E. Slide 62 — Project Governance
+### E. Slide 63 — Project Governance
 
 **Concetto proposto:** Un tavolo circolare con posti equivalenti, senza stemmi o figure identificabili.
 
 **Uso:** Composizione adatta al formato richiesto, con spazio negativo dove verrà sovrapposto il titolo.
 
-### F. Slide 71 — Start contributing!
+### F. Slide 72 — Start contributing!
 
 **Concetto proposto:** Un ingresso aperto verso un laboratorio collettivo; spazio per chi guarda.
 

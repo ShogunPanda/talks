@@ -24,13 +24,15 @@ Relatore o facilitatori indicati nei metadati: Paolo Insogna. Il tema condiviso 
 
 ## Struttura narrativa
 
-La versione corrente contiene **49 slide**. Nessuna nuova slide tecnica è stata aggiunta in questa revisione; il conteggio include «WHAT'S NEXT?» alla posizione 47, prima della citazione e della chiusura.
+La slide 4, subito dopo `hello`, è “Platformatic is used by”: titolo, loghi di Supabase e Spendesk e link ai case study provengono dal tema condiviso (`src/themes/main/theme.yml`). Riutilizzare i loghi originali, senza generarli o aggiungere affermazioni commerciali.
 
-- **Slide 1–9 — Dalla battuta al terminale:** Mostrare perché l'esperimento vale la pena.
-- **Slide 10–19 — Il confine nativo:** Spiegare ABI, API e responsabilità della memoria.
-- **Slide 20–34 — Il gioco funziona:** Separare engine, loop, rendering, input e audio.
-- **Slide 35–39 — Distribuzione:** Spiegare come SEA e librerie native convivono.
-- **Slide 40–49 — Performance e demo:** Collegare fast path, dimostrazione e riuso.
+La versione corrente contiene **50 slide**. Nessuna nuova slide tecnica è stata aggiunta in questa revisione; il conteggio include «WHAT'S NEXT?» alla posizione 48, prima della citazione e della chiusura.
+
+- **Slide 1–10 — Dalla battuta al terminale:** Mostrare perché l'esperimento vale la pena.
+- **Slide 11–20 — Il confine nativo:** Spiegare ABI, API e responsabilità della memoria.
+- **Slide 21–35 — Il gioco funziona:** Separare engine, loop, rendering, input e audio.
+- **Slide 36–40 — Distribuzione:** Spiegare come SEA e librerie native convivono.
+- **Slide 41–50 — Performance e demo:** Collegare fast path, dimostrazione e riuso.
 
 ## Tono e direzione visiva
 
@@ -57,60 +59,60 @@ Questi sono riferimenti sorgente, non immagini da rigenerare automaticamente. `@
 | Slide | Titolo | Riferimento immagine |
 | --- | --- | --- |
 | 2 | STFU! | `@talk/stfu.png` |
-| 4 | This started as a joke... | `@talk/joke.png` |
-| 5 | ... and now we have Doom in the terminal! | `@talk/screenshot.png` |
-| 7 | The terminal is the new UI. | `@talk/opentui.png` |
-| 10 | But this is not only about Doom. | `@talk/bradipi.png` |
-| 12 | Before FFI, we had choices. | `@talk/choice.png` |
-| 14 | Say hello to `node:ffi`. | `@talk/hello-ffi.png` |
-| 17 | FFI is very powerful. | `@talk/ffi-power.png` |
-| 18 | What can go wrong? | `@talk/coder.png` |
-| 20 | OK, but what about Doom? | `@talk/sad.png` |
-| 21 | Say hi to Destino. | `@talk/destino.png` |
-| 25 | Keep the native boundary explicit. | `@talk/attack.png` |
-| 28 | Now render Doom in a terminal. | `@talk/title.png` |
-| 31 | Input is the awkward part. | `@talk/input.png` |
-| 35 | How did we package this monster? | `@talk/packaging.png` |
-| 37 | How would you solve that? | `@talk/solving.png` |
-| 38 | Don't forget about K.I.S.S.ing! | `@talk/kissing.png` |
-| 40 | Then comes performance. | `@talk/performance.png` |
-| 42 | (Very) Fast FFI is now in Node.js. | `@talk/flash.png` |
+| 5 | This started as a joke... | `@talk/joke.png` |
+| 6 | ... and now we have Doom in the terminal! | `@talk/screenshot.png` |
+| 8 | The terminal is the new UI. | `@talk/opentui.png` |
+| 11 | But this is not only about Doom. | `@talk/bradipi.png` |
+| 13 | Before FFI, we had choices. | `@talk/choice.png` |
+| 15 | Say hello to `node:ffi`. | `@talk/hello-ffi.png` |
+| 18 | FFI is very powerful. | `@talk/ffi-power.png` |
+| 19 | What can go wrong? | `@talk/coder.png` |
+| 21 | OK, but what about Doom? | `@talk/sad.png` |
+| 22 | Say hi to Destino. | `@talk/destino.png` |
+| 26 | Keep the native boundary explicit. | `@talk/attack.png` |
+| 29 | Now render Doom in a terminal. | `@talk/title.png` |
+| 32 | Input is the awkward part. | `@talk/input.png` |
+| 36 | How did we package this monster? | `@talk/packaging.png` |
+| 38 | How would you solve that? | `@talk/solving.png` |
+| 39 | Don't forget about K.I.S.S.ing! | `@talk/kissing.png` |
+| 41 | Then comes performance. | `@talk/performance.png` |
+| 43 | (Very) Fast FFI is now in Node.js. | `@talk/flash.png` |
 
 ## Brief proposti
 
 Le proposte seguenti sono varianti facoltative associate a slide e titoli reali, non nuove scelte già approvate.
 
-### A. Slide 4 — This started as a joke...
+### A. Slide 5 — This started as a joke...
 
 **Concetto proposto:** Una piccola idea scherzosa su un banco di lavoro prende forma come macchina funzionante.
 
 **Uso:** Soggetto compatto nel pannello laterale, margini generosi; evitare dettagli indispensabili ai bordi.
 
-### B. Slide 7 — The terminal is the new UI.
+### B. Slide 8 — The terminal is the new UI.
 
 **Concetto proposto:** Un terminale astratto diventa uno spazio tridimensionale senza UI o testo.
 
 **Uso:** Soggetto compatto nel pannello laterale, margini generosi; evitare dettagli indispensabili ai bordi.
 
-### C. Slide 14 — Say hello to `node:ffi`.
+### C. Slide 15 — Say hello to `node:ffi`.
 
 **Concetto proposto:** Un adattatore collega moduli di forme diverse, senza loghi.
 
 **Uso:** Soggetto compatto nel pannello laterale, margini generosi; evitare dettagli indispensabili ai bordi.
 
-### D. Slide 25 — Keep the native boundary explicit.
+### D. Slide 26 — Keep the native boundary explicit.
 
 **Concetto proposto:** Un connettore ben definito collega due sistemi complessi. Il punto è il contratto esplicito, non una promessa di poco codice nativo.
 
 **Uso:** Soggetto compatto nel pannello laterale, margini generosi; evitare dettagli indispensabili ai bordi.
 
-### E. Slide 35 — How did we package this monster?
+### E. Slide 36 — How did we package this monster?
 
 **Concetto proposto:** Una scatola trasportabile contiene componenti ordinati accessibili attraverso un'interfaccia. Evitare la metafora dello svuotamento su disco: gli asset del gioco passano in memoria, mentre i salvataggi hanno uno spazio persistente separato.
 
 **Uso:** Soggetto compatto nel pannello laterale, margini generosi; evitare dettagli indispensabili ai bordi.
 
-### F. Slide 40 — Then comes performance.
+### F. Slide 41 — Then comes performance.
 
 **Concetto proposto:** Un percorso breve fra due macchine, con il costo del passaggio reso visibile da un solo ostacolo.
 

@@ -24,14 +24,16 @@ Relatore o facilitatori indicati nei metadati: Paolo Insogna. Il tema condiviso 
 
 ## Struttura narrativa
 
-La versione corrente contiene **49 slide**.
+La slide 4, subito dopo `hello`, è “Platformatic is used by”: titolo, loghi di Supabase e Spendesk e link ai case study provengono dal tema condiviso (`src/themes/main/theme.yml`). Riutilizzare i loghi originali, senza generarli o aggiungere affermazioni commerciali.
 
-- **Slide 1–8 — Storia e API:** Superare il luogo comune sul single thread.
-- **Slide 9–20 — Comunicazione:** Distinguere messaggi, RPC, clone e transfer.
-- **Slide 21–24 — Piscina:** Mostrare una gestione più semplice del pool.
-- **Slide 25–36 — Memoria condivisa e sincronizzazione:** Spiegare il ponte fra API asincrone e sincrone.
-- **Slide 37–45 — Watt:** Applicare i worker a più servizi.
-- **Slide 46–49 — Community e chiusura:** Lasciare risorse e inviti concreti.
+La versione corrente contiene **50 slide**.
+
+- **Slide 1–9 — Storia e API:** Superare il luogo comune sul single thread.
+- **Slide 10–21 — Comunicazione:** Distinguere messaggi, RPC, clone e transfer.
+- **Slide 22–25 — Piscina:** Mostrare una gestione più semplice del pool.
+- **Slide 26–37 — Memoria condivisa e sincronizzazione:** Spiegare il ponte fra API asincrone e sincrone.
+- **Slide 38–46 — Watt:** Applicare i worker a più servizi.
+- **Slide 47–50 — Community e chiusura:** Lasciare risorse e inviti concreti.
 
 ## Tono e direzione visiva
 
@@ -58,27 +60,27 @@ Questi sono riferimenti sorgente, non immagini da rigenerare automaticamente. `@
 | Slide | Titolo | Riferimento immagine |
 | --- | --- | --- |
 | 2 | There is a lot in the unknown! | `@common/unknown.png` |
-| 4 | First of all, let’s give credits! | `@common/matteo.png` |
-| 5 | Let's start the right way! 🤦‍♂️ | `@talk/chatgpt.png` |
-| 6 | Node.js is (no longer) single threaded ... | `@common/postman.png` |
-| 7 | 2018: "Node.js has threads!" | `@talk/anna.png` |
-| 10 | Do you see how far we have gone? | `@common/pidgeon.png` |
-| 11 | How do threads communicate? | `@talk/worker-threads-communication.png` |
-| 14 | How can threads communicate? | `@common/children.png` |
-| 17 | Is all that easy? | `@common/messages-flood.png` |
-| 21 | Ready for another dive? | `@common/turtle-pool.png` |
-| 22 | Piscina | `@common/piscina.png` |
-| 23 | How to use Piscina | `@common/arrow-right.png` |
-| 24 | Are we done? | `@common/turtles-tired.png` |
-| 25 | Do you know what you can use Worker Threads for? | `@common/batman-superman.png` |
-| 26 | “Everything is impossible until somebody does it” | `@talk/batman.png` |
-| 30 | How? | `@common/batcave.png` |
-| 31 | `Atomics.waitAsync` and `SharedArrayBuffer` | `@talk/shared-array-buffer.png` |
-| 35 | Why this is useful? | `@common/pino.png` |
-| 37 | Are we finally done? | `@common/turtles-escaping.png` |
-| 38 | Introducing Watt, the Node.js application server | `@talk/watt.png` |
-| 44 | Network-less HTTP | `@talk/mesh.png` |
-| 46 | Immagine — bootcamp.png | `@talk/bootcamp.png` |
+| 5 | First of all, let’s give credits! | `@common/matteo.png` |
+| 6 | Let's start the right way! 🤦‍♂️ | `@talk/chatgpt.png` |
+| 7 | Node.js is (no longer) single threaded ... | `@common/postman.png` |
+| 8 | 2018: "Node.js has threads!" | `@talk/anna.png` |
+| 11 | Do you see how far we have gone? | `@common/pidgeon.png` |
+| 12 | How do threads communicate? | `@talk/worker-threads-communication.png` |
+| 15 | How can threads communicate? | `@common/children.png` |
+| 18 | Is all that easy? | `@common/messages-flood.png` |
+| 22 | Ready for another dive? | `@common/turtle-pool.png` |
+| 23 | Piscina | `@common/piscina.png` |
+| 24 | How to use Piscina | `@common/arrow-right.png` |
+| 25 | Are we done? | `@common/turtles-tired.png` |
+| 26 | Do you know what you can use Worker Threads for? | `@common/batman-superman.png` |
+| 27 | “Everything is impossible until somebody does it” | `@talk/batman.png` |
+| 31 | How? | `@common/batcave.png` |
+| 32 | `Atomics.waitAsync` and `SharedArrayBuffer` | `@talk/shared-array-buffer.png` |
+| 36 | Why this is useful? | `@common/pino.png` |
+| 38 | Are we finally done? | `@common/turtles-escaping.png` |
+| 39 | Introducing Watt, the Node.js application server | `@talk/watt.png` |
+| 45 | Network-less HTTP | `@talk/mesh.png` |
+| 47 | Immagine — bootcamp.png | `@talk/bootcamp.png` |
 
 ## Brief proposti
 
@@ -90,31 +92,31 @@ Le proposte seguenti sono varianti facoltative associate a slide e titoli reali,
 
 **Uso:** Soggetto compatto nel pannello laterale, margini generosi; evitare dettagli indispensabili ai bordi.
 
-### B. Slide 6 — Node.js is (no longer) single threaded ...
+### B. Slide 7 — Node.js is (no longer) single threaded ...
 
 **Concetto proposto:** Un coordinatore smista lavoro a postazioni indipendenti.
 
 **Uso:** Soggetto compatto nel pannello laterale, margini generosi; evitare dettagli indispensabili ai bordi.
 
-### C. Slide 17 — Is all that easy?
+### C. Slide 18 — Is all that easy?
 
 **Concetto proposto:** Un canale troppo pieno di messaggi rende visibile il costo della comunicazione.
 
 **Uso:** Soggetto compatto nel pannello laterale, margini generosi; evitare dettagli indispensabili ai bordi.
 
-### D. Slide 21 — Ready for another dive?
+### D. Slide 22 — Ready for another dive?
 
 **Concetto proposto:** Una piscina con corsie ordinate evoca un pool di worker.
 
 **Uso:** Soggetto compatto nel pannello laterale, margini generosi; evitare dettagli indispensabili ai bordi.
 
-### E. Slide 30 — How?
+### E. Slide 31 — How?
 
 **Concetto proposto:** Due postazioni accedono a uno spazio comune alternando un segnale semplice.
 
 **Uso:** Soggetto compatto nel pannello laterale, margini generosi; evitare dettagli indispensabili ai bordi.
 
-### F. Slide 37 — Are we finally done?
+### F. Slide 38 — Are we finally done?
 
 **Concetto proposto:** Una nuova stanza di lavoro si apre oltre una porta che sembrava l'ultima.
 

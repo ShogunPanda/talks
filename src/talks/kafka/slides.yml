@@ -16,6 +16,10 @@ layout: hello
 # ---
 
 ---
+layout: platformatic
+# ---
+
+---
 layout: side
 title: Hello Apache Kafka!
 items:

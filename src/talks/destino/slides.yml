@@ -16,6 +16,10 @@ layout: hello
 # ---
 
 ---
+layout: platformatic
+# ---
+
+---
 layout: separator
 title: |
   This started

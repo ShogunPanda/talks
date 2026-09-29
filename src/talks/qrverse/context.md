@@ -28,13 +28,15 @@ Relatore o facilitatori indicati nei metadati: Paolo Insogna. Il tema condiviso 
 
 ## Struttura narrativa
 
-La versione corrente contiene **43 slide**.
+La slide 4, subito dopo `hello`, è “Platformatic is used by”: titolo, loghi di Supabase e Spendesk e link ai case study provengono dal tema condiviso (`src/themes/main/theme.yml`). Riutilizzare i loghi originali, senza generarli o aggiungere affermazioni commerciali.
 
-- **Slide 1–10 — QR nella vita quotidiana:** Spiegare origine, capacità e resilienza.
-- **Slide 11–19 — Anatomia:** Distinguere marker, metadati e dati.
-- **Slide 20–29 — Servizio applicativo:** Collegare database, URL e frontend.
-- **Slide 30–40 — Rendering:** Seguire helper, matrice dei moduli e SVG.
-- **Slide 41–43 — Risorse e chiusura:** Invitare a usare il progetto.
+La versione corrente contiene **44 slide**.
+
+- **Slide 1–11 — QR nella vita quotidiana:** Spiegare origine, capacità e resilienza.
+- **Slide 12–20 — Anatomia:** Distinguere marker, metadati e dati.
+- **Slide 21–30 — Servizio applicativo:** Collegare database, URL e frontend.
+- **Slide 31–41 — Rendering:** Seguire helper, matrice dei moduli e SVG.
+- **Slide 42–44 — Risorse e chiusura:** Invitare a usare il progetto.
 
 ## Tono e direzione visiva
 
@@ -61,23 +63,23 @@ Questi sono riferimenti sorgente, non immagini da rigenerare automaticamente. `@
 | Slide | Titolo | Riferimento immagine |
 | --- | --- | --- |
 | 2 | Phenomenal cosmic powers... Itty bitty living space. | `@common/genius.png` |
-| 4 | Have you ever heard of QR codes? | `@talk/qr-intro.png` |
-| 5 | Yes, of course! | `@common/troll-white.svg` |
-| 9 | QR Codes make our life way easier ... | `@talk/green-pass.png` |
-| 10 | ... sometimes in a weird way! | `@common/grave.png` |
-| 11 | If we look closely... | `@common/microscope.png` |
-| 12 | Position markers (finders) | `@talk/qr-position.png` |
-| 13 | Alignment markers | `@talk/qr-alignment.png` |
-| 14 | Timing markers | `@talk/qr-timing.png` |
-| 15 | Version information | `@talk/qr-version.png` |
-| 16 | Format information | `@talk/qr-format.png` |
-| 17 | Data and Error correction | `@talk/qr-data-ecc.png` |
-| 18 | Quiet zone | `@talk/qr-quiet.png` |
-| 19 | The best path might not be the straight one | `@talk/qr-fill.png` |
-| 20 | Can we get to the practice please? | `@common/easy.png` |
-| 22 | Let's go! | `@common/start.png` |
-| 30 | Where are the QR codes? | `@common/dog-1.png` |
-| 31 | Let's dive in! | `@common/dive.png` |
+| 5 | Have you ever heard of QR codes? | `@talk/qr-intro.png` |
+| 6 | Yes, of course! | `@common/troll-white.svg` |
+| 10 | QR Codes make our life way easier ... | `@talk/green-pass.png` |
+| 11 | ... sometimes in a weird way! | `@common/grave.png` |
+| 12 | If we look closely... | `@common/microscope.png` |
+| 13 | Position markers (finders) | `@talk/qr-position.png` |
+| 14 | Alignment markers | `@talk/qr-alignment.png` |
+| 15 | Timing markers | `@talk/qr-timing.png` |
+| 16 | Version information | `@talk/qr-version.png` |
+| 17 | Format information | `@talk/qr-format.png` |
+| 18 | Data and Error correction | `@talk/qr-data-ecc.png` |
+| 19 | Quiet zone | `@talk/qr-quiet.png` |
+| 20 | The best path might not be the straight one | `@talk/qr-fill.png` |
+| 21 | Can we get to the practice please? | `@common/easy.png` |
+| 23 | Let's go! | `@common/start.png` |
+| 31 | Where are the QR codes? | `@common/dog-1.png` |
+| 32 | Let's dive in! | `@common/dive.png` |
 
 ## Brief proposti
 
@@ -89,31 +91,31 @@ Le proposte seguenti sono varianti facoltative associate a slide e titoli reali,
 
 **Uso:** Soggetto compatto nel pannello laterale, margini generosi; evitare dettagli indispensabili ai bordi.
 
-### B. Slide 4 — Have you ever heard of QR codes?
+### B. Slide 5 — Have you ever heard of QR codes?
 
 **Concetto proposto:** Un oggetto quotidiano presenta un piccolo simbolo astratto a celle.
 
 **Uso:** Soggetto compatto nel pannello laterale, margini generosi; evitare dettagli indispensabili ai bordi.
 
-### C. Slide 9 — QR Codes make our life way easier ...
+### C. Slide 10 — QR Codes make our life way easier ...
 
 **Concetto proposto:** Un telefono inquadra una matrice geometrica senza schermate testuali.
 
 **Uso:** Soggetto compatto nel pannello laterale, margini generosi; evitare dettagli indispensabili ai bordi.
 
-### D. Slide 11 — If we look closely...
+### D. Slide 12 — If we look closely...
 
 **Concetto proposto:** Una lente ingrandisce tre blocchi angolari di una griglia astratta.
 
 **Uso:** Soggetto compatto nel pannello laterale, margini generosi; evitare dettagli indispensabili ai bordi.
 
-### E. Slide 20 — Can we get to the practice please?
+### E. Slide 21 — Can we get to the practice please?
 
 **Concetto proposto:** Un banco di lavoro prepara componenti per un servizio.
 
 **Uso:** Soggetto compatto nel pannello laterale, margini generosi; evitare dettagli indispensabili ai bordi.
 
-### F. Slide 31 — Let's dive in!
+### F. Slide 32 — Let's dive in!
 
 **Concetto proposto:** Un'immersione metaforica dentro una griglia di moduli grandi.
 

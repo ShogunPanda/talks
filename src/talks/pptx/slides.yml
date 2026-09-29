@@ -18,6 +18,10 @@ notes: |
 # ---
 
 ---
+layout: platformatic
+# ---
+
+---
 layout: default
 title: TEXT-01 — Rich text is still text
 items:

@@ -31,13 +31,15 @@ Relatore o facilitatori indicati nei metadati: Paolo Insogna. Il tema condiviso 
 
 ## Struttura narrativa
 
-La versione corrente contiene **47 slide**.
+La slide 4, subito dopo `hello`, è “Platformatic is used by”: titolo, loghi di Supabase e Spendesk e link ai case study provengono dal tema condiviso (`src/themes/main/theme.yml`). Riutilizzare i loghi originali, senza generarli o aggiungere affermazioni commerciali.
 
-- **Slide 1–12 — Distribuzione e aggiornamenti:** Confrontare batch, polling e push.
-- **Slide 13–19 — Coda e failure:** Definire consegna, retry, DLQ e ricorrenza.
-- **Slide 20–26 — Coordinamento:** Spiegare leader election e advisory lock.
-- **Slide 27–37 — Implementazione:** Seguire schema, loop e consegna HTTP.
-- **Slide 38–47 — Scheduling e chiusura:** Gestire notifiche, retry e creazione eventi.
+La versione corrente contiene **48 slide**.
+
+- **Slide 1–13 — Distribuzione e aggiornamenti:** Confrontare batch, polling e push.
+- **Slide 14–20 — Coda e failure:** Definire consegna, retry, DLQ e ricorrenza.
+- **Slide 21–27 — Coordinamento:** Spiegare leader election e advisory lock.
+- **Slide 28–38 — Implementazione:** Seguire schema, loop e consegna HTTP.
+- **Slide 39–48 — Scheduling e chiusura:** Gestire notifiche, retry e creazione eventi.
 
 ## Tono e direzione visiva
 
@@ -64,22 +66,22 @@ Questi sono riferimenti sorgente, non immagini da rigenerare automaticamente. `@
 | Slide | Titolo | Riferimento immagine |
 | --- | --- | --- |
 | 2 | Don't shoot a fly with a cannon! | `@common/cannon.png` |
-| 6 | How do we keep updated? | `@common/server.png` |
-| 10 | Which one shall we choose? | `@common/alternatives.png` |
-| 11 | Say hello to Webhooks! | `@common/hook.png` |
-| 13 | Let's implement a real one! | `@common/action.png` |
-| 17 | What about failures? | `@common/firefighter.png` |
-| 20 | What about race conditions? | `@common/horses-race.png` |
-| 24 | How do you easily get such a lock implementation? | `@common/algorithm.png` |
-| 25 | PostgreSQL Advisory Locks | `@common/semaphore.png` |
-| 27 | Stop talking please. Show me the code! | `@common/code.png` |
-| 28 | Technical stack | `@common/nodejs.png` |
-| 28 | Technical stack | `@common/postgresql.png` |
-| 28 | Technical stack | `@common/fastify.png` |
-| 34 | And now, let's deliver some messages! | `@common/letter.png` |
-| 38 | Why all those delays? | `@common/confused.png` |
-| 42 | Remember, successful message cannot be retried! | `@common/danger-line.png` |
-| 44 | Mission completed! | `@common/completed.png` |
+| 7 | How do we keep updated? | `@common/server.png` |
+| 11 | Which one shall we choose? | `@common/alternatives.png` |
+| 12 | Say hello to Webhooks! | `@common/hook.png` |
+| 14 | Let's implement a real one! | `@common/action.png` |
+| 18 | What about failures? | `@common/firefighter.png` |
+| 21 | What about race conditions? | `@common/horses-race.png` |
+| 25 | How do you easily get such a lock implementation? | `@common/algorithm.png` |
+| 26 | PostgreSQL Advisory Locks | `@common/semaphore.png` |
+| 28 | Stop talking please. Show me the code! | `@common/code.png` |
+| 29 | Technical stack | `@common/nodejs.png` |
+| 29 | Technical stack | `@common/postgresql.png` |
+| 29 | Technical stack | `@common/fastify.png` |
+| 35 | And now, let's deliver some messages! | `@common/letter.png` |
+| 39 | Why all those delays? | `@common/confused.png` |
+| 43 | Remember, successful message cannot be retried! | `@common/danger-line.png` |
+| 45 | Mission completed! | `@common/completed.png` |
 
 ## Brief proposti
 
@@ -91,31 +93,31 @@ Le proposte seguenti sono varianti facoltative associate a slide e titoli reali,
 
 **Uso:** Soggetto compatto nel pannello laterale, margini generosi; evitare dettagli indispensabili ai bordi.
 
-### B. Slide 6 — How do we keep updated?
+### B. Slide 7 — How do we keep updated?
 
 **Concetto proposto:** Due postazioni devono aggiornarsi su un oggetto condiviso.
 
 **Uso:** Soggetto compatto nel pannello laterale, margini generosi; evitare dettagli indispensabili ai bordi.
 
-### C. Slide 11 — Say hello to Webhooks!
+### C. Slide 12 — Say hello to Webhooks!
 
 **Concetto proposto:** Una notifica parte quando cambia un oggetto, senza interrogazioni continue.
 
 **Uso:** Soggetto compatto nel pannello laterale, margini generosi; evitare dettagli indispensabili ai bordi.
 
-### D. Slide 17 — What about failures?
+### D. Slide 18 — What about failures?
 
 **Concetto proposto:** Una corsia laterale conserva con ordine i messaggi non consegnati.
 
 **Uso:** Soggetto compatto nel pannello laterale, margini generosi; evitare dettagli indispensabili ai bordi.
 
-### E. Slide 20 — What about race conditions?
+### E. Slide 21 — What about race conditions?
 
 **Concetto proposto:** Due mani raggiungono lo stesso oggetto, con un segnale che regola il turno.
 
 **Uso:** Soggetto compatto nel pannello laterale, margini generosi; evitare dettagli indispensabili ai bordi.
 
-### F. Slide 38 — Why all those delays?
+### F. Slide 39 — Why all those delays?
 
 **Concetto proposto:** Un campanello sveglia un lavoratore soltanto quando arriva un nuovo incarico.
 

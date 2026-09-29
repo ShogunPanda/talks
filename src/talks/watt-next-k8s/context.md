@@ -26,14 +26,16 @@ Relatore o facilitatori indicati nei metadati: Paolo Insogna. Il tema condiviso 
 
 ## Struttura narrativa
 
-La versione corrente contiene **39 slide**.
+La slide 4, subito dopo `hello`, è “Platformatic is used by”: titolo, loghi di Supabase e Spendesk e link ai case study provengono dal tema condiviso (`src/themes/main/theme.yml`). Riutilizzare i loghi originali, senza generarli o aggiungere affermazioni commerciali.
 
-- **Slide 1–6 — Parallelismo:** Presentare i worker come capacità del runtime.
-- **Slide 7–14 — Il problema sotto carico:** Separare accettazione, code e costo di coordinamento.
-- **Slide 15–22 — Watt e SO_REUSEPORT:** Spiegare architettura e servizi comuni.
-- **Slide 23–26 — Kubernetes:** Distinguere bilanciamento fra pod e fra worker.
-- **Slide 27–36 — Benchmark:** Interpretare configurazioni e risultati osservati.
-- **Slide 37–39 — Avvio e chiusura:** Lasciare una strada pratica al pubblico.
+La versione corrente contiene **40 slide**.
+
+- **Slide 1–7 — Parallelismo:** Presentare i worker come capacità del runtime.
+- **Slide 8–15 — Il problema sotto carico:** Separare accettazione, code e costo di coordinamento.
+- **Slide 16–23 — Watt e SO_REUSEPORT:** Spiegare architettura e servizi comuni.
+- **Slide 24–27 — Kubernetes:** Distinguere bilanciamento fra pod e fra worker.
+- **Slide 28–37 — Benchmark:** Interpretare configurazioni e risultati osservati.
+- **Slide 38–40 — Avvio e chiusura:** Lasciare una strada pratica al pubblico.
 
 ## Tono e direzione visiva
 
@@ -60,18 +62,18 @@ Questi sono riferimenti sorgente, non immagini da rigenerare automaticamente. `@
 | Slide | Titolo | Riferimento immagine |
 | --- | --- | --- |
 | 2 | There is a lot in the unknown! | `@common/unknown.png` |
-| 4 | Node.js is (no longer) single threaded ... | `@common/postman.png` |
-| 5 | 2018: "Node.js has threads!" | `@talk/anna.png` |
-| 7 | Why do we care? | `@common/why.png` |
-| 8 | How do you scale Node.js in production? | `@common/server.png` |
-| 11 | The Cluster Module: How It Works (2/2) | `@talk/cluster.png` |
-| 15 | We solved this. | `@common/fresh.png` |
-| 17 | Introducing Watt, the Node.js application server | `@talk/mesh.png` |
-| 19 | Watt: Architecture | `@talk/watt.png` |
-| 23 | Deploying Watt in Kubernetes | `@common/turtle-pool.png` |
-| 27 | What about performance? | `@common/car.png` |
-| 30 | Benchmark: Results | `@talk/benchmarks.png` |
-| 33 | How is that possible? | `@common/dog-1.png` |
+| 5 | Node.js is (no longer) single threaded ... | `@common/postman.png` |
+| 6 | 2018: "Node.js has threads!" | `@talk/anna.png` |
+| 8 | Why do we care? | `@common/why.png` |
+| 9 | How do you scale Node.js in production? | `@common/server.png` |
+| 12 | The Cluster Module: How It Works (2/2) | `@talk/cluster.png` |
+| 16 | We solved this. | `@common/fresh.png` |
+| 18 | Introducing Watt, the Node.js application server | `@talk/mesh.png` |
+| 20 | Watt: Architecture | `@talk/watt.png` |
+| 24 | Deploying Watt in Kubernetes | `@common/turtle-pool.png` |
+| 28 | What about performance? | `@common/car.png` |
+| 31 | Benchmark: Results | `@talk/benchmarks.png` |
+| 34 | How is that possible? | `@common/dog-1.png` |
 
 ## Brief proposti
 
@@ -83,31 +85,31 @@ Le proposte seguenti sono varianti facoltative associate a slide e titoli reali,
 
 **Uso:** Soggetto compatto nel pannello laterale, margini generosi; evitare dettagli indispensabili ai bordi.
 
-### B. Slide 7 — Why do we care?
+### B. Slide 8 — Why do we care?
 
 **Concetto proposto:** Due code di lavoro crescono in modo molto diverso a parità di risorse.
 
 **Uso:** Soggetto compatto nel pannello laterale, margini generosi; evitare dettagli indispensabili ai bordi.
 
-### C. Slide 8 — How do you scale Node.js in production?
+### C. Slide 9 — How do you scale Node.js in production?
 
 **Concetto proposto:** Più gruppi di postazioni ricevono richieste da un punto esterno.
 
 **Uso:** Soggetto compatto nel pannello laterale, margini generosi; evitare dettagli indispensabili ai bordi.
 
-### D. Slide 15 — We solved this.
+### D. Slide 16 — We solved this.
 
 **Concetto proposto:** Un passaggio centrale viene sostituito da ingressi diretti ordinati.
 
 **Uso:** Soggetto compatto nel pannello laterale, margini generosi; evitare dettagli indispensabili ai bordi.
 
-### E. Slide 23 — Deploying Watt in Kubernetes
+### E. Slide 24 — Deploying Watt in Kubernetes
 
 **Concetto proposto:** Due livelli di smistamento chiaramente separati, senza etichette.
 
 **Uso:** Soggetto compatto nel pannello laterale, margini generosi; evitare dettagli indispensabili ai bordi.
 
-### F. Slide 27 — What about performance?
+### F. Slide 28 — What about performance?
 
 **Concetto proposto:** Tre configurazioni equivalenti sono preparate su banchi di prova identici.
 

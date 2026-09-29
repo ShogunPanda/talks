@@ -27,6 +27,10 @@ layout: hello
 # ---
 
 ---
+layout: platformatic
+# ---
+
+---
 layout: half
 title: First of all, let's give credits!
 content:

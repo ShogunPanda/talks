@@ -18,6 +18,10 @@ layout: hello
 # ---
 
 ---
+layout: platformatic
+# ---
+
+---
 layout: separator
 title: |
   Node.js is

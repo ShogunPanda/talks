@@ -26,13 +26,15 @@ Relatore o facilitatori indicati nei metadati: Paolo Insogna. Il tema condiviso 
 
 ## Struttura narrativa
 
-La versione corrente contiene **39 slide**.
+La slide 3, subito dopo `hello`, è “Platformatic is used by”: titolo, loghi di Supabase e Spendesk e link ai case study provengono dal tema condiviso (`src/themes/main/theme.yml`). Riutilizzare i loghi originali, senza generarli o aggiungere affermazioni commerciali.
 
-- **Slide 1–9 — Node.js e parallelismo:** Superare la semplificazione del runtime esclusivamente single-threaded.
-- **Slide 10–16 — Osservabilità sotto carico:** Spiegare il limite del monitoraggio nello stesso event loop.
-- **Slide 17–23 — Architettura Watt:** Separare esecuzione applicativa e supervisione.
-- **Slide 24–29 — Guasti e recupero:** Descrivere rilevamento, sostituzione e instradamento.
-- **Slide 30–39 — Più applicazioni e conclusione:** Collegare orchestrazione e uso delle risorse.
+La versione corrente contiene **40 slide**.
+
+- **Slide 1–10 — Node.js e parallelismo:** Superare la semplificazione del runtime esclusivamente single-threaded.
+- **Slide 11–17 — Osservabilità sotto carico:** Spiegare il limite del monitoraggio nello stesso event loop.
+- **Slide 18–24 — Architettura Watt:** Separare esecuzione applicativa e supervisione.
+- **Slide 25–30 — Guasti e recupero:** Descrivere rilevamento, sostituzione e instradamento.
+- **Slide 31–40 — Più applicazioni e conclusione:** Collegare orchestrazione e uso delle risorse.
 
 ## Tono e direzione visiva
 
@@ -58,59 +60,59 @@ Questi sono riferimenti sorgente, non immagini da rigenerare automaticamente. `@
 
 | Slide | Titolo | Riferimento immagine |
 | --- | --- | --- |
-| 3 | Node.js is everywhere | `@common/node-mascot.svg` |
-| 5 | But there's a catch... | `@common/danger-strip.png` |
-| 7 | Is this still true? | `@common/questions-2.png` |
-| 8 | Did you hide in a cave? | `@common/cave.png` |
-| 10 | Running Node.js in production | `@common/server.png` |
-| 12 | How do we monitor health? | `@common/health-monitor.png` |
-| 13 | The Node.js event loop | `@talk/event-loop.png` |
-| 16 | We need a better architecture! | `@common/deserve.png` |
-| 20 | What about metrics? | `@common/metrics.png` |
-| 22 | Monitoring architecture | `@talk/metrics.png` |
-| 24 | Handling failures | `@common/firefighter.png` |
-| 27 | Why is this approach better? | `@common/dog-1.png` |
-| 28 | Because I'm telling you! | `@common/troll-black.svg` |
-| 30 | Not convinced yet? | `@common/fry-money.png` |
-| 32 | Watt in action: the mesh network | `@talk/mesh.png` |
-| 34 | Watt in action: multiple workers | `@talk/multiple-workers.png` |
-| 36 | Please, just let me go! | `@common/dog-2.png` |
+| 4 | Node.js is everywhere | `@common/node-mascot.svg` |
+| 6 | But there's a catch... | `@common/danger-strip.png` |
+| 8 | Is this still true? | `@common/questions-2.png` |
+| 9 | Did you hide in a cave? | `@common/cave.png` |
+| 11 | Running Node.js in production | `@common/server.png` |
+| 13 | How do we monitor health? | `@common/health-monitor.png` |
+| 14 | The Node.js event loop | `@talk/event-loop.png` |
+| 17 | We need a better architecture! | `@common/deserve.png` |
+| 21 | What about metrics? | `@common/metrics.png` |
+| 23 | Monitoring architecture | `@talk/metrics.png` |
+| 25 | Handling failures | `@common/firefighter.png` |
+| 28 | Why is this approach better? | `@common/dog-1.png` |
+| 29 | Because I'm telling you! | `@common/troll-black.svg` |
+| 31 | Not convinced yet? | `@common/fry-money.png` |
+| 33 | Watt in action: the mesh network | `@talk/mesh.png` |
+| 35 | Watt in action: multiple workers | `@talk/multiple-workers.png` |
+| 37 | Please, just let me go! | `@common/dog-2.png` |
 
 ## Brief proposti
 
 Le proposte seguenti sono varianti facoltative associate a slide e titoli reali, non nuove scelte già approvate.
 
-### A. Slide 5 — But there's a catch...
+### A. Slide 6 — But there's a catch...
 
 **Concetto proposto:** Un piccolo ingranaggio sovraccarico accanto a un sistema apparentemente efficiente.
 
 **Uso:** Soggetto compatto nel pannello laterale, margini generosi; evitare dettagli indispensabili ai bordi.
 
-### B. Slide 12 — How do we monitor health?
+### B. Slide 13 — How do we monitor health?
 
 **Concetto proposto:** Un osservatore dentro una ruota occupata non riesce a vedere il resto; metafora del monitoraggio.
 
 **Uso:** Soggetto compatto nel pannello laterale, margini generosi; evitare dettagli indispensabili ai bordi.
 
-### C. Slide 16 — We need a better architecture!
+### C. Slide 17 — We need a better architecture!
 
 **Concetto proposto:** Una torre di controllo esterna a tre postazioni operative distinte.
 
 **Uso:** Soggetto compatto nel pannello laterale, margini generosi; evitare dettagli indispensabili ai bordi.
 
-### D. Slide 24 — Handling failures
+### D. Slide 25 — Handling failures
 
 **Concetto proposto:** Una postazione viene sostituita mentre le altre continuano il lavoro.
 
 **Uso:** Soggetto compatto nel pannello laterale, margini generosi; evitare dettagli indispensabili ai bordi.
 
-### E. Slide 30 — Not convinced yet?
+### E. Slide 31 — Not convinced yet?
 
 **Concetto proposto:** Più laboratori sotto lo stesso tetto, ciascuno con un ingresso distinto.
 
 **Uso:** Composizione adatta al formato richiesto, con spazio negativo dove verrà sovrapposto il titolo.
 
-### F. Slide 36 — Please, just let me go!
+### F. Slide 37 — Please, just let me go!
 
 **Concetto proposto:** Una valigia chiusa accanto a tre oggetti essenziali: preparare il riepilogo.
 

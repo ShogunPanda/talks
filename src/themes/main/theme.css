@@ -728,6 +728,31 @@
   }
 }
 
+.theme\@platformatic {
+  .contents {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 100%;
+  }
+
+  .theme\@items {
+    &.default-gap {
+      row-gap: 6ch;
+    }
+
+    .image {
+      width: 3--sp;
+      height: unset;
+      min-height: unset;
+    }
+
+    a {
+      color: var(--freya-color-white);
+    }
+  }
+}
+
 .theme\@hello {
   display: grid;
   grid-template-areas: 'a b' 'c b';

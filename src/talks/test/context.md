@@ -22,12 +22,14 @@ Relatore o facilitatori indicati nei metadati: Paolo Insogna. Il tema condiviso 
 
 ## Struttura narrativa
 
-La versione corrente contiene **40 slide**.
+La slide 3, subito dopo `hello`, usa il layout `platformatic`: titolo “Platformatic is used by”, loghi di Supabase e Spendesk e link ai case study provengono da `src/themes/main/theme.yml`. Verificare la griglia e i link; riutilizzare i loghi originali senza generarli.
 
-- **Slide 1–6 — Layout di servizio:** Confrontare cover, hello, end e quote.
-- **Slide 7–18 — Contenuti e codice:** Controllare le varianti del layout principale.
-- **Slide 19–27 — Immagini e pannelli:** Confrontare half, image e side.
-- **Slide 28–40 — Separatori:** Controllare varianti cromatiche e decorazioni.
+La versione corrente contiene **41 slide**.
+
+- **Slide 1–7 — Layout di servizio:** Confrontare cover, hello, end e quote.
+- **Slide 8–19 — Contenuti e codice:** Controllare le varianti del layout principale.
+- **Slide 20–28 — Immagini e pannelli:** Confrontare half, image e side.
+- **Slide 29–41 — Separatori:** Controllare varianti cromatiche e decorazioni.
 
 ## Tono e direzione visiva
 
@@ -53,20 +55,19 @@ Questi sono riferimenti sorgente, non immagini da rigenerare automaticamente. `@
 
 | Slide | Titolo | Riferimento immagine |
 | --- | --- | --- |
-| 8 | Default with simple content and image | `@common/panda.png` |
-| 9 | Default with vertical items | `@common/panda.png` |
-| 10 | Default with horizontal items | `@common/panda.png` |
-| 14 | Default with grid | `@common/panda.png` |
-| 19 | Half with simple content | `@common/panda.png` |
-| 20 | Half with vertical items, reversed | `@common/panda.png` |
-| 21 | Image with no content | `@common/panda.png` |
+| 9 | Default with simple content and image | `@common/panda.png` |
+| 10 | Default with vertical items | `@common/panda.png` |
+| 11 | Default with horizontal items | `@common/panda.png` |
+| 15 | Default with grid | `@common/panda.png` |
+| 20 | Half with simple content | `@common/panda.png` |
+| 21 | Half with vertical items, reversed | `@common/panda.png` |
 | 22 | Image with no content | `@common/panda.png` |
-| 23 | Image with content | `@common/panda.png` |
-| 24 | Side with simple content | `@common/panda.png` |
-| 25 | Side with vertical items | `@common/panda.png` |
-| 26 | Side with highlight | `@common/panda.png` |
-| 27 | Side with code | `@common/panda.png` |
-| 28 | Irure consectetur officia aliquip nostrud. | `@common/panda.png` |
+| 23 | Image with no content | `@common/panda.png` |
+| 24 | Image with content | `@common/panda.png` |
+| 25 | Side with simple content | `@common/panda.png` |
+| 26 | Side with vertical items | `@common/panda.png` |
+| 27 | Side with highlight | `@common/panda.png` |
+| 28 | Side with code | `@common/panda.png` |
 | 29 | Irure consectetur officia aliquip nostrud. | `@common/panda.png` |
 | 30 | Irure consectetur officia aliquip nostrud. | `@common/panda.png` |
 | 31 | Irure consectetur officia aliquip nostrud. | `@common/panda.png` |
@@ -79,30 +80,31 @@ Questi sono riferimenti sorgente, non immagini da rigenerare automaticamente. `@
 | 38 | Irure consectetur officia aliquip nostrud. | `@common/panda.png` |
 | 39 | Irure consectetur officia aliquip nostrud. | `@common/panda.png` |
 | 40 | Irure consectetur officia aliquip nostrud. | `@common/panda.png` |
+| 41 | Irure consectetur officia aliquip nostrud. | `@common/panda.png` |
 
 ## Brief proposti
 
 Le proposte seguenti sono varianti facoltative associate a slide e titoli reali, non nuove scelte già approvate.
 
-### A. Slide 8 — Default with simple content and image
+### A. Slide 9 — Default with simple content and image
 
 **Concetto proposto:** Un unico oggetto geometrico grande con margini regolari per confrontare il layout.
 
 **Uso:** Composizione adatta al formato richiesto, con spazio negativo dove verrà sovrapposto il titolo.
 
-### B. Slide 21 — Image with no content
+### B. Slide 22 — Image with no content
 
 **Concetto proposto:** Una scena panoramica astratta con aree chiare e scure utili a provare il contrasto.
 
 **Uso:** Composizione adatta al formato richiesto, con spazio negativo dove verrà sovrapposto il titolo.
 
-### C. Slide 24 — Side with simple content
+### C. Slide 25 — Side with simple content
 
 **Concetto proposto:** Un soggetto verticale centrato adatto al pannello laterale.
 
 **Uso:** Soggetto compatto nel pannello laterale, margini generosi; evitare dettagli indispensabili ai bordi.
 
-### D. Slide 28 — Irure consectetur officia aliquip nostrud.
+### D. Slide 29 — Irure consectetur officia aliquip nostrud.
 
 **Concetto proposto:** Una composizione molto semplice per confrontare titolo e immagine nel separatore.
 

@@ -11,6 +11,7 @@ import { type Slide } from '../../common/models.ts'
 
 interface TextProps {
   text: string
+  url?: string
   className?: string
 }
 
@@ -27,7 +28,7 @@ export function wrapTalkClasses(...klasses: (CSSClassToken | CSSClassToken[])[])
   )
 }
 
-export function Text({ text, className }: TextProps): VNode {
+export function Text({ text, url, className }: TextProps): VNode {
   const { parseContent } = useClient()
 
   text = parseContent(text).replaceAll(
@@ -35,7 +36,16 @@ export function Text({ text, className }: TextProps): VNode {
     (_: string, className: string) => ` class="${cleanCssClasses(wrapTalkClasses(className))}"`
   )
 
-  return (
+  return url ? (
+    <a
+      href={url}
+      target="_blank"
+      rel="noopener noreferrer"
+      data-pptx="text"
+      className={className ? cleanCssClasses(className) : undefined}
+      dangerouslySetInnerHTML={{ __html: text }}
+    />
+  ) : (
     <span
       data-pptx="text"
       className={className ? cleanCssClasses(className) : undefined}

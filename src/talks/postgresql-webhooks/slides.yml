@@ -16,6 +16,10 @@ layout: hello
 # ---
 
 ---
+layout: platformatic
+# ---
+
+---
 title: Distributed data in a distributed world
 items:
   entries:

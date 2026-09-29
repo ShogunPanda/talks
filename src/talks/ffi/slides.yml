@@ -20,6 +20,10 @@ layout: hello
 # ---
 
 ---
+layout: platformatic
+# ---
+
+---
 layout: separator
 title: |
   Your next dependency
@@ -668,6 +672,31 @@ decorations:
 # ---
 
 ---
+layout: image
+title: |
+  Was it worth it?
+image:
+  url: '@talk/worth'
+className:
+  title: theme@bg-amber theme@fg-black
+# ---
+
+---
+title: Reading the benchmark columns
+items:
+  entries:
+    - icon: cubes
+      title: ffi-rs / Koffi
+      text: Third-party FFI libraries for Node.js.
+    - icon: exchange-alt
+      title: Generic / Shared
+      text: C++ argument conversion vs a reusable JS/C++ argument buffer; both call through libffi.
+    - icon: bolt
+      title: Fast API
+      text: V8 fast calls through a generated native adapter, when eligible.
+# ---
+
+---
 title: How fast is Fast FFI?
 content: 'Benchmarks run on a Apple M2 Max · Median ns/call, lower is better · 15 runs'
 code:
@@ -678,7 +707,7 @@ code:
     +----------------------+---------+---------+---------+---------+---------+
     | identity-i32         | 1638.61 |   22.08 |   78.12 |   53.76 |    2.13 |
     | add-i32              | 2020.85 |   26.65 |   87.73 |   70.25 |    2.21 |
-    | sum-8-i32 *          | 4178.95 |   51.51 |  122.69 |  124.65 |  124.73 |
+    | sum-8-i32            | 4178.95 |   51.51 |  122.69 |  124.65 |  124.73 |
     | sum-buffer: 64 B     | 2060.27 |   43.42 |  107.78 |   83.78 |   14.04 |
     | sum-buffer: 1 KiB    | 2094.26 |   97.19 |  161.94 |  138.32 |   68.80 |
     | sum-buffer: 16 KiB   | 2986.33 |  964.40 | 1037.58 | 1006.89 |  931.89 |
@@ -689,7 +718,7 @@ code:
 
 ---
 title: Let's focus on Node.js Fast API vs Koffi
-content: 'Node.js is always faster on optimizable calls.'
+content: 'Node.js wins on the fast-path cases measured here; Koffi wins on the eight-argument fallback.'
 code:
   language: none
   content: |
@@ -698,7 +727,7 @@ code:
     +----------------------+--------------------------+
     | identity-i32         |                 +937.09% |
     | add-i32              |                +1105.01% |
-    | sum-8-i32 *          |                  -58.70% |
+    | sum-8-i32            |                  -58.70% |
     | sum-buffer: 64 B     |                 +209.20% |
     | sum-buffer: 1 KiB    |                  +41.25% |
     | sum-buffer: 16 KiB   |                   +3.49% |

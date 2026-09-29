@@ -28,13 +28,15 @@ Relatore o facilitatori indicati nei metadati: Paolo Insogna. Il tema condiviso 
 
 ## Struttura narrativa
 
-La versione corrente contiene **34 slide**.
+La slide 4, subito dopo `hello`, è “Platformatic is used by”: titolo, loghi di Supabase e Spendesk e link ai case study provengono dal tema condiviso (`src/themes/main/theme.yml`). Riutilizzare i loghi originali, senza generarli o aggiungere affermazioni commerciali.
 
-- **Slide 1–10 — Protocollo Kafka:** Spiegare partizioni, gruppi e complessità delle versioni.
-- **Slide 11–19 — Costruire un client:** Motivare il progetto e il metodo di ricerca.
-- **Slide 20–24 — Scelte API:** Collegare DX, tipi, serializzazione e stream.
-- **Slide 25–32 — Codice e misure:** Seguire produzione, consumo e risultati.
-- **Slide 33–34 — Chiusura:** Invitare a esplorare il progetto.
+La versione corrente contiene **35 slide**.
+
+- **Slide 1–11 — Protocollo Kafka:** Spiegare partizioni, gruppi e complessità delle versioni.
+- **Slide 12–20 — Costruire un client:** Motivare il progetto e il metodo di ricerca.
+- **Slide 21–25 — Scelte API:** Collegare DX, tipi, serializzazione e stream.
+- **Slide 26–33 — Codice e misure:** Seguire produzione, consumo e risultati.
+- **Slide 34–35 — Chiusura:** Invitare a esplorare il progetto.
 
 ## Tono e direzione visiva
 
@@ -61,17 +63,17 @@ Questi sono riferimenti sorgente, non immagini da rigenerare automaticamente. `@
 | Slide | Titolo | Riferimento immagine |
 | --- | --- | --- |
 | 2 | Let's dive into the unknown! | `@common/dive.png` |
-| 4 | Hello Apache Kafka! | `@common/kafka.png` |
-| 8 | That's a lot to handle ... | `@common/information-overload.png` |
-| 9 | ...and it got much worse! 😭 | `@common/missing-puzzle.png` |
-| 11 | What about Node.js? | `@common/node.png` |
-| 15 | We needed a better solution ... | `@common/deserve.png` |
-| 16 | ... so we started fresh! | `@common/fresh.png` |
-| 18 | How did we build a client with no documentation available? | `@common/questions-2.png` |
-| 25 | Show the code! | `@common/fry-money.png` |
-| 28 | What about performance? | `@common/car.png` |
-| 30 | Producer API | `@talk/benchmark-producer.png` |
-| 32 | Consumer API | `@talk/benchmark-consumer.png` |
+| 5 | Hello Apache Kafka! | `@common/kafka.png` |
+| 9 | That's a lot to handle ... | `@common/information-overload.png` |
+| 10 | ...and it got much worse! 😭 | `@common/missing-puzzle.png` |
+| 12 | What about Node.js? | `@common/node.png` |
+| 16 | We needed a better solution ... | `@common/deserve.png` |
+| 17 | ... so we started fresh! | `@common/fresh.png` |
+| 19 | How did we build a client with no documentation available? | `@common/questions-2.png` |
+| 26 | Show the code! | `@common/fry-money.png` |
+| 29 | What about performance? | `@common/car.png` |
+| 31 | Producer API | `@talk/benchmark-producer.png` |
+| 33 | Consumer API | `@talk/benchmark-consumer.png` |
 
 ## Brief proposti
 
@@ -83,31 +85,31 @@ Le proposte seguenti sono varianti facoltative associate a slide e titoli reali,
 
 **Uso:** Soggetto compatto nel pannello laterale, margini generosi; evitare dettagli indispensabili ai bordi.
 
-### B. Slide 8 — That's a lot to handle ...
+### B. Slide 9 — That's a lot to handle ...
 
 **Concetto proposto:** Pochi ingranaggi con interfacce differenti richiedono coordinamento.
 
 **Uso:** Soggetto compatto nel pannello laterale, margini generosi; evitare dettagli indispensabili ai bordi.
 
-### C. Slide 9 — ...and it got much worse! 😭
+### C. Slide 10 — ...and it got much worse! 😭
 
 **Concetto proposto:** Un puzzle incompleto accanto a molti frammenti di documentazione senza testo.
 
 **Uso:** Soggetto compatto nel pannello laterale, margini generosi; evitare dettagli indispensabili ai bordi.
 
-### D. Slide 16 — ... so we started fresh!
+### D. Slide 17 — ... so we started fresh!
 
 **Concetto proposto:** Un banco nuovo riusa gli strumenti utili e ordina quelli sparsi.
 
 **Uso:** Soggetto compatto nel pannello laterale, margini generosi; evitare dettagli indispensabili ai bordi.
 
-### E. Slide 18 — How did we build a client with no documentation available?
+### E. Slide 19 — How did we build a client with no documentation available?
 
 **Concetto proposto:** Una lente collega frammenti sparsi prima di costruire il sistema.
 
 **Uso:** Soggetto compatto nel pannello laterale, margini generosi; evitare dettagli indispensabili ai bordi.
 
-### F. Slide 28 — What about performance?
+### F. Slide 29 — What about performance?
 
 **Concetto proposto:** Flussi comparabili attraversano canali distinti, senza podi o numeri di velocità.
 
