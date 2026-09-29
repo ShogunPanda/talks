@@ -741,6 +741,10 @@
       row-gap: 6ch;
     }
 
+    .large {
+      grid-column: 1 / span 2;
+    }
+
     .image {
       width: 3--sp;
       height: unset;

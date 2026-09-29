@@ -4,16 +4,19 @@ platformatic:
   title: Platformatic is used by
   grids:
     - entries:
-        # - image: '@theme/customer-booking'
-        #   text: 'Article'
+        - image: '@theme/customer-booking'
+          text: 'Article'
+          textUrl: 'https://medium.com/booking-com-development/node-js-at-scale-rebalanced-how-we-cut-cost-by-38-62ce247a3002'
+          className:
+            root: 'large'
         - image: '@theme/customer-supabase'
           text: 'Case Study'
           textUrl: 'https://platformatichq.com/case-studies/supabase'
-        # - image: '@theme/customer-opencode'
-        #   text: 'Article'
         - image: '@theme/customer-spendesk'
           text: 'Case Study'
           textUrl: 'https://platformatichq.com/case-studies/spendesk'
+        # - image: '@theme/customer-opencode'
+        #   text: 'Article'
 urls:
   development: 'https://home.cowtech.it:4200'
   production: 'https://talks.paoloinsogna.dev'

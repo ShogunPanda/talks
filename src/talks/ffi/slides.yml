@@ -746,6 +746,13 @@ decorations:
 # ---
 
 ---
+layout: image
+title: Challenge won!
+image:
+  url: '@theme/all-cats'
+# ---
+
+---
 layout: quote
 quote:
   sentence: The best way to predict the future is to invent it.
