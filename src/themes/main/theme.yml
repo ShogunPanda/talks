@@ -1,7 +1,7 @@
 ---
 style: style.css
 platformatic:
-  title: Platformatic is used by
+  title: Some companies trusting us
   grids:
     - entries:
         - image: '@theme/customer-booking'
