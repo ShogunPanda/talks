@@ -1,4 +1,4 @@
-import { type BaseSlide, type CodeDefinition } from '@perseveranza-pets/freya'
+import type { BaseSlide, CodeDefinition } from '@perseveranza-pets/freya'
 
 export interface ItemClasses {
   root?: string

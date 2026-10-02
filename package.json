@@ -27,33 +27,28 @@
     "lint": "eslint --cache",
     "lint:css": "stylelint --cache src/**/*.css",
     "deploy": "freya deploy",
-    "postdeploy": "node --import tsx src/scripts/postdeploy.ts && cd dist/deploy && netlify deploy --site $NETLIFY_SITE_ID --dir site --prod",
-    "verify": "node --import tsx src/scripts/verify.ts",
+    "postdeploy": "freya postdeploy && cd dist/deploy && netlify deploy --site $NETLIFY_SITE_ID --dir site --prod",
     "list": "find src/talks -type d -depth 1 -exec basename {} \\; | sort",
     "fix-downloads-visibility": "nodemon -e jpg,png,webp --exec chflags nohidden .",
-    "generate-cfp": "node --import tsx src/scripts/generate-cfp.ts"
+    "generate-cfp": "freya generate-cfp"
   },
   "dependencies": {
-    "@fortawesome/free-brands-svg-icons": "^7.1.0",
-    "@fortawesome/free-solid-svg-icons": "^7.1.0",
-    "@perseveranza-pets/freya": "^0.78.0",
-    "@perseveranza-pets/dante": "^0.62.2",
-    "preact": "link:../../../Public/freya/node_modules/preact",
-    "preact-render-to-string": "link:../../../Public/freya/node_modules/preact-render-to-string",
-    "http-errors-enhanced": "link:../../../Public/dante/node_modules/http-errors-enhanced"
+    "@fortawesome/free-brands-svg-icons": "^7.3.1",
+    "@fortawesome/free-solid-svg-icons": "^7.3.1",
+    "@perseveranza-pets/dante": "^2.1.2",
+    "@perseveranza-pets/freya": "^1.1.1"
   },
   "devDependencies": {
-    "@perseveranza/terreno": "^7.0.1",
-    "@cowtech/eslint-config": "^11.0.0",
-    "@cowtech/stylelint-config": "^2.0.5",
-    "@cowtech/typescript-config": "^0.2.5",
-    "@types/node": "^24.10.1",
-    "commander": "^14.0.2",
-    "eslint": "^9.39.1",
-    "playwright": "^1.57.0",
-    "prettier": "^3.6.2",
-    "stylelint": "^16.26.0",
-    "tsx": "^4.20.6",
-    "typescript": "^5.9.3"
+    "@cowtech/eslint-config": "^12.0.1",
+    "@cowtech/stylelint-config": "^3.0.0",
+    "@cowtech/typescript-config": "^1.0.0",
+    "@eslint/compat": "^2.1.1",
+    "@types/node": "^26.6.4",
+    "@typescript/native": "npm:typescript@^7.0.2",
+    "eslint": "^10.11.0",
+    "pino": "^10.3.1",
+    "prettier": "^3.9.9",
+    "stylelint": "^17.16.0",
+    "typescript": "npm:@typescript/typescript6@^6.0.2"
   }
 }
