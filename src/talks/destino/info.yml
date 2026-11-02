@@ -13,3 +13,8 @@ document:
   createdAt: '2026-07-04'
   author: common.author
   company: common.company
+
+cover:
+  color: '#F3B7AC'
+  icon: gamepad
+  text: 'Doom meets your terminal.'

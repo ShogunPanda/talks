@@ -17,3 +17,8 @@ document:
   author: common.author
   company: common.company
   branding: false
+
+cover:
+  color: '#F2DDBA'
+  icon: cat
+  text: 'Cats deserve APIs too.'

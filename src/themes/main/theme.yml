@@ -1,5 +1,5 @@
 ---
-style: style.css
+style: theme.css
 platformatic:
   title: Some companies trusting us
   grids:

@@ -15,3 +15,10 @@ document:
   author: common.author
   company: common.company
   branding: false
+
+cover:
+  color: '#D5DFB1'
+  icon: yin-yang
+  text: |-
+    Better balance.
+    Better code.

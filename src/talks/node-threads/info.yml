@@ -12,3 +12,8 @@ document:
   createdAt: '2025-02-15'
   author: common.author
   company: common.company
+
+cover:
+  color: '#B5DFD7'
+  icon: microchip
+  text: 'More than one thread.'

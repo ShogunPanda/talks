@@ -12,3 +12,8 @@ document:
   company: common.company
   archived: true
   branding: false
+
+cover:
+  color: '#C5D7E2'
+  icon: magnifying-glass
+  text: 'Inside the HTTP engine.'

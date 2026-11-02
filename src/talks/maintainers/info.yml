@@ -12,3 +12,8 @@ document:
   author: common.author
   company: common.company
   branding: false
+
+cover:
+  color: '#F2C4BE'
+  icon: hand-holding-heart
+  text: 'Code has a human side.'

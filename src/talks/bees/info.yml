@@ -22,3 +22,10 @@ document:
   author: common.author
   company: common.company
   branding: false
+
+cover:
+  color: '#F6D991'
+  icon: cubes
+  text: |-
+    Less SDK.
+    More API.

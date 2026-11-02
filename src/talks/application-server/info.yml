@@ -11,3 +11,8 @@ document:
   createdAt: '2025-11-09'
   author: common.author
   company: common.company
+
+cover:
+  color: '#C8D3F5'
+  icon: server
+  text: 'Give Node.js room.'

@@ -1,6 +1,11 @@
 {
   "extends": "@cowtech/typescript-config",
-  "compilerOptions": { "outDir": "./dist", "rootDir": "./src", "jsx": "react-jsx", "jsxImportSource": "preact" },
+  "compilerOptions": {
+    "outDir": "./dist",
+    "rootDir": "./src",
+    "jsx": "react-jsx",
+    "jsxImportSource": "@perseveranza-pets/freya/preact"
+  },
   "include": ["src/**/*.ts", "src/**/*.tsx"],
   "exclude": ["node_modules", "dist"]
 }

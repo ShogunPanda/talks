@@ -14,3 +14,8 @@ document:
   author: common.author
   company: common.company
   branding: false
+
+cover:
+  color: '#E7BFA8'
+  icon: gears
+  text: 'HTTP gets a fresh start.'

@@ -19,3 +19,8 @@ document:
   createdAt: '2025-01-24'
   author: common.author
   company: common.company
+
+cover:
+  color: '#B8CEE8'
+  icon: database
+  text: 'Your database delivers.'

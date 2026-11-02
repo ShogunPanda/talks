@@ -6,6 +6,8 @@ notes: |
   Controllare corner SVG, logo, titolo centrato, QR con icone sovrapposte,
   sfondo arrotondato dei QR e link. Le etichette sono quelle native del tema;
   il link PDF non implica che questo talk abbia già un PDF pubblicato.
+
+
 # ---
 
 ---
@@ -15,6 +17,8 @@ notes: |
   HELLO-01. Origine: layout main/hello e common.author.
   Il layout genera il proprio titolo: l'identificativo resta nelle note.
   Controllare griglia, foto location, ruoli inline, font misti, QR e link social.
+
+
 # ---
 
 ---
@@ -40,6 +44,8 @@ notes: |
   br ed emoji di kafka. Sup/sub aggiunti come controllo della baseline.
   Em nel tema è blu e grassetto, non corsivo. Verificare font fallback degli emoji,
   link, accenti, barrato e ritorni a capo, senza appiattire il testo.
+
+
 # ---
 
 ---
@@ -54,6 +60,8 @@ notes: |
   TEXT-02. Origine: alleged-node-end, titolo sulle vulnerabilità delle versioni Node.js.
   Classe originale talk@danger-banner. Controllare uppercase, padding, sfondo,
   angoli e allineamento della baseline rispetto al testo esterno al banner.
+
+
 # ---
 
 ---
@@ -64,9 +72,13 @@ items:
     - title: A deliberately wrapping inline banner
       text: 'The decorated span should wrap naturally. Its fragments are the test, not an overflow to hide.'
 notes: |
-  TEXT-03. Stress case derivato da TEXT-02, con lo stesso font e lo stesso layout.
+  ## TEXT-03. 
+
+  Stress **case derivato** da __TEXT-02__, ~con lo stesso font~ e lo stesso layout.
   L'andata a capo del banner è intenzionale. Controllare i rettangoli dei frammenti,
   padding, sfondo e distanza tra righe. Nessuna riduzione artificiale del titolo.
+
+
 # ---
 
 ---
@@ -83,6 +95,8 @@ highlight:
 notes: |
   TEXT-04. Origine: layout main/side con highlight e reset delle liste del tema.
   Confrontare giustificazione, ultima riga, interlinea, margini e rientri dei bullet.
+
+
 # ---
 
 ---
@@ -96,6 +110,8 @@ notes: |
   TEXT-05. Origine: layout main/quote, variante light del talk test.
   Controllare Bitter corsivo, virgolette tipografiche, autore e decorazioni SVG.
   Il tema dichiara font normali: confrontare anche il corsivo sintetizzato.
+
+
 # ---
 
 ---
@@ -110,6 +126,8 @@ notes: |
   TEXT-06. Origine: layout main/hero, variante tiny già prevista dal tema.
   Entrambi i testi devono essere maiuscoli per effetto CSS, con line-height 1.
   Verificare conversione delle unità custom e centratura del blocco complessivo.
+
+
 # ---
 
 ---
@@ -134,6 +152,8 @@ notes: |
   CODE-01. Origine: layout main/code e numerazione del talk test.
   Controllare token, spazi consecutivi, rientri, righe vuote e allineamento dei numeri
   a una e due cifre. Questo è il riferimento senza evidenziazioni.
+
+
 # ---
 
 ---
@@ -158,6 +178,8 @@ code:
 notes: |
   CODE-02. Stesso codice di CODE-01 con righe 3, 7 e 8 evidenziate.
   Controllare opacity 0.5 delle altre righe, incluso sfondo e numerazione.
+
+
 # ---
 
 ---
@@ -181,6 +203,8 @@ notes: |
   CODE-03. Origine: classi talk@line-not-highlighted e talk@line-highlighted del talk test.
   Rosso e verde sono intenzionali. Controllare continuità dello sfondo sotto gli span,
   numerazione e comportamento della riga lunga al bordo del blocco.
+
+
 # ---
 
 ---
@@ -194,6 +218,8 @@ className:
 notes: |
   IMAGE-01. Origine: layout main/image del talk test.
   Controllare background-size cover, ritaglio, proporzioni e callout in primo piano.
+
+
 # ---
 
 ---
@@ -207,6 +233,8 @@ className:
 notes: |
   IMAGE-02. Stesso asset di IMAGE-01. Origine CSS: alleged-node-end, talk@send-pr.
   L'immagine deve essere centrata, interamente visibile e su sfondo nero.
+
+
 # ---
 
 ---
@@ -220,6 +248,8 @@ className:
 notes: |
   IMAGE-03. Origine: compiling-bundling, talk@logo, background-size 3--sp 3--sp.
   La deformazione dell'asset non quadrato è intenzionale e va conservata.
+
+
 # ---
 
 ---
@@ -233,6 +263,8 @@ className:
 notes: |
   IMAGE-04. Origine: compiling-bundling, talk@logo.auto, background-size 3--sp auto.
   Confrontare con IMAGE-03: stessa larghezza ma proporzioni originali preservate.
+
+
 # ---
 
 ---
@@ -253,6 +285,8 @@ className:
 notes: |
   IMAGE-05. Origine: layout main/half reversed del talk test.
   Controllare ordine visivo diverso dal DOM, ritaglio e dimensione dell'area immagine.
+
+
 # ---
 
 ---
@@ -267,6 +301,8 @@ options:
 notes: |
   IMAGE-06. Origine: variante troll del layout main/separator.
   Controllare background-size calc(min(85vh, 5--sp)), centratura e SVG come background.
+
+
 # ---
 
 ---
@@ -293,6 +329,8 @@ notes: |
   STACK-01. Origine: composizione talk@vite di compiling-bundling.
   Vite deve stare davanti ai due loghi laterali. Controllare z-index,
   posizionamento assoluto, trasparenza degli asset e ordine di pittura.
+
+
 # ---
 
 ---
@@ -311,6 +349,8 @@ decorations:
 notes: |
   STACK-02. Origine: slowloris, talk@ten-years applicato al numero decorativo.
   Controllare offset negativi, font 300--pt, clipping al bordo e z-index -1.
+
+
 # ---
 
 ---
@@ -329,6 +369,8 @@ notes: |
   SVG-01. Origine: colori del talk test e icone del layout quote.
   La stessa definizione SVG è referenziata da due use; primaria rossa, secondaria
   verde e ruotata di 180 gradi. Controllare colori per istanza e clipping.
+
+
 # ---
 
 ---
@@ -350,6 +392,8 @@ notes: |
   QR-01. Origine: item orizzontali del talk test.
   Controllare dimensioni relative, separatori verticali e qualità del QR.
   I QR con logo sono già coperti da COVER-01 e dai permalink del tema.
+
+
 # ---
 
 ---
@@ -375,6 +419,8 @@ notes: |
   ALPHA-01. Origine: postgresql-webhooks, talk@disabled.
   Al centro il gruppo ha opacity 0.2 e l'icona un ulteriore 0.2.
   A destra solo l'icona ha opacity 0.2. Confrontare anche colore grigio e testo.
+
+
 # ---
 
 ---
@@ -393,6 +439,8 @@ grids:
 notes: |
   GRID-01. Origine: griglie del talk test e talk@icons-grid di compiling-bundling.
   Controllare tre colonne, gap in ch, altezze diverse e centratura degli elementi.
+
+
 # ---
 
 ---
@@ -412,6 +460,8 @@ notes: |
   LAYOUT-01. Origine: varianti reverse del layout main/separator.
   Il pannello immagine passa a sinistra e il sottotitolo precede il titolo.
   Controllare grid-template-areas, column-reverse e margini delle varianti native.
+
+
 # ---
 
 ---
@@ -443,6 +493,8 @@ notes: |
   MIX-01. Combinazione nel layout main/side: banner alleged-node-end,
   opacità postgresql-webhooks, codice del tema e numero decorativo dietro il testo.
   Controllare insieme ordine di pittura, testo formattato, clipping e contrasto.
+
+
 # ---
 
 ---
@@ -455,4 +507,5 @@ notes: |
   MIX-02. Origine: layout main/end.
   Controllare background cover, callout, footer Grid, nowrap dei contatti,
   bordo sinistro del logo, link e pesi tipografici. Feedback tramite ID e screenshot.
+
 # ---

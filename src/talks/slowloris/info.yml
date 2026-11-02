@@ -17,3 +17,10 @@ document:
   author: common.author
   company: common.company
   branding: false
+
+cover:
+  color: '#E4BAC6'
+  icon: shield-halved
+  text: |-
+    Slow requests.
+    Real threats.

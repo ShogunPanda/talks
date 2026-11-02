@@ -7,3 +7,8 @@ document:
   company: common.company
   branding: true
   hidden: true
+
+cover:
+  color: '#DDE2E5'
+  icon: flask
+  text: 'Let the experiments begin.'

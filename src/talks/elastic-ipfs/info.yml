@@ -23,3 +23,10 @@ document:
   company: common.company
   archived: true
   branding: false
+
+cover:
+  color: '#BCDDF2'
+  icon: cloud-arrow-up
+  text: |-
+    More traffic.
+    Less pain.

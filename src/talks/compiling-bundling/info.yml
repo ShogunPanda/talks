@@ -21,3 +21,10 @@ document:
   company: common.company
   archived: true
   branding: false
+
+cover:
+  color: '#EAD4B3'
+  icon: boxes-packing
+  text: |-
+    Build more.
+    Hurt less.

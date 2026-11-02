@@ -16,3 +16,10 @@ document:
   company: common.company
   archived: true
   branding: false
+
+cover:
+  color: '#C1E2ED'
+  icon: water
+  text: |-
+    Same streams.
+    New flow.

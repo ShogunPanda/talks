@@ -16,3 +16,10 @@ document:
   createdAt: '2024-06-11'
   author: common.author
   company: common.company
+
+cover:
+  color: '#B9E5E5'
+  icon: qrcode
+  text: |-
+    Small squares.
+    Big possibilities.

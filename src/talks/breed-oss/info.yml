@@ -15,3 +15,8 @@ document:
   author: common.author
   company: common.company
   branding: false
+
+cover:
+  color: '#C8DFC0'
+  icon: seedling
+  text: 'Code grows with people.'

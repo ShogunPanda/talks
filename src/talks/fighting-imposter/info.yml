@@ -16,3 +16,8 @@ document:
     I haven’t defeated the voice yet, but now I know how to deal with it and I want you to deal with it as well.
   createdAt: '2026-09-18'
   author: common.author
+
+cover:
+  color: '#EDC0D1'
+  icon: mountain-sun
+  text: 'You belong here.'

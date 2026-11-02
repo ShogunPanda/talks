@@ -7,3 +7,8 @@ document:
   author: common.author
   branding: true
   hidden: true
+
+cover:
+  color: '#DCD3EA'
+  icon: file-powerpoint
+  text: 'Every pixel counts.'

@@ -14,3 +14,10 @@ document:
   createdAt: '2025-11-27'
   author: common.author
   company: common.company
+
+cover:
+  color: '#EEE5A5'
+  icon: bolt
+  text: |-
+    Less overhead.
+    More Watt.

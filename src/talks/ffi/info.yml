@@ -15,3 +15,8 @@ document:
   createdAt: '2026-09-24'
   author: common.author
   company: common.company
+
+cover:
+  color: '#C9C0EF'
+  icon: bridge
+  text: 'JavaScript goes native.'

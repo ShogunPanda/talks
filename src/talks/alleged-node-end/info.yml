@@ -17,3 +17,10 @@ document:
   createdAt: '2025-03-24'
   author: common.author
   company: common.company
+
+cover:
+  color: '#BDE8CD'
+  icon: heart-pulse
+  text: |-
+    Not dead.
+    Still growing.

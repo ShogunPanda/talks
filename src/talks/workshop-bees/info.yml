@@ -30,3 +30,8 @@ document:
   author: common.author
   company: common.company
   branding: false
+
+cover:
+  color: '#F5E4B3'
+  icon: screwdriver-wrench
+  text: 'Build beyond the SDK.'

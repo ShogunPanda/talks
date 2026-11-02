@@ -20,3 +20,8 @@ document:
   author: common.author
   company: common.company
   branding: false
+
+cover:
+  color: '#D8C5ED'
+  icon: lock
+  text: 'Where maths meets magic.'

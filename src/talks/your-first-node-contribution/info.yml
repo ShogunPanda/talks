@@ -23,3 +23,8 @@ document:
       email: marcoippolito54@gmail.com
       twitter: marco-ippolito
   branding: false
+
+cover:
+  color: '#C7E7B7'
+  icon: code-pull-request
+  text: 'Make Node.js your next commit.'

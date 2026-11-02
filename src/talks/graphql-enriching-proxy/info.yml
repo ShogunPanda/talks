@@ -16,3 +16,10 @@ document:
   author: common.author
   company: common.company
   branding: false
+
+cover:
+  color: '#E8BFE0'
+  icon: diagram-project
+  text: |-
+    Same endpoint.
+    More possibilities.

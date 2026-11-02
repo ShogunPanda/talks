@@ -1,5 +1,5 @@
 import { Image, Progress, QRCode, cleanCssClasses, useClient, useSlide } from '@perseveranza-pets/freya/client'
-import { type ComponentChildren, type JSX, type VNode } from 'preact'
+import { type ComponentChildren, type JSX, type VNode } from '@perseveranza-pets/freya/preact'
 import { Text } from '../../common/components/common.tsx'
 import { SvgIcon } from '../../common/components/icons.tsx'
 import { type Slide } from '../../common/models.ts'
