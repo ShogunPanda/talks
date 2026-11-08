@@ -98,7 +98,7 @@
           }
 
           &:hover {
-            color: var(--pi-color-accent-text-hover);
+            color: var(--pi-color-accent-text);
           }
         }
 
